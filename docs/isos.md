@@ -36,8 +36,8 @@ nix build .#images.x86_64-linux.installer     # → result/iso/pwnbox-installer.
 
 | System | Live ISO | Installer ISO | Notes |
 | --- | --- | --- | --- |
-| `x86_64-linux` | ✅ BIOS + UEFI | ✅ | Builds natively; this covers every PC and laptop. |
-| `aarch64-linux` | ✅ UEFI only | ✅ UEFI only | Needs an ARM builder (`--builders 'ssh-ng://root@pi aarch64-linux - 8'`) or binfmt emulation (slow). Does **not** boot on Raspberry Pi-style boards without UEFI. |
+| `x86_64-linux` | BIOS + UEFI | yes | Builds natively; this covers every PC and laptop. |
+| `aarch64-linux` | UEFI only | UEFI only | Needs an ARM builder (`--builders 'ssh-ng://root@pi aarch64-linux - 8'`) or binfmt emulation (slow). Does **not** boot on Raspberry Pi-style boards without UEFI. |
 
 Building for a foreign architecture:
 
