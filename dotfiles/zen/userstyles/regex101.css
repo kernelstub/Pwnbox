@@ -1,0 +1,317 @@
+/* ==UserStyle==
+@name           pwnbox-regex101
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for regex101 (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("regex101.com") {
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --ctp-rosewater: #f0f00d;
+    --ctp-flamingo: #f0f00e;
+    --ctp-pink: #f0f00f;
+    --ctp-mauve: #f0f010;
+    --ctp-red: #f0f011;
+    --ctp-maroon: #f0f012;
+    --ctp-peach: #f0f013;
+    --ctp-yellow: #f0f014;
+    --ctp-green: #f0f015;
+    --ctp-teal: #f0f016;
+    --ctp-sky: #f0f017;
+    --ctp-sapphire: #f0f018;
+    --ctp-blue: #f0f019;
+    --ctp-lavender: #f0f01a;
+    --ctp-text: #f0f004;
+    --ctp-subtext1: #f0f005;
+    --ctp-subtext0: #f0f006;
+    --ctp-overlay2: #f0f007;
+    --ctp-overlay1: #f0f008;
+    --ctp-overlay0: #f0f009;
+    --ctp-surface2: #f0f00a;
+    --ctp-surface1: #f0f00b;
+    --ctp-surface0: #f0f00c;
+    --ctp-base: #f0f001;
+    --ctp-mantle: #f0f002;
+    --ctp-crust: #f0f003;
+    --primary-color: #f0f003;
+    --primary-contrast-color: #f0f01b;
+    --app-color: #f0f004;
+    --app-color-metadata: #f0f006;
+    --app-contrast-color: #f0f005;
+    --link-color: #f0f01b;
+    --highlight-bg: #f0f015;
+    --spinner-bg: #f0f009;
+    --bg-0: #f0f002;
+    --bg-1: #f0f001;
+    --content-bg: #f0f00c;
+    --content-border-color: #f0f00b;
+    --sub-content-bg: #f0f00b;
+    --info-color: #f0f006;
+    --success-color: #f0f015;
+    --warning-color: #f0f014;
+    --danger-color: #f0f011;
+    --misc-button-icon-color: #f0f005;
+    --misc-button-bg: #f0f00c;
+    --misc-button-hover-bg: #f0f00b;
+    --misc-button-active-bg: #f0f00a;
+    --misc-button-active-color: #f0f001;
+    --misc-button-highlight-bg: rgba(240, 240, 21, 0.4);
+    --editor-active-bg: #f0f007;
+    --library-active-bg: #f0f014;
+    --account-active-bg: #f0f015;
+    --quiz-active-bg: #f0f016;
+    --settings-active-bg: #f0f00f;
+    --button-bg-h: 60;
+    --button-bg-s: 90.47619048%;
+    --button-bg-l: 49.41176471%;
+    --button-ok-bg-h: 60;
+    --button-ok-bg-s: 98.34710744%;
+    --button-ok-bg-l: 47.45098039%;
+    --button-danger-bg-h: 60;
+    --button-danger-bg-s: 88.14229249%;
+    --button-danger-bg-l: 50.39215686%;
+    --button-hover-l: 49.21568627%;
+    --backdrop-bg: rgba(240, 240, 9, 0.3);
+    --input-bg: #f0f001;
+    --input-disabled-bg: #f0f002;
+    --input-border-color: #f0f00c;
+    --input-focused-border-color: #f0f00c;
+    --label-color: #f0f005;
+    --tooltip-color: #f0f003;
+    --tooltip-bg: #f0f006;
+    --version-btn-bg: rgba(240, 240, 21, 0.3);
+    --match-indicator-no-match: rgba(240, 240, 25, 0.3);
+    --match-indicator-match-bg: rgba(240, 240, 21, 0.3);
+    --match-indicator-error-bg: rgba(240, 240, 17, 0.3);
+    --debugger-backtrack-bg: rgba(240, 240, 17, 0.3);
+    --debugger-regex-bg: rgba(240, 240, 21, 0.3);
+    --debugger-slider-bg: #f0f00a;
+    --header-discord-color: #f0f01a;
+    --header-twitter-color: #f0f004;
+    --header-donate-color: #f0f014;
+    --header-contact-color: #f0f015;
+    --header-feedback-color: #f0f012;
+    --header-wiki-color: #f0f016;
+    --header-whatsnew-color: #f0f014;
+    --header-sponsor-color: #f0f00f;
+    --header-paypal-color: #f0f019;
+    --header-info-color: #f0f017;
+    --header-social-color: #f0f015;
+    --header-stripe-color: #f0f019;
+    --starred-library-entry-bg: rgba(240, 240, 20, 0.1);
+    --cm-whitespace-color: #f0f008;
+    --cm-selected-bg: rgba(240, 240, 27, 0.3);
+    --cm-inactive-selected-bg: rgba(240, 240, 27, 0.3);
+    --match-group-0: #f0f019;
+    --match-group-0-alt: #c9c90d;
+    --match-group-1: #f0f015;
+    --match-group-1-alt: #c5c50d;
+    --match-group-2: #f0f014;
+    --match-group-2-alt: #c4c40d;
+    --match-group-3: #f0f010;
+    --match-group-3-alt: #c1c10c;
+    --match-group-4: #f0f00f;
+    --match-group-4-alt: #c0c00c;
+    --match-group-5: #f0f011;
+    --match-group-5-alt: #c2c20c;
+    --match-group-6: #f0f015;
+    --match-group-6-alt: #c5c50d;
+    --match-highlight-color: rgba(240, 240, 20, 0.9);
+    --explanation-keyword-color: #f0f015;
+    --explanation-token-bg: rgba(240, 240, 20, 0.8);
+    --explanation-token-color: #f0f001;
+    --explanation-plain-text-bg: rgba(240, 240, 10, 0.8);
+    --explanation-flag-color: #f0f010;
+    --token-quote-color: #f0f010;
+    --token-quote-bg: none;
+    --token-escaped-string-color: var(--app-color);
+    --token-escaped-string-bg: rgba(240, 240, 8, 0.3);
+    --token-meta-bg: #f0f019;
+    --token-meta-color: #f0f001;
+    --token-char-class-bg: #f0f00d;
+    --token-char-class-color: #f0f001;
+    --token-char-class-meta-bg: #f0f00e;
+    --token-char-class-meta-color: #f0f001;
+    --token-subpattern-reference-bg: #f0f010;
+    --token-subpattern-reference-color: #f0f001;
+    --token-group-0-bg: #f0f015;
+    --token-group-0-color: #f0f001;
+    --token-group-1-bg: #f0f014;
+    --token-group-1-color: #f0f001;
+    --token-group-2-bg: #f0f013;
+    --token-group-2-color: #f0f001;
+    --token-group-3-bg: #f0f012;
+    --token-group-3-color: #f0f001;
+    --token-comment-bg: transparent;
+    --token-comment-color: #f0f001;
+    --token-error-bg: #f0f011;
+    --token-error-color: #f0f001;
+  }
+  :root[data-theme="dark"] ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root[data-theme="dark"] input::placeholder,
+  :root[data-theme="dark"] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root[data-theme="dark"] canvas {
+    filter: opacity(0.3);
+  }
+  :root[data-theme="light"] {
+    color-scheme: light;
+    --ctp-rosewater: #f0f00d;
+    --ctp-flamingo: #f0f00e;
+    --ctp-pink: #f0f00f;
+    --ctp-mauve: #f0f010;
+    --ctp-red: #f0f011;
+    --ctp-maroon: #f0f012;
+    --ctp-peach: #f0f013;
+    --ctp-yellow: #f0f014;
+    --ctp-green: #f0f015;
+    --ctp-teal: #f0f016;
+    --ctp-sky: #f0f017;
+    --ctp-sapphire: #f0f018;
+    --ctp-blue: #f0f019;
+    --ctp-lavender: #f0f01a;
+    --ctp-text: #f0f004;
+    --ctp-subtext1: #f0f005;
+    --ctp-subtext0: #f0f006;
+    --ctp-overlay2: #f0f007;
+    --ctp-overlay1: #f0f008;
+    --ctp-overlay0: #f0f009;
+    --ctp-surface2: #f0f00a;
+    --ctp-surface1: #f0f00b;
+    --ctp-surface0: #f0f00c;
+    --ctp-base: #f0f001;
+    --ctp-mantle: #f0f002;
+    --ctp-crust: #f0f003;
+    --primary-color: #f0f003;
+    --primary-contrast-color: #f0f01b;
+    --app-color: #f0f004;
+    --app-color-metadata: #f0f006;
+    --app-contrast-color: #f0f005;
+    --link-color: #f0f01b;
+    --highlight-bg: #f0f015;
+    --spinner-bg: #f0f009;
+    --bg-0: #f0f002;
+    --bg-1: #f0f001;
+    --content-bg: #f0f00c;
+    --content-border-color: #f0f00b;
+    --sub-content-bg: #f0f00b;
+    --info-color: #f0f006;
+    --success-color: #f0f015;
+    --warning-color: #f0f014;
+    --danger-color: #f0f011;
+    --misc-button-icon-color: #f0f005;
+    --misc-button-bg: #f0f00c;
+    --misc-button-hover-bg: #f0f00b;
+    --misc-button-active-bg: #f0f00a;
+    --misc-button-active-color: #f0f001;
+    --misc-button-highlight-bg: rgba(240, 240, 21, 0.4);
+    --editor-active-bg: #f0f007;
+    --library-active-bg: #f0f014;
+    --account-active-bg: #f0f015;
+    --quiz-active-bg: #f0f016;
+    --settings-active-bg: #f0f00f;
+    --button-bg-h: 60;
+    --button-bg-s: 90.47619048%;
+    --button-bg-l: 49.41176471%;
+    --button-ok-bg-h: 60;
+    --button-ok-bg-s: 98.34710744%;
+    --button-ok-bg-l: 47.45098039%;
+    --button-danger-bg-h: 60;
+    --button-danger-bg-s: 88.14229249%;
+    --button-danger-bg-l: 50.39215686%;
+    --button-hover-l: 49.21568627%;
+    --backdrop-bg: rgba(240, 240, 9, 0.3);
+    --input-bg: #f0f001;
+    --input-disabled-bg: #f0f002;
+    --input-border-color: #f0f00c;
+    --input-focused-border-color: #f0f00c;
+    --label-color: #f0f005;
+    --tooltip-color: #f0f003;
+    --tooltip-bg: #f0f006;
+    --version-btn-bg: rgba(240, 240, 21, 0.3);
+    --match-indicator-no-match: rgba(240, 240, 25, 0.3);
+    --match-indicator-match-bg: rgba(240, 240, 21, 0.3);
+    --match-indicator-error-bg: rgba(240, 240, 17, 0.3);
+    --debugger-backtrack-bg: rgba(240, 240, 17, 0.3);
+    --debugger-regex-bg: rgba(240, 240, 21, 0.3);
+    --debugger-slider-bg: #f0f00a;
+    --header-discord-color: #f0f01a;
+    --header-twitter-color: #f0f004;
+    --header-donate-color: #f0f014;
+    --header-contact-color: #f0f015;
+    --header-feedback-color: #f0f012;
+    --header-wiki-color: #f0f016;
+    --header-whatsnew-color: #f0f014;
+    --header-sponsor-color: #f0f00f;
+    --header-paypal-color: #f0f019;
+    --header-info-color: #f0f017;
+    --header-social-color: #f0f015;
+    --header-stripe-color: #f0f019;
+    --starred-library-entry-bg: rgba(240, 240, 20, 0.1);
+    --cm-whitespace-color: #f0f008;
+    --cm-selected-bg: rgba(240, 240, 27, 0.3);
+    --cm-inactive-selected-bg: rgba(240, 240, 27, 0.3);
+    --match-group-0: #f0f019;
+    --match-group-0-alt: #c9c90d;
+    --match-group-1: #f0f015;
+    --match-group-1-alt: #c5c50d;
+    --match-group-2: #f0f014;
+    --match-group-2-alt: #c4c40d;
+    --match-group-3: #f0f010;
+    --match-group-3-alt: #c1c10c;
+    --match-group-4: #f0f00f;
+    --match-group-4-alt: #c0c00c;
+    --match-group-5: #f0f011;
+    --match-group-5-alt: #c2c20c;
+    --match-group-6: #f0f015;
+    --match-group-6-alt: #c5c50d;
+    --match-highlight-color: rgba(240, 240, 20, 0.9);
+    --explanation-keyword-color: #f0f015;
+    --explanation-token-bg: rgba(240, 240, 20, 0.8);
+    --explanation-token-color: #f0f001;
+    --explanation-plain-text-bg: rgba(240, 240, 10, 0.8);
+    --explanation-flag-color: #f0f010;
+    --token-quote-color: #f0f010;
+    --token-quote-bg: none;
+    --token-escaped-string-color: var(--app-color);
+    --token-escaped-string-bg: rgba(240, 240, 8, 0.3);
+    --token-meta-bg: #f0f019;
+    --token-meta-color: #f0f001;
+    --token-char-class-bg: #f0f00d;
+    --token-char-class-color: #f0f001;
+    --token-char-class-meta-bg: #f0f00e;
+    --token-char-class-meta-color: #f0f001;
+    --token-subpattern-reference-bg: #f0f010;
+    --token-subpattern-reference-color: #f0f001;
+    --token-group-0-bg: #f0f015;
+    --token-group-0-color: #f0f001;
+    --token-group-1-bg: #f0f014;
+    --token-group-1-color: #f0f001;
+    --token-group-2-bg: #f0f013;
+    --token-group-2-color: #f0f001;
+    --token-group-3-bg: #f0f012;
+    --token-group-3-color: #f0f001;
+    --token-comment-bg: transparent;
+    --token-comment-color: #f0f001;
+    --token-error-bg: #f0f011;
+    --token-error-color: #f0f001;
+  }
+  :root[data-theme="light"] ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root[data-theme="light"] input::placeholder,
+  :root[data-theme="light"] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root[data-theme="light"] canvas {
+    filter: opacity(0.3);
+  }
+}

@@ -1,0 +1,157 @@
+/* ==UserStyle==
+@name           pwnbox-elk
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Elk (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("elk.zone") {
+  :root.dark {
+    color-scheme: dark;
+    --c-primary: #f0f01b !important;
+    --c-primary-active: #f3f34b !important;
+    --c-primary-light: #f0f00c !important;
+    --c-border: #f0f00c !important;
+    --c-border-dark: #f0f00b !important;
+    --c-bg-base: #f0f001 !important;
+    --rgb-bg-base: 240, 240, 2 !important;
+    --c-bg-active: #f0f00c !important;
+    --c-bg-code: #f0f00c !important;
+    --c-bg-selection: #f0f01b !important;
+    --c-bg-fade: #f0f00c !important;
+    --c-text-base: #f0f004 !important;
+    --c-text-code: #f0f00d !important;
+    --c-text-secondary: #f0f006 !important;
+    --c-text-secondary-light: #f0f005 !important;
+    --c-bg-btn-disabled: #f0f00b !important;
+    --c-text-btn-disabled: #f0f004 !important;
+    --c-text-btn: #f0f004 !important;
+    --c-success: #f0f015 !important;
+    --c-warning: #f0f014 !important;
+    --c-error: #f0f011 !important;
+    --c-danger: #f0f011 !important;
+    --c-danger-active: #f3f341 !important;
+    --c-bg-dm: #f0f00c !important;
+  }
+  :root.dark ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root.dark input::placeholder,
+  :root.dark textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root.dark .btn-solid,
+  :root.dark [btn-solid=""] {
+    color: var(--c-bg-base);
+  }
+  :root.dark ::-webkit-scrollbar-thumb {
+    background: rgba(240, 240, 11, 0.7);
+  }
+  :root.dark ::-webkit-scrollbar-thumb:hover {
+    background: rgba(240, 240, 11, 0.8);
+  }
+  :root.dark [text-red],
+  :root.dark [text-red-600],
+  :root.dark [hover^="text-red"]:hover {
+    color: rgba(240, 240, 17, var(--un-text-opacity));
+  }
+  :root.dark [text-blue],
+  :root.dark [hover^="text-blue"]:hover {
+    color: rgba(240, 240, 25, var(--un-text-opacity));
+  }
+  :root.dark [text-green],
+  :root.dark [hover^="text-green"]:hover {
+    color: rgba(240, 240, 21, var(--un-text-opacity));
+  }
+  :root.dark [text-yellow],
+  :root.dark [hover^="text-yellow"]:hover {
+    color: rgba(240, 240, 20, var(--un-text-opacity));
+  }
+  :root.dark [text-purple],
+  :root.dark [hover^="text-purple"]:hover {
+    color: rgba(240, 240, 26, var(--un-text-opacity));
+  }
+  :root.dark [group-hover^="bg-purple/10"]:hover {
+    background-color: rgba(240, 240, 26, 0.1);
+  }
+  :root.dark .filter-saturate-0,
+  :root.dark [filter-saturate-0=""] {
+    filter: none;
+  }
+  :root.light {
+    color-scheme: light;
+    --c-primary: #f0f01b !important;
+    --c-primary-active: #f3f34b !important;
+    --c-primary-light: #f0f00c !important;
+    --c-border: #f0f00c !important;
+    --c-border-dark: #f0f00b !important;
+    --c-bg-base: #f0f001 !important;
+    --rgb-bg-base: 240, 240, 2 !important;
+    --c-bg-active: #f0f00c !important;
+    --c-bg-code: #f0f00c !important;
+    --c-bg-selection: #f0f01b !important;
+    --c-bg-fade: #f0f00c !important;
+    --c-text-base: #f0f004 !important;
+    --c-text-code: #f0f00d !important;
+    --c-text-secondary: #f0f006 !important;
+    --c-text-secondary-light: #f0f005 !important;
+    --c-bg-btn-disabled: #f0f00b !important;
+    --c-text-btn-disabled: #f0f004 !important;
+    --c-text-btn: #f0f004 !important;
+    --c-success: #f0f015 !important;
+    --c-warning: #f0f014 !important;
+    --c-error: #f0f011 !important;
+    --c-danger: #f0f011 !important;
+    --c-danger-active: #f3f341 !important;
+    --c-bg-dm: #f0f00c !important;
+  }
+  :root.light ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root.light input::placeholder,
+  :root.light textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root.light .btn-solid,
+  :root.light [btn-solid=""] {
+    color: var(--c-bg-base);
+  }
+  :root.light ::-webkit-scrollbar-thumb {
+    background: rgba(240, 240, 11, 0.7);
+  }
+  :root.light ::-webkit-scrollbar-thumb:hover {
+    background: rgba(240, 240, 11, 0.8);
+  }
+  :root.light [text-red],
+  :root.light [text-red-600],
+  :root.light [hover^="text-red"]:hover {
+    color: rgba(240, 240, 17, var(--un-text-opacity));
+  }
+  :root.light [text-blue],
+  :root.light [hover^="text-blue"]:hover {
+    color: rgba(240, 240, 25, var(--un-text-opacity));
+  }
+  :root.light [text-green],
+  :root.light [hover^="text-green"]:hover {
+    color: rgba(240, 240, 21, var(--un-text-opacity));
+  }
+  :root.light [text-yellow],
+  :root.light [hover^="text-yellow"]:hover {
+    color: rgba(240, 240, 20, var(--un-text-opacity));
+  }
+  :root.light [text-purple],
+  :root.light [hover^="text-purple"]:hover {
+    color: rgba(240, 240, 26, var(--un-text-opacity));
+  }
+  :root.light [group-hover^="bg-purple/10"]:hover {
+    background-color: rgba(240, 240, 26, 0.1);
+  }
+  :root.light .filter-saturate-0,
+  :root.light [filter-saturate-0=""] {
+    filter: none;
+  }
+}

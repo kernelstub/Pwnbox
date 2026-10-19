@@ -1,0 +1,175 @@
+/* ==UserStyle==
+@name           pwnbox-nitter
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Nitter (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("nitter.net"), domain("nitter.unixfox.eu"), domain("nitter.42l.fr"), domain("nitter.fdn.fr"), domain("nitter.1d4.us"), domain("nitter.kavin.rocks"), domain("nitter.namazso.eu"), domain("nitter.hu"), domain("bird.trom.tf"), domain("nitter.it"), domain("twitter.censors.us"), domain("nitter.grimneko.de"), domain("n.hyperborea.cloud"), domain("nitter.ca"), domain("twitter.076.ne.jp"), domain("nitter.mstdn.social"), domain("nitter.fly.dev"), domain("nitter.weiler.rocks"), domain("nitter.sethforprivacy.com"), domain("nttr.stream"), domain("nitter.tiekoetter.com"), domain("nitter.spaceint.fr"), domain("nitter.privacy.com.denitter.mastodon.pro"), domain("nitter.notraxx.chnitter.poast.org"), domain("nitter.bird.froth.zone"), domain("nitter.dcs0.hu"), domain("twitter.beparanoid.de"), domain("n.ramle.be"), domain("nitter.cz"), domain("nitter.privacydev.net"), domain("tweet.lambda.dance"), domain("nitter.kylrth.com"), domain("nitter.oishi-ra.men"), domain("nitter.foss.wtf"), domain("nitter.priv.pw"), domain("t.com.sb"), domain("xcancel.com"), domain("nitter.poast.org") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+      /* logo */
+      /* Fix Poll Leader color */
+      /* xcancel "verifying your request" */
+      /* error text color contrast */
+      /* twitter blue verification checkmark contrast */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root body {
+      --bg_color: #f0f002;
+      --fg_color: #f0f004;
+      --fg_faded: #f0f005;
+      --fg_dark: #f0f01b;
+      --fg_nav: #f0f01b;
+      --bg_panel: #f0f003;
+      --bg_elements: #f0f001;
+      --bg_overlays: #f0f001;
+      --bg_hover: #f0f003;
+      --grey: #f0f005;
+      --dark_grey: #f0f009;
+      --darker_grey: #f0f001;
+      --darkest_grey: #f0f002;
+      --border_grey: #f0f001;
+      --accent: #f0f01b;
+      --accent_light: #f3f34b;
+      --accent_dark: #cbcb0d;
+      --accent_border: #cbcb0d;
+      --play_button: #f0f01b;
+      --play_button_hover: #f0f01b;
+      --more_replies_dots: #cbcb0d;
+      --error_red: #f0f011;
+      --verified_blue: #f0f019;
+      --icon_text: #f0f004;
+      --tab: #f0f004;
+      --tab_selected: #f0f01b;
+      --profile_stat: #f0f004;
+      --verified_government: #f0f006;
+      --verified_business: #f0f014;
+      background-color: var(--bg_color);
+      color: var(--fg_color);
+      line-height: 1.3;
+      margin: 0;
+    }
+    :root img.site-logo {
+      content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22none%22%3E%3Cpath%20stroke%3D%22%23f0f01b%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2220%22%20d%3D%22M145%2041H81v418h78V183.5L355%20459h64V41h-78v275.5z%22/%3E%3C/svg%3E");
+    }
+    :root .poll-meter.leader {
+      color: var(--bg_color);
+    }
+    :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] {
+      background: #f0f001 !important;
+    }
+    :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h1,
+    :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h2,
+    :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] p,
+    :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] #status {
+      color: #f0f01b !important;
+    }
+    :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] [style="width:auto;margin:16px auto;border:1px solid #FF6C60;background-color:#1f1f1f;border-radius:3px 3px 3px 3px;padding:10px;"] {
+      background: #f0f001 !important;
+      border-color: #f0f01b !important;
+    }
+    :root .error-panel {
+      color: #f0f003;
+    }
+    :root .error-panel a {
+      color: #f0f003;
+      text-decoration: underline;
+    }
+    :root .verified-icon.blue {
+      color: #f0f003;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      /* logo */
+      /* Fix Poll Leader color */
+      /* xcancel "verifying your request" */
+      /* error text color contrast */
+      /* twitter blue verification checkmark contrast */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root body {
+      --bg_color: #f0f002;
+      --fg_color: #f0f004;
+      --fg_faded: #f0f005;
+      --fg_dark: #f0f01b;
+      --fg_nav: #f0f01b;
+      --bg_panel: #f0f003;
+      --bg_elements: #f0f001;
+      --bg_overlays: #f0f001;
+      --bg_hover: #f0f003;
+      --grey: #f0f005;
+      --dark_grey: #f0f009;
+      --darker_grey: #f0f001;
+      --darkest_grey: #f0f002;
+      --border_grey: #f0f001;
+      --accent: #f0f01b;
+      --accent_light: #f3f34b;
+      --accent_dark: #cbcb0d;
+      --accent_border: #cbcb0d;
+      --play_button: #f0f01b;
+      --play_button_hover: #f0f01b;
+      --more_replies_dots: #cbcb0d;
+      --error_red: #f0f011;
+      --verified_blue: #f0f019;
+      --icon_text: #f0f004;
+      --tab: #f0f004;
+      --tab_selected: #f0f01b;
+      --profile_stat: #f0f004;
+      --verified_government: #f0f006;
+      --verified_business: #f0f014;
+      background-color: var(--bg_color);
+      color: var(--fg_color);
+      line-height: 1.3;
+      margin: 0;
+    }
+    :root img.site-logo {
+      content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22none%22%3E%3Cpath%20stroke%3D%22%23f0f01b%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2220%22%20d%3D%22M145%2041H81v418h78V183.5L355%20459h64V41h-78v275.5z%22/%3E%3C/svg%3E");
+    }
+    :root .poll-meter.leader {
+      color: var(--bg_color);
+    }
+    :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] {
+      background: #f0f001 !important;
+    }
+    :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h1,
+    :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] h2,
+    :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] p,
+    :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] #status {
+      color: #f0f01b !important;
+    }
+    :root [style="background-color:#1f1f1f;color:#1f1f1f;font-family:Arial,Helvetica,sans-serif;font-size:100%;"] [style="width:auto;margin:16px auto;border:1px solid #FF6C60;background-color:#1f1f1f;border-radius:3px 3px 3px 3px;padding:10px;"] {
+      background: #f0f001 !important;
+      border-color: #f0f01b !important;
+    }
+    :root .error-panel {
+      color: #f0f003;
+    }
+    :root .error-panel a {
+      color: #f0f003;
+      text-decoration: underline;
+    }
+    :root .verified-icon.blue {
+      color: #f0f003;
+    }
+  }
+}

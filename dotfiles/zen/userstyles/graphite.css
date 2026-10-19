@@ -1,0 +1,111 @@
+/* ==UserStyle==
+@name           pwnbox-graphite
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Graphite (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("app.graphite.com") {
+  :root[data-theme="light"] {
+    color-scheme: light;
+    --color-bg-light: #f0f001;
+    --color-bg-med: #f0f002;
+    --color-bg-dark: #f0f003;
+    --text-color-light: #f0f003;
+    --text-color-default: #f0f004;
+    --text-color-low-contrast: #f0f004;
+    --text-color-high-contrast: #f0f004;
+    --text-color-disabled: #f0f006;
+    --btn-color-neutral-selected: #f0f00c;
+    --btn-color-neutral-default: #f0f00c;
+    --btn-color-neutral-hover: #f0f00c;
+    --icon-color-default: #f0f004;
+    --border-color-default: #f0f00b;
+    --color-gray-60: #f0f00c;
+    --color-emphasis-default: #f0f01b;
+    --color-emphasis-lowest-contrast: #000000;
+    --color-emphasis-low-contrast: #f0f01b;
+    --color-emphasis-high-contrast: #f0f01b;
+    --color-emphasis-highest-contrast: #f3f34b;
+    --color-positive-default: #f0f015;
+    --color-positive-lowest-contrast: #000000;
+    --color-positive-low-contrast: #f0f015;
+    --color-positive-high-contrast: #f0f015;
+    --color-positive-highest-contrast: #f3f345;
+    --color-caution-default: #f0f013;
+    --color-caution-lowest-contrast: #000000;
+    --color-caution-low-contrast: #f0f013;
+    --color-caution-high-contrast: #f0f013;
+    --color-caution-highest-contrast: #f3f343;
+    --color-negative-default: #f0f011;
+    --color-negative-lowest-contrast: #000000;
+    --color-negative-low-contrast: #f0f011;
+    --color-negative-high-contrast: #f0f011;
+    --color-negative-highest-contrast: #f3f341;
+    --color-action-default: #f0f010;
+    --color-action-lowest-contrast: #000000;
+    --color-action-low-contrast: #f0f010;
+    --color-action-high-contrast: #f0f010;
+    --color-action-highest-contrast: #f3f340;
+  }
+  :root[data-theme="light"] ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root[data-theme="light"] input::placeholder,
+  :root[data-theme="light"] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --color-bg-light: #f0f001;
+    --color-bg-med: #f0f002;
+    --color-bg-dark: #f0f003;
+    --text-color-light: #f0f003;
+    --text-color-default: #f0f004;
+    --text-color-low-contrast: #f0f004;
+    --text-color-high-contrast: #f0f004;
+    --text-color-disabled: #f0f006;
+    --btn-color-neutral-selected: #f0f00c;
+    --btn-color-neutral-default: #f0f00c;
+    --btn-color-neutral-hover: #f0f00c;
+    --icon-color-default: #f0f004;
+    --border-color-default: #f0f00b;
+    --color-gray-60: #f0f00c;
+    --color-emphasis-default: #f0f01b;
+    --color-emphasis-lowest-contrast: #000000;
+    --color-emphasis-low-contrast: #f0f01b;
+    --color-emphasis-high-contrast: #f0f01b;
+    --color-emphasis-highest-contrast: #f3f34b;
+    --color-positive-default: #f0f015;
+    --color-positive-lowest-contrast: #000000;
+    --color-positive-low-contrast: #f0f015;
+    --color-positive-high-contrast: #f0f015;
+    --color-positive-highest-contrast: #f3f345;
+    --color-caution-default: #f0f013;
+    --color-caution-lowest-contrast: #000000;
+    --color-caution-low-contrast: #f0f013;
+    --color-caution-high-contrast: #f0f013;
+    --color-caution-highest-contrast: #f3f343;
+    --color-negative-default: #f0f011;
+    --color-negative-lowest-contrast: #000000;
+    --color-negative-low-contrast: #f0f011;
+    --color-negative-high-contrast: #f0f011;
+    --color-negative-highest-contrast: #f3f341;
+    --color-action-default: #f0f010;
+    --color-action-lowest-contrast: #000000;
+    --color-action-low-contrast: #f0f010;
+    --color-action-high-contrast: #f0f010;
+    --color-action-highest-contrast: #f3f340;
+  }
+  :root[data-theme="dark"] ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root[data-theme="dark"] input::placeholder,
+  :root[data-theme="dark"] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+}

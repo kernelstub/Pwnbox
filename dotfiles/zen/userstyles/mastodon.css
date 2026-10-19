@@ -1,0 +1,163 @@
+/* ==UserStyle==
+@name           pwnbox-mastodon
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Mastodon (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("mastodon.social"), domain("fosstodon.org") {
+  [data-color-scheme="light"] {
+    color-scheme: light;
+    --color-bg-primary: #f0f001;
+    --color-bg-secondary: #f0f00c;
+    --color-bg-tertiary: #f0f00b;
+    --color-bg-inverted: #f0f004;
+    --color-text-primary: #f0f004;
+    --color-text-secondary: #f0f005;
+    --color-text-tertiary: #f0f006;
+    --color-text-inverted: #f0f001;
+    /* Brand */
+    --color-bg-brand-base: #f0f01b;
+    --color-bg-brand-base-hover: #e3e30f;
+    --color-bg-brand-soft: rgba(240, 240, 27, 0.4);
+    --color-bg-brand-softest: rgba(240, 240, 27, 0.15);
+    --color-text-brand: #f0f01b;
+    --color-text-on-brand-base: #f0f001;
+    --color-text-brand-on-inverted: #f0f01b;
+    /* States */
+    --color-bg-error-base: #f0f011;
+    --color-bg-error-base-hover: #dada0e;
+    --color-bg-error-soft: rgba(240, 240, 17, 0.4);
+    --color-bg-error-softest: rgba(240, 240, 17, 0.15);
+    --color-text-error: #f0f011;
+    --color-text-on-error-base: #f0f001;
+    --color-bg-warning-base: #f0f014;
+    --color-bg-warning-soft: rgba(240, 240, 20, 0.4);
+    --color-bg-warning-softest: rgba(240, 240, 20, 0.15);
+    --color-text-warning: #f0f014;
+    --color-text-on-warning-base: #f0f001;
+    --color-bg-success-base: #f0f015;
+    --color-bg-success-soft: rgba(240, 240, 21, 0.4);
+    --color-bg-success-softest: rgba(240, 240, 21, 0.15);
+    --color-text-success: #f0f015;
+    --color-text-on-success-base: #f0f001;
+    --color-bg-disabled: #f0f008;
+    --color-text-disabled: #f0f008;
+    --color-text-on-disabled: #f0f006;
+    /* Borders */
+    --color-border-primary: #f0f00a;
+    --color-border-brand: #f0f01b;
+    --color-border-brand-soft: rgba(240, 240, 27, 0.5);
+    --color-border-error: #f0f011;
+    --color-border-error-soft: rgba(240, 240, 17, 0.5);
+    --color-border-warning-soft: rgba(240, 240, 20, 0.5);
+    --color-border-success-soft: rgba(240, 240, 21, 0.5);
+    /* Other */
+    --color-shadow-primary: rgba(240, 240, 2, 0.3);
+    --color-bg-overlay-base: rgba(240, 240, 4, 0.6);
+    --color-bg-overlay-highlight: rgba(240, 240, 4, 0.05);
+    /* Images (alt text, hide/spoilers) */
+    --color-bg-media-base: #f0f003;
+    --color-text-on-media: #f0f004;
+    --color-border-media: #f0f00b;
+    /* Actions (bookmarking, favoriting) */
+    --color-text-bookmark-highlight: #f0f016;
+    --color-text-favourite-highlight: #f0f014;
+    /* Verified badge icon (e.g. profile fields) */
+  }
+  [data-color-scheme="light"] ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  [data-color-scheme="light"] input::placeholder,
+  [data-color-scheme="light"] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  [data-color-scheme="light"] .logo {
+    content: url("data:image/svg+xml,%3Csvg%20width%3D%2265%22%20height%3D%2265%22%20viewBox%3D%220%200%2061%2065%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M60.754%2014.39C59.814%207.406%2053.727%201.903%2046.512.836%2045.294.656%2040.682%200%2029.997%200h-.08C19.23%200%2016.938.656%2015.72.836%208.705%201.873%202.299%206.82.745%2013.886c-.748%203.48-.828%207.338-.689%2010.877.198%205.075.237%2010.142.697%2015.197a71.5%2071.5%200%200%200%201.664%209.968c1.477%206.056%207.458%2011.096%2013.317%2013.152a35.7%2035.7%200%200%200%2019.484%201.028%2028%2028%200%200%200%202.107-.576c1.572-.5%203.413-1.057%204.766-2.038a.15.15%200%200%200%20.062-.118v-4.899a.15.15%200%200%200-.055-.111.14.14%200%200%200-.122-.028%2054%2054%200%200%201-12.644%201.478c-7.328%200-9.298-3.478-9.863-4.925a15.3%2015.3%200%200%201-.857-3.882.142.142%200%200%201%20.178-.145%2053%2053%200%200%200%2012.437%201.477c1.007%200%202.012%200%203.02-.026%204.213-.119%208.654-.334%2012.8-1.144.103-.02.206-.038.295-.065%206.539-1.255%2012.762-5.196%2013.394-15.176.024-.393.083-4.115.083-4.523.003-1.386.446-9.829-.065-15.017%22%20fill%3D%22url%28%23a%29%22/%3E%3Cpath%20d%3D%22M50.394%2022.237v17.35H43.52V22.749c0-3.545-1.478-5.353-4.483-5.353-3.303%200-4.958%202.139-4.958%206.364v9.217h-6.835V23.76c0-4.225-1.657-6.364-4.96-6.364-2.988%200-4.48%201.808-4.48%205.353v16.84H10.93V22.237q0-5.318%202.715-8.45c1.868-2.082%204.317-3.152%207.358-3.152%203.519%200%206.178%201.354%207.951%204.057l1.711%202.871%201.714-2.871c1.773-2.703%204.432-4.056%207.945-4.056%203.038%200%205.487%201.069%207.36%203.152q2.714%203.128%202.71%208.449%22%20fill%3D%22%23f0f001%22/%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22a%22%20x1%3D%2230.5%22%20y1%3D%220%22%20x2%3D%2230.5%22%20y2%3D%2265%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%3Cstop%20stop-color%3D%22%23f0f01b%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23f0f01b%22/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
+  }
+  [data-color-scheme="light"] svg.icon-verified path[fill="url(#VerifiedGradient)"] {
+    fill: #f0f015 !important;
+  }
+  [data-color-scheme="light"] svg.icon-verified path[stroke="#fff"] {
+    stroke: #f0f001 !important;
+  }
+  [data-color-scheme="dark"] {
+    color-scheme: dark;
+    --color-bg-primary: #f0f001;
+    --color-bg-secondary: #f0f00c;
+    --color-bg-tertiary: #f0f00b;
+    --color-bg-inverted: #f0f004;
+    --color-text-primary: #f0f004;
+    --color-text-secondary: #f0f005;
+    --color-text-tertiary: #f0f006;
+    --color-text-inverted: #f0f001;
+    /* Brand */
+    --color-bg-brand-base: #f0f01b;
+    --color-bg-brand-base-hover: #e3e30f;
+    --color-bg-brand-soft: rgba(240, 240, 27, 0.4);
+    --color-bg-brand-softest: rgba(240, 240, 27, 0.15);
+    --color-text-brand: #f0f01b;
+    --color-text-on-brand-base: #f0f001;
+    --color-text-brand-on-inverted: #f0f01b;
+    /* States */
+    --color-bg-error-base: #f0f011;
+    --color-bg-error-base-hover: #dada0e;
+    --color-bg-error-soft: rgba(240, 240, 17, 0.4);
+    --color-bg-error-softest: rgba(240, 240, 17, 0.15);
+    --color-text-error: #f0f011;
+    --color-text-on-error-base: #f0f001;
+    --color-bg-warning-base: #f0f014;
+    --color-bg-warning-soft: rgba(240, 240, 20, 0.4);
+    --color-bg-warning-softest: rgba(240, 240, 20, 0.15);
+    --color-text-warning: #f0f014;
+    --color-text-on-warning-base: #f0f001;
+    --color-bg-success-base: #f0f015;
+    --color-bg-success-soft: rgba(240, 240, 21, 0.4);
+    --color-bg-success-softest: rgba(240, 240, 21, 0.15);
+    --color-text-success: #f0f015;
+    --color-text-on-success-base: #f0f001;
+    --color-bg-disabled: #f0f008;
+    --color-text-disabled: #f0f008;
+    --color-text-on-disabled: #f0f006;
+    /* Borders */
+    --color-border-primary: #f0f00a;
+    --color-border-brand: #f0f01b;
+    --color-border-brand-soft: rgba(240, 240, 27, 0.5);
+    --color-border-error: #f0f011;
+    --color-border-error-soft: rgba(240, 240, 17, 0.5);
+    --color-border-warning-soft: rgba(240, 240, 20, 0.5);
+    --color-border-success-soft: rgba(240, 240, 21, 0.5);
+    /* Other */
+    --color-shadow-primary: rgba(240, 240, 2, 0.3);
+    --color-bg-overlay-base: rgba(240, 240, 4, 0.6);
+    --color-bg-overlay-highlight: rgba(240, 240, 4, 0.05);
+    /* Images (alt text, hide/spoilers) */
+    --color-bg-media-base: #f0f003;
+    --color-text-on-media: #f0f004;
+    --color-border-media: #f0f00b;
+    /* Actions (bookmarking, favoriting) */
+    --color-text-bookmark-highlight: #f0f016;
+    --color-text-favourite-highlight: #f0f014;
+    /* Verified badge icon (e.g. profile fields) */
+  }
+  [data-color-scheme="dark"] ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  [data-color-scheme="dark"] input::placeholder,
+  [data-color-scheme="dark"] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  [data-color-scheme="dark"] .logo {
+    content: url("data:image/svg+xml,%3Csvg%20width%3D%2265%22%20height%3D%2265%22%20viewBox%3D%220%200%2061%2065%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M60.754%2014.39C59.814%207.406%2053.727%201.903%2046.512.836%2045.294.656%2040.682%200%2029.997%200h-.08C19.23%200%2016.938.656%2015.72.836%208.705%201.873%202.299%206.82.745%2013.886c-.748%203.48-.828%207.338-.689%2010.877.198%205.075.237%2010.142.697%2015.197a71.5%2071.5%200%200%200%201.664%209.968c1.477%206.056%207.458%2011.096%2013.317%2013.152a35.7%2035.7%200%200%200%2019.484%201.028%2028%2028%200%200%200%202.107-.576c1.572-.5%203.413-1.057%204.766-2.038a.15.15%200%200%200%20.062-.118v-4.899a.15.15%200%200%200-.055-.111.14.14%200%200%200-.122-.028%2054%2054%200%200%201-12.644%201.478c-7.328%200-9.298-3.478-9.863-4.925a15.3%2015.3%200%200%201-.857-3.882.142.142%200%200%201%20.178-.145%2053%2053%200%200%200%2012.437%201.477c1.007%200%202.012%200%203.02-.026%204.213-.119%208.654-.334%2012.8-1.144.103-.02.206-.038.295-.065%206.539-1.255%2012.762-5.196%2013.394-15.176.024-.393.083-4.115.083-4.523.003-1.386.446-9.829-.065-15.017%22%20fill%3D%22url%28%23a%29%22/%3E%3Cpath%20d%3D%22M50.394%2022.237v17.35H43.52V22.749c0-3.545-1.478-5.353-4.483-5.353-3.303%200-4.958%202.139-4.958%206.364v9.217h-6.835V23.76c0-4.225-1.657-6.364-4.96-6.364-2.988%200-4.48%201.808-4.48%205.353v16.84H10.93V22.237q0-5.318%202.715-8.45c1.868-2.082%204.317-3.152%207.358-3.152%203.519%200%206.178%201.354%207.951%204.057l1.711%202.871%201.714-2.871c1.773-2.703%204.432-4.056%207.945-4.056%203.038%200%205.487%201.069%207.36%203.152q2.714%203.128%202.71%208.449%22%20fill%3D%22%23f0f001%22/%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22a%22%20x1%3D%2230.5%22%20y1%3D%220%22%20x2%3D%2230.5%22%20y2%3D%2265%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%3Cstop%20stop-color%3D%22%23f0f01b%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23f0f01b%22/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
+  }
+  [data-color-scheme="dark"] svg.icon-verified path[fill="url(#VerifiedGradient)"] {
+    fill: #f0f015 !important;
+  }
+  [data-color-scheme="dark"] svg.icon-verified path[stroke="#fff"] {
+    stroke: #f0f001 !important;
+  }
+}

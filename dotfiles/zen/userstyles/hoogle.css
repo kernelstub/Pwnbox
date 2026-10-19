@@ -1,0 +1,367 @@
+/* ==UserStyle==
+@name           pwnbox-hoogle
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Hoogle (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("hoogle.haskell.org") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+      /*
+     * Top
+     */
+      /*
+     * Left
+     */
+      /*
+     * Footer
+     */
+      /*
+     * Other
+     */
+      /*
+     * Results
+     */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root a {
+      color: #f0f01b;
+    }
+    :root a:hover {
+      background-color: #f0f00c;
+    }
+    :root body {
+      background-color: #f0f001;
+      color: #f0f004;
+    }
+    :root #links {
+      background-color: #f0f01b;
+      color: #f0f00b;
+      border-color: #b4b414;
+    }
+    :root #top-menu li {
+      border-color: #f0f003;
+    }
+    :root #top-menu li a,
+    :root #top-menu li a:visited,
+    :root #top-menu li a:link {
+      color: #f0f001;
+    }
+    :root #top-menu li a:hover {
+      background-color: rgba(240, 240, 9, 0.3);
+    }
+    :root #logo img {
+      content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22160%22%20height%3D%2258%22%3E%3Cpath%20d%3D%22M110.241%2011.967c-.248%200-.524.221-.837.652a20.5%2020.5%200%200%201-2.977%203.328v1.126a7%207%200%200%201%20.672-.03q1.194-.001%201.82.526.623.528%201.601%202.915l1.271%203.028-5.085%2013.519c-.404%201.03-.757%201.666-1.043%201.901-.287.222-.739.39-1.365.507v1.643a14%2014%200%200%201%201.82-.134q.802-.001%202.407.134c1.044-4.317%202.51-9.344%204.414-15.069%201.956%205.36%203.33%208.896%204.113%2010.604a34%2034%200%200%200%202.76%204.858h.61a57%2057%200%200%201%204.516-2.057v-1.096q-1.215-.116-2.098-1.074c-.574-.653-1.58-2.778-3.028-6.377l-5.261-13.25q-1.174-2.932-2.367-4.279c-.795-.913-1.447-1.375-1.943-1.375m-93.741.3v28.68h5.788V28.402h11.348v12.547h5.788v-28.68h-5.788v11.285H22.288V12.267zm118.453%209.095c-2.635%200-4.864%201.038-6.677%203.111-1.721%201.996-2.573%204.331-2.573%207.018%200%203.012.897%205.432%202.697%207.245q2.699%202.698%207.235%202.697%204.501.002%207.38-3.049c.208-.221.31-.376.31-.454q.001-.096-.683-1.406c-.456-.887-.705-1.348-.744-1.374q-.04-.041-.196-.042l-.63.517q-2.583%201.995-5.675%201.995c-1.2%200-2.315-.388-3.359-1.158-1.095-.808-1.732-1.787-1.902-2.935%207.513-.56%2011.553-.939%2012.113-1.147.835-.326%201.251-.978%201.251-1.943q-.001-3.756-2.408-6.377-2.463-2.699-6.14-2.698m-36.741.042c-.157%200-.238.385-.238%201.167%200%20.183.015.47.041.848.027.365.042.626.042.796q0%20.352-.155.351c-.092%200-.246-.129-.455-.403-1.265-1.656-2.974-2.49-5.126-2.49-2.44%200-4.417.928-5.943%202.78-1.435%201.734-2.15%203.836-2.15%206.314%200%202.44.746%204.501%202.233%206.17%201.551%201.735%203.53%202.595%205.942%202.595%202.23%200%204.072-.875%205.52-2.636.052.952.072%201.566.072%201.84%200%201.239-.49%202.18-1.468%202.832-.848.574-1.913.858-3.204.858-1.97%200-3.935-.553-5.891-1.675-.104-.065-.183-.103-.248-.103q-.218%200-.28.33-.587%203.11-.588%202.895c0%20.13.147.292.434.475q2.74%201.683%207.183%201.685c3.065%200%205.291-.782%206.687-2.347%201.33-1.473%201.995-3.769%201.995-6.873%200-1.565.015-3.908.041-7.038.026-3.143.041-5.504.041-7.07%200-.273-.096-.44-.279-.506-.117-.052-.81-.189-2.087-.423-1.279-.248-1.989-.372-2.12-.372m-45.464.155c-2.7%200-4.962.979-6.8%202.935-1.788%201.917-2.688%204.24-2.688%206.966s.9%205.038%202.687%206.955c1.826%201.983%204.088%202.977%206.8%202.977%202.7%200%204.965-1.002%206.791-2.997%201.787-1.93%202.677-4.25%202.677-6.977q.001-4.068-2.698-6.924-2.739-2.934-6.77-2.935m20.485%200q-4.051%200-6.81%202.935-2.679%202.876-2.677%206.966c0%202.726.89%205.038%202.676%206.955%201.826%201.983%204.099%202.977%206.811%202.977%202.7%200%204.965-1.002%206.79-2.997%201.787-1.93%202.677-4.25%202.677-6.977q.001-4.068-2.697-6.924-2.74-2.934-6.77-2.935m61.444%203.555c1.069%200%202.035.416%202.883%201.25.86.835%201.292%201.802%201.292%202.884q0%20.236-1.137.393c-2.686.391-4.994.579-6.925.579-.469%200-.702-.13-.702-.403%200-1.2.459-2.291%201.385-3.256.939-.965%202.004-1.447%203.204-1.447m-41.31.279q2.13%200%203.441%201.664c.796%201.017%201.189%202.25%201.189%203.71q0%202.134-1.23%203.68-1.329%201.683-3.4%201.684c-1.396%200-2.537-.563-3.411-1.684q-1.212-1.546-1.21-3.68c0-1.447.404-2.672%201.2-3.69q1.309-1.682%203.42-1.684m-40.617.217q2.349-.002%203.875%201.778%201.468%201.683%201.468%204.072c0%201.565-.49%202.914-1.468%204.062q-1.546%201.819-3.875%201.819c-1.54%200-2.822-.607-3.866-1.82-.99-1.147-1.488-2.496-1.488-4.061q0-2.388%201.468-4.093c1.03-1.174%202.32-1.757%203.886-1.757m20.484%200q2.349-.001%203.876%201.778%201.467%201.683%201.468%204.072c0%201.565-.49%202.914-1.468%204.062Q75.56%2037.34%2073.23%2037.34q-2.31%200-3.875-1.82c-.992-1.147-1.489-2.496-1.489-4.061q0-2.388%201.468-4.093%201.547-1.759%203.896-1.757%22%20fill%3D%22%23f0f01b%22/%3E%3C/svg%3E");
+    }
+    :root #logo:hover {
+      background-color: transparent;
+    }
+    :root #hoogle,
+    :root #scope,
+    :root #submit {
+      background-color: #f0f002;
+      color: #f0f005;
+      border-style: solid;
+      border-width: 2px;
+      border-color: #f0f00c;
+      border-radius: 4px;
+    }
+    :root .chosen-container .chosen-drop {
+      background-color: #f0f002;
+      border-color: #f0f00c;
+    }
+    :root .chosen-container .chosen-single {
+      background-image: none;
+      background-color: #f0f002;
+      box-shadow: none;
+      border-style: solid;
+      border-width: 2px;
+      border-color: #f0f00c;
+      color: #f0f005;
+    }
+    :root .chosen-container .chosen-default {
+      color: #f0f003;
+    }
+    :root .chosen-container .chosen-search input {
+      border-color: #f0f00b;
+      border-radius: 4px;
+    }
+    :root .chosen-container .chosen-results {
+      color: #f0f005;
+    }
+    :root .chosen-container .chosen-results li.disabled-result {
+      color: #f0f009;
+    }
+    :root .chosen-container .chosen-results li.highlighted {
+      background-image: none;
+      background-color: #f0f01b;
+      color: #f0f001;
+    }
+    :root .chosen-container .chosen-results li.no-results {
+      color: #f0f005;
+      background-color: #f0f002;
+    }
+    :root #left a {
+      color: #f0f01b;
+    }
+    :root #left .plus {
+      background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Ccircle%20cy%3D%226%22%20cx%3D%226%22%20r%3D%225.5%22%20fill%3D%22none%22%20stroke%3D%22%23f0f009%22/%3E%3Crect%20width%3D%222%22%20height%3D%228%22%20x%3D%225%22%20y%3D%222%22%20ry%3D%22.5%22%20fill%3D%22%23f0f015%22/%3E%3Crect%20width%3D%228%22%20height%3D%222%22%20x%3D%222%22%20y%3D%225%22%20ry%3D%22.5%22%20fill%3D%22%23f0f015%22/%3E%3C/svg%3E");
+      color: #f0f015;
+    }
+    :root #left .minus {
+      background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Ccircle%20cy%3D%226%22%20cx%3D%226%22%20r%3D%225.5%22%20fill%3D%22none%22%20stroke%3D%22%23f0f009%22/%3E%3Crect%20width%3D%228%22%20height%3D%222%22%20x%3D%222%22%20y%3D%225%22%20ry%3D%22.5%22%20fill%3D%22%23f0f011%22/%3E%3C/svg%3E");
+      color: #f0f011;
+    }
+    :root #footer {
+      background-color: #f0f003;
+      color: #f0f005;
+      border-color: #f0f009;
+    }
+    :root .error {
+      border-color: #f0f011;
+    }
+    :root #example {
+      background-color: #f0f002;
+      color: #f0f005;
+      border-color: #f0f00c;
+    }
+    :root .result.active {
+      background-color: #f0f002;
+    }
+    :root .ans {
+      background-color: #f0f002;
+      border-color: #f0f00c;
+    }
+    :root .ans a {
+      color: #f0f005;
+    }
+    :root .ans .name {
+      color: #f0f01b;
+    }
+    :root .links a {
+      color: #f0f008;
+    }
+    :root .from a,
+    :root .p1,
+    :root .p2 {
+      color: #f0f015;
+    }
+    :root .doc,
+    :root .doc a {
+      color: #f0f005;
+    }
+    :root .open {
+      background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%2010%2010%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Crect%20width%3D%229%22%20height%3D%229%22%20x%3D%22.5%22%20y%3D%22.5%22%20ry%3D%223%22%20fill%3D%22none%22%20stroke%3D%22%23f0f009%22/%3E%3Crect%20width%3D%226%22%20height%3D%222%22%20x%3D%222%22%20y%3D%224%22%20ry%3D%22.5%22%20fill%3D%22%23f0f009%22/%3E%3C/svg%3E");
+    }
+    :root .shut {
+      background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%2010%2010%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Crect%20width%3D%229%22%20height%3D%229%22%20x%3D%22.5%22%20y%3D%22.5%22%20ry%3D%223%22%20fill%3D%22none%22%20stroke%3D%22%23f0f009%22/%3E%3Crect%20width%3D%222%22%20height%3D%226%22%20x%3D%224%22%20y%3D%222%22%20ry%3D%22.5%22%20fill%3D%22%23f0f009%22/%3E%3Crect%20width%3D%226%22%20height%3D%222%22%20x%3D%222%22%20y%3D%224%22%20ry%3D%22.5%22%20fill%3D%22%23f0f009%22/%3E%3C/svg%3E");
+    }
+    :root .c0 {
+      background-color: #f0f00d;
+    }
+    :root .c1 {
+      background-color: #f0f015;
+    }
+    :root .c2 {
+      background-color: #f0f01a;
+    }
+    :root .c3 {
+      background-color: #f0f014;
+    }
+    :root .c4 {
+      background-color: #f0f00f;
+    }
+    :root .c5 {
+      background-color: #f0f016;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      /*
+     * Top
+     */
+      /*
+     * Left
+     */
+      /*
+     * Footer
+     */
+      /*
+     * Other
+     */
+      /*
+     * Results
+     */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root a {
+      color: #f0f01b;
+    }
+    :root a:hover {
+      background-color: #f0f00c;
+    }
+    :root body {
+      background-color: #f0f001;
+      color: #f0f004;
+    }
+    :root #links {
+      background-color: #f0f01b;
+      color: #f0f00b;
+      border-color: #b4b414;
+    }
+    :root #top-menu li {
+      border-color: #f0f003;
+    }
+    :root #top-menu li a,
+    :root #top-menu li a:visited,
+    :root #top-menu li a:link {
+      color: #f0f001;
+    }
+    :root #top-menu li a:hover {
+      background-color: rgba(240, 240, 9, 0.3);
+    }
+    :root #logo img {
+      content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22160%22%20height%3D%2258%22%3E%3Cpath%20d%3D%22M110.241%2011.967c-.248%200-.524.221-.837.652a20.5%2020.5%200%200%201-2.977%203.328v1.126a7%207%200%200%201%20.672-.03q1.194-.001%201.82.526.623.528%201.601%202.915l1.271%203.028-5.085%2013.519c-.404%201.03-.757%201.666-1.043%201.901-.287.222-.739.39-1.365.507v1.643a14%2014%200%200%201%201.82-.134q.802-.001%202.407.134c1.044-4.317%202.51-9.344%204.414-15.069%201.956%205.36%203.33%208.896%204.113%2010.604a34%2034%200%200%200%202.76%204.858h.61a57%2057%200%200%201%204.516-2.057v-1.096q-1.215-.116-2.098-1.074c-.574-.653-1.58-2.778-3.028-6.377l-5.261-13.25q-1.174-2.932-2.367-4.279c-.795-.913-1.447-1.375-1.943-1.375m-93.741.3v28.68h5.788V28.402h11.348v12.547h5.788v-28.68h-5.788v11.285H22.288V12.267zm118.453%209.095c-2.635%200-4.864%201.038-6.677%203.111-1.721%201.996-2.573%204.331-2.573%207.018%200%203.012.897%205.432%202.697%207.245q2.699%202.698%207.235%202.697%204.501.002%207.38-3.049c.208-.221.31-.376.31-.454q.001-.096-.683-1.406c-.456-.887-.705-1.348-.744-1.374q-.04-.041-.196-.042l-.63.517q-2.583%201.995-5.675%201.995c-1.2%200-2.315-.388-3.359-1.158-1.095-.808-1.732-1.787-1.902-2.935%207.513-.56%2011.553-.939%2012.113-1.147.835-.326%201.251-.978%201.251-1.943q-.001-3.756-2.408-6.377-2.463-2.699-6.14-2.698m-36.741.042c-.157%200-.238.385-.238%201.167%200%20.183.015.47.041.848.027.365.042.626.042.796q0%20.352-.155.351c-.092%200-.246-.129-.455-.403-1.265-1.656-2.974-2.49-5.126-2.49-2.44%200-4.417.928-5.943%202.78-1.435%201.734-2.15%203.836-2.15%206.314%200%202.44.746%204.501%202.233%206.17%201.551%201.735%203.53%202.595%205.942%202.595%202.23%200%204.072-.875%205.52-2.636.052.952.072%201.566.072%201.84%200%201.239-.49%202.18-1.468%202.832-.848.574-1.913.858-3.204.858-1.97%200-3.935-.553-5.891-1.675-.104-.065-.183-.103-.248-.103q-.218%200-.28.33-.587%203.11-.588%202.895c0%20.13.147.292.434.475q2.74%201.683%207.183%201.685c3.065%200%205.291-.782%206.687-2.347%201.33-1.473%201.995-3.769%201.995-6.873%200-1.565.015-3.908.041-7.038.026-3.143.041-5.504.041-7.07%200-.273-.096-.44-.279-.506-.117-.052-.81-.189-2.087-.423-1.279-.248-1.989-.372-2.12-.372m-45.464.155c-2.7%200-4.962.979-6.8%202.935-1.788%201.917-2.688%204.24-2.688%206.966s.9%205.038%202.687%206.955c1.826%201.983%204.088%202.977%206.8%202.977%202.7%200%204.965-1.002%206.791-2.997%201.787-1.93%202.677-4.25%202.677-6.977q.001-4.068-2.698-6.924-2.739-2.934-6.77-2.935m20.485%200q-4.051%200-6.81%202.935-2.679%202.876-2.677%206.966c0%202.726.89%205.038%202.676%206.955%201.826%201.983%204.099%202.977%206.811%202.977%202.7%200%204.965-1.002%206.79-2.997%201.787-1.93%202.677-4.25%202.677-6.977q.001-4.068-2.697-6.924-2.74-2.934-6.77-2.935m61.444%203.555c1.069%200%202.035.416%202.883%201.25.86.835%201.292%201.802%201.292%202.884q0%20.236-1.137.393c-2.686.391-4.994.579-6.925.579-.469%200-.702-.13-.702-.403%200-1.2.459-2.291%201.385-3.256.939-.965%202.004-1.447%203.204-1.447m-41.31.279q2.13%200%203.441%201.664c.796%201.017%201.189%202.25%201.189%203.71q0%202.134-1.23%203.68-1.329%201.683-3.4%201.684c-1.396%200-2.537-.563-3.411-1.684q-1.212-1.546-1.21-3.68c0-1.447.404-2.672%201.2-3.69q1.309-1.682%203.42-1.684m-40.617.217q2.349-.002%203.875%201.778%201.468%201.683%201.468%204.072c0%201.565-.49%202.914-1.468%204.062q-1.546%201.819-3.875%201.819c-1.54%200-2.822-.607-3.866-1.82-.99-1.147-1.488-2.496-1.488-4.061q0-2.388%201.468-4.093c1.03-1.174%202.32-1.757%203.886-1.757m20.484%200q2.349-.001%203.876%201.778%201.467%201.683%201.468%204.072c0%201.565-.49%202.914-1.468%204.062Q75.56%2037.34%2073.23%2037.34q-2.31%200-3.875-1.82c-.992-1.147-1.489-2.496-1.489-4.061q0-2.388%201.468-4.093%201.547-1.759%203.896-1.757%22%20fill%3D%22%23f0f01b%22/%3E%3C/svg%3E");
+    }
+    :root #logo:hover {
+      background-color: transparent;
+    }
+    :root #hoogle,
+    :root #scope,
+    :root #submit {
+      background-color: #f0f002;
+      color: #f0f005;
+      border-style: solid;
+      border-width: 2px;
+      border-color: #f0f00c;
+      border-radius: 4px;
+    }
+    :root .chosen-container .chosen-drop {
+      background-color: #f0f002;
+      border-color: #f0f00c;
+    }
+    :root .chosen-container .chosen-single {
+      background-image: none;
+      background-color: #f0f002;
+      box-shadow: none;
+      border-style: solid;
+      border-width: 2px;
+      border-color: #f0f00c;
+      color: #f0f005;
+    }
+    :root .chosen-container .chosen-default {
+      color: #f0f003;
+    }
+    :root .chosen-container .chosen-search input {
+      border-color: #f0f00b;
+      border-radius: 4px;
+    }
+    :root .chosen-container .chosen-results {
+      color: #f0f005;
+    }
+    :root .chosen-container .chosen-results li.disabled-result {
+      color: #f0f009;
+    }
+    :root .chosen-container .chosen-results li.highlighted {
+      background-image: none;
+      background-color: #f0f01b;
+      color: #f0f001;
+    }
+    :root .chosen-container .chosen-results li.no-results {
+      color: #f0f005;
+      background-color: #f0f002;
+    }
+    :root #left a {
+      color: #f0f01b;
+    }
+    :root #left .plus {
+      background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Ccircle%20cy%3D%226%22%20cx%3D%226%22%20r%3D%225.5%22%20fill%3D%22none%22%20stroke%3D%22%23f0f009%22/%3E%3Crect%20width%3D%222%22%20height%3D%228%22%20x%3D%225%22%20y%3D%222%22%20ry%3D%22.5%22%20fill%3D%22%23f0f015%22/%3E%3Crect%20width%3D%228%22%20height%3D%222%22%20x%3D%222%22%20y%3D%225%22%20ry%3D%22.5%22%20fill%3D%22%23f0f015%22/%3E%3C/svg%3E");
+      color: #f0f015;
+    }
+    :root #left .minus {
+      background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Ccircle%20cy%3D%226%22%20cx%3D%226%22%20r%3D%225.5%22%20fill%3D%22none%22%20stroke%3D%22%23f0f009%22/%3E%3Crect%20width%3D%228%22%20height%3D%222%22%20x%3D%222%22%20y%3D%225%22%20ry%3D%22.5%22%20fill%3D%22%23f0f011%22/%3E%3C/svg%3E");
+      color: #f0f011;
+    }
+    :root #footer {
+      background-color: #f0f003;
+      color: #f0f005;
+      border-color: #f0f009;
+    }
+    :root .error {
+      border-color: #f0f011;
+    }
+    :root #example {
+      background-color: #f0f002;
+      color: #f0f005;
+      border-color: #f0f00c;
+    }
+    :root .result.active {
+      background-color: #f0f002;
+    }
+    :root .ans {
+      background-color: #f0f002;
+      border-color: #f0f00c;
+    }
+    :root .ans a {
+      color: #f0f005;
+    }
+    :root .ans .name {
+      color: #f0f01b;
+    }
+    :root .links a {
+      color: #f0f008;
+    }
+    :root .from a,
+    :root .p1,
+    :root .p2 {
+      color: #f0f015;
+    }
+    :root .doc,
+    :root .doc a {
+      color: #f0f005;
+    }
+    :root .open {
+      background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%2010%2010%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Crect%20width%3D%229%22%20height%3D%229%22%20x%3D%22.5%22%20y%3D%22.5%22%20ry%3D%223%22%20fill%3D%22none%22%20stroke%3D%22%23f0f009%22/%3E%3Crect%20width%3D%226%22%20height%3D%222%22%20x%3D%222%22%20y%3D%224%22%20ry%3D%22.5%22%20fill%3D%22%23f0f009%22/%3E%3C/svg%3E");
+    }
+    :root .shut {
+      background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%2010%2010%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Crect%20width%3D%229%22%20height%3D%229%22%20x%3D%22.5%22%20y%3D%22.5%22%20ry%3D%223%22%20fill%3D%22none%22%20stroke%3D%22%23f0f009%22/%3E%3Crect%20width%3D%222%22%20height%3D%226%22%20x%3D%224%22%20y%3D%222%22%20ry%3D%22.5%22%20fill%3D%22%23f0f009%22/%3E%3Crect%20width%3D%226%22%20height%3D%222%22%20x%3D%222%22%20y%3D%224%22%20ry%3D%22.5%22%20fill%3D%22%23f0f009%22/%3E%3C/svg%3E");
+    }
+    :root .c0 {
+      background-color: #f0f00d;
+    }
+    :root .c1 {
+      background-color: #f0f015;
+    }
+    :root .c2 {
+      background-color: #f0f01a;
+    }
+    :root .c3 {
+      background-color: #f0f014;
+    }
+    :root .c4 {
+      background-color: #f0f00f;
+    }
+    :root .c5 {
+      background-color: #f0f016;
+    }
+  }
+}

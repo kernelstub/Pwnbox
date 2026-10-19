@@ -1,0 +1,94 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+theme="$HOME/.config/quickshell/Theme.js"
+border="$(sed -nE 's/^var brdr[[:space:]]*=[[:space:]]*"#?([0-9a-fA-F]{6})".*/\1/p' \
+    "$theme" 2>/dev/null | head -1)"
+[ -n "$border" ] || border="171717"
+fg="$(sed -nE 's/^var fg[[:space:]]*=[[:space:]]*"#?([0-9a-fA-F]{6})".*/\1/p' \
+    "$theme" 2>/dev/null | head -1)"
+[ -n "$fg" ] || fg="cccccc"
+
+notify() {
+    command -v notify-send >/dev/null 2>&1 && notify-send -a pwnbox-screenshot "$@" || true
+}
+
+save_dir="$HOME/Pictures"
+mkdir -p "$save_dir"
+
+finish() {
+    tmp="$1"
+    label="$2"
+    save="${3:-1}"
+    if [ "$save" = "1" ]; then
+        out="$save_dir/$(date +'%Y-%m-%d-%H%M%S_pwnbox.png')"
+        mv -f "$tmp" "$out"
+        wl-copy --type image/png <"$out"
+        notify -i "$out" "Screenshot" "$label saved to $(basename "$out") and copied to the clipboard"
+    else
+        wl-copy --type image/png <"$tmp"
+        rm -f "$tmp"
+        notify -i camera-photo "Screenshot" "$label copied to the clipboard"
+    fi
+}
+
+area_geometry() {
+    slurp -d -w 2 \
+        -b "#00000080" \
+        -c "#${fg}ff" \
+        -s "#00000000" || true
+}
+
+mode="${1:-clipboard}"
+case "$mode" in
+    area|save|clipboard)
+        geometry="$(area_geometry)"
+        [ -n "$geometry" ] || exit 0
+        tmp="$(mktemp --suffix=.png)"
+        grim -g "$geometry" "$tmp"
+        case "$mode" in
+            clipboard)
+                finish "$tmp" "Region" 0
+                ;;
+            *)
+                finish "$tmp" "Region" 1
+                ;;
+        esac
+        ;;
+    edit)
+        geometry="$(area_geometry)"
+        [ -n "$geometry" ] || exit 0
+        tmp="$(mktemp --suffix=.png)"
+        grim -g "$geometry" "$tmp"
+        if command -v swappy >/dev/null 2>&1; then
+            swappy -f "$tmp"
+        else
+            finish "$tmp" "Region" 1
+        fi
+        rm -f "$tmp" 2>/dev/null || true
+        ;;
+    full)
+        tmp="$(mktemp --suffix=.png)"
+        output="${2:-}"
+        if [ -n "$output" ]; then
+            grim -o "$output" "$tmp"
+            finish "$tmp" "Screen $output" 1
+        else
+            grim "$tmp"
+            finish "$tmp" "Screen" 1
+        fi
+        ;;
+    window)
+        geometry="$(hyprctl activewindow -j | jq -r \
+            '.at[0] as $x | .at[1] as $y | .size[0] as $w | .size[1] as $h |
+             "\($x),\($y) \($w)x\($h)"' 2>/dev/null || true)"
+        [ -n "$geometry" ] && [ "$geometry" != ", x" ] || { notify "Screenshot" "No active window"; exit 0; }
+        tmp="$(mktemp --suffix=.png)"
+        grim -g "$geometry" "$tmp"
+        finish "$tmp" "Window" 1
+        ;;
+    *)
+        echo "usage: pwnbox-screenshot [area|save|clipboard|edit|full [output]|window]" >&2
+        exit 2
+        ;;
+esac

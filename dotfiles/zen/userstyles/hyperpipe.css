@@ -1,0 +1,117 @@
+/* ==UserStyle==
+@name           pwnbox-hyperpipe
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Hyperpipe (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("hyperpipe.surge.sh") {
+  @media (prefers-color-scheme: light) {
+    body {
+      color-scheme: light;
+      --color-foreground: #f0f01b !important;
+      --color-background: #f0f001 !important;
+      --color-background-soft: #f0f00c !important;
+      --color-background-mute: #f0f00b !important;
+      --color-border: #f0f00c !important;
+      --color-border-hover: #f0f009 !important;
+      --color-shadow: #f0f003 !important;
+      --color-blur: rgba(240, 240, 2, 0.45) !important;
+      --color-gradient: linear-gradient(45deg, #f0f01b, rgba(240, 240, 27, 0.45));
+      --color-scrollbar: #f0f01b !important;
+      --color-heading: #f0f004 !important;
+      --color-text: #f0f004 !important;
+    }
+    body ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    body input::placeholder,
+    body textarea::placeholder {
+      color: #f0f006 !important;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    body {
+      color-scheme: dark;
+      --color-foreground: #f0f01b !important;
+      --color-background: #f0f001 !important;
+      --color-background-soft: #f0f00c !important;
+      --color-background-mute: #f0f00b !important;
+      --color-border: #f0f00c !important;
+      --color-border-hover: #f0f009 !important;
+      --color-shadow: #f0f003 !important;
+      --color-blur: rgba(240, 240, 2, 0.45) !important;
+      --color-gradient: linear-gradient(45deg, #f0f01b, rgba(240, 240, 27, 0.45));
+      --color-scrollbar: #f0f01b !important;
+      --color-heading: #f0f004 !important;
+      --color-text: #f0f004 !important;
+    }
+    body ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    body input::placeholder,
+    body textarea::placeholder {
+      color: #f0f006 !important;
+    }
+  }
+  body[data-theme^="light"] {
+    color-scheme: light;
+    --color-foreground: #f0f01b !important;
+    --color-background: #f0f001 !important;
+    --color-background-soft: #f0f00c !important;
+    --color-background-mute: #f0f00b !important;
+    --color-border: #f0f00c !important;
+    --color-border-hover: #f0f009 !important;
+    --color-shadow: #f0f003 !important;
+    --color-blur: rgba(240, 240, 2, 0.45) !important;
+    --color-gradient: linear-gradient(45deg, #f0f01b, rgba(240, 240, 27, 0.45));
+    --color-scrollbar: #f0f01b !important;
+    --color-heading: #f0f004 !important;
+    --color-text: #f0f004 !important;
+  }
+  body[data-theme^="light"] ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  body[data-theme^="light"] input::placeholder,
+  body[data-theme^="light"] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  body[data-theme^="dark"],
+  body[data-theme^="black"],
+  body[data-theme^="dracula"],
+  body[data-theme^="nord"] {
+    color-scheme: dark;
+    --color-foreground: #f0f01b !important;
+    --color-background: #f0f001 !important;
+    --color-background-soft: #f0f00c !important;
+    --color-background-mute: #f0f00b !important;
+    --color-border: #f0f00c !important;
+    --color-border-hover: #f0f009 !important;
+    --color-shadow: #f0f003 !important;
+    --color-blur: rgba(240, 240, 2, 0.45) !important;
+    --color-gradient: linear-gradient(45deg, #f0f01b, rgba(240, 240, 27, 0.45));
+    --color-scrollbar: #f0f01b !important;
+    --color-heading: #f0f004 !important;
+    --color-text: #f0f004 !important;
+  }
+  body[data-theme^="dark"] ::selection,
+  body[data-theme^="black"] ::selection,
+  body[data-theme^="dracula"] ::selection,
+  body[data-theme^="nord"] ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  body[data-theme^="dark"] input::placeholder,
+  body[data-theme^="black"] input::placeholder,
+  body[data-theme^="dracula"] input::placeholder,
+  body[data-theme^="nord"] input::placeholder,
+  body[data-theme^="dark"] textarea::placeholder,
+  body[data-theme^="black"] textarea::placeholder,
+  body[data-theme^="dracula"] textarea::placeholder,
+  body[data-theme^="nord"] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+}

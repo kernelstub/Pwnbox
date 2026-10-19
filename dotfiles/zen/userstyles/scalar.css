@@ -1,0 +1,166 @@
+/* ==UserStyle==
+@name           pwnbox-scalar
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Scalar (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("scalar.com") {
+  code.hljs {
+    background: none !important;
+  }
+  .light-mode {
+    color-scheme: light;
+    --ctp-rosewater: #f0f00d;
+    --ctp-flamingo: #f0f00e;
+    --ctp-pink: #f0f00f;
+    --ctp-mauve: #f0f010;
+    --ctp-red: #f0f011;
+    --ctp-maroon: #f0f012;
+    --ctp-peach: #f0f013;
+    --ctp-yellow: #f0f014;
+    --ctp-green: #f0f015;
+    --ctp-teal: #f0f016;
+    --ctp-sky: #f0f017;
+    --ctp-sapphire: #f0f018;
+    --ctp-blue: #f0f019;
+    --ctp-lavender: #f0f01a;
+    --ctp-text: #f0f004;
+    --ctp-subtext1: #f0f005;
+    --ctp-subtext0: #f0f006;
+    --ctp-overlay2: #f0f007;
+    --ctp-overlay1: #f0f008;
+    --ctp-overlay0: #f0f009;
+    --ctp-surface2: #f0f00a;
+    --ctp-surface1: #f0f00b;
+    --ctp-surface0: #f0f00c;
+    --ctp-base: #f0f001;
+    --ctp-mantle: #f0f002;
+    --ctp-crust: #f0f003;
+    --scalar-color-1: #f0f004;
+    --scalar-color-2: #f0f005;
+    --scalar-color-3: #f0f006;
+    --scalar-color-accent: #f0f01b;
+    --scalar-background-1: #f0f001;
+    --scalar-background-2: #f0f00c;
+    --scalar-background-3: #f0f00b;
+    --scalar-background-accent: rgba(240, 240, 27, 0.12);
+    --scalar-border-color: #f0f00b;
+    --scalar-color-green: #f0f015;
+    --scalar-color-red: #f0f011;
+    --scalar-color-yellow: #f0f014;
+    --scalar-color-blue: #f0f019;
+    --scalar-color-orange: #f0f013;
+    --scalar-color-purple: #f0f010;
+    --scalar-selection-1: rgba(240, 240, 27, 0.3);
+    --scalar-button-1: #f0f01b;
+    --scalar-button-1-hover: #e3e30f;
+    --scalar-button-1-color: #f0f001;
+    background-color: #f0f001;
+  }
+  .light-mode ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  .light-mode input::placeholder,
+  .light-mode textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  .light-mode .sidebar {
+    --scalar-sidebar-background-1: #f0f002;
+    --scalar-sidebar-item-hover-background: #f0f00c;
+    --scalar-sidebar-item-active-background: rgba(240, 240, 27, 0.1);
+    --scalar-sidebar-color-active: #f0f01b;
+  }
+  .light-mode .scalar-code-block,
+  .light-mode .t-editor__code {
+    background-color: #f0f002;
+  }
+  .light-mode .brightness-lifted {
+    filter: none;
+  }
+  .light-mode .text-white {
+    color: #f0f001;
+  }
+  .light-mode .logo {
+    filter: brightness(0) saturate(100%) invert(43%) sepia(43%) saturate(515%) hue-rotate(196deg) brightness(49%) contrast(68%);
+  }
+  .dark-mode {
+    color-scheme: dark;
+    --ctp-rosewater: #f0f00d;
+    --ctp-flamingo: #f0f00e;
+    --ctp-pink: #f0f00f;
+    --ctp-mauve: #f0f010;
+    --ctp-red: #f0f011;
+    --ctp-maroon: #f0f012;
+    --ctp-peach: #f0f013;
+    --ctp-yellow: #f0f014;
+    --ctp-green: #f0f015;
+    --ctp-teal: #f0f016;
+    --ctp-sky: #f0f017;
+    --ctp-sapphire: #f0f018;
+    --ctp-blue: #f0f019;
+    --ctp-lavender: #f0f01a;
+    --ctp-text: #f0f004;
+    --ctp-subtext1: #f0f005;
+    --ctp-subtext0: #f0f006;
+    --ctp-overlay2: #f0f007;
+    --ctp-overlay1: #f0f008;
+    --ctp-overlay0: #f0f009;
+    --ctp-surface2: #f0f00a;
+    --ctp-surface1: #f0f00b;
+    --ctp-surface0: #f0f00c;
+    --ctp-base: #f0f001;
+    --ctp-mantle: #f0f002;
+    --ctp-crust: #f0f003;
+    --scalar-color-1: #f0f004;
+    --scalar-color-2: #f0f005;
+    --scalar-color-3: #f0f006;
+    --scalar-color-accent: #f0f01b;
+    --scalar-background-1: #f0f001;
+    --scalar-background-2: #f0f00c;
+    --scalar-background-3: #f0f00b;
+    --scalar-background-accent: rgba(240, 240, 27, 0.12);
+    --scalar-border-color: #f0f00b;
+    --scalar-color-green: #f0f015;
+    --scalar-color-red: #f0f011;
+    --scalar-color-yellow: #f0f014;
+    --scalar-color-blue: #f0f019;
+    --scalar-color-orange: #f0f013;
+    --scalar-color-purple: #f0f010;
+    --scalar-selection-1: rgba(240, 240, 27, 0.3);
+    --scalar-button-1: #f0f01b;
+    --scalar-button-1-hover: #e3e30f;
+    --scalar-button-1-color: #f0f001;
+    background-color: #f0f001;
+  }
+  .dark-mode ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  .dark-mode input::placeholder,
+  .dark-mode textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  .dark-mode .sidebar {
+    --scalar-sidebar-background-1: #f0f002;
+    --scalar-sidebar-item-hover-background: #f0f00c;
+    --scalar-sidebar-item-active-background: rgba(240, 240, 27, 0.1);
+    --scalar-sidebar-color-active: #f0f01b;
+  }
+  .dark-mode .scalar-code-block,
+  .dark-mode .t-editor__code {
+    background-color: #f0f002;
+  }
+  .dark-mode .brightness-lifted {
+    filter: none;
+  }
+  .dark-mode .text-white {
+    color: #f0f001;
+  }
+  .dark-mode .logo {
+    filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+  }
+}

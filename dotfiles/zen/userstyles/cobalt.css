@@ -1,0 +1,153 @@
+/* ==UserStyle==
+@name           pwnbox-cobalt
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for cobalt (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("cobalt.tools") {
+  [data-theme="dark"] {
+    color-scheme: dark;
+    --primary: #f0f001;
+    --secondary: #f0f004;
+    --gray: #f0f006;
+    --blue: #f0f019;
+    --green: #f0f015;
+    --red: #f0f012;
+    --medium-red: #f0f011;
+    --dark-red: #f0f011;
+    --white: #f0f003;
+    --button: #f0f00c;
+    --button-hover: #d8d80b;
+    --button-active-hover: #d7d705;
+    --button-elevated: #f0f00b;
+    --button-elevated-hover: #d8d80a;
+    --button-text: #f0f004;
+    --sidebar-bg: #f0f002;
+    --sidebar-hover: #f0f00c;
+    --sidebar-highlight: #f0f004;
+    --input-border: #f0f00a;
+    --popup-bg: #f0f002;
+    --toggle-bg-enabled: #f0f01b;
+  }
+  [data-theme="dark"] ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  [data-theme="dark"] input::placeholder,
+  [data-theme="dark"] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  [data-theme="dark"] #donate-page {
+    --donate-gradient-start: #f0f00b !important;
+    --donate-gradient-end: #f0f00c !important;
+  }
+  [data-theme="dark"] #banner-left {
+    color: #f0f004;
+  }
+  [data-theme="dark"] #banner-subtitle {
+    color: #f0f006;
+    opacity: 1;
+  }
+  [data-theme="dark"] .donate-card button {
+    color: #f0f004 !important;
+  }
+  [data-theme="dark"] .donate-card {
+    color: #f0f004;
+  }
+  [data-theme="dark"] .donate-card-title {
+    color: #f0f004;
+  }
+  [data-theme="dark"] .donate-card-subtitle {
+    color: #f0f006;
+    opacity: 1;
+  }
+  [data-theme="dark"] #input-container.focused {
+    box-shadow: 0 0 0 2px #f0f004 inset !important;
+  }
+  [data-theme="dark"] #input-dollar-sign {
+    color: #f0f004;
+  }
+  [data-theme="dark"] #donation-custom-input {
+    color: #f0f004 !important;
+  }
+  [data-theme="dark"] #cobalt-logo path {
+    fill: #f0f004;
+  }
+  [data-theme="dark"] .sidebar-tab.active {
+    background-color: #f0f01b !important;
+  }
+  [data-theme="light"] {
+    color-scheme: light;
+    --primary: #f0f001;
+    --secondary: #f0f004;
+    --gray: #f0f006;
+    --blue: #f0f019;
+    --green: #f0f015;
+    --red: #f0f012;
+    --medium-red: #f0f011;
+    --dark-red: #f0f011;
+    --white: #f0f003;
+    --button: #f0f00c;
+    --button-hover: #d8d80b;
+    --button-active-hover: #d7d705;
+    --button-elevated: #f0f00b;
+    --button-elevated-hover: #d8d80a;
+    --button-text: #f0f004;
+    --sidebar-bg: #f0f002;
+    --sidebar-hover: #f0f00c;
+    --sidebar-highlight: #f0f004;
+    --input-border: #f0f00a;
+    --popup-bg: #f0f002;
+    --toggle-bg-enabled: #f0f01b;
+  }
+  [data-theme="light"] ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  [data-theme="light"] input::placeholder,
+  [data-theme="light"] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  [data-theme="light"] #donate-page {
+    --donate-gradient-start: #f0f00b !important;
+    --donate-gradient-end: #f0f00c !important;
+  }
+  [data-theme="light"] #banner-left {
+    color: #f0f004;
+  }
+  [data-theme="light"] #banner-subtitle {
+    color: #f0f006;
+    opacity: 1;
+  }
+  [data-theme="light"] .donate-card button {
+    color: #f0f004 !important;
+  }
+  [data-theme="light"] .donate-card {
+    color: #f0f004;
+  }
+  [data-theme="light"] .donate-card-title {
+    color: #f0f004;
+  }
+  [data-theme="light"] .donate-card-subtitle {
+    color: #f0f006;
+    opacity: 1;
+  }
+  [data-theme="light"] #input-container.focused {
+    box-shadow: 0 0 0 2px #f0f004 inset !important;
+  }
+  [data-theme="light"] #input-dollar-sign {
+    color: #f0f004;
+  }
+  [data-theme="light"] #donation-custom-input {
+    color: #f0f004 !important;
+  }
+  [data-theme="light"] #cobalt-logo path {
+    fill: #f0f004;
+  }
+  [data-theme="light"] .sidebar-tab.active {
+    background-color: #f0f01b !important;
+  }
+}

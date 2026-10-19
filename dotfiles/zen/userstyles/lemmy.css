@@ -1,0 +1,359 @@
+/* ==UserStyle==
+@name           pwnbox-lemmy
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Lemmy (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("lemmy.ml"), domain("lemmy.world") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root [data-bs-theme="dark"] {
+      --bs-body-color: #f0f004;
+      --bs-body-bg: #f0f001;
+      --bs-emphasis-color: #f0f005;
+      --bs-secondary-color: #f0f006;
+      --bs-secondary-bg: #f0f002;
+      --bs-tertiary-color: #f0f003;
+      --bs-tertiary-bg: #f0f003;
+      --bs-primary-text-emphasis: #f0f009;
+      --bs-secondary-text-emphasis: #f0f008;
+      --bs-success-text-emphasis: #f0f015;
+      --bs-info-text-emphasis: #f0f017;
+      --bs-warning-text-emphasis: #f0f014;
+      --bs-danger-text-emphasis: #f0f011;
+      --bs-light-text-emphasis: #f0f007;
+      --bs-dark-text-emphasis: #f0f007;
+      --bs-primary-bg-subtle: #f0f001;
+      --bs-secondary-bg-subtle: #f0f002;
+      --bs-success-bg-subtle: #f0f015;
+      --bs-info-bg-subtle: #f0f01b;
+      --bs-warning-bg-subtle: #f0f014;
+      --bs-danger-bg-subtle: #f0f011;
+      --bs-light-bg-subtle: #f0f001;
+      --bs-dark-bg-subtle: #f0f001;
+      --bs-primary-border-subtle: #f0f01b;
+      --bs-secondary-border-subtle: #f0f01b;
+      --bs-success-border-subtle: #f0f015;
+      --bs-info-border-subtle: #f0f01b;
+      --bs-warning-border-subtle: #f0f014;
+      --bs-danger-border-subtle: #f0f011;
+      --bs-light-border-subtle: #f0f003;
+      --bs-dark-border-subtle: #f0f003;
+      --bs-heading-color: #f0f004;
+      --bs-card-border-color: #f0f003;
+      --bs-link-color: #f0f019;
+      --bs-link-hover-color: #f0f012;
+      --bs-code-color: #f0f01a;
+      --bs-highlight-color: #f0f01b;
+      --bs-highlight-bg: #f0f002;
+      --bs-border-color: #f0f003;
+      --bs-form-valid-color: #f0f015;
+      --bs-form-valid-border-color: #f0f015;
+      --bs-form-invalid-color: #f0f011;
+      --bs-form-invalid-border-color: #f0f011;
+      --bs-dark-rgb: #f0f01b;
+      --bs-btn-bg: #f0f001;
+    }
+    :root body {
+      color: #f0f004;
+      background-color: #f0f001;
+    }
+    :root .nav-link {
+      color: #f0f01b;
+    }
+    :root .card {
+      --bs-card-cap-bg: #f0f002;
+      --bs-card-title-color: #f0f004;
+      --bs-card-subtitle-color: #f0f005;
+      --bs-card-color: #f0f004;
+      --bs-card-cap-color: #f0f002;
+      --bs-card-bg: #f0f003;
+    }
+    :root .form-control {
+      color: #f0f004;
+      background-color: #f0f003;
+      border-color: #f0f003;
+    }
+    :root .btn-secondary {
+      --bs-btn-color: #f0f004;
+      --bs-btn-bg: #f0f001;
+      --bs-btn-border-color: #f0f008;
+      --bs-btn-hover-color: #f0f01b;
+      --bs-btn-hover-bg: #f0f003;
+      --bs-btn-hover-border-color: #f0f007;
+      --bs-btn-active-color: #f0f004;
+      --bs-btn-active-bg: #f0f01b;
+      --bs-btn-active-border-color: #f0f003;
+      --bs-btn-active-shadow: inset 0 3px 5px #f0f003;
+      --bs-btn-disabled-color: #f0f011;
+      --bs-btn-disabled-bg: #f0f003;
+      --bs-btn-disabled-border-color: #f0f002;
+    }
+    :root .table > :not(caption) > * > * {
+      color: #f0f004;
+      background-color: #f0f002;
+    }
+    :root .dropdown-menu-dark {
+      --bs-dropdown-color: #f0f004;
+      --bs-dropdown-bg: #f0f003;
+      --bs-dropdown-border-color: #f0f002;
+      --bs-dropdown-box-shadow: #f0f002;
+      --bs-dropdown-link-color: #f0f019;
+      --bs-dropdown-link-hover-color: #f0f01b;
+      --bs-dropdown-divider-bg: #f0f009;
+      --bs-dropdown-link-hover-bg: #f0f003;
+      --bs-dropdown-link-active-color: #f0f01b;
+      --bs-dropdown-link-active-bg: #f0f002;
+      --bs-dropdown-link-disabled-color: #f0f011;
+      --bs-dropdown-header-color: #f0f004;
+    }
+    :root .form-select {
+      color: #f0f004;
+      background-color: #f0f002;
+      border-color: #f0f003;
+    }
+    :root .btn-outline-secondary {
+      --bs-btn-color: #f0f004;
+      --bs-btn-border-color: #f0f002;
+      --bs-btn-hover-color: #f0f01b;
+      --bs-btn-hover-bg: #f0f003;
+      --bs-btn-hover-border-color: #f0f009;
+      --bs-btn-active-color: #f0f01b;
+      --bs-btn-active-bg: #f0f003;
+      --bs-btn-active-border-color: #f0f003;
+      --bs-btn-active-shadow: inset 0 3px 5px #f0f003;
+      --bs-btn-disabled-color: #f0f011;
+      --bs-btn-disabled-border-color: #f0f002;
+    }
+    :root .nav-tabs .nav-link.active,
+    :root .nav-tabs .nav-item.show .nav-link {
+      color: #f0f01b;
+      background-color: #f0f003;
+      border-color: #f0f002;
+    }
+    :root .dropdown-item {
+      color: #f0f004;
+      background-color: #f0f003;
+    }
+    :root .dropdown-menu {
+      --bs-dropdown-color: #f0f004;
+      --bs-dropdown-bg: #f0f003;
+      --bs-dropdown-border-color: #f0f002;
+      --bs-dropdown-box-shadow: #f0f002;
+      --bs-dropdown-link-color: #f0f019;
+      --bs-dropdown-link-hover-color: #f0f01b;
+      --bs-dropdown-divider-bg: #f0f009;
+      --bs-dropdown-link-hover-bg: #f0f003;
+      --bs-dropdown-link-active-color: #f0f01b;
+      --bs-dropdown-link-active-bg: #f0f002;
+      --bs-dropdown-link-disabled-color: #f0f011;
+      --bs-dropdown-header-color: #f0f004;
+    }
+    :root a {
+      color: #f0f01b;
+    }
+    :root .text-bg-primary {
+      color: #f0f004;
+    }
+    :root .text-muted {
+      color: #f0f01b;
+    }
+    :root .text-bg-light {
+      color: #f0f004 !important;
+      background-color: rgba(240, 240, 2, 1) !important;
+    }
+    :root .alert-info,
+    :root .alert-warning {
+      background-color: #f0f002 !important;
+      border-color: #f0f002 !important;
+      color: #f0f004 !important;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root [data-bs-theme="dark"] {
+      --bs-body-color: #f0f004;
+      --bs-body-bg: #f0f001;
+      --bs-emphasis-color: #f0f005;
+      --bs-secondary-color: #f0f006;
+      --bs-secondary-bg: #f0f002;
+      --bs-tertiary-color: #f0f003;
+      --bs-tertiary-bg: #f0f003;
+      --bs-primary-text-emphasis: #f0f009;
+      --bs-secondary-text-emphasis: #f0f008;
+      --bs-success-text-emphasis: #f0f015;
+      --bs-info-text-emphasis: #f0f017;
+      --bs-warning-text-emphasis: #f0f014;
+      --bs-danger-text-emphasis: #f0f011;
+      --bs-light-text-emphasis: #f0f007;
+      --bs-dark-text-emphasis: #f0f007;
+      --bs-primary-bg-subtle: #f0f001;
+      --bs-secondary-bg-subtle: #f0f002;
+      --bs-success-bg-subtle: #f0f015;
+      --bs-info-bg-subtle: #f0f01b;
+      --bs-warning-bg-subtle: #f0f014;
+      --bs-danger-bg-subtle: #f0f011;
+      --bs-light-bg-subtle: #f0f001;
+      --bs-dark-bg-subtle: #f0f001;
+      --bs-primary-border-subtle: #f0f01b;
+      --bs-secondary-border-subtle: #f0f01b;
+      --bs-success-border-subtle: #f0f015;
+      --bs-info-border-subtle: #f0f01b;
+      --bs-warning-border-subtle: #f0f014;
+      --bs-danger-border-subtle: #f0f011;
+      --bs-light-border-subtle: #f0f003;
+      --bs-dark-border-subtle: #f0f003;
+      --bs-heading-color: #f0f004;
+      --bs-card-border-color: #f0f003;
+      --bs-link-color: #f0f019;
+      --bs-link-hover-color: #f0f012;
+      --bs-code-color: #f0f01a;
+      --bs-highlight-color: #f0f01b;
+      --bs-highlight-bg: #f0f002;
+      --bs-border-color: #f0f003;
+      --bs-form-valid-color: #f0f015;
+      --bs-form-valid-border-color: #f0f015;
+      --bs-form-invalid-color: #f0f011;
+      --bs-form-invalid-border-color: #f0f011;
+      --bs-dark-rgb: #f0f01b;
+      --bs-btn-bg: #f0f001;
+    }
+    :root body {
+      color: #f0f004;
+      background-color: #f0f001;
+    }
+    :root .nav-link {
+      color: #f0f01b;
+    }
+    :root .card {
+      --bs-card-cap-bg: #f0f002;
+      --bs-card-title-color: #f0f004;
+      --bs-card-subtitle-color: #f0f005;
+      --bs-card-color: #f0f004;
+      --bs-card-cap-color: #f0f002;
+      --bs-card-bg: #f0f003;
+    }
+    :root .form-control {
+      color: #f0f004;
+      background-color: #f0f003;
+      border-color: #f0f003;
+    }
+    :root .btn-secondary {
+      --bs-btn-color: #f0f004;
+      --bs-btn-bg: #f0f001;
+      --bs-btn-border-color: #f0f008;
+      --bs-btn-hover-color: #f0f01b;
+      --bs-btn-hover-bg: #f0f003;
+      --bs-btn-hover-border-color: #f0f007;
+      --bs-btn-active-color: #f0f004;
+      --bs-btn-active-bg: #f0f01b;
+      --bs-btn-active-border-color: #f0f003;
+      --bs-btn-active-shadow: inset 0 3px 5px #f0f003;
+      --bs-btn-disabled-color: #f0f011;
+      --bs-btn-disabled-bg: #f0f003;
+      --bs-btn-disabled-border-color: #f0f002;
+    }
+    :root .table > :not(caption) > * > * {
+      color: #f0f004;
+      background-color: #f0f002;
+    }
+    :root .dropdown-menu-dark {
+      --bs-dropdown-color: #f0f004;
+      --bs-dropdown-bg: #f0f003;
+      --bs-dropdown-border-color: #f0f002;
+      --bs-dropdown-box-shadow: #f0f002;
+      --bs-dropdown-link-color: #f0f019;
+      --bs-dropdown-link-hover-color: #f0f01b;
+      --bs-dropdown-divider-bg: #f0f009;
+      --bs-dropdown-link-hover-bg: #f0f003;
+      --bs-dropdown-link-active-color: #f0f01b;
+      --bs-dropdown-link-active-bg: #f0f002;
+      --bs-dropdown-link-disabled-color: #f0f011;
+      --bs-dropdown-header-color: #f0f004;
+    }
+    :root .form-select {
+      color: #f0f004;
+      background-color: #f0f002;
+      border-color: #f0f003;
+    }
+    :root .btn-outline-secondary {
+      --bs-btn-color: #f0f004;
+      --bs-btn-border-color: #f0f002;
+      --bs-btn-hover-color: #f0f01b;
+      --bs-btn-hover-bg: #f0f003;
+      --bs-btn-hover-border-color: #f0f009;
+      --bs-btn-active-color: #f0f01b;
+      --bs-btn-active-bg: #f0f003;
+      --bs-btn-active-border-color: #f0f003;
+      --bs-btn-active-shadow: inset 0 3px 5px #f0f003;
+      --bs-btn-disabled-color: #f0f011;
+      --bs-btn-disabled-border-color: #f0f002;
+    }
+    :root .nav-tabs .nav-link.active,
+    :root .nav-tabs .nav-item.show .nav-link {
+      color: #f0f01b;
+      background-color: #f0f003;
+      border-color: #f0f002;
+    }
+    :root .dropdown-item {
+      color: #f0f004;
+      background-color: #f0f003;
+    }
+    :root .dropdown-menu {
+      --bs-dropdown-color: #f0f004;
+      --bs-dropdown-bg: #f0f003;
+      --bs-dropdown-border-color: #f0f002;
+      --bs-dropdown-box-shadow: #f0f002;
+      --bs-dropdown-link-color: #f0f019;
+      --bs-dropdown-link-hover-color: #f0f01b;
+      --bs-dropdown-divider-bg: #f0f009;
+      --bs-dropdown-link-hover-bg: #f0f003;
+      --bs-dropdown-link-active-color: #f0f01b;
+      --bs-dropdown-link-active-bg: #f0f002;
+      --bs-dropdown-link-disabled-color: #f0f011;
+      --bs-dropdown-header-color: #f0f004;
+    }
+    :root a {
+      color: #f0f01b;
+    }
+    :root .text-bg-primary {
+      color: #f0f004;
+    }
+    :root .text-muted {
+      color: #f0f01b;
+    }
+    :root .text-bg-light {
+      color: #f0f004 !important;
+      background-color: rgba(240, 240, 2, 1) !important;
+    }
+    :root .alert-info,
+    :root .alert-warning {
+      background-color: #f0f002 !important;
+      border-color: #f0f002 !important;
+      color: #f0f004 !important;
+    }
+  }
+}

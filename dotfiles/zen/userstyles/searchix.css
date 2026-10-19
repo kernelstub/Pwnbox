@@ -1,0 +1,65 @@
+/* ==UserStyle==
+@name           pwnbox-searchix
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Searchix (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("searchix.ovh") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+      --bg: #f0f001;
+      --accent-bg: #f0f002;
+      --text: #f0f004;
+      --text-light: #f0f006;
+      --accent: #f0f01b;
+      --accent-hover: #f0f01b;
+      --accent-error: rgba(240, 240, 17, 0.2);
+      --border: #f0f009;
+      --code: #f0f01a;
+      --preformatted: #f0f004;
+      --disabled: #f0f003;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root dialog {
+      color: var(--text);
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --bg: #f0f001;
+      --accent-bg: #f0f002;
+      --text: #f0f004;
+      --text-light: #f0f006;
+      --accent: #f0f01b;
+      --accent-hover: #f0f01b;
+      --accent-error: rgba(240, 240, 17, 0.2);
+      --border: #f0f009;
+      --code: #f0f01a;
+      --preformatted: #f0f004;
+      --disabled: #f0f003;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root dialog {
+      color: var(--text);
+    }
+  }
+}

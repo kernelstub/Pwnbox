@@ -1,0 +1,331 @@
+/* ==UserStyle==
+@name           pwnbox-wikiwand
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Wikiwand (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("wikiwand.com") {
+  @media (prefers-color-scheme: light) {
+    .theme-system {
+      color-scheme: light;
+      --ctp-rosewater: #f0f00d;
+      --ctp-flamingo: #f0f00e;
+      --ctp-pink: #f0f00f;
+      --ctp-mauve: #f0f010;
+      --ctp-red: #f0f011;
+      --ctp-maroon: #f0f012;
+      --ctp-peach: #f0f013;
+      --ctp-yellow: #f0f014;
+      --ctp-green: #f0f015;
+      --ctp-teal: #f0f016;
+      --ctp-sky: #f0f017;
+      --ctp-sapphire: #f0f018;
+      --ctp-blue: #f0f019;
+      --ctp-lavender: #f0f01a;
+      --ctp-text: #f0f004;
+      --ctp-subtext1: #f0f005;
+      --ctp-subtext0: #f0f006;
+      --ctp-overlay2: #f0f007;
+      --ctp-overlay1: #f0f008;
+      --ctp-overlay0: #f0f009;
+      --ctp-surface2: #f0f00a;
+      --ctp-surface1: #f0f00b;
+      --ctp-surface0: #f0f00c;
+      --ctp-base: #f0f001;
+      --ctp-mantle: #f0f002;
+      --ctp-crust: #f0f003;
+      --color-bg: #f0f001 !important;
+      --color-text: #f0f004 !important;
+      --color-grey: #f0f005 !important;
+      --color-accent: #f0f01b !important;
+      --color-highlight: #f0f00a !important;
+      --color-ash: #f0f00a !important;
+      --color-border: #f0f00a !important;
+      --color-blue-bg: #f0f00b !important;
+      --color-blue-text: #f0f019 !important;
+      --color-purple-bg: #f0f00b !important;
+      --color-purple-text: #f0f010 !important;
+      --color-green-bg: #f0f00b !important;
+      --color-green-text: #f0f015 !important;
+      --color-orange-bg: #f0f00b !important;
+      --color-orange-text: #f0f013 !important;
+      --color-table: #f0f00c !important;
+      --color-link: #f0f01b !important;
+      --color-score-A: #f0f015 !important;
+      --color-score-B: #f0f010 !important;
+      --color-score-C: #f0f013 !important;
+      --color-score-F: #f0f011 !important;
+      --color-score-NA: var(--color-grey) !important;
+      --grad: linear-gradient(-45deg, #f0f013, #f0f019, #f0f00f, #f0f014) !important;
+      --box-shadow: 0px 1px 4px 1px #f0f003 !important;
+      --box-shadow-dark: 0px 0px 1px 1px #f0f003, 0px 1px 5px 2px #f0f003 !important;
+      --box-shadow-strong: 0px 1px 5px 2px #f0f003 !important;
+      --backdrop-bg: #f0f001 !important;
+      --backdrop-bg-ash: rgba(240, 240, 11, 0.5) !important;
+    }
+    .theme-system ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    .theme-system input::placeholder,
+    .theme-system textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    .theme-system .mw-no-invert * {
+      color: #f0f003 !important;
+    }
+    .theme-system .notheme * {
+      --color-text: auto;
+      --color-link: auto;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    .theme-system {
+      color-scheme: dark;
+      --ctp-rosewater: #f0f00d;
+      --ctp-flamingo: #f0f00e;
+      --ctp-pink: #f0f00f;
+      --ctp-mauve: #f0f010;
+      --ctp-red: #f0f011;
+      --ctp-maroon: #f0f012;
+      --ctp-peach: #f0f013;
+      --ctp-yellow: #f0f014;
+      --ctp-green: #f0f015;
+      --ctp-teal: #f0f016;
+      --ctp-sky: #f0f017;
+      --ctp-sapphire: #f0f018;
+      --ctp-blue: #f0f019;
+      --ctp-lavender: #f0f01a;
+      --ctp-text: #f0f004;
+      --ctp-subtext1: #f0f005;
+      --ctp-subtext0: #f0f006;
+      --ctp-overlay2: #f0f007;
+      --ctp-overlay1: #f0f008;
+      --ctp-overlay0: #f0f009;
+      --ctp-surface2: #f0f00a;
+      --ctp-surface1: #f0f00b;
+      --ctp-surface0: #f0f00c;
+      --ctp-base: #f0f001;
+      --ctp-mantle: #f0f002;
+      --ctp-crust: #f0f003;
+      --color-bg: #f0f001 !important;
+      --color-text: #f0f004 !important;
+      --color-grey: #f0f005 !important;
+      --color-accent: #f0f01b !important;
+      --color-highlight: #f0f00a !important;
+      --color-ash: #f0f00a !important;
+      --color-border: #f0f00a !important;
+      --color-blue-bg: #f0f00b !important;
+      --color-blue-text: #f0f019 !important;
+      --color-purple-bg: #f0f00b !important;
+      --color-purple-text: #f0f010 !important;
+      --color-green-bg: #f0f00b !important;
+      --color-green-text: #f0f015 !important;
+      --color-orange-bg: #f0f00b !important;
+      --color-orange-text: #f0f013 !important;
+      --color-table: #f0f00c !important;
+      --color-link: #f0f01b !important;
+      --color-score-A: #f0f015 !important;
+      --color-score-B: #f0f010 !important;
+      --color-score-C: #f0f013 !important;
+      --color-score-F: #f0f011 !important;
+      --color-score-NA: var(--color-grey) !important;
+      --grad: linear-gradient(-45deg, #f0f013, #f0f019, #f0f00f, #f0f014) !important;
+      --box-shadow: 0px 1px 4px 1px #f0f003 !important;
+      --box-shadow-dark: 0px 0px 1px 1px #f0f003, 0px 1px 5px 2px #f0f003 !important;
+      --box-shadow-strong: 0px 1px 5px 2px #f0f003 !important;
+      --backdrop-bg: #f0f001 !important;
+      --backdrop-bg-ash: rgba(240, 240, 11, 0.5) !important;
+    }
+    .theme-system ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    .theme-system input::placeholder,
+    .theme-system textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    .theme-system .mw-no-invert * {
+      color: #f0f003 !important;
+    }
+    .theme-system .notheme * {
+      --color-text: auto;
+      --color-link: auto;
+    }
+  }
+  .theme-light,
+  .theme-desert,
+  .theme-calmness {
+    color-scheme: light;
+    --ctp-rosewater: #f0f00d;
+    --ctp-flamingo: #f0f00e;
+    --ctp-pink: #f0f00f;
+    --ctp-mauve: #f0f010;
+    --ctp-red: #f0f011;
+    --ctp-maroon: #f0f012;
+    --ctp-peach: #f0f013;
+    --ctp-yellow: #f0f014;
+    --ctp-green: #f0f015;
+    --ctp-teal: #f0f016;
+    --ctp-sky: #f0f017;
+    --ctp-sapphire: #f0f018;
+    --ctp-blue: #f0f019;
+    --ctp-lavender: #f0f01a;
+    --ctp-text: #f0f004;
+    --ctp-subtext1: #f0f005;
+    --ctp-subtext0: #f0f006;
+    --ctp-overlay2: #f0f007;
+    --ctp-overlay1: #f0f008;
+    --ctp-overlay0: #f0f009;
+    --ctp-surface2: #f0f00a;
+    --ctp-surface1: #f0f00b;
+    --ctp-surface0: #f0f00c;
+    --ctp-base: #f0f001;
+    --ctp-mantle: #f0f002;
+    --ctp-crust: #f0f003;
+    --color-bg: #f0f001 !important;
+    --color-text: #f0f004 !important;
+    --color-grey: #f0f005 !important;
+    --color-accent: #f0f01b !important;
+    --color-highlight: #f0f00a !important;
+    --color-ash: #f0f00a !important;
+    --color-border: #f0f00a !important;
+    --color-blue-bg: #f0f00b !important;
+    --color-blue-text: #f0f019 !important;
+    --color-purple-bg: #f0f00b !important;
+    --color-purple-text: #f0f010 !important;
+    --color-green-bg: #f0f00b !important;
+    --color-green-text: #f0f015 !important;
+    --color-orange-bg: #f0f00b !important;
+    --color-orange-text: #f0f013 !important;
+    --color-table: #f0f00c !important;
+    --color-link: #f0f01b !important;
+    --color-score-A: #f0f015 !important;
+    --color-score-B: #f0f010 !important;
+    --color-score-C: #f0f013 !important;
+    --color-score-F: #f0f011 !important;
+    --color-score-NA: var(--color-grey) !important;
+    --grad: linear-gradient(-45deg, #f0f013, #f0f019, #f0f00f, #f0f014) !important;
+    --box-shadow: 0px 1px 4px 1px #f0f003 !important;
+    --box-shadow-dark: 0px 0px 1px 1px #f0f003, 0px 1px 5px 2px #f0f003 !important;
+    --box-shadow-strong: 0px 1px 5px 2px #f0f003 !important;
+    --backdrop-bg: #f0f001 !important;
+    --backdrop-bg-ash: rgba(240, 240, 11, 0.5) !important;
+  }
+  .theme-light ::selection,
+  .theme-desert ::selection,
+  .theme-calmness ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  .theme-light input::placeholder,
+  .theme-desert input::placeholder,
+  .theme-calmness input::placeholder,
+  .theme-light textarea::placeholder,
+  .theme-desert textarea::placeholder,
+  .theme-calmness textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  .theme-light .mw-no-invert *,
+  .theme-desert .mw-no-invert *,
+  .theme-calmness .mw-no-invert * {
+    color: #f0f003 !important;
+  }
+  .theme-light .notheme *,
+  .theme-desert .notheme *,
+  .theme-calmness .notheme * {
+    --color-text: auto;
+    --color-link: auto;
+  }
+  .theme-dark,
+  .theme-black,
+  .theme-deepOcean,
+  .theme-nature {
+    color-scheme: dark;
+    --ctp-rosewater: #f0f00d;
+    --ctp-flamingo: #f0f00e;
+    --ctp-pink: #f0f00f;
+    --ctp-mauve: #f0f010;
+    --ctp-red: #f0f011;
+    --ctp-maroon: #f0f012;
+    --ctp-peach: #f0f013;
+    --ctp-yellow: #f0f014;
+    --ctp-green: #f0f015;
+    --ctp-teal: #f0f016;
+    --ctp-sky: #f0f017;
+    --ctp-sapphire: #f0f018;
+    --ctp-blue: #f0f019;
+    --ctp-lavender: #f0f01a;
+    --ctp-text: #f0f004;
+    --ctp-subtext1: #f0f005;
+    --ctp-subtext0: #f0f006;
+    --ctp-overlay2: #f0f007;
+    --ctp-overlay1: #f0f008;
+    --ctp-overlay0: #f0f009;
+    --ctp-surface2: #f0f00a;
+    --ctp-surface1: #f0f00b;
+    --ctp-surface0: #f0f00c;
+    --ctp-base: #f0f001;
+    --ctp-mantle: #f0f002;
+    --ctp-crust: #f0f003;
+    --color-bg: #f0f001 !important;
+    --color-text: #f0f004 !important;
+    --color-grey: #f0f005 !important;
+    --color-accent: #f0f01b !important;
+    --color-highlight: #f0f00a !important;
+    --color-ash: #f0f00a !important;
+    --color-border: #f0f00a !important;
+    --color-blue-bg: #f0f00b !important;
+    --color-blue-text: #f0f019 !important;
+    --color-purple-bg: #f0f00b !important;
+    --color-purple-text: #f0f010 !important;
+    --color-green-bg: #f0f00b !important;
+    --color-green-text: #f0f015 !important;
+    --color-orange-bg: #f0f00b !important;
+    --color-orange-text: #f0f013 !important;
+    --color-table: #f0f00c !important;
+    --color-link: #f0f01b !important;
+    --color-score-A: #f0f015 !important;
+    --color-score-B: #f0f010 !important;
+    --color-score-C: #f0f013 !important;
+    --color-score-F: #f0f011 !important;
+    --color-score-NA: var(--color-grey) !important;
+    --grad: linear-gradient(-45deg, #f0f013, #f0f019, #f0f00f, #f0f014) !important;
+    --box-shadow: 0px 1px 4px 1px #f0f003 !important;
+    --box-shadow-dark: 0px 0px 1px 1px #f0f003, 0px 1px 5px 2px #f0f003 !important;
+    --box-shadow-strong: 0px 1px 5px 2px #f0f003 !important;
+    --backdrop-bg: #f0f001 !important;
+    --backdrop-bg-ash: rgba(240, 240, 11, 0.5) !important;
+  }
+  .theme-dark ::selection,
+  .theme-black ::selection,
+  .theme-deepOcean ::selection,
+  .theme-nature ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  .theme-dark input::placeholder,
+  .theme-black input::placeholder,
+  .theme-deepOcean input::placeholder,
+  .theme-nature input::placeholder,
+  .theme-dark textarea::placeholder,
+  .theme-black textarea::placeholder,
+  .theme-deepOcean textarea::placeholder,
+  .theme-nature textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  .theme-dark .mw-no-invert *,
+  .theme-black .mw-no-invert *,
+  .theme-deepOcean .mw-no-invert *,
+  .theme-nature .mw-no-invert * {
+    color: #f0f003 !important;
+  }
+  .theme-dark .notheme *,
+  .theme-black .notheme *,
+  .theme-deepOcean .notheme *,
+  .theme-nature .notheme * {
+    --color-text: auto;
+    --color-link: auto;
+  }
+}

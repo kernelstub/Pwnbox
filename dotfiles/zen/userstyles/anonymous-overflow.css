@@ -1,0 +1,314 @@
+/* ==UserStyle==
+@name           pwnbox-anonymous-overflow
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Anonymous Overflow (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+/* Working instances filtered from instance list: https://aohub.httpjames.space/. */
+@-moz-document domain("ao.vern.cc"), domain("overflow.adminforge.de"), domain("overflow.floppa.cloud"), domain("overflow.hostux.net"), domain("ao.bloat.cat"), domain("ao.owo.si"), domain("overflow.r4fo.com"), domain("overflow.ducks.party"), domain("anonymousoverflow.privacyredirect.com"), domain("soflow.nerdvpn.de"), domain("overflow.einfachzocken.eu"), domain("anonymousoverflow.catsarch.com"), domain("overflow.darkness.services"), domain("anonflow.aketawi.space"), domain("o.iii.st"), domain("overflow.canine.tools") {
+  @media (prefers-color-scheme: light) {
+    :root[data-theme="auto"] {
+      color-scheme: light;
+      --ctp-rosewater: #f0f00d;
+      --ctp-flamingo: #f0f00e;
+      --ctp-pink: #f0f00f;
+      --ctp-mauve: #f0f010;
+      --ctp-red: #f0f011;
+      --ctp-maroon: #f0f012;
+      --ctp-peach: #f0f013;
+      --ctp-yellow: #f0f014;
+      --ctp-green: #f0f015;
+      --ctp-teal: #f0f016;
+      --ctp-sky: #f0f017;
+      --ctp-sapphire: #f0f018;
+      --ctp-blue: #f0f019;
+      --ctp-lavender: #f0f01a;
+      --ctp-text: #f0f004;
+      --ctp-subtext1: #f0f005;
+      --ctp-subtext0: #f0f006;
+      --ctp-overlay2: #f0f007;
+      --ctp-overlay1: #f0f008;
+      --ctp-overlay0: #f0f009;
+      --ctp-surface2: #f0f00a;
+      --ctp-surface1: #f0f00b;
+      --ctp-surface0: #f0f00c;
+      --ctp-base: #f0f001;
+      --ctp-mantle: #f0f002;
+      --ctp-crust: #f0f003;
+      --main-bg: #f0f001;
+      --text-color: #f0f004;
+      --muted-text-color: #f0f006;
+      --link-color: #f0f019;
+      --meta-bg: #f0f00b;
+      --input-bg: #f0f002;
+      --input-bg-hover: #f0f00b;
+      --divider-color: #f0f009;
+    }
+    :root[data-theme="auto"] ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root[data-theme="auto"] input::placeholder,
+    :root[data-theme="auto"] textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root[data-theme="auto"] .view-input:focus {
+      border-color: #f0f00a;
+    }
+    :root[data-theme="auto"] .answer-link .icon img {
+      background: none;
+      filter: brightness(0) saturate(100%) invert(43%) sepia(43%) saturate(515%) hue-rotate(196deg) brightness(49%) contrast(68%);
+    }
+    :root[data-theme="auto"] .answer-meta.accepted {
+      background-color: #f0f015;
+      color: #f0f001;
+    }
+    :root[data-theme="auto"] .answer-meta.accepted .answer-link .icon img {
+      filter: brightness(0) saturate(100%) invert(84%) sepia(32%) saturate(502%) hue-rotate(192deg) brightness(111%) contrast(84%);
+    }
+    :root[data-theme="auto"] .sorting img[src="/static/icons/sort.svg"] {
+      filter: brightness(0) saturate(100%) invert(65%) sepia(15%) saturate(535%) hue-rotate(195deg) brightness(63%) contrast(82%);
+    }
+    :root[data-theme="auto"] .logo {
+      content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2049%2048%22%3E%3Ccircle%20cx%3D%2214.5%22%20cy%3D%2233.5%22%20r%3D%2214.5%22%20fill%3D%22%23f0f016%22/%3E%3Ccircle%20cx%3D%2214.5%22%20cy%3D%2214.5%22%20r%3D%2214.5%22%20fill%3D%22%23f0f004%22/%3E%3Ccircle%20cx%3D%2234.5%22%20cy%3D%2214.5%22%20r%3D%2214.5%22%20fill%3D%22%23f0f016%22/%3E%3Ccircle%20cx%3D%2234.5%22%20cy%3D%2233.5%22%20r%3D%2214.5%22%20fill%3D%22%23f0f004%22/%3E%3C/svg%3E");
+    }
+    :root[data-theme="auto"] hr {
+      border-color: #f0f009;
+    }
+    :root[data-theme="auto"] .error {
+      background-color: #f0f011;
+    }
+    :root[data-theme="auto"] .error,
+    :root[data-theme="auto"] .success {
+      color: #f0f003;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root[data-theme="auto"] {
+      color-scheme: dark;
+      --ctp-rosewater: #f0f00d;
+      --ctp-flamingo: #f0f00e;
+      --ctp-pink: #f0f00f;
+      --ctp-mauve: #f0f010;
+      --ctp-red: #f0f011;
+      --ctp-maroon: #f0f012;
+      --ctp-peach: #f0f013;
+      --ctp-yellow: #f0f014;
+      --ctp-green: #f0f015;
+      --ctp-teal: #f0f016;
+      --ctp-sky: #f0f017;
+      --ctp-sapphire: #f0f018;
+      --ctp-blue: #f0f019;
+      --ctp-lavender: #f0f01a;
+      --ctp-text: #f0f004;
+      --ctp-subtext1: #f0f005;
+      --ctp-subtext0: #f0f006;
+      --ctp-overlay2: #f0f007;
+      --ctp-overlay1: #f0f008;
+      --ctp-overlay0: #f0f009;
+      --ctp-surface2: #f0f00a;
+      --ctp-surface1: #f0f00b;
+      --ctp-surface0: #f0f00c;
+      --ctp-base: #f0f001;
+      --ctp-mantle: #f0f002;
+      --ctp-crust: #f0f003;
+      --main-bg: #f0f001;
+      --text-color: #f0f004;
+      --muted-text-color: #f0f006;
+      --link-color: #f0f019;
+      --meta-bg: #f0f00b;
+      --input-bg: #f0f002;
+      --input-bg-hover: #f0f00b;
+      --divider-color: #f0f009;
+    }
+    :root[data-theme="auto"] ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root[data-theme="auto"] input::placeholder,
+    :root[data-theme="auto"] textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root[data-theme="auto"] .view-input:focus {
+      border-color: #f0f00a;
+    }
+    :root[data-theme="auto"] .answer-link .icon img {
+      background: none;
+      filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+    }
+    :root[data-theme="auto"] .answer-meta.accepted {
+      background-color: #f0f015;
+      color: #f0f001;
+    }
+    :root[data-theme="auto"] .answer-meta.accepted .answer-link .icon img {
+      filter: brightness(0) saturate(100%) invert(25%) sepia(44%) saturate(549%) hue-rotate(204deg) brightness(18%) contrast(96%);
+    }
+    :root[data-theme="auto"] .sorting img[src="/static/icons/sort.svg"] {
+      filter: brightness(0) saturate(100%) invert(79%) sepia(13%) saturate(517%) hue-rotate(191deg) brightness(93%) contrast(71%);
+    }
+    :root[data-theme="auto"] .logo {
+      content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2049%2048%22%3E%3Ccircle%20cx%3D%2214.5%22%20cy%3D%2233.5%22%20r%3D%2214.5%22%20fill%3D%22%23f0f016%22/%3E%3Ccircle%20cx%3D%2214.5%22%20cy%3D%2214.5%22%20r%3D%2214.5%22%20fill%3D%22%23f0f004%22/%3E%3Ccircle%20cx%3D%2234.5%22%20cy%3D%2214.5%22%20r%3D%2214.5%22%20fill%3D%22%23f0f016%22/%3E%3Ccircle%20cx%3D%2234.5%22%20cy%3D%2233.5%22%20r%3D%2214.5%22%20fill%3D%22%23f0f004%22/%3E%3C/svg%3E");
+    }
+    :root[data-theme="auto"] hr {
+      border-color: #f0f009;
+    }
+    :root[data-theme="auto"] .error {
+      background-color: #f0f011;
+    }
+    :root[data-theme="auto"] .error,
+    :root[data-theme="auto"] .success {
+      color: #f0f003;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --ctp-rosewater: #f0f00d;
+    --ctp-flamingo: #f0f00e;
+    --ctp-pink: #f0f00f;
+    --ctp-mauve: #f0f010;
+    --ctp-red: #f0f011;
+    --ctp-maroon: #f0f012;
+    --ctp-peach: #f0f013;
+    --ctp-yellow: #f0f014;
+    --ctp-green: #f0f015;
+    --ctp-teal: #f0f016;
+    --ctp-sky: #f0f017;
+    --ctp-sapphire: #f0f018;
+    --ctp-blue: #f0f019;
+    --ctp-lavender: #f0f01a;
+    --ctp-text: #f0f004;
+    --ctp-subtext1: #f0f005;
+    --ctp-subtext0: #f0f006;
+    --ctp-overlay2: #f0f007;
+    --ctp-overlay1: #f0f008;
+    --ctp-overlay0: #f0f009;
+    --ctp-surface2: #f0f00a;
+    --ctp-surface1: #f0f00b;
+    --ctp-surface0: #f0f00c;
+    --ctp-base: #f0f001;
+    --ctp-mantle: #f0f002;
+    --ctp-crust: #f0f003;
+    --main-bg: #f0f001;
+    --text-color: #f0f004;
+    --muted-text-color: #f0f006;
+    --link-color: #f0f019;
+    --meta-bg: #f0f00b;
+    --input-bg: #f0f002;
+    --input-bg-hover: #f0f00b;
+    --divider-color: #f0f009;
+  }
+  :root[data-theme="dark"] ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root[data-theme="dark"] input::placeholder,
+  :root[data-theme="dark"] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root[data-theme="dark"] .view-input:focus {
+    border-color: #f0f00a;
+  }
+  :root[data-theme="dark"] .answer-link .icon img {
+    background: none;
+    filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+  }
+  :root[data-theme="dark"] .answer-meta.accepted {
+    background-color: #f0f015;
+    color: #f0f001;
+  }
+  :root[data-theme="dark"] .answer-meta.accepted .answer-link .icon img {
+    filter: brightness(0) saturate(100%) invert(25%) sepia(44%) saturate(549%) hue-rotate(204deg) brightness(18%) contrast(96%);
+  }
+  :root[data-theme="dark"] .sorting img[src="/static/icons/sort.svg"] {
+    filter: brightness(0) saturate(100%) invert(79%) sepia(13%) saturate(517%) hue-rotate(191deg) brightness(93%) contrast(71%);
+  }
+  :root[data-theme="dark"] .logo {
+    content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2049%2048%22%3E%3Ccircle%20cx%3D%2214.5%22%20cy%3D%2233.5%22%20r%3D%2214.5%22%20fill%3D%22%23f0f016%22/%3E%3Ccircle%20cx%3D%2214.5%22%20cy%3D%2214.5%22%20r%3D%2214.5%22%20fill%3D%22%23f0f004%22/%3E%3Ccircle%20cx%3D%2234.5%22%20cy%3D%2214.5%22%20r%3D%2214.5%22%20fill%3D%22%23f0f016%22/%3E%3Ccircle%20cx%3D%2234.5%22%20cy%3D%2233.5%22%20r%3D%2214.5%22%20fill%3D%22%23f0f004%22/%3E%3C/svg%3E");
+  }
+  :root[data-theme="dark"] hr {
+    border-color: #f0f009;
+  }
+  :root[data-theme="dark"] .error {
+    background-color: #f0f011;
+  }
+  :root[data-theme="dark"] .error,
+  :root[data-theme="dark"] .success {
+    color: #f0f003;
+  }
+  :root[data-theme="light"] {
+    color-scheme: light;
+    --ctp-rosewater: #f0f00d;
+    --ctp-flamingo: #f0f00e;
+    --ctp-pink: #f0f00f;
+    --ctp-mauve: #f0f010;
+    --ctp-red: #f0f011;
+    --ctp-maroon: #f0f012;
+    --ctp-peach: #f0f013;
+    --ctp-yellow: #f0f014;
+    --ctp-green: #f0f015;
+    --ctp-teal: #f0f016;
+    --ctp-sky: #f0f017;
+    --ctp-sapphire: #f0f018;
+    --ctp-blue: #f0f019;
+    --ctp-lavender: #f0f01a;
+    --ctp-text: #f0f004;
+    --ctp-subtext1: #f0f005;
+    --ctp-subtext0: #f0f006;
+    --ctp-overlay2: #f0f007;
+    --ctp-overlay1: #f0f008;
+    --ctp-overlay0: #f0f009;
+    --ctp-surface2: #f0f00a;
+    --ctp-surface1: #f0f00b;
+    --ctp-surface0: #f0f00c;
+    --ctp-base: #f0f001;
+    --ctp-mantle: #f0f002;
+    --ctp-crust: #f0f003;
+    --main-bg: #f0f001;
+    --text-color: #f0f004;
+    --muted-text-color: #f0f006;
+    --link-color: #f0f019;
+    --meta-bg: #f0f00b;
+    --input-bg: #f0f002;
+    --input-bg-hover: #f0f00b;
+    --divider-color: #f0f009;
+  }
+  :root[data-theme="light"] ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root[data-theme="light"] input::placeholder,
+  :root[data-theme="light"] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root[data-theme="light"] .view-input:focus {
+    border-color: #f0f00a;
+  }
+  :root[data-theme="light"] .answer-link .icon img {
+    background: none;
+    filter: brightness(0) saturate(100%) invert(43%) sepia(43%) saturate(515%) hue-rotate(196deg) brightness(49%) contrast(68%);
+  }
+  :root[data-theme="light"] .answer-meta.accepted {
+    background-color: #f0f015;
+    color: #f0f001;
+  }
+  :root[data-theme="light"] .answer-meta.accepted .answer-link .icon img {
+    filter: brightness(0) saturate(100%) invert(84%) sepia(32%) saturate(502%) hue-rotate(192deg) brightness(111%) contrast(84%);
+  }
+  :root[data-theme="light"] .sorting img[src="/static/icons/sort.svg"] {
+    filter: brightness(0) saturate(100%) invert(65%) sepia(15%) saturate(535%) hue-rotate(195deg) brightness(63%) contrast(82%);
+  }
+  :root[data-theme="light"] .logo {
+    content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2049%2048%22%3E%3Ccircle%20cx%3D%2214.5%22%20cy%3D%2233.5%22%20r%3D%2214.5%22%20fill%3D%22%23f0f016%22/%3E%3Ccircle%20cx%3D%2214.5%22%20cy%3D%2214.5%22%20r%3D%2214.5%22%20fill%3D%22%23f0f004%22/%3E%3Ccircle%20cx%3D%2234.5%22%20cy%3D%2214.5%22%20r%3D%2214.5%22%20fill%3D%22%23f0f016%22/%3E%3Ccircle%20cx%3D%2234.5%22%20cy%3D%2233.5%22%20r%3D%2214.5%22%20fill%3D%22%23f0f004%22/%3E%3C/svg%3E");
+  }
+  :root[data-theme="light"] hr {
+    border-color: #f0f009;
+  }
+  :root[data-theme="light"] .error {
+    background-color: #f0f011;
+  }
+  :root[data-theme="light"] .error,
+  :root[data-theme="light"] .success {
+    color: #f0f003;
+  }
+}

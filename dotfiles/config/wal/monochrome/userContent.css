@@ -1,0 +1,145 @@
+/* pwnbox zen theme — userContent.css (generated from pywal)
+   adapted from catppuccin/zen-browser */
+
+@media (prefers-color-scheme: dark) {
+
+  /* Common variables affecting all pages */
+  @-moz-document url-prefix("about:") {
+    :root {
+      --in-content-page-color: #cccccc !important;
+      --color-accent-primary: #999999 !important;
+      --color-accent-primary-hover: #cccccc !important;
+      --color-accent-primary-active: #8a8a8a !important;
+      background-color: #171717 !important;
+      --in-content-page-background: #171717 !important;
+    }
+
+    * {
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
+  }
+
+  /* Variables and styles specific to about:newtab and about:home */
+  @-moz-document url("about:newtab"), url("about:home") {
+    :root {
+      --newtab-background-color: #171717 !important;
+      --newtab-background-color-secondary: #353535 !important;
+      --newtab-element-hover-color: #353535 !important;
+      --newtab-text-primary-color: #cccccc !important;
+      --newtab-wordmark-color: #cccccc !important;
+      --newtab-primary-action-background: #999999 !important;
+    }
+
+    .icon {
+      color: #999999 !important;
+    }
+
+    .card-outer:is(:hover, :focus, .active):not(.placeholder) .card-title {
+      color: #999999 !important;
+    }
+
+    .top-site-outer .search-topsite {
+      background-color: #8a8a8a !important;
+    }
+
+    .compact-cards .card-outer .card-context .card-context-icon.icon-download {
+      fill: #c4c4c4 !important;
+    }
+  }
+
+  /* Variables and styles specific to about:preferences */
+  @-moz-document url-prefix("about:preferences") {
+    :root {
+      --zen-colors-tertiary: #080808 !important;
+      --in-content-text-color: #cccccc !important;
+      --link-color: #999999 !important;
+      --link-color-hover: #cccccc !important;
+      --zen-colors-primary: #353535 !important;
+      --in-content-box-background: #353535 !important;
+      --zen-primary-color: #999999 !important;
+    }
+
+    groupbox, moz-card {
+      background: #171717 !important;
+    }
+
+    button,
+    groupbox menulist {
+      background: #353535 !important;
+      color: #cccccc !important;
+    }
+
+    .main-content {
+      background-color: #080808 !important;
+    }
+
+    .identity-color-blue {
+      --identity-tab-color: #999999 !important;
+      --identity-icon-color: #999999 !important;
+    }
+
+    .identity-color-turquoise {
+      --identity-tab-color: #8a8a8a !important;
+      --identity-icon-color: #8a8a8a !important;
+    }
+
+    .identity-color-green {
+      --identity-tab-color: #c4c4c4 !important;
+      --identity-icon-color: #c4c4c4 !important;
+    }
+
+    .identity-color-yellow {
+      --identity-tab-color: #999999 !important;
+      --identity-icon-color: #999999 !important;
+    }
+
+    .identity-color-orange {
+      --identity-tab-color: #999999 !important;
+      --identity-icon-color: #999999 !important;
+    }
+
+    .identity-color-red {
+      --identity-tab-color: #717171 !important;
+      --identity-icon-color: #717171 !important;
+    }
+
+    .identity-color-pink {
+      --identity-tab-color: #717171 !important;
+      --identity-icon-color: #717171 !important;
+    }
+
+    .identity-color-purple {
+      --identity-tab-color: #999999 !important;
+      --identity-icon-color: #999999 !important;
+    }
+  }
+
+  /* Variables and styles specific to about:addons */
+  @-moz-document url-prefix("about:addons") {
+    :root {
+      --zen-dark-color-mix-base: #080808 !important;
+      --background-color-box: #171717 !important;
+    }
+  }
+
+  /* Variables and styles specific to about:protections */
+  @-moz-document url-prefix("about:protections") {
+    :root {
+      --zen-primary-color: #171717 !important;
+      --social-color: #999999 !important;
+      --coockie-color: #8a8a8a !important;
+      --fingerprinter-color: #999999 !important;
+      --cryptominer-color: #999999 !important;
+      --tracker-color: #c4c4c4 !important;
+      --in-content-primary-button-background-hover: #cccccc !important;
+      --in-content-primary-button-text-color-hover: #080808 !important;
+      --in-content-primary-button-background: #353535 !important;
+      --in-content-primary-button-text-color: #cccccc !important;
+    }
+
+    .card {
+      background-color: #353535 !important;
+    }
+  }
+}

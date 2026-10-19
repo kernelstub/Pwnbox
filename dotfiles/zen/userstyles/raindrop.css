@@ -1,0 +1,401 @@
+/* ==UserStyle==
+@name           pwnbox-raindrop
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Raindrop (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("app.raindrop.io") {
+  [data-theme="night"] {
+    color-scheme: dark !important;
+  }
+  [data-theme="night"] ::selection {
+    background-color: rgba(240, 240, 27, 0.3) !important;
+  }
+  [data-theme="night"] input::placeholder,
+  [data-theme="night"] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  [data-theme="night"],
+  [data-theme="night"] [data-theme] {
+    --background-color: #f0f001 !important;
+    --disable-background-color: #f0f003 !important;
+    --disable-text-color: #f0f008 !important;
+    --accent-color: #f0f01b !important;
+    --alternative-background-color: #f0f002 !important;
+    --sidebar-background-color: #f0f002 !important;
+    --hover-background-color: rgba(240, 240, 9, 0.2) !important;
+    --active-background-color: #f0f00b !important;
+    --primary-text-color: #f0f004 !important;
+    --secondary-text-color: #f0f006 !important;
+    --shadow-color: rgba(240, 240, 4, 0.1) !important;
+    --shadow-light-color: rgba(240, 240, 4, 0.1) !important;
+    --danger-color: #f0f011 !important;
+    --important-color: #f0f011 !important;
+    --success-color: #f0f015 !important;
+    --highlights-color: #f0f010 !important;
+    --reminder-color: #f0f013 !important;
+    --note-color: #f0f014 !important;
+    --article-color: #f0f013 !important;
+    --audio-color: #f0f010 !important;
+    --document-color: #f0f006 !important;
+    --book-color: #f0f00d !important;
+    --image-color: #f0f015 !important;
+    --video-color: #f0f019 !important;
+    --broken-color: #f0f012 !important;
+    --duplicate-color: #f0f018 !important;
+    --tag-color: #f0f006 !important;
+    --filter-color: #f0f006 !important;
+    color: #f0f004 !important;
+  }
+  [data-theme="night"] [data-variant="active"],
+  [data-theme="night"] [data-theme] [data-variant="active"] {
+    background: rgba(240, 240, 27, 0.1) !important;
+  }
+  [data-theme="night"] [class^="header-"][data-fancy="true"],
+  [data-theme="night"] [data-theme] [class^="header-"][data-fancy="true"] {
+    background: linear-gradient(to bottom, var(--background-color) 30%, rgba(240, 240, 1, 0.6) 100%) !important;
+  }
+  [data-theme="night"] [class^="cover-"] > [class^="more-"],
+  [data-theme="night"] [data-theme] [class^="cover-"] > [class^="more-"] {
+    background: rgba(240, 240, 27, 0.85) !important;
+  }
+  [data-theme="night"] [title="Add Bookmark"],
+  [data-theme="night"] [data-theme] [title="Add Bookmark"] {
+    color: #f0f001 !important;
+  }
+  [data-theme="night"] [class^="button-"][data-variant="primary"][disabled],
+  [data-theme="night"] [data-theme] [class^="button-"][data-variant="primary"][disabled] {
+    filter: none !important;
+    opacity: 100% !important;
+    background: #f0f009 !important;
+    color: #f0f003 !important;
+  }
+  [data-theme="night"] [class*="isDropping-"],
+  [data-theme="night"] [data-theme] [class*="isDropping-"] {
+    background-color: rgba(240, 240, 27, 0.1) !important;
+  }
+  [data-theme="night"] .svSidebar,
+  [data-theme="night"] [data-theme] .svSidebar {
+    background: var(--sidebar-background-color) !important;
+  }
+  [data-theme="night"] [href^="https://api.raindrop.io/v1/auth/google"] > span {
+    color: #f0f004 !important;
+  }
+  [data-theme="day"],
+  [data-theme="sunset"] {
+    color-scheme: light;
+  }
+  [data-theme="day"] ::selection,
+  [data-theme="sunset"] ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  [data-theme="day"] input::placeholder,
+  [data-theme="sunset"] input::placeholder,
+  [data-theme="day"] textarea::placeholder,
+  [data-theme="sunset"] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  [data-theme="day"],
+  [data-theme="sunset"],
+  [data-theme="day"] [data-theme],
+  [data-theme="sunset"] [data-theme] {
+    --background-color: #f0f001;
+    --disable-background-color: #f0f003;
+    --disable-text-color: #f0f008;
+    --accent-color: #f0f01b;
+    --alternative-background-color: #f0f002;
+    --sidebar-background-color: #f0f002;
+    --hover-background-color: rgba(240, 240, 9, 0.2);
+    --active-background-color: #f0f00b;
+    --primary-text-color: #f0f004;
+    --secondary-text-color: #f0f006;
+    --shadow-color: rgba(240, 240, 4, 0.1);
+    --shadow-light-color: rgba(240, 240, 4, 0.1);
+    --danger-color: #f0f011;
+    --important-color: #f0f011;
+    --success-color: #f0f015;
+    --highlights-color: #f0f010;
+    --reminder-color: #f0f013;
+    --note-color: #f0f014;
+    --article-color: #f0f013;
+    --audio-color: #f0f010;
+    --document-color: #f0f006;
+    --book-color: #f0f00d;
+    --image-color: #f0f015;
+    --video-color: #f0f019;
+    --broken-color: #f0f012;
+    --duplicate-color: #f0f018;
+    --tag-color: #f0f006;
+    --filter-color: #f0f006;
+    color: #f0f004;
+  }
+  [data-theme="day"] [data-variant="active"],
+  [data-theme="sunset"] [data-variant="active"],
+  [data-theme="day"] [data-theme] [data-variant="active"],
+  [data-theme="sunset"] [data-theme] [data-variant="active"] {
+    background: rgba(240, 240, 27, 0.1) !important;
+  }
+  [data-theme="day"] [class^="header-"][data-fancy="true"],
+  [data-theme="sunset"] [class^="header-"][data-fancy="true"],
+  [data-theme="day"] [data-theme] [class^="header-"][data-fancy="true"],
+  [data-theme="sunset"] [data-theme] [class^="header-"][data-fancy="true"] {
+    background: linear-gradient(to bottom, var(--background-color) 30%, rgba(240, 240, 1, 0.6) 100%);
+  }
+  [data-theme="day"] [class^="cover-"] > [class^="more-"],
+  [data-theme="sunset"] [class^="cover-"] > [class^="more-"],
+  [data-theme="day"] [data-theme] [class^="cover-"] > [class^="more-"],
+  [data-theme="sunset"] [data-theme] [class^="cover-"] > [class^="more-"] {
+    background: rgba(240, 240, 27, 0.85);
+  }
+  [data-theme="day"] [title="Add Bookmark"],
+  [data-theme="sunset"] [title="Add Bookmark"],
+  [data-theme="day"] [data-theme] [title="Add Bookmark"],
+  [data-theme="sunset"] [data-theme] [title="Add Bookmark"] {
+    color: #f0f001;
+  }
+  [data-theme="day"] [class^="button-"][data-variant="primary"][disabled],
+  [data-theme="sunset"] [class^="button-"][data-variant="primary"][disabled],
+  [data-theme="day"] [data-theme] [class^="button-"][data-variant="primary"][disabled],
+  [data-theme="sunset"] [data-theme] [class^="button-"][data-variant="primary"][disabled] {
+    filter: none;
+    opacity: 100%;
+    background: #f0f009;
+    color: #f0f003;
+  }
+  [data-theme="day"] [class*="isDropping-"],
+  [data-theme="sunset"] [class*="isDropping-"],
+  [data-theme="day"] [data-theme] [class*="isDropping-"],
+  [data-theme="sunset"] [data-theme] [class*="isDropping-"] {
+    background-color: rgba(240, 240, 27, 0.1);
+  }
+  [data-theme="day"] .svSidebar,
+  [data-theme="sunset"] .svSidebar,
+  [data-theme="day"] [data-theme] .svSidebar,
+  [data-theme="sunset"] [data-theme] .svSidebar {
+    background: var(--sidebar-background-color);
+  }
+  [data-theme="day"] [href^="https://api.raindrop.io/v1/auth/google"] > span,
+  [data-theme="sunset"] [href^="https://api.raindrop.io/v1/auth/google"] > span {
+    color: #f0f004;
+  }
+  [class^="theme-"][data-index="0"],
+  [class^="theme-"][data-index="2"] > [class^="main-"],
+  [class^="theme-"][data-index="3"] {
+    color-scheme: light !important;
+  }
+  [class^="theme-"][data-index="0"] ::selection,
+  [class^="theme-"][data-index="2"] > [class^="main-"] ::selection,
+  [class^="theme-"][data-index="3"] ::selection {
+    background-color: rgba(240, 240, 27, 0.3) !important;
+  }
+  [class^="theme-"][data-index="0"] input::placeholder,
+  [class^="theme-"][data-index="2"] > [class^="main-"] input::placeholder,
+  [class^="theme-"][data-index="3"] input::placeholder,
+  [class^="theme-"][data-index="0"] textarea::placeholder,
+  [class^="theme-"][data-index="2"] > [class^="main-"] textarea::placeholder,
+  [class^="theme-"][data-index="3"] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  [class^="theme-"][data-index="0"],
+  [class^="theme-"][data-index="2"] > [class^="main-"],
+  [class^="theme-"][data-index="3"],
+  [class^="theme-"][data-index="0"] [data-theme],
+  [class^="theme-"][data-index="2"] > [class^="main-"] [data-theme],
+  [class^="theme-"][data-index="3"] [data-theme] {
+    --background-color: #f0f001 !important;
+    --disable-background-color: #f0f003 !important;
+    --disable-text-color: #f0f008 !important;
+    --accent-color: #f0f01b !important;
+    --alternative-background-color: #f0f002 !important;
+    --sidebar-background-color: #f0f002 !important;
+    --hover-background-color: rgba(240, 240, 9, 0.2) !important;
+    --active-background-color: #f0f00b !important;
+    --primary-text-color: #f0f004 !important;
+    --secondary-text-color: #f0f006 !important;
+    --shadow-color: rgba(240, 240, 4, 0.1) !important;
+    --shadow-light-color: rgba(240, 240, 4, 0.1) !important;
+    --danger-color: #f0f011 !important;
+    --important-color: #f0f011 !important;
+    --success-color: #f0f015 !important;
+    --highlights-color: #f0f010 !important;
+    --reminder-color: #f0f013 !important;
+    --note-color: #f0f014 !important;
+    --article-color: #f0f013 !important;
+    --audio-color: #f0f010 !important;
+    --document-color: #f0f006 !important;
+    --book-color: #f0f00d !important;
+    --image-color: #f0f015 !important;
+    --video-color: #f0f019 !important;
+    --broken-color: #f0f012 !important;
+    --duplicate-color: #f0f018 !important;
+    --tag-color: #f0f006 !important;
+    --filter-color: #f0f006 !important;
+    color: #f0f004 !important;
+  }
+  [class^="theme-"][data-index="0"] [data-variant="active"],
+  [class^="theme-"][data-index="2"] > [class^="main-"] [data-variant="active"],
+  [class^="theme-"][data-index="3"] [data-variant="active"],
+  [class^="theme-"][data-index="0"] [data-theme] [data-variant="active"],
+  [class^="theme-"][data-index="2"] > [class^="main-"] [data-theme] [data-variant="active"],
+  [class^="theme-"][data-index="3"] [data-theme] [data-variant="active"] {
+    background: rgba(240, 240, 27, 0.1) !important;
+  }
+  [class^="theme-"][data-index="0"] [class^="header-"][data-fancy="true"],
+  [class^="theme-"][data-index="2"] > [class^="main-"] [class^="header-"][data-fancy="true"],
+  [class^="theme-"][data-index="3"] [class^="header-"][data-fancy="true"],
+  [class^="theme-"][data-index="0"] [data-theme] [class^="header-"][data-fancy="true"],
+  [class^="theme-"][data-index="2"] > [class^="main-"] [data-theme] [class^="header-"][data-fancy="true"],
+  [class^="theme-"][data-index="3"] [data-theme] [class^="header-"][data-fancy="true"] {
+    background: linear-gradient(to bottom, var(--background-color) 30%, rgba(240, 240, 1, 0.6) 100%) !important;
+  }
+  [class^="theme-"][data-index="0"] [class^="cover-"] > [class^="more-"],
+  [class^="theme-"][data-index="2"] > [class^="main-"] [class^="cover-"] > [class^="more-"],
+  [class^="theme-"][data-index="3"] [class^="cover-"] > [class^="more-"],
+  [class^="theme-"][data-index="0"] [data-theme] [class^="cover-"] > [class^="more-"],
+  [class^="theme-"][data-index="2"] > [class^="main-"] [data-theme] [class^="cover-"] > [class^="more-"],
+  [class^="theme-"][data-index="3"] [data-theme] [class^="cover-"] > [class^="more-"] {
+    background: rgba(240, 240, 27, 0.85) !important;
+  }
+  [class^="theme-"][data-index="0"] [title="Add Bookmark"],
+  [class^="theme-"][data-index="2"] > [class^="main-"] [title="Add Bookmark"],
+  [class^="theme-"][data-index="3"] [title="Add Bookmark"],
+  [class^="theme-"][data-index="0"] [data-theme] [title="Add Bookmark"],
+  [class^="theme-"][data-index="2"] > [class^="main-"] [data-theme] [title="Add Bookmark"],
+  [class^="theme-"][data-index="3"] [data-theme] [title="Add Bookmark"] {
+    color: #f0f001 !important;
+  }
+  [class^="theme-"][data-index="0"] [class^="button-"][data-variant="primary"][disabled],
+  [class^="theme-"][data-index="2"] > [class^="main-"] [class^="button-"][data-variant="primary"][disabled],
+  [class^="theme-"][data-index="3"] [class^="button-"][data-variant="primary"][disabled],
+  [class^="theme-"][data-index="0"] [data-theme] [class^="button-"][data-variant="primary"][disabled],
+  [class^="theme-"][data-index="2"] > [class^="main-"] [data-theme] [class^="button-"][data-variant="primary"][disabled],
+  [class^="theme-"][data-index="3"] [data-theme] [class^="button-"][data-variant="primary"][disabled] {
+    filter: none !important;
+    opacity: 100% !important;
+    background: #f0f009 !important;
+    color: #f0f003 !important;
+  }
+  [class^="theme-"][data-index="0"] [class*="isDropping-"],
+  [class^="theme-"][data-index="2"] > [class^="main-"] [class*="isDropping-"],
+  [class^="theme-"][data-index="3"] [class*="isDropping-"],
+  [class^="theme-"][data-index="0"] [data-theme] [class*="isDropping-"],
+  [class^="theme-"][data-index="2"] > [class^="main-"] [data-theme] [class*="isDropping-"],
+  [class^="theme-"][data-index="3"] [data-theme] [class*="isDropping-"] {
+    background-color: rgba(240, 240, 27, 0.1) !important;
+  }
+  [class^="theme-"][data-index="0"] .svSidebar,
+  [class^="theme-"][data-index="2"] > [class^="main-"] .svSidebar,
+  [class^="theme-"][data-index="3"] .svSidebar,
+  [class^="theme-"][data-index="0"] [data-theme] .svSidebar,
+  [class^="theme-"][data-index="2"] > [class^="main-"] [data-theme] .svSidebar,
+  [class^="theme-"][data-index="3"] [data-theme] .svSidebar {
+    background: var(--sidebar-background-color) !important;
+  }
+  [class^="theme-"][data-index="0"] [href^="https://api.raindrop.io/v1/auth/google"] > span,
+  [class^="theme-"][data-index="2"] > [class^="main-"] [href^="https://api.raindrop.io/v1/auth/google"] > span,
+  [class^="theme-"][data-index="3"] [href^="https://api.raindrop.io/v1/auth/google"] > span {
+    color: #f0f004 !important;
+  }
+  [class^="theme-"][data-index="1"],
+  [class^="theme-"][data-index="2"] > [class^="sidebar-"] {
+    color-scheme: dark !important;
+  }
+  [class^="theme-"][data-index="1"] ::selection,
+  [class^="theme-"][data-index="2"] > [class^="sidebar-"] ::selection {
+    background-color: rgba(240, 240, 27, 0.3) !important;
+  }
+  [class^="theme-"][data-index="1"] input::placeholder,
+  [class^="theme-"][data-index="2"] > [class^="sidebar-"] input::placeholder,
+  [class^="theme-"][data-index="1"] textarea::placeholder,
+  [class^="theme-"][data-index="2"] > [class^="sidebar-"] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  [class^="theme-"][data-index="1"],
+  [class^="theme-"][data-index="2"] > [class^="sidebar-"],
+  [class^="theme-"][data-index="1"] [data-theme],
+  [class^="theme-"][data-index="2"] > [class^="sidebar-"] [data-theme] {
+    --background-color: #f0f001 !important;
+    --disable-background-color: #f0f003 !important;
+    --disable-text-color: #f0f008 !important;
+    --accent-color: #f0f01b !important;
+    --alternative-background-color: #f0f002 !important;
+    --sidebar-background-color: #f0f002 !important;
+    --hover-background-color: rgba(240, 240, 9, 0.2) !important;
+    --active-background-color: #f0f00b !important;
+    --primary-text-color: #f0f004 !important;
+    --secondary-text-color: #f0f006 !important;
+    --shadow-color: rgba(240, 240, 4, 0.1) !important;
+    --shadow-light-color: rgba(240, 240, 4, 0.1) !important;
+    --danger-color: #f0f011 !important;
+    --important-color: #f0f011 !important;
+    --success-color: #f0f015 !important;
+    --highlights-color: #f0f010 !important;
+    --reminder-color: #f0f013 !important;
+    --note-color: #f0f014 !important;
+    --article-color: #f0f013 !important;
+    --audio-color: #f0f010 !important;
+    --document-color: #f0f006 !important;
+    --book-color: #f0f00d !important;
+    --image-color: #f0f015 !important;
+    --video-color: #f0f019 !important;
+    --broken-color: #f0f012 !important;
+    --duplicate-color: #f0f018 !important;
+    --tag-color: #f0f006 !important;
+    --filter-color: #f0f006 !important;
+    color: #f0f004 !important;
+  }
+  [class^="theme-"][data-index="1"] [data-variant="active"],
+  [class^="theme-"][data-index="2"] > [class^="sidebar-"] [data-variant="active"],
+  [class^="theme-"][data-index="1"] [data-theme] [data-variant="active"],
+  [class^="theme-"][data-index="2"] > [class^="sidebar-"] [data-theme] [data-variant="active"] {
+    background: rgba(240, 240, 27, 0.1) !important;
+  }
+  [class^="theme-"][data-index="1"] [class^="header-"][data-fancy="true"],
+  [class^="theme-"][data-index="2"] > [class^="sidebar-"] [class^="header-"][data-fancy="true"],
+  [class^="theme-"][data-index="1"] [data-theme] [class^="header-"][data-fancy="true"],
+  [class^="theme-"][data-index="2"] > [class^="sidebar-"] [data-theme] [class^="header-"][data-fancy="true"] {
+    background: linear-gradient(to bottom, var(--background-color) 30%, rgba(240, 240, 1, 0.6) 100%) !important;
+  }
+  [class^="theme-"][data-index="1"] [class^="cover-"] > [class^="more-"],
+  [class^="theme-"][data-index="2"] > [class^="sidebar-"] [class^="cover-"] > [class^="more-"],
+  [class^="theme-"][data-index="1"] [data-theme] [class^="cover-"] > [class^="more-"],
+  [class^="theme-"][data-index="2"] > [class^="sidebar-"] [data-theme] [class^="cover-"] > [class^="more-"] {
+    background: rgba(240, 240, 27, 0.85) !important;
+  }
+  [class^="theme-"][data-index="1"] [title="Add Bookmark"],
+  [class^="theme-"][data-index="2"] > [class^="sidebar-"] [title="Add Bookmark"],
+  [class^="theme-"][data-index="1"] [data-theme] [title="Add Bookmark"],
+  [class^="theme-"][data-index="2"] > [class^="sidebar-"] [data-theme] [title="Add Bookmark"] {
+    color: #f0f001 !important;
+  }
+  [class^="theme-"][data-index="1"] [class^="button-"][data-variant="primary"][disabled],
+  [class^="theme-"][data-index="2"] > [class^="sidebar-"] [class^="button-"][data-variant="primary"][disabled],
+  [class^="theme-"][data-index="1"] [data-theme] [class^="button-"][data-variant="primary"][disabled],
+  [class^="theme-"][data-index="2"] > [class^="sidebar-"] [data-theme] [class^="button-"][data-variant="primary"][disabled] {
+    filter: none !important;
+    opacity: 100% !important;
+    background: #f0f009 !important;
+    color: #f0f003 !important;
+  }
+  [class^="theme-"][data-index="1"] [class*="isDropping-"],
+  [class^="theme-"][data-index="2"] > [class^="sidebar-"] [class*="isDropping-"],
+  [class^="theme-"][data-index="1"] [data-theme] [class*="isDropping-"],
+  [class^="theme-"][data-index="2"] > [class^="sidebar-"] [data-theme] [class*="isDropping-"] {
+    background-color: rgba(240, 240, 27, 0.1) !important;
+  }
+  [class^="theme-"][data-index="1"] .svSidebar,
+  [class^="theme-"][data-index="2"] > [class^="sidebar-"] .svSidebar,
+  [class^="theme-"][data-index="1"] [data-theme] .svSidebar,
+  [class^="theme-"][data-index="2"] > [class^="sidebar-"] [data-theme] .svSidebar {
+    background: var(--sidebar-background-color) !important;
+  }
+  [class^="theme-"][data-index="1"] [href^="https://api.raindrop.io/v1/auth/google"] > span,
+  [class^="theme-"][data-index="2"] > [class^="sidebar-"] [href^="https://api.raindrop.io/v1/auth/google"] > span {
+    color: #f0f004 !important;
+  }
+}

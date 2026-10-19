@@ -1,0 +1,13 @@
+
+* {
+    background:     {background};
+    background-alt: {color0};
+    brdr:           {color8};
+    foreground:     {foreground};
+    foresel:        {foreground};
+    selected:       {color8};
+    urgent:         {color1};
+    on:             {color2};
+    off:            {color1};
+    radius:         9px;
+}

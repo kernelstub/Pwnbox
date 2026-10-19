@@ -1,0 +1,91 @@
+
+@import "@HOME@/.cache/pwnbox/theme/rofi.rasi"
+
+configuration {
+    show-icons: false;
+    drun-display-format: "{name}";
+    display-drun: "Apps";
+}
+
+* {
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+window {
+    location: center;
+    anchor: center;
+    width: 560px;
+    border: 2px;
+    border-color: @brdr;
+    border-radius: @radius;
+    background-color: @background;
+}
+
+mainbox {
+    border: 0px;
+    spacing: 12px;
+    padding: 16px;
+}
+
+inputbar {
+    spacing: 8px;
+    text-color: @foreground;
+    children: [ prompt, entry ];
+    padding: 0px;
+    background-color: transparent;
+}
+
+prompt {
+    background-color: @background-alt;
+    text-color: @foreground;
+    padding: 7px 14px;
+    border-radius: @radius;
+}
+
+entry {
+    expand: true;
+    text-color: @foreground;
+    placeholder-color: @foreground;
+    placeholder: "Search...";
+    background-color: @background-alt;
+    padding: 7px 12px;
+    border: 0px;
+    border-radius: @radius;
+}
+
+listview {
+    lines: 8;
+    columns: 1;
+    fixed-height: false;
+    border: 0px;
+    spacing: 4px;
+    scrollbar: false;
+    padding: 0px;
+}
+
+element {
+    border: 2px;
+    border-color: transparent;
+    padding: 7px 10px;
+    border-radius: @radius;
+    spacing: 10px;
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+element selected.normal {
+    background-color: @background-alt;
+    text-color: @foresel;
+    border-color: @brdr;
+    border-radius: @radius;
+}
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+}

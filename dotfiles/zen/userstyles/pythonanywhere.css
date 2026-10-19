@@ -1,0 +1,2399 @@
+/* ==UserStyle==
+@name           pwnbox-pythonanywhere
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for PythonAnywhere (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("www.pythonanywhere.com"), domain("eu.pythonanywhere.com"), domain("blog.pythonanywhere.com") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      --ctp-rosewater: #f0f00d;
+      --ctp-flamingo: #f0f00e;
+      --ctp-pink: #f0f00f;
+      --ctp-mauve: #f0f010;
+      --ctp-red: #f0f011;
+      --ctp-maroon: #f0f012;
+      --ctp-peach: #f0f013;
+      --ctp-yellow: #f0f014;
+      --ctp-green: #f0f015;
+      --ctp-teal: #f0f016;
+      --ctp-sky: #f0f017;
+      --ctp-sapphire: #f0f018;
+      --ctp-blue: #f0f019;
+      --ctp-lavender: #f0f01a;
+      --ctp-text: #f0f004;
+      --ctp-subtext1: #f0f005;
+      --ctp-subtext0: #f0f006;
+      --ctp-overlay2: #f0f007;
+      --ctp-overlay1: #f0f008;
+      --ctp-overlay0: #f0f009;
+      --ctp-surface2: #f0f00a;
+      --ctp-surface1: #f0f00b;
+      --ctp-surface0: #f0f00c;
+      --ctp-base: #f0f001;
+      --ctp-mantle: #f0f002;
+      --ctp-crust: #f0f003;
+      color-scheme: light;
+      /* Ace file editor */
+      /* Console */
+      /* $ prompt character */
+      /* ANSI colors */
+      /* blog */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006;
+    }
+    :root .ace_editor {
+      background-color: #f0f003;
+      color: #f0f004;
+    }
+    :root .ace_editor .ace_gutter,
+    :root .ace_editor .ace_gutter-cell {
+      background: #f0f002;
+      color: #f0f008;
+    }
+    :root .ace_editor .ace_print-margin {
+      background: #f0f002;
+    }
+    :root .ace_editor .ace_marker-layer .ace_active-line {
+      background-color: rgba(240, 240, 20, 0.2);
+    }
+    :root .ace_editor .ace_marker-layer .highlight-line-error {
+      background-color: rgba(240, 240, 17, 0.2);
+    }
+    :root .ace_editor .ace_marker-layer .ace_bracket {
+      border-color: #f0f008;
+    }
+    :root .ace_editor .ace_doctype {
+      color: #f0f010;
+    }
+    :root .ace_editor .ace_cursor,
+    :root .ace_editor .ace_xml.ace_text {
+      color: #f0f004;
+    }
+    :root .ace_editor .ace_heading.ace_1,
+    :root .ace_editor .ace_heading.ace_1 + .ace_heading {
+      color: #f0f011;
+    }
+    :root .ace_editor .ace_heading.ace_2,
+    :root .ace_editor .ace_heading.ace_2 + .ace_heading {
+      color: #f0f013;
+    }
+    :root .ace_editor .ace_heading.ace_3,
+    :root .ace_editor .ace_heading.ace_3 + .ace_heading {
+      color: #f0f014;
+    }
+    :root .ace_editor .ace_heading.ace_4,
+    :root .ace_editor .ace_heading.ace_4 + .ace_heading {
+      color: #f0f015;
+    }
+    :root .ace_editor .ace_heading.ace_5,
+    :root .ace_editor .ace_heading.ace_5 + .ace_heading {
+      color: #f0f019;
+    }
+    :root .ace_editor .ace_heading.ace_6,
+    :root .ace_editor .ace_heading.ace_6 + .ace_heading {
+      color: #f0f010;
+    }
+    :root .ace_editor .ace_list {
+      color: #f0f004;
+    }
+    :root .ace_editor .ace_list.ace_markup {
+      color: #f0f017;
+    }
+    :root .ace_editor .ace_marker-layer .ace_selection {
+      background: rgba(240, 240, 27, 0.3);
+    }
+    :root .ace_editor .ace_fold {
+      background-color: #f0f00c;
+      border-color: #f0f00b;
+    }
+    :root .ace_editor .ace_constant.ace_language,
+    :root .ace_editor .ace_keyword,
+    :root .ace_editor .ace_meta {
+      color: #f0f010;
+    }
+    :root .ace_editor .ace_xml,
+    :root .ace_editor .ace_support.ace_class,
+    :root .ace_editor .ace_support.ace_type {
+      color: #f0f014;
+    }
+    :root .ace_editor .ace_line .ace_identifier:not(:first-of-type),
+    :root .ace_editor .ace_entity.ace_name.ace_function,
+    :root .ace_editor .ace_constant {
+      color: #f0f019;
+    }
+    :root .ace_editor .ace_paren,
+    :root .ace_editor .ace_variable.ace_language {
+      color: #f0f011;
+    }
+    :root .ace_editor .ace_constant.ace_numeric {
+      color: #f0f013;
+    }
+    :root .ace_editor .ace_entity.ace_other.ace_attribute-name,
+    :root .ace_editor .ace_support.ace_constant,
+    :root .ace_editor .ace_support.ace_function {
+      color: #f0f016;
+    }
+    :root .ace_editor .ace_entity.ace_name.ace_tag,
+    :root .ace_editor .ace_variable {
+      color: #f0f019;
+    }
+    :root .ace_editor .ace_storage {
+      color: #f0f013;
+    }
+    :root .ace_editor .ace_string {
+      color: #f0f015;
+    }
+    :root .ace_editor .ace_comment {
+      color: #f0f007;
+    }
+    :root .ace_editor .ace_indent-guide {
+      background-image: url("data:image/svg+xml;utf8,%3Csvg%20width%3D%221%22%20height%3D%222%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20stroke%3D%22%23f0f00c%22%20d%3D%22M0%200v2%22/%3E%3C/svg%3E");
+    }
+    :root .ace_tooltip {
+      background-color: #f0f003;
+      color: #f0f004;
+      border-color: #f0f00c;
+    }
+    :root #ace_settingsmenu {
+      background-color: #f0f002;
+      box-shadow: none;
+      color: #f0f006;
+    }
+    :root #kbshortcutmenu {
+      background-color: #f0f002;
+      box-shadow: none;
+    }
+    :root #kbshortcutmenu .ace_optionsMenuEntry:hover,
+    :root #kbshortcutmenu .ace_optionsMenuEntry:focus {
+      background-color: #f0f001;
+    }
+    :root #kbshortcutmenu,
+    :root #kbshortcutmenu .ace_optionsMenuCommand {
+      color: #f0f006;
+    }
+    :root #kbshortcutmenu .ace_optionsMenuKey {
+      color: #f0f01b;
+    }
+    :root x-screen {
+      background-color: #f0f001 !important;
+      color: #f0f004 !important;
+    }
+    :root .cursor-node {
+      border-color: #f0f01b !important;
+    }
+    :root .cursor-node[focus="true"] {
+      background-color: #f0f01b !important;
+    }
+    :root [style*="color: rgb(0, 186, 19);"] {
+      color: #f0f015 !important;
+    }
+    :root x-row span {
+      /* Black & Bright Black */
+      /* Red and Bright Red */
+      /* Dim Red */
+      /* Green and Bright Green */
+      /* Dim Green */
+      /* Yellow and Bright Yellow */
+      /* Dim Yellow */
+      /* Blue and Bright Blue */
+      /* Dim Blue */
+      /* Pink and Bright Pink */
+      /* Dim Pink */
+      /* Teal and Bright Teal */
+      /* Dim Teal */
+      /* White */
+      /* Bright White */
+      /* Dim White */
+    }
+    :root x-row span[style^="color: rgb(0, 0, 0);"] {
+      color: #f0f005 !important;
+    }
+    :root x-row span[style*="background-color: rgb(0, 0, 0);"] {
+      background-color: #f0f005 !important;
+    }
+    :root x-row span[style^="color: rgb(85, 87, 83);"] {
+      color: #f0f005 !important;
+    }
+    :root x-row span[style*="background-color: rgb(85, 87, 83);"] {
+      background-color: #f0f005 !important;
+    }
+    :root x-row span[style^="color: rgb(204, 0, 0);"],
+    :root x-row span[style^="color: rgb(239, 41, 41);"] {
+      color: #f0f011 !important;
+    }
+    :root x-row span[style*="background-color: rgb(204, 0, 0);"],
+    :root x-row span[style*="background-color: rgb(239, 41, 41);"] {
+      background-color: #f0f011 !important;
+    }
+    :root x-row span[style^="color: rgb(136, 0, 0);"] {
+      color: rgba(240, 240, 17, 0.8) !important;
+    }
+    :root x-row span[style^="color: rgb(78, 154, 6);"],
+    :root x-row span[style^="color: rgb(0, 186, 19);"] {
+      color: #f0f015 !important;
+    }
+    :root x-row span[style*="background-color: rgb(78, 154, 6);"],
+    :root x-row span[style*="background-color: rgb(0, 186, 19);"] {
+      background-color: #f0f015 !important;
+    }
+    :root x-row span[style^="color: rgb(52, 103, 4);"] {
+      color: rgba(240, 240, 21, 0.8) !important;
+    }
+    :root x-row span[style^="color: rgb(196, 160, 0);"],
+    :root x-row span[style^="color: rgb(252, 233, 79);"] {
+      color: #f0f014 !important;
+    }
+    :root x-row span[style*="background-color: rgb(196, 160, 0);"],
+    :root x-row span[style*="background-color: rgb(252, 233, 79);"] {
+      background-color: #f0f014 !important;
+    }
+    :root x-row span[style^="color: rgb(131, 107, 0);"] {
+      color: rgba(240, 240, 20, 0.8) !important;
+    }
+    :root x-row span[style^="color: rgb(52, 101, 164);"],
+    :root x-row span[style^="color: rgb(114, 159, 207);"] {
+      color: #f0f019 !important;
+    }
+    :root x-row span[style*="background-color: rgb(52, 101, 164);"],
+    :root x-row span[style*="background-color: rgb(114, 159, 207);"] {
+      background-color: #f0f019 !important;
+    }
+    :root x-row span[style^="color: rgb(35, 67, 109);"] {
+      color: rgba(240, 240, 25, 0.8) !important;
+    }
+    :root x-row span[style^="color: rgb(117, 80, 123);"],
+    :root x-row span[style^="color: rgb(242, 0, 203);"] {
+      color: #f0f00f !important;
+    }
+    :root x-row span[style*="background-color: rgb(117, 80, 123);"],
+    :root x-row span[style*="background-color: rgb(242, 0, 203);"] {
+      background-color: #f0f00f !important;
+    }
+    :root x-row span[style^="color: rgb(78, 53, 82);"] {
+      color: rgba(240, 240, 15, 0.8) !important;
+    }
+    :root x-row span[style^="color: rgb(6, 152, 154);"],
+    :root x-row span[style^="color: rgb(0, 181, 189);"] {
+      color: #f0f016 !important;
+    }
+    :root x-row span[style*="background-color: rgb(6, 152, 154);"],
+    :root x-row span[style*="background-color: rgb(0, 181, 189);"] {
+      background-color: #f0f016 !important;
+    }
+    :root x-row span[style^="color: rgb(4, 101, 103);"] {
+      color: rgba(240, 240, 22, 0.8) !important;
+    }
+    :root x-row span[style^="color: rgb(211, 215, 207);"] {
+      color: #f0f00a !important;
+    }
+    :root x-row span[style*="background-color: rgb(211, 215, 207);"] {
+      background-color: #f0f00a !important;
+    }
+    :root x-row span[style^="color: rgb(238, 238, 236);"] {
+      color: #f0f00b !important;
+    }
+    :root x-row span[style*="background-color: rgb(238, 238, 236);"] {
+      background-color: #f0f00b !important;
+    }
+    :root x-row span[style^="color: rgb(141, 143, 138);"] {
+      color: rgba(240, 240, 10, 0.8) !important;
+    }
+    :root #terminal div[style*="color: rgb(16, 16, 16);"] {
+      color: #f0f004 !important;
+    }
+    :root #terminal div[style*="background-color: rgb(240, 240, 240);"] {
+      background-color: #f0f003 !important;
+    }
+    :root body,
+    :root .dark {
+      background-color: #f0f001;
+      color: #f0f004;
+    }
+    :root a,
+    :root a:hover,
+    :root a:focus {
+      color: #f0f01b;
+    }
+    :root hr,
+    :root pre {
+      border-color: #f0f00c;
+    }
+    :root small,
+    :root .small {
+      color: #f0f006;
+    }
+    :root input,
+    :root button:not(.close, [class*="btn"], [data-toggle="dropdown"]) {
+      background-color: #f0f003;
+      border-color: #f0f00c;
+    }
+    :root input:hover,
+    :root button:not(.close, [class*="btn"], [data-toggle="dropdown"]):hover,
+    :root input:focus,
+    :root button:not(.close, [class*="btn"], [data-toggle="dropdown"]):focus {
+      background-color: #f0f002;
+    }
+    :root input i.glyphicon,
+    :root button:not(.close, [class*="btn"], [data-toggle="dropdown"]) i.glyphicon {
+      pointer-events: none;
+    }
+    :root blockquote {
+      border-color: #f0f00c;
+    }
+    :root blockquote footer,
+    :root blockquote small,
+    :root blockquote .small {
+      color: #f0f006;
+    }
+    :root .footer p {
+      color: #f0f004;
+    }
+    :root .gsc-modal-background-image {
+      background-color: #f0f001;
+    }
+    :root .gsc-results-wrapper-overlay {
+      background-color: #f0f002;
+      color: #f0f006;
+    }
+    :root input.gsc-input,
+    :root .gsc-input-box,
+    :root .gsc-input-box-hover,
+    :root .gsc-input-box-focus {
+      border-color: #f0f00c;
+    }
+    :root .gsc-completion-container {
+      background-color: #f0f003;
+      border-color: #f0f00c;
+    }
+    :root .gsc-completion-selected {
+      background-color: #f0f002;
+    }
+    :root input.gsc-input {
+      background-color: #f0f002;
+    }
+    :root .gsc-input-box,
+    :root .gsc-results {
+      background-color: #f0f002;
+    }
+    :root .gsc-option-menu-item-highlighted {
+      background-color: #f0f001;
+      color: #f0f004;
+    }
+    :root .gsc-selected-option-container {
+      background-color: #f0f003;
+      color: #f0f004;
+      border-color: #f0f00c;
+    }
+    :root .gsc-webResult.gsc-result {
+      border-color: #f0f00c;
+      background-color: #f0f002;
+    }
+    :root .gsc-search-button-v2,
+    :root .gsc-search-button-v2:hover,
+    :root .gsc-search-button-v2:focus {
+      border-color: #f0f00c;
+      background-color: #f0f003;
+      color: #f0f004;
+    }
+    :root .gsc-search-button-v2 svg {
+      fill: #f0f004;
+    }
+    :root .gsc-result-info,
+    :root .gsc-orderby-label,
+    :root .gsc-option-menu-item {
+      color: #f0f006;
+    }
+    :root .gcsc-find-more-on-google {
+      color: #f0f01b;
+    }
+    :root .gcsc-find-more-on-google-magnifier {
+      fill: #f0f01b;
+    }
+    :root .gsc-results .gsc-cursor-box .gsc-cursor-page {
+      color: #f0f004;
+      background-color: unset;
+    }
+    :root .gsc-control-cse .gsc-option-menu {
+      background-color: #f0f003;
+    }
+    :root .gs-webResult div.gs-visibleUrl {
+      color: #f0f006;
+    }
+    :root .gs-webResult.gs-result a.gs-title,
+    :root .gs-webResult.gs-result a.gs-title:hover,
+    :root .gs-webResult.gs-result a.gs-title:focus,
+    :root .gs-webResult.gs-result a.gs-title b {
+      color: #f0f01b;
+    }
+    :root .gs-webResult .gs-snippet {
+      color: #f0f004;
+    }
+    :root .badge {
+      background-color: #f0f003;
+    }
+    :root .badge:hover,
+    :root .badge:focus {
+      background-color: #f0f002;
+    }
+    :root .dashboard-panel__headline a {
+      text-decoration-color: #f0f01b;
+    }
+    :root .dashboard-columns {
+      border-top-color: #f0f00c;
+    }
+    :root .dashboard-columns::before {
+      background-color: #f0f00c;
+    }
+    :root .dashboard-columns .row > div {
+      border-color: #f0f00c;
+    }
+    :root .pagination > li > span,
+    :root .pagination > li > a {
+      background-color: #f0f003;
+      border-color: #f0f00c;
+      color: #f0f004;
+    }
+    :root .pagination > li > span:hover,
+    :root .pagination > li > a:hover,
+    :root .pagination > li > span:focus,
+    :root .pagination > li > a:focus {
+      background-color: #f0f002;
+    }
+    :root textarea {
+      background-color: #f0f003;
+      outline-color: #f0f00c;
+      border-color: none;
+      outline-style: solid;
+    }
+    :root textarea:focus {
+      outline-color: #f0f01b;
+    }
+    :root .jumbotron {
+      background-color: #f0f002;
+    }
+    :root .jumbotron > hr {
+      border-top-color: #f0f002;
+    }
+    :root .top-nav {
+      background: #f0f003;
+    }
+    :root .top-nav li a,
+    :root .top-nav li button.btn-link {
+      color: #f0f004;
+    }
+    :root .top-nav button:focus,
+    :root .top-nav a:focus,
+    :root .top-nav li a:focus {
+      background-color: #f0f003;
+    }
+    :root .err {
+      border-color: #f0f011;
+    }
+    :root .btn-success,
+    :root .open > .dropdown-toggle.btn-success,
+    :root .btn-success:focus,
+    :root .open > .dropdown-toggle.btn-success:focus,
+    :root .btn-success.focus,
+    :root .open > .dropdown-toggle.btn-success.focus,
+    :root .btn-success:active,
+    :root .open > .dropdown-toggle.btn-success:active,
+    :root .btn-success.active,
+    :root .open > .dropdown-toggle.btn-success.active,
+    :root .btn-success:hover,
+    :root .open > .dropdown-toggle.btn-success:hover {
+      color: #f0f002;
+      background-color: #f0f015;
+      border-color: #f0f00c;
+    }
+    :root .btn-success .badge {
+      color: #f0f015;
+      background-color: #f0f003;
+    }
+    :root tr.hoverable:hover {
+      background-color: #f0f002;
+    }
+    :root td.file_size,
+    :root td.file_timestamp {
+      color: #f0f006;
+    }
+    :root span[style="color: blue;"] {
+      color: #f0f004 !important;
+    }
+    :root [style="color: #888"],
+    :root [style="color: #444"] {
+      color: #f0f004 !important;
+    }
+    :root .btn-info,
+    :root .btn-primary,
+    :root .open > .dropdown-toggle.btn-info,
+    :root .open > .dropdown-toggle.btn-primary,
+    :root .btn-info:focus,
+    :root .btn-primary:focus,
+    :root .open > .dropdown-toggle.btn-info:focus,
+    :root .open > .dropdown-toggle.btn-primary:focus,
+    :root .btn-info.focus,
+    :root .btn-primary.focus,
+    :root .open > .dropdown-toggle.btn-info.focus,
+    :root .open > .dropdown-toggle.btn-primary.focus,
+    :root .btn-info:active,
+    :root .btn-primary:active,
+    :root .open > .dropdown-toggle.btn-info:active,
+    :root .open > .dropdown-toggle.btn-primary:active,
+    :root .btn-info.active,
+    :root .btn-primary.active,
+    :root .open > .dropdown-toggle.btn-info.active,
+    :root .open > .dropdown-toggle.btn-primary.active,
+    :root .btn-info:hover,
+    :root .btn-primary:hover,
+    :root .open > .dropdown-toggle.btn-info:hover,
+    :root .open > .dropdown-toggle.btn-primary:hover {
+      color: #f0f001;
+      background-color: #f0f01b;
+      border-color: #f0f00c;
+    }
+    :root .label-primary {
+      background-color: #f0f01b;
+      color: #f0f003;
+    }
+    :root .label-info {
+      background-color: #f0f01b;
+      color: #f0f003;
+    }
+    :root .label-danger {
+      background-color: #f0f011;
+      color: #f0f003;
+    }
+    :root .btn-danger {
+      background-color: #f0f011;
+      border-color: #f0f011;
+      color: #f0f003;
+    }
+    :root .btn-danger:hover,
+    :root .btn-danger:focus {
+      background-color: #dada0e;
+      color: #f0f002;
+    }
+    :root .btn-warning {
+      background-color: #f0f014;
+      border-color: #f0f014;
+      color: #f0f002;
+    }
+    :root .btn-warning:hover,
+    :root .btn-warning:focus {
+      background-color: #dcdc0e;
+      color: #f0f002;
+    }
+    :root .edit_value {
+      color: #f0f01b;
+    }
+    :root .btn-info .badge,
+    :root .btn-primary .badge {
+      color: #f0f01b;
+      background-color: #f0f003;
+    }
+    :root .alert-success,
+    :root .alert-info,
+    :root .alert-warning,
+    :root .alert-danger {
+      border-color: #f0f00c;
+    }
+    :root .alert-success,
+    :root .alert-info,
+    :root .alert-warning,
+    :root .alert-danger,
+    :root .alert-success small,
+    :root .alert-info small,
+    :root .alert-warning small,
+    :root .alert-danger small {
+      color: #f0f001;
+    }
+    :root .alert-success button,
+    :root .alert-info button,
+    :root .alert-warning button,
+    :root .alert-danger button {
+      background-color: unset;
+    }
+    :root .alert-success hr,
+    :root .alert-info hr,
+    :root .alert-warning hr,
+    :root .alert-danger hr {
+      border-top-color: #f0f00c;
+    }
+    :root .alert-success a,
+    :root .alert-info a,
+    :root .alert-warning a,
+    :root .alert-danger a {
+      color: #f0f001;
+      text-decoration: underline;
+    }
+    :root .alert-success .close,
+    :root .alert-info .close,
+    :root .alert-warning .close,
+    :root .alert-danger .close,
+    :root .alert-success .close:hover,
+    :root .alert-info .close:hover,
+    :root .alert-warning .close:hover,
+    :root .alert-danger .close:hover,
+    :root .alert-success .close:focus,
+    :root .alert-info .close:focus,
+    :root .alert-warning .close:focus,
+    :root .alert-danger .close:focus {
+      color: #f0f003;
+    }
+    :root .alert-success {
+      background-color: #f0f015;
+    }
+    :root .alert-info {
+      background-color: #f0f01b;
+    }
+    :root .alert-warning {
+      background-color: #f0f014;
+    }
+    :root .alert-danger {
+      background-color: #f0f011;
+    }
+    :root .close {
+      opacity: 100%;
+      text-shadow: none;
+    }
+    :root .close,
+    :root .close:hover,
+    :root .close:focus {
+      color: #f0f004;
+      background: none;
+    }
+    :root .form-control {
+      color: #f0f004;
+      background-color: #f0f003;
+      border-color: #f0f00c;
+      box-shadow: inset 0 1px 1px #f0f00c;
+    }
+    :root .form-control:focus {
+      border-color: #f0f00c;
+      box-shadow: inset 0 1px 1px #f0f00c;
+    }
+    :root .form-control[disabled],
+    :root .form-control[readonly] {
+      background-color: #f0f002;
+    }
+    :root .help-block {
+      color: #f0f004;
+    }
+    :root .pricing_table ul {
+      background-color: #f0f001;
+    }
+    :root .pricing_table ul li {
+      background: #f0f002;
+    }
+    :root .pricing_table ul li:first-child,
+    :root .account_type_header {
+      color: #f0f004;
+    }
+    :root .sub_and_dark_blue,
+    :root .scheduled_task:not(.enabled) {
+      color: #f0f006;
+    }
+    :root #id_initializing_mysql_spinner {
+      background-color: #f0f003 !important;
+      color: #f0f004;
+    }
+    :root .directory_listing_table i.pale {
+      color: #f0f006;
+      opacity: 100%;
+    }
+    :root .pricing_table ul.Free li {
+      background-color: #f0f002;
+    }
+    :root .col-md-12 div[style*="background-color"] {
+      background-color: #f0f002 !important;
+    }
+    :root .col-md-12 h1[style*="color"] {
+      color: #f0f004 !important;
+    }
+    :root .table {
+      background-color: #f0f001;
+    }
+    :root .table th,
+    :root .table td {
+      border-top-color: #f0f00c;
+    }
+    :root .table > thead th {
+      border-bottom-color: #f0f00c;
+    }
+    :root .table .success,
+    :root .table .info,
+    :root .table .warning,
+    :root .table .danger {
+      background-color: #f0f001;
+    }
+    :root .table .success,
+    :root .table .info,
+    :root .table .warning,
+    :root .table .danger,
+    :root .table .success td,
+    :root .table .info td,
+    :root .table .warning td,
+    :root .table .danger td,
+    :root .table .success th,
+    :root .table .info th,
+    :root .table .warning th,
+    :root .table .danger th,
+    :root .table .success:hover,
+    :root .table .info:hover,
+    :root .table .warning:hover,
+    :root .table .danger:hover,
+    :root .table .success td:hover,
+    :root .table .info td:hover,
+    :root .table .warning td:hover,
+    :root .table .danger td:hover,
+    :root .table .success th:hover,
+    :root .table .info th:hover,
+    :root .table .warning th:hover,
+    :root .table .danger th:hover {
+      background-color: #f0f001;
+    }
+    :root .table td.active,
+    :root .table th.active,
+    :root .table.active td,
+    :root .table.active th {
+      background-color: #f0f002;
+    }
+    :root .table-bordered {
+      border-color: #f0f00c;
+    }
+    :root .table-bordered th,
+    :root .table-bordered td {
+      border-color: #f0f00c;
+    }
+    :root .table-striped > tbody > tr:nth-of-type(odd),
+    :root .table-hover > tbody > tr:hover {
+      background-color: #f0f002;
+    }
+    :root .highlighted_feature_text {
+      color: #f0f015;
+    }
+    :root .text-muted {
+      color: #f0f006;
+    }
+    :root .modal-header {
+      border-bottom-color: #f0f00c;
+    }
+    :root .modal-content {
+      background-color: #f0f001;
+      border-color: #f0f00c;
+      box-shadow: 0 3px 9px #f0f003;
+    }
+    :root .modal-backdrop {
+      background-color: #f0f003;
+    }
+    :root .directories_listing_group h4,
+    :root .page-header,
+    :root .gsc-above-wrapper-area,
+    :root .nav-tabs,
+    :root .property_group_header {
+      border-bottom-color: #f0f00c;
+    }
+    :root .nav-tabs a:hover,
+    :root .nav-tabs a:focus {
+      border-color: #f0f00c !important;
+    }
+    :root .popover {
+      background-color: #f0f002;
+      border-color: #f0f00c;
+      box-shadow: none;
+    }
+    :root .popover.top > .arrow,
+    :root .popover.top > .arrow::after {
+      border-top-color: #f0f002;
+    }
+    :root .popover.right > .arrow,
+    :root .popover.right > .arrow::after {
+      border-right-color: #f0f002;
+    }
+    :root .popover.left > .arrow,
+    :root .popover.left > .arrow::after {
+      border-left-color: #f0f002;
+    }
+    :root .popover.bottom > .arrow,
+    :root .popover.bottom > .arrow::after {
+      border-bottom-color: #f0f002;
+    }
+    :root .popover-title {
+      background-color: #f0f002;
+      border-bottom-color: #f0f00c;
+    }
+    :root .modal-footer {
+      border-top-color: #f0f00c;
+    }
+    :root .unsorted {
+      color: #f0f006;
+    }
+    :root .sorted-up,
+    :root .sorted-down {
+      color: #f0f01b;
+    }
+    :root .ui-widget-content {
+      border-color: #f0f00c;
+      background: #f0f002;
+      color: #f0f004;
+    }
+    :root .ui-state-default {
+      border-color: #f0f00c;
+      background: #f0f00b;
+      color: #f0f004;
+    }
+    :root .bootstrap-switch {
+      border-color: #f0f00c;
+    }
+    :root .bootstrap-switch.bootstrap-switch-focused {
+      border-color: #f0f00c;
+      box-shadow: none;
+    }
+    :root .bootstrap-switch .bootstrap-switch-label {
+      color: #f0f004;
+      background-color: #f0f00c;
+    }
+    :root .bootstrap-switch .bootstrap-switch-handle-off,
+    :root .bootstrap-switch .bootstrap-switch-handle-on {
+      color: #f0f004;
+      background-color: #f0f003;
+    }
+    :root .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-success,
+    :root .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-success,
+    :root .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-warning,
+    :root .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-warning,
+    :root .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-danger,
+    :root .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-danger,
+    :root .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary,
+    :root .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary {
+      color: #f0f001;
+    }
+    :root .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-success,
+    :root .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-success {
+      background-color: #f0f015;
+    }
+    :root .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-warning,
+    :root .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-warning {
+      background-color: #f0f014;
+    }
+    :root .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-danger,
+    :root .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-danger {
+      background-color: #f0f011;
+    }
+    :root .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary,
+    :root .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary {
+      background-color: #f0f01b;
+    }
+    :root .tooltip-inner {
+      color: #f0f004;
+      background-color: #f0f003;
+    }
+    :root .tooltip.right .tooltip-arrow {
+      border-right-color: #f0f003;
+    }
+    :root .tooltip.left .tooltip-arrow {
+      border-left-color: #f0f003;
+    }
+    :root .tooltip.top .tooltip-arrow,
+    :root .tooltip.top-left .tooltip-arrow,
+    :root .tooltip.top-right .tooltip-arrow {
+      border-top-color: #f0f003;
+    }
+    :root .tooltip.bottom .tooltip-arrow,
+    :root .tooltip.bottom-left .tooltip-arrow,
+    :root .tooltip.bottom-right .tooltip-arrow {
+      border-bottom-color: #f0f003;
+    }
+    :root .has-error .help-block,
+    :root .has-error .control-label,
+    :root .has-error .radio,
+    :root .has-error .checkbox,
+    :root .has-error .radio-inline,
+    :root .has-error .checkbox-inline,
+    :root .has-error label {
+      color: #f0f011;
+    }
+    :root .success-stories-container {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root .success-stories-container h3 {
+      color: #f0f004;
+    }
+    :root .gsc-control-cse {
+      border-color: #f0f00c;
+      background-color: #f0f001;
+    }
+    :root .post_metadata {
+      color: #f0f006;
+    }
+    :root .ui-widget-header {
+      background-color: #f0f001;
+      border-color: #f0f00c;
+      color: #f0f004;
+    }
+    :root .fullscreen-main-navbar {
+      background-color: #f0f002;
+    }
+    :root .dropdown-menu {
+      background-color: #f0f002;
+      border-color: #f0f00c;
+      box-shadow: none;
+    }
+    :root .dropdown-menu > li > a {
+      color: #f0f004;
+    }
+    :root .dropdown-menu > li > a:hover,
+    :root .dropdown-menu > li > a:focus {
+      background-color: #f0f001;
+    }
+    :root .fullscreen-main-navbar button.btn-link:hover,
+    :root .fullscreen-main-navbar button.btn-link:focus {
+      background-color: #f0f001;
+    }
+    :root .navbar-default .btn-link,
+    :root .navbar-default .btn-link:hover,
+    :root .navbar-default .btn-link:focus {
+      color: #f0f004;
+    }
+    :root .btn.btn-default {
+      border-color: #f0f01b;
+      color: #f0f01b;
+      background-color: #f0f001;
+    }
+    :root .btn.btn-default:hover,
+    :root .btn.btn-default:focus {
+      background-color: #f0f00c;
+    }
+    :root .well {
+      background-color: #f0f002;
+      border-color: #f0f00c;
+    }
+    :root .icon-bar {
+      background-color: #f0f004;
+    }
+    :root .nav-tabs > li > a,
+    :root .nav-pills > li > a {
+      border-color: #f0f00c;
+    }
+    :root .nav-tabs > li > a,
+    :root .nav-pills > li > a,
+    :root .nav-tabs > li > a:hover,
+    :root .nav-pills > li > a:hover,
+    :root .nav-tabs > li > a:focus,
+    :root .nav-pills > li > a:focus {
+      color: #f0f01b;
+    }
+    :root .nav-tabs > li.active > a,
+    :root .nav-pills > li.active > a,
+    :root .nav-tabs > li.active > a:focus,
+    :root .nav-pills > li.active > a:focus {
+      background-color: #f0f002;
+    }
+    :root .nav-tabs > li.active > a:hover,
+    :root .nav-pills > li.active > a:hover,
+    :root .nav-tabs > li.active > a:focus,
+    :root .nav-pills > li.active > a:focus {
+      background-color: #f0f003;
+    }
+    :root .nav-tabs > li:not(.active) > a:hover,
+    :root .nav-pills > li:not(.active) > a:hover,
+    :root .nav-tabs > li:not(.active) > a:focus,
+    :root .nav-pills > li:not(.active) > a:focus {
+      background-color: #f0f002;
+    }
+    :root .ui-state-highlight {
+      border-color: #f0f01b;
+      background: #f0f01b;
+      color: #f0f001;
+    }
+    :root .primary-navbar a,
+    :root .primary-navbar form,
+    :root .primary-navbar .active {
+      background-color: #f0f001;
+    }
+    :root .primary-navbar form .btn-link {
+      color: #f0f01b;
+    }
+    :root .primary-navbar .active a {
+      color: #f0f004;
+    }
+    :root .post,
+    :root .topic {
+      background-color: #f0f002;
+      border-color: #f0f00c;
+    }
+    :root .editable-click,
+    :root .editable-click:hover,
+    :root .editable-click:focus {
+      border-bottom-color: #f0f006;
+    }
+    :root [style*="background: whitesmoke;"] {
+      background-color: #f0f002 !important;
+    }
+    :root #id_main_screenshot {
+      box-shadow: 12px 12px 29px #f0f00b;
+    }
+    :root #id_hosting_details,
+    :root #id_education_details,
+    :root #id_hosting_details h1,
+    :root #id_education_details h1,
+    :root #id_hosting_details h2,
+    :root #id_education_details h2,
+    :root #id_hosting_details h3,
+    :root #id_education_details h3 {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root #id_hosting_details .btn,
+    :root #id_education_details .btn {
+      color: #f0f003 !important;
+    }
+    :root #id_hosting_details a,
+    :root #id_education_details a {
+      color: #f0f01b;
+    }
+    :root #id_develop_anywhere_details {
+      background-color: #f0f001;
+    }
+    :root #id_support_details {
+      background-color: #f0f001;
+    }
+    :root #id_support_details a {
+      color: #f0f01b !important;
+    }
+    :root #id_company_info_strip {
+      color: #f0f004;
+    }
+    :root .console_table .info_tooltip {
+      color: #f0f01b;
+    }
+    :root #id_console_name {
+      color: #f0f004;
+    }
+    :root .beginner_pane,
+    :root .pricing_pane {
+      background-color: #f0f002;
+    }
+    :root #id_error_message,
+    :root #id_login_error {
+      color: #f0f011;
+    }
+    :root .post_preview {
+      background-color: #f0f001;
+    }
+    :root .post_preview h3 {
+      color: #f0f004;
+    }
+    :root .teacher-navbar {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root .nav > li > a:focus {
+      background: none;
+    }
+    :root .site-header {
+      background-color: #f0f003;
+    }
+    :root h1,
+    :root h2,
+    :root h3,
+    :root h4,
+    :root code {
+      color: #f0f004 !important;
+    }
+    :root button code {
+      background: none !important;
+      color: inherit !important;
+    }
+    :root p,
+    :root .tipue_search_content_text,
+    :root .tipue_search_content_bold,
+    :root #tipue_search_error,
+    :root #tipue_search_results_count,
+    :root .post-meta {
+      color: #f0f006;
+    }
+    :root .navbar-default .navbar-toggle:hover,
+    :root .navbar-default .navbar-toggle:focus {
+      background-color: #f0f002;
+    }
+    :root button:not(.btn-link, .btn, [data-toggle="dropdown"]),
+    :root .pagination a,
+    :root #tipue_search_foot_boxes li.current,
+    :root #tipue_search_foot_boxes li a {
+      background-color: #f0f01b;
+      color: #f0f003;
+      border-color: #f0f01b;
+    }
+    :root button:disabled,
+    :root .pagination .disabled {
+      background-color: #e3e30f;
+      border-color: #e3e30f;
+    }
+    :root #tipue_search_input,
+    :root form.navbar-search {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root svg {
+      fill: #f0f006;
+    }
+    :root .fa-at,
+    :root .fa-twitter,
+    :root .fa-rss {
+      filter: brightness(0) saturate(100%) invert(43%) sepia(43%) saturate(515%) hue-rotate(196deg) brightness(49%) contrast(68%);
+    }
+    :root .hide_search_icon path {
+      stroke: #f0f006;
+    }
+    :root footer,
+    :root footer .wrap {
+      background-color: #f0f003;
+      color: #f0f004;
+      border-color: #f0f003;
+    }
+    :root .pagination a,
+    :root #tipue_search_foot_boxes li.current,
+    :root #tipue_search_foot_boxes li a {
+      background-color: #f0f01b;
+      color: #f0f003;
+      border-color: #f0f01b;
+    }
+    :root img[src*="ssl.gstatic.com/ui/v1/disclosure/small-grey-disclosure-arrow-down.png"],
+    :root img[src*="/static/anywhere/images/staff.png"],
+    :root img[src*="/static/glyphicons/glyphicons_"],
+    :root img[src="/static/anywhere/images/PA-logo-snake-only.svg"],
+    :root .testimonial-content,
+    :root .quickstart_logo:not([src$="/django-logo-negative-small.png"]),
+    :root .ui-icon {
+      filter: brightness(0) saturate(100%) invert(43%) sepia(43%) saturate(515%) hue-rotate(196deg) brightness(49%) contrast(68%);
+    }
+    :root img[src*="/static/anywhere/images/cross.png"] {
+      filter: brightness(0) saturate(100%) invert(28%) sepia(41%) saturate(3765%) hue-rotate(329deg) brightness(79%) contrast(110%);
+    }
+    :root img[src*="/static/anywhere/images/tick.png"] {
+      filter: brightness(0) saturate(100%) invert(60%) sepia(63%) saturate(538%) hue-rotate(63deg) brightness(76%) contrast(90%);
+    }
+    :root .quickstart_logo[src$="/django-logo-negative-small.png"] {
+      content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22160%22%20height%3D%2273%22%20viewBox%3D%220%200%20260%2090%22%3E%3Cpath%20d%3D%22M19.587%2044.065c-.043%208.197%205.968%2013.084%2015.56%2010.862V33.202c-9.713-2.958-15.52%203.027-15.56%2010.863M35.441%201.789h13.21v62.533c-12.663%202.07-24.79%203.383-33.468-1.468-11.171-6.246-12.07-26.096-3.23-34.936%204.483-4.482%2013.506-7.638%2023.194-5.578V2.67c-.025-.417-.049-.832.294-.881m34.642%2013.798h-13.21V1.789h13.21zm158.536%2039.927c14.402%205.597%2015.995-25.778%201.468-22.9-9.022%201.789-8.732%2020.078-1.468%2022.9m.587-33.762c10.998-1.176%2019.296%203.678%2022.606%2011.156%205.648%2012.76-.31%2027.403-9.394%2031.708-4.709%202.23-9.639%202.443-14.093%202.055-13.767-1.2-22.449-15.23-17.615-30.827.757-2.44%201.607-3.934%202.056-4.697%202.992-5.088%208.044-8.497%2016.44-9.395M88.286%2050.524c-3.654%206.14%205.527%207.612%2011.45%205.871v-9.1c-4.551.635-9.73.339-11.45%203.229m23.193%2014.385c-10.913.628-27.498%204.346-33.469-2.935-3.507-4.279-3.13-12.438%200-16.441%204.046-5.173%2012.876-6.301%2020.845-7.046.723-1.782.235-4.68-.587-5.872-7.29-1.857-14.531%201.02-19.67%203.229V25.569c7.762-3.566%2025.74-7.321%2031.12.88%202.825%204.308%201.76%2011.821%201.76%2018.496zm46.386.588h-13.21V48.469c0-5.607.906-12.716-2.057-14.973-2.32-1.769-7.824-.881-11.155%200v32h-13.212V24.688c13.506-3.508%2037.883-7.27%2039.634%209.688.864%208.361-.64%2020.904%200%2031.12m19.67-14.092c2.224%203.597%208.244%204.946%2013.211%202.643a424%20424%200%200%201-.293-21.139c-11.418-3.016-18.222%209.916-12.918%2018.496m33.175-27.89c-1.176%203.522-2.896%206.498-4.403%209.688-1.362.305-2.542-.54-3.23%200-.301%2014.311%203.048%2033.712-2.642%2044.038-3.426%206.217-9.734%2010.205-19.377%2010.862-7.024.48-12.477-.668-17.615-2.642V73.13c6.027%203.518%2021.255%206.387%2025.542-.881%201.261-2.139%201.181-4.349%201.761-7.633-2.76.145-5.439%201.423-8.807%201.468-13.846.183-22.412-10.841-19.083-26.13%201.288-5.913%204.753-10.675%209.395-13.504%209.642-5.877%2024.463-5.43%2038.46-2.936%22%20fill%3D%22%23f0f004%22/%3E%3Cpath%20d%3D%22M70.083%2022.574c-.014%209.728-.012%2016.72-.013%2028.538-.561%2011.615-.43%2020.864-4.684%2026.421-.838%201.096-2.62%202.695-4.11%203.817-1.251.942-3.637%202.853-4.99%202.936-1.366.084-4.873-1.895-6.46-2.643-2.084-.981-4.01-2.285-6.165-2.935%205.025-3.114%209.796-5.449%2011.743-11.744%201.694-5.474%201.468-13.407%201.468-21.138%200-7.634.034-16.509.034-23.249z%22%20fill%3D%22%23f0f004%22/%3E%3C/svg%3E");
+    }
+    :root img[src$="/images/PA-logo.svg"] {
+      content: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20776.8%20166%22%3E%3Cpath%20d%3D%22M197.99%2041.73c-2.1-2.4-5.1-3.7-8.8-3.7s-6.5%201.2-8.7%203.7h.1q-3.3%203.75-3.3%209c0%203.7%201.2%206.8%203.2%209.2v-.1c2.1%202.5%205%203.7%208.7%203.7s6.7-1.2%208.9-3.7h-.1c2.2-2.5%203.2-5.5%203.2-9.1s-1.1-6.6-3.2-9m3%2021c-3.1%203.2-7%205-11.9%205-4.6%200-8.9-1.9-11.9-4.9%200%200-.1%200-.1-.1v21.7h-4.3v-50h4.4v4.3l.1-.1c3.1-3.2%207-4.8%2011.9-4.8s8.9%201.7%2011.9%204.8c3.1%203.2%204.6%207.2%204.6%2012.1s-1.7%209-4.7%2012m42.2%2017c-2.9%203.1-6.9%204.6-11.8%204.6q-5.85%200-11.4-3.6l1.5-4.3c2.2%201.6%204.4%202.6%206.4%203.1%201.3.3%202.6.5%203.6.5%203.7%200%206.5-1.2%208.5-3.5s3-5.1%203-8.9v-3.3c-2.3%202.2-5.3%203.2-9%203.2-4.3%200-7.7-1.6-10.1-4.4-2.2-2.7-3.2-6.2-3.2-10.5v-18.2h4.3v19.3c0%202.9.8%205.2%202.4%207h-.1c1.7%202%203.9%202.9%206.7%202.9s5-.9%206.6-2.8c1.6-1.7%202.4-4.1%202.4-7.1v-19.3h4.4v33.4c-.1%204.8-1.4%208.8-4.2%2011.9m33.8-12.8c-8.5%200-12.6-3.9-12.6-11.7v-30.2h4.3v9.4h9.1v4.4h-9.1v16.2c0%205.1%202.7%207.8%208.3%207.8h2.7v4.1zm39.5.2v-19.2c0-2.7-.8-5.2-2.2-7.1-1.6-1.7-3.7-2.8-6.3-2.8-3.1%200-5.5%201.2-7.3%203.2-1.6%202.2-2.4%205-2.4%208.1v17.7h-4.3v-47.6h4.3v18.5c2.4-2.4%206.1-4.2%209.7-4.2%204.1%200%207.5%201.5%209.7%204.4%202%202.6%203.2%206.1%203.2%2010.2v18.8zm42.9-25.5c-2.1-2.4-5.1-3.7-8.8-3.7-3.6%200-6.6%201.5-8.8%203.7-1.9%202.2-3.2%205.5-3.2%209%200%203.7%201.2%206.8%203.2%209.2%202.2%202.2%205.2%203.6%208.8%203.6%203.7%200%206.6-1.2%208.8-3.7h-.1c2.2-2.6%203.3-5.5%203.3-9.1s-1.1-6.6-3.2-9m3.2%2021.2c-3.1%203.2-7%204.8-11.9%204.8-4.8%200-8.8-1.7-11.8-4.8-3.2-3.2-4.6-7.3-4.6-12.1%200-4.9%201.7-8.8%204.6-12%203.1-3.3%207-4.9%2011.8-4.9%205%200%209%201.7%2012%204.9s4.5%207.1%204.5%2012c-.1%205-1.6%209-4.6%2012.1m40.5%204.3v-19.2c0-2.9-.8-5.2-2.4-7.1l.1.1c-1.7-1.9-4-2.9-6.7-2.9-2.8%200-4.9.9-6.6%202.6-1.6%201.7-2.5%203.8-2.5%206.6v20l-4.3-.1v-32.8h4.3v2.8c2.3-2.1%205.5-3.3%209.1-3.3%204.3%200%207.6%201.5%2010.1%204.5v-.1c2.2%202.5%203.3%206.1%203.3%2010.5v18.4z%22%20fill%3D%22%23f0f01b%22/%3E%3Cpath%20d%3D%22M449.89%2041.63c-2.1-2.4-5.1-3.7-8.8-3.7-3.6%200-6.6%201.5-8.8%203.7-1.9%202.2-3.2%205.5-3.2%209%200%203.7%201.2%206.8%203.2%209.2%202.2%202.2%205.2%203.6%208.8%203.6%203.7%200%206.6-1.2%208.8-3.7h-.1c2.2-2.6%203.3-5.5%203.3-9.1s-1.1-6.6-3.2-9m3.2%2025.5v-4.3l-.1.1c-3.1%203.2-5.2%204.8-10.4%204.8-4.8%200-10.4-1.7-13.4-4.8-3.2-3.2-4.6-7.3-4.6-12.1%200-4.9%201.7-8.8%204.6-12%203.1-3.3%207-4.9%2011.8-4.9%204.7%200%209%201.8%2011.9%204.8%200%200%20.1%200%20.1.1v-4.3h4.4v32.7h-4.3zm44.2%200v-19.2c0-2.9-.8-5.2-2.4-7.1l.1.1c-1.7-1.9-4-2.9-6.7-2.9-2.8%200-4.9.9-6.6%202.6-1.6%201.7-2.5%203.8-2.5%206.6v20l-4.3-.1v-32.8h4.3v2.8c2.3-2.1%205.5-3.3%209.1-3.3%204.3%200%207.6%201.5%2010.1%204.5v-.1c2.2%202.5%203.3%206.1%203.3%2010.5v18.4zm43.7%2012.6c-2.9%203.1-6.9%204.6-11.8%204.6q-5.85%200-11.4-3.6l1.5-4.3c2.2%201.6%204.4%202.6%206.4%203.1%201.3.3%202.6.5%203.6.5%203.7%200%206.5-1.2%208.5-3.5s3-5.1%203-8.9v-3.3c-2.3%202.2-5.3%203.2-9%203.2-4.3%200-7.7-1.6-10.1-4.4-2.2-2.7-3.2-6.2-3.2-10.5v-18.2h4.3v19.3c0%202.9.8%205.2%202.4%207h-.1c1.7%202%203.9%202.9%206.7%202.9s5-.9%206.6-2.8c1.6-1.7%202.4-4.1%202.4-7.1v-19.3h4.4v33.4c0%204.8-1.3%208.8-4.2%2011.9m53.5-15.6c-.9%202.4-2.2%203.7-4.1%203.7-2%200-3.3-1.2-4.2-3.7l-3.2-8.5c-1.1%202.8-2.1%205.8-3.2%208.5-.9%202.4-2.5%203.7-4.2%203.7-2%200-3.3-1.2-4.2-3.7l-11.1-29.7h4.6l10.4%2027.8v-.1c.2.7.4.9.3.9.1%200%20.1-.2.4-.9v.1c1.6-4.3%203.2-8.3%204.7-12.6-1.8-4.6-3.9-10.5-5.6-15.2h4.5l10.4%2027.8v-.1c.2.7.3.9.3.9s.1-.2.3-.8l10.4-27.8h4.7zm47.7%203v-19.2c0-2.7-.8-5.2-2.2-7.1-1.6-1.7-3.7-2.8-6.3-2.8-3.1%200-5.5%201.2-7.3%203.2-1.6%202.2-2.4%205-2.4%208.1v17.7h-4.3v-47.6h4.3v18.5c2.4-2.4%206.1-4.2%209.7-4.2%204.1%200%207.5%201.5%209.7%204.4%202%202.6%203.2%206.1%203.2%2010.2v18.8zm22.2-18.9h23.7c-.4-2.9-1.7-5.4-3.6-7.2-2.1-2-4.7-3.1-8.2-3.1-3.4%200-6.1%201.1-8.1%203.1-2.1%201.8-3.3%204.3-3.8%207.2m28.3%202.8c0%20.3-.1%201.3-.1%201.4h-28.2c.4%203.2%201.7%205.8%203.7%207.7%202.2%202.1%205%203.2%208.5%203.2%201.9%200%203.9-.3%205.9-.9v.1c2.2-.7%203.9-1.9%205.5-3.4l3.2%203.1c-3.5%203.5-8.2%205.4-14.4%205.4-4.9%200-9-1.7-12-4.7-3.2-3.1-4.8-7.1-4.8-12.2%200-4.9%201.7-8.8%204.6-12%203.1-3.3%207-4.9%2011.8-4.9s8.7%201.6%2011.8%204.7%204.7%206.9%204.7%2011.8c-.2.2-.1.3-.2.7m31.7-11.9-.7-.2c.1.1-.8-.1-1.4-.2-.4-.1-.7-.1-1.4-.2-2.4.2-4.9%201.3-6.6%203.7-1.8%202.3-2.7%205.7-2.7%2010.1v14.7h-4.4v-32.6h4.4v4.2c2.4-2.4%206.2-4.4%2010-4.4%200%200%20.5.1%201.1.2s2.1.3%203.1.5v4.2zm14.2%209.106h23.7c-.4-2.9-1.7-5.4-3.6-7.2-2.1-2-4.7-3.1-8.2-3.1-3.4%200-6.1%201.1-8.1%203.1-2.2%201.8-3.3%204.3-3.8%207.2m28.2%202.8c0%20.3-.1%201.3-.1%201.4h-28.2c.4%203.2%201.7%205.8%203.7%207.7%202.2%202.1%205%203.2%208.5%203.2%201.9%200%203.9-.3%205.9-.9v.1c2.2-.7%203.9-1.9%205.5-3.4l3.2%203.1c-3.5%203.5-8.2%205.4-14.4%205.4-4.9%200-9-1.7-12-4.7-3.2-3.1-4.8-7.1-4.8-12.2%200-4.9%201.7-8.8%204.6-12%203.1-3.3%207-4.9%2011.8-4.9s8.7%201.6%2011.8%204.7%204.7%206.9%204.7%2011.8c-.1.2%200%20.3-.2.7M69.69%20103.93c-.5-.6-1.2-1-1.8-1.4-.5-.3-.7-.6-.6-1.3%201-5.9%201.9-11.8%202.8-17.8.6-4%201.2-8%201.9-12.2.9.6%201.8%201.2%202.6%201.8.2.2.1.5.1.7-.2%201.4-.4%202.9-.7%204.3-.5%203.2-1%206.5-1.5%209.7l-1.5%209.6c-.1.8-.2%201.7-.4%202.5.4.1.6-.2.9-.3%207.6-4%2015.2-7.9%2022.8-11.9l.6-.3c.2-.1.4-.2.6%200%20.8.5%201.6%201.1%202.5%201.7-.4.2-.6.4-.9.5-8.8%204.6-17.5%209.2-26.3%2013.8-.3.1-.6.2-.7.5zm-26.7-54c-.2%201.6-.5%203-.7%204.4-.7%204.6-1.5%209.1-2.2%2013.7-.4%202.7-.9%205.4-1.3%208.1-.1.5-.3.7-.7.8-.8.2-1.7.5-2.5.8-.1-.2%200-.4%200-.6.8-5%201.6-9.9%202.4-14.9.8-4.8%201.5-9.7%202.3-14.5.1-.4.2-.7.7-.8.7-.2%201.3-.4%202-.6.4-.2.7-.1%201.1.2l5.1%205.1c5.4%205.4%2010.9%2010.8%2016.3%2016.1.1.1.2.3.4.4-1%20.4-2%20.6-2.9%201-.3.1-.5-.2-.6-.3-1.3-1.3-2.6-2.6-4-3.9-5-4.9-9.9-9.8-14.8-14.7-.2%200-.3-.1-.6-.3m26%2015.5c-.8-.7-1.5-1.4-2.2-2.1-.2-.2-.1-.5%200-.7.6-1.8%201.2-3.6%201.9-5.4l6.6-18.9c.1-.2.2-.5.2-.7-.4-.1-.7.1-1%20.2-8.2%202.6-16.3%205.1-24.5%207.7-1.3.4-.9.5-1.8-.4l-1.5-1.5c.2-.3.6-.3.9-.4%209.5-3%2019-6%2028.4-9%20.7-.2%201.1-.1%201.6.4.3.4.8.8%201.2%201.2.4.3.4.7.3%201.1-1.1%203-2.1%206-3.2%209-2.2%206.3-4.4%2012.6-6.6%2018.8%200%20.1-.1.4-.3.7m-1.7%206.3c-.2%201-.3%201.9-.4%202.9%200%20.4-.3.4-.6.5-2.2.7-4.3%201.4-6.4%202-6.2%202-12.5%203.9-18.7%205.9-.2.1-.5.2-.8.3.2.3.5.5.8.6%207%204.8%2014%209.7%2021%2014.5.6.4%201%20.8.7%201.6-.2.7-.2%201.4-.4%202.1-.3%200-.5-.2-.7-.3-8.2-5.6-16.4-11.3-24.6-16.9-.5-.4-.7-.7-.6-1.4.1-.6.3-1.1.3-1.7%200-.5.3-.7.7-.8%209.7-3.1%2019.5-6.1%2029.2-9.2.1%200%20.3%200%20.5-.1m-22.2-61.3c-.1%201-.3%202-.4%202.9%200%20.4-.4.4-.7.4-1.8.6-3.7%201.1-5.5%201.7-6.6%202-13.1%204-19.7%206-.2.1-.5.1-.7.4.3.2.5.4.8.6%207%204.9%2013.9%209.9%2020.9%2014.8.5.4.7.7.6%201.4-.2.8-.3%201.5-.4%202.3-.3-.1-.5-.3-.8-.4l-24.3-17.1c-.6-.4-.8-.8-.6-1.4.1-.6.2-1.1.3-1.7%200-.4.2-.6.7-.8l6.9-2.1c7.4-2.2%2014.7-4.5%2022.1-6.7.2-.2.5-.2.8-.3m30%2020.4c-.8.3-1.6.5-2.4.8-.5.2-.9.1-1.3-.3-2.7-2.8-5.5-5.5-8.3-8.3-3.3-3.3-6.6-6.6-10-9.9-.2-.2-.3-.5-.7-.6-.2%201-.4%202.1-.5%203.1-.8%204.7-1.5%209.4-2.3%2014-.5%203-1%205.9-1.4%208.9-.1.5-.2.7-.7.8-.8.2-1.7.5-2.5.8-.1-.6.1-1.1.2-1.5l3-18.6c.5-3.3%201.1-6.6%201.6-9.9.1-.4.2-.6.6-.7.7-.2%201.3-.4%202-.6.5-.2.8-.1%201.2.3l8%208c4.3%204.3%208.7%208.6%2013%2012.9.1.2.4.4.5.8m3.682%2042.481a20.4%2020.4%200%200%201-.712-4.16c-.635-5.257-.08-10.33%201.965-15.2%203.138-7.6%208.544-13.236%2015.913-16.83%203.631-1.752%207.526-2.983%2011.586-3.701.279.32.151.712.13%201.011l.174%201.817c.072.406-.142.591-.548.663-2.65.617-5.313%201.433-7.797%202.562-6.722%202.939-11.852%207.492-15.12%2014.08-2.209%204.357-3.135%209.003-2.878%2013.933.109%201.31.217%202.622.426%203.94.072.405.05.705-.462.87-.819.243-1.745.58-2.677%201.015m13.858%209.69c.07-.997.032-1.902.102-2.9.028-.399.142-.591.647-.656%202.636-.417%205.186-1.04%207.57-2.177%208.794-3.896%2014.57-10.51%2016.928-19.868.963-3.742%201.129-7.54.795-11.372.014-.2-.065-.506-.05-.705.027-.4-.337-.926-.017-1.204.22-.286.72-.25%201.125-.323.713-.15%201.325-.308%202.044-.558.309%201.324.41%202.735.42%204.039a40%2040%200%200%201-.294%208.5q-1.428%209.674-8.097%2016.876c-4.766%205.08-10.696%208.174-17.413%209.609-1.232.415-2.45.63-3.76.74m29.26-57.199c.3.021.414-.171.62-.257%204.08-2.422%208.244-4.637%2012.408-6.851.214-.186.52-.265.805-.044a77%2077%200%200%200%202.789%201.698%203%203%200%200%201-.733.45c-5.205%202.744-10.501%205.38-15.705%208.125-.42.27-.74.55-1.068.927-1.912%202.974-3.93%206.04-5.843%209.015-.34.577-.34.577-.919.236s-1.055-.675-1.633-1.016-.577-.341-.243-.82l3.71-5.754c.782-1.149%201.465-2.304%202.247-3.452.22-.285.348-.677.376-1.076.304-5.793.702-11.48%201.107-17.265l.056-.798c.777.355%201.44.902%202.217%201.257.87.462%201.035.975.965%201.972-.358%203.685-.623%207.475-.881%2011.166-.056.798-.211%201.59-.274%202.487%22%20fill%3D%22%23f0f004%22/%3E%3Cpath%20d%3D%22M100.632%2050.28c-.098%201.396-1.734%203.287-3.151%203.489-1.019.229-1.896-.133-2.545-.88s-.786-1.659-.424-2.536c.482-1.17%201.25-2.118%202.39-2.64.932-.436%201.83-.373%202.593.182.856.661%201.306%201.394%201.137%202.385m10.162%206.625c-.097%201.396-1.733%203.287-3.158%203.588-1.018.23-1.795-.125-2.545-.88q-.974-1.12-.43-2.435c.489-1.27%201.257-2.218%202.496-2.733%201.766-.879%203.77.564%203.637%202.46M11.89%2025.83c.9.5%201.6%201.1%202.5%201.7.3.2.2.5.1.8l-.9%205.7c-1.1%206.8-2.2%2013.5-3.3%2020.3%200%20.2-.2.5%200%20.8.3-.2.6-.3.9-.5l22.5-12.3c.6-.3%201-.3%201.5.1.6.5%201.2.9%201.9%201.4-.2.3-.5.4-.7.5-8.7%204.8-17.4%209.5-26%2014.3-.6.3-1%20.4-1.5-.1-.4-.4-.9-.7-1.4-1-.4-.2-.5-.5-.4-.9.4-2.4.8-4.7%201.1-7.1%201.2-7.6%202.5-15.2%203.7-22.8q-.15-.45%200-.9m481.48%2085.08c-.19-.28-.37-.56-.84-.56h-.47c-.47%200-.75.28-.84.56l-15.84%2034.37c-.28.65.09%201.3.84%201.3h4.47c.84%200%201.3-.47%201.49-1.02l2.52-5.5h15.28l2.52%205.5c.37.75.75%201.02%201.49%201.02h4.47c.75%200%201.21-.65.84-1.3zm-6.33%2023.47%205.03-11.18h.19l5.12%2011.18zm54.87-23.47h-4.66c-.56%200-.93.47-.93.93v21.05h-.09l-21.24-22.54h-1.3c-.47%200-.93.37-.93.93v34.28c0%20.47.47.93.93.93h4.66c.56%200%20.93-.47.93-.93v-21.89h.09l21.33%2023.38h1.21c.47%200%20.93-.37.93-.93v-34.28c.09-.47-.37-.93-.93-.93m22.91%200c-.19-.28-.37-.56-.84-.56h-.47c-.47%200-.75.28-.84.56l-15.84%2034.37c-.28.65.09%201.3.84%201.3h4.47c.84%200%201.3-.47%201.49-1.02l2.52-5.5h15.28l2.52%205.5c.37.75.75%201.02%201.49%201.02h4.47c.75%200%201.21-.65.84-1.3zm-6.33%2023.47%205.03-11.18h.19l5.12%2011.18zm49.93%203.07c-.28-.28-.84-.37-1.3%200-2.14%201.77-4.75%202.89-7.82%202.89-6.52%200-11.46-5.4-11.46-11.74%200-6.43%204.84-11.92%2011.36-11.92%202.89%200%205.68%201.12%207.82%202.98a.9.9%200%200%200%201.3%200l3.07-3.17a.947.947%200%200%200-.09-1.4c-3.45-3.07-7.17-4.75-12.3-4.75-10.15%200-18.44%208.2-18.44%2018.44%200%2010.15%208.2%2018.26%2018.44%2018.26%204.56%200%208.94-1.58%2012.39-4.94.37-.37.47-1.02.09-1.4zm24.12-27.1c-10.15%200-18.26%208.2-18.26%2018.44%200%2010.15%208.1%2018.26%2018.26%2018.26%2010.15%200%2018.35-8.1%2018.35-18.26%200-10.25-8.19-18.44-18.35-18.44m0%2030.09c-6.43%200-11.64-5.22-11.64-11.64%200-6.43%205.22-11.74%2011.64-11.74s11.74%205.31%2011.74%2011.74c-.09%206.42-5.31%2011.64-11.74%2011.64m53.1-29.53h-4.66c-.56%200-.93.47-.93.93v21.05h-.09l-21.24-22.54h-1.3c-.47%200-.93.37-.93.93v34.28c0%20.47.47.93.93.93h4.66c.56%200%20.93-.47.93-.93v-21.89h.09l21.33%2023.38h1.21c.47%200%20.93-.37.93-.93v-34.28c0-.47-.47-.93-.93-.93m20.4%200h-12.11c-.47%200-.93.47-.93.93v33.72c0%20.47.37.93.93.93h12.11c9.87%200%2017.89-8.01%2017.89-17.89-.01-9.68-8.02-17.69-17.89-17.69m-.56%2029.43h-5.87v-23.29h5.78c6.61%200%2011.46%205.03%2011.46%2011.64.09%206.62-4.76%2011.65-11.37%2011.65m52.54%205.03-15.74-34.28c-.19-.28-.37-.56-.84-.56h-.47c-.47%200-.75.28-.84.56l-15.84%2034.28c-.28.65.09%201.3.84%201.3h4.47c.84%200%201.3-.47%201.49-1.02l2.52-5.5h15.28l2.52%205.5c.37.75.75%201.02%201.49%201.02h4.47c.55-.09.93-.65.65-1.3m-21.99-10.99%205.03-11.18h.19l5.12%2011.18zm28.32%2011.64h.28c.09%200%20.19-.09.19-.19v-.93h.56l.37%201.02c0%20.09.09.09.19.09h.37c.09%200%20.19-.09.19-.19-.19-.28-.28-.65-.47-.93.28-.09.65-.37.65-.93%200-.65-.47-1.02-1.02-1.02h-1.21c-.09%200-.19.09-.19.19v2.7c0%20.19%200%20.19.09.19m.47-2.51h.75c.28%200%20.37.19.37.37s-.19.37-.37.37h-.75z%22%20fill%3D%22%23f0f004%22/%3E%3Cpath%20d%3D%22M765.28%20147.51c1.68%200%202.98-1.3%202.98-2.98s-1.4-2.98-2.98-2.98c-1.68%200-2.98%201.4-2.98%202.98s1.31%202.98%202.98%202.98m0-5.49c1.3%200%202.42%201.12%202.42%202.42s-1.12%202.42-2.42%202.42-2.42-1.12-2.42-2.42%201.12-2.42%202.42-2.42m-360.96-30.4h3.37v12.1c0%201.14-.1%202.03-.1%202.03h.1s2.08-4.81%208.48-4.81c6.69%200%2010.86%205.36%2010.86%2013.09%200%207.88-4.71%2013.04-11.26%2013.04-5.95%200-8.18-4.86-8.18-4.86h-.1s.1.84.1%202.03v2.23h-3.27zm11.21%2032.48c4.41%200%208.03-3.72%208.03-10.07%200-6.1-3.22-10.02-7.88-10.02-4.17%200-8.08%202.98-8.08%2010.07%200%205.01%202.58%2010.02%207.93%2010.02m15.58%208.63s1.39%201.14%202.98%201.14c2.18%200%203.72-1.79%204.71-4.07l1.54-3.52-10.41-24.75h3.72l7.34%2018.2c.5%201.24.89%202.63.89%202.63h.1s.35-1.39.84-2.63l7.19-18.2h3.67l-12.3%2030.15c-1.29%203.17-3.87%205.21-7.19%205.21-2.58%200-4.36-1.49-4.36-1.49z%22%20fill%3D%22%23f0f004%22/%3E%3C/svg%3E");
+    }
+  }
+  @media (prefers-color-scheme: light) and (min-width: 768px) {
+    :root .modal-content {
+      box-shadow: 0 5px 15px #f0f003;
+    }
+  }
+  @media (prefers-color-scheme: light) and screen and (max-width: 767px) {
+    :root .table-responsive {
+      border-color: #f0f00c;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ctp-rosewater: #f0f00d;
+      --ctp-flamingo: #f0f00e;
+      --ctp-pink: #f0f00f;
+      --ctp-mauve: #f0f010;
+      --ctp-red: #f0f011;
+      --ctp-maroon: #f0f012;
+      --ctp-peach: #f0f013;
+      --ctp-yellow: #f0f014;
+      --ctp-green: #f0f015;
+      --ctp-teal: #f0f016;
+      --ctp-sky: #f0f017;
+      --ctp-sapphire: #f0f018;
+      --ctp-blue: #f0f019;
+      --ctp-lavender: #f0f01a;
+      --ctp-text: #f0f004;
+      --ctp-subtext1: #f0f005;
+      --ctp-subtext0: #f0f006;
+      --ctp-overlay2: #f0f007;
+      --ctp-overlay1: #f0f008;
+      --ctp-overlay0: #f0f009;
+      --ctp-surface2: #f0f00a;
+      --ctp-surface1: #f0f00b;
+      --ctp-surface0: #f0f00c;
+      --ctp-base: #f0f001;
+      --ctp-mantle: #f0f002;
+      --ctp-crust: #f0f003;
+      color-scheme: dark;
+      /* Ace file editor */
+      /* Console */
+      /* $ prompt character */
+      /* ANSI colors */
+      /* blog */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006;
+    }
+    :root .ace_editor {
+      background-color: #f0f003;
+      color: #f0f004;
+    }
+    :root .ace_editor .ace_gutter,
+    :root .ace_editor .ace_gutter-cell {
+      background: #f0f002;
+      color: #f0f008;
+    }
+    :root .ace_editor .ace_print-margin {
+      background: #f0f002;
+    }
+    :root .ace_editor .ace_marker-layer .ace_active-line {
+      background-color: rgba(240, 240, 20, 0.2);
+    }
+    :root .ace_editor .ace_marker-layer .highlight-line-error {
+      background-color: rgba(240, 240, 17, 0.2);
+    }
+    :root .ace_editor .ace_marker-layer .ace_bracket {
+      border-color: #f0f008;
+    }
+    :root .ace_editor .ace_doctype {
+      color: #f0f010;
+    }
+    :root .ace_editor .ace_cursor,
+    :root .ace_editor .ace_xml.ace_text {
+      color: #f0f004;
+    }
+    :root .ace_editor .ace_heading.ace_1,
+    :root .ace_editor .ace_heading.ace_1 + .ace_heading {
+      color: #f0f011;
+    }
+    :root .ace_editor .ace_heading.ace_2,
+    :root .ace_editor .ace_heading.ace_2 + .ace_heading {
+      color: #f0f013;
+    }
+    :root .ace_editor .ace_heading.ace_3,
+    :root .ace_editor .ace_heading.ace_3 + .ace_heading {
+      color: #f0f014;
+    }
+    :root .ace_editor .ace_heading.ace_4,
+    :root .ace_editor .ace_heading.ace_4 + .ace_heading {
+      color: #f0f015;
+    }
+    :root .ace_editor .ace_heading.ace_5,
+    :root .ace_editor .ace_heading.ace_5 + .ace_heading {
+      color: #f0f019;
+    }
+    :root .ace_editor .ace_heading.ace_6,
+    :root .ace_editor .ace_heading.ace_6 + .ace_heading {
+      color: #f0f010;
+    }
+    :root .ace_editor .ace_list {
+      color: #f0f004;
+    }
+    :root .ace_editor .ace_list.ace_markup {
+      color: #f0f017;
+    }
+    :root .ace_editor .ace_marker-layer .ace_selection {
+      background: rgba(240, 240, 27, 0.3);
+    }
+    :root .ace_editor .ace_fold {
+      background-color: #f0f00c;
+      border-color: #f0f00b;
+    }
+    :root .ace_editor .ace_constant.ace_language,
+    :root .ace_editor .ace_keyword,
+    :root .ace_editor .ace_meta {
+      color: #f0f010;
+    }
+    :root .ace_editor .ace_xml,
+    :root .ace_editor .ace_support.ace_class,
+    :root .ace_editor .ace_support.ace_type {
+      color: #f0f014;
+    }
+    :root .ace_editor .ace_line .ace_identifier:not(:first-of-type),
+    :root .ace_editor .ace_entity.ace_name.ace_function,
+    :root .ace_editor .ace_constant {
+      color: #f0f019;
+    }
+    :root .ace_editor .ace_paren,
+    :root .ace_editor .ace_variable.ace_language {
+      color: #f0f011;
+    }
+    :root .ace_editor .ace_constant.ace_numeric {
+      color: #f0f013;
+    }
+    :root .ace_editor .ace_entity.ace_other.ace_attribute-name,
+    :root .ace_editor .ace_support.ace_constant,
+    :root .ace_editor .ace_support.ace_function {
+      color: #f0f016;
+    }
+    :root .ace_editor .ace_entity.ace_name.ace_tag,
+    :root .ace_editor .ace_variable {
+      color: #f0f019;
+    }
+    :root .ace_editor .ace_storage {
+      color: #f0f013;
+    }
+    :root .ace_editor .ace_string {
+      color: #f0f015;
+    }
+    :root .ace_editor .ace_comment {
+      color: #f0f007;
+    }
+    :root .ace_editor .ace_indent-guide {
+      background-image: url("data:image/svg+xml;utf8,%3Csvg%20width%3D%221%22%20height%3D%222%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20stroke%3D%22%23f0f00c%22%20d%3D%22M0%200v2%22/%3E%3C/svg%3E");
+    }
+    :root .ace_tooltip {
+      background-color: #f0f003;
+      color: #f0f004;
+      border-color: #f0f00c;
+    }
+    :root #ace_settingsmenu {
+      background-color: #f0f002;
+      box-shadow: none;
+      color: #f0f006;
+    }
+    :root #kbshortcutmenu {
+      background-color: #f0f002;
+      box-shadow: none;
+    }
+    :root #kbshortcutmenu .ace_optionsMenuEntry:hover,
+    :root #kbshortcutmenu .ace_optionsMenuEntry:focus {
+      background-color: #f0f001;
+    }
+    :root #kbshortcutmenu,
+    :root #kbshortcutmenu .ace_optionsMenuCommand {
+      color: #f0f006;
+    }
+    :root #kbshortcutmenu .ace_optionsMenuKey {
+      color: #f0f01b;
+    }
+    :root x-screen {
+      background-color: #f0f001 !important;
+      color: #f0f004 !important;
+    }
+    :root .cursor-node {
+      border-color: #f0f01b !important;
+    }
+    :root .cursor-node[focus="true"] {
+      background-color: #f0f01b !important;
+    }
+    :root [style*="color: rgb(0, 186, 19);"] {
+      color: #f0f015 !important;
+    }
+    :root x-row span {
+      /* Black & Bright Black */
+      /* Red and Bright Red */
+      /* Dim Red */
+      /* Green and Bright Green */
+      /* Dim Green */
+      /* Yellow and Bright Yellow */
+      /* Dim Yellow */
+      /* Blue and Bright Blue */
+      /* Dim Blue */
+      /* Pink and Bright Pink */
+      /* Dim Pink */
+      /* Teal and Bright Teal */
+      /* Dim Teal */
+      /* White */
+      /* Bright White */
+      /* Dim White */
+    }
+    :root x-row span[style^="color: rgb(0, 0, 0);"] {
+      color: #f0f00b !important;
+    }
+    :root x-row span[style*="background-color: rgb(0, 0, 0);"] {
+      background-color: #f0f00b !important;
+    }
+    :root x-row span[style^="color: rgb(85, 87, 83);"] {
+      color: #f0f00a !important;
+    }
+    :root x-row span[style*="background-color: rgb(85, 87, 83);"] {
+      background-color: #f0f00a !important;
+    }
+    :root x-row span[style^="color: rgb(204, 0, 0);"],
+    :root x-row span[style^="color: rgb(239, 41, 41);"] {
+      color: #f0f011 !important;
+    }
+    :root x-row span[style*="background-color: rgb(204, 0, 0);"],
+    :root x-row span[style*="background-color: rgb(239, 41, 41);"] {
+      background-color: #f0f011 !important;
+    }
+    :root x-row span[style^="color: rgb(136, 0, 0);"] {
+      color: rgba(240, 240, 17, 0.8) !important;
+    }
+    :root x-row span[style^="color: rgb(78, 154, 6);"],
+    :root x-row span[style^="color: rgb(0, 186, 19);"] {
+      color: #f0f015 !important;
+    }
+    :root x-row span[style*="background-color: rgb(78, 154, 6);"],
+    :root x-row span[style*="background-color: rgb(0, 186, 19);"] {
+      background-color: #f0f015 !important;
+    }
+    :root x-row span[style^="color: rgb(52, 103, 4);"] {
+      color: rgba(240, 240, 21, 0.8) !important;
+    }
+    :root x-row span[style^="color: rgb(196, 160, 0);"],
+    :root x-row span[style^="color: rgb(252, 233, 79);"] {
+      color: #f0f014 !important;
+    }
+    :root x-row span[style*="background-color: rgb(196, 160, 0);"],
+    :root x-row span[style*="background-color: rgb(252, 233, 79);"] {
+      background-color: #f0f014 !important;
+    }
+    :root x-row span[style^="color: rgb(131, 107, 0);"] {
+      color: rgba(240, 240, 20, 0.8) !important;
+    }
+    :root x-row span[style^="color: rgb(52, 101, 164);"],
+    :root x-row span[style^="color: rgb(114, 159, 207);"] {
+      color: #f0f019 !important;
+    }
+    :root x-row span[style*="background-color: rgb(52, 101, 164);"],
+    :root x-row span[style*="background-color: rgb(114, 159, 207);"] {
+      background-color: #f0f019 !important;
+    }
+    :root x-row span[style^="color: rgb(35, 67, 109);"] {
+      color: rgba(240, 240, 25, 0.8) !important;
+    }
+    :root x-row span[style^="color: rgb(117, 80, 123);"],
+    :root x-row span[style^="color: rgb(242, 0, 203);"] {
+      color: #f0f00f !important;
+    }
+    :root x-row span[style*="background-color: rgb(117, 80, 123);"],
+    :root x-row span[style*="background-color: rgb(242, 0, 203);"] {
+      background-color: #f0f00f !important;
+    }
+    :root x-row span[style^="color: rgb(78, 53, 82);"] {
+      color: rgba(240, 240, 15, 0.8) !important;
+    }
+    :root x-row span[style^="color: rgb(6, 152, 154);"],
+    :root x-row span[style^="color: rgb(0, 181, 189);"] {
+      color: #f0f016 !important;
+    }
+    :root x-row span[style*="background-color: rgb(6, 152, 154);"],
+    :root x-row span[style*="background-color: rgb(0, 181, 189);"] {
+      background-color: #f0f016 !important;
+    }
+    :root x-row span[style^="color: rgb(4, 101, 103);"] {
+      color: rgba(240, 240, 22, 0.8) !important;
+    }
+    :root x-row span[style^="color: rgb(211, 215, 207);"] {
+      color: #f0f005 !important;
+    }
+    :root x-row span[style*="background-color: rgb(211, 215, 207);"] {
+      background-color: #f0f005 !important;
+    }
+    :root x-row span[style^="color: rgb(238, 238, 236);"] {
+      color: #f0f006 !important;
+    }
+    :root x-row span[style*="background-color: rgb(238, 238, 236);"] {
+      background-color: #f0f006 !important;
+    }
+    :root x-row span[style^="color: rgb(141, 143, 138);"] {
+      color: rgba(240, 240, 5, 0.8) !important;
+    }
+    :root #terminal div[style*="color: rgb(16, 16, 16);"] {
+      color: #f0f004 !important;
+    }
+    :root #terminal div[style*="background-color: rgb(240, 240, 240);"] {
+      background-color: #f0f003 !important;
+    }
+    :root body,
+    :root .dark {
+      background-color: #f0f001;
+      color: #f0f004;
+    }
+    :root a,
+    :root a:hover,
+    :root a:focus {
+      color: #f0f01b;
+    }
+    :root hr,
+    :root pre {
+      border-color: #f0f00c;
+    }
+    :root small,
+    :root .small {
+      color: #f0f006;
+    }
+    :root input,
+    :root button:not(.close, [class*="btn"], [data-toggle="dropdown"]) {
+      background-color: #f0f003;
+      border-color: #f0f00c;
+    }
+    :root input:hover,
+    :root button:not(.close, [class*="btn"], [data-toggle="dropdown"]):hover,
+    :root input:focus,
+    :root button:not(.close, [class*="btn"], [data-toggle="dropdown"]):focus {
+      background-color: #f0f002;
+    }
+    :root input i.glyphicon,
+    :root button:not(.close, [class*="btn"], [data-toggle="dropdown"]) i.glyphicon {
+      pointer-events: none;
+    }
+    :root blockquote {
+      border-color: #f0f00c;
+    }
+    :root blockquote footer,
+    :root blockquote small,
+    :root blockquote .small {
+      color: #f0f006;
+    }
+    :root .footer p {
+      color: #f0f004;
+    }
+    :root .gsc-modal-background-image {
+      background-color: #f0f001;
+    }
+    :root .gsc-results-wrapper-overlay {
+      background-color: #f0f002;
+      color: #f0f006;
+    }
+    :root input.gsc-input,
+    :root .gsc-input-box,
+    :root .gsc-input-box-hover,
+    :root .gsc-input-box-focus {
+      border-color: #f0f00c;
+    }
+    :root .gsc-completion-container {
+      background-color: #f0f003;
+      border-color: #f0f00c;
+    }
+    :root .gsc-completion-selected {
+      background-color: #f0f002;
+    }
+    :root input.gsc-input {
+      background-color: #f0f002;
+    }
+    :root .gsc-input-box,
+    :root .gsc-results {
+      background-color: #f0f002;
+    }
+    :root .gsc-option-menu-item-highlighted {
+      background-color: #f0f001;
+      color: #f0f004;
+    }
+    :root .gsc-selected-option-container {
+      background-color: #f0f003;
+      color: #f0f004;
+      border-color: #f0f00c;
+    }
+    :root .gsc-webResult.gsc-result {
+      border-color: #f0f00c;
+      background-color: #f0f002;
+    }
+    :root .gsc-search-button-v2,
+    :root .gsc-search-button-v2:hover,
+    :root .gsc-search-button-v2:focus {
+      border-color: #f0f00c;
+      background-color: #f0f003;
+      color: #f0f004;
+    }
+    :root .gsc-search-button-v2 svg {
+      fill: #f0f004;
+    }
+    :root .gsc-result-info,
+    :root .gsc-orderby-label,
+    :root .gsc-option-menu-item {
+      color: #f0f006;
+    }
+    :root .gcsc-find-more-on-google {
+      color: #f0f01b;
+    }
+    :root .gcsc-find-more-on-google-magnifier {
+      fill: #f0f01b;
+    }
+    :root .gsc-results .gsc-cursor-box .gsc-cursor-page {
+      color: #f0f004;
+      background-color: unset;
+    }
+    :root .gsc-control-cse .gsc-option-menu {
+      background-color: #f0f003;
+    }
+    :root .gs-webResult div.gs-visibleUrl {
+      color: #f0f006;
+    }
+    :root .gs-webResult.gs-result a.gs-title,
+    :root .gs-webResult.gs-result a.gs-title:hover,
+    :root .gs-webResult.gs-result a.gs-title:focus,
+    :root .gs-webResult.gs-result a.gs-title b {
+      color: #f0f01b;
+    }
+    :root .gs-webResult .gs-snippet {
+      color: #f0f004;
+    }
+    :root .badge {
+      background-color: #f0f003;
+    }
+    :root .badge:hover,
+    :root .badge:focus {
+      background-color: #f0f002;
+    }
+    :root .dashboard-panel__headline a {
+      text-decoration-color: #f0f01b;
+    }
+    :root .dashboard-columns {
+      border-top-color: #f0f00c;
+    }
+    :root .dashboard-columns::before {
+      background-color: #f0f00c;
+    }
+    :root .dashboard-columns .row > div {
+      border-color: #f0f00c;
+    }
+    :root .pagination > li > span,
+    :root .pagination > li > a {
+      background-color: #f0f003;
+      border-color: #f0f00c;
+      color: #f0f004;
+    }
+    :root .pagination > li > span:hover,
+    :root .pagination > li > a:hover,
+    :root .pagination > li > span:focus,
+    :root .pagination > li > a:focus {
+      background-color: #f0f002;
+    }
+    :root textarea {
+      background-color: #f0f003;
+      outline-color: #f0f00c;
+      border-color: none;
+      outline-style: solid;
+    }
+    :root textarea:focus {
+      outline-color: #f0f01b;
+    }
+    :root .jumbotron {
+      background-color: #f0f002;
+    }
+    :root .jumbotron > hr {
+      border-top-color: #f0f002;
+    }
+    :root .top-nav {
+      background: #f0f003;
+    }
+    :root .top-nav li a,
+    :root .top-nav li button.btn-link {
+      color: #f0f004;
+    }
+    :root .top-nav button:focus,
+    :root .top-nav a:focus,
+    :root .top-nav li a:focus {
+      background-color: #f0f003;
+    }
+    :root .err {
+      border-color: #f0f011;
+    }
+    :root .btn-success,
+    :root .open > .dropdown-toggle.btn-success,
+    :root .btn-success:focus,
+    :root .open > .dropdown-toggle.btn-success:focus,
+    :root .btn-success.focus,
+    :root .open > .dropdown-toggle.btn-success.focus,
+    :root .btn-success:active,
+    :root .open > .dropdown-toggle.btn-success:active,
+    :root .btn-success.active,
+    :root .open > .dropdown-toggle.btn-success.active,
+    :root .btn-success:hover,
+    :root .open > .dropdown-toggle.btn-success:hover {
+      color: #f0f002;
+      background-color: #f0f015;
+      border-color: #f0f00c;
+    }
+    :root .btn-success .badge {
+      color: #f0f015;
+      background-color: #f0f003;
+    }
+    :root tr.hoverable:hover {
+      background-color: #f0f002;
+    }
+    :root td.file_size,
+    :root td.file_timestamp {
+      color: #f0f006;
+    }
+    :root span[style="color: blue;"] {
+      color: #f0f004 !important;
+    }
+    :root [style="color: #888"],
+    :root [style="color: #444"] {
+      color: #f0f004 !important;
+    }
+    :root .btn-info,
+    :root .btn-primary,
+    :root .open > .dropdown-toggle.btn-info,
+    :root .open > .dropdown-toggle.btn-primary,
+    :root .btn-info:focus,
+    :root .btn-primary:focus,
+    :root .open > .dropdown-toggle.btn-info:focus,
+    :root .open > .dropdown-toggle.btn-primary:focus,
+    :root .btn-info.focus,
+    :root .btn-primary.focus,
+    :root .open > .dropdown-toggle.btn-info.focus,
+    :root .open > .dropdown-toggle.btn-primary.focus,
+    :root .btn-info:active,
+    :root .btn-primary:active,
+    :root .open > .dropdown-toggle.btn-info:active,
+    :root .open > .dropdown-toggle.btn-primary:active,
+    :root .btn-info.active,
+    :root .btn-primary.active,
+    :root .open > .dropdown-toggle.btn-info.active,
+    :root .open > .dropdown-toggle.btn-primary.active,
+    :root .btn-info:hover,
+    :root .btn-primary:hover,
+    :root .open > .dropdown-toggle.btn-info:hover,
+    :root .open > .dropdown-toggle.btn-primary:hover {
+      color: #f0f001;
+      background-color: #f0f01b;
+      border-color: #f0f00c;
+    }
+    :root .label-primary {
+      background-color: #f0f01b;
+      color: #f0f003;
+    }
+    :root .label-info {
+      background-color: #f0f01b;
+      color: #f0f003;
+    }
+    :root .label-danger {
+      background-color: #f0f011;
+      color: #f0f003;
+    }
+    :root .btn-danger {
+      background-color: #f0f011;
+      border-color: #f0f011;
+      color: #f0f003;
+    }
+    :root .btn-danger:hover,
+    :root .btn-danger:focus {
+      background-color: #dada0e;
+      color: #f0f002;
+    }
+    :root .btn-warning {
+      background-color: #f0f014;
+      border-color: #f0f014;
+      color: #f0f002;
+    }
+    :root .btn-warning:hover,
+    :root .btn-warning:focus {
+      background-color: #dcdc0e;
+      color: #f0f002;
+    }
+    :root .edit_value {
+      color: #f0f01b;
+    }
+    :root .btn-info .badge,
+    :root .btn-primary .badge {
+      color: #f0f01b;
+      background-color: #f0f003;
+    }
+    :root .alert-success,
+    :root .alert-info,
+    :root .alert-warning,
+    :root .alert-danger {
+      border-color: #f0f00c;
+    }
+    :root .alert-success,
+    :root .alert-info,
+    :root .alert-warning,
+    :root .alert-danger,
+    :root .alert-success small,
+    :root .alert-info small,
+    :root .alert-warning small,
+    :root .alert-danger small {
+      color: #f0f001;
+    }
+    :root .alert-success button,
+    :root .alert-info button,
+    :root .alert-warning button,
+    :root .alert-danger button {
+      background-color: unset;
+    }
+    :root .alert-success hr,
+    :root .alert-info hr,
+    :root .alert-warning hr,
+    :root .alert-danger hr {
+      border-top-color: #f0f00c;
+    }
+    :root .alert-success a,
+    :root .alert-info a,
+    :root .alert-warning a,
+    :root .alert-danger a {
+      color: #f0f001;
+      text-decoration: underline;
+    }
+    :root .alert-success .close,
+    :root .alert-info .close,
+    :root .alert-warning .close,
+    :root .alert-danger .close,
+    :root .alert-success .close:hover,
+    :root .alert-info .close:hover,
+    :root .alert-warning .close:hover,
+    :root .alert-danger .close:hover,
+    :root .alert-success .close:focus,
+    :root .alert-info .close:focus,
+    :root .alert-warning .close:focus,
+    :root .alert-danger .close:focus {
+      color: #f0f003;
+    }
+    :root .alert-success {
+      background-color: #f0f015;
+    }
+    :root .alert-info {
+      background-color: #f0f01b;
+    }
+    :root .alert-warning {
+      background-color: #f0f014;
+    }
+    :root .alert-danger {
+      background-color: #f0f011;
+    }
+    :root .close {
+      opacity: 100%;
+      text-shadow: none;
+    }
+    :root .close,
+    :root .close:hover,
+    :root .close:focus {
+      color: #f0f004;
+      background: none;
+    }
+    :root .form-control {
+      color: #f0f004;
+      background-color: #f0f003;
+      border-color: #f0f00c;
+      box-shadow: inset 0 1px 1px #f0f00c;
+    }
+    :root .form-control:focus {
+      border-color: #f0f00c;
+      box-shadow: inset 0 1px 1px #f0f00c;
+    }
+    :root .form-control[disabled],
+    :root .form-control[readonly] {
+      background-color: #f0f002;
+    }
+    :root .help-block {
+      color: #f0f004;
+    }
+    :root .pricing_table ul {
+      background-color: #f0f001;
+    }
+    :root .pricing_table ul li {
+      background: #f0f002;
+    }
+    :root .pricing_table ul li:first-child,
+    :root .account_type_header {
+      color: #f0f004;
+    }
+    :root .sub_and_dark_blue,
+    :root .scheduled_task:not(.enabled) {
+      color: #f0f006;
+    }
+    :root #id_initializing_mysql_spinner {
+      background-color: #f0f003 !important;
+      color: #f0f004;
+    }
+    :root .directory_listing_table i.pale {
+      color: #f0f006;
+      opacity: 100%;
+    }
+    :root .pricing_table ul.Free li {
+      background-color: #f0f002;
+    }
+    :root .col-md-12 div[style*="background-color"] {
+      background-color: #f0f002 !important;
+    }
+    :root .col-md-12 h1[style*="color"] {
+      color: #f0f004 !important;
+    }
+    :root .table {
+      background-color: #f0f001;
+    }
+    :root .table th,
+    :root .table td {
+      border-top-color: #f0f00c;
+    }
+    :root .table > thead th {
+      border-bottom-color: #f0f00c;
+    }
+    :root .table .success,
+    :root .table .info,
+    :root .table .warning,
+    :root .table .danger {
+      background-color: #f0f001;
+    }
+    :root .table .success,
+    :root .table .info,
+    :root .table .warning,
+    :root .table .danger,
+    :root .table .success td,
+    :root .table .info td,
+    :root .table .warning td,
+    :root .table .danger td,
+    :root .table .success th,
+    :root .table .info th,
+    :root .table .warning th,
+    :root .table .danger th,
+    :root .table .success:hover,
+    :root .table .info:hover,
+    :root .table .warning:hover,
+    :root .table .danger:hover,
+    :root .table .success td:hover,
+    :root .table .info td:hover,
+    :root .table .warning td:hover,
+    :root .table .danger td:hover,
+    :root .table .success th:hover,
+    :root .table .info th:hover,
+    :root .table .warning th:hover,
+    :root .table .danger th:hover {
+      background-color: #f0f001;
+    }
+    :root .table td.active,
+    :root .table th.active,
+    :root .table.active td,
+    :root .table.active th {
+      background-color: #f0f002;
+    }
+    :root .table-bordered {
+      border-color: #f0f00c;
+    }
+    :root .table-bordered th,
+    :root .table-bordered td {
+      border-color: #f0f00c;
+    }
+    :root .table-striped > tbody > tr:nth-of-type(odd),
+    :root .table-hover > tbody > tr:hover {
+      background-color: #f0f002;
+    }
+    :root .highlighted_feature_text {
+      color: #f0f015;
+    }
+    :root .text-muted {
+      color: #f0f006;
+    }
+    :root .modal-header {
+      border-bottom-color: #f0f00c;
+    }
+    :root .modal-content {
+      background-color: #f0f001;
+      border-color: #f0f00c;
+      box-shadow: 0 3px 9px #f0f003;
+    }
+    :root .modal-backdrop {
+      background-color: #f0f003;
+    }
+    :root .directories_listing_group h4,
+    :root .page-header,
+    :root .gsc-above-wrapper-area,
+    :root .nav-tabs,
+    :root .property_group_header {
+      border-bottom-color: #f0f00c;
+    }
+    :root .nav-tabs a:hover,
+    :root .nav-tabs a:focus {
+      border-color: #f0f00c !important;
+    }
+    :root .popover {
+      background-color: #f0f002;
+      border-color: #f0f00c;
+      box-shadow: none;
+    }
+    :root .popover.top > .arrow,
+    :root .popover.top > .arrow::after {
+      border-top-color: #f0f002;
+    }
+    :root .popover.right > .arrow,
+    :root .popover.right > .arrow::after {
+      border-right-color: #f0f002;
+    }
+    :root .popover.left > .arrow,
+    :root .popover.left > .arrow::after {
+      border-left-color: #f0f002;
+    }
+    :root .popover.bottom > .arrow,
+    :root .popover.bottom > .arrow::after {
+      border-bottom-color: #f0f002;
+    }
+    :root .popover-title {
+      background-color: #f0f002;
+      border-bottom-color: #f0f00c;
+    }
+    :root .modal-footer {
+      border-top-color: #f0f00c;
+    }
+    :root .unsorted {
+      color: #f0f006;
+    }
+    :root .sorted-up,
+    :root .sorted-down {
+      color: #f0f01b;
+    }
+    :root .ui-widget-content {
+      border-color: #f0f00c;
+      background: #f0f002;
+      color: #f0f004;
+    }
+    :root .ui-state-default {
+      border-color: #f0f00c;
+      background: #f0f00b;
+      color: #f0f004;
+    }
+    :root .bootstrap-switch {
+      border-color: #f0f00c;
+    }
+    :root .bootstrap-switch.bootstrap-switch-focused {
+      border-color: #f0f00c;
+      box-shadow: none;
+    }
+    :root .bootstrap-switch .bootstrap-switch-label {
+      color: #f0f004;
+      background-color: #f0f00c;
+    }
+    :root .bootstrap-switch .bootstrap-switch-handle-off,
+    :root .bootstrap-switch .bootstrap-switch-handle-on {
+      color: #f0f004;
+      background-color: #f0f003;
+    }
+    :root .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-success,
+    :root .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-success,
+    :root .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-warning,
+    :root .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-warning,
+    :root .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-danger,
+    :root .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-danger,
+    :root .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary,
+    :root .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary {
+      color: #f0f001;
+    }
+    :root .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-success,
+    :root .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-success {
+      background-color: #f0f015;
+    }
+    :root .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-warning,
+    :root .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-warning {
+      background-color: #f0f014;
+    }
+    :root .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-danger,
+    :root .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-danger {
+      background-color: #f0f011;
+    }
+    :root .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary,
+    :root .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary {
+      background-color: #f0f01b;
+    }
+    :root .tooltip-inner {
+      color: #f0f004;
+      background-color: #f0f003;
+    }
+    :root .tooltip.right .tooltip-arrow {
+      border-right-color: #f0f003;
+    }
+    :root .tooltip.left .tooltip-arrow {
+      border-left-color: #f0f003;
+    }
+    :root .tooltip.top .tooltip-arrow,
+    :root .tooltip.top-left .tooltip-arrow,
+    :root .tooltip.top-right .tooltip-arrow {
+      border-top-color: #f0f003;
+    }
+    :root .tooltip.bottom .tooltip-arrow,
+    :root .tooltip.bottom-left .tooltip-arrow,
+    :root .tooltip.bottom-right .tooltip-arrow {
+      border-bottom-color: #f0f003;
+    }
+    :root .has-error .help-block,
+    :root .has-error .control-label,
+    :root .has-error .radio,
+    :root .has-error .checkbox,
+    :root .has-error .radio-inline,
+    :root .has-error .checkbox-inline,
+    :root .has-error label {
+      color: #f0f011;
+    }
+    :root .success-stories-container {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root .success-stories-container h3 {
+      color: #f0f004;
+    }
+    :root .gsc-control-cse {
+      border-color: #f0f00c;
+      background-color: #f0f001;
+    }
+    :root .post_metadata {
+      color: #f0f006;
+    }
+    :root .ui-widget-header {
+      background-color: #f0f001;
+      border-color: #f0f00c;
+      color: #f0f004;
+    }
+    :root .fullscreen-main-navbar {
+      background-color: #f0f002;
+    }
+    :root .dropdown-menu {
+      background-color: #f0f002;
+      border-color: #f0f00c;
+      box-shadow: none;
+    }
+    :root .dropdown-menu > li > a {
+      color: #f0f004;
+    }
+    :root .dropdown-menu > li > a:hover,
+    :root .dropdown-menu > li > a:focus {
+      background-color: #f0f001;
+    }
+    :root .fullscreen-main-navbar button.btn-link:hover,
+    :root .fullscreen-main-navbar button.btn-link:focus {
+      background-color: #f0f001;
+    }
+    :root .navbar-default .btn-link,
+    :root .navbar-default .btn-link:hover,
+    :root .navbar-default .btn-link:focus {
+      color: #f0f004;
+    }
+    :root .btn.btn-default {
+      border-color: #f0f01b;
+      color: #f0f01b;
+      background-color: #f0f001;
+    }
+    :root .btn.btn-default:hover,
+    :root .btn.btn-default:focus {
+      background-color: #f0f00c;
+    }
+    :root .well {
+      background-color: #f0f002;
+      border-color: #f0f00c;
+    }
+    :root .icon-bar {
+      background-color: #f0f004;
+    }
+    :root .nav-tabs > li > a,
+    :root .nav-pills > li > a {
+      border-color: #f0f00c;
+    }
+    :root .nav-tabs > li > a,
+    :root .nav-pills > li > a,
+    :root .nav-tabs > li > a:hover,
+    :root .nav-pills > li > a:hover,
+    :root .nav-tabs > li > a:focus,
+    :root .nav-pills > li > a:focus {
+      color: #f0f01b;
+    }
+    :root .nav-tabs > li.active > a,
+    :root .nav-pills > li.active > a,
+    :root .nav-tabs > li.active > a:focus,
+    :root .nav-pills > li.active > a:focus {
+      background-color: #f0f002;
+    }
+    :root .nav-tabs > li.active > a:hover,
+    :root .nav-pills > li.active > a:hover,
+    :root .nav-tabs > li.active > a:focus,
+    :root .nav-pills > li.active > a:focus {
+      background-color: #f0f003;
+    }
+    :root .nav-tabs > li:not(.active) > a:hover,
+    :root .nav-pills > li:not(.active) > a:hover,
+    :root .nav-tabs > li:not(.active) > a:focus,
+    :root .nav-pills > li:not(.active) > a:focus {
+      background-color: #f0f002;
+    }
+    :root .ui-state-highlight {
+      border-color: #f0f01b;
+      background: #f0f01b;
+      color: #f0f001;
+    }
+    :root .primary-navbar a,
+    :root .primary-navbar form,
+    :root .primary-navbar .active {
+      background-color: #f0f001;
+    }
+    :root .primary-navbar form .btn-link {
+      color: #f0f01b;
+    }
+    :root .primary-navbar .active a {
+      color: #f0f004;
+    }
+    :root .post,
+    :root .topic {
+      background-color: #f0f002;
+      border-color: #f0f00c;
+    }
+    :root .editable-click,
+    :root .editable-click:hover,
+    :root .editable-click:focus {
+      border-bottom-color: #f0f006;
+    }
+    :root [style*="background: whitesmoke;"] {
+      background-color: #f0f002 !important;
+    }
+    :root #id_main_screenshot {
+      box-shadow: 12px 12px 29px #f0f00b;
+    }
+    :root #id_hosting_details,
+    :root #id_education_details,
+    :root #id_hosting_details h1,
+    :root #id_education_details h1,
+    :root #id_hosting_details h2,
+    :root #id_education_details h2,
+    :root #id_hosting_details h3,
+    :root #id_education_details h3 {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root #id_hosting_details .btn,
+    :root #id_education_details .btn {
+      color: #f0f003 !important;
+    }
+    :root #id_hosting_details a,
+    :root #id_education_details a {
+      color: #f0f01b;
+    }
+    :root #id_develop_anywhere_details {
+      background-color: #f0f001;
+    }
+    :root #id_support_details {
+      background-color: #f0f001;
+    }
+    :root #id_support_details a {
+      color: #f0f01b !important;
+    }
+    :root #id_company_info_strip {
+      color: #f0f004;
+    }
+    :root .console_table .info_tooltip {
+      color: #f0f01b;
+    }
+    :root #id_console_name {
+      color: #f0f004;
+    }
+    :root .beginner_pane,
+    :root .pricing_pane {
+      background-color: #f0f002;
+    }
+    :root #id_error_message,
+    :root #id_login_error {
+      color: #f0f011;
+    }
+    :root .post_preview {
+      background-color: #f0f001;
+    }
+    :root .post_preview h3 {
+      color: #f0f004;
+    }
+    :root .teacher-navbar {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root .nav > li > a:focus {
+      background: none;
+    }
+    :root .site-header {
+      background-color: #f0f003;
+    }
+    :root h1,
+    :root h2,
+    :root h3,
+    :root h4,
+    :root code {
+      color: #f0f004 !important;
+    }
+    :root button code {
+      background: none !important;
+      color: inherit !important;
+    }
+    :root p,
+    :root .tipue_search_content_text,
+    :root .tipue_search_content_bold,
+    :root #tipue_search_error,
+    :root #tipue_search_results_count,
+    :root .post-meta {
+      color: #f0f006;
+    }
+    :root .navbar-default .navbar-toggle:hover,
+    :root .navbar-default .navbar-toggle:focus {
+      background-color: #f0f002;
+    }
+    :root button:not(.btn-link, .btn, [data-toggle="dropdown"]),
+    :root .pagination a,
+    :root #tipue_search_foot_boxes li.current,
+    :root #tipue_search_foot_boxes li a {
+      background-color: #f0f01b;
+      color: #f0f003;
+      border-color: #f0f01b;
+    }
+    :root button:disabled,
+    :root .pagination .disabled {
+      background-color: #e3e30f;
+      border-color: #e3e30f;
+    }
+    :root #tipue_search_input,
+    :root form.navbar-search {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root svg {
+      fill: #f0f006;
+    }
+    :root .fa-at,
+    :root .fa-twitter,
+    :root .fa-rss {
+      filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+    }
+    :root .hide_search_icon path {
+      stroke: #f0f006;
+    }
+    :root footer,
+    :root footer .wrap {
+      background-color: #f0f003;
+      color: #f0f004;
+      border-color: #f0f003;
+    }
+    :root .pagination a,
+    :root #tipue_search_foot_boxes li.current,
+    :root #tipue_search_foot_boxes li a {
+      background-color: #f0f01b;
+      color: #f0f003;
+      border-color: #f0f01b;
+    }
+    :root img[src*="ssl.gstatic.com/ui/v1/disclosure/small-grey-disclosure-arrow-down.png"],
+    :root img[src*="/static/anywhere/images/staff.png"],
+    :root img[src*="/static/glyphicons/glyphicons_"],
+    :root img[src="/static/anywhere/images/PA-logo-snake-only.svg"],
+    :root .testimonial-content,
+    :root .quickstart_logo:not([src$="/django-logo-negative-small.png"]),
+    :root .ui-icon {
+      filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+    }
+    :root img[src*="/static/anywhere/images/cross.png"] {
+      filter: brightness(0) saturate(100%) invert(61%) sepia(33%) saturate(540%) hue-rotate(293deg) brightness(101%) contrast(90%);
+    }
+    :root img[src*="/static/anywhere/images/tick.png"] {
+      filter: brightness(0) saturate(100%) invert(86%) sepia(22%) saturate(538%) hue-rotate(63deg) brightness(97%) contrast(88%);
+    }
+    :root .quickstart_logo[src$="/django-logo-negative-small.png"] {
+      content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22160%22%20height%3D%2273%22%20viewBox%3D%220%200%20260%2090%22%3E%3Cpath%20d%3D%22M19.587%2044.065c-.043%208.197%205.968%2013.084%2015.56%2010.862V33.202c-9.713-2.958-15.52%203.027-15.56%2010.863M35.441%201.789h13.21v62.533c-12.663%202.07-24.79%203.383-33.468-1.468-11.171-6.246-12.07-26.096-3.23-34.936%204.483-4.482%2013.506-7.638%2023.194-5.578V2.67c-.025-.417-.049-.832.294-.881m34.642%2013.798h-13.21V1.789h13.21zm158.536%2039.927c14.402%205.597%2015.995-25.778%201.468-22.9-9.022%201.789-8.732%2020.078-1.468%2022.9m.587-33.762c10.998-1.176%2019.296%203.678%2022.606%2011.156%205.648%2012.76-.31%2027.403-9.394%2031.708-4.709%202.23-9.639%202.443-14.093%202.055-13.767-1.2-22.449-15.23-17.615-30.827.757-2.44%201.607-3.934%202.056-4.697%202.992-5.088%208.044-8.497%2016.44-9.395M88.286%2050.524c-3.654%206.14%205.527%207.612%2011.45%205.871v-9.1c-4.551.635-9.73.339-11.45%203.229m23.193%2014.385c-10.913.628-27.498%204.346-33.469-2.935-3.507-4.279-3.13-12.438%200-16.441%204.046-5.173%2012.876-6.301%2020.845-7.046.723-1.782.235-4.68-.587-5.872-7.29-1.857-14.531%201.02-19.67%203.229V25.569c7.762-3.566%2025.74-7.321%2031.12.88%202.825%204.308%201.76%2011.821%201.76%2018.496zm46.386.588h-13.21V48.469c0-5.607.906-12.716-2.057-14.973-2.32-1.769-7.824-.881-11.155%200v32h-13.212V24.688c13.506-3.508%2037.883-7.27%2039.634%209.688.864%208.361-.64%2020.904%200%2031.12m19.67-14.092c2.224%203.597%208.244%204.946%2013.211%202.643a424%20424%200%200%201-.293-21.139c-11.418-3.016-18.222%209.916-12.918%2018.496m33.175-27.89c-1.176%203.522-2.896%206.498-4.403%209.688-1.362.305-2.542-.54-3.23%200-.301%2014.311%203.048%2033.712-2.642%2044.038-3.426%206.217-9.734%2010.205-19.377%2010.862-7.024.48-12.477-.668-17.615-2.642V73.13c6.027%203.518%2021.255%206.387%2025.542-.881%201.261-2.139%201.181-4.349%201.761-7.633-2.76.145-5.439%201.423-8.807%201.468-13.846.183-22.412-10.841-19.083-26.13%201.288-5.913%204.753-10.675%209.395-13.504%209.642-5.877%2024.463-5.43%2038.46-2.936%22%20fill%3D%22%23f0f004%22/%3E%3Cpath%20d%3D%22M70.083%2022.574c-.014%209.728-.012%2016.72-.013%2028.538-.561%2011.615-.43%2020.864-4.684%2026.421-.838%201.096-2.62%202.695-4.11%203.817-1.251.942-3.637%202.853-4.99%202.936-1.366.084-4.873-1.895-6.46-2.643-2.084-.981-4.01-2.285-6.165-2.935%205.025-3.114%209.796-5.449%2011.743-11.744%201.694-5.474%201.468-13.407%201.468-21.138%200-7.634.034-16.509.034-23.249z%22%20fill%3D%22%23f0f004%22/%3E%3C/svg%3E");
+    }
+    :root img[src$="/images/PA-logo.svg"] {
+      content: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20776.8%20166%22%3E%3Cpath%20d%3D%22M197.99%2041.73c-2.1-2.4-5.1-3.7-8.8-3.7s-6.5%201.2-8.7%203.7h.1q-3.3%203.75-3.3%209c0%203.7%201.2%206.8%203.2%209.2v-.1c2.1%202.5%205%203.7%208.7%203.7s6.7-1.2%208.9-3.7h-.1c2.2-2.5%203.2-5.5%203.2-9.1s-1.1-6.6-3.2-9m3%2021c-3.1%203.2-7%205-11.9%205-4.6%200-8.9-1.9-11.9-4.9%200%200-.1%200-.1-.1v21.7h-4.3v-50h4.4v4.3l.1-.1c3.1-3.2%207-4.8%2011.9-4.8s8.9%201.7%2011.9%204.8c3.1%203.2%204.6%207.2%204.6%2012.1s-1.7%209-4.7%2012m42.2%2017c-2.9%203.1-6.9%204.6-11.8%204.6q-5.85%200-11.4-3.6l1.5-4.3c2.2%201.6%204.4%202.6%206.4%203.1%201.3.3%202.6.5%203.6.5%203.7%200%206.5-1.2%208.5-3.5s3-5.1%203-8.9v-3.3c-2.3%202.2-5.3%203.2-9%203.2-4.3%200-7.7-1.6-10.1-4.4-2.2-2.7-3.2-6.2-3.2-10.5v-18.2h4.3v19.3c0%202.9.8%205.2%202.4%207h-.1c1.7%202%203.9%202.9%206.7%202.9s5-.9%206.6-2.8c1.6-1.7%202.4-4.1%202.4-7.1v-19.3h4.4v33.4c-.1%204.8-1.4%208.8-4.2%2011.9m33.8-12.8c-8.5%200-12.6-3.9-12.6-11.7v-30.2h4.3v9.4h9.1v4.4h-9.1v16.2c0%205.1%202.7%207.8%208.3%207.8h2.7v4.1zm39.5.2v-19.2c0-2.7-.8-5.2-2.2-7.1-1.6-1.7-3.7-2.8-6.3-2.8-3.1%200-5.5%201.2-7.3%203.2-1.6%202.2-2.4%205-2.4%208.1v17.7h-4.3v-47.6h4.3v18.5c2.4-2.4%206.1-4.2%209.7-4.2%204.1%200%207.5%201.5%209.7%204.4%202%202.6%203.2%206.1%203.2%2010.2v18.8zm42.9-25.5c-2.1-2.4-5.1-3.7-8.8-3.7-3.6%200-6.6%201.5-8.8%203.7-1.9%202.2-3.2%205.5-3.2%209%200%203.7%201.2%206.8%203.2%209.2%202.2%202.2%205.2%203.6%208.8%203.6%203.7%200%206.6-1.2%208.8-3.7h-.1c2.2-2.6%203.3-5.5%203.3-9.1s-1.1-6.6-3.2-9m3.2%2021.2c-3.1%203.2-7%204.8-11.9%204.8-4.8%200-8.8-1.7-11.8-4.8-3.2-3.2-4.6-7.3-4.6-12.1%200-4.9%201.7-8.8%204.6-12%203.1-3.3%207-4.9%2011.8-4.9%205%200%209%201.7%2012%204.9s4.5%207.1%204.5%2012c-.1%205-1.6%209-4.6%2012.1m40.5%204.3v-19.2c0-2.9-.8-5.2-2.4-7.1l.1.1c-1.7-1.9-4-2.9-6.7-2.9-2.8%200-4.9.9-6.6%202.6-1.6%201.7-2.5%203.8-2.5%206.6v20l-4.3-.1v-32.8h4.3v2.8c2.3-2.1%205.5-3.3%209.1-3.3%204.3%200%207.6%201.5%2010.1%204.5v-.1c2.2%202.5%203.3%206.1%203.3%2010.5v18.4z%22%20fill%3D%22%23f0f01b%22/%3E%3Cpath%20d%3D%22M449.89%2041.63c-2.1-2.4-5.1-3.7-8.8-3.7-3.6%200-6.6%201.5-8.8%203.7-1.9%202.2-3.2%205.5-3.2%209%200%203.7%201.2%206.8%203.2%209.2%202.2%202.2%205.2%203.6%208.8%203.6%203.7%200%206.6-1.2%208.8-3.7h-.1c2.2-2.6%203.3-5.5%203.3-9.1s-1.1-6.6-3.2-9m3.2%2025.5v-4.3l-.1.1c-3.1%203.2-5.2%204.8-10.4%204.8-4.8%200-10.4-1.7-13.4-4.8-3.2-3.2-4.6-7.3-4.6-12.1%200-4.9%201.7-8.8%204.6-12%203.1-3.3%207-4.9%2011.8-4.9%204.7%200%209%201.8%2011.9%204.8%200%200%20.1%200%20.1.1v-4.3h4.4v32.7h-4.3zm44.2%200v-19.2c0-2.9-.8-5.2-2.4-7.1l.1.1c-1.7-1.9-4-2.9-6.7-2.9-2.8%200-4.9.9-6.6%202.6-1.6%201.7-2.5%203.8-2.5%206.6v20l-4.3-.1v-32.8h4.3v2.8c2.3-2.1%205.5-3.3%209.1-3.3%204.3%200%207.6%201.5%2010.1%204.5v-.1c2.2%202.5%203.3%206.1%203.3%2010.5v18.4zm43.7%2012.6c-2.9%203.1-6.9%204.6-11.8%204.6q-5.85%200-11.4-3.6l1.5-4.3c2.2%201.6%204.4%202.6%206.4%203.1%201.3.3%202.6.5%203.6.5%203.7%200%206.5-1.2%208.5-3.5s3-5.1%203-8.9v-3.3c-2.3%202.2-5.3%203.2-9%203.2-4.3%200-7.7-1.6-10.1-4.4-2.2-2.7-3.2-6.2-3.2-10.5v-18.2h4.3v19.3c0%202.9.8%205.2%202.4%207h-.1c1.7%202%203.9%202.9%206.7%202.9s5-.9%206.6-2.8c1.6-1.7%202.4-4.1%202.4-7.1v-19.3h4.4v33.4c0%204.8-1.3%208.8-4.2%2011.9m53.5-15.6c-.9%202.4-2.2%203.7-4.1%203.7-2%200-3.3-1.2-4.2-3.7l-3.2-8.5c-1.1%202.8-2.1%205.8-3.2%208.5-.9%202.4-2.5%203.7-4.2%203.7-2%200-3.3-1.2-4.2-3.7l-11.1-29.7h4.6l10.4%2027.8v-.1c.2.7.4.9.3.9.1%200%20.1-.2.4-.9v.1c1.6-4.3%203.2-8.3%204.7-12.6-1.8-4.6-3.9-10.5-5.6-15.2h4.5l10.4%2027.8v-.1c.2.7.3.9.3.9s.1-.2.3-.8l10.4-27.8h4.7zm47.7%203v-19.2c0-2.7-.8-5.2-2.2-7.1-1.6-1.7-3.7-2.8-6.3-2.8-3.1%200-5.5%201.2-7.3%203.2-1.6%202.2-2.4%205-2.4%208.1v17.7h-4.3v-47.6h4.3v18.5c2.4-2.4%206.1-4.2%209.7-4.2%204.1%200%207.5%201.5%209.7%204.4%202%202.6%203.2%206.1%203.2%2010.2v18.8zm22.2-18.9h23.7c-.4-2.9-1.7-5.4-3.6-7.2-2.1-2-4.7-3.1-8.2-3.1-3.4%200-6.1%201.1-8.1%203.1-2.1%201.8-3.3%204.3-3.8%207.2m28.3%202.8c0%20.3-.1%201.3-.1%201.4h-28.2c.4%203.2%201.7%205.8%203.7%207.7%202.2%202.1%205%203.2%208.5%203.2%201.9%200%203.9-.3%205.9-.9v.1c2.2-.7%203.9-1.9%205.5-3.4l3.2%203.1c-3.5%203.5-8.2%205.4-14.4%205.4-4.9%200-9-1.7-12-4.7-3.2-3.1-4.8-7.1-4.8-12.2%200-4.9%201.7-8.8%204.6-12%203.1-3.3%207-4.9%2011.8-4.9s8.7%201.6%2011.8%204.7%204.7%206.9%204.7%2011.8c-.2.2-.1.3-.2.7m31.7-11.9-.7-.2c.1.1-.8-.1-1.4-.2-.4-.1-.7-.1-1.4-.2-2.4.2-4.9%201.3-6.6%203.7-1.8%202.3-2.7%205.7-2.7%2010.1v14.7h-4.4v-32.6h4.4v4.2c2.4-2.4%206.2-4.4%2010-4.4%200%200%20.5.1%201.1.2s2.1.3%203.1.5v4.2zm14.2%209.106h23.7c-.4-2.9-1.7-5.4-3.6-7.2-2.1-2-4.7-3.1-8.2-3.1-3.4%200-6.1%201.1-8.1%203.1-2.2%201.8-3.3%204.3-3.8%207.2m28.2%202.8c0%20.3-.1%201.3-.1%201.4h-28.2c.4%203.2%201.7%205.8%203.7%207.7%202.2%202.1%205%203.2%208.5%203.2%201.9%200%203.9-.3%205.9-.9v.1c2.2-.7%203.9-1.9%205.5-3.4l3.2%203.1c-3.5%203.5-8.2%205.4-14.4%205.4-4.9%200-9-1.7-12-4.7-3.2-3.1-4.8-7.1-4.8-12.2%200-4.9%201.7-8.8%204.6-12%203.1-3.3%207-4.9%2011.8-4.9s8.7%201.6%2011.8%204.7%204.7%206.9%204.7%2011.8c-.1.2%200%20.3-.2.7M69.69%20103.93c-.5-.6-1.2-1-1.8-1.4-.5-.3-.7-.6-.6-1.3%201-5.9%201.9-11.8%202.8-17.8.6-4%201.2-8%201.9-12.2.9.6%201.8%201.2%202.6%201.8.2.2.1.5.1.7-.2%201.4-.4%202.9-.7%204.3-.5%203.2-1%206.5-1.5%209.7l-1.5%209.6c-.1.8-.2%201.7-.4%202.5.4.1.6-.2.9-.3%207.6-4%2015.2-7.9%2022.8-11.9l.6-.3c.2-.1.4-.2.6%200%20.8.5%201.6%201.1%202.5%201.7-.4.2-.6.4-.9.5-8.8%204.6-17.5%209.2-26.3%2013.8-.3.1-.6.2-.7.5zm-26.7-54c-.2%201.6-.5%203-.7%204.4-.7%204.6-1.5%209.1-2.2%2013.7-.4%202.7-.9%205.4-1.3%208.1-.1.5-.3.7-.7.8-.8.2-1.7.5-2.5.8-.1-.2%200-.4%200-.6.8-5%201.6-9.9%202.4-14.9.8-4.8%201.5-9.7%202.3-14.5.1-.4.2-.7.7-.8.7-.2%201.3-.4%202-.6.4-.2.7-.1%201.1.2l5.1%205.1c5.4%205.4%2010.9%2010.8%2016.3%2016.1.1.1.2.3.4.4-1%20.4-2%20.6-2.9%201-.3.1-.5-.2-.6-.3-1.3-1.3-2.6-2.6-4-3.9-5-4.9-9.9-9.8-14.8-14.7-.2%200-.3-.1-.6-.3m26%2015.5c-.8-.7-1.5-1.4-2.2-2.1-.2-.2-.1-.5%200-.7.6-1.8%201.2-3.6%201.9-5.4l6.6-18.9c.1-.2.2-.5.2-.7-.4-.1-.7.1-1%20.2-8.2%202.6-16.3%205.1-24.5%207.7-1.3.4-.9.5-1.8-.4l-1.5-1.5c.2-.3.6-.3.9-.4%209.5-3%2019-6%2028.4-9%20.7-.2%201.1-.1%201.6.4.3.4.8.8%201.2%201.2.4.3.4.7.3%201.1-1.1%203-2.1%206-3.2%209-2.2%206.3-4.4%2012.6-6.6%2018.8%200%20.1-.1.4-.3.7m-1.7%206.3c-.2%201-.3%201.9-.4%202.9%200%20.4-.3.4-.6.5-2.2.7-4.3%201.4-6.4%202-6.2%202-12.5%203.9-18.7%205.9-.2.1-.5.2-.8.3.2.3.5.5.8.6%207%204.8%2014%209.7%2021%2014.5.6.4%201%20.8.7%201.6-.2.7-.2%201.4-.4%202.1-.3%200-.5-.2-.7-.3-8.2-5.6-16.4-11.3-24.6-16.9-.5-.4-.7-.7-.6-1.4.1-.6.3-1.1.3-1.7%200-.5.3-.7.7-.8%209.7-3.1%2019.5-6.1%2029.2-9.2.1%200%20.3%200%20.5-.1m-22.2-61.3c-.1%201-.3%202-.4%202.9%200%20.4-.4.4-.7.4-1.8.6-3.7%201.1-5.5%201.7-6.6%202-13.1%204-19.7%206-.2.1-.5.1-.7.4.3.2.5.4.8.6%207%204.9%2013.9%209.9%2020.9%2014.8.5.4.7.7.6%201.4-.2.8-.3%201.5-.4%202.3-.3-.1-.5-.3-.8-.4l-24.3-17.1c-.6-.4-.8-.8-.6-1.4.1-.6.2-1.1.3-1.7%200-.4.2-.6.7-.8l6.9-2.1c7.4-2.2%2014.7-4.5%2022.1-6.7.2-.2.5-.2.8-.3m30%2020.4c-.8.3-1.6.5-2.4.8-.5.2-.9.1-1.3-.3-2.7-2.8-5.5-5.5-8.3-8.3-3.3-3.3-6.6-6.6-10-9.9-.2-.2-.3-.5-.7-.6-.2%201-.4%202.1-.5%203.1-.8%204.7-1.5%209.4-2.3%2014-.5%203-1%205.9-1.4%208.9-.1.5-.2.7-.7.8-.8.2-1.7.5-2.5.8-.1-.6.1-1.1.2-1.5l3-18.6c.5-3.3%201.1-6.6%201.6-9.9.1-.4.2-.6.6-.7.7-.2%201.3-.4%202-.6.5-.2.8-.1%201.2.3l8%208c4.3%204.3%208.7%208.6%2013%2012.9.1.2.4.4.5.8m3.682%2042.481a20.4%2020.4%200%200%201-.712-4.16c-.635-5.257-.08-10.33%201.965-15.2%203.138-7.6%208.544-13.236%2015.913-16.83%203.631-1.752%207.526-2.983%2011.586-3.701.279.32.151.712.13%201.011l.174%201.817c.072.406-.142.591-.548.663-2.65.617-5.313%201.433-7.797%202.562-6.722%202.939-11.852%207.492-15.12%2014.08-2.209%204.357-3.135%209.003-2.878%2013.933.109%201.31.217%202.622.426%203.94.072.405.05.705-.462.87-.819.243-1.745.58-2.677%201.015m13.858%209.69c.07-.997.032-1.902.102-2.9.028-.399.142-.591.647-.656%202.636-.417%205.186-1.04%207.57-2.177%208.794-3.896%2014.57-10.51%2016.928-19.868.963-3.742%201.129-7.54.795-11.372.014-.2-.065-.506-.05-.705.027-.4-.337-.926-.017-1.204.22-.286.72-.25%201.125-.323.713-.15%201.325-.308%202.044-.558.309%201.324.41%202.735.42%204.039a40%2040%200%200%201-.294%208.5q-1.428%209.674-8.097%2016.876c-4.766%205.08-10.696%208.174-17.413%209.609-1.232.415-2.45.63-3.76.74m29.26-57.199c.3.021.414-.171.62-.257%204.08-2.422%208.244-4.637%2012.408-6.851.214-.186.52-.265.805-.044a77%2077%200%200%200%202.789%201.698%203%203%200%200%201-.733.45c-5.205%202.744-10.501%205.38-15.705%208.125-.42.27-.74.55-1.068.927-1.912%202.974-3.93%206.04-5.843%209.015-.34.577-.34.577-.919.236s-1.055-.675-1.633-1.016-.577-.341-.243-.82l3.71-5.754c.782-1.149%201.465-2.304%202.247-3.452.22-.285.348-.677.376-1.076.304-5.793.702-11.48%201.107-17.265l.056-.798c.777.355%201.44.902%202.217%201.257.87.462%201.035.975.965%201.972-.358%203.685-.623%207.475-.881%2011.166-.056.798-.211%201.59-.274%202.487%22%20fill%3D%22%23f0f004%22/%3E%3Cpath%20d%3D%22M100.632%2050.28c-.098%201.396-1.734%203.287-3.151%203.489-1.019.229-1.896-.133-2.545-.88s-.786-1.659-.424-2.536c.482-1.17%201.25-2.118%202.39-2.64.932-.436%201.83-.373%202.593.182.856.661%201.306%201.394%201.137%202.385m10.162%206.625c-.097%201.396-1.733%203.287-3.158%203.588-1.018.23-1.795-.125-2.545-.88q-.974-1.12-.43-2.435c.489-1.27%201.257-2.218%202.496-2.733%201.766-.879%203.77.564%203.637%202.46M11.89%2025.83c.9.5%201.6%201.1%202.5%201.7.3.2.2.5.1.8l-.9%205.7c-1.1%206.8-2.2%2013.5-3.3%2020.3%200%20.2-.2.5%200%20.8.3-.2.6-.3.9-.5l22.5-12.3c.6-.3%201-.3%201.5.1.6.5%201.2.9%201.9%201.4-.2.3-.5.4-.7.5-8.7%204.8-17.4%209.5-26%2014.3-.6.3-1%20.4-1.5-.1-.4-.4-.9-.7-1.4-1-.4-.2-.5-.5-.4-.9.4-2.4.8-4.7%201.1-7.1%201.2-7.6%202.5-15.2%203.7-22.8q-.15-.45%200-.9m481.48%2085.08c-.19-.28-.37-.56-.84-.56h-.47c-.47%200-.75.28-.84.56l-15.84%2034.37c-.28.65.09%201.3.84%201.3h4.47c.84%200%201.3-.47%201.49-1.02l2.52-5.5h15.28l2.52%205.5c.37.75.75%201.02%201.49%201.02h4.47c.75%200%201.21-.65.84-1.3zm-6.33%2023.47%205.03-11.18h.19l5.12%2011.18zm54.87-23.47h-4.66c-.56%200-.93.47-.93.93v21.05h-.09l-21.24-22.54h-1.3c-.47%200-.93.37-.93.93v34.28c0%20.47.47.93.93.93h4.66c.56%200%20.93-.47.93-.93v-21.89h.09l21.33%2023.38h1.21c.47%200%20.93-.37.93-.93v-34.28c.09-.47-.37-.93-.93-.93m22.91%200c-.19-.28-.37-.56-.84-.56h-.47c-.47%200-.75.28-.84.56l-15.84%2034.37c-.28.65.09%201.3.84%201.3h4.47c.84%200%201.3-.47%201.49-1.02l2.52-5.5h15.28l2.52%205.5c.37.75.75%201.02%201.49%201.02h4.47c.75%200%201.21-.65.84-1.3zm-6.33%2023.47%205.03-11.18h.19l5.12%2011.18zm49.93%203.07c-.28-.28-.84-.37-1.3%200-2.14%201.77-4.75%202.89-7.82%202.89-6.52%200-11.46-5.4-11.46-11.74%200-6.43%204.84-11.92%2011.36-11.92%202.89%200%205.68%201.12%207.82%202.98a.9.9%200%200%200%201.3%200l3.07-3.17a.947.947%200%200%200-.09-1.4c-3.45-3.07-7.17-4.75-12.3-4.75-10.15%200-18.44%208.2-18.44%2018.44%200%2010.15%208.2%2018.26%2018.44%2018.26%204.56%200%208.94-1.58%2012.39-4.94.37-.37.47-1.02.09-1.4zm24.12-27.1c-10.15%200-18.26%208.2-18.26%2018.44%200%2010.15%208.1%2018.26%2018.26%2018.26%2010.15%200%2018.35-8.1%2018.35-18.26%200-10.25-8.19-18.44-18.35-18.44m0%2030.09c-6.43%200-11.64-5.22-11.64-11.64%200-6.43%205.22-11.74%2011.64-11.74s11.74%205.31%2011.74%2011.74c-.09%206.42-5.31%2011.64-11.74%2011.64m53.1-29.53h-4.66c-.56%200-.93.47-.93.93v21.05h-.09l-21.24-22.54h-1.3c-.47%200-.93.37-.93.93v34.28c0%20.47.47.93.93.93h4.66c.56%200%20.93-.47.93-.93v-21.89h.09l21.33%2023.38h1.21c.47%200%20.93-.37.93-.93v-34.28c0-.47-.47-.93-.93-.93m20.4%200h-12.11c-.47%200-.93.47-.93.93v33.72c0%20.47.37.93.93.93h12.11c9.87%200%2017.89-8.01%2017.89-17.89-.01-9.68-8.02-17.69-17.89-17.69m-.56%2029.43h-5.87v-23.29h5.78c6.61%200%2011.46%205.03%2011.46%2011.64.09%206.62-4.76%2011.65-11.37%2011.65m52.54%205.03-15.74-34.28c-.19-.28-.37-.56-.84-.56h-.47c-.47%200-.75.28-.84.56l-15.84%2034.28c-.28.65.09%201.3.84%201.3h4.47c.84%200%201.3-.47%201.49-1.02l2.52-5.5h15.28l2.52%205.5c.37.75.75%201.02%201.49%201.02h4.47c.55-.09.93-.65.65-1.3m-21.99-10.99%205.03-11.18h.19l5.12%2011.18zm28.32%2011.64h.28c.09%200%20.19-.09.19-.19v-.93h.56l.37%201.02c0%20.09.09.09.19.09h.37c.09%200%20.19-.09.19-.19-.19-.28-.28-.65-.47-.93.28-.09.65-.37.65-.93%200-.65-.47-1.02-1.02-1.02h-1.21c-.09%200-.19.09-.19.19v2.7c0%20.19%200%20.19.09.19m.47-2.51h.75c.28%200%20.37.19.37.37s-.19.37-.37.37h-.75z%22%20fill%3D%22%23f0f004%22/%3E%3Cpath%20d%3D%22M765.28%20147.51c1.68%200%202.98-1.3%202.98-2.98s-1.4-2.98-2.98-2.98c-1.68%200-2.98%201.4-2.98%202.98s1.31%202.98%202.98%202.98m0-5.49c1.3%200%202.42%201.12%202.42%202.42s-1.12%202.42-2.42%202.42-2.42-1.12-2.42-2.42%201.12-2.42%202.42-2.42m-360.96-30.4h3.37v12.1c0%201.14-.1%202.03-.1%202.03h.1s2.08-4.81%208.48-4.81c6.69%200%2010.86%205.36%2010.86%2013.09%200%207.88-4.71%2013.04-11.26%2013.04-5.95%200-8.18-4.86-8.18-4.86h-.1s.1.84.1%202.03v2.23h-3.27zm11.21%2032.48c4.41%200%208.03-3.72%208.03-10.07%200-6.1-3.22-10.02-7.88-10.02-4.17%200-8.08%202.98-8.08%2010.07%200%205.01%202.58%2010.02%207.93%2010.02m15.58%208.63s1.39%201.14%202.98%201.14c2.18%200%203.72-1.79%204.71-4.07l1.54-3.52-10.41-24.75h3.72l7.34%2018.2c.5%201.24.89%202.63.89%202.63h.1s.35-1.39.84-2.63l7.19-18.2h3.67l-12.3%2030.15c-1.29%203.17-3.87%205.21-7.19%205.21-2.58%200-4.36-1.49-4.36-1.49z%22%20fill%3D%22%23f0f004%22/%3E%3C/svg%3E");
+    }
+  }
+  @media (prefers-color-scheme: dark) and (min-width: 768px) {
+    :root .modal-content {
+      box-shadow: 0 5px 15px #f0f003;
+    }
+  }
+  @media (prefers-color-scheme: dark) and screen and (max-width: 767px) {
+    :root .table-responsive {
+      border-color: #f0f00c;
+    }
+  }
+}

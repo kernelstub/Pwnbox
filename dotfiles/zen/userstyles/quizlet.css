@@ -1,0 +1,3543 @@
+/* ==UserStyle==
+@name           pwnbox-quizlet
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Quizlet (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("quizlet.com") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+      /*     .AssemblyIcon--small {
+        color: @lavender;
+    } */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root :root body {
+      color: #f0f004;
+      background: #f0f001;
+    }
+    :root .DashboardLayout {
+      background-color: #f0f001 !important;
+    }
+    :root .TopNavigation {
+      background-color: #f0f003;
+    }
+    :root .s19dmjr1 {
+      border-color: none;
+      background: #f0f00c;
+    }
+    :root .NavigationTab--span {
+      color: #f0f004 !important;
+    }
+    :root .s13oqxd2.NavigationTab:not(.no-highlight::after) {
+      background: #f0f007;
+    }
+    :root .e1bxx0ta::after:hover {
+      background: #f0f007;
+    }
+    :root .hri9878 {
+      color: #f0f005;
+    }
+    :root .AssemblyCard {
+      background-color: #f0f002;
+      border-color: #f0f002;
+      box-shadow: 0 0.125rem 0.5rem 0 #f0f003;
+    }
+    :root h5 {
+      color: #f0f004;
+    }
+    :root .CourseOverviewPreviewCard-recommendationTitle {
+      color: #f0f004;
+    }
+    :root .UISwitch-input:hover:not(:disabled) ~ .UISwitch-label {
+      color: #f0f014;
+    }
+    :root .UIToggle-optionInput:hover:not(:disabled) ~ .UIToggle-optionLabel {
+      color: #f0f014;
+    }
+    :root .UIToggle-optionInput:checked:not(:disabled) ~ .UIToggle-optionLabel {
+      background-color: #f0f014;
+      color: #f0f002;
+    }
+    :root .UIButton--inverted,
+    :root .UIButton--inverted:visited,
+    :root html.touch .UIButton--inverted:focus:hover:not(:active) {
+      box-shadow: inset 0 0 0 3px #f0f009;
+    }
+    :root .UIButton--borderless,
+    :root .UIButton--borderless:visited,
+    :root html.touch .UIButton--borderless:focus:hover:not(:active) {
+      background: none;
+      background-color: initial;
+      color: inherit;
+    }
+    :root .UIButton,
+    :root .UIButton:visited,
+    :root html.touch .UIButton:focus:hover:not(:active) {
+      color: inherit;
+      background-color: #f0f019;
+    }
+    :root .UIButton--alert,
+    :root .UIButton--alert:visited,
+    :root html.touch .UIButton--alert:focus:hover:not(:active) {
+      background-color: #f0f011;
+    }
+    :root .h1ebmrjk {
+      background: linear-gradient(180deg, #0000 69.83%, #f0f001 100%);
+    }
+    :root .jqcfj5w {
+      filter: brightness(0) saturate(100%) invert(12%) sepia(5%) saturate(4408%) hue-rotate(195deg) brightness(93%) contrast(90%);
+    }
+    :root .RichTextEditor[aria-invalid="true"]:not([aria-disabled="true"]) .RichTextEditor-label,
+    :root .LanguageBarSide.has-error .UILink,
+    :root .LanguageBarSide.has-error select {
+      color: #f0f012;
+    }
+    :root .neeykg0 {
+      filter: brightness(0) saturate(100%) invert(14%) sepia(10%) saturate(1367%) hue-rotate(192deg) brightness(95%) contrast(95%);
+    }
+    :root .CourseOverviewPreviewCard-recommendationLink:hover {
+      background-color: #f0f003;
+    }
+    :root .CourseOverviewPreviewCard-subtitle {
+      color: #f0f005;
+    }
+    :root .CourseOverviewPreviewCard-recommendationLabel {
+      color: #f0f005;
+    }
+    :root .CourseOverviewPreviewCard-divider {
+      border-color: #f0f002;
+    }
+    :root .AssemblyPrimaryButton--default {
+      background-color: #f0f003;
+      border-color: #f0f004;
+    }
+    :root .c1vierhv {
+      border-color: #f0f007;
+    }
+    :root .djzjpyv {
+      color: #f0f005;
+    }
+    :root span {
+      color: inherit;
+    }
+    :root .s139vgrg {
+      color: #f0f005;
+    }
+    :root form {
+      background-color: inherit;
+    }
+    :root input {
+      background-color: #f0f00c;
+    }
+    :root .b1r2wylq {
+      background-color: #f0f002;
+      box-shadow: 0 0.125rem 0.25rem #f0f003;
+    }
+    :root .AssemblyPill {
+      background-color: #f0f003;
+      color: #f0f004;
+    }
+    :root .t7pmw6o {
+      color: #f0f004;
+    }
+    :root .UIBaseCard-footer .UserLink-username,
+    :root .UserLink-username {
+      color: #f0f004;
+    }
+    :root .UserLink-title {
+      color: #f0f004;
+    }
+    :root .UILinkBox {
+      background-color: #f0f002;
+    }
+    :root .UIBaseCardHeader-info {
+      color: #f0f004;
+    }
+    :root .UIBaseCardHeader-thumbnail {
+      border-color: #f0f002;
+    }
+    :root .a1s81tf6 {
+      background-color: #f0f002;
+    }
+    :root .aup4qff {
+      color: #f0f002;
+    }
+    :root .illkdv2c {
+      color: #f0f012;
+    }
+    :root .react-calendar__month-view__weekdays__weekday {
+      color: #f0f006;
+    }
+    :root .CalendarTile--isCurrentWeek::after {
+      background-color: #f0f002;
+    }
+    :root .CalendarTile--isCurrentWeek {
+      color: #f0f004;
+    }
+    :root .AssemblyIcon--medium {
+      color: inherit;
+    }
+    :root .AssemblyIconButton--tertiary {
+      color: #f0f004;
+    }
+    :root .AssemblyButtonBase--circle {
+      color: #f0f004;
+    }
+    :root .AssemblySecondaryButton {
+      background-color: #f0f003;
+      color: #f0f004;
+    }
+    :root .AssemblyPillText {
+      color: #f0f004;
+    }
+    :root .SiteActivity-button.isGlobalNavInExperiment {
+      color: #f0f004;
+    }
+    :root .UIIcon--large {
+      color: #f0f004;
+    }
+    :root .s1da1u6y {
+      background-color: #f0f003;
+    }
+    :root .CalendarTile--hasEvent {
+      color: #f0f002;
+    }
+    :root .c1qopd51 {
+      color: #f0f012;
+    }
+    :root .AssemblyIconButton--primary {
+      background: #f0f001;
+    }
+    :root .AssemblyButtonBase:hover:not([disabled]),
+    :root [aria-disabled="true"] {
+      background: #f0f002;
+    }
+    :root .SiteActivity-button {
+      border-color: #f0f007;
+      color: #f0f004;
+    }
+    :root .SiteActivity-button:focus,
+    :root .SiteActivity-button:hover {
+      border-color: #f0f009;
+      color: #f0f005;
+    }
+    :root .NotificationBadge-container {
+      background: #f0f007;
+    }
+    :root [d17q91q7][aria-expanded="true"] {
+      background-color: #f0f004;
+    }
+    :root .UILinkBox-link .UILink:active,
+    :root .UILinkBox-link .UILink:focus,
+    :root .UILinkBox-link .UILink:hover {
+      border-bottom-color: #f0f007;
+    }
+    :root .AssemblySmallCard-hover:hover::after {
+      background-color: #f0f007;
+    }
+    :root .rellgo5 {
+      color: #f0f004;
+    }
+    :root #react-autowhatever-site-header-global-search-autosuggest {
+      background-color: #f0f003;
+      border-color: #f0f002;
+    }
+    :root .tqxyjjt {
+      color: #f0f004;
+    }
+    :root text {
+      color: #f0f005;
+    }
+    :root li.react-autosuggest__suggestion:hover {
+      background: #f0f002;
+    }
+    :root .poy4xqf {
+      background: #f0f003;
+      border-color: #f0f003;
+    }
+    :root .wej97zk {
+      background-color: #f0f003;
+    }
+    :root .wvbj6cw {
+      background-color: #f0f003;
+    }
+    :root .c721v4v {
+      color: #f0f004;
+    }
+    :root .c139umgt {
+      color: #f0f004;
+    }
+    :root .t1ow6gy9 {
+      color: #f0f005;
+    }
+    :root .u1jilvfz {
+      background-color: #f0f007;
+    }
+    :root .wej97zk:hover {
+      background-color: #f0f002;
+    }
+    :root .s1ovpdog {
+      background-color: #f0f002;
+      border-top-color: #f0f009;
+    }
+    :root .c1ap9d88 .AssemblyMenuItem--title {
+      color: #f0f006;
+    }
+    :root .c1ap9d88:hover {
+      background-color: #f0f001;
+    }
+    :root .c1ap9d88 {
+      background-color: #f0f002;
+    }
+    :root .h1hbonvg {
+      background-color: #f0f002;
+    }
+    :root .UIBaseCard-labelTag {
+      background-color: #f0f00c;
+      color: #f0f004;
+    }
+    :root .UIIcon--chevron-right {
+      color: #f0f004;
+    }
+    :root .UIIcon--chevron-left {
+      color: #f0f004;
+    }
+    :root .UIPopover,
+    :root .UIPopover::after {
+      background-color: #f0f002;
+    }
+    :root .UIPopover.UIPopover--mediumShadow {
+      box-shadow: 0 0.125rem 0.25rem #f0f003;
+    }
+    :root .SetRecommendationCard-contextMenuItem:hover {
+      background-color: #f0f003;
+    }
+    :root .cxvmyeq {
+      border-color: #f0f003;
+    }
+    :root .wxhi4p:hover {
+      background-color: #f0f002;
+    }
+    :root .AssemblyTab {
+      color: #f0f006;
+    }
+    :root .AssemblyTab::after {
+      color: #f0f006;
+    }
+    :root .s4cgp9b.AssemblyTab {
+      color: #f0f004;
+    }
+    :root .AssemblyTab:hover {
+      color: #f0f01a;
+    }
+    :root .f1ub3img {
+      border-top-color: #f0f007;
+    }
+    :root .AssemblyTabsWrapper::before {
+      background-color: #f0f007;
+    }
+    :root .s4cgp9b.AssemblyTab::after {
+      background: #f0f019;
+    }
+    :root .AssemblyTab:hover::after {
+      background: #f0f019;
+    }
+    :root .w15oa27z:hover {
+      background: #f0f002;
+    }
+    :root .i1v4i7rf.textbookIcon {
+      background-image: url("https://assets.quizlet.com/a/j/dist/app/i/explanations/textbook_night.1ff39f68b703b28.svg");
+    }
+    :root .sinah8x {
+      color: #f0f006;
+    }
+    :root .SetPage {
+      background-color: #f0f001;
+    }
+    :root .SetPage .SetPage-setDetailsInfoWrapper,
+    :root .SetPage .SetPage-setIntroWrapper.SetPage-setIntroWrapper {
+      background-color: #f0f001;
+    }
+    :root .SetPage-setDetailsInfoWrapper {
+      background-color: #f0f001;
+    }
+    :root .SetPage-setDetailsTermsWrapper {
+      background-color: #f0f001;
+    }
+    :root .SetPage .SetPage-setDetailsTermsWrapper,
+    :root .SetPage .SetPage-setLinksWrapper.SetPage-setLinksWrapper {
+      background-color: #f0f001;
+    }
+    :root .SiteFooter {
+      background-color: #f0f001;
+      color: #f0f004;
+    }
+    :root .SiteFooter-bottom {
+      background-color: #f0f001;
+    }
+    :root .SetPageStickyHeader.is-pinned {
+      background-color: #f0f003;
+    }
+    :root .StudyModesNavItem {
+      background-color: #f0f002;
+    }
+    :root .StudyModesNavItemName {
+      color: #f0f004;
+    }
+    :root .StudyModesNavItemName:visited {
+      color: #f0f004;
+    }
+    :root .c78g08u {
+      background-color: #f0f002;
+      box-shadow: 0 0.25rem 1rem 0 #f0f003;
+    }
+    :root .o1rf13bx {
+      color: #f0f004;
+    }
+    :root .lck97c5 {
+      background: #f0f002;
+    }
+    :root .SetPageTerm {
+      background: #f0f002;
+    }
+    :root .AssemblyIconButton--secondary {
+      background: #f0f003;
+    }
+    :root .UIDropdown--inverted {
+      background: #f0f001;
+    }
+    :root .UIDropdown-select {
+      color: #f0f004;
+    }
+    :root .soyu1j6 {
+      color: #f0f012;
+    }
+    :root .s1e29328.cbb9lkx {
+      color: #f0f011;
+      background: #f0f00d;
+      border-color: #f0f013;
+    }
+    :root .kahyre1 {
+      color: #f0f015;
+    }
+    :root .kzo3tk {
+      color: #f0f019;
+    }
+    :root .SiteActivity-button .NotificationBadge-container {
+      background-color: #f0f019;
+    }
+    :root .hgmlhdt {
+      background-color: #f0f003;
+    }
+    :root .o1rfl3bx {
+      color: #f0f004;
+      border-color: #f0f007;
+    }
+    :root .c1lf7cxm {
+      color: #f0f006;
+    }
+    :root .l3ucz5w {
+      color: #f0f005;
+    }
+    :root .u3v4pv0 {
+      color: #f0f006;
+    }
+    :root .StudyModesNavItem:hover {
+      border-bottom-color: #f0f007;
+    }
+    :root .o1g4qwv {
+      background-color: #f0f003;
+    }
+    :root .tqyy7cr.h19ive8k {
+      color: #f0f004;
+    }
+    :root .t1kgxwr0 {
+      color: #f0f004;
+    }
+    :root .tuxzbsj {
+      fill: #f0f004;
+    }
+    :root .c5iom2o {
+      color: #f0f01a;
+    }
+    :root .lck97c5:focus .c5iom2o,
+    :root .lck97c5:hover .c5iom2o {
+      color: #f0f019;
+    }
+    :root .t4sjwm7 {
+      color: #f0f004;
+    }
+    :root body.colorRefresh-setPageOnly .UISwitch-label {
+      color: #f0f004;
+    }
+    :root .UISwitch-label {
+      border-color: #f0f008;
+      background-color: #f0f002;
+      color: #f0f006;
+    }
+    :root .SetPageTerm-sideContent {
+      border-right-color: #f0f007;
+    }
+    :root .UISwitch-input:checked:not(:disabled ~ .UISwitch-label) {
+      color: #f0f002;
+      border-color: #f0f014;
+      background-color: #f0f014;
+    }
+    :root .AssemblyIconButton--highlight {
+      background: none;
+      color: #f0f014;
+    }
+    :root .UIToggle-optionLabel {
+      background-color: #f0f002;
+      color: #f0f019;
+    }
+    :root .AssemblyIconButton--highlight:hover:not([disabled]) {
+      background-color: #f0f003;
+    }
+    :root .AssemblyIconButton--tertiary:hover:not([disabled]) {
+      background-color: #f0f003;
+    }
+    :root .AssemblyButtonBase--square {
+      color: #f0f004;
+    }
+    :root .z1x1k8pd.svwhkoh {
+      color: #f0f015;
+      border-color: #f0f015;
+    }
+    :root .svwhkoh {
+      background-color: #f0f002;
+    }
+    :root .kzo3tk.cbb9lkx {
+      background: #f0f015;
+      border-color: #f0f015;
+      color: #f0f019;
+    }
+    :root .kahyre1.l40n85g {
+      color: #f0f015;
+    }
+    :root .soyu1j6.l40n85g {
+      color: #f0f011;
+    }
+    :root .axrvw3e.s1e29328.cbb9lkx {
+      background: #f0f00e;
+      border-color: #f0f00e;
+      color: #f0f011;
+    }
+    :root .mnlifen {
+      background: #f0f002;
+    }
+    :root .f1yw38c3 {
+      background: none;
+    }
+    :root .AssemblyToggleSwitch-input:checked + .AssemblyToggleSwitch-fauxInput {
+      background: #f0f01a;
+    }
+    :root .AssemblyToggleSwitch-input:checked + .AssemblyToggleSwitch-fauxInput::after {
+      background-color: #f0f00f;
+    }
+    :root .AssemblyToggleSwitch-fauxInput {
+      background: #f0f008;
+    }
+    :root .AssemblyToggleSwitch-fauxInput::after {
+      background: #f0f01a;
+    }
+    :root .c13e2cpr {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root .AssemblyInput {
+      background-color: #f0f00c;
+      color: #f0f004;
+    }
+    :root .AssemblyInput-input {
+      color: #f0f005;
+    }
+    :root .a1k2umqi {
+      background-color: #f0f003;
+    }
+    :root .bxtl8jy {
+      background-color: #f0f00c;
+      color: #f0f004;
+    }
+    :root .ah6785x {
+      color: #f0f005;
+    }
+    :root .a1fcz3cu:focus-within > .ah6785x {
+      color: #f0f005;
+    }
+    :root .e29yge6 .react-autosuggest__container .react-autosuggest__suggestions-container--open {
+      background: #f0f002;
+    }
+    :root .e1g8wmc7 {
+      background-color: #f0f00c;
+    }
+    :root .AssemblyLink--secondary:hover {
+      color: #f0f013;
+    }
+    :root .a1k2umqi:focus-within {
+      border-bottom-color: #f0f019;
+    }
+    :root .cgyrcnx {
+      background-color: #f0f007;
+    }
+    :root .byhd60 {
+      background-color: #f0f012;
+    }
+    :root .d11ucs5j {
+      background: #f0f007;
+    }
+    :root .sjsxdsz {
+      border-bottom-color: #f0f007;
+    }
+    :root .fz4nps6 {
+      border-top-color: #f0f007;
+    }
+    :root .AssemblyPrimaryButton--default:disabled,
+    :root .AssemblyPrimaryButton--default[aria-disabled="true"] {
+      background: #f0f00c;
+      border-color: #f0f001;
+      color: #f0f006;
+    }
+    :root .ptc18zm {
+      background: inherit;
+    }
+    :root .c1gi3y8b {
+      background: #f0f003;
+    }
+    :root .k3lm6f3 {
+      background-color: #f0f003;
+      color: #f0f004;
+    }
+    :root .w1uwrq7e {
+      color: #f0f004;
+      border-color: #f0f007;
+    }
+    :root .t1d08860 {
+      color: inherit;
+    }
+    :root .i1p8x1gp .i1e9rt5 {
+      color: #f0f012;
+    }
+    :root .i1p8x1gp {
+      background-color: #f0f002;
+    }
+    :root .i1p8x1gp,
+    :root .i1p8x1gp:focus,
+    :root .i1p8x1gp:hover {
+      border-color: #f0f012;
+    }
+    :root .cv1rd7s {
+      background: #f0f002;
+    }
+    :root .cv1rd7s,
+    :root .cv1rd7s:focus,
+    :root .cv1rd7s:hover {
+      border-color: #f0f015;
+    }
+    :root .cv1rd7s .i1e9rt5 {
+      color: #f0f015;
+    }
+    :root .b1jcf4jl {
+      background-color: #f0f003;
+    }
+    :root .pck8ctn {
+      color: #f0f004;
+    }
+    :root .i6cf9vy {
+      color: #f0f011;
+    }
+    :root .c2mfnz6 {
+      color: #f0f015;
+    }
+    :root .pr2w5fu:first-child {
+      border-right-color: #f0f007;
+    }
+    :root .t117larf {
+      background-color: #f0f003;
+      border-color: #f0f007;
+      color: #f0f004;
+    }
+    :root .q1m09plc:hover {
+      background-color: #f0f003;
+    }
+    :root .q1m09plc {
+      color: #f0f019;
+    }
+    :root .hbcu5v.q1m09plc {
+      color: #f0f005;
+    }
+    :root .qzk5crt {
+      color: #f0f004;
+    }
+    :root .sd72jj0 {
+      color: #f0f005;
+    }
+    :root .UIModalHeader {
+      background-color: #f0f003;
+    }
+    :root .UIModalBody {
+      background-color: #f0f002;
+    }
+    :root .TestModeOptions {
+      background-color: #f0f002;
+    }
+    :root .UIModal-box {
+      color: #f0f004;
+    }
+    :root .UICheckbox-label {
+      color: #f0f004;
+    }
+    :root .UICheckbox-input:checked ~ .UICheckbox-fauxInput {
+      border-color: #f0f014;
+    }
+    :root .UICheckbox-fauxInput::after {
+      border-color: #f0f014;
+      border-width: 0 0 0.125rem 0.125rem;
+    }
+    :root .UIInput-input {
+      color: #f0f004;
+    }
+    :root .UIInput[aria-invalid="false"] .UIInput-input ~ .UIInput-border {
+      box-shadow: 0 0.125rem 0 0 #f0f007;
+    }
+    :root .UILink,
+    :root .UILink:visited {
+      color: #f0f00d;
+    }
+    :root .UIButton:active,
+    :root html.cursor .UIButton:hover,
+    :root html.cursor .UIButton:hover:visited {
+      background-color: #f0f017;
+    }
+    :root .UIHorizontalRule {
+      border-bottom-color: #f0f007;
+    }
+    :root .OptionsModal-description,
+    :root .TestModeOptions-listOption-description {
+      color: #f0f006;
+    }
+    :root .swjz05g {
+      background-color: #f0f003;
+    }
+    :root .swjz05g,
+    :root .swjz05g:focus,
+    :root .swjz05g:hover {
+      border-color: #f0f019;
+    }
+    :root .s2y71yx label {
+      background: #f0f00c;
+    }
+    :root .s2y71yx input {
+      background: inherit;
+      color: #f0f004;
+    }
+    :root .TextbookRecommendations {
+      background: #f0f003;
+    }
+    :root .TextbookCard-Details {
+      color: #f0f005;
+    }
+    :root .AssemblyLink--title:any-link {
+      color: #f0f004;
+    }
+    :root .AssemblyLink--title:hover {
+      color: #f0f014;
+    }
+    :root .ah3z5j1 {
+      border-color: #f0f019;
+    }
+    :root .hkyil8p {
+      color: #f0f019;
+    }
+    :root .e17gih4t {
+      border-color: #f0f007;
+    }
+    :root .o1q1tz6w {
+      border-color: #f0f007;
+      color: #f0f004;
+    }
+    :root .hg3d33q {
+      border-color: #0000;
+    }
+    :root .ser6cev,
+    :root .c86ukn8 {
+      color: #f0f006;
+    }
+    :root .a99ei82 {
+      background-color: #f0f002;
+      border-color: #f0f007;
+    }
+    :root .qcpiy8g {
+      color: #f0f004;
+    }
+    :root .pqa404y {
+      color: #f0f015;
+    }
+    :root .s18c8hjh {
+      color: #f0f012;
+    }
+    :root .ljt3l6v {
+      fill: #f0f006;
+    }
+    :root .c16l7630.iayao2g {
+      color: #f0f015;
+    }
+    :root .i1e9dzkh.iayao2g {
+      color: #f0f012;
+    }
+    :root .w1e3jc65 {
+      background-color: #f0f002;
+      border-color: #f0f002;
+    }
+    :root .t7fr19y {
+      color: #f0f01a;
+    }
+    :root .dw1ojws {
+      color: #f0f006;
+    }
+    :root .w1e3jc65:hover {
+      border-color: #f0f007;
+    }
+    :root .q1nxab59 {
+      color: #f0f005;
+    }
+    :root .ssbjprp {
+      color: #f0f006;
+    }
+    :root .smvj06a {
+      color: #f0f005;
+    }
+    :root .cfzatrd.a548wz9 {
+      color: #f0f015;
+    }
+    :root .cag3g2z.anp68o5 {
+      color: #f0f015;
+    }
+    :root .CombinePage-wrap {
+      background-color: #f0f001;
+    }
+    :root .CombinePageTable-row {
+      background-color: #f0f002;
+    }
+    :root .CombinePageTable-rowTermCount {
+      color: #f0f005;
+    }
+    :root .CombinePageTable-setTitle .UIHeading--four {
+      color: #f0f004;
+    }
+    :root .UIDropdown {
+      background: #f0f002;
+      border-color: #f0f003;
+    }
+    :root .UIDropdown .UIDropdown-icon {
+      color: #f0f007;
+    }
+    :root .UIDropdown-select:focus option {
+      background: #f0f002;
+    }
+    :root option:hover {
+      background: #f0f003;
+    }
+    :root .ModeControls {
+      background-color: #f0f002;
+    }
+    :root .ModeControls-backText {
+      color: #f0f004;
+    }
+    :root .ModeControls-back {
+      border-bottom-color: #f0f007;
+    }
+    :root .UIButton--whiteBorder {
+      background: #f0f003;
+      border-color: #f0f001;
+      color: #f0f004;
+    }
+    :root .MatchModeControls-currentTime {
+      color: #f0f019;
+    }
+    :root .MatchModeQuestionScatterTile {
+      background-color: #f0f002;
+      border-color: #f0f009;
+    }
+    :root .MatchModeQuestionScatterTile.is-draggedOver,
+    :root .MatchModeQuestionScatterTile.is-dragging,
+    :root .MatchModeQuestionScatterTile:hover {
+      border-color: #f0f007;
+    }
+    :root .MatchModeQuestionScatterTile.is-incorrect {
+      border-color: #f0f012;
+    }
+    :root .MatchModeQuestionScatterTile.is-correct {
+      border-color: #f0f015;
+    }
+    :root .HighscoresList {
+      background-color: #f0f003;
+    }
+    :root .HighscoreRow {
+      background-color: #f0f002;
+    }
+    :root .UIButton[aria-disabled="true"],
+    :root .UIButton[aria-disabled="true"]:active,
+    :root .UIButton[aria-disabled="true"]:focus,
+    :root .UIButton[aria-disabled="true"]:visited,
+    :root .UIButton[disabled],
+    :root .UIButton[disabled]:active,
+    :root .UIButton[disabled]:focus,
+    :root .UIButton[disabled]:visited,
+    :root html.cursor .UIButton[aria-disabled="true"]:hover,
+    :root html.cursor .UIButton[disabled]:hover {
+      background-color: #f0f002;
+    }
+    :root .t10tqhey {
+      background-color: #f0f002;
+      color: #f0f004;
+      border-color: #f0f003;
+    }
+    :root .t9i9vmb.h19ive8k,
+    :root .t1s26kx5.h19ive8k,
+    :root .s1rx7q8q.h19ive8k {
+      color: #f0f004;
+    }
+    :root .s8j1d54,
+    :root .c49e2ip {
+      color: #f0f005;
+    }
+    :root .c6p6uaq .react-calendar__month-view__days__day {
+      color: #f0f004;
+    }
+    :root .c6p6uaq .react-calendar__month-view__days__day--neighboringMonth {
+      color: #f0f006;
+    }
+    :root .AchievementsImage--isActive .a130rwfv,
+    :root .al33ekg.isActive .a130rwfv {
+      color: #f0f006;
+    }
+    :root .s1rtnf4c::before,
+    :root .s1rtnf4c::after {
+      background: none;
+    }
+    :root .AchievementsImage--isActive .a130rwfv,
+    :root .al33ekg.isActive .a130rwfv,
+    :root .DashboardLayout .SetPreviewLink--noLinkBox,
+    :root .DashboardLayout .PreviewCard--noLinkBox {
+      background-color: #f0f002;
+    }
+    :root .SetPreview-queryMatchHighlight {
+      background: #f0f014;
+      color: #f0f001;
+    }
+    :root .cpey3pe {
+      color: #f0f004;
+    }
+    :root .s1fl65t6 {
+      color: #f0f006;
+    }
+    :root .t1ne2oir {
+      color: #f0f004;
+    }
+    :root .b1xq6unb {
+      color: #f0f004;
+    }
+    :root .bp0a7jj {
+      color: #f0f005;
+    }
+    :root .pltikop {
+      color: #f0f019;
+    }
+    :root .SettingsBox-box {
+      background-color: #f0f002;
+    }
+    :root .EdgyDataCoursePillbox .UIPill {
+      background: #f0f003;
+      border-color: #f0f007;
+      color: #f0f004;
+    }
+    :root .UIAutosuggest .react-autosuggest__suggestions-container {
+      background: #f0f002;
+    }
+    :root .UIAutosuggest .react-autosuggest__suggestion {
+      border-bottom-color: #f0f007;
+    }
+    :root .UIAutosuggest .react-autosuggest__suggestion.react-autosuggest__suggestion--highlighted {
+      border-bottom-color: #f0f014;
+    }
+    :root .EdgyDataCourseSelector-suggestion .EdgyDataCourseSelector-suggestionName {
+      color: #f0f004;
+    }
+    :root .UIInput-input.UIInput-autoExpandInput.is-focused ~ .UIInput-border,
+    :root .UIInput-input:focus ~ .UIInput-border {
+      box-shadow: 0 0.25rem 0 0 #f0f014;
+    }
+    :root .Divider-label {
+      background: #f0f002;
+    }
+    :root .the-label,
+    :root .UIButton {
+      color: #f0f003;
+    }
+    :root input:checked + .p22broa {
+      box-shadow: 0 0 0 0.25rem #f0f019;
+    }
+    :root .button.google {
+      background-color: #f0f011;
+      border-color: #f0f013;
+    }
+    :root .button.google::after {
+      border-right-color: #f0f013;
+    }
+    :root .b1opuclq {
+      background-color: #f0f002;
+      box-shadow: 0 0.25rem 1rem 0 #f0f003;
+    }
+    :root .button.apple .label,
+    :root .button.facebook .label,
+    :root .button.google .label {
+      color: #f0f003;
+    }
+    :root .button.facebook {
+      background-color: #f0f019;
+      border-color: #f0f01a;
+    }
+    :root .button.facebook::after {
+      border-right-color: #f0f01a;
+    }
+    :root .UIInput-input:-webkit-autofill,
+    :root .UIInput-input:-webkit-autofill:focus,
+    :root .UIInput-input:-webkit-autofill:hover {
+      box-shadow: none !important;
+    }
+    :root .UIInput-input:-internal-autofill-previewed,
+    :root .UIInput-input:-internal-autofill-selected {
+      -webkit-text-fill-color: #f0f004;
+    }
+    :root .UILink:active,
+    :root html.cursor .UILink:hover,
+    :root html.cursor .UILink:hover:visited {
+      color: #f0f012;
+    }
+    :root .setting legend,
+    :root .setting p {
+      color: #f0f004;
+    }
+    :root .UIButton-wrapper {
+      color: inherit;
+    }
+    :root .UIButton--alert:active,
+    :root html.cursor .UIButton--alert:hover,
+    :root html.cursor .UIButton--alert:hover:visited {
+      background-color: #f0f012;
+    }
+    :root .c1qo8ql4 {
+      background-color: #f0f001;
+    }
+    :root .phx9gy6 {
+      color: #f0f004;
+    }
+    :root .soad3d7 {
+      color: #f0f004;
+    }
+    :root .AssemblyLink--primary:any-link {
+      color: #f0f00d;
+    }
+    :root .AssemblyLink {
+      color: #f0f00d;
+    }
+    :root .UIButton--borderless:active,
+    :root html.cursor .UIButton--borderless:hover,
+    :root html.cursor .UIButton--borderless:hover:visited {
+      background-color: initial;
+      color: #f0f014;
+    }
+    :root .UIButton--borderless[aria-disabled="true"],
+    :root .UIButton--borderless[aria-disabled="true"]:active,
+    :root .UIButton--borderless[aria-disabled="true"]:focus,
+    :root .UIButton--borderless[aria-disabled="true"]:visited,
+    :root .UIButton--borderless[disabled],
+    :root .UIButton--borderless[disabled]:active,
+    :root .UIButton--borderless[disabled]:focus,
+    :root .UIButton--borderless[disabled]:visited,
+    :root html.cursor .UIButton--borderless[aria-disabled="true"]:hover,
+    :root html.cursor .UIButton--borderless[disabled]:hover {
+      background-color: initial;
+    }
+    :root .s19dmjr1.isGlobalNavInExperiment.is-focused,
+    :root .s19dmjr1.isGlobalNavInExperiment.is-focused input {
+      background: #f0f00c;
+    }
+    :root .t1iqlnnn p {
+      color: #f0f005;
+    }
+    :root .axupt8p,
+    :root .igkckaz {
+      color: #f0f00d;
+    }
+    :root .axupt8p:active,
+    :root .axupt8p:focus,
+    :root .axupt8p:hover {
+      color: #f0f00e;
+    }
+    :root .cnuw08l {
+      background-color: #f0f002;
+    }
+    :root .c192jkj8 {
+      color: #f0f004;
+    }
+    :root .a1sd82zg {
+      background-color: #f0f003;
+      border-left-color: #f0f01a;
+    }
+    :root .g84nzqs {
+      background-image: none;
+    }
+    :root .du7o3ew > div:not(:last-child) {
+      border-right-color: #f0f007;
+    }
+    :root .i73vo82:hover {
+      color: #f0f003;
+      background-color: #f0f003;
+    }
+    :root .f2nmi2p {
+      border-top-color: #f0f007;
+    }
+    :root .a1scx0nz {
+      background-color: #f0f002;
+    }
+    :root .a4ouqer {
+      color: #f0f004;
+    }
+    :root .t104cykg {
+      color: #f0f004;
+    }
+    :root .ExplanationsLandingPage #PrismicExplanationsSearchBarTarget label,
+    :root .ExplanationsLandingPage #SearchBarTarget label,
+    :root .explanations.prismic-page #PrismicExplanationsSearchBarTarget label,
+    :root .explanations.prismic-page #SearchBarTarget label {
+      background-color: #f0f00c;
+    }
+    :root .l1rgb1ub {
+      border-color: #f0f007;
+    }
+    :root .theme-night .h1uvmh9x,
+    :root .h1uvmh9x {
+      background: #f0f002;
+    }
+    :root .h1wn8ccf {
+      color: #f0f004;
+    }
+    :root .ccm0r9d {
+      color: #f0f006;
+    }
+    :root .AssemblySmallCard-isActive::after {
+      background-color: #f0f01a;
+    }
+    :root .i192320l {
+      border-color: #f0f002;
+    }
+    :root .b1j40uwt::before {
+      background-color: #f0f002;
+    }
+    :root .theme-night .g84nzqs {
+      background: none;
+    }
+    :root .CreateSetHeader-sticky {
+      background: #f0f001;
+    }
+    :root .a1fcz3cu {
+      background-color: #f0f00c;
+    }
+    :root .CreateSetHeader-permissionsLink {
+      color: #f0f005;
+    }
+    :root .CreateSetDiagramUploader .UIFloatedCard--white,
+    :root .TermContent-inner {
+      background-color: #f0f002;
+    }
+    :root .CreateSetDiagramUploader-banner {
+      border-color: #f0f009;
+    }
+    :root .AssemblyIconButton--primaryInverted {
+      border-color: #f0f007;
+    }
+    :root .StudiableItemToolbar {
+      border-bottom-color: #f0f007;
+    }
+    :root .b18prmdf {
+      box-shadow: 0 0.125rem 0 0 #f0f007;
+    }
+    :root .ImageUploadProminentContextToggle {
+      border-color: #f0f009;
+    }
+    :root .UILinkButton {
+      border-bottom-color: #f0f019;
+      color: #f0f004;
+    }
+    :root .p10i2lyl {
+      background-color: #f0f002;
+    }
+    :root * + .KeyboardShortcuts-shortcut,
+    :root .KeyboardShortcuts-shortcut + *,
+    :root .KeyboardShortcuts-shortcut + .KeyboardShortcuts-shortcut {
+      border-top-color: #f0f007;
+    }
+    :root .UIKeyboardInput {
+      color: #f0f004;
+      border-color: #f0f007;
+    }
+    :root .UIDropdown-select option {
+      color: #f0f004;
+    }
+    :root .UIButton--inverted:active,
+    :root html.cursor .UIButton--inverted:hover,
+    :root html.cursor .UIButton--inverted:hover:visited {
+      box-shadow: inset 0 0 0 3px #f0f007;
+    }
+    :root .PMEditor:focus-within ~ .b18prmdf {
+      box-shadow: 0 0.25rem 0 0 #f0f014;
+    }
+    :root .UITooltip,
+    :root .UITooltip::after {
+      background: #f0f003;
+    }
+    :root :not(.ie11 .UITooltip),
+    :root :not(.ie11 .UIPopover) {
+      filter: none;
+    }
+    :root .LanguageSelect-option:hover,
+    :root .Select-option.is-focused .LanguageSelect-option {
+      background-color: #f0f014;
+    }
+    :root .i1u1jhdl {
+      background-color: #f0f003;
+    }
+    :root .TermRowDragPlaceholder {
+      background: #f0f001;
+    }
+    :root .CreateSetDiagramUploader-banner.is-dropTarget {
+      border-color: #f0f014;
+    }
+    :root .TermContent-addRow:hover .UILinkButton {
+      border-bottom-color: #f0f014;
+    }
+    :root .tetv1rf.t8spden:hover {
+      background-color: #f0f003;
+    }
+    :root .ImportTerms {
+      background-color: #f0f001;
+    }
+    :root .ImportTerms-import,
+    :root .ImportTerms-preview {
+      background-color: #f0f001;
+    }
+    :root .ImportTerms-textarea {
+      color: #f0f004;
+      border-color: #f0f007;
+    }
+    :root .TermRowsPreview .TermRowsPreview-row {
+      background: #f0f002;
+    }
+    :root .UIRadio-input:checked ~ .UIRadio-fauxInput {
+      border-color: #f0f014;
+    }
+    :root .UIRadio-fauxInput::after {
+      background-color: #f0f014;
+    }
+    :root .UILinkButton:active,
+    :root .UILinkButton:focus,
+    :root .UILinkButton:hover {
+      border-bottom-color: #f0f014;
+    }
+    :root .AutosuggestContextItem {
+      background-color: #f0f003;
+      color: #f0f004;
+    }
+    :root .AssemblyNotice-error {
+      border-color: #f0f011;
+      background-color: #f0f00c;
+    }
+    :root .TermRow.is-duplicate {
+      outline-color: #f0f014;
+    }
+    :root .AssemblyPrimaryButton--danger {
+      background: #f0f011;
+      color: #f0f003;
+    }
+    :root .AssemblyPrimaryButton--danger:hover:not([disabled]),
+    :root [aria-disabled="true"] {
+      background: #f0f00f;
+    }
+    :root .s19dmjr1.is-focused,
+    :root .s19dmjr1.is-focused input,
+    :root .s2y71yx label,
+    :root .s2y71yx.is-expanded label {
+      background: #f0f00c;
+      color: #f0f004;
+    }
+    :root .eeiq5c0 {
+      color: #f0f004;
+    }
+    :root .t1r0fp00,
+    :root .t1elfe8k {
+      color: #f0f006;
+    }
+    :root .MobilePage {
+      background: #f0f001;
+    }
+    :root .MobilePage-feature {
+      border-color: #f0f007;
+    }
+    :root .MobilePage-anyDevice {
+      border-top-color: #f0f007;
+    }
+    :root .AssemblyTextButton--secondary {
+      color: #f0f004;
+    }
+    :root .AssemblyPrimaryButton--upgrade {
+      background: #f0f014;
+    }
+    :root .page,
+    :root .PrismicSimpleRichText--white,
+    :root .PrismicTextCallout--whiteBackground,
+    :root .PrismicVideoEmbedWithText--whiteBackground,
+    :root .p1mcvm6s,
+    :root .PrismicImageTextTile--whiteBackground,
+    :root .PrismicTextCallout--twilightBlue200Background,
+    :root #SearchResultsPageHeader-mainExperiment {
+      background-color: #f0f001;
+    }
+    :root .tfomyx6,
+    :root .i1rs7b62,
+    :root .d5ww82k {
+      color: #f0f004;
+    }
+    :root .cssrxmc {
+      background-color: #f0f014;
+    }
+    :root .PrismicImageTextTile-tileWrapper {
+      background-color: #f0f002;
+    }
+    :root .AssemblyPrimaryButton--upgrade:hover:not([disabled]) {
+      background: #f0f00d;
+    }
+    :root .s1qq0zr7 {
+      background-color: #f0f002;
+    }
+    :root .sv0yvnj a,
+    :root .sv0yvnj a:visited:not(:last-child) {
+      color: #f0f004;
+    }
+    :root .sg4pwu6:hover,
+    :root .hivq638,
+    :root .s1ahro8n:hover {
+      background-color: #f0f003;
+    }
+    :root .e7lqtuc .react-autosuggest__suggestions-container.react-autosuggest__suggestions-container--open {
+      background-color: #f0f002;
+    }
+    :root .e7lqtuc .react-autosuggest__section-title,
+    :root .SearchResultsPageHeader-queryFeedback,
+    :root .SearchResultsPage-contentType .SearchResultsPage-emptyStateHeadline,
+    :root .SearchResultsPage-contentType .SearchResultsPage-emptyStateDescription,
+    :root .SearchResultsPage-contentType .SearchResultsPage-emptyStateSuggestionsList {
+      color: #f0f004;
+    }
+    :root .markdown-body {
+      color: #f0f005;
+    }
+    :root .e7lqtuc li.react-autosuggest__suggestion.react-autosuggest__suggestion--highlighted,
+    :root .e7lqtuc li.react-autosuggest__suggestion:hover {
+      background-color: #f0f003;
+      border-color: #f0f01a;
+    }
+    :root .UserPreviewCard-username,
+    :root .ClassPreviewCard-title {
+      color: #f0f004;
+    }
+    :root .UserPreviewCard-classesDescription,
+    :root .UserPreviewCard-createdSetsDescription,
+    :root .QuestionCard-subject,
+    :root .ClassPreviewCard-location,
+    :root .ClassPreviewCard-membersDescription,
+    :root .ClassPreviewCard-studySetsDescription {
+      color: #f0f005;
+    }
+    :root .QuestionCard-bottomGradient {
+      background-image: none;
+    }
+    :root .AssemblyTextButton--primary {
+      color: #f0f00d;
+    }
+    :root .TosLegend--normal {
+      color: #f0f005;
+    }
+    :root .AssemblyLink--secondary:any-link {
+      color: #f0f00d;
+    }
+    :root .lghzn8f,
+    :root .a1cdxe01.h9lvpq {
+      color: #f0f004;
+    }
+    :root .s1mff1xn,
+    :root .AssemblyCheckbox-label {
+      color: #f0f004;
+    }
+    :root .ccnmm10 {
+      background-color: #f0f002;
+    }
+    :root .c1g4obhz {
+      background-color: #f0f003;
+      color: #f0f004;
+    }
+    :root .SetPageTerm-wordText,
+    :root .SetPageTerm-definitionText {
+      color: #f0f004;
+    }
+    :root .SetPageTerms-embeddedDesktopAdWrapper {
+      background: #f0f002;
+    }
+    :root .c1qw5oc {
+      background: #f0f003;
+      border-bottom-color: #f0f00c;
+    }
+    :root .c19lfjrd,
+    :root .l1fkuqeb {
+      background-color: #f0f001;
+    }
+    :root .bxyvgmh {
+      background-color: #f0f002;
+    }
+    :root .ata5p6z[aria-disabled="true"],
+    :root .ata5p6z[aria-disabled="true"] div,
+    :root .ata5p6z[aria-disabled="true"] textarea {
+      background-color: #f0f002;
+    }
+    :root .ata5p6z {
+      border-color: #f0f007;
+      background-color: #f0f002;
+    }
+    :root .AssemblyIconButton--primary:disabled,
+    :root .AssemblyIconButton--primary[aria-disabled="true"] {
+      background: #f0f00b;
+      color: #f0f004;
+    }
+    :root .ugcsb7m {
+      background-color: #f0f019;
+      color: #f0f003;
+    }
+    :root .AssemblySecondaryButton:disabled,
+    :root .AssemblySecondaryButton[aria-disabled="true"] {
+      background-color: #f0f001;
+      border-color: #f0f007;
+    }
+    :root .m9mf1hr div,
+    :root .m9mf1hr textarea {
+      background-color: #f0f002;
+    }
+    :root .lu5rlws {
+      color: #f0f005;
+    }
+    :root .b1yjduyh {
+      background-color: #f0f002;
+    }
+    :root .d6tac4m {
+      background-color: #f0f00c;
+    }
+    :root .RecentFeed-empty {
+      background-color: #f0f002;
+    }
+    :root .i1ykvw4f {
+      background: #f0f002;
+    }
+    :root .i1ykvw4f:hover {
+      background: #f0f003;
+    }
+    :root .RecentFeed-empty--cta {
+      color: #f0f004;
+    }
+    :root .UIButton--whiteBorder:active,
+    :root html.cursor .UIButton--whiteBorder:hover,
+    :root html.cursor .UIButton--whiteBorder:hover:visited {
+      color: #f0f014;
+    }
+    :root .c124zyvn {
+      background: #f0f001;
+    }
+    :root .AssemblyLink--primary:hover {
+      color: #f0f012;
+    }
+    :root .cczh2hb,
+    :root .h1jftztg,
+    :root .t2m5erc {
+      color: #f0f004;
+    }
+    :root .t1nv0ihp,
+    :root .sku1zau,
+    :root .s54kfc3 {
+      color: #f0f005;
+    }
+    :root .ImageUploadProminentContextToggle .ImageUploadProminentContextToggle-IconExplanation {
+      color: #f0f004;
+    }
+    :root .SiteHeaderLogo-link {
+      color: #f0f019;
+    }
+    :root .c1sgnxr5 {
+      color: #f0f015;
+    }
+    :root .suyglfi {
+      color: #f0f004;
+    }
+    :root .s2y71yx li.react-autosuggest__suggestion.react-autosuggest__suggestion--highlighted,
+    :root .s2y71yx li.react-autosuggest__suggestion:hover {
+      background: #f0f002;
+    }
+    :root .q1kwd3of {
+      color: #f0f007;
+    }
+    :root .c1741jrq:not(:first-child) {
+      border-top-color: #f0f007;
+    }
+    :root .SetsView-studySetResults {
+      color: #f0f004;
+    }
+    :root .UILink .SetPreview-cardHeaderTitle,
+    :root .UILink .SetPreview-cardHeaderTitle:visited,
+    :root html.touch .UILink .SetPreview-cardHeaderTitle:focus:hover:not(:active) {
+      color: #f0f004;
+    }
+    :root .SetPreview-cardBylineClass {
+      color: #f0f006;
+    }
+    :root .UILink .SetPreview-cardHeaderTitle:active,
+    :root html.cursor .UILink .SetPreview-cardHeaderTitle:hover,
+    :root html.cursor .UILink .SetPreview-cardHeaderTitle:hover:visited {
+      color: #f0f014;
+    }
+    :root .e29yge6 .react-autosuggest__container .react-autosuggest__suggestion.react-autosuggest__suggestion--highlighted,
+    :root .e29yge6 .react-autosuggest__container .react-autosuggest__suggestion:hover {
+      background-color: #f0f003;
+    }
+    :root .e29yge6 .react-autosuggest__container .react-autosuggest__suggestion {
+      border-bottom-color: #f0f002;
+    }
+    :root .EdgyDataCourseSelector-addYourOwn {
+      color: #f0f019;
+    }
+    :root .i5h71e0 {
+      background-color: #f0f00c;
+    }
+    :root .ikdjsw2 {
+      color: #f0f004;
+    }
+    :root .i1m3kkj2 {
+      color: #f0f004;
+    }
+    :root .i1190urg {
+      color: #f0f006;
+    }
+    :root .le206v0 {
+      border-color: #f0f007;
+    }
+    :root .sby7w0g {
+      background: #f0f007;
+    }
+    :root .c3s5vdc:hover {
+      background-color: #f0f019;
+    }
+    :root .g4cyoxx {
+      color: #f0f004;
+    }
+    :root .s1lyn4nc {
+      background: #f0f019;
+    }
+    :root .UIModal.is-white .UIModal-box {
+      background: #f0f002;
+    }
+    :root .UIModalBadge {
+      background-color: #f0f019;
+      color: #f0f003;
+    }
+    :root .CombinePage-sourceSelectWrap .UIFieldset-legend {
+      color: #f0f004;
+    }
+    :root .k1reqlz9.ijrfqxy svg {
+      fill: #f0f015;
+    }
+    :root .dhmqhsx.ijrfqxy svg {
+      fill: #f0f011;
+    }
+    :root .c6p6uaq .react-calendar__navigation__label {
+      color: #f0f004;
+    }
+    :root .c6p6uaq .react-calendar__navigation__arrow {
+      color: #f0f004;
+    }
+    :root .c6p6uaq .react-calendar__navigation__arrow:disabled {
+      color: #f0f008;
+    }
+    :root .f1sxiitf {
+      background: none;
+    }
+    :root .c1ext0pg {
+      background-color: #f0f00b;
+      color: #f0f004;
+    }
+    :root .sl7nfp9 {
+      background-color: #f0f002;
+    }
+    :root .sdw19mu .SetPreviewCardV1 {
+      border-bottom-color: #f0f007;
+    }
+    :root .fiejqa {
+      background: none;
+    }
+    :root .t1ied0h6 {
+      color: #f0f005;
+    }
+    :root .SetListMediumCard-isActive::before {
+      background-color: #f0f01a;
+    }
+    :root .c51obz3 {
+      background-color: #f0f001;
+    }
+    :root .s80h93u {
+      color: #f0f004;
+      border-color: #f0f007;
+    }
+    :root .s80h93u:active:not([disabled]),
+    :root .s80h93u:hover:not([disabled]) {
+      background: #f0f003;
+    }
+    :root .r78nxpu > div:hover {
+      background-color: #f0f002;
+    }
+    :root .stbnqj0 {
+      color: #f0f004;
+    }
+    :root .c1n6gny6,
+    :root .to5kbh1 {
+      color: #f0f004;
+    }
+    :root .tb3hrve {
+      color: #f0f006;
+    }
+    :root .HurricaneBanner--default {
+      background: #f0f003;
+      border-bottom-color: #f0f00c;
+    }
+    :root .HurricaneBanner--default .HurricaneBanner-text {
+      color: #f0f004;
+    }
+    :root .StudyModesNavSectionTitle {
+      color: #f0f004;
+    }
+    :root .cgkxufs {
+      background: #f0f003;
+      border-bottom-color: #f0f009;
+    }
+    :root .TeacherChoosePageView-gameTypeOption {
+      background-color: #f0f002;
+    }
+    :root .TeacherChoosePageView-gameTypes--text {
+      color: #f0f004;
+    }
+    :root .TeacherChoosePageView-gameTypes--description {
+      color: #f0f006;
+    }
+    :root .TeacherChoosePageView-gameTypes--cta,
+    :root .CardContent-cta {
+      color: #f0f019;
+    }
+    :root .TeacherChoosePageView-gameTypeOption:hover,
+    :root .PlayModeCard:hover {
+      border-bottom-color: #f0f014;
+    }
+    :root .PlayModeCard:active,
+    :root .PlayModeCard:focus:not(:active:not(:hover)),
+    :root html.cursor .PlayModeCard:hover,
+    :root html.cursor .PlayModeCard:hover:visited {
+      border-color: #f0f014;
+    }
+    :root .PlayModeCard {
+      background-color: #f0f002;
+    }
+    :root .CardContent-option {
+      background: #f0f003;
+      color: #f0f004;
+    }
+    :root .CardContent-text,
+    :root .CardContent-title {
+      color: #f0f004;
+    }
+    :root .TeacherLobbyView-join {
+      background-color: #f0f002;
+    }
+    :root .TeacherLobbyView .UIFloatedCard,
+    :root .TeacherStartGameView-side,
+    :root .TeacherEndView-side {
+      background: #f0f003;
+    }
+    :root .theme-night .TeacherLobbyView .UIFloatedCard {
+      border-color: #f0f007;
+    }
+    :root .TeacherLobbyView-join--instructionLink .UIButton {
+      color: #f0f019;
+    }
+    :root .TeacherLobbyView-player:hover {
+      color: #f0f011;
+    }
+    :root .td5er02 .UIFloatedCard {
+      background-color: #f0f002;
+    }
+    :root .TermStat--perfectTerms .TermStat-header {
+      background-color: #f0f015;
+    }
+    :root .TermStat-header {
+      color: #f0f002;
+    }
+    :root .TermStatGroup-navProgress {
+      color: #f0f006 \1;
+    }
+    :root .TeacherEndView-side--bottomButton .UIButton.UIButton--whiteBorderRounded {
+      color: #f0f004;
+    }
+    :root .SegmentedControl.SegmentedControl--quizletBlue .SegmentedControl-navItem.is-active,
+    :root .segmented-control.SegmentedControl--quizletBlue .SegmentedControl-navItem.is-active {
+      background: #f0f01a;
+      color: #f0f003;
+    }
+    :root .StudyWhileWaitingView {
+      background-color: #f0f001;
+    }
+    :root .firefox .CardsList.CardsList--showSingle .CardsItem .CardsItemSide .CardsItemInner,
+    :root .ie11 .CardsList.CardsList--showSingle .CardsItem .CardsItemSide .CardsItemInner,
+    :root .webkit .CardsList.CardsList--showSingle .CardsItem .CardsItemSide .CardsItemInner {
+      background-color: #f0f002;
+    }
+    :root .StudentTeamView-teamInner {
+      background-color: #f0f002;
+    }
+    :root .StudentAnswerOption .UIButton {
+      background-color: #f0f002 !important;
+    }
+    :root .StudentAnswerOption .UIButton:active,
+    :root html.cursor .StudentAnswerOption .UIButton:hover,
+    :root html.cursor .StudentAnswerOption .UIButton:hover:visited {
+      border-color: #f0f014;
+    }
+    :root .StudentPlayingHeader {
+      background: #f0f003;
+    }
+    :root .StudentLeaderboard-headstart {
+      background: #f0f019;
+    }
+    :root .StudentLeaderboard {
+      background: #f0f01a;
+    }
+    :root .StudentLeaderboard-team {
+      background: #f0f019;
+    }
+    :root .StudentGameboard-feedback.is-incorrectAnswer {
+      background: #f0f011;
+    }
+    :root .StudentAnswerOption.is-showingIncorrectFeedback.StudentAnswerOption .UIButton {
+      background: #f0f011 !important;
+    }
+    :root .StudentAnswerOption.is-showingCorrectFeedback.StudentAnswerOption .UIButton {
+      background: #f0f015 !important;
+    }
+    :root .StudentIncorrectAnswerFeedback-section--correct .StudentIncorrectAnswerFeedback-heading {
+      color: #f0f015;
+    }
+    :root .TermStat--learnedTerms .TermStat-header {
+      background-color: #f0f011;
+    }
+    :root .TeacherChoosePageView-gameTypeOption:active,
+    :root .TeacherChoosePageView-gameTypeOption:focus:not(:active:not(:hover)),
+    :root html.cursor .TeacherChoosePageView-gameTypeOption:hover,
+    :root html.cursor .TeacherChoosePageView-gameTypeOption:hover:visited {
+      border-color: #f0f014;
+    }
+    :root .tllqvk3,
+    :root .c1tmoumb {
+      background-color: #f0f002;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      /*     .AssemblyIcon--small {
+        color: @lavender;
+    } */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root :root body {
+      color: #f0f004;
+      background: #f0f001;
+    }
+    :root .DashboardLayout {
+      background-color: #f0f001 !important;
+    }
+    :root .TopNavigation {
+      background-color: #f0f003;
+    }
+    :root .s19dmjr1 {
+      border-color: none;
+      background: #f0f00c;
+    }
+    :root .NavigationTab--span {
+      color: #f0f004 !important;
+    }
+    :root .s13oqxd2.NavigationTab:not(.no-highlight::after) {
+      background: #f0f007;
+    }
+    :root .e1bxx0ta::after:hover {
+      background: #f0f007;
+    }
+    :root .hri9878 {
+      color: #f0f005;
+    }
+    :root .AssemblyCard {
+      background-color: #f0f002;
+      border-color: #f0f002;
+      box-shadow: 0 0.125rem 0.5rem 0 #f0f003;
+    }
+    :root h5 {
+      color: #f0f004;
+    }
+    :root .CourseOverviewPreviewCard-recommendationTitle {
+      color: #f0f004;
+    }
+    :root .UISwitch-input:hover:not(:disabled) ~ .UISwitch-label {
+      color: #f0f014;
+    }
+    :root .UIToggle-optionInput:hover:not(:disabled) ~ .UIToggle-optionLabel {
+      color: #f0f014;
+    }
+    :root .UIToggle-optionInput:checked:not(:disabled) ~ .UIToggle-optionLabel {
+      background-color: #f0f014;
+      color: #f0f002;
+    }
+    :root .UIButton--inverted,
+    :root .UIButton--inverted:visited,
+    :root html.touch .UIButton--inverted:focus:hover:not(:active) {
+      box-shadow: inset 0 0 0 3px #f0f009;
+    }
+    :root .UIButton--borderless,
+    :root .UIButton--borderless:visited,
+    :root html.touch .UIButton--borderless:focus:hover:not(:active) {
+      background: none;
+      background-color: initial;
+      color: inherit;
+    }
+    :root .UIButton,
+    :root .UIButton:visited,
+    :root html.touch .UIButton:focus:hover:not(:active) {
+      color: inherit;
+      background-color: #f0f019;
+    }
+    :root .UIButton--alert,
+    :root .UIButton--alert:visited,
+    :root html.touch .UIButton--alert:focus:hover:not(:active) {
+      background-color: #f0f011;
+    }
+    :root .h1ebmrjk {
+      background: linear-gradient(180deg, #0000 69.83%, #f0f001 100%);
+    }
+    :root .jqcfj5w {
+      filter: brightness(0) saturate(100%) invert(12%) sepia(5%) saturate(4408%) hue-rotate(195deg) brightness(93%) contrast(90%);
+    }
+    :root .RichTextEditor[aria-invalid="true"]:not([aria-disabled="true"]) .RichTextEditor-label,
+    :root .LanguageBarSide.has-error .UILink,
+    :root .LanguageBarSide.has-error select {
+      color: #f0f012;
+    }
+    :root .neeykg0 {
+      filter: brightness(0) saturate(100%) invert(14%) sepia(10%) saturate(1367%) hue-rotate(192deg) brightness(95%) contrast(95%);
+    }
+    :root .CourseOverviewPreviewCard-recommendationLink:hover {
+      background-color: #f0f003;
+    }
+    :root .CourseOverviewPreviewCard-subtitle {
+      color: #f0f005;
+    }
+    :root .CourseOverviewPreviewCard-recommendationLabel {
+      color: #f0f005;
+    }
+    :root .CourseOverviewPreviewCard-divider {
+      border-color: #f0f002;
+    }
+    :root .AssemblyPrimaryButton--default {
+      background-color: #f0f003;
+      border-color: #f0f004;
+    }
+    :root .c1vierhv {
+      border-color: #f0f007;
+    }
+    :root .djzjpyv {
+      color: #f0f005;
+    }
+    :root span {
+      color: inherit;
+    }
+    :root .s139vgrg {
+      color: #f0f005;
+    }
+    :root form {
+      background-color: inherit;
+    }
+    :root input {
+      background-color: #f0f00c;
+    }
+    :root .b1r2wylq {
+      background-color: #f0f002;
+      box-shadow: 0 0.125rem 0.25rem #f0f003;
+    }
+    :root .AssemblyPill {
+      background-color: #f0f003;
+      color: #f0f004;
+    }
+    :root .t7pmw6o {
+      color: #f0f004;
+    }
+    :root .UIBaseCard-footer .UserLink-username,
+    :root .UserLink-username {
+      color: #f0f004;
+    }
+    :root .UserLink-title {
+      color: #f0f004;
+    }
+    :root .UILinkBox {
+      background-color: #f0f002;
+    }
+    :root .UIBaseCardHeader-info {
+      color: #f0f004;
+    }
+    :root .UIBaseCardHeader-thumbnail {
+      border-color: #f0f002;
+    }
+    :root .a1s81tf6 {
+      background-color: #f0f002;
+    }
+    :root .aup4qff {
+      color: #f0f002;
+    }
+    :root .illkdv2c {
+      color: #f0f012;
+    }
+    :root .react-calendar__month-view__weekdays__weekday {
+      color: #f0f006;
+    }
+    :root .CalendarTile--isCurrentWeek::after {
+      background-color: #f0f002;
+    }
+    :root .CalendarTile--isCurrentWeek {
+      color: #f0f004;
+    }
+    :root .AssemblyIcon--medium {
+      color: inherit;
+    }
+    :root .AssemblyIconButton--tertiary {
+      color: #f0f004;
+    }
+    :root .AssemblyButtonBase--circle {
+      color: #f0f004;
+    }
+    :root .AssemblySecondaryButton {
+      background-color: #f0f003;
+      color: #f0f004;
+    }
+    :root .AssemblyPillText {
+      color: #f0f004;
+    }
+    :root .SiteActivity-button.isGlobalNavInExperiment {
+      color: #f0f004;
+    }
+    :root .UIIcon--large {
+      color: #f0f004;
+    }
+    :root .s1da1u6y {
+      background-color: #f0f003;
+    }
+    :root .CalendarTile--hasEvent {
+      color: #f0f002;
+    }
+    :root .c1qopd51 {
+      color: #f0f012;
+    }
+    :root .AssemblyIconButton--primary {
+      background: #f0f001;
+    }
+    :root .AssemblyButtonBase:hover:not([disabled]),
+    :root [aria-disabled="true"] {
+      background: #f0f002;
+    }
+    :root .SiteActivity-button {
+      border-color: #f0f007;
+      color: #f0f004;
+    }
+    :root .SiteActivity-button:focus,
+    :root .SiteActivity-button:hover {
+      border-color: #f0f009;
+      color: #f0f005;
+    }
+    :root .NotificationBadge-container {
+      background: #f0f007;
+    }
+    :root [d17q91q7][aria-expanded="true"] {
+      background-color: #f0f004;
+    }
+    :root .UILinkBox-link .UILink:active,
+    :root .UILinkBox-link .UILink:focus,
+    :root .UILinkBox-link .UILink:hover {
+      border-bottom-color: #f0f007;
+    }
+    :root .AssemblySmallCard-hover:hover::after {
+      background-color: #f0f007;
+    }
+    :root .rellgo5 {
+      color: #f0f004;
+    }
+    :root #react-autowhatever-site-header-global-search-autosuggest {
+      background-color: #f0f003;
+      border-color: #f0f002;
+    }
+    :root .tqxyjjt {
+      color: #f0f004;
+    }
+    :root text {
+      color: #f0f005;
+    }
+    :root li.react-autosuggest__suggestion:hover {
+      background: #f0f002;
+    }
+    :root .poy4xqf {
+      background: #f0f003;
+      border-color: #f0f003;
+    }
+    :root .wej97zk {
+      background-color: #f0f003;
+    }
+    :root .wvbj6cw {
+      background-color: #f0f003;
+    }
+    :root .c721v4v {
+      color: #f0f004;
+    }
+    :root .c139umgt {
+      color: #f0f004;
+    }
+    :root .t1ow6gy9 {
+      color: #f0f005;
+    }
+    :root .u1jilvfz {
+      background-color: #f0f007;
+    }
+    :root .wej97zk:hover {
+      background-color: #f0f002;
+    }
+    :root .s1ovpdog {
+      background-color: #f0f002;
+      border-top-color: #f0f009;
+    }
+    :root .c1ap9d88 .AssemblyMenuItem--title {
+      color: #f0f006;
+    }
+    :root .c1ap9d88:hover {
+      background-color: #f0f001;
+    }
+    :root .c1ap9d88 {
+      background-color: #f0f002;
+    }
+    :root .h1hbonvg {
+      background-color: #f0f002;
+    }
+    :root .UIBaseCard-labelTag {
+      background-color: #f0f00c;
+      color: #f0f004;
+    }
+    :root .UIIcon--chevron-right {
+      color: #f0f004;
+    }
+    :root .UIIcon--chevron-left {
+      color: #f0f004;
+    }
+    :root .UIPopover,
+    :root .UIPopover::after {
+      background-color: #f0f002;
+    }
+    :root .UIPopover.UIPopover--mediumShadow {
+      box-shadow: 0 0.125rem 0.25rem #f0f003;
+    }
+    :root .SetRecommendationCard-contextMenuItem:hover {
+      background-color: #f0f003;
+    }
+    :root .cxvmyeq {
+      border-color: #f0f003;
+    }
+    :root .wxhi4p:hover {
+      background-color: #f0f002;
+    }
+    :root .AssemblyTab {
+      color: #f0f006;
+    }
+    :root .AssemblyTab::after {
+      color: #f0f006;
+    }
+    :root .s4cgp9b.AssemblyTab {
+      color: #f0f004;
+    }
+    :root .AssemblyTab:hover {
+      color: #f0f01a;
+    }
+    :root .f1ub3img {
+      border-top-color: #f0f007;
+    }
+    :root .AssemblyTabsWrapper::before {
+      background-color: #f0f007;
+    }
+    :root .s4cgp9b.AssemblyTab::after {
+      background: #f0f019;
+    }
+    :root .AssemblyTab:hover::after {
+      background: #f0f019;
+    }
+    :root .w15oa27z:hover {
+      background: #f0f002;
+    }
+    :root .i1v4i7rf.textbookIcon {
+      background-image: url("https://assets.quizlet.com/a/j/dist/app/i/explanations/textbook_night.1ff39f68b703b28.svg");
+    }
+    :root .sinah8x {
+      color: #f0f006;
+    }
+    :root .SetPage {
+      background-color: #f0f001;
+    }
+    :root .SetPage .SetPage-setDetailsInfoWrapper,
+    :root .SetPage .SetPage-setIntroWrapper.SetPage-setIntroWrapper {
+      background-color: #f0f001;
+    }
+    :root .SetPage-setDetailsInfoWrapper {
+      background-color: #f0f001;
+    }
+    :root .SetPage-setDetailsTermsWrapper {
+      background-color: #f0f001;
+    }
+    :root .SetPage .SetPage-setDetailsTermsWrapper,
+    :root .SetPage .SetPage-setLinksWrapper.SetPage-setLinksWrapper {
+      background-color: #f0f001;
+    }
+    :root .SiteFooter {
+      background-color: #f0f001;
+      color: #f0f004;
+    }
+    :root .SiteFooter-bottom {
+      background-color: #f0f001;
+    }
+    :root .SetPageStickyHeader.is-pinned {
+      background-color: #f0f003;
+    }
+    :root .StudyModesNavItem {
+      background-color: #f0f002;
+    }
+    :root .StudyModesNavItemName {
+      color: #f0f004;
+    }
+    :root .StudyModesNavItemName:visited {
+      color: #f0f004;
+    }
+    :root .c78g08u {
+      background-color: #f0f002;
+      box-shadow: 0 0.25rem 1rem 0 #f0f003;
+    }
+    :root .o1rf13bx {
+      color: #f0f004;
+    }
+    :root .lck97c5 {
+      background: #f0f002;
+    }
+    :root .SetPageTerm {
+      background: #f0f002;
+    }
+    :root .AssemblyIconButton--secondary {
+      background: #f0f003;
+    }
+    :root .UIDropdown--inverted {
+      background: #f0f001;
+    }
+    :root .UIDropdown-select {
+      color: #f0f004;
+    }
+    :root .soyu1j6 {
+      color: #f0f012;
+    }
+    :root .s1e29328.cbb9lkx {
+      color: #f0f011;
+      background: #f0f00d;
+      border-color: #f0f013;
+    }
+    :root .kahyre1 {
+      color: #f0f015;
+    }
+    :root .kzo3tk {
+      color: #f0f019;
+    }
+    :root .SiteActivity-button .NotificationBadge-container {
+      background-color: #f0f019;
+    }
+    :root .hgmlhdt {
+      background-color: #f0f003;
+    }
+    :root .o1rfl3bx {
+      color: #f0f004;
+      border-color: #f0f007;
+    }
+    :root .c1lf7cxm {
+      color: #f0f006;
+    }
+    :root .l3ucz5w {
+      color: #f0f005;
+    }
+    :root .u3v4pv0 {
+      color: #f0f006;
+    }
+    :root .StudyModesNavItem:hover {
+      border-bottom-color: #f0f007;
+    }
+    :root .o1g4qwv {
+      background-color: #f0f003;
+    }
+    :root .tqyy7cr.h19ive8k {
+      color: #f0f004;
+    }
+    :root .t1kgxwr0 {
+      color: #f0f004;
+    }
+    :root .tuxzbsj {
+      fill: #f0f004;
+    }
+    :root .c5iom2o {
+      color: #f0f01a;
+    }
+    :root .lck97c5:focus .c5iom2o,
+    :root .lck97c5:hover .c5iom2o {
+      color: #f0f019;
+    }
+    :root .t4sjwm7 {
+      color: #f0f004;
+    }
+    :root body.colorRefresh-setPageOnly .UISwitch-label {
+      color: #f0f004;
+    }
+    :root .UISwitch-label {
+      border-color: #f0f008;
+      background-color: #f0f002;
+      color: #f0f006;
+    }
+    :root .SetPageTerm-sideContent {
+      border-right-color: #f0f007;
+    }
+    :root .UISwitch-input:checked:not(:disabled ~ .UISwitch-label) {
+      color: #f0f002;
+      border-color: #f0f014;
+      background-color: #f0f014;
+    }
+    :root .AssemblyIconButton--highlight {
+      background: none;
+      color: #f0f014;
+    }
+    :root .UIToggle-optionLabel {
+      background-color: #f0f002;
+      color: #f0f019;
+    }
+    :root .AssemblyIconButton--highlight:hover:not([disabled]) {
+      background-color: #f0f003;
+    }
+    :root .AssemblyIconButton--tertiary:hover:not([disabled]) {
+      background-color: #f0f003;
+    }
+    :root .AssemblyButtonBase--square {
+      color: #f0f004;
+    }
+    :root .z1x1k8pd.svwhkoh {
+      color: #f0f015;
+      border-color: #f0f015;
+    }
+    :root .svwhkoh {
+      background-color: #f0f002;
+    }
+    :root .kzo3tk.cbb9lkx {
+      background: #f0f015;
+      border-color: #f0f015;
+      color: #f0f019;
+    }
+    :root .kahyre1.l40n85g {
+      color: #f0f015;
+    }
+    :root .soyu1j6.l40n85g {
+      color: #f0f011;
+    }
+    :root .axrvw3e.s1e29328.cbb9lkx {
+      background: #f0f00e;
+      border-color: #f0f00e;
+      color: #f0f011;
+    }
+    :root .mnlifen {
+      background: #f0f002;
+    }
+    :root .f1yw38c3 {
+      background: none;
+    }
+    :root .AssemblyToggleSwitch-input:checked + .AssemblyToggleSwitch-fauxInput {
+      background: #f0f01a;
+    }
+    :root .AssemblyToggleSwitch-input:checked + .AssemblyToggleSwitch-fauxInput::after {
+      background-color: #f0f00f;
+    }
+    :root .AssemblyToggleSwitch-fauxInput {
+      background: #f0f008;
+    }
+    :root .AssemblyToggleSwitch-fauxInput::after {
+      background: #f0f01a;
+    }
+    :root .c13e2cpr {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root .AssemblyInput {
+      background-color: #f0f00c;
+      color: #f0f004;
+    }
+    :root .AssemblyInput-input {
+      color: #f0f005;
+    }
+    :root .a1k2umqi {
+      background-color: #f0f003;
+    }
+    :root .bxtl8jy {
+      background-color: #f0f00c;
+      color: #f0f004;
+    }
+    :root .ah6785x {
+      color: #f0f005;
+    }
+    :root .a1fcz3cu:focus-within > .ah6785x {
+      color: #f0f005;
+    }
+    :root .e29yge6 .react-autosuggest__container .react-autosuggest__suggestions-container--open {
+      background: #f0f002;
+    }
+    :root .e1g8wmc7 {
+      background-color: #f0f00c;
+    }
+    :root .AssemblyLink--secondary:hover {
+      color: #f0f013;
+    }
+    :root .a1k2umqi:focus-within {
+      border-bottom-color: #f0f019;
+    }
+    :root .cgyrcnx {
+      background-color: #f0f007;
+    }
+    :root .byhd60 {
+      background-color: #f0f012;
+    }
+    :root .d11ucs5j {
+      background: #f0f007;
+    }
+    :root .sjsxdsz {
+      border-bottom-color: #f0f007;
+    }
+    :root .fz4nps6 {
+      border-top-color: #f0f007;
+    }
+    :root .AssemblyPrimaryButton--default:disabled,
+    :root .AssemblyPrimaryButton--default[aria-disabled="true"] {
+      background: #f0f00c;
+      border-color: #f0f001;
+      color: #f0f006;
+    }
+    :root .ptc18zm {
+      background: inherit;
+    }
+    :root .c1gi3y8b {
+      background: #f0f003;
+    }
+    :root .k3lm6f3 {
+      background-color: #f0f003;
+      color: #f0f004;
+    }
+    :root .w1uwrq7e {
+      color: #f0f004;
+      border-color: #f0f007;
+    }
+    :root .t1d08860 {
+      color: inherit;
+    }
+    :root .i1p8x1gp .i1e9rt5 {
+      color: #f0f012;
+    }
+    :root .i1p8x1gp {
+      background-color: #f0f002;
+    }
+    :root .i1p8x1gp,
+    :root .i1p8x1gp:focus,
+    :root .i1p8x1gp:hover {
+      border-color: #f0f012;
+    }
+    :root .cv1rd7s {
+      background: #f0f002;
+    }
+    :root .cv1rd7s,
+    :root .cv1rd7s:focus,
+    :root .cv1rd7s:hover {
+      border-color: #f0f015;
+    }
+    :root .cv1rd7s .i1e9rt5 {
+      color: #f0f015;
+    }
+    :root .b1jcf4jl {
+      background-color: #f0f003;
+    }
+    :root .pck8ctn {
+      color: #f0f004;
+    }
+    :root .i6cf9vy {
+      color: #f0f011;
+    }
+    :root .c2mfnz6 {
+      color: #f0f015;
+    }
+    :root .pr2w5fu:first-child {
+      border-right-color: #f0f007;
+    }
+    :root .t117larf {
+      background-color: #f0f003;
+      border-color: #f0f007;
+      color: #f0f004;
+    }
+    :root .q1m09plc:hover {
+      background-color: #f0f003;
+    }
+    :root .q1m09plc {
+      color: #f0f019;
+    }
+    :root .hbcu5v.q1m09plc {
+      color: #f0f005;
+    }
+    :root .qzk5crt {
+      color: #f0f004;
+    }
+    :root .sd72jj0 {
+      color: #f0f005;
+    }
+    :root .UIModalHeader {
+      background-color: #f0f003;
+    }
+    :root .UIModalBody {
+      background-color: #f0f002;
+    }
+    :root .TestModeOptions {
+      background-color: #f0f002;
+    }
+    :root .UIModal-box {
+      color: #f0f004;
+    }
+    :root .UICheckbox-label {
+      color: #f0f004;
+    }
+    :root .UICheckbox-input:checked ~ .UICheckbox-fauxInput {
+      border-color: #f0f014;
+    }
+    :root .UICheckbox-fauxInput::after {
+      border-color: #f0f014;
+      border-width: 0 0 0.125rem 0.125rem;
+    }
+    :root .UIInput-input {
+      color: #f0f004;
+    }
+    :root .UIInput[aria-invalid="false"] .UIInput-input ~ .UIInput-border {
+      box-shadow: 0 0.125rem 0 0 #f0f007;
+    }
+    :root .UILink,
+    :root .UILink:visited {
+      color: #f0f00d;
+    }
+    :root .UIButton:active,
+    :root html.cursor .UIButton:hover,
+    :root html.cursor .UIButton:hover:visited {
+      background-color: #f0f017;
+    }
+    :root .UIHorizontalRule {
+      border-bottom-color: #f0f007;
+    }
+    :root .OptionsModal-description,
+    :root .TestModeOptions-listOption-description {
+      color: #f0f006;
+    }
+    :root .swjz05g {
+      background-color: #f0f003;
+    }
+    :root .swjz05g,
+    :root .swjz05g:focus,
+    :root .swjz05g:hover {
+      border-color: #f0f019;
+    }
+    :root .s2y71yx label {
+      background: #f0f00c;
+    }
+    :root .s2y71yx input {
+      background: inherit;
+      color: #f0f004;
+    }
+    :root .TextbookRecommendations {
+      background: #f0f003;
+    }
+    :root .TextbookCard-Details {
+      color: #f0f005;
+    }
+    :root .AssemblyLink--title:any-link {
+      color: #f0f004;
+    }
+    :root .AssemblyLink--title:hover {
+      color: #f0f014;
+    }
+    :root .ah3z5j1 {
+      border-color: #f0f019;
+    }
+    :root .hkyil8p {
+      color: #f0f019;
+    }
+    :root .e17gih4t {
+      border-color: #f0f007;
+    }
+    :root .o1q1tz6w {
+      border-color: #f0f007;
+      color: #f0f004;
+    }
+    :root .hg3d33q {
+      border-color: #0000;
+    }
+    :root .ser6cev,
+    :root .c86ukn8 {
+      color: #f0f006;
+    }
+    :root .a99ei82 {
+      background-color: #f0f002;
+      border-color: #f0f007;
+    }
+    :root .qcpiy8g {
+      color: #f0f004;
+    }
+    :root .pqa404y {
+      color: #f0f015;
+    }
+    :root .s18c8hjh {
+      color: #f0f012;
+    }
+    :root .ljt3l6v {
+      fill: #f0f006;
+    }
+    :root .c16l7630.iayao2g {
+      color: #f0f015;
+    }
+    :root .i1e9dzkh.iayao2g {
+      color: #f0f012;
+    }
+    :root .w1e3jc65 {
+      background-color: #f0f002;
+      border-color: #f0f002;
+    }
+    :root .t7fr19y {
+      color: #f0f01a;
+    }
+    :root .dw1ojws {
+      color: #f0f006;
+    }
+    :root .w1e3jc65:hover {
+      border-color: #f0f007;
+    }
+    :root .q1nxab59 {
+      color: #f0f005;
+    }
+    :root .ssbjprp {
+      color: #f0f006;
+    }
+    :root .smvj06a {
+      color: #f0f005;
+    }
+    :root .cfzatrd.a548wz9 {
+      color: #f0f015;
+    }
+    :root .cag3g2z.anp68o5 {
+      color: #f0f015;
+    }
+    :root .CombinePage-wrap {
+      background-color: #f0f001;
+    }
+    :root .CombinePageTable-row {
+      background-color: #f0f002;
+    }
+    :root .CombinePageTable-rowTermCount {
+      color: #f0f005;
+    }
+    :root .CombinePageTable-setTitle .UIHeading--four {
+      color: #f0f004;
+    }
+    :root .UIDropdown {
+      background: #f0f002;
+      border-color: #f0f003;
+    }
+    :root .UIDropdown .UIDropdown-icon {
+      color: #f0f007;
+    }
+    :root .UIDropdown-select:focus option {
+      background: #f0f002;
+    }
+    :root option:hover {
+      background: #f0f003;
+    }
+    :root .ModeControls {
+      background-color: #f0f002;
+    }
+    :root .ModeControls-backText {
+      color: #f0f004;
+    }
+    :root .ModeControls-back {
+      border-bottom-color: #f0f007;
+    }
+    :root .UIButton--whiteBorder {
+      background: #f0f003;
+      border-color: #f0f001;
+      color: #f0f004;
+    }
+    :root .MatchModeControls-currentTime {
+      color: #f0f019;
+    }
+    :root .MatchModeQuestionScatterTile {
+      background-color: #f0f002;
+      border-color: #f0f009;
+    }
+    :root .MatchModeQuestionScatterTile.is-draggedOver,
+    :root .MatchModeQuestionScatterTile.is-dragging,
+    :root .MatchModeQuestionScatterTile:hover {
+      border-color: #f0f007;
+    }
+    :root .MatchModeQuestionScatterTile.is-incorrect {
+      border-color: #f0f012;
+    }
+    :root .MatchModeQuestionScatterTile.is-correct {
+      border-color: #f0f015;
+    }
+    :root .HighscoresList {
+      background-color: #f0f003;
+    }
+    :root .HighscoreRow {
+      background-color: #f0f002;
+    }
+    :root .UIButton[aria-disabled="true"],
+    :root .UIButton[aria-disabled="true"]:active,
+    :root .UIButton[aria-disabled="true"]:focus,
+    :root .UIButton[aria-disabled="true"]:visited,
+    :root .UIButton[disabled],
+    :root .UIButton[disabled]:active,
+    :root .UIButton[disabled]:focus,
+    :root .UIButton[disabled]:visited,
+    :root html.cursor .UIButton[aria-disabled="true"]:hover,
+    :root html.cursor .UIButton[disabled]:hover {
+      background-color: #f0f002;
+    }
+    :root .t10tqhey {
+      background-color: #f0f002;
+      color: #f0f004;
+      border-color: #f0f003;
+    }
+    :root .t9i9vmb.h19ive8k,
+    :root .t1s26kx5.h19ive8k,
+    :root .s1rx7q8q.h19ive8k {
+      color: #f0f004;
+    }
+    :root .s8j1d54,
+    :root .c49e2ip {
+      color: #f0f005;
+    }
+    :root .c6p6uaq .react-calendar__month-view__days__day {
+      color: #f0f004;
+    }
+    :root .c6p6uaq .react-calendar__month-view__days__day--neighboringMonth {
+      color: #f0f006;
+    }
+    :root .AchievementsImage--isActive .a130rwfv,
+    :root .al33ekg.isActive .a130rwfv {
+      color: #f0f006;
+    }
+    :root .s1rtnf4c::before,
+    :root .s1rtnf4c::after {
+      background: none;
+    }
+    :root .AchievementsImage--isActive .a130rwfv,
+    :root .al33ekg.isActive .a130rwfv,
+    :root .DashboardLayout .SetPreviewLink--noLinkBox,
+    :root .DashboardLayout .PreviewCard--noLinkBox {
+      background-color: #f0f002;
+    }
+    :root .SetPreview-queryMatchHighlight {
+      background: #f0f014;
+      color: #f0f001;
+    }
+    :root .cpey3pe {
+      color: #f0f004;
+    }
+    :root .s1fl65t6 {
+      color: #f0f006;
+    }
+    :root .t1ne2oir {
+      color: #f0f004;
+    }
+    :root .b1xq6unb {
+      color: #f0f004;
+    }
+    :root .bp0a7jj {
+      color: #f0f005;
+    }
+    :root .pltikop {
+      color: #f0f019;
+    }
+    :root .SettingsBox-box {
+      background-color: #f0f002;
+    }
+    :root .EdgyDataCoursePillbox .UIPill {
+      background: #f0f003;
+      border-color: #f0f007;
+      color: #f0f004;
+    }
+    :root .UIAutosuggest .react-autosuggest__suggestions-container {
+      background: #f0f002;
+    }
+    :root .UIAutosuggest .react-autosuggest__suggestion {
+      border-bottom-color: #f0f007;
+    }
+    :root .UIAutosuggest .react-autosuggest__suggestion.react-autosuggest__suggestion--highlighted {
+      border-bottom-color: #f0f014;
+    }
+    :root .EdgyDataCourseSelector-suggestion .EdgyDataCourseSelector-suggestionName {
+      color: #f0f004;
+    }
+    :root .UIInput-input.UIInput-autoExpandInput.is-focused ~ .UIInput-border,
+    :root .UIInput-input:focus ~ .UIInput-border {
+      box-shadow: 0 0.25rem 0 0 #f0f014;
+    }
+    :root .Divider-label {
+      background: #f0f002;
+    }
+    :root .the-label,
+    :root .UIButton {
+      color: #f0f003;
+    }
+    :root input:checked + .p22broa {
+      box-shadow: 0 0 0 0.25rem #f0f019;
+    }
+    :root .button.google {
+      background-color: #f0f011;
+      border-color: #f0f013;
+    }
+    :root .button.google::after {
+      border-right-color: #f0f013;
+    }
+    :root .b1opuclq {
+      background-color: #f0f002;
+      box-shadow: 0 0.25rem 1rem 0 #f0f003;
+    }
+    :root .button.apple .label,
+    :root .button.facebook .label,
+    :root .button.google .label {
+      color: #f0f003;
+    }
+    :root .button.facebook {
+      background-color: #f0f019;
+      border-color: #f0f01a;
+    }
+    :root .button.facebook::after {
+      border-right-color: #f0f01a;
+    }
+    :root .UIInput-input:-webkit-autofill,
+    :root .UIInput-input:-webkit-autofill:focus,
+    :root .UIInput-input:-webkit-autofill:hover {
+      box-shadow: none !important;
+    }
+    :root .UIInput-input:-internal-autofill-previewed,
+    :root .UIInput-input:-internal-autofill-selected {
+      -webkit-text-fill-color: #f0f004;
+    }
+    :root .UILink:active,
+    :root html.cursor .UILink:hover,
+    :root html.cursor .UILink:hover:visited {
+      color: #f0f012;
+    }
+    :root .setting legend,
+    :root .setting p {
+      color: #f0f004;
+    }
+    :root .UIButton-wrapper {
+      color: inherit;
+    }
+    :root .UIButton--alert:active,
+    :root html.cursor .UIButton--alert:hover,
+    :root html.cursor .UIButton--alert:hover:visited {
+      background-color: #f0f012;
+    }
+    :root .c1qo8ql4 {
+      background-color: #f0f001;
+    }
+    :root .phx9gy6 {
+      color: #f0f004;
+    }
+    :root .soad3d7 {
+      color: #f0f004;
+    }
+    :root .AssemblyLink--primary:any-link {
+      color: #f0f00d;
+    }
+    :root .AssemblyLink {
+      color: #f0f00d;
+    }
+    :root .UIButton--borderless:active,
+    :root html.cursor .UIButton--borderless:hover,
+    :root html.cursor .UIButton--borderless:hover:visited {
+      background-color: initial;
+      color: #f0f014;
+    }
+    :root .UIButton--borderless[aria-disabled="true"],
+    :root .UIButton--borderless[aria-disabled="true"]:active,
+    :root .UIButton--borderless[aria-disabled="true"]:focus,
+    :root .UIButton--borderless[aria-disabled="true"]:visited,
+    :root .UIButton--borderless[disabled],
+    :root .UIButton--borderless[disabled]:active,
+    :root .UIButton--borderless[disabled]:focus,
+    :root .UIButton--borderless[disabled]:visited,
+    :root html.cursor .UIButton--borderless[aria-disabled="true"]:hover,
+    :root html.cursor .UIButton--borderless[disabled]:hover {
+      background-color: initial;
+    }
+    :root .s19dmjr1.isGlobalNavInExperiment.is-focused,
+    :root .s19dmjr1.isGlobalNavInExperiment.is-focused input {
+      background: #f0f00c;
+    }
+    :root .t1iqlnnn p {
+      color: #f0f005;
+    }
+    :root .axupt8p,
+    :root .igkckaz {
+      color: #f0f00d;
+    }
+    :root .axupt8p:active,
+    :root .axupt8p:focus,
+    :root .axupt8p:hover {
+      color: #f0f00e;
+    }
+    :root .cnuw08l {
+      background-color: #f0f002;
+    }
+    :root .c192jkj8 {
+      color: #f0f004;
+    }
+    :root .a1sd82zg {
+      background-color: #f0f003;
+      border-left-color: #f0f01a;
+    }
+    :root .g84nzqs {
+      background-image: none;
+    }
+    :root .du7o3ew > div:not(:last-child) {
+      border-right-color: #f0f007;
+    }
+    :root .i73vo82:hover {
+      color: #f0f003;
+      background-color: #f0f003;
+    }
+    :root .f2nmi2p {
+      border-top-color: #f0f007;
+    }
+    :root .a1scx0nz {
+      background-color: #f0f002;
+    }
+    :root .a4ouqer {
+      color: #f0f004;
+    }
+    :root .t104cykg {
+      color: #f0f004;
+    }
+    :root .ExplanationsLandingPage #PrismicExplanationsSearchBarTarget label,
+    :root .ExplanationsLandingPage #SearchBarTarget label,
+    :root .explanations.prismic-page #PrismicExplanationsSearchBarTarget label,
+    :root .explanations.prismic-page #SearchBarTarget label {
+      background-color: #f0f00c;
+    }
+    :root .l1rgb1ub {
+      border-color: #f0f007;
+    }
+    :root .theme-night .h1uvmh9x,
+    :root .h1uvmh9x {
+      background: #f0f002;
+    }
+    :root .h1wn8ccf {
+      color: #f0f004;
+    }
+    :root .ccm0r9d {
+      color: #f0f006;
+    }
+    :root .AssemblySmallCard-isActive::after {
+      background-color: #f0f01a;
+    }
+    :root .i192320l {
+      border-color: #f0f002;
+    }
+    :root .b1j40uwt::before {
+      background-color: #f0f002;
+    }
+    :root .theme-night .g84nzqs {
+      background: none;
+    }
+    :root .CreateSetHeader-sticky {
+      background: #f0f001;
+    }
+    :root .a1fcz3cu {
+      background-color: #f0f00c;
+    }
+    :root .CreateSetHeader-permissionsLink {
+      color: #f0f005;
+    }
+    :root .CreateSetDiagramUploader .UIFloatedCard--white,
+    :root .TermContent-inner {
+      background-color: #f0f002;
+    }
+    :root .CreateSetDiagramUploader-banner {
+      border-color: #f0f009;
+    }
+    :root .AssemblyIconButton--primaryInverted {
+      border-color: #f0f007;
+    }
+    :root .StudiableItemToolbar {
+      border-bottom-color: #f0f007;
+    }
+    :root .b18prmdf {
+      box-shadow: 0 0.125rem 0 0 #f0f007;
+    }
+    :root .ImageUploadProminentContextToggle {
+      border-color: #f0f009;
+    }
+    :root .UILinkButton {
+      border-bottom-color: #f0f019;
+      color: #f0f004;
+    }
+    :root .p10i2lyl {
+      background-color: #f0f002;
+    }
+    :root * + .KeyboardShortcuts-shortcut,
+    :root .KeyboardShortcuts-shortcut + *,
+    :root .KeyboardShortcuts-shortcut + .KeyboardShortcuts-shortcut {
+      border-top-color: #f0f007;
+    }
+    :root .UIKeyboardInput {
+      color: #f0f004;
+      border-color: #f0f007;
+    }
+    :root .UIDropdown-select option {
+      color: #f0f004;
+    }
+    :root .UIButton--inverted:active,
+    :root html.cursor .UIButton--inverted:hover,
+    :root html.cursor .UIButton--inverted:hover:visited {
+      box-shadow: inset 0 0 0 3px #f0f007;
+    }
+    :root .PMEditor:focus-within ~ .b18prmdf {
+      box-shadow: 0 0.25rem 0 0 #f0f014;
+    }
+    :root .UITooltip,
+    :root .UITooltip::after {
+      background: #f0f003;
+    }
+    :root :not(.ie11 .UITooltip),
+    :root :not(.ie11 .UIPopover) {
+      filter: none;
+    }
+    :root .LanguageSelect-option:hover,
+    :root .Select-option.is-focused .LanguageSelect-option {
+      background-color: #f0f014;
+    }
+    :root .i1u1jhdl {
+      background-color: #f0f003;
+    }
+    :root .TermRowDragPlaceholder {
+      background: #f0f001;
+    }
+    :root .CreateSetDiagramUploader-banner.is-dropTarget {
+      border-color: #f0f014;
+    }
+    :root .TermContent-addRow:hover .UILinkButton {
+      border-bottom-color: #f0f014;
+    }
+    :root .tetv1rf.t8spden:hover {
+      background-color: #f0f003;
+    }
+    :root .ImportTerms {
+      background-color: #f0f001;
+    }
+    :root .ImportTerms-import,
+    :root .ImportTerms-preview {
+      background-color: #f0f001;
+    }
+    :root .ImportTerms-textarea {
+      color: #f0f004;
+      border-color: #f0f007;
+    }
+    :root .TermRowsPreview .TermRowsPreview-row {
+      background: #f0f002;
+    }
+    :root .UIRadio-input:checked ~ .UIRadio-fauxInput {
+      border-color: #f0f014;
+    }
+    :root .UIRadio-fauxInput::after {
+      background-color: #f0f014;
+    }
+    :root .UILinkButton:active,
+    :root .UILinkButton:focus,
+    :root .UILinkButton:hover {
+      border-bottom-color: #f0f014;
+    }
+    :root .AutosuggestContextItem {
+      background-color: #f0f003;
+      color: #f0f004;
+    }
+    :root .AssemblyNotice-error {
+      border-color: #f0f011;
+      background-color: #f0f00c;
+    }
+    :root .TermRow.is-duplicate {
+      outline-color: #f0f014;
+    }
+    :root .AssemblyPrimaryButton--danger {
+      background: #f0f011;
+      color: #f0f003;
+    }
+    :root .AssemblyPrimaryButton--danger:hover:not([disabled]),
+    :root [aria-disabled="true"] {
+      background: #f0f00f;
+    }
+    :root .s19dmjr1.is-focused,
+    :root .s19dmjr1.is-focused input,
+    :root .s2y71yx label,
+    :root .s2y71yx.is-expanded label {
+      background: #f0f00c;
+      color: #f0f004;
+    }
+    :root .eeiq5c0 {
+      color: #f0f004;
+    }
+    :root .t1r0fp00,
+    :root .t1elfe8k {
+      color: #f0f006;
+    }
+    :root .MobilePage {
+      background: #f0f001;
+    }
+    :root .MobilePage-feature {
+      border-color: #f0f007;
+    }
+    :root .MobilePage-anyDevice {
+      border-top-color: #f0f007;
+    }
+    :root .AssemblyTextButton--secondary {
+      color: #f0f004;
+    }
+    :root .AssemblyPrimaryButton--upgrade {
+      background: #f0f014;
+    }
+    :root .page,
+    :root .PrismicSimpleRichText--white,
+    :root .PrismicTextCallout--whiteBackground,
+    :root .PrismicVideoEmbedWithText--whiteBackground,
+    :root .p1mcvm6s,
+    :root .PrismicImageTextTile--whiteBackground,
+    :root .PrismicTextCallout--twilightBlue200Background,
+    :root #SearchResultsPageHeader-mainExperiment {
+      background-color: #f0f001;
+    }
+    :root .tfomyx6,
+    :root .i1rs7b62,
+    :root .d5ww82k {
+      color: #f0f004;
+    }
+    :root .cssrxmc {
+      background-color: #f0f014;
+    }
+    :root .PrismicImageTextTile-tileWrapper {
+      background-color: #f0f002;
+    }
+    :root .AssemblyPrimaryButton--upgrade:hover:not([disabled]) {
+      background: #f0f00d;
+    }
+    :root .s1qq0zr7 {
+      background-color: #f0f002;
+    }
+    :root .sv0yvnj a,
+    :root .sv0yvnj a:visited:not(:last-child) {
+      color: #f0f004;
+    }
+    :root .sg4pwu6:hover,
+    :root .hivq638,
+    :root .s1ahro8n:hover {
+      background-color: #f0f003;
+    }
+    :root .e7lqtuc .react-autosuggest__suggestions-container.react-autosuggest__suggestions-container--open {
+      background-color: #f0f002;
+    }
+    :root .e7lqtuc .react-autosuggest__section-title,
+    :root .SearchResultsPageHeader-queryFeedback,
+    :root .SearchResultsPage-contentType .SearchResultsPage-emptyStateHeadline,
+    :root .SearchResultsPage-contentType .SearchResultsPage-emptyStateDescription,
+    :root .SearchResultsPage-contentType .SearchResultsPage-emptyStateSuggestionsList {
+      color: #f0f004;
+    }
+    :root .markdown-body {
+      color: #f0f005;
+    }
+    :root .e7lqtuc li.react-autosuggest__suggestion.react-autosuggest__suggestion--highlighted,
+    :root .e7lqtuc li.react-autosuggest__suggestion:hover {
+      background-color: #f0f003;
+      border-color: #f0f01a;
+    }
+    :root .UserPreviewCard-username,
+    :root .ClassPreviewCard-title {
+      color: #f0f004;
+    }
+    :root .UserPreviewCard-classesDescription,
+    :root .UserPreviewCard-createdSetsDescription,
+    :root .QuestionCard-subject,
+    :root .ClassPreviewCard-location,
+    :root .ClassPreviewCard-membersDescription,
+    :root .ClassPreviewCard-studySetsDescription {
+      color: #f0f005;
+    }
+    :root .QuestionCard-bottomGradient {
+      background-image: none;
+    }
+    :root .AssemblyTextButton--primary {
+      color: #f0f00d;
+    }
+    :root .TosLegend--normal {
+      color: #f0f005;
+    }
+    :root .AssemblyLink--secondary:any-link {
+      color: #f0f00d;
+    }
+    :root .lghzn8f,
+    :root .a1cdxe01.h9lvpq {
+      color: #f0f004;
+    }
+    :root .s1mff1xn,
+    :root .AssemblyCheckbox-label {
+      color: #f0f004;
+    }
+    :root .ccnmm10 {
+      background-color: #f0f002;
+    }
+    :root .c1g4obhz {
+      background-color: #f0f003;
+      color: #f0f004;
+    }
+    :root .SetPageTerm-wordText,
+    :root .SetPageTerm-definitionText {
+      color: #f0f004;
+    }
+    :root .SetPageTerms-embeddedDesktopAdWrapper {
+      background: #f0f002;
+    }
+    :root .c1qw5oc {
+      background: #f0f003;
+      border-bottom-color: #f0f00c;
+    }
+    :root .c19lfjrd,
+    :root .l1fkuqeb {
+      background-color: #f0f001;
+    }
+    :root .bxyvgmh {
+      background-color: #f0f002;
+    }
+    :root .ata5p6z[aria-disabled="true"],
+    :root .ata5p6z[aria-disabled="true"] div,
+    :root .ata5p6z[aria-disabled="true"] textarea {
+      background-color: #f0f002;
+    }
+    :root .ata5p6z {
+      border-color: #f0f007;
+      background-color: #f0f002;
+    }
+    :root .AssemblyIconButton--primary:disabled,
+    :root .AssemblyIconButton--primary[aria-disabled="true"] {
+      background: #f0f00b;
+      color: #f0f004;
+    }
+    :root .ugcsb7m {
+      background-color: #f0f019;
+      color: #f0f003;
+    }
+    :root .AssemblySecondaryButton:disabled,
+    :root .AssemblySecondaryButton[aria-disabled="true"] {
+      background-color: #f0f001;
+      border-color: #f0f007;
+    }
+    :root .m9mf1hr div,
+    :root .m9mf1hr textarea {
+      background-color: #f0f002;
+    }
+    :root .lu5rlws {
+      color: #f0f005;
+    }
+    :root .b1yjduyh {
+      background-color: #f0f002;
+    }
+    :root .d6tac4m {
+      background-color: #f0f00c;
+    }
+    :root .RecentFeed-empty {
+      background-color: #f0f002;
+    }
+    :root .i1ykvw4f {
+      background: #f0f002;
+    }
+    :root .i1ykvw4f:hover {
+      background: #f0f003;
+    }
+    :root .RecentFeed-empty--cta {
+      color: #f0f004;
+    }
+    :root .UIButton--whiteBorder:active,
+    :root html.cursor .UIButton--whiteBorder:hover,
+    :root html.cursor .UIButton--whiteBorder:hover:visited {
+      color: #f0f014;
+    }
+    :root .c124zyvn {
+      background: #f0f001;
+    }
+    :root .AssemblyLink--primary:hover {
+      color: #f0f012;
+    }
+    :root .cczh2hb,
+    :root .h1jftztg,
+    :root .t2m5erc {
+      color: #f0f004;
+    }
+    :root .t1nv0ihp,
+    :root .sku1zau,
+    :root .s54kfc3 {
+      color: #f0f005;
+    }
+    :root .ImageUploadProminentContextToggle .ImageUploadProminentContextToggle-IconExplanation {
+      color: #f0f004;
+    }
+    :root .SiteHeaderLogo-link {
+      color: #f0f019;
+    }
+    :root .c1sgnxr5 {
+      color: #f0f015;
+    }
+    :root .suyglfi {
+      color: #f0f004;
+    }
+    :root .s2y71yx li.react-autosuggest__suggestion.react-autosuggest__suggestion--highlighted,
+    :root .s2y71yx li.react-autosuggest__suggestion:hover {
+      background: #f0f002;
+    }
+    :root .q1kwd3of {
+      color: #f0f007;
+    }
+    :root .c1741jrq:not(:first-child) {
+      border-top-color: #f0f007;
+    }
+    :root .SetsView-studySetResults {
+      color: #f0f004;
+    }
+    :root .UILink .SetPreview-cardHeaderTitle,
+    :root .UILink .SetPreview-cardHeaderTitle:visited,
+    :root html.touch .UILink .SetPreview-cardHeaderTitle:focus:hover:not(:active) {
+      color: #f0f004;
+    }
+    :root .SetPreview-cardBylineClass {
+      color: #f0f006;
+    }
+    :root .UILink .SetPreview-cardHeaderTitle:active,
+    :root html.cursor .UILink .SetPreview-cardHeaderTitle:hover,
+    :root html.cursor .UILink .SetPreview-cardHeaderTitle:hover:visited {
+      color: #f0f014;
+    }
+    :root .e29yge6 .react-autosuggest__container .react-autosuggest__suggestion.react-autosuggest__suggestion--highlighted,
+    :root .e29yge6 .react-autosuggest__container .react-autosuggest__suggestion:hover {
+      background-color: #f0f003;
+    }
+    :root .e29yge6 .react-autosuggest__container .react-autosuggest__suggestion {
+      border-bottom-color: #f0f002;
+    }
+    :root .EdgyDataCourseSelector-addYourOwn {
+      color: #f0f019;
+    }
+    :root .i5h71e0 {
+      background-color: #f0f00c;
+    }
+    :root .ikdjsw2 {
+      color: #f0f004;
+    }
+    :root .i1m3kkj2 {
+      color: #f0f004;
+    }
+    :root .i1190urg {
+      color: #f0f006;
+    }
+    :root .le206v0 {
+      border-color: #f0f007;
+    }
+    :root .sby7w0g {
+      background: #f0f007;
+    }
+    :root .c3s5vdc:hover {
+      background-color: #f0f019;
+    }
+    :root .g4cyoxx {
+      color: #f0f004;
+    }
+    :root .s1lyn4nc {
+      background: #f0f019;
+    }
+    :root .UIModal.is-white .UIModal-box {
+      background: #f0f002;
+    }
+    :root .UIModalBadge {
+      background-color: #f0f019;
+      color: #f0f003;
+    }
+    :root .CombinePage-sourceSelectWrap .UIFieldset-legend {
+      color: #f0f004;
+    }
+    :root .k1reqlz9.ijrfqxy svg {
+      fill: #f0f015;
+    }
+    :root .dhmqhsx.ijrfqxy svg {
+      fill: #f0f011;
+    }
+    :root .c6p6uaq .react-calendar__navigation__label {
+      color: #f0f004;
+    }
+    :root .c6p6uaq .react-calendar__navigation__arrow {
+      color: #f0f004;
+    }
+    :root .c6p6uaq .react-calendar__navigation__arrow:disabled {
+      color: #f0f008;
+    }
+    :root .f1sxiitf {
+      background: none;
+    }
+    :root .c1ext0pg {
+      background-color: #f0f00b;
+      color: #f0f004;
+    }
+    :root .sl7nfp9 {
+      background-color: #f0f002;
+    }
+    :root .sdw19mu .SetPreviewCardV1 {
+      border-bottom-color: #f0f007;
+    }
+    :root .fiejqa {
+      background: none;
+    }
+    :root .t1ied0h6 {
+      color: #f0f005;
+    }
+    :root .SetListMediumCard-isActive::before {
+      background-color: #f0f01a;
+    }
+    :root .c51obz3 {
+      background-color: #f0f001;
+    }
+    :root .s80h93u {
+      color: #f0f004;
+      border-color: #f0f007;
+    }
+    :root .s80h93u:active:not([disabled]),
+    :root .s80h93u:hover:not([disabled]) {
+      background: #f0f003;
+    }
+    :root .r78nxpu > div:hover {
+      background-color: #f0f002;
+    }
+    :root .stbnqj0 {
+      color: #f0f004;
+    }
+    :root .c1n6gny6,
+    :root .to5kbh1 {
+      color: #f0f004;
+    }
+    :root .tb3hrve {
+      color: #f0f006;
+    }
+    :root .HurricaneBanner--default {
+      background: #f0f003;
+      border-bottom-color: #f0f00c;
+    }
+    :root .HurricaneBanner--default .HurricaneBanner-text {
+      color: #f0f004;
+    }
+    :root .StudyModesNavSectionTitle {
+      color: #f0f004;
+    }
+    :root .cgkxufs {
+      background: #f0f003;
+      border-bottom-color: #f0f009;
+    }
+    :root .TeacherChoosePageView-gameTypeOption {
+      background-color: #f0f002;
+    }
+    :root .TeacherChoosePageView-gameTypes--text {
+      color: #f0f004;
+    }
+    :root .TeacherChoosePageView-gameTypes--description {
+      color: #f0f006;
+    }
+    :root .TeacherChoosePageView-gameTypes--cta,
+    :root .CardContent-cta {
+      color: #f0f019;
+    }
+    :root .TeacherChoosePageView-gameTypeOption:hover,
+    :root .PlayModeCard:hover {
+      border-bottom-color: #f0f014;
+    }
+    :root .PlayModeCard:active,
+    :root .PlayModeCard:focus:not(:active:not(:hover)),
+    :root html.cursor .PlayModeCard:hover,
+    :root html.cursor .PlayModeCard:hover:visited {
+      border-color: #f0f014;
+    }
+    :root .PlayModeCard {
+      background-color: #f0f002;
+    }
+    :root .CardContent-option {
+      background: #f0f003;
+      color: #f0f004;
+    }
+    :root .CardContent-text,
+    :root .CardContent-title {
+      color: #f0f004;
+    }
+    :root .TeacherLobbyView-join {
+      background-color: #f0f002;
+    }
+    :root .TeacherLobbyView .UIFloatedCard,
+    :root .TeacherStartGameView-side,
+    :root .TeacherEndView-side {
+      background: #f0f003;
+    }
+    :root .theme-night .TeacherLobbyView .UIFloatedCard {
+      border-color: #f0f007;
+    }
+    :root .TeacherLobbyView-join--instructionLink .UIButton {
+      color: #f0f019;
+    }
+    :root .TeacherLobbyView-player:hover {
+      color: #f0f011;
+    }
+    :root .td5er02 .UIFloatedCard {
+      background-color: #f0f002;
+    }
+    :root .TermStat--perfectTerms .TermStat-header {
+      background-color: #f0f015;
+    }
+    :root .TermStat-header {
+      color: #f0f002;
+    }
+    :root .TermStatGroup-navProgress {
+      color: #f0f006 \1;
+    }
+    :root .TeacherEndView-side--bottomButton .UIButton.UIButton--whiteBorderRounded {
+      color: #f0f004;
+    }
+    :root .SegmentedControl.SegmentedControl--quizletBlue .SegmentedControl-navItem.is-active,
+    :root .segmented-control.SegmentedControl--quizletBlue .SegmentedControl-navItem.is-active {
+      background: #f0f01a;
+      color: #f0f003;
+    }
+    :root .StudyWhileWaitingView {
+      background-color: #f0f001;
+    }
+    :root .firefox .CardsList.CardsList--showSingle .CardsItem .CardsItemSide .CardsItemInner,
+    :root .ie11 .CardsList.CardsList--showSingle .CardsItem .CardsItemSide .CardsItemInner,
+    :root .webkit .CardsList.CardsList--showSingle .CardsItem .CardsItemSide .CardsItemInner {
+      background-color: #f0f002;
+    }
+    :root .StudentTeamView-teamInner {
+      background-color: #f0f002;
+    }
+    :root .StudentAnswerOption .UIButton {
+      background-color: #f0f002 !important;
+    }
+    :root .StudentAnswerOption .UIButton:active,
+    :root html.cursor .StudentAnswerOption .UIButton:hover,
+    :root html.cursor .StudentAnswerOption .UIButton:hover:visited {
+      border-color: #f0f014;
+    }
+    :root .StudentPlayingHeader {
+      background: #f0f003;
+    }
+    :root .StudentLeaderboard-headstart {
+      background: #f0f019;
+    }
+    :root .StudentLeaderboard {
+      background: #f0f01a;
+    }
+    :root .StudentLeaderboard-team {
+      background: #f0f019;
+    }
+    :root .StudentGameboard-feedback.is-incorrectAnswer {
+      background: #f0f011;
+    }
+    :root .StudentAnswerOption.is-showingIncorrectFeedback.StudentAnswerOption .UIButton {
+      background: #f0f011 !important;
+    }
+    :root .StudentAnswerOption.is-showingCorrectFeedback.StudentAnswerOption .UIButton {
+      background: #f0f015 !important;
+    }
+    :root .StudentIncorrectAnswerFeedback-section--correct .StudentIncorrectAnswerFeedback-heading {
+      color: #f0f015;
+    }
+    :root .TermStat--learnedTerms .TermStat-header {
+      background-color: #f0f011;
+    }
+    :root .TeacherChoosePageView-gameTypeOption:active,
+    :root .TeacherChoosePageView-gameTypeOption:focus:not(:active:not(:hover)),
+    :root html.cursor .TeacherChoosePageView-gameTypeOption:hover,
+    :root html.cursor .TeacherChoosePageView-gameTypeOption:hover:visited {
+      border-color: #f0f014;
+    }
+    :root .tllqvk3,
+    :root .c1tmoumb {
+      background-color: #f0f002;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+
+
+
+@define-color accent_bg_color {color4};
+@define-color accent_fg_color {background};
+@define-color accent_color {color4};
+@define-color accent_bg_color {color4} !important;
+@define-color accent_fg_color {background} !important;
+@define-color accent_color {color4} !important;
+
+
+@define-color window_bg_color {background};
+@define-color window_fg_color {foreground};
+@define-color view_bg_color {background};
+@define-color view_fg_color {foreground};
+@define-color headerbar_bg_color {background};
+@define-color headerbar_fg_color {foreground};
+@define-color headerbar_border_color {color8};
+@define-color headerbar_backdrop_color {background};
+@define-color sidebar_bg_color {background};
+@define-color sidebar_fg_color {foreground};
+@define-color sidebar_backdrop_color {background};
+@define-color secondary_sidebar_bg_color {background};
+@define-color secondary_sidebar_fg_color {foreground};
+@define-color secondary_sidebar_backdrop_color {background};
+@define-color card_bg_color {color0};
+@define-color card_fg_color {foreground};
+@define-color dialog_bg_color {background};
+@define-color dialog_fg_color {foreground};
+@define-color popover_bg_color {background};
+@define-color popover_fg_color {foreground};
+@define-color thumbnail_bg_color {color0};
+@define-color thumbnail_fg_color {foreground};
+
+
+@define-color theme_bg_color {background};
+@define-color theme_fg_color {foreground};
+@define-color theme_base_color {background};
+@define-color theme_text_color {foreground};
+@define-color theme_selected_bg_color {color4};
+@define-color theme_selected_fg_color {background};

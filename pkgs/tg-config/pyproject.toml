@@ -1,0 +1,18 @@
+[project]
+name = "tg-config"
+version = "0.1.0"
+description = "Telegram Desktop settings reader/writer"
+requires-python = ">=3.11"
+dependencies = [
+    "cryptography>=41.0",
+]
+
+[project.scripts]
+tg-config = "tg_config.__main__:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = []

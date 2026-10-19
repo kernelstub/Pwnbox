@@ -1,0 +1,2 @@
+ACTION_ICONS = {}
+UNNAMED_ICONS = {}

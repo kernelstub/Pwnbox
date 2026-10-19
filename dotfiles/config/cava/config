@@ -1,0 +1,26 @@
+
+
+[general]
+
+
+[input]
+
+
+[output]
+
+
+[color]
+
+
+ gradient = 1
+ gradient_count = 2
+
+ gradient_color_1 = '#171717'
+ gradient_color_2 = '#171717'
+
+
+[smoothing]
+
+
+[eq]
+

@@ -1,0 +1,180 @@
+/* ==UserStyle==
+@name           pwnbox-status.cafe
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for status.cafe (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document regexp("https://status\\.cafe/(?!users).*"), domain("forum.status.cafe") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+      background-color: #f0f001;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root body {
+      background-color: #f0f001;
+      color: #f0f004;
+    }
+    :root textarea {
+      background-color: #f0f002;
+      color: #f0f004;
+      border-color: #f0f00b;
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 2px;
+      padding: 3px;
+    }
+    :root input {
+      background-color: #f0f002;
+      color: #f0f004;
+      border-color: #f0f00b;
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 4px;
+      padding: 2px 5px;
+    }
+    :root input :hover {
+      background-color: #e6e602;
+    }
+    :root input :active {
+      background-color: #f0f003;
+      border-color: #f0f00c;
+    }
+    :root textarea:hover,
+    :root input:hover {
+      border-color: #d8d80a;
+    }
+    :root .flash {
+      background-color: #f0f015;
+    }
+    :root a:not(.flash a) {
+      color: #f0f01b;
+    }
+    :root a:visited:not(.flash a) {
+      color: #e3e30f;
+    }
+    :root table,
+    :root th,
+    :root td {
+      border-color: #f0f00b !important;
+    }
+    :root thead {
+      background-color: #f0f00b;
+      color: #f0f004;
+    }
+    :root .forum {
+      background-color: #f0f014;
+    }
+    :root .forum a {
+      color: #c9c90d !important;
+    }
+    :root tbody,
+    :root .topic > tbody > tr:nth-child(2n) {
+      background-color: #f0f002;
+    }
+    :root hr {
+      background-color: #f0f00b;
+    }
+    :root .signature {
+      border-top-color: #f0f00c;
+    }
+    :root a:visited:not(.flash a) {
+      color: #cbcb0d;
+    }
+    :root input:active {
+      background-color: #f0f00c;
+      border-color: #f0f00a;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      background-color: #f0f001;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root body {
+      background-color: #f0f001;
+      color: #f0f004;
+    }
+    :root textarea {
+      background-color: #f0f002;
+      color: #f0f004;
+      border-color: #f0f00b;
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 2px;
+      padding: 3px;
+    }
+    :root input {
+      background-color: #f0f002;
+      color: #f0f004;
+      border-color: #f0f00b;
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 4px;
+      padding: 2px 5px;
+    }
+    :root input :hover {
+      background-color: #e6e602;
+    }
+    :root input :active {
+      background-color: #f0f003;
+      border-color: #f0f00c;
+    }
+    :root textarea:hover,
+    :root input:hover {
+      border-color: #d8d80a;
+    }
+    :root .flash {
+      background-color: #f0f015;
+    }
+    :root a:not(.flash a) {
+      color: #f0f01b;
+    }
+    :root a:visited:not(.flash a) {
+      color: #e3e30f;
+    }
+    :root table,
+    :root th,
+    :root td {
+      border-color: #f0f00b !important;
+    }
+    :root thead {
+      background-color: #f0f00b;
+      color: #f0f004;
+    }
+    :root .forum {
+      background-color: #f0f014;
+    }
+    :root .forum a {
+      color: #c9c90d !important;
+    }
+    :root tbody,
+    :root .topic > tbody > tr:nth-child(2n) {
+      background-color: #f0f002;
+    }
+    :root hr {
+      background-color: #f0f00b;
+    }
+    :root .signature {
+      border-top-color: #f0f00c;
+    }
+  }
+}

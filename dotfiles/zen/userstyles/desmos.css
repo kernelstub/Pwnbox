@@ -1,0 +1,2341 @@
+/* ==UserStyle==
+@name           pwnbox-desmos
+@namespace      pwnbox
+@version        2026.09.04
+@description    Soothing pastel theme for Desmos (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document regexp("^(https?:\/\/)(?!(cl|teacher|student)\.desmos\.com)([a-zA-Z0-9-]+\.)?desmos\.com(\/.*)?$") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+      --ctp-rosewater: #f0f00d;
+      --ctp-flamingo: #f0f00e;
+      --ctp-pink: #f0f00f;
+      --ctp-mauve: #f0f010;
+      --ctp-red: #f0f011;
+      --ctp-maroon: #f0f012;
+      --ctp-peach: #f0f013;
+      --ctp-yellow: #f0f014;
+      --ctp-green: #f0f015;
+      --ctp-teal: #f0f016;
+      --ctp-sky: #f0f017;
+      --ctp-sapphire: #f0f018;
+      --ctp-blue: #f0f019;
+      --ctp-lavender: #f0f01a;
+      --ctp-text: #f0f004;
+      --ctp-subtext1: #f0f005;
+      --ctp-subtext0: #f0f006;
+      --ctp-overlay2: #f0f007;
+      --ctp-overlay1: #f0f008;
+      --ctp-overlay0: #f0f009;
+      --ctp-surface2: #f0f00a;
+      --ctp-surface1: #f0f00b;
+      --ctp-surface0: #f0f00c;
+      --ctp-base: #f0f001;
+      --ctp-mantle: #f0f002;
+      --ctp-crust: #f0f003;
+      /* This is not applied to entire view to prevent the graph from changing color. */
+      /* To make this !important more important than Desmos' !important */
+      --dcg-custom-text-color: #f0f004;
+      --dcg-custom-background-color-shaded: #f0f001;
+      /* DesModder */
+      /* Non-Calculator Pages */
+      /* Scientific, Geometric, and Matrix */
+      --dcg-custom-text-color-shaded: #f0f004;
+      /* Help Center */
+      --input-border-color: #f0f00c;
+      --input-focus-border-color: #f0f01b;
+      /* Blog */
+      /* Exams & Testing Pages (desmos.com/testing/default/{fourfunction,graphing,scientific}) */
+      /* Login/sign up modal */
+      /* Account button/dropdown (displays username) */
+      /* Account settings modal */
+      /* Desmos Professional (desmos.com/professional) */
+      /* "powered by" text above logo */
+      /* saved graph titles */
+      /* saved folders */
+      /* slider bounds */
+      /* tutorial (internally called tour/trip) */
+      /* folders */
+      /* folders search (no items found) */
+      /* new graph button */
+      /* update to new behavior button (write f()=random() then enter/exit text mode) */
+      /* desmodder: intellisense current variable highlight */
+      /* line numbers */
+      /* Banner (e.g. "Saving, sharing, and signing in will be temporarily disabled...") */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root .dcg-desmos-svg-logo g {
+      fill: #f0f004;
+    }
+    :root .dcg-expression-top-bar {
+      border-right-color: #f0f00c !important;
+      border-bottom-color: #f0f00c !important;
+    }
+    :root .user-info,
+    :root .dcg-saved-graphs-tile-or-row,
+    :root .dcg-graph-list__header-row {
+      border-bottom-color: #f0f00c !important;
+    }
+    :root .dcg-exppanel-container {
+      --dcg-item-background-color: #f0f001;
+      background: #f0f001;
+    }
+    :root i:not(
+      .dcg-shared-product-icon,
+      .dcg-icon-error,
+      .dcg-geo-basic-tools .dcg-icon-caret-down,
+      .dcg-geometry-toolbar-view i,
+      .dcg-btn-short-blue i
+    ) {
+      opacity: 1 !important;
+      text-shadow: none !important;
+      color: #f0f004 !important;
+    }
+    :root .dcg-expressionitem:not(.dcg-selected) .dcg-tab,
+    :root .dcg-account-reminder,
+    :root .search-container input,
+    :root .dcg-evaluation-view__wrapped-value,
+    :root .dcg-loading-background-div,
+    :root .dcg-mq-sqrt-container .dcg-mq-empty,
+    :root .dcg-mq-fraction .dcg-mq-empty,
+    :root .dcg-my-graphs-modal__footer,
+    :root .dcg-product-filter__button.dcg-hovered,
+    :root .dsm-panic-button,
+    :root .dcg-select-dropdown-option.dcg-hovered {
+      background: #f0f002 !important;
+    }
+    :root .dcg-expressionitem.dcg-selected .dcg-tab {
+      background: #f0f01b !important;
+    }
+    :root .dcg-expressionitem.dcg-selected .dcg-tab .dcg-num {
+      color: #f0f002 !important;
+    }
+    :root .dcg-expressionitem.dcg-selected .dcg-tab .dcg-slider-menu-opener i,
+    :root .dcg-expressionitem.dcg-selected .dcg-tab .dcg-icon-zoom-fit,
+    :root .dcg-expressionitem.dcg-selected .dcg-tab .dcg-icon-create-table {
+      color: #f0f002 !important;
+    }
+    :root .dcg-expressionitem.dcg-selected .dcg-tab .dcg-circular-icon:not(:has(.dcg-icon-parametric-solid)):not(
+        .dcg-colored-icon
+      ) {
+      border-color: #f0f002 !important;
+    }
+    :root .dcg-expressionitem.dcg-selected .dcg-tab .dcg-circular-icon:not(:has(.dcg-icon-parametric-solid)):not(
+        .dcg-colored-icon
+      ) i {
+      color: #f0f002 !important;
+    }
+    :root .dcg-new-expression-fade,
+    :root .dcg-mq-editable-field::after,
+    :root .dcg-popover,
+    :root .dcg-options-menu,
+    :root .dcg-dropdown-popover__interior,
+    :root .dcg-arrow,
+    :root .dcg-table-container,
+    :root .dcg-mq-editing-overflow-left::before,
+    :root .dcg-exppanel-outer__wrapper {
+      --dcg-custom-background-color: #f0f001;
+    }
+    :root .dcg-popover .dcg-new-item,
+    :root .dcg-evaluation-view__equals-sign,
+    :root .dcg-circular-icon-container {
+      opacity: 1 !important;
+    }
+    :root .dcg-popover-interior,
+    :root .dcg-dropdown-popover__interior,
+    :root .dcg-notice--authenticate,
+    :root .dcg-btn-white-outline,
+    :root .dcg-action-save.dcg-disabled,
+    :root .dcg-calc-option,
+    :root .dcg-end-test-button,
+    :root .dcg-action-cartesian,
+    :root .dcg-action-polar,
+    :root .dcg-evaluation-view__plaintext,
+    :root .dcg-add-inference-wizard__table th,
+    :root .dcg-add-inference-wizard__table td,
+    :root .dcg-add-inference-wizard__sample-type-selector.dcg-selected,
+    :root .dcg-table--cell,
+    :root .dcg-checkbox:not(.dcg-geometry-toolbar-view .dcg-checkbox),
+    :root .dcg-product-filter__button {
+      border-color: #f0f004 !important;
+    }
+    :root .dcg-btn-white-outline.dcg-hovered,
+    :root .dcg-end-test-button.dcg-hovered {
+      box-shadow: 0 0 0 1px #f0f004 !important;
+    }
+    :root .dcg-arrow::after,
+    :root .dcg-add-inference-wizard__header {
+      border-bottom-color: #f0f004 !important;
+    }
+    :root .dcg-expressionitem.dcg-selected {
+      border-color: #f0f01b !important;
+      --dcg-item-border-color: #f0f01b !important;
+    }
+    :root .dcg-expressionitem:not(.dcg-selected) {
+      border-top-color: #f0f00c !important;
+    }
+    :root .dcg-popover-title,
+    :root .dcg-dropdown-popover__title,
+    :root .dcg-help-menu-title {
+      color: #f0f01b !important;
+      background-color: transparent !important;
+      border-bottom-color: #f0f01b !important;
+    }
+    :root .dcg-toggle-track {
+      background: #f0f006 !important;
+    }
+    :root .dcg-toggle-switch,
+    :root .dcg-or-separator {
+      background: #f0f004 !important;
+    }
+    :root .dcg-toggled .dcg-toggle-switch {
+      background: #f0f008 !important;
+    }
+    :root .dcg-keypad-btn.dcg-btn-light-on-gray,
+    :root .dcg-keypad-btn.dcg-btn-light-gray,
+    :root .dcg-ctrl-toggle-cover {
+      background: #f0f002 !important;
+      border-color: #f0f00c !important;
+    }
+    :root .dcg-keypad-btn.dcg-btn-dark-on-gray {
+      background: #f0f003 !important;
+      border-color: #f0f00c !important;
+    }
+    @layer {
+      :root .dcg-btn-short-blue,
+      :root .dcg-btn-blue,
+      :root .dcg-copy-button {
+        background: #f0f01b !important;
+        border-color: transparent !important;
+        color: #f0f001 !important;
+      }
+      :root .dcg-btn-short-blue *,
+      :root .dcg-btn-blue *,
+      :root .dcg-copy-button *,
+      :root .dcg-btn-short-blue *::before,
+      :root .dcg-btn-blue *::before,
+      :root .dcg-copy-button *::before {
+        color: #f0f001 !important;
+      }
+    }
+    :root .dcg-btn-red {
+      background: #f0f011 !important;
+      border-color: none !important;
+      color: #f0f001 !important;
+    }
+    :root .dcg-unstyled-button.dcg-disabled {
+      color: #f0f006 !important;
+      border-color: #f0f006 !important;
+    }
+    :root .dcg-overgraph-icon-container {
+      background: #f0f001;
+      border-radius: 5px;
+    }
+    :root .dcg-header,
+    :root .dcg-main-header-container,
+    :root .navbar-inner,
+    :root .dcg-practice-header-view {
+      background: #f0f003 !important;
+      border-bottom-color: #f0f00c !important;
+    }
+    :root .dcg-header *:not(
+        .dcg-btn-blue,
+        .dcg-dropdown-popover__title,
+        .dcg-copy-button > span,
+        .dcg-copy-button,
+        .dcg-help-menu-title
+      ),
+    :root .dcg-main-header-container *:not(
+        .dcg-btn-blue,
+        .dcg-dropdown-popover__title,
+        .dcg-copy-button > span,
+        .dcg-copy-button,
+        .dcg-help-menu-title
+      ),
+    :root .navbar-inner *:not(
+        .dcg-btn-blue,
+        .dcg-dropdown-popover__title,
+        .dcg-copy-button > span,
+        .dcg-copy-button,
+        .dcg-help-menu-title
+      ),
+    :root .dcg-practice-header-view *:not(
+        .dcg-btn-blue,
+        .dcg-dropdown-popover__title,
+        .dcg-copy-button > span,
+        .dcg-copy-button,
+        .dcg-help-menu-title
+      ) {
+      color: #f0f004 !important;
+    }
+    :root .dcg-variable-permalink,
+    :root .dcg-shared-input-blue-outline:not(
+      .dcg-geometry-toolbar-view .dcg-shared-input-blue-outline
+    ),
+    :root .dcg-input-blue-outline:not(
+      .dcg-geometry-toolbar-view .dcg-input-blue-outline
+    ) {
+      background: #f0f002;
+      border-color: #f0f004 !important;
+    }
+    :root .dcg-variable-permalink.dcg-focus-visible,
+    :root .dcg-shared-input-blue-outline:not(
+      .dcg-geometry-toolbar-view .dcg-shared-input-blue-outline
+    ).dcg-focus-visible,
+    :root .dcg-input-blue-outline:not(
+      .dcg-geometry-toolbar-view .dcg-input-blue-outline
+    ).dcg-focus-visible {
+      box-shadow: inset 0 0 0 1px #f0f01b !important;
+      border-color: #f0f01b !important;
+    }
+    :root *:not(.dcg-header-right-content) > * > *:not(.dcg-share-menu__sharing-options-button) > .dcg-icon-print,
+    :root *:not(.dcg-share-menu__sharing-options-button) > .dcg-icon-export,
+    :root .dcg-icon-embed {
+      box-shadow: 0 0 0 1px #f0f01b !important;
+    }
+    :root .dcg-hovered:not(.dcg-share-menu__sharing-options-button) > .dcg-icon-print,
+    :root .dcg-hovered:not(.dcg-share-menu__sharing-options-button) > .dcg-icon-export,
+    :root .dcg-hovered > .dcg-icon-embed {
+      background: rgba(240, 240, 27, 0.26) !important;
+    }
+    :root .dcg-notice--authenticate,
+    :root .dcg-authentication-modal,
+    :root .dcg-authentication-modal__detail,
+    :root .dcg-btn-gray-outline.dcg-hovered:not(.dcg-frontpage-landing__button),
+    :root .dcg-resources-container,
+    :root .dcg-account-link,
+    :root .dcg-title,
+    :root .dcg-lost-work-link,
+    :root .dcg-action-save.dcg-disabled,
+    :root .account-name,
+    :root .account-email,
+    :root .dcg-account-container *,
+    :root .dcg-icon-remove::before,
+    :root .dcg-tooltip-message,
+    :root .dcg-attempt-recovery.dcg-hovered,
+    :root .no-matches,
+    :root .dcg-basic-calculator-footer,
+    :root .dcg-basic-calculator-footer *,
+    :root .dcg-checkbox-label,
+    :root .dcg-input-blue-outline,
+    :root .dcg-shared-modal-contents-wrapper *:not(
+        .dcg-btn-blue,
+        .dcg-gray-link,
+        .dcg-blue-link,
+        .dcg-shared-tab-gray-underline
+      ),
+    :root .dcg-start-practice-screen,
+    :root .dcg-calc-option,
+    :root .dcg-keypad-control-toggle,
+    :root code,
+    :root h3,
+    :root .dcg-show-more-row-interior,
+    :root .dcg-label-input,
+    :root .dcg-checkbox-children,
+    :root .dcg-axis-label-to,
+    :root .pulsing-message,
+    :root .dsm-panic-close-button,
+    :root #dsm-panic-reopen-button {
+      color: #f0f004 !important;
+    }
+    :root .dcg-shared-modal-contents-wrapper,
+    :root .dcg-shared-modal-title::before,
+    :root .dcg-authentication-modal__detail,
+    :root .dcg-user-bar,
+    :root .dcg-scrollable,
+    :root .dcg-expressionitem.dcg-shell,
+    :root .dcg-loading-div-container,
+    :root .dcg-mini-play-pause,
+    :root .dcg-start-practice-screen,
+    :root .dcg-basic-calc-practice,
+    :root .dcg-cell.dcg-non-editable.dcg-selected,
+    :root pre,
+    :root .dcg-action-polar:not(.dcg-selected),
+    :root .dcg-action-cartesian:not(.dcg-selected),
+    :root .dcg-my-graphs-modal__options,
+    :root #dsm-panic-popover,
+    :root .dcg-hotkeys-header,
+    :root .dcg-select-dropdown-list {
+      background: #f0f001 !important;
+    }
+    :root .dcg-authentication-modal__divider::before,
+    :root .dcg-authentication-modal__divider::after {
+      border-bottom-color: #f0f004 !important;
+    }
+    :root .dcg-btn-gray-outline,
+    :root .dcg-dropdown-input {
+      background: #f0f002 !important;
+      border-color: #f0f00c !important;
+    }
+    :root .dcg-btn-gray-outline.dcg-hovered,
+    :root .dcg-dropdown-input.dcg-hovered {
+      box-shadow: 0 0 0 1px #f0f004 !important;
+    }
+    :root .dcg-user-bar {
+      border-bottom-color: #f0f00c !important;
+    }
+    :root .graph-link-container.dcg-hovered,
+    :root .graph-link-container.dcg-selected .graph-link,
+    :root .dcg-tooltip-message,
+    :root .dcg-sliding-interior,
+    :root .dcg-keypad-control-toggle,
+    :root .dcg-dropdown-choice.dcg-selected,
+    :root .dcg-saved-graphs-tile-or-row.dcg-selected,
+    :root .dcg-track > .dcg-graphic {
+      background: #f0f003 !important;
+    }
+    :root .dcg-circular-icon {
+      border-color: #f0f004 !important;
+      opacity: 1 !important;
+    }
+    :root .dcg-thumb > .dcg-graphic {
+      background: rgba(240, 240, 27, 0.59) !important;
+    }
+    :root .dcg-thumb > .dcg-center,
+    :root .dcg-action-cartesian.dcg-selected,
+    :root .dcg-action-polar.dcg-selected {
+      background: #f0f01b !important;
+    }
+    :root .dcg-evaluation-view__wrapped-value,
+    :root .dcg-circular-icon.dcg-hidden,
+    :root .dcg-keypad-control-toggle,
+    :root .dcg-btn-gray-outline {
+      border-color: #f0f00c !important;
+      box-shadow: none !important;
+    }
+    :root .dcg-tooltip-arrow {
+      border-bottom-color: #f0f003 !important;
+    }
+    :root .dcg-hovered > .dcg-add-blank {
+      background: rgba(240, 240, 4, 0.26) !important;
+    }
+    :root .dcg-icon-error {
+      color: #f0f014 !important;
+    }
+    :root .dcg-action-redo.dcg-disabled,
+    :root .dcg-action-undo.dcg-disabled {
+      opacity: 1 !important;
+    }
+    :root .dcg-action-redo.dcg-disabled i,
+    :root .dcg-action-undo.dcg-disabled i {
+      color: #f0f00b !important;
+    }
+    :root .dcg-loading-div {
+      filter: brightness(0) saturate(100%) invert(43%) sepia(43%) saturate(515%) hue-rotate(196deg) brightness(49%) contrast(68%) !important;
+    }
+    :root .dcg-inline-math-input-view .dcg-math-field,
+    :root .dcg-ticker-settings-internal .dcg-math-field {
+      border-bottom-color: #f0f007 !important;
+    }
+    :root .dcg-inline-math-input-view .dcg-math-field.dcg-focus,
+    :root .dcg-ticker-settings-internal .dcg-math-field.dcg-focus {
+      border-bottom-color: #f0f01b !important;
+    }
+    :root .dcg-mq-ghost {
+      opacity: 1 !important;
+      color: #f0f007;
+    }
+    :root .dcg-mq-root-block::after,
+    :root .dcg-action-cancel {
+      opacity: 1 !important;
+    }
+    :root .dcg-mini-play-pause {
+      border-color: #f0f001 !important;
+    }
+    :root .dcg-gray-link,
+    :root .dcg-centered-top-link,
+    :root .dcg-cancel-while-loading {
+      color: #f0f01b !important;
+    }
+    :root .dcg-shared-tab-gray-underline.dcg-selected {
+      border-bottom-color: #f0f01b !important;
+    }
+    :root .dcg-calc-option.dcg-is-selected {
+      border-color: #f0f01b !important;
+      box-shadow: 0 0 0 1px #f0f01b !important;
+      background: rgba(240, 240, 27, 0.13) !important;
+    }
+    @layer {
+      :root .dcg-mq-selection,
+      :root .dcg-mq-selection .dcg-mq-non-leaf,
+      :root .dcg-mq-selection .dcg-mq-scaled {
+        background: #f0f01b !important;
+        color: #f0f001 !important;
+      }
+    }
+    :root .dcg-cell.dcg-first-column,
+    :root .dcg-cell.dcg-interior-column {
+      border-right-color: #f0f004 !important;
+    }
+    :root .dcg-cell.dcg-table-header {
+      border-bottom-color: #f0f004 !important;
+    }
+    :root .dcg-cell.dcg-interior-row,
+    :root .dcg-show-more-row {
+      border-bottom-color: #f0f00a !important;
+    }
+    :root .dcg-cell.dcg-selected {
+      box-shadow: inset 0 0 0 2px #f0f01b !important;
+    }
+    :root .dcg-cell.dcg-selected:not(.dcg-computed-cell)::after,
+    :root .dcg-cell.dcg-selected .dcg-inner-border {
+      border-color: #f0f01b !important;
+    }
+    :root .dcg-action-changeimage.dcg-hovered,
+    :root .dcg-expressionitem .dcg-icon-remove.dcg-hovered::before,
+    :root .dcg-complex-enabled-note,
+    :root .dcg-expression-warning,
+    :root .dcg-reference-count,
+    :root .dcg-maxLabel.dcg-hovered,
+    :root .dcg-minLabel.dcg-hovered {
+      color: #f0f006 !important;
+    }
+    :root .active-arrow .dcg-graphic {
+      border-right-color: #f0f001 !important;
+    }
+    :root .dcg-row:nth-of-type(2) .dcg-cell,
+    :root table th,
+    :root table td,
+    :root .footer,
+    :root .dcg-add-inference-wizard--create-button-wrapper,
+    :root .dcg-small-screen-menu__logout-container,
+    :root .dcg-product-filter__clear-filter-container {
+      border-top-color: #f0f004 !important;
+    }
+    :root .dcg-row .dcg-cell,
+    :root .dcg-expressionfolder .dcg-fade-container::after,
+    :root .dcg-expressionitem.dcg-inFolder .dcg-fade-container::after {
+      border-left-color: #f0f004 !important;
+    }
+    :root .dcg-row:not(:nth-of-type(2)) .dcg-cell {
+      border-top-color: #f0f00a !important;
+    }
+    :root .dcg-cell .dcg-empty-line {
+      border-top-color: transparent !important;
+    }
+    :root #pageHeader.brand,
+    :root .dcg-grapher__error-in-graph-bounds {
+      text-shadow: none !important;
+    }
+    :root .dcg-btn-light-gray,
+    :root .dcg-btn-light-on-gray {
+      background: #f0f002 !important;
+      box-shadow: none !important;
+      border-color: #f0f004 !important;
+      color: #f0f004 !important;
+    }
+    :root .spa-header {
+      background: #f0f015 !important;
+      color: #f0f001;
+    }
+    @layer {
+      :root .spa-header .spa-header .dcg-icon-desmos {
+        color: #f0f001 !important;
+      }
+    }
+    :root .spa-header .state-name,
+    :root .spa-header .test-name {
+      border-left-color: #f0f001 !important;
+    }
+    :root .dcg-complex-container,
+    :root .dcg-axes-settings-container,
+    :root .dcg-options-menu-section {
+      border-top-color: #f0f007 !important;
+    }
+    :root .dcg-visual-settings {
+      border-bottom-color: #f0f007 !important;
+    }
+    :root .dcg-checkbox__box,
+    :root .dcg-axis-label,
+    :root .dcg-clickable-menu-row:has(.dcg-input-label) > .dcg-mathquill-wrapper {
+      --dcg-accent-color: #f0f01b !important;
+    }
+    :root .dcg-segmented-control-btn.dcg-selected,
+    :root .dcg-action-cartesian.dcg-selected > i::before,
+    :root .dcg-action-polar.dcg-selected > i::before,
+    :root .dcg-grapher__error-in-graph-bounds,
+    :root .dcg-toast-view,
+    :root .dcg-toast .dcg-undo,
+    :root .dcg-segmented-control-container .dcg-selected i::before,
+    :root .dcg-selected-graphs-actions__icon-btn i::before,
+    :root .dcg-segmented-control-btn.dcg-selected * {
+      color: #f0f001 !important;
+    }
+    @layer {
+      :root .dcg-btn-blue:has(> .dcg-icon-caret-down) i {
+        color: #f0f001 !important;
+      }
+      :root .dcg-btn-blue:has(> .dcg-icon-caret-down)::before {
+        border-left-color: #f0f001 !important;
+      }
+    }
+    :root .dcg-label-input {
+      border-color: #f0f004 !important;
+    }
+    :root .dcg-label-input:focus {
+      border-color: #f0f01b !important;
+      box-shadow: 0 1px #f0f01b !important;
+    }
+    :root .dcg-toast {
+      background: #f0f014 !important;
+      border-color: #f0f013 !important;
+    }
+    :root .dcg-expressionitem.dcg-inference-wizard-insert-target {
+      --dcg-item-border-color: #f0f004 !important;
+    }
+    :root .dcg-add-inference-wizard__table td:has(.dcg-focus)::after,
+    :root .dcg-table--cell:has(.dcg-focus)::after {
+      border-color: #f0f01b !important;
+    }
+    :root .dcg-add-inference-wizard__sample-type-selector.dcg-hovered:not(
+      .dcg-selected
+    ) {
+      border-color: #f0f009 !important;
+    }
+    @layer {
+      :root .dcg-frontpage-landing-interactive__graph-link i,
+      :root .dcg-frontpage-landing-interactive__arrow-overlay i {
+        color: #f0f001 !important;
+      }
+    }
+    :root .dcg-my-graphs-modal__heading--selectable.dcg-hovered {
+      box-shadow: 0 3px #f0f009 !important;
+    }
+    :root .dcg-my-graphs-modal__heading--selectable.dcg-selected {
+      box-shadow: 0 3px #f0f01b !important;
+    }
+    :root .dcg-saved-graphs-tile {
+      --dcg-saved-graphs-tile-or-row-hover-color: #f0f003 !important;
+      background: #f0f002 !important;
+    }
+    :root .dcg-graph-list__row.dcg-hovered:not(.dcg-selected),
+    :root .dcg-my-graphs-modal__currently-open,
+    :root .dcg-graph-list__field-btn.dcg-hovered,
+    :root .dcg-product-filter__option--selected {
+      background: #f0f002 !important;
+    }
+    @layer {
+      :root .dcg-saved-graphs-tile__subtitle {
+        color: #f0f001 !important;
+      }
+    }
+    :root .dcg-geometry-toolbar-view .dcg-component-checkbox,
+    :root .dcg-geometry-toolbar-view {
+      color: #000 !important;
+    }
+    :root .dcg-my-graphs-modal-empty-state__logged-out {
+      border-color: #f0f00b !important;
+    }
+    :root .dcg-shortcuts-table tr {
+      border-bottom-color: #f0f00a !important;
+    }
+    :root .dsm-plugin-title-bar,
+    :root .dsm-version-number,
+    :root .dsm-plugin-info-body,
+    :root .cm-panel,
+    :root #intellisense-container td,
+    :root .dsm-vc-outfile-name {
+      color: #f0f004 !important;
+    }
+    :root .cm-gutters,
+    :root .cm-foldPlaceholder,
+    :root .selected-intellisense-option {
+      background: #f0f003 !important;
+    }
+    :root .ͼb {
+      color: #f0f010 !important;
+    }
+    :root .ͼe {
+      color: #f0f011 !important;
+    }
+    :root .ͼd {
+      color: #f0f015 !important;
+    }
+    :root .cm-activeLineGutter,
+    :root #intellisense-container,
+    :root .dsm-vc-outfile-name {
+      background: #f0f002 !important;
+    }
+    :root .cm-focused .cm-matchingBracket {
+      background: rgba(240, 240, 27, 0.25) !important;
+    }
+    :root .cm-activeLine {
+      background: rgba(240, 240, 12, 0.5) !important;
+    }
+    :root .cm-foldPlaceholder,
+    :root #intellisense-container {
+      border-color: #f0f00c !important;
+    }
+    :root .cm-gutters {
+      color: #f0f006 !important;
+      border-right-color: #f0f00c;
+    }
+    :root .cm-panels,
+    :root .dsm-vc-preview-inner {
+      background: #f0f001 !important;
+    }
+    :root .cm-panels-bottom {
+      border-top-color: #f0f00c !important;
+    }
+    :root .cm-lintRange-error {
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%226%22%20height%3D%223%22%3E%3Cpath%20d%3D%22M0%202.5%202%201h1l2%201.5h1%22%20stroke%3D%22%23f0f011%22%20fill%3D%22none%22%20stroke-width%3D%22.7%22/%3E%3C/svg%3E");
+    }
+    :root .cm-cursor {
+      border-left-color: #f0f004 !important;
+    }
+    :root .cm-selectionBackground {
+      background: #f0f00b !important;
+    }
+    :root .compact-view-enabled .dcg-mq-cursor {
+      border-color: #f0f004 !important;
+    }
+    @layer {
+      :root .dsm-vc-preview-expand i,
+      :root .dsm-vc-remove-frame i,
+      :root .dsm-vc-preview-play-pause i {
+        color: #f0f001 !important;
+      }
+    }
+    :root .dsm-vc-outfile-name {
+      border-bottom-color: #f0f009 !important;
+    }
+    :root .dsm-vc-outfile-name.dcg-hovered {
+      box-shadow: 0 1px #f0f009 !important;
+    }
+    :root .dsm-vc-outfile-name:focus {
+      border-bottom-color: #f0f01b !important;
+      box-shadow: 0 1px #f0f01b !important;
+    }
+    :root .cls-1,
+    :root #states path {
+      fill: #f0f01b !important;
+    }
+    :root #states path:not(.uses-desmos) {
+      filter: brightness(125%);
+    }
+    :root .dcg-frontpage-landing-hero,
+    :root .dcg-frontpage-landing__button--hero,
+    :root .dcg-text--dark-blue,
+    :root .dcg-for-work-hero__label,
+    :root .accessibility-main details[open] summary,
+    :root .accessibility-main details[open] summary h3 {
+      color: #f0f001 !important;
+    }
+    :root .dcg-frontpage-landing__button,
+    :root .dcg-for-work-hero__button {
+      background: #f0f004 !important;
+      color: #f0f001 !important;
+      opacity: 1 !important;
+    }
+    :root .dcg-frontpage-landing-geometry__primary-link {
+      background: #f0f010 !important;
+    }
+    :root .dcg-frontpage-landing-3d__primary-link {
+      background: #f0f012 !important;
+    }
+    :root .dcg-frontpage-landing-section,
+    :root .dcg-frontpage-landing-tools__link,
+    :root .dcg-link-section-title,
+    :root .dcg-finalist-name,
+    :root li,
+    :root .section-interior *,
+    :root .dcg-p-tag,
+    :root .dcg-search-container input,
+    :root .dcg-searchable-dropdown-list,
+    :root .section-interior,
+    :root .careers-hero h1,
+    :root .sticky-nav li:not(.active) a,
+    :root .top-info,
+    :root .partners,
+    :root .dcg-principles-section *,
+    :root .dcg-for-work-hero,
+    :root body,
+    :root .dcg-basic-markdown-container p,
+    :root .dcg-basic-markdown-container table th,
+    :root .accessibility-main {
+      color: #f0f004 !important;
+    }
+    :root .dcg-frontpage-landing-interactive__arrow-overlay {
+      /* Desmos' normal solution looks bad when zoomed in (it uses like 10 stacked text-shadows.) */
+      text-shadow: none;
+      paint-order: stroke fill;
+      -webkit-text-stroke: 4px white;
+    }
+    :root .dcg-frontpage-landing-section--bg-light,
+    :root .dcg-frontpage-landing-section--bg-dark,
+    :root .dcg-facts-wrapper,
+    :root .dcg-principles-container__light-bg,
+    :root .dcg-for-work-hero,
+    :root .dcg-section--gray,
+    :root .callout--primary,
+    :root .lt-dropdown-menu,
+    :root .dcg-basic-markdown-container table th,
+    :root .accessibility-main section:nth-of-type(2n) {
+      background: #f0f003 !important;
+    }
+    :root .dcg-frontpage-landing-classroom__card,
+    :root body,
+    :root .dcg-frontpage-landing-testing__bullets,
+    :root .accessibility-features-in-tools li,
+    :root .accessibility-main details {
+      background-color: #f0f001 !important;
+    }
+    :root .dcg-blue-link,
+    :root .dcg-footer-link,
+    :root .dcg-primary-link,
+    :root .dcg-shared-tab-gray-underline,
+    :root .dcg-btn-blue-outline {
+      color: #f0f01b !important;
+    }
+    :root .dcg-footer-legal-content-container,
+    :root .sticky-nav li.active a,
+    :root .dcg-principles-header,
+    :root .dcg-for-work-hero__label,
+    :root .accessibility-main details[open] summary {
+      background: #f0f01b !important;
+    }
+    :root .dcg-finalist-location,
+    :root .dcg-subtitle,
+    :root .breadcrumbs li::before {
+      color: #f0f006 !important;
+    }
+    :root .dcg-shared-tab-gray-underline.dcg-hovered {
+      border-bottom-color: #f0f01b !important;
+    }
+    :root .dcg-footer-main-content-container,
+    :root .careers-hero,
+    :root .dcg-background--light-blue,
+    :root .state-info:not(.modal-view) {
+      background: #f0f001 !important;
+    }
+    :root .dcg-footer-legal-info a,
+    :root .dcg-footer-title,
+    :root .dcg-copyright,
+    :root .dcg-footer-legal-info,
+    :root .sticky-nav li.active a,
+    :root .dcg-principles-header * {
+      color: #f0f001 !important;
+    }
+    :root .dcg-test-blurb,
+    :root .dcg-key-command,
+    :root pre,
+    :root .dcg-container,
+    :root .lt-dropdown-menu,
+    :root .accessibility-main details {
+      border-color: #f0f00c !important;
+    }
+    :root .dcg-search-container input,
+    :root .dcg-searchable-dropdown-list,
+    :root .sticky-nav li:not(.active) a,
+    :root .dcg-key-command,
+    :root .dcg-btn-blue-outline,
+    :root *:not(pre) > code {
+      background: #f0f002 !important;
+    }
+    :root .dcg-search-container input:focus,
+    :root .pdf-button,
+    :root .dcg-btn-blue-outline,
+    :root .callout--primary,
+    :root .lt-btn,
+    :root .lt-section-subscribe button {
+      border-color: #f0f01b !important;
+    }
+    :root .dividing-line {
+      background: #f0f00c !important;
+    }
+    :root .job-openings-message-container .white-background {
+      background: transparent !important;
+    }
+    :root .pdf-button.dcg-hovered,
+    :root .dcg-btn-blue-outline.dcg-hovered {
+      box-shadow: 0 0 0 1px #f0f01b !important;
+    }
+    :root .dcg-footer-logo img,
+    :root .dcg-testimonial__image {
+      filter: brightness(0) saturate(100%) invert(43%) sepia(43%) saturate(515%) hue-rotate(196deg) brightness(49%) contrast(68%);
+    }
+    :root .dcg-for-work-hero__input {
+      border-color: #f0f004 !important;
+    }
+    :root .dcg-for-work-hero__input:focus {
+      box-shadow: 0 0 0 1px #f0f004 !important;
+    }
+    :root .dcg-basic-markdown-container table th,
+    :root .dcg-basic-markdown-container table td {
+      border-color: #f0f004 !important;
+    }
+    :root .dcg-calc-basic-main,
+    :root #main {
+      --dcg-custom-background-color: #f0f001;
+      border-color: transparent !important;
+    }
+    :root .dcg-basic-list-container,
+    :root .dcg-matrix-list-container {
+      border-top-color: #f0f00c !important;
+    }
+    :root .dcg-basic-list-placeholder,
+    :root .dcg-keypad-control-bar,
+    :root .dcg-matrix-list-placeholder {
+      border-left-color: #f0f00c !important;
+      border-right-color: #f0f00c !important;
+    }
+    :root .dcg-basic-keypad-container,
+    :root .dcg-basic-expression,
+    :root .dcg-latex-expression,
+    :root .dcg-matrix-expression {
+      border-color: #f0f00c !important;
+    }
+    :root .dcg-keypad-control-btn.dcg-selected::after,
+    :root .dcg-segmented-control-btn.dcg-selected {
+      background: #f0f01b !important;
+    }
+    :root .dcg-basic-expression.dcg-focused,
+    :root .dcg-matrix-expression.dcg-focused,
+    :root .dcg-latex-expression.dcg-focused {
+      border-color: #f0f01b !important;
+      box-shadow: inset 0 0 0 1px #f0f01b !important;
+    }
+    :root .dcg-resize-action {
+      background: #f0f002 !important;
+      border-color: #f0f00c !important;
+    }
+    :root .dcg-matrix-container,
+    :root .dcg-segmented-control-btn.dcg-selected {
+      border-color: #f0f004 !important;
+    }
+    :root .dcg-matrix-view .dcg-mq-math-mode.dcg-mq-focused {
+      border-bottom-color: #f0f01b !important;
+    }
+    :root .dcg-mq-ans {
+      border-color: #f0f01b !important;
+      color: #f0f01b !important;
+      background: rgba(240, 240, 27, 0.26) !important;
+    }
+    :root .dcg-mq-ans::after {
+      border-color: #f0f01b !important;
+      color: #f0f01b !important;
+      background: #f0f002 !important;
+    }
+    :root .dcg-keypad-control-btn.dcg-disabled {
+      opacity: 1 !important;
+      color: #f0f00b !important;
+    }
+    :root .dcg-keypad-control-btn.dcg-disabled i {
+      color: #f0f00b !important;
+    }
+    :root .lt-container-inner *,
+    :root .lt-topbar,
+    :root .hc-multiselect-toggle li span[aria-label]::before {
+      color: #f0f004 !important;
+    }
+    :root .lt-container-inner a:not(.lt-btn--primary),
+    :root .lt-topbar__link {
+      color: #f0f01b !important;
+    }
+    :root .lt-topbar {
+      background: #f0f003 !important;
+    }
+    :root .lt-topbar__logo {
+      filter: brightness(0) saturate(100%) invert(43%) sepia(43%) saturate(515%) hue-rotate(196deg) brightness(49%) contrast(68%);
+    }
+    :root .lt-hero-unit__bg,
+    :root .lt-footer-submit-ticket,
+    :root .tab,
+    :root .lt-new-request-tip,
+    :root .form-field input,
+    :root .form-field textarea,
+    :root .hc-multiselect-toggle,
+    :root .hc-multiselect-menu {
+      background: #f0f002 !important;
+    }
+    :root input[type="submit"],
+    :root .lt-block-list-item__link,
+    :root .lt-btn--primary {
+      background: #f0f01b !important;
+      border-color: #f0f01b !important;
+      color: #f0f001 !important;
+    }
+    :root input[type="search"] {
+      background: #f0f003 !important;
+      border-color: #f0f004 !important;
+    }
+    :root .search::before {
+      background-image: url("data:image/svg+xml,%3Csvg%20aria-hidden%3D%22true%22%20focusable%3D%22false%22%20data-prefix%3D%22far%22%20data-icon%3D%22search%22%20role%3D%22img%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%20class%3D%22svg-inline--fa%20fa-search%20fa-w-16%20fa-3x%22%3E%3Cpath%20fill%3D%22%23f0f004%22%20d%3D%22M508.5%20468.9%20387.1%20347.5c-2.3-2.3-5.3-3.5-8.5-3.5h-13.2c31.5-36.5%2050.6-84%2050.6-136C416%2093.1%20322.9%200%20208%200S0%2093.1%200%20208s93.1%20208%20208%20208c52%200%2099.5-19.1%20136-50.6v13.2c0%203.2%201.3%206.2%203.5%208.5l121.4%20121.4c4.7%204.7%2012.3%204.7%2017%200l22.6-22.6c4.7-4.7%204.7-12.3%200-17M208%20368c-88.4%200-160-71.6-160-160S119.6%2048%20208%2048s160%2071.6%20160%20160-71.6%20160-160%20160%22%20class%3D%22%22/%3E%3C/svg%3E");
+    }
+    :root .lt-block-list-item__link * {
+      color: #f0f001 !important;
+    }
+    :root .lt-custom-block__icon {
+      filter: brightness(0) saturate(100%) invert(26%) sepia(31%) saturate(3766%) hue-rotate(247deg) brightness(114%) contrast(114%);
+    }
+    :root .lt-footer,
+    :root .lt-search-box:not(.lt-search-box--hero-unit),
+    :root .lt-breadcrumbs-wrapper,
+    :root .hc-multiselect-menu li:focus,
+    :root .hc-multiselect-toggle li {
+      background: #f0f001 !important;
+    }
+    :root .lt-scroll-to-top {
+      color: #f0f01b !important;
+    }
+    :root .pagination-list *,
+    :root .lt-scroll-to-top,
+    :root .lt-new-request-tip {
+      border-color: #f0f01b !important;
+    }
+    :root .lt-header,
+    :root .lt-search-result {
+      border-bottom-color: #f0f00c !important;
+    }
+    :root .lt-search-result__text em {
+      background: #f0f014 !important;
+      color: #f0f001 !important;
+    }
+    :root .lt-toc--link.is-active > span {
+      color: #f0f001 !important;
+    }
+    :root .tab,
+    :root .key-command,
+    :root .hc-multiselect-toggle,
+    :root .hc-multiselect-menu {
+      border-color: #f0f00c !important;
+    }
+    @layer {
+      :root .tabs-link {
+        color: #f0f004 !important;
+      }
+      :root .tabs-link:hover {
+        color: #f0f01b !important;
+      }
+      :root .tabs-link.is-active {
+        color: #f0f001 !important;
+        background: #f0f01b !important;
+        border-color: #f0f01b !important;
+      }
+    }
+    :root .upload-dropzone[data-hc-focus="true"] {
+      border-color: #f0f01b !important;
+    }
+    :root .content-wrap *:not(a),
+    :root .tag-links > a {
+      color: #f0f004 !important;
+    }
+    :root .article header {
+      border-top-color: #f0f00c !important;
+    }
+    :root *:not(.tag-links) > a:not(.img-card, .btn-blue, .btn-blue-outline) {
+      color: #f0f01b;
+    }
+    :root .tag-container a {
+      border-color: #f0f004 !important;
+    }
+    :root .tag-container a:active {
+      background: rgba(240, 240, 4, 0.5) !important;
+    }
+    :root .img-card {
+      border-color: #f0f00a !important;
+    }
+    :root .img-card:hover {
+      box-shadow: 0 0 0 1px #f0f00a !important;
+    }
+    :root .btn-blue {
+      background: #f0f01b !important;
+      color: #f0f001 !important;
+    }
+    :root .btn-blue-outline {
+      border-color: #f0f01b !important;
+      color: #f0f01b !important;
+    }
+    :root .btn-blue-outline:hover {
+      box-shadow: 0 0 0 1px #f0f01b !important;
+    }
+    :root .dcg-frontpage-landing__announcement {
+      background: #f0f01b;
+      color: #f0f004;
+    }
+    :root .dcg-frontpage-landing__announcement-interior {
+      background-color: rgba(240, 240, 3, 0.5);
+    }
+    :root .spa-sample-calculator-view .dcg-sample-calculator__header i.dcg-icon-desmos {
+      color: #f0f001 !important;
+    }
+    :root .spa-sample-calculator-view .dcg-sample-calculator__header {
+      background-color: #f0f01b !important;
+      color: #f0f001 !important;
+    }
+    :root .spa-sample-calculator-view .dcg-sample-calculator__calculator-name,
+    :root .spa-sample-calculator-view .dcg-sample-calculator__state-name {
+      border-color: #f0f001;
+    }
+    :root .dcg-shared-modal-dialog {
+      color: #f0f004;
+      --dcg-modal-background-color: #f0f001;
+      /* Account signup welcome */
+    }
+    :root .dcg-shared-modal-dialog .dcg-authentication-modal__sublabel {
+      color: #f0f006;
+    }
+    :root .dcg-shared-modal-dialog .dcg-authentication-modal__tag {
+      background-color: rgba(240, 240, 27, 0.2);
+    }
+    :root .dcg-shared-modal-dialog .dcg-authentication-modal__tag:hover {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root .dcg-shared-modal-dialog .dcg-authentication-modal__tag.dcg-authentication-modal__tag--selected {
+      border-color: #f0f01b;
+    }
+    :root .dcg-header-bar__account-menu.dcg-hovered,
+    :root .dcg-header-bar__account-menu[aria-expanded="true"] {
+      background-color: #f0f00c;
+    }
+    :root .dcg-shared-account-dialog {
+      color: #f0f004;
+    }
+    :root .dcg-professional-hero {
+      background-color: #f0f003;
+      color: #f0f004;
+    }
+    :root .dcg-section__beta-button {
+      color: #f0f001;
+      background-color: #f0f004;
+    }
+    :root .dcg-section__beta-button.dcg-hovered {
+      background-color: #f0f005;
+    }
+    :root .dcg-section__beta-button.dcg-depressed {
+      background-color: #f0f006;
+    }
+    :root .dcg-powered-by {
+      color: #f0f004 !important;
+    }
+    :root .dcg-checkbox__content {
+      color: #f0f01b;
+    }
+    :root .dcg-saved-graphs {
+      --dcg-folder-background-color: #f0f002;
+    }
+    :root .dcg-slider {
+      --dcg-custom-secondary-text-color: #f0f01b;
+    }
+    :root .dcg-trip-interior,
+    :root .dcg-trip-content {
+      background: #f0f001 !important;
+      color: #f0f004;
+    }
+    :root .dcg-folder {
+      --dcg-folder-background-color: #f0f002 !important;
+    }
+    :root .dcg-folder-item-count {
+      color: #f0f005;
+    }
+    :root .dcg-my-graphs-modal__back-btn-text,
+    :root .dcg-folder__name,
+    :root .dcg-my-graphs-modal__folder-header > .dcg-my-graphs-modal-saved-graphs-header,
+    :root .dcg-example-gallery__heading,
+    :root .dcg-saved-graphs-tile__title {
+      color: #f0f01b;
+    }
+    :root .dcg-my-graphs-modal-empty-state__heading {
+      color: #f0f01b !important;
+    }
+    :root .dcg-my-graphs-modal-empty-state__no-search-results {
+      color: #f0f005;
+    }
+    :root .dcg-new-my-graphs-item__button {
+      color: #f0f004 !important;
+    }
+    :root .dropdown-option-container > .dcg-dropdown-choice[role="menuitem"] {
+      color: #f0f004;
+    }
+    :root .dcg-update-behavior-btn {
+      border-color: #f0f00c !important;
+    }
+    :root .pfc-param-selected {
+      background: #f0f00c !important;
+      color: #f0f004 !important;
+    }
+    :root .dcg-num {
+      color: #f0f004;
+    }
+    :root .dcg-header-container .dcg-top-banner {
+      color: #f0f004;
+      background-color: #f0f001;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --ctp-rosewater: #f0f00d;
+      --ctp-flamingo: #f0f00e;
+      --ctp-pink: #f0f00f;
+      --ctp-mauve: #f0f010;
+      --ctp-red: #f0f011;
+      --ctp-maroon: #f0f012;
+      --ctp-peach: #f0f013;
+      --ctp-yellow: #f0f014;
+      --ctp-green: #f0f015;
+      --ctp-teal: #f0f016;
+      --ctp-sky: #f0f017;
+      --ctp-sapphire: #f0f018;
+      --ctp-blue: #f0f019;
+      --ctp-lavender: #f0f01a;
+      --ctp-text: #f0f004;
+      --ctp-subtext1: #f0f005;
+      --ctp-subtext0: #f0f006;
+      --ctp-overlay2: #f0f007;
+      --ctp-overlay1: #f0f008;
+      --ctp-overlay0: #f0f009;
+      --ctp-surface2: #f0f00a;
+      --ctp-surface1: #f0f00b;
+      --ctp-surface0: #f0f00c;
+      --ctp-base: #f0f001;
+      --ctp-mantle: #f0f002;
+      --ctp-crust: #f0f003;
+      /* This is not applied to entire view to prevent the graph from changing color. */
+      /* To make this !important more important than Desmos' !important */
+      --dcg-custom-text-color: #f0f004;
+      --dcg-custom-background-color-shaded: #f0f001;
+      /* DesModder */
+      /* Non-Calculator Pages */
+      /* Scientific, Geometric, and Matrix */
+      --dcg-custom-text-color-shaded: #f0f004;
+      /* Help Center */
+      --input-border-color: #f0f00c;
+      --input-focus-border-color: #f0f01b;
+      /* Blog */
+      /* Exams & Testing Pages (desmos.com/testing/default/{fourfunction,graphing,scientific}) */
+      /* Login/sign up modal */
+      /* Account button/dropdown (displays username) */
+      /* Account settings modal */
+      /* Desmos Professional (desmos.com/professional) */
+      /* "powered by" text above logo */
+      /* saved graph titles */
+      /* saved folders */
+      /* slider bounds */
+      /* tutorial (internally called tour/trip) */
+      /* folders */
+      /* folders search (no items found) */
+      /* new graph button */
+      /* update to new behavior button (write f()=random() then enter/exit text mode) */
+      /* desmodder: intellisense current variable highlight */
+      /* line numbers */
+      /* Banner (e.g. "Saving, sharing, and signing in will be temporarily disabled...") */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root .dcg-desmos-svg-logo g {
+      fill: #f0f004;
+    }
+    :root .dcg-expression-top-bar {
+      border-right-color: #f0f00c !important;
+      border-bottom-color: #f0f00c !important;
+    }
+    :root .user-info,
+    :root .dcg-saved-graphs-tile-or-row,
+    :root .dcg-graph-list__header-row {
+      border-bottom-color: #f0f00c !important;
+    }
+    :root .dcg-exppanel-container {
+      --dcg-item-background-color: #f0f001;
+      background: #f0f001;
+    }
+    :root i:not(
+      .dcg-shared-product-icon,
+      .dcg-icon-error,
+      .dcg-geo-basic-tools .dcg-icon-caret-down,
+      .dcg-geometry-toolbar-view i,
+      .dcg-btn-short-blue i
+    ) {
+      opacity: 1 !important;
+      text-shadow: none !important;
+      color: #f0f004 !important;
+    }
+    :root .dcg-expressionitem:not(.dcg-selected) .dcg-tab,
+    :root .dcg-account-reminder,
+    :root .search-container input,
+    :root .dcg-evaluation-view__wrapped-value,
+    :root .dcg-loading-background-div,
+    :root .dcg-mq-sqrt-container .dcg-mq-empty,
+    :root .dcg-mq-fraction .dcg-mq-empty,
+    :root .dcg-my-graphs-modal__footer,
+    :root .dcg-product-filter__button.dcg-hovered,
+    :root .dsm-panic-button,
+    :root .dcg-select-dropdown-option.dcg-hovered {
+      background: #f0f002 !important;
+    }
+    :root .dcg-expressionitem.dcg-selected .dcg-tab {
+      background: #f0f01b !important;
+    }
+    :root .dcg-expressionitem.dcg-selected .dcg-tab .dcg-num {
+      color: #f0f002 !important;
+    }
+    :root .dcg-expressionitem.dcg-selected .dcg-tab .dcg-slider-menu-opener i,
+    :root .dcg-expressionitem.dcg-selected .dcg-tab .dcg-icon-zoom-fit,
+    :root .dcg-expressionitem.dcg-selected .dcg-tab .dcg-icon-create-table {
+      color: #f0f002 !important;
+    }
+    :root .dcg-expressionitem.dcg-selected .dcg-tab .dcg-circular-icon:not(:has(.dcg-icon-parametric-solid)):not(
+        .dcg-colored-icon
+      ) {
+      border-color: #f0f002 !important;
+    }
+    :root .dcg-expressionitem.dcg-selected .dcg-tab .dcg-circular-icon:not(:has(.dcg-icon-parametric-solid)):not(
+        .dcg-colored-icon
+      ) i {
+      color: #f0f002 !important;
+    }
+    :root .dcg-new-expression-fade,
+    :root .dcg-mq-editable-field::after,
+    :root .dcg-popover,
+    :root .dcg-options-menu,
+    :root .dcg-dropdown-popover__interior,
+    :root .dcg-arrow,
+    :root .dcg-table-container,
+    :root .dcg-mq-editing-overflow-left::before,
+    :root .dcg-exppanel-outer__wrapper {
+      --dcg-custom-background-color: #f0f001;
+    }
+    :root .dcg-popover .dcg-new-item,
+    :root .dcg-evaluation-view__equals-sign,
+    :root .dcg-circular-icon-container {
+      opacity: 1 !important;
+    }
+    :root .dcg-popover-interior,
+    :root .dcg-dropdown-popover__interior,
+    :root .dcg-notice--authenticate,
+    :root .dcg-btn-white-outline,
+    :root .dcg-action-save.dcg-disabled,
+    :root .dcg-calc-option,
+    :root .dcg-end-test-button,
+    :root .dcg-action-cartesian,
+    :root .dcg-action-polar,
+    :root .dcg-evaluation-view__plaintext,
+    :root .dcg-add-inference-wizard__table th,
+    :root .dcg-add-inference-wizard__table td,
+    :root .dcg-add-inference-wizard__sample-type-selector.dcg-selected,
+    :root .dcg-table--cell,
+    :root .dcg-checkbox:not(.dcg-geometry-toolbar-view .dcg-checkbox),
+    :root .dcg-product-filter__button {
+      border-color: #f0f004 !important;
+    }
+    :root .dcg-btn-white-outline.dcg-hovered,
+    :root .dcg-end-test-button.dcg-hovered {
+      box-shadow: 0 0 0 1px #f0f004 !important;
+    }
+    :root .dcg-arrow::after,
+    :root .dcg-add-inference-wizard__header {
+      border-bottom-color: #f0f004 !important;
+    }
+    :root .dcg-expressionitem.dcg-selected {
+      border-color: #f0f01b !important;
+      --dcg-item-border-color: #f0f01b !important;
+    }
+    :root .dcg-expressionitem:not(.dcg-selected) {
+      border-top-color: #f0f00c !important;
+    }
+    :root .dcg-popover-title,
+    :root .dcg-dropdown-popover__title,
+    :root .dcg-help-menu-title {
+      color: #f0f01b !important;
+      background-color: transparent !important;
+      border-bottom-color: #f0f01b !important;
+    }
+    :root .dcg-toggle-track {
+      background: #f0f006 !important;
+    }
+    :root .dcg-toggle-switch,
+    :root .dcg-or-separator {
+      background: #f0f004 !important;
+    }
+    :root .dcg-toggled .dcg-toggle-switch {
+      background: #f0f008 !important;
+    }
+    :root .dcg-keypad-btn.dcg-btn-light-on-gray,
+    :root .dcg-keypad-btn.dcg-btn-light-gray,
+    :root .dcg-ctrl-toggle-cover {
+      background: #f0f002 !important;
+      border-color: #f0f00c !important;
+    }
+    :root .dcg-keypad-btn.dcg-btn-dark-on-gray {
+      background: #f0f003 !important;
+      border-color: #f0f00c !important;
+    }
+    @layer {
+      :root .dcg-btn-short-blue,
+      :root .dcg-btn-blue,
+      :root .dcg-copy-button {
+        background: #f0f01b !important;
+        border-color: transparent !important;
+        color: #f0f001 !important;
+      }
+      :root .dcg-btn-short-blue *,
+      :root .dcg-btn-blue *,
+      :root .dcg-copy-button *,
+      :root .dcg-btn-short-blue *::before,
+      :root .dcg-btn-blue *::before,
+      :root .dcg-copy-button *::before {
+        color: #f0f001 !important;
+      }
+    }
+    :root .dcg-btn-red {
+      background: #f0f011 !important;
+      border-color: none !important;
+      color: #f0f001 !important;
+    }
+    :root .dcg-unstyled-button.dcg-disabled {
+      color: #f0f006 !important;
+      border-color: #f0f006 !important;
+    }
+    :root .dcg-overgraph-icon-container {
+      background: #f0f001;
+      border-radius: 5px;
+    }
+    :root .dcg-header,
+    :root .dcg-main-header-container,
+    :root .navbar-inner,
+    :root .dcg-practice-header-view {
+      background: #f0f003 !important;
+      border-bottom-color: #f0f00c !important;
+    }
+    :root .dcg-header *:not(
+        .dcg-btn-blue,
+        .dcg-dropdown-popover__title,
+        .dcg-copy-button > span,
+        .dcg-copy-button,
+        .dcg-help-menu-title
+      ),
+    :root .dcg-main-header-container *:not(
+        .dcg-btn-blue,
+        .dcg-dropdown-popover__title,
+        .dcg-copy-button > span,
+        .dcg-copy-button,
+        .dcg-help-menu-title
+      ),
+    :root .navbar-inner *:not(
+        .dcg-btn-blue,
+        .dcg-dropdown-popover__title,
+        .dcg-copy-button > span,
+        .dcg-copy-button,
+        .dcg-help-menu-title
+      ),
+    :root .dcg-practice-header-view *:not(
+        .dcg-btn-blue,
+        .dcg-dropdown-popover__title,
+        .dcg-copy-button > span,
+        .dcg-copy-button,
+        .dcg-help-menu-title
+      ) {
+      color: #f0f004 !important;
+    }
+    :root .dcg-variable-permalink,
+    :root .dcg-shared-input-blue-outline:not(
+      .dcg-geometry-toolbar-view .dcg-shared-input-blue-outline
+    ),
+    :root .dcg-input-blue-outline:not(
+      .dcg-geometry-toolbar-view .dcg-input-blue-outline
+    ) {
+      background: #f0f002;
+      border-color: #f0f004 !important;
+    }
+    :root .dcg-variable-permalink.dcg-focus-visible,
+    :root .dcg-shared-input-blue-outline:not(
+      .dcg-geometry-toolbar-view .dcg-shared-input-blue-outline
+    ).dcg-focus-visible,
+    :root .dcg-input-blue-outline:not(
+      .dcg-geometry-toolbar-view .dcg-input-blue-outline
+    ).dcg-focus-visible {
+      box-shadow: inset 0 0 0 1px #f0f01b !important;
+      border-color: #f0f01b !important;
+    }
+    :root *:not(.dcg-header-right-content) > * > *:not(.dcg-share-menu__sharing-options-button) > .dcg-icon-print,
+    :root *:not(.dcg-share-menu__sharing-options-button) > .dcg-icon-export,
+    :root .dcg-icon-embed {
+      box-shadow: 0 0 0 1px #f0f01b !important;
+    }
+    :root .dcg-hovered:not(.dcg-share-menu__sharing-options-button) > .dcg-icon-print,
+    :root .dcg-hovered:not(.dcg-share-menu__sharing-options-button) > .dcg-icon-export,
+    :root .dcg-hovered > .dcg-icon-embed {
+      background: rgba(240, 240, 27, 0.26) !important;
+    }
+    :root .dcg-notice--authenticate,
+    :root .dcg-authentication-modal,
+    :root .dcg-authentication-modal__detail,
+    :root .dcg-btn-gray-outline.dcg-hovered:not(.dcg-frontpage-landing__button),
+    :root .dcg-resources-container,
+    :root .dcg-account-link,
+    :root .dcg-title,
+    :root .dcg-lost-work-link,
+    :root .dcg-action-save.dcg-disabled,
+    :root .account-name,
+    :root .account-email,
+    :root .dcg-account-container *,
+    :root .dcg-icon-remove::before,
+    :root .dcg-tooltip-message,
+    :root .dcg-attempt-recovery.dcg-hovered,
+    :root .no-matches,
+    :root .dcg-basic-calculator-footer,
+    :root .dcg-basic-calculator-footer *,
+    :root .dcg-checkbox-label,
+    :root .dcg-input-blue-outline,
+    :root .dcg-shared-modal-contents-wrapper *:not(
+        .dcg-btn-blue,
+        .dcg-gray-link,
+        .dcg-blue-link,
+        .dcg-shared-tab-gray-underline
+      ),
+    :root .dcg-start-practice-screen,
+    :root .dcg-calc-option,
+    :root .dcg-keypad-control-toggle,
+    :root code,
+    :root h3,
+    :root .dcg-show-more-row-interior,
+    :root .dcg-label-input,
+    :root .dcg-checkbox-children,
+    :root .dcg-axis-label-to,
+    :root .pulsing-message,
+    :root .dsm-panic-close-button,
+    :root #dsm-panic-reopen-button {
+      color: #f0f004 !important;
+    }
+    :root .dcg-shared-modal-contents-wrapper,
+    :root .dcg-shared-modal-title::before,
+    :root .dcg-authentication-modal__detail,
+    :root .dcg-user-bar,
+    :root .dcg-scrollable,
+    :root .dcg-expressionitem.dcg-shell,
+    :root .dcg-loading-div-container,
+    :root .dcg-mini-play-pause,
+    :root .dcg-start-practice-screen,
+    :root .dcg-basic-calc-practice,
+    :root .dcg-cell.dcg-non-editable.dcg-selected,
+    :root pre,
+    :root .dcg-action-polar:not(.dcg-selected),
+    :root .dcg-action-cartesian:not(.dcg-selected),
+    :root .dcg-my-graphs-modal__options,
+    :root #dsm-panic-popover,
+    :root .dcg-hotkeys-header,
+    :root .dcg-select-dropdown-list {
+      background: #f0f001 !important;
+    }
+    :root .dcg-authentication-modal__divider::before,
+    :root .dcg-authentication-modal__divider::after {
+      border-bottom-color: #f0f004 !important;
+    }
+    :root .dcg-btn-gray-outline,
+    :root .dcg-dropdown-input {
+      background: #f0f002 !important;
+      border-color: #f0f00c !important;
+    }
+    :root .dcg-btn-gray-outline.dcg-hovered,
+    :root .dcg-dropdown-input.dcg-hovered {
+      box-shadow: 0 0 0 1px #f0f004 !important;
+    }
+    :root .dcg-user-bar {
+      border-bottom-color: #f0f00c !important;
+    }
+    :root .graph-link-container.dcg-hovered,
+    :root .graph-link-container.dcg-selected .graph-link,
+    :root .dcg-tooltip-message,
+    :root .dcg-sliding-interior,
+    :root .dcg-keypad-control-toggle,
+    :root .dcg-dropdown-choice.dcg-selected,
+    :root .dcg-saved-graphs-tile-or-row.dcg-selected,
+    :root .dcg-track > .dcg-graphic {
+      background: #f0f003 !important;
+    }
+    :root .dcg-circular-icon {
+      border-color: #f0f004 !important;
+      opacity: 1 !important;
+    }
+    :root .dcg-thumb > .dcg-graphic {
+      background: rgba(240, 240, 27, 0.59) !important;
+    }
+    :root .dcg-thumb > .dcg-center,
+    :root .dcg-action-cartesian.dcg-selected,
+    :root .dcg-action-polar.dcg-selected {
+      background: #f0f01b !important;
+    }
+    :root .dcg-evaluation-view__wrapped-value,
+    :root .dcg-circular-icon.dcg-hidden,
+    :root .dcg-keypad-control-toggle,
+    :root .dcg-btn-gray-outline {
+      border-color: #f0f00c !important;
+      box-shadow: none !important;
+    }
+    :root .dcg-tooltip-arrow {
+      border-bottom-color: #f0f003 !important;
+    }
+    :root .dcg-hovered > .dcg-add-blank {
+      background: rgba(240, 240, 4, 0.26) !important;
+    }
+    :root .dcg-icon-error {
+      color: #f0f014 !important;
+    }
+    :root .dcg-action-redo.dcg-disabled,
+    :root .dcg-action-undo.dcg-disabled {
+      opacity: 1 !important;
+    }
+    :root .dcg-action-redo.dcg-disabled i,
+    :root .dcg-action-undo.dcg-disabled i {
+      color: #f0f00b !important;
+    }
+    :root .dcg-loading-div {
+      filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%) !important;
+    }
+    :root .dcg-inline-math-input-view .dcg-math-field,
+    :root .dcg-ticker-settings-internal .dcg-math-field {
+      border-bottom-color: #f0f007 !important;
+    }
+    :root .dcg-inline-math-input-view .dcg-math-field.dcg-focus,
+    :root .dcg-ticker-settings-internal .dcg-math-field.dcg-focus {
+      border-bottom-color: #f0f01b !important;
+    }
+    :root .dcg-mq-ghost {
+      opacity: 1 !important;
+      color: #f0f007;
+    }
+    :root .dcg-mq-root-block::after,
+    :root .dcg-action-cancel {
+      opacity: 1 !important;
+    }
+    :root .dcg-mini-play-pause {
+      border-color: #f0f001 !important;
+    }
+    :root .dcg-gray-link,
+    :root .dcg-centered-top-link,
+    :root .dcg-cancel-while-loading {
+      color: #f0f01b !important;
+    }
+    :root .dcg-shared-tab-gray-underline.dcg-selected {
+      border-bottom-color: #f0f01b !important;
+    }
+    :root .dcg-calc-option.dcg-is-selected {
+      border-color: #f0f01b !important;
+      box-shadow: 0 0 0 1px #f0f01b !important;
+      background: rgba(240, 240, 27, 0.13) !important;
+    }
+    @layer {
+      :root .dcg-mq-selection,
+      :root .dcg-mq-selection .dcg-mq-non-leaf,
+      :root .dcg-mq-selection .dcg-mq-scaled {
+        background: #f0f01b !important;
+        color: #f0f001 !important;
+      }
+    }
+    :root .dcg-cell.dcg-first-column,
+    :root .dcg-cell.dcg-interior-column {
+      border-right-color: #f0f004 !important;
+    }
+    :root .dcg-cell.dcg-table-header {
+      border-bottom-color: #f0f004 !important;
+    }
+    :root .dcg-cell.dcg-interior-row,
+    :root .dcg-show-more-row {
+      border-bottom-color: #f0f00a !important;
+    }
+    :root .dcg-cell.dcg-selected {
+      box-shadow: inset 0 0 0 2px #f0f01b !important;
+    }
+    :root .dcg-cell.dcg-selected:not(.dcg-computed-cell)::after,
+    :root .dcg-cell.dcg-selected .dcg-inner-border {
+      border-color: #f0f01b !important;
+    }
+    :root .dcg-action-changeimage.dcg-hovered,
+    :root .dcg-expressionitem .dcg-icon-remove.dcg-hovered::before,
+    :root .dcg-complex-enabled-note,
+    :root .dcg-expression-warning,
+    :root .dcg-reference-count,
+    :root .dcg-maxLabel.dcg-hovered,
+    :root .dcg-minLabel.dcg-hovered {
+      color: #f0f006 !important;
+    }
+    :root .active-arrow .dcg-graphic {
+      border-right-color: #f0f001 !important;
+    }
+    :root .dcg-row:nth-of-type(2) .dcg-cell,
+    :root table th,
+    :root table td,
+    :root .footer,
+    :root .dcg-add-inference-wizard--create-button-wrapper,
+    :root .dcg-small-screen-menu__logout-container,
+    :root .dcg-product-filter__clear-filter-container {
+      border-top-color: #f0f004 !important;
+    }
+    :root .dcg-row .dcg-cell,
+    :root .dcg-expressionfolder .dcg-fade-container::after,
+    :root .dcg-expressionitem.dcg-inFolder .dcg-fade-container::after {
+      border-left-color: #f0f004 !important;
+    }
+    :root .dcg-row:not(:nth-of-type(2)) .dcg-cell {
+      border-top-color: #f0f00a !important;
+    }
+    :root .dcg-cell .dcg-empty-line {
+      border-top-color: transparent !important;
+    }
+    :root #pageHeader.brand,
+    :root .dcg-grapher__error-in-graph-bounds {
+      text-shadow: none !important;
+    }
+    :root .dcg-btn-light-gray,
+    :root .dcg-btn-light-on-gray {
+      background: #f0f002 !important;
+      box-shadow: none !important;
+      border-color: #f0f004 !important;
+      color: #f0f004 !important;
+    }
+    :root .spa-header {
+      background: #f0f015 !important;
+      color: #f0f001;
+    }
+    @layer {
+      :root .spa-header .spa-header .dcg-icon-desmos {
+        color: #f0f001 !important;
+      }
+    }
+    :root .spa-header .state-name,
+    :root .spa-header .test-name {
+      border-left-color: #f0f001 !important;
+    }
+    :root .dcg-complex-container,
+    :root .dcg-axes-settings-container,
+    :root .dcg-options-menu-section {
+      border-top-color: #f0f007 !important;
+    }
+    :root .dcg-visual-settings {
+      border-bottom-color: #f0f007 !important;
+    }
+    :root .dcg-checkbox__box,
+    :root .dcg-axis-label,
+    :root .dcg-clickable-menu-row:has(.dcg-input-label) > .dcg-mathquill-wrapper {
+      --dcg-accent-color: #f0f01b !important;
+    }
+    :root .dcg-segmented-control-btn.dcg-selected,
+    :root .dcg-action-cartesian.dcg-selected > i::before,
+    :root .dcg-action-polar.dcg-selected > i::before,
+    :root .dcg-grapher__error-in-graph-bounds,
+    :root .dcg-toast-view,
+    :root .dcg-toast .dcg-undo,
+    :root .dcg-segmented-control-container .dcg-selected i::before,
+    :root .dcg-selected-graphs-actions__icon-btn i::before,
+    :root .dcg-segmented-control-btn.dcg-selected * {
+      color: #f0f001 !important;
+    }
+    @layer {
+      :root .dcg-btn-blue:has(> .dcg-icon-caret-down) i {
+        color: #f0f001 !important;
+      }
+      :root .dcg-btn-blue:has(> .dcg-icon-caret-down)::before {
+        border-left-color: #f0f001 !important;
+      }
+    }
+    :root .dcg-label-input {
+      border-color: #f0f004 !important;
+    }
+    :root .dcg-label-input:focus {
+      border-color: #f0f01b !important;
+      box-shadow: 0 1px #f0f01b !important;
+    }
+    :root .dcg-toast {
+      background: #f0f014 !important;
+      border-color: #f0f013 !important;
+    }
+    :root .dcg-expressionitem.dcg-inference-wizard-insert-target {
+      --dcg-item-border-color: #f0f004 !important;
+    }
+    :root .dcg-add-inference-wizard__table td:has(.dcg-focus)::after,
+    :root .dcg-table--cell:has(.dcg-focus)::after {
+      border-color: #f0f01b !important;
+    }
+    :root .dcg-add-inference-wizard__sample-type-selector.dcg-hovered:not(
+      .dcg-selected
+    ) {
+      border-color: #f0f009 !important;
+    }
+    @layer {
+      :root .dcg-frontpage-landing-interactive__graph-link i,
+      :root .dcg-frontpage-landing-interactive__arrow-overlay i {
+        color: #f0f001 !important;
+      }
+    }
+    :root .dcg-my-graphs-modal__heading--selectable.dcg-hovered {
+      box-shadow: 0 3px #f0f009 !important;
+    }
+    :root .dcg-my-graphs-modal__heading--selectable.dcg-selected {
+      box-shadow: 0 3px #f0f01b !important;
+    }
+    :root .dcg-saved-graphs-tile {
+      --dcg-saved-graphs-tile-or-row-hover-color: #f0f003 !important;
+      background: #f0f002 !important;
+    }
+    :root .dcg-graph-list__row.dcg-hovered:not(.dcg-selected),
+    :root .dcg-my-graphs-modal__currently-open,
+    :root .dcg-graph-list__field-btn.dcg-hovered,
+    :root .dcg-product-filter__option--selected {
+      background: #f0f002 !important;
+    }
+    @layer {
+      :root .dcg-saved-graphs-tile__subtitle {
+        color: #f0f001 !important;
+      }
+    }
+    :root .dcg-geometry-toolbar-view .dcg-component-checkbox,
+    :root .dcg-geometry-toolbar-view {
+      color: #000 !important;
+    }
+    :root .dcg-my-graphs-modal-empty-state__logged-out {
+      border-color: #f0f00b !important;
+    }
+    :root .dcg-shortcuts-table tr {
+      border-bottom-color: #f0f00a !important;
+    }
+    :root .dsm-plugin-title-bar,
+    :root .dsm-version-number,
+    :root .dsm-plugin-info-body,
+    :root .cm-panel,
+    :root #intellisense-container td,
+    :root .dsm-vc-outfile-name {
+      color: #f0f004 !important;
+    }
+    :root .cm-gutters,
+    :root .cm-foldPlaceholder,
+    :root .selected-intellisense-option {
+      background: #f0f003 !important;
+    }
+    :root .ͼb {
+      color: #f0f010 !important;
+    }
+    :root .ͼe {
+      color: #f0f011 !important;
+    }
+    :root .ͼd {
+      color: #f0f015 !important;
+    }
+    :root .cm-activeLineGutter,
+    :root #intellisense-container,
+    :root .dsm-vc-outfile-name {
+      background: #f0f002 !important;
+    }
+    :root .cm-focused .cm-matchingBracket {
+      background: rgba(240, 240, 27, 0.25) !important;
+    }
+    :root .cm-activeLine {
+      background: rgba(240, 240, 12, 0.5) !important;
+    }
+    :root .cm-foldPlaceholder,
+    :root #intellisense-container {
+      border-color: #f0f00c !important;
+    }
+    :root .cm-gutters {
+      color: #f0f006 !important;
+      border-right-color: #f0f00c;
+    }
+    :root .cm-panels,
+    :root .dsm-vc-preview-inner {
+      background: #f0f001 !important;
+    }
+    :root .cm-panels-bottom {
+      border-top-color: #f0f00c !important;
+    }
+    :root .cm-lintRange-error {
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%226%22%20height%3D%223%22%3E%3Cpath%20d%3D%22M0%202.5%202%201h1l2%201.5h1%22%20stroke%3D%22%23f0f011%22%20fill%3D%22none%22%20stroke-width%3D%22.7%22/%3E%3C/svg%3E");
+    }
+    :root .cm-cursor {
+      border-left-color: #f0f004 !important;
+    }
+    :root .cm-selectionBackground {
+      background: #f0f00b !important;
+    }
+    :root .compact-view-enabled .dcg-mq-cursor {
+      border-color: #f0f004 !important;
+    }
+    @layer {
+      :root .dsm-vc-preview-expand i,
+      :root .dsm-vc-remove-frame i,
+      :root .dsm-vc-preview-play-pause i {
+        color: #f0f001 !important;
+      }
+    }
+    :root .dsm-vc-outfile-name {
+      border-bottom-color: #f0f009 !important;
+    }
+    :root .dsm-vc-outfile-name.dcg-hovered {
+      box-shadow: 0 1px #f0f009 !important;
+    }
+    :root .dsm-vc-outfile-name:focus {
+      border-bottom-color: #f0f01b !important;
+      box-shadow: 0 1px #f0f01b !important;
+    }
+    :root .cls-1,
+    :root #states path {
+      fill: #f0f01b !important;
+    }
+    :root #states path:not(.uses-desmos) {
+      filter: brightness(125%);
+    }
+    :root .dcg-frontpage-landing-hero,
+    :root .dcg-frontpage-landing__button--hero,
+    :root .dcg-text--dark-blue,
+    :root .dcg-for-work-hero__label,
+    :root .accessibility-main details[open] summary,
+    :root .accessibility-main details[open] summary h3 {
+      color: #f0f001 !important;
+    }
+    :root .dcg-frontpage-landing__button,
+    :root .dcg-for-work-hero__button {
+      background: #f0f004 !important;
+      color: #f0f001 !important;
+      opacity: 1 !important;
+    }
+    :root .dcg-frontpage-landing-geometry__primary-link {
+      background: #f0f010 !important;
+    }
+    :root .dcg-frontpage-landing-3d__primary-link {
+      background: #f0f012 !important;
+    }
+    :root .dcg-frontpage-landing-section,
+    :root .dcg-frontpage-landing-tools__link,
+    :root .dcg-link-section-title,
+    :root .dcg-finalist-name,
+    :root li,
+    :root .section-interior *,
+    :root .dcg-p-tag,
+    :root .dcg-search-container input,
+    :root .dcg-searchable-dropdown-list,
+    :root .section-interior,
+    :root .careers-hero h1,
+    :root .sticky-nav li:not(.active) a,
+    :root .top-info,
+    :root .partners,
+    :root .dcg-principles-section *,
+    :root .dcg-for-work-hero,
+    :root body,
+    :root .dcg-basic-markdown-container p,
+    :root .dcg-basic-markdown-container table th,
+    :root .accessibility-main {
+      color: #f0f004 !important;
+    }
+    :root .dcg-frontpage-landing-interactive__arrow-overlay {
+      /* Desmos' normal solution looks bad when zoomed in (it uses like 10 stacked text-shadows.) */
+      text-shadow: none;
+      paint-order: stroke fill;
+      -webkit-text-stroke: 4px white;
+    }
+    :root .dcg-frontpage-landing-section--bg-light,
+    :root .dcg-frontpage-landing-section--bg-dark,
+    :root .dcg-facts-wrapper,
+    :root .dcg-principles-container__light-bg,
+    :root .dcg-for-work-hero,
+    :root .dcg-section--gray,
+    :root .callout--primary,
+    :root .lt-dropdown-menu,
+    :root .dcg-basic-markdown-container table th,
+    :root .accessibility-main section:nth-of-type(2n) {
+      background: #f0f003 !important;
+    }
+    :root .dcg-frontpage-landing-classroom__card,
+    :root body,
+    :root .dcg-frontpage-landing-testing__bullets,
+    :root .accessibility-features-in-tools li,
+    :root .accessibility-main details {
+      background-color: #f0f001 !important;
+    }
+    :root .dcg-blue-link,
+    :root .dcg-footer-link,
+    :root .dcg-primary-link,
+    :root .dcg-shared-tab-gray-underline,
+    :root .dcg-btn-blue-outline {
+      color: #f0f01b !important;
+    }
+    :root .dcg-footer-legal-content-container,
+    :root .sticky-nav li.active a,
+    :root .dcg-principles-header,
+    :root .dcg-for-work-hero__label,
+    :root .accessibility-main details[open] summary {
+      background: #f0f01b !important;
+    }
+    :root .dcg-finalist-location,
+    :root .dcg-subtitle,
+    :root .breadcrumbs li::before {
+      color: #f0f006 !important;
+    }
+    :root .dcg-shared-tab-gray-underline.dcg-hovered {
+      border-bottom-color: #f0f01b !important;
+    }
+    :root .dcg-footer-main-content-container,
+    :root .careers-hero,
+    :root .dcg-background--light-blue,
+    :root .state-info:not(.modal-view) {
+      background: #f0f001 !important;
+    }
+    :root .dcg-footer-legal-info a,
+    :root .dcg-footer-title,
+    :root .dcg-copyright,
+    :root .dcg-footer-legal-info,
+    :root .sticky-nav li.active a,
+    :root .dcg-principles-header * {
+      color: #f0f001 !important;
+    }
+    :root .dcg-test-blurb,
+    :root .dcg-key-command,
+    :root pre,
+    :root .dcg-container,
+    :root .lt-dropdown-menu,
+    :root .accessibility-main details {
+      border-color: #f0f00c !important;
+    }
+    :root .dcg-search-container input,
+    :root .dcg-searchable-dropdown-list,
+    :root .sticky-nav li:not(.active) a,
+    :root .dcg-key-command,
+    :root .dcg-btn-blue-outline,
+    :root *:not(pre) > code {
+      background: #f0f002 !important;
+    }
+    :root .dcg-search-container input:focus,
+    :root .pdf-button,
+    :root .dcg-btn-blue-outline,
+    :root .callout--primary,
+    :root .lt-btn,
+    :root .lt-section-subscribe button {
+      border-color: #f0f01b !important;
+    }
+    :root .dividing-line {
+      background: #f0f00c !important;
+    }
+    :root .job-openings-message-container .white-background {
+      background: transparent !important;
+    }
+    :root .pdf-button.dcg-hovered,
+    :root .dcg-btn-blue-outline.dcg-hovered {
+      box-shadow: 0 0 0 1px #f0f01b !important;
+    }
+    :root .dcg-footer-logo img,
+    :root .dcg-testimonial__image {
+      filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+    }
+    :root .dcg-for-work-hero__input {
+      border-color: #f0f004 !important;
+    }
+    :root .dcg-for-work-hero__input:focus {
+      box-shadow: 0 0 0 1px #f0f004 !important;
+    }
+    :root .dcg-basic-markdown-container table th,
+    :root .dcg-basic-markdown-container table td {
+      border-color: #f0f004 !important;
+    }
+    :root .dcg-calc-basic-main,
+    :root #main {
+      --dcg-custom-background-color: #f0f001;
+      border-color: transparent !important;
+    }
+    :root .dcg-basic-list-container,
+    :root .dcg-matrix-list-container {
+      border-top-color: #f0f00c !important;
+    }
+    :root .dcg-basic-list-placeholder,
+    :root .dcg-keypad-control-bar,
+    :root .dcg-matrix-list-placeholder {
+      border-left-color: #f0f00c !important;
+      border-right-color: #f0f00c !important;
+    }
+    :root .dcg-basic-keypad-container,
+    :root .dcg-basic-expression,
+    :root .dcg-latex-expression,
+    :root .dcg-matrix-expression {
+      border-color: #f0f00c !important;
+    }
+    :root .dcg-keypad-control-btn.dcg-selected::after,
+    :root .dcg-segmented-control-btn.dcg-selected {
+      background: #f0f01b !important;
+    }
+    :root .dcg-basic-expression.dcg-focused,
+    :root .dcg-matrix-expression.dcg-focused,
+    :root .dcg-latex-expression.dcg-focused {
+      border-color: #f0f01b !important;
+      box-shadow: inset 0 0 0 1px #f0f01b !important;
+    }
+    :root .dcg-resize-action {
+      background: #f0f002 !important;
+      border-color: #f0f00c !important;
+    }
+    :root .dcg-matrix-container,
+    :root .dcg-segmented-control-btn.dcg-selected {
+      border-color: #f0f004 !important;
+    }
+    :root .dcg-matrix-view .dcg-mq-math-mode.dcg-mq-focused {
+      border-bottom-color: #f0f01b !important;
+    }
+    :root .dcg-mq-ans {
+      border-color: #f0f01b !important;
+      color: #f0f01b !important;
+      background: rgba(240, 240, 27, 0.26) !important;
+    }
+    :root .dcg-mq-ans::after {
+      border-color: #f0f01b !important;
+      color: #f0f01b !important;
+      background: #f0f002 !important;
+    }
+    :root .dcg-keypad-control-btn.dcg-disabled {
+      opacity: 1 !important;
+      color: #f0f00b !important;
+    }
+    :root .dcg-keypad-control-btn.dcg-disabled i {
+      color: #f0f00b !important;
+    }
+    :root .lt-container-inner *,
+    :root .lt-topbar,
+    :root .hc-multiselect-toggle li span[aria-label]::before {
+      color: #f0f004 !important;
+    }
+    :root .lt-container-inner a:not(.lt-btn--primary),
+    :root .lt-topbar__link {
+      color: #f0f01b !important;
+    }
+    :root .lt-topbar {
+      background: #f0f003 !important;
+    }
+    :root .lt-topbar__logo {
+      filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+    }
+    :root .lt-hero-unit__bg,
+    :root .lt-footer-submit-ticket,
+    :root .tab,
+    :root .lt-new-request-tip,
+    :root .form-field input,
+    :root .form-field textarea,
+    :root .hc-multiselect-toggle,
+    :root .hc-multiselect-menu {
+      background: #f0f002 !important;
+    }
+    :root input[type="submit"],
+    :root .lt-block-list-item__link,
+    :root .lt-btn--primary {
+      background: #f0f01b !important;
+      border-color: #f0f01b !important;
+      color: #f0f001 !important;
+    }
+    :root input[type="search"] {
+      background: #f0f003 !important;
+      border-color: #f0f004 !important;
+    }
+    :root .search::before {
+      background-image: url("data:image/svg+xml,%3Csvg%20aria-hidden%3D%22true%22%20focusable%3D%22false%22%20data-prefix%3D%22far%22%20data-icon%3D%22search%22%20role%3D%22img%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%20class%3D%22svg-inline--fa%20fa-search%20fa-w-16%20fa-3x%22%3E%3Cpath%20fill%3D%22%23f0f004%22%20d%3D%22M508.5%20468.9%20387.1%20347.5c-2.3-2.3-5.3-3.5-8.5-3.5h-13.2c31.5-36.5%2050.6-84%2050.6-136C416%2093.1%20322.9%200%20208%200S0%2093.1%200%20208s93.1%20208%20208%20208c52%200%2099.5-19.1%20136-50.6v13.2c0%203.2%201.3%206.2%203.5%208.5l121.4%20121.4c4.7%204.7%2012.3%204.7%2017%200l22.6-22.6c4.7-4.7%204.7-12.3%200-17M208%20368c-88.4%200-160-71.6-160-160S119.6%2048%20208%2048s160%2071.6%20160%20160-71.6%20160-160%20160%22%20class%3D%22%22/%3E%3C/svg%3E");
+    }
+    :root .lt-block-list-item__link * {
+      color: #f0f001 !important;
+    }
+    :root .lt-custom-block__icon {
+      filter: brightness(0) saturate(100%) invert(63%) sepia(71%) saturate(1021%) hue-rotate(208deg) brightness(110%) contrast(94%);
+    }
+    :root .lt-footer,
+    :root .lt-search-box:not(.lt-search-box--hero-unit),
+    :root .lt-breadcrumbs-wrapper,
+    :root .hc-multiselect-menu li:focus,
+    :root .hc-multiselect-toggle li {
+      background: #f0f001 !important;
+    }
+    :root .lt-scroll-to-top {
+      color: #f0f01b !important;
+    }
+    :root .pagination-list *,
+    :root .lt-scroll-to-top,
+    :root .lt-new-request-tip {
+      border-color: #f0f01b !important;
+    }
+    :root .lt-header,
+    :root .lt-search-result {
+      border-bottom-color: #f0f00c !important;
+    }
+    :root .lt-search-result__text em {
+      background: #f0f014 !important;
+      color: #f0f001 !important;
+    }
+    :root .lt-toc--link.is-active > span {
+      color: #f0f001 !important;
+    }
+    :root .tab,
+    :root .key-command,
+    :root .hc-multiselect-toggle,
+    :root .hc-multiselect-menu {
+      border-color: #f0f00c !important;
+    }
+    @layer {
+      :root .tabs-link {
+        color: #f0f004 !important;
+      }
+      :root .tabs-link:hover {
+        color: #f0f01b !important;
+      }
+      :root .tabs-link.is-active {
+        color: #f0f001 !important;
+        background: #f0f01b !important;
+        border-color: #f0f01b !important;
+      }
+    }
+    :root .upload-dropzone[data-hc-focus="true"] {
+      border-color: #f0f01b !important;
+    }
+    :root .content-wrap *:not(a),
+    :root .tag-links > a {
+      color: #f0f004 !important;
+    }
+    :root .article header {
+      border-top-color: #f0f00c !important;
+    }
+    :root *:not(.tag-links) > a:not(.img-card, .btn-blue, .btn-blue-outline) {
+      color: #f0f01b;
+    }
+    :root .tag-container a {
+      border-color: #f0f004 !important;
+    }
+    :root .tag-container a:active {
+      background: rgba(240, 240, 4, 0.5) !important;
+    }
+    :root .img-card {
+      border-color: #f0f00a !important;
+    }
+    :root .img-card:hover {
+      box-shadow: 0 0 0 1px #f0f00a !important;
+    }
+    :root .btn-blue {
+      background: #f0f01b !important;
+      color: #f0f001 !important;
+    }
+    :root .btn-blue-outline {
+      border-color: #f0f01b !important;
+      color: #f0f01b !important;
+    }
+    :root .btn-blue-outline:hover {
+      box-shadow: 0 0 0 1px #f0f01b !important;
+    }
+    :root .dcg-frontpage-landing__announcement {
+      background: #f0f01b;
+      color: #f0f004;
+    }
+    :root .dcg-frontpage-landing__announcement-interior {
+      background-color: rgba(240, 240, 3, 0.5);
+    }
+    :root .spa-sample-calculator-view .dcg-sample-calculator__header i.dcg-icon-desmos {
+      color: #f0f001 !important;
+    }
+    :root .spa-sample-calculator-view .dcg-sample-calculator__header {
+      background-color: #f0f01b !important;
+      color: #f0f001 !important;
+    }
+    :root .spa-sample-calculator-view .dcg-sample-calculator__calculator-name,
+    :root .spa-sample-calculator-view .dcg-sample-calculator__state-name {
+      border-color: #f0f001;
+    }
+    :root .dcg-shared-modal-dialog {
+      color: #f0f004;
+      --dcg-modal-background-color: #f0f001;
+      /* Account signup welcome */
+    }
+    :root .dcg-shared-modal-dialog .dcg-authentication-modal__sublabel {
+      color: #f0f006;
+    }
+    :root .dcg-shared-modal-dialog .dcg-authentication-modal__tag {
+      background-color: rgba(240, 240, 27, 0.2);
+    }
+    :root .dcg-shared-modal-dialog .dcg-authentication-modal__tag:hover {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root .dcg-shared-modal-dialog .dcg-authentication-modal__tag.dcg-authentication-modal__tag--selected {
+      border-color: #f0f01b;
+    }
+    :root .dcg-header-bar__account-menu.dcg-hovered,
+    :root .dcg-header-bar__account-menu[aria-expanded="true"] {
+      background-color: #f0f00c;
+    }
+    :root .dcg-shared-account-dialog {
+      color: #f0f004;
+    }
+    :root .dcg-professional-hero {
+      background-color: #f0f003;
+      color: #f0f004;
+    }
+    :root .dcg-section__beta-button {
+      color: #f0f001;
+      background-color: #f0f004;
+    }
+    :root .dcg-section__beta-button.dcg-hovered {
+      background-color: #f0f005;
+    }
+    :root .dcg-section__beta-button.dcg-depressed {
+      background-color: #f0f006;
+    }
+    :root .dcg-powered-by {
+      color: #f0f004 !important;
+    }
+    :root .dcg-checkbox__content {
+      color: #f0f01b;
+    }
+    :root .dcg-saved-graphs {
+      --dcg-folder-background-color: #f0f002;
+    }
+    :root .dcg-slider {
+      --dcg-custom-secondary-text-color: #f0f01b;
+    }
+    :root .dcg-trip-interior,
+    :root .dcg-trip-content {
+      background: #f0f001 !important;
+      color: #f0f004;
+    }
+    :root .dcg-folder {
+      --dcg-folder-background-color: #f0f002 !important;
+    }
+    :root .dcg-folder-item-count {
+      color: #f0f005;
+    }
+    :root .dcg-my-graphs-modal__back-btn-text,
+    :root .dcg-folder__name,
+    :root .dcg-my-graphs-modal__folder-header > .dcg-my-graphs-modal-saved-graphs-header,
+    :root .dcg-example-gallery__heading,
+    :root .dcg-saved-graphs-tile__title {
+      color: #f0f01b;
+    }
+    :root .dcg-my-graphs-modal-empty-state__heading {
+      color: #f0f01b !important;
+    }
+    :root .dcg-my-graphs-modal-empty-state__no-search-results {
+      color: #f0f005;
+    }
+    :root .dcg-new-my-graphs-item__button {
+      color: #f0f004 !important;
+    }
+    :root .dropdown-option-container > .dcg-dropdown-choice[role="menuitem"] {
+      color: #f0f004;
+    }
+    :root .dcg-update-behavior-btn {
+      border-color: #f0f00c !important;
+    }
+    :root .pfc-param-selected {
+      background: #f0f00c !important;
+      color: #f0f004 !important;
+    }
+    :root .dcg-num {
+      color: #f0f004;
+    }
+    :root .dcg-header-container .dcg-top-banner {
+      color: #f0f004;
+      background-color: #f0f001;
+    }
+  }
+}

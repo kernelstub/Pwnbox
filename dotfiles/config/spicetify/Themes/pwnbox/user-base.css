@@ -1,0 +1,316 @@
+
+
+:root {
+  --pwnbox-radius: 10px;
+}
+
+
+.VTO__modal-slot:empty,
+[class*="modal-slot"]:empty {
+  background: transparent !important;
+}
+
+
+:root,
+body {
+  --background-bright-accent: var(--spice-button) !important;
+  --background-bright-accent-hover: var(--spice-button) !important;
+
+  --text-base: var(--spice-text) !important;
+  --text-subdued: var(--spice-subtext) !important;
+  --text-bright-accent: var(--spice-button) !important;
+  --text-negative: var(--spice-notification-error) !important;
+  --text-warning: var(--spice-text) !important;
+  --text-positive: var(--spice-button) !important;
+
+  --essential-base: var(--spice-text) !important;
+  --essential-subdued: var(--spice-subtext) !important;
+  --essential-bright-accent: var(--spice-button) !important;
+
+  --decorative-base: var(--spice-text) !important;
+  --decorative-subdued: var(--spice-selected-row) !important;
+
+
+  --essential-positive: var(--spice-button) !important;
+  --background-positive: var(--spice-button) !important;
+  --text-positive: var(--spice-button) !important;
+  --decorative-positive: var(--spice-button) !important;
+  --essential-warning: var(--spice-button) !important;
+  --background-warning: var(--spice-button) !important;
+  --decorative-warning: var(--spice-button) !important;
+  --essential-negative: var(--spice-notification-error) !important;
+  --background-negative: var(--spice-notification-error) !important;
+  --decorative-negative: var(--spice-notification-error) !important;
+  --rdp-accent-color: var(--spice-button) !important;
+}
+
+
+[style*="--background-base"],
+[style*="--background-highlight"],
+[style*="--background-press"],
+[style*="--background-elevated"],
+[style*="--background-tinted"] {
+  --background-base: var(--spice-main) !important;
+  --background-base-low: var(--spice-main) !important;
+  --background-base-lowest: var(--spice-main) !important;
+  --background-base-min-contrast: var(--spice-main) !important;
+  --background-highlight: var(--spice-card) !important;
+  --background-press: var(--spice-card) !important;
+  --background-elevated-base: var(--spice-card) !important;
+  --background-elevated-highlight: var(--spice-card) !important;
+  --background-elevated-press: var(--spice-card) !important;
+  --background-tinted: var(--spice-main) !important;
+  --background-tinted-base: var(--spice-main) !important;
+  --background-tinted-highlight: var(--spice-card) !important;
+  --background-tinted-press: var(--spice-card) !important;
+}
+
+
+.Root__main-view,
+.Root__main-view .main-view-container {
+  --background-base: var(--spice-main) !important;
+  --background-base-low: var(--spice-main) !important;
+  --background-base-lowest: var(--spice-main) !important;
+  --background-tinted: var(--spice-main) !important;
+  --background-tinted-base: var(--spice-main) !important;
+  --background-noise: none !important;
+}
+
+
+.mOhp6uUOOQY4YFdW,
+[style*="--key-color"],
+[style*="--badge-color"] {
+  background-color: var(--spice-button) !important;
+  background-image: none !important;
+  color: var(--spice-main) !important;
+}
+
+
+.Root__main-view,
+.Root__nav-bar,
+.Root__right-sidebar,
+.Root__now-playing-bar {
+  border-radius: var(--pwnbox-radius);
+}
+
+
+* {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+*::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+
+.os-scrollbar,
+.os-scrollbar-track,
+.os-scrollbar-handle,
+.os-scrollbar-cornerless {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
+}
+
+
+* {
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+:root,
+body,
+[class*="Root"] {
+  --shadow-sm: none !important;
+  --shadow-md: none !important;
+  --shadow-lg: none !important;
+  --shadow-xl: none !important;
+  --shadow-2xl: none !important;
+  --elevated-box-shadow: none !important;
+}
+
+
+[style*="1ed760" i],
+[style*="1db954" i],
+[style*="30, 215, 96"],
+[style*="30,215,96"],
+[style*="29, 185, 84"],
+[style*="29,185,84"] {
+  background-color: var(--spice-button) !important;
+  background-image: none !important;
+  color: var(--spice-main) !important;
+}
+
+
+[data-testid="upgrade-button"],
+button[data-testid="upgrade-button"] {
+  display: none !important;
+}
+
+
+.Root__main-view,
+.under-main-view,
+[class*="underMainView"],
+[class*="UnderMainView"],
+.Root__main-view .main-view-container,
+.Root__main-view .main-view-container__scroll-node,
+[class*="scrollNode"],
+[class*="ScrollNode"] {
+  background-color: var(--spice-main) !important;
+  background-image: none !important;
+}
+
+
+.main-home-homeHeader,
+[class*="homeHeader"],
+[class*="HomeHeader"],
+[class*="homeContent"],
+[class*="HomeContent"] {
+  background-color: var(--spice-main) !important;
+  background-image: none !important;
+}
+
+
+.main-entityHeader-backgroundColor,
+.main-entityHeader-overlay,
+.main-entityHeader-background,
+.main-entityHeader-gradient,
+.main-actionBarBackground-background,
+[class*="entityHeader"],
+[class*="EntityHeader"],
+[class*="actionBarBackground"],
+[class*="ActionBarBackground"],
+[class*="trackListHeader"],
+[class*="TrackListHeader"] {
+  background-color: var(--spice-main) !important;
+  background-image: none !important;
+}
+
+
+[class*="entityHeader"],
+[class*="EntityHeader"],
+[class*="trackListHeader"],
+[class*="TrackListHeader"],
+[class*="actionBar"],
+[class*="ActionBar"] {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+
+[class*="trackList"],
+[class*="TrackList"] {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+
+.Root__nav-bar,
+.Root__right-sidebar {
+  background-color: var(--spice-sidebar, var(--spice-main)) !important;
+}
+
+.Root__now-playing-bar {
+  background-color: var(--spice-player, var(--spice-main)) !important;
+}
+
+
+input,
+textarea,
+select,
+[contenteditable="true"],
+[role="textbox"],
+[role="combobox"],
+[role="searchbox"],
+[data-testid="search-input"],
+input[data-testid="search-input"],
+.x-searchInput-searchInputInput,
+[class*="searchInput"],
+[class*="SearchInput"],
+[class*="textInput"],
+[class*="TextInput"],
+[class*="inputInput"],
+[class*="InputInput"] {
+  background-color: var(--spice-card, var(--spice-main)) !important;
+  background-image: none !important;
+  color: var(--spice-text) !important;
+  border: 0 !important;
+  border-radius: var(--pwnbox-radius) !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+input::placeholder,
+textarea::placeholder,
+[contenteditable="true"][data-placeholder]::before,
+[contenteditable="true"]:empty::before {
+  color: var(--spice-subtext) !important;
+  opacity: 1 !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+[contenteditable="true"]:focus,
+[role="textbox"]:focus {
+  border-color: var(--spice-button) !important;
+  background-color: var(--spice-card, var(--spice-main)) !important;
+}
+
+
+[role="menu"],
+[role="listbox"],
+.main-contextMenu-menu,
+[class*="contextMenu"],
+[class*="ContextMenu"],
+[class*="popup"],
+[class*="Popup"],
+[class*="dialog"],
+[class*="Dialog"],
+[class*="modal"],
+[class*="Modal"],
+[class*="popover"],
+[class*="Popover"],
+[class*="tooltip"],
+[class*="Tooltip"] {
+  background-color: var(--spice-card, var(--spice-main)) !important;
+  color: var(--spice-text) !important;
+  border: 0 !important;
+  border-radius: var(--pwnbox-radius) !important;
+}
+
+[role="menuitem"],
+.main-contextMenu-menuItemButton,
+[class*="menuItem"],
+[class*="MenuItem"] {
+  color: var(--spice-text) !important;
+  border-radius: calc(var(--pwnbox-radius) - 2px) !important;
+}
+
+[role="menuitem"]:hover,
+[role="menuitem"]:focus,
+[role="option"]:hover,
+[role="option"][aria-selected="true"],
+.main-contextMenu-menuItemButton:hover,
+[class*="menuItem"]:hover,
+[class*="MenuItem"]:hover {
+  background-color: var(--spice-selected-row) !important;
+  color: var(--spice-text) !important;
+}
+
+
+button,
+[role="button"] {
+  background-image: none !important;
+  border-radius: var(--pwnbox-radius) !important;
+}
+
+::selection {
+  background: var(--spice-selected-row) !important;
+  color: var(--spice-text) !important;
+}

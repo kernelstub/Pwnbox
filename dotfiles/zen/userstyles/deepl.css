@@ -1,0 +1,465 @@
+/* ==UserStyle==
+@name           pwnbox-deepl
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for DeepL (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document regexp("https:\\/\\/www.deepl.com\\/?(.*\\/)translator.*$") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+      /* header */
+      /* background */
+      /* text color */
+      /* privacy notice */
+      /* side menu */
+      /* borders */
+      /* hover */
+      /* highlight */
+      /* buttons */
+      /* glossary button */
+      /* pro banner */
+      /* some button colors */
+      /* dropdowns */
+      /* allow mic/get extension prompt */
+      /* icons, svgs and images */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root .BasePageHeader-module--container--d81cb {
+      background-color: #f0f002 !important;
+    }
+    :root body {
+      background-color: #f0f001 !important;
+      color: #f0f004 !important;
+    }
+    :root .bg-neutral-next-50,
+    :root .bg-white,
+    :root .contextual-menu-dragging-area,
+    :root input {
+      background-color: #f0f001 !important;
+    }
+    :root .pageFooterV2-module--footerOuterContainer--0b055 {
+      background-color: #f0f002 !important;
+    }
+    :root .scrollablePopiverListRoot-module--root--588fe {
+      background-color: #f0f001 !important;
+    }
+    :root h1,
+    :root h2,
+    :root h3,
+    :root h4,
+    :root p,
+    :root a,
+    :root button,
+    :root span,
+    :root input,
+    :root ul,
+    :root li,
+    :root .mb-3,
+    :root .mb-4,
+    :root .GlossaryModalWithIllustration-module--content--2bf03,
+    :root .lmt__glossary_editor_glossaryName {
+      color: #f0f004 !important;
+    }
+    :root .text-neutral-next-600 {
+      color: #f0f006 !important;
+    }
+    :root .cookieBanner-module--container--9baef {
+      background-color: #f0f00c !important;
+      color: #f0f004 !important;
+    }
+    :root .button-module--button--4f58d.button-module--color_primaryAlt3--cd3cf {
+      border-color: #f0f004 !important;
+    }
+    :root .classicSidemenu-module--menuContainer--35157 {
+      background-color: #f0f001 !important;
+    }
+    :root .border-black {
+      border-color: #f0f00a !important;
+    }
+    :root .border-neutral-next-100,
+    :root .StartFreeTrialButton-module--startFreeTrialButton--bd671 {
+      border-color: #f0f00c !important;
+    }
+    :root .divide-y > :not([hidden]) ~ :not([hidden]) {
+      border-color: #f0f001;
+    }
+    :root .TranslatorTab-module--active--0b6ea .TranslatorTab-module--innerLower--8a080 {
+      background-color: #f0f01b !important;
+    }
+    :root .ring-neutral-next-900 {
+      --tw-ring-color: #f0f00a;
+    }
+    :root .border-neutral-next-900 {
+      border-color: #f0f00a !important;
+    }
+    :root input {
+      border-color: #f0f00c !important;
+    }
+    :root button:hover,
+    :root .bg-blue-next-500:hover {
+      background-color: #f0f00b !important;
+    }
+    :root a:hover {
+      background-color: #f0f002 !important;
+    }
+    :root .FlyoutMenuButton-module--flyoutMenuButton--97ae6:hover {
+      background-color: #f0f002 !important;
+    }
+    :root [class*="SourceTranslatorArea-module--focusBorder--"]:has(
+      div[contenteditable="true"]:focus
+    ) {
+      border-color: #f0f01b;
+    }
+    :root [class*="PageHeaderLink-module--pageHeaderLink--"]:not(
+      [class*="PageHeaderLink-module--nohover--"]
+    ):hover {
+      color: #f0f01b;
+      border-color: #f0f01b;
+    }
+    :root .hover\:bg-\[\#B4DAE8\]:hover {
+      background-color: #f0f00a !important;
+    }
+    :root .bg-\[\#E1F0F5\] {
+      background-color: #f0f00b !important;
+    }
+    :root .TranslatorTab-module--cardButton--4b203,
+    :root .bg-\[\#EDF8FC\] {
+      background-color: #f0f00c !important;
+      border-color: #f0f00c !important;
+    }
+    :root .StartFreeTrialButton-module--startFreeTrialButton--bd671,
+    :root .bg-blue-next-50 {
+      background-color: #f0f00c !important;
+    }
+    :root .bg-blue-next-500 {
+      background-color: #f0f00c;
+      border-color: #f0f00c;
+    }
+    :root .LanguageSelector-module--wrapper--f9f17 {
+      --button-background: #f0f00c !important;
+      --button-border-color: #f0f00c !important;
+      color: #f0f001 !important;
+    }
+    :root .CareerBanner-module--container--2ac20 {
+      background-color: #f0f00c !important;
+    }
+    :root .lmt__glossaryButton,
+    :root .lmt__glossaryButton__desktop:hover,
+    :root .ModalDialogContent-module--content--5751e {
+      background-color: #f0f00c !important;
+    }
+    :root .lmt__glossary_acceptButton,
+    :root .lmt__glossary_editor,
+    :root .lmt__glossary_editor_subBar_top,
+    :root .lmt__glossary_editor_subBar_bottom,
+    :root .lmt__glossary_editor_mainBar,
+    :root .Select-module--wrapper--53ec7 .Select-module--flyout--c91f3,
+    :root .lmt_firstEntry-content,
+    :root .lmt__glossary_newEntry_langButton,
+    :root .Select-module--wrapper--53ec7,
+    :root .Select-module--button--f032e {
+      background-color: #f0f00c !important;
+      border-color: #f0f00c !important;
+    }
+    :root .desktop-glossary-overwrites .lmt__language_select__menu {
+      background-color: #f0f00c !important;
+      color: #f0f004 !important;
+    }
+    :root .lmt__glossary_newEntry_langDropdown.lmt__language_select__menu button .langName {
+      color: #f0f004 !important;
+    }
+    :root .ProBanner2021-module--wrapper--c7e3d,
+    :root .p-8 {
+      background: #f0f001 !important;
+    }
+    :root .badge-module--badge--c9ebe.badge-module--proDark--a4d4e {
+      background-color: #f0f015;
+      color: #f0f001 !important;
+    }
+    :root .button-module--button--a854e.button-module--color_secondary--f171e {
+      background-color: #f0f013;
+      border-color: #f0f013 !important;
+      color: #f0f001 !important;
+    }
+    :root .button-module--button--a854e.button-module--variant_outline--b937c {
+      background-color: #f0f00c !important;
+      border-color: #f0f00c !important;
+    }
+    :root .button-module--button--a854e.button-module--color_primary--bfa59 {
+      background-color: #f0f019 !important;
+      border-color: #f0f019 !important;
+      color: #f0f001 !important;
+    }
+    :root .ProductUpdatesContainer-module--updateContainer--16394,
+    :root .ProductUpdateFooter-module--updateFooter--b46f0,
+    :root .LanguageSelector-module--flyout--6bfe6 {
+      background-color: #f0f001 !important;
+      border-color: #f0f00c !important;
+    }
+    :root .bg-neutral-next-900,
+    :root .bg-blue-next-800 {
+      background-color: #f0f00c !important;
+      color: #f0f004 !important;
+    }
+    :root svg {
+      color: #f0f004 !important;
+    }
+    :root .lmt__glossary_ad_checkmark,
+    :root .lmt__glossary_arrowDown {
+      border-color: #f0f004 !important;
+    }
+    :root path,
+    :root .DeeplLogoText-module--logoText--34a4f,
+    :root .ProBanner2021-module--lockitem--febe3,
+    :root .FlyoutMenuButton-module--flyoutMenuButton--97ae6::after,
+    :root #top-navi-sidemenu-opener,
+    :root .pageFooterV2-module--socialMediaLinks--71305,
+    :root .ProBanner2021-module--checkitem--2d8e7,
+    :root [src*="https://static.deepl.com/img/app_desktop.svg"] {
+      filter: brightness(0) saturate(100%) invert(43%) sepia(43%) saturate(515%) hue-rotate(196deg) brightness(49%) contrast(68%);
+    }
+    :root .Logo-module--logoImg--1ee7e,
+    :root .LogoLink-module--logoText--33735,
+    :root .deeplLogo-module--logo--ffd7a {
+      filter: brightness(0) saturate(100%) invert(30%) sepia(36%) saturate(3759%) hue-rotate(209deg) brightness(103%) contrast(110%);
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      /* header */
+      /* background */
+      /* text color */
+      /* privacy notice */
+      /* side menu */
+      /* borders */
+      /* hover */
+      /* highlight */
+      /* buttons */
+      /* glossary button */
+      /* pro banner */
+      /* some button colors */
+      /* dropdowns */
+      /* allow mic/get extension prompt */
+      /* icons, svgs and images */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root .BasePageHeader-module--container--d81cb {
+      background-color: #f0f002 !important;
+    }
+    :root body {
+      background-color: #f0f001 !important;
+      color: #f0f004 !important;
+    }
+    :root .bg-neutral-next-50,
+    :root .bg-white,
+    :root .contextual-menu-dragging-area,
+    :root input {
+      background-color: #f0f001 !important;
+    }
+    :root .pageFooterV2-module--footerOuterContainer--0b055 {
+      background-color: #f0f002 !important;
+    }
+    :root .scrollablePopiverListRoot-module--root--588fe {
+      background-color: #f0f001 !important;
+    }
+    :root h1,
+    :root h2,
+    :root h3,
+    :root h4,
+    :root p,
+    :root a,
+    :root button,
+    :root span,
+    :root input,
+    :root ul,
+    :root li,
+    :root .mb-3,
+    :root .mb-4,
+    :root .GlossaryModalWithIllustration-module--content--2bf03,
+    :root .lmt__glossary_editor_glossaryName {
+      color: #f0f004 !important;
+    }
+    :root .text-neutral-next-600 {
+      color: #f0f006 !important;
+    }
+    :root .cookieBanner-module--container--9baef {
+      background-color: #f0f00c !important;
+      color: #f0f004 !important;
+    }
+    :root .button-module--button--4f58d.button-module--color_primaryAlt3--cd3cf {
+      border-color: #f0f004 !important;
+    }
+    :root .classicSidemenu-module--menuContainer--35157 {
+      background-color: #f0f001 !important;
+    }
+    :root .border-black {
+      border-color: #f0f00a !important;
+    }
+    :root .border-neutral-next-100,
+    :root .StartFreeTrialButton-module--startFreeTrialButton--bd671 {
+      border-color: #f0f00c !important;
+    }
+    :root .divide-y > :not([hidden]) ~ :not([hidden]) {
+      border-color: #f0f001;
+    }
+    :root .TranslatorTab-module--active--0b6ea .TranslatorTab-module--innerLower--8a080 {
+      background-color: #f0f01b !important;
+    }
+    :root .ring-neutral-next-900 {
+      --tw-ring-color: #f0f00a;
+    }
+    :root .border-neutral-next-900 {
+      border-color: #f0f00a !important;
+    }
+    :root input {
+      border-color: #f0f00c !important;
+    }
+    :root button:hover,
+    :root .bg-blue-next-500:hover {
+      background-color: #f0f00b !important;
+    }
+    :root a:hover {
+      background-color: #f0f002 !important;
+    }
+    :root .FlyoutMenuButton-module--flyoutMenuButton--97ae6:hover {
+      background-color: #f0f002 !important;
+    }
+    :root [class*="SourceTranslatorArea-module--focusBorder--"]:has(
+      div[contenteditable="true"]:focus
+    ) {
+      border-color: #f0f01b;
+    }
+    :root [class*="PageHeaderLink-module--pageHeaderLink--"]:not(
+      [class*="PageHeaderLink-module--nohover--"]
+    ):hover {
+      color: #f0f01b;
+      border-color: #f0f01b;
+    }
+    :root .hover\:bg-\[\#B4DAE8\]:hover {
+      background-color: #f0f00a !important;
+    }
+    :root .bg-\[\#E1F0F5\] {
+      background-color: #f0f00b !important;
+    }
+    :root .TranslatorTab-module--cardButton--4b203,
+    :root .bg-\[\#EDF8FC\] {
+      background-color: #f0f00c !important;
+      border-color: #f0f00c !important;
+    }
+    :root .StartFreeTrialButton-module--startFreeTrialButton--bd671,
+    :root .bg-blue-next-50 {
+      background-color: #f0f00c !important;
+    }
+    :root .bg-blue-next-500 {
+      background-color: #f0f00c;
+      border-color: #f0f00c;
+    }
+    :root .LanguageSelector-module--wrapper--f9f17 {
+      --button-background: #f0f00c !important;
+      --button-border-color: #f0f00c !important;
+      color: #f0f001 !important;
+    }
+    :root .CareerBanner-module--container--2ac20 {
+      background-color: #f0f00c !important;
+    }
+    :root .lmt__glossaryButton,
+    :root .lmt__glossaryButton__desktop:hover,
+    :root .ModalDialogContent-module--content--5751e {
+      background-color: #f0f00c !important;
+    }
+    :root .lmt__glossary_acceptButton,
+    :root .lmt__glossary_editor,
+    :root .lmt__glossary_editor_subBar_top,
+    :root .lmt__glossary_editor_subBar_bottom,
+    :root .lmt__glossary_editor_mainBar,
+    :root .Select-module--wrapper--53ec7 .Select-module--flyout--c91f3,
+    :root .lmt_firstEntry-content,
+    :root .lmt__glossary_newEntry_langButton,
+    :root .Select-module--wrapper--53ec7,
+    :root .Select-module--button--f032e {
+      background-color: #f0f00c !important;
+      border-color: #f0f00c !important;
+    }
+    :root .desktop-glossary-overwrites .lmt__language_select__menu {
+      background-color: #f0f00c !important;
+      color: #f0f004 !important;
+    }
+    :root .lmt__glossary_newEntry_langDropdown.lmt__language_select__menu button .langName {
+      color: #f0f004 !important;
+    }
+    :root .ProBanner2021-module--wrapper--c7e3d,
+    :root .p-8 {
+      background: #f0f001 !important;
+    }
+    :root .badge-module--badge--c9ebe.badge-module--proDark--a4d4e {
+      background-color: #f0f015;
+      color: #f0f001 !important;
+    }
+    :root .button-module--button--a854e.button-module--color_secondary--f171e {
+      background-color: #f0f013;
+      border-color: #f0f013 !important;
+      color: #f0f001 !important;
+    }
+    :root .button-module--button--a854e.button-module--variant_outline--b937c {
+      background-color: #f0f00c !important;
+      border-color: #f0f00c !important;
+    }
+    :root .button-module--button--a854e.button-module--color_primary--bfa59 {
+      background-color: #f0f019 !important;
+      border-color: #f0f019 !important;
+      color: #f0f001 !important;
+    }
+    :root .ProductUpdatesContainer-module--updateContainer--16394,
+    :root .ProductUpdateFooter-module--updateFooter--b46f0,
+    :root .LanguageSelector-module--flyout--6bfe6 {
+      background-color: #f0f001 !important;
+      border-color: #f0f00c !important;
+    }
+    :root .bg-neutral-next-900,
+    :root .bg-blue-next-800 {
+      background-color: #f0f00c !important;
+      color: #f0f004 !important;
+    }
+    :root svg {
+      color: #f0f004 !important;
+    }
+    :root .lmt__glossary_ad_checkmark,
+    :root .lmt__glossary_arrowDown {
+      border-color: #f0f004 !important;
+    }
+    :root path,
+    :root .DeeplLogoText-module--logoText--34a4f,
+    :root .ProBanner2021-module--lockitem--febe3,
+    :root .FlyoutMenuButton-module--flyoutMenuButton--97ae6::after,
+    :root #top-navi-sidemenu-opener,
+    :root .pageFooterV2-module--socialMediaLinks--71305,
+    :root .ProBanner2021-module--checkitem--2d8e7,
+    :root [src*="https://static.deepl.com/img/app_desktop.svg"] {
+      filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+    }
+    :root .Logo-module--logoImg--1ee7e,
+    :root .LogoLink-module--logoText--33735,
+    :root .deeplLogo-module--logo--ffd7a {
+      filter: brightness(0) saturate(100%) invert(57%) sepia(66%) saturate(1020%) hue-rotate(195deg) brightness(115%) contrast(96%);
+    }
+  }
+}

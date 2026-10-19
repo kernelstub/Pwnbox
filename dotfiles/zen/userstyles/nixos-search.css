@@ -1,0 +1,197 @@
+/* ==UserStyle==
+@name           pwnbox-nixos-search
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for NixOS Search (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("search.nixos.org") {
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme]) {
+      color-scheme: light;
+      --background-color: #f0f001;
+      --badge-background: #f0f00a;
+      --button-active-background: #f0f00b;
+      --button-active-hover-background: #f0f00a;
+      --button-background: #f0f00c;
+      --button-hover-background: #f0f00a;
+      --color-active-hover-tab: #f0f00b;
+      --color-active-tab: #f0f00c;
+      --color-hover-tab: #f0f00b;
+      --headerbar-background-color: #f0f002;
+      --hover-background: #f0f00c;
+      --link-color: #f0f01b;
+      --info-label-background: #f0f01b;
+      --dark-blue: #f0f01b;
+      --light-blue: #f0f01b;
+      --line-color: #f0f00c;
+      --search-result-short-details-color: #f0f005;
+      --search-result-divider-line-color: #f0f00c;
+      --search-result-title-color: #f0f01b;
+      --search-sidebar-link-color: #f0f004;
+      --search-sidebar-selected-link-background: #f0f01b;
+      --search-sidebar-selected-link-color: #f0f003;
+      --terminal-background: #f0f00c;
+      --terminal-color: #f0f004;
+      --text-color: #f0f004;
+      --text-color-light: #f0f004;
+      --text-color-warning: #f0f014;
+      /* Experimental Flakes label */
+    }
+    :root:not([data-theme]) ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root:not([data-theme]) input::placeholder,
+    :root:not([data-theme]) textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root:not([data-theme]) .badge {
+      color: #f0f004;
+    }
+    :root:not([data-theme]) .label {
+      color: #f0f001;
+      text-shadow: none;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+      color-scheme: dark;
+      --background-color: #f0f001;
+      --badge-background: #f0f00a;
+      --button-active-background: #f0f00b;
+      --button-active-hover-background: #f0f00a;
+      --button-background: #f0f00c;
+      --button-hover-background: #f0f00a;
+      --color-active-hover-tab: #f0f00b;
+      --color-active-tab: #f0f00c;
+      --color-hover-tab: #f0f00b;
+      --headerbar-background-color: #f0f002;
+      --hover-background: #f0f00c;
+      --link-color: #f0f01b;
+      --info-label-background: #f0f01b;
+      --dark-blue: #f0f01b;
+      --light-blue: #f0f01b;
+      --line-color: #f0f00c;
+      --search-result-short-details-color: #f0f005;
+      --search-result-divider-line-color: #f0f00c;
+      --search-result-title-color: #f0f01b;
+      --search-sidebar-link-color: #f0f004;
+      --search-sidebar-selected-link-background: #f0f01b;
+      --search-sidebar-selected-link-color: #f0f003;
+      --terminal-background: #f0f00c;
+      --terminal-color: #f0f004;
+      --text-color: #f0f004;
+      --text-color-light: #f0f004;
+      --text-color-warning: #f0f014;
+      /* Experimental Flakes label */
+    }
+    :root:not([data-theme]) ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root:not([data-theme]) input::placeholder,
+    :root:not([data-theme]) textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root:not([data-theme]) .badge {
+      color: #f0f004;
+    }
+    :root:not([data-theme]) .label {
+      color: #f0f001;
+      text-shadow: none;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --background-color: #f0f001;
+    --badge-background: #f0f00a;
+    --button-active-background: #f0f00b;
+    --button-active-hover-background: #f0f00a;
+    --button-background: #f0f00c;
+    --button-hover-background: #f0f00a;
+    --color-active-hover-tab: #f0f00b;
+    --color-active-tab: #f0f00c;
+    --color-hover-tab: #f0f00b;
+    --headerbar-background-color: #f0f002;
+    --hover-background: #f0f00c;
+    --link-color: #f0f01b;
+    --info-label-background: #f0f01b;
+    --dark-blue: #f0f01b;
+    --light-blue: #f0f01b;
+    --line-color: #f0f00c;
+    --search-result-short-details-color: #f0f005;
+    --search-result-divider-line-color: #f0f00c;
+    --search-result-title-color: #f0f01b;
+    --search-sidebar-link-color: #f0f004;
+    --search-sidebar-selected-link-background: #f0f01b;
+    --search-sidebar-selected-link-color: #f0f003;
+    --terminal-background: #f0f00c;
+    --terminal-color: #f0f004;
+    --text-color: #f0f004;
+    --text-color-light: #f0f004;
+    --text-color-warning: #f0f014;
+    /* Experimental Flakes label */
+  }
+  :root[data-theme="dark"] ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root[data-theme="dark"] input::placeholder,
+  :root[data-theme="dark"] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root[data-theme="dark"] .badge {
+    color: #f0f004;
+  }
+  :root[data-theme="dark"] .label {
+    color: #f0f001;
+    text-shadow: none;
+  }
+  :root[data-theme="light"] {
+    color-scheme: light;
+    --background-color: #f0f001;
+    --badge-background: #f0f00a;
+    --button-active-background: #f0f00b;
+    --button-active-hover-background: #f0f00a;
+    --button-background: #f0f00c;
+    --button-hover-background: #f0f00a;
+    --color-active-hover-tab: #f0f00b;
+    --color-active-tab: #f0f00c;
+    --color-hover-tab: #f0f00b;
+    --headerbar-background-color: #f0f002;
+    --hover-background: #f0f00c;
+    --link-color: #f0f01b;
+    --info-label-background: #f0f01b;
+    --dark-blue: #f0f01b;
+    --light-blue: #f0f01b;
+    --line-color: #f0f00c;
+    --search-result-short-details-color: #f0f005;
+    --search-result-divider-line-color: #f0f00c;
+    --search-result-title-color: #f0f01b;
+    --search-sidebar-link-color: #f0f004;
+    --search-sidebar-selected-link-background: #f0f01b;
+    --search-sidebar-selected-link-color: #f0f003;
+    --terminal-background: #f0f00c;
+    --terminal-color: #f0f004;
+    --text-color: #f0f004;
+    --text-color-light: #f0f004;
+    --text-color-warning: #f0f014;
+    /* Experimental Flakes label */
+  }
+  :root[data-theme="light"] ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root[data-theme="light"] input::placeholder,
+  :root[data-theme="light"] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root[data-theme="light"] .badge {
+    color: #f0f004;
+  }
+  :root[data-theme="light"] .label {
+    color: #f0f001;
+    text-shadow: none;
+  }
+}

@@ -1,0 +1,201 @@
+/* ==UserStyle==
+@name           pwnbox-snapchat-web
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Snapchat Web (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document url-prefix("https://www.snapchat.com/web") {
+  :root[theme="dark"] {
+    color-scheme: dark;
+    /* Snapchat applies the variables (overrides?) to specific elements so we need to apply to every element (with high specificity) to override those. */
+  }
+  :root[theme="dark"] ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root[theme="dark"] input::placeholder,
+  :root[theme="dark"] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root[theme="dark"],
+  :root[theme="dark"] body > main#root * {
+    --sigMain: #f0f001;
+    --sigSurface: #f0f002;
+    --sigSurfaceRGB: 240, 240, 2;
+    --sigAboveSurface: #f0f003;
+    --sigSurfaceDown: #f0f001;
+    --sigSubscreen: #f0f003;
+    --sigTextField: #f0f003;
+    --sigDivider: #f0f00c;
+    --sigDividerLight: #f0f00c;
+    --sigColorBackgroundBorder: #f0f00c;
+    --sigBackgroundPrimary: #f0f001;
+    --sigBackgroundSecondary: #f0f002;
+    --sigBackgroundSecondaryHover: #d7d702;
+    --sigBackgroundTertiary: #f0f003;
+    --sigBackgroundMessageHover: #f0f00b;
+    --sigBackgroundMessageSaved: #f0f00c;
+    --sigBackgroundMessageSavedHover: #f0f00a;
+    --sigOverlay: rgba(240, 240, 11, 0.4);
+    --sigOverlayHover: rgba(240, 240, 11, 0.35);
+    --sigBrandSecondary: #f0f01b;
+    --sigObject: rgba(255, 255, 255, 0.05);
+    --sigTextPrimary: #f0f004;
+    --sigButtonOnPrimary: #f0f003;
+    --sigTextSecondary: #f0f006;
+    --sigButtonOnSecondary: #f0f006;
+    --sigTextTertiary: #f0f005;
+    --sigButtonOnTertiary: #f0f005;
+    --sigTextNegative: #f0f011;
+    --sigButtonOnSuccess: #f0f001;
+    --sigButtonOnError: #f0f001;
+    --sigButtonOnNegative: #f0f001;
+    --sigButtonOnChatSurfaceCalling: #f0f001;
+    --sigTextPlayer: #f0f003;
+    --sigButtonGreyHover: #d8d80b;
+    --sigButtonGreyActive: #c9c90a;
+    --sigButtonPrimary: #f0f01b;
+    --sigButtonPrimaryHover: #e3e30f;
+    --sigButtonPrimaryActive: #d4d40e;
+    --sigButtonSecondary: #f0f00c;
+    --sigButtonSecondaryHover: #f0f00b;
+    --sigButtonSecondaryActive: #f0f00a;
+    --sigButtonNegative: #f0f011;
+    --sigButtonError: #f0f011;
+    --sigButtonErrorHover: #dada0e;
+    --sigButtonSuccess: #f0f015;
+    --sigButtonSuccessHover: #dddd0e;
+    --sigIconCalling: #f0f015;
+    --sigIconCallingHover: #dddd0e;
+    --sigChatSurfaceCalling: #f0f015;
+    --sigChatSurfaceCallingDisabled: #95950a;
+    --sigChatSurfaceCallingHover: #dddd0e;
+    --sigChat: #f0f019;
+    --sigChatIcon: #f0f019;
+    --sigSnapWithoutSound: #f0f011;
+    --sigSnapWithSound: #f0f010;
+  }
+  :root[theme="dark"] button[title="New Chat"] path[fill="#fff"],
+  :root[theme="dark"] [id*="downshift-"] a path[fill="#fff"],
+  :root[theme="dark"] [aria-label="Unselect chosen user"] path[fill="#fff"] {
+    fill: #f0f003;
+  }
+  :root[theme="dark"] button[title="New Chat"] path[fill="#51B7FF"],
+  :root[theme="dark"] [id*="downshift-"] a path[fill="#51B7FF"],
+  :root[theme="dark"] [aria-label="Unselect chosen user"] path[fill="#51B7FF"] {
+    fill: #f0f01b;
+  }
+  :root[theme="dark"] form > div > div > div[role="searchbox"] button {
+    color: #f0f003;
+  }
+  :root[theme="dark"] form > div > div > div[role="searchbox"] button path {
+    fill: #f0f003;
+  }
+  :root[theme="dark"] li button[type="button"].replyText {
+    background-color: rgba(30, 30, 30, 0.8);
+  }
+  :root[theme="dark"] [data-projection-id] button {
+    --sigColorAlwaysWhite: #f0f00c;
+  }
+  :root[theme="dark"] img[role="presentation"][src^="blob:"] + div > svg > path[fill="#fff"] {
+    fill: #f0f004;
+  }
+  :root[theme="light"] {
+    color-scheme: light;
+    /* Snapchat applies the variables (overrides?) to specific elements so we need to apply to every element (with high specificity) to override those. */
+  }
+  :root[theme="light"] ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root[theme="light"] input::placeholder,
+  :root[theme="light"] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root[theme="light"],
+  :root[theme="light"] body > main#root * {
+    --sigMain: #f0f001;
+    --sigSurface: #f0f002;
+    --sigSurfaceRGB: 240, 240, 2;
+    --sigAboveSurface: #f0f003;
+    --sigSurfaceDown: #f0f001;
+    --sigSubscreen: #f0f003;
+    --sigTextField: #f0f003;
+    --sigDivider: #f0f00c;
+    --sigDividerLight: #f0f00c;
+    --sigColorBackgroundBorder: #f0f00c;
+    --sigBackgroundPrimary: #f0f001;
+    --sigBackgroundSecondary: #f0f002;
+    --sigBackgroundSecondaryHover: #d7d702;
+    --sigBackgroundTertiary: #f0f003;
+    --sigBackgroundMessageHover: #f0f00b;
+    --sigBackgroundMessageSaved: #f0f00c;
+    --sigBackgroundMessageSavedHover: #f0f00a;
+    --sigOverlay: rgba(240, 240, 11, 0.4);
+    --sigOverlayHover: rgba(240, 240, 11, 0.35);
+    --sigBrandSecondary: #f0f01b;
+    --sigObject: rgba(255, 255, 255, 0.05);
+    --sigTextPrimary: #f0f004;
+    --sigButtonOnPrimary: #f0f003;
+    --sigTextSecondary: #f0f006;
+    --sigButtonOnSecondary: #f0f006;
+    --sigTextTertiary: #f0f005;
+    --sigButtonOnTertiary: #f0f005;
+    --sigTextNegative: #f0f011;
+    --sigButtonOnSuccess: #f0f001;
+    --sigButtonOnError: #f0f001;
+    --sigButtonOnNegative: #f0f001;
+    --sigButtonOnChatSurfaceCalling: #f0f001;
+    --sigTextPlayer: #f0f003;
+    --sigButtonGreyHover: #d8d80b;
+    --sigButtonGreyActive: #c9c90a;
+    --sigButtonPrimary: #f0f01b;
+    --sigButtonPrimaryHover: #e3e30f;
+    --sigButtonPrimaryActive: #d4d40e;
+    --sigButtonSecondary: #f0f00c;
+    --sigButtonSecondaryHover: #f0f00b;
+    --sigButtonSecondaryActive: #f0f00a;
+    --sigButtonNegative: #f0f011;
+    --sigButtonError: #f0f011;
+    --sigButtonErrorHover: #dada0e;
+    --sigButtonSuccess: #f0f015;
+    --sigButtonSuccessHover: #dddd0e;
+    --sigIconCalling: #f0f015;
+    --sigIconCallingHover: #dddd0e;
+    --sigChatSurfaceCalling: #f0f015;
+    --sigChatSurfaceCallingDisabled: #95950a;
+    --sigChatSurfaceCallingHover: #dddd0e;
+    --sigChat: #f0f019;
+    --sigChatIcon: #f0f019;
+    --sigSnapWithoutSound: #f0f011;
+    --sigSnapWithSound: #f0f010;
+  }
+  :root[theme="light"] button[title="New Chat"] path[fill="#fff"],
+  :root[theme="light"] [id*="downshift-"] a path[fill="#fff"],
+  :root[theme="light"] [aria-label="Unselect chosen user"] path[fill="#fff"] {
+    fill: #f0f003;
+  }
+  :root[theme="light"] button[title="New Chat"] path[fill="#51B7FF"],
+  :root[theme="light"] [id*="downshift-"] a path[fill="#51B7FF"],
+  :root[theme="light"] [aria-label="Unselect chosen user"] path[fill="#51B7FF"] {
+    fill: #f0f01b;
+  }
+  :root[theme="light"] form > div > div > div[role="searchbox"] button {
+    color: #f0f003;
+  }
+  :root[theme="light"] form > div > div > div[role="searchbox"] button path {
+    fill: #f0f003;
+  }
+  :root[theme="light"] li button[type="button"].replyText {
+    background-color: rgba(30, 30, 30, 0.8);
+  }
+  :root[theme="light"] [data-projection-id] button {
+    --sigColorAlwaysWhite: #f0f00c;
+  }
+  :root[theme="light"] img[role="presentation"][src^="blob:"] + div > svg > path[fill="#fff"] {
+    fill: #f0f004;
+  }
+}

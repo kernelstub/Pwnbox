@@ -1,0 +1,429 @@
+/* ==UserStyle==
+@name           pwnbox-ichi.moe
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for ichi.moe (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("ichi.moe") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+      /* Options */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root html,
+    :root body {
+      background: #f0f001;
+      color: #f0f004;
+    }
+    :root footer {
+      color: #f0f005;
+    }
+    :root span.query-word:hover {
+      border-color: #f0f00f;
+    }
+    :root .panel-error {
+      background-color: rgba(240, 240, 17, 0.8);
+    }
+    :root .highlight {
+      background-color: rgba(240, 240, 20, 0.8);
+    }
+    :root .gloss {
+      background-color: #f0f00c;
+    }
+    :root .gloss,
+    :root .gloss-rtext {
+      border-color: #f0f009;
+    }
+    :root .gloss:target {
+      box-shadow: 0 0 5px #f0f009;
+      -webkit-box-shadow: 0 0 5px #f0f009;
+      -moz-box-shadow: 0 0 5px #f0f009;
+    }
+    :root a {
+      color: #f0f018;
+    }
+    :root a.wiktionary-link {
+      color: #f0f004;
+    }
+    :root a.info-link {
+      color: #f0f004;
+    }
+    :root a.info-link:hover {
+      border-bottom-color: #f0f018;
+    }
+    :root .note-skipped a {
+      color: #f0f005;
+    }
+    :root .note-skipped a:hover {
+      border-color: #f0f005;
+    }
+    :root .jspDrag {
+      background-color: #f0f00a;
+    }
+    :root .conj-negative {
+      color: #f0f011;
+    }
+    :root .conj-formal {
+      color: #f0f019;
+    }
+    :root .pos-desc {
+      color: #f0f015;
+    }
+    :root .reading-table tr:nth-of-type(2n),
+    :root table.kanji-match tr:nth-of-type(2n) {
+      background: rgba(240, 240, 11, 0.5);
+    }
+    :root .kanji-big a {
+      color: #f0f005;
+    }
+    :root .autocomplete-suggestions {
+      border-color: #f0f009;
+    }
+    :root .autocomplete-suggestions,
+    :root .autocomplete-selected {
+      background: #f0f00c;
+    }
+    :root .autocomplete-suggestions strong {
+      color: #f0f01a;
+    }
+    :root .autocomplete-group strong {
+      border-bottom-color: #f0f004;
+    }
+    :root .button {
+      background-color: #f0f018;
+      border-color: #f0f018;
+      color: #f0f001;
+    }
+    :root button:hover,
+    :root button:focus,
+    :root .button:hover,
+    :root .button:focus {
+      background-color: #808008;
+      color: #f0f001;
+    }
+    :root h1,
+    :root h2,
+    :root h3,
+    :root h4,
+    :root h5,
+    :root h6 {
+      color: #f0f004;
+    }
+    :root input[type="text"],
+    :root input[type="password"],
+    :root input[type="date"],
+    :root input[type="datetime"],
+    :root input[type="datetime-local"],
+    :root input[type="month"],
+    :root input[type="week"],
+    :root input[type="email"],
+    :root input[type="number"],
+    :root input[type="search"],
+    :root input[type="tel"],
+    :root input[type="time"],
+    :root input[type="url"],
+    :root input[type="color"],
+    :root textarea,
+    :root input[type="file"],
+    :root input[type="checkbox"],
+    :root input[type="radio"],
+    :root select,
+    :root input[type="text"]:focus,
+    :root input[type="password"]:focus,
+    :root input[type="date"]:focus,
+    :root input[type="datetime"]:focus,
+    :root input[type="datetime-local"]:focus,
+    :root input[type="month"]:focus,
+    :root input[type="week"]:focus,
+    :root input[type="email"]:focus,
+    :root input[type="number"]:focus,
+    :root input[type="search"]:focus,
+    :root input[type="tel"]:focus,
+    :root input[type="time"]:focus,
+    :root input[type="url"]:focus,
+    :root input[type="color"]:focus,
+    :root textarea:focus,
+    :root input[type="file"]:focus,
+    :root input[type="checkbox"]:focus,
+    :root input[type="radio"]:focus,
+    :root select:focus {
+      background-color: #f0f00c;
+      border-color: #f0f00b;
+      color: #f0f004;
+    }
+    :root .header-nav a {
+      color: #f0f00f;
+    }
+    :root .header-nav a:hover {
+      color: #a8a80a;
+    }
+    :root .jspTrack {
+      background: #f0f00b;
+    }
+    :root .f-dropdown {
+      background-color: #f0f00c;
+      border-color: #f0f005;
+    }
+    :root .f-dropdown::before {
+      border-color: transparent transparent #f0f005;
+    }
+    :root span.query-pick {
+      color: #f0f004;
+    }
+    :root .has-tip {
+      color: #f0f005;
+      border-color: #f0f008;
+    }
+    :root .has-tip:hover,
+    :root .has-tip:focus {
+      border-bottom-color: #f0f018;
+      color: #f0f018;
+    }
+    :root label {
+      color: #f0f005;
+    }
+    :root table {
+      background: #f0f001;
+      background-color: #f0f00b;
+    }
+    :root table tr th,
+    :root table tr td {
+      color: #f0f005;
+    }
+    :root table tr.even,
+    :root table tr.alt,
+    :root table tr:nth-of-type(2n) {
+      background: rgba(240, 240, 11, 0.5);
+    }
+    :root .kanji-table td,
+    :root .reading-table tr ~ tr > td,
+    :root table.kanji-match td,
+    :root tr.match-row-kanji,
+    :root tr.match-row-reading {
+      border-color: #f0f00b;
+    }
+    :root img {
+      filter: contrast(1.2) opacity(85%);
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      /* Options */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root html,
+    :root body {
+      background: #f0f001;
+      color: #f0f004;
+    }
+    :root footer {
+      color: #f0f005;
+    }
+    :root span.query-word:hover {
+      border-color: #f0f00f;
+    }
+    :root .panel-error {
+      background-color: rgba(240, 240, 17, 0.8);
+    }
+    :root .highlight {
+      background-color: rgba(240, 240, 20, 0.8);
+    }
+    :root .gloss {
+      background-color: #f0f00c;
+    }
+    :root .gloss,
+    :root .gloss-rtext {
+      border-color: #f0f009;
+    }
+    :root .gloss:target {
+      box-shadow: 0 0 5px #f0f009;
+      -webkit-box-shadow: 0 0 5px #f0f009;
+      -moz-box-shadow: 0 0 5px #f0f009;
+    }
+    :root a {
+      color: #f0f018;
+    }
+    :root a.wiktionary-link {
+      color: #f0f004;
+    }
+    :root a.info-link {
+      color: #f0f004;
+    }
+    :root a.info-link:hover {
+      border-bottom-color: #f0f018;
+    }
+    :root .note-skipped a {
+      color: #f0f005;
+    }
+    :root .note-skipped a:hover {
+      border-color: #f0f005;
+    }
+    :root .jspDrag {
+      background-color: #f0f00a;
+    }
+    :root .conj-negative {
+      color: #f0f011;
+    }
+    :root .conj-formal {
+      color: #f0f019;
+    }
+    :root .pos-desc {
+      color: #f0f015;
+    }
+    :root .reading-table tr:nth-of-type(2n),
+    :root table.kanji-match tr:nth-of-type(2n) {
+      background: rgba(240, 240, 11, 0.5);
+    }
+    :root .kanji-big a {
+      color: #f0f005;
+    }
+    :root .autocomplete-suggestions {
+      border-color: #f0f009;
+    }
+    :root .autocomplete-suggestions,
+    :root .autocomplete-selected {
+      background: #f0f00c;
+    }
+    :root .autocomplete-suggestions strong {
+      color: #f0f01a;
+    }
+    :root .autocomplete-group strong {
+      border-bottom-color: #f0f004;
+    }
+    :root .button {
+      background-color: #f0f018;
+      border-color: #f0f018;
+      color: #f0f001;
+    }
+    :root button:hover,
+    :root button:focus,
+    :root .button:hover,
+    :root .button:focus {
+      background-color: #808008;
+      color: #f0f001;
+    }
+    :root h1,
+    :root h2,
+    :root h3,
+    :root h4,
+    :root h5,
+    :root h6 {
+      color: #f0f004;
+    }
+    :root input[type="text"],
+    :root input[type="password"],
+    :root input[type="date"],
+    :root input[type="datetime"],
+    :root input[type="datetime-local"],
+    :root input[type="month"],
+    :root input[type="week"],
+    :root input[type="email"],
+    :root input[type="number"],
+    :root input[type="search"],
+    :root input[type="tel"],
+    :root input[type="time"],
+    :root input[type="url"],
+    :root input[type="color"],
+    :root textarea,
+    :root input[type="file"],
+    :root input[type="checkbox"],
+    :root input[type="radio"],
+    :root select,
+    :root input[type="text"]:focus,
+    :root input[type="password"]:focus,
+    :root input[type="date"]:focus,
+    :root input[type="datetime"]:focus,
+    :root input[type="datetime-local"]:focus,
+    :root input[type="month"]:focus,
+    :root input[type="week"]:focus,
+    :root input[type="email"]:focus,
+    :root input[type="number"]:focus,
+    :root input[type="search"]:focus,
+    :root input[type="tel"]:focus,
+    :root input[type="time"]:focus,
+    :root input[type="url"]:focus,
+    :root input[type="color"]:focus,
+    :root textarea:focus,
+    :root input[type="file"]:focus,
+    :root input[type="checkbox"]:focus,
+    :root input[type="radio"]:focus,
+    :root select:focus {
+      background-color: #f0f00c;
+      border-color: #f0f00b;
+      color: #f0f004;
+    }
+    :root .header-nav a {
+      color: #f0f00f;
+    }
+    :root .header-nav a:hover {
+      color: #a8a80a;
+    }
+    :root .jspTrack {
+      background: #f0f00b;
+    }
+    :root .f-dropdown {
+      background-color: #f0f00c;
+      border-color: #f0f005;
+    }
+    :root .f-dropdown::before {
+      border-color: transparent transparent #f0f005;
+    }
+    :root span.query-pick {
+      color: #f0f004;
+    }
+    :root .has-tip {
+      color: #f0f005;
+      border-color: #f0f008;
+    }
+    :root .has-tip:hover,
+    :root .has-tip:focus {
+      border-bottom-color: #f0f018;
+      color: #f0f018;
+    }
+    :root label {
+      color: #f0f005;
+    }
+    :root table {
+      background: #f0f001;
+      background-color: #f0f00b;
+    }
+    :root table tr th,
+    :root table tr td {
+      color: #f0f005;
+    }
+    :root table tr.even,
+    :root table tr.alt,
+    :root table tr:nth-of-type(2n) {
+      background: rgba(240, 240, 11, 0.5);
+    }
+    :root .kanji-table td,
+    :root .reading-table tr ~ tr > td,
+    :root table.kanji-match td,
+    :root tr.match-row-kanji,
+    :root tr.match-row-reading {
+      border-color: #f0f00b;
+    }
+    :root img {
+      filter: contrast(1.2) opacity(85%);
+    }
+  }
+}

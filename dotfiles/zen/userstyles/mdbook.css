@@ -1,0 +1,213 @@
+/* ==UserStyle==
+@name           pwnbox-mdbook
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for mdBook (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("rust-lang.github.io"), domain("doc.rust-lang.org"), domain("rust-book.cs.brown.edu"), domain("rustc-dev-guide.rust-lang.org"), domain("forge.rust-lang.org"), domain("lang-team.rust-lang.org"), domain("doc.redox-os.org"), url-prefix("https://lukaswirth.dev/tlborm/") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+      --ctp-rosewater: #f0f00d;
+      --ctp-flamingo: #f0f00e;
+      --ctp-pink: #f0f00f;
+      --ctp-mauve: #f0f010;
+      --ctp-red: #f0f011;
+      --ctp-maroon: #f0f012;
+      --ctp-peach: #f0f013;
+      --ctp-yellow: #f0f014;
+      --ctp-green: #f0f015;
+      --ctp-teal: #f0f016;
+      --ctp-sky: #f0f017;
+      --ctp-sapphire: #f0f018;
+      --ctp-blue: #f0f019;
+      --ctp-lavender: #f0f01a;
+      --ctp-text: #f0f004;
+      --ctp-subtext1: #f0f005;
+      --ctp-subtext0: #f0f006;
+      --ctp-overlay2: #f0f007;
+      --ctp-overlay1: #f0f008;
+      --ctp-overlay0: #f0f009;
+      --ctp-surface2: #f0f00a;
+      --ctp-surface1: #f0f00b;
+      --ctp-surface0: #f0f00c;
+      --ctp-base: #f0f001;
+      --ctp-mantle: #f0f002;
+      --ctp-crust: #f0f003;
+      --bg: #f0f001;
+      --fg: #f0f004;
+      --sidebar-bg: #f0f002;
+      --sidebar-fg: #f0f004;
+      --sidebar-non-existant: #f0f009;
+      --sidebar-active: #f0f019;
+      --sidebar-spacer: #f0f009;
+      --scrollbar: #f0f009;
+      --icons: #f0f009;
+      --icons-hover: #f0f007;
+      --links: #f0f019;
+      --inline-code-color: #f0f004;
+      --theme-popup-bg: #f0f002;
+      --theme-popup-border: #f0f009;
+      --theme-hover: #f0f009;
+      --quote-bg: #f0f002;
+      --quote-border: #f0f003;
+      --table-border-color: #f0f00c;
+      --table-header-bg: #f0f009;
+      --table-alternate-bg: #f0f002;
+      --searchbar-border-color: #f0f00c;
+      --searchbar-bg: #f0f002;
+      --searchbar-fg: #f0f004;
+      --searchbar-shadow-color: #f0f003;
+      --searchresults-header-fg: #f0f004;
+      --searchresults-border-color: #f0f00a;
+      --searchresults-li-bg: #f0f001;
+      --sidebar-header-border-color: #f0f01a;
+      --search-mark-bg: #f0f013;
+      --warning-border: #f0f013;
+      --copy-button-filter: brightness(0) saturate(100%) invert(65%) sepia(15%) saturate(535%) hue-rotate(195deg) brightness(63%) contrast(82%);
+      --copy-button-filter-hover: brightness(0) saturate(100%) invert(30%) sepia(36%) saturate(3759%) hue-rotate(209deg) brightness(103%) contrast(110%);
+      --blockquote-note-color: #f0f019;
+      --blockquote-tip-color: #f0f015;
+      --blockquote-important-color: #f0f010;
+      --blockquote-warning-color: #f0f014;
+      --blockquote-caution-color: #f0f011;
+      /* https://github.com/cognitive-engineering-lab/mdbook-quiz */
+      --mdbook-incorrect: #f0f011;
+      --mdbook-correct: #f0f015;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root code.hljs {
+      color: #f0f004;
+      background: #f0f002;
+    }
+    :root blockquote blockquote {
+      border-top-color: #f0f00a;
+      border-bottom-color: #f0f00a;
+    }
+    :root hr {
+      color: #f0f00a;
+    }
+    :root del {
+      color: #f0f007;
+    }
+    :root .ace_gutter {
+      color: #f0f008;
+      background: #f0f002;
+    }
+    :root .ace_gutter-active-line.ace_gutter-cell {
+      color: #f0f00f;
+      background: #f0f002;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --ctp-rosewater: #f0f00d;
+      --ctp-flamingo: #f0f00e;
+      --ctp-pink: #f0f00f;
+      --ctp-mauve: #f0f010;
+      --ctp-red: #f0f011;
+      --ctp-maroon: #f0f012;
+      --ctp-peach: #f0f013;
+      --ctp-yellow: #f0f014;
+      --ctp-green: #f0f015;
+      --ctp-teal: #f0f016;
+      --ctp-sky: #f0f017;
+      --ctp-sapphire: #f0f018;
+      --ctp-blue: #f0f019;
+      --ctp-lavender: #f0f01a;
+      --ctp-text: #f0f004;
+      --ctp-subtext1: #f0f005;
+      --ctp-subtext0: #f0f006;
+      --ctp-overlay2: #f0f007;
+      --ctp-overlay1: #f0f008;
+      --ctp-overlay0: #f0f009;
+      --ctp-surface2: #f0f00a;
+      --ctp-surface1: #f0f00b;
+      --ctp-surface0: #f0f00c;
+      --ctp-base: #f0f001;
+      --ctp-mantle: #f0f002;
+      --ctp-crust: #f0f003;
+      --bg: #f0f001;
+      --fg: #f0f004;
+      --sidebar-bg: #f0f002;
+      --sidebar-fg: #f0f004;
+      --sidebar-non-existant: #f0f009;
+      --sidebar-active: #f0f019;
+      --sidebar-spacer: #f0f009;
+      --scrollbar: #f0f009;
+      --icons: #f0f009;
+      --icons-hover: #f0f007;
+      --links: #f0f019;
+      --inline-code-color: #f0f004;
+      --theme-popup-bg: #f0f002;
+      --theme-popup-border: #f0f009;
+      --theme-hover: #f0f009;
+      --quote-bg: #f0f002;
+      --quote-border: #f0f003;
+      --table-border-color: #f0f00c;
+      --table-header-bg: #f0f009;
+      --table-alternate-bg: #f0f002;
+      --searchbar-border-color: #f0f00c;
+      --searchbar-bg: #f0f002;
+      --searchbar-fg: #f0f004;
+      --searchbar-shadow-color: #f0f003;
+      --searchresults-header-fg: #f0f004;
+      --searchresults-border-color: #f0f00a;
+      --searchresults-li-bg: #f0f001;
+      --sidebar-header-border-color: #f0f01a;
+      --search-mark-bg: #f0f013;
+      --warning-border: #f0f013;
+      --copy-button-filter: brightness(0) saturate(100%) invert(79%) sepia(13%) saturate(517%) hue-rotate(191deg) brightness(93%) contrast(71%);
+      --copy-button-filter-hover: brightness(0) saturate(100%) invert(57%) sepia(66%) saturate(1020%) hue-rotate(195deg) brightness(115%) contrast(96%);
+      --blockquote-note-color: #f0f019;
+      --blockquote-tip-color: #f0f015;
+      --blockquote-important-color: #f0f010;
+      --blockquote-warning-color: #f0f014;
+      --blockquote-caution-color: #f0f011;
+      /* https://github.com/cognitive-engineering-lab/mdbook-quiz */
+      --mdbook-incorrect: #f0f011;
+      --mdbook-correct: #f0f015;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root code.hljs {
+      color: #f0f004;
+      background: #f0f002;
+    }
+    :root blockquote blockquote {
+      border-top-color: #f0f00a;
+      border-bottom-color: #f0f00a;
+    }
+    :root hr {
+      color: #f0f00a;
+    }
+    :root del {
+      color: #f0f007;
+    }
+    :root .ace_gutter {
+      color: #f0f008;
+      background: #f0f002;
+    }
+    :root .ace_gutter-active-line.ace_gutter-cell {
+      color: #f0f00f;
+      background: #f0f002;
+    }
+  }
+}

@@ -1,0 +1,2361 @@
+/* ==UserStyle==
+@name           pwnbox-bsky
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Bluesky Social (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("bsky.app") {
+  @media (prefers-color-scheme: light) {
+    html.colorMode--system {
+      color-scheme: light;
+      background-color: #f0f001;
+      --text: #f0f004;
+      --background: #f0f001;
+      --backgroundLight: #f0f001;
+      /* generic text */
+      /* some background color of follow button + hover */
+      /* secondary text [contrast_700] */
+      /* generic blue inline (e.g. link text, etc) [primary_500] */
+      /* generic blue inline underline (links) [primary_500] */
+      /* generic blue inline bg color (e.g. notification count) [primary_500] */
+      /* sending/pending/failed direct message */
+      /* a lot of blue things (buttons etc) */
+      /* subscribe to labeler button */
+      /* direct message "failed to send" text */
+      /* red button text (delete my account) [negative_500] */
+      /* red button (delete, etc) */
+      /* delete account button */
+      /* generic background color */
+      /* secondary background color + sidebar button hover [contrast_25] */
+      /* secondary background color (when active?) (e.g. search bar, hovering some buttons like cancel) */
+      /* some sort of tertiary background color with a slight accent */
+      /* loading circle */
+      /* wide site: new post button (w text) */
+      /* borders */
+      /* fix selected tab bottom border issue caused by selector above */
+      /* fixes the bottom border on tabs (timeline) having a darker color */
+      /* current selected tab (acc page) !! KEEP THIS BELOW ABOVE DEFINITION !! */
+      /* settings highlight thing */
+      /* thin site: bluesky text */
+      /* empty profile banner */
+      /* "invalid handle" warning */
+      /* end of feed text */
+      /* mobile side drawer */
+      /* feedback */
+      /* save, report, post modal button */
+      /* draft "Discard" button */
+      /* Discard draft modal border, bunch of other borders around the app [contrast_100] */
+      /* the round gradient post button in the bottom right when the page is thinner than usual */
+      /* blue text only button (e.g. cancel post button) */
+      /* text color when writing a post */
+      /* some button background color (when hovering) [primary_100] */
+      /* several white buttons */
+      /* the white buttons text */
+      /* replace dark fill icons with crust ones */
+      /* fixes a contrast issue when the suggested follows button is enabled (very ugly selector) */
+      /* text inside most buttons */
+      /* search bar text */
+      /* search bar icon (this doesn't actually apply because path fill. keeping anyways) [contrast_500] */
+      /* small icons */
+      /* more gray small icons (e.g. search bar icon, icons below posts [contrast_500] */
+      /* settings button at the top of the timeline, hashtag button/icon at top of timeline [contrast_600] */
+      /* x invite codes available icon */
+      /* heart/like */
+      /* repost */
+      /* saved icon on post + trending icon */
+      /* tiny people icon on post view ("Everybody can reply") */
+      /* onboarding: continue/next button */
+      /* pretty self explanatory, user mentions in the post create modal */
+      /* mentions in the notification tab (highlighted notifications) */
+      /* generic blue background color inline (used for buttons in notifications tab) */
+      /* contrast fix for above */
+      /* miscellaneous lines around the app [contrast_200] */
+      /* other button in notifications tab, inner text */
+      /* "No notifications yet!" text in the notifications tab */
+      /* login: wrong password highlight */
+      /* please verify your email popup (green checkmark) */
+      /* toggle circle */
+      /* skeletons */
+      /* thread lines */
+      /* character limit progress circle [primary_500] */
+      /* bg circle [contrast_100] */
+      /* load new posts button (border: [contrast_100]; bg: [primary_50]) */
+      /* any button that's disabled (we should start using broader overrides) */
+      /* sitewide text inputs */
+      /* the divs are styled separately from the input areas */
+      /* search bar [primary_500] */
+      /* image preview borders across app */
+      /* search tab trending buttons */
+      /* TODO: new which is green but I can't get the right class cause nothing on bsky is a new trending topic atm */
+      /* round icon backgrounds (e.g. feeds) */
+      /* pill toggle button styles (e.g. account activity notifications) */
+      /* active, hover */
+      /* inactive, circle in pill */
+      /* inactive, hover */
+    }
+    html.colorMode--system ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    html.colorMode--system input::placeholder,
+    html.colorMode--system textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    html.colorMode--system [style*="color: rgb(255, 255, 255)"],
+    html.colorMode--system [style*="color: rgb(241, 243, 245)"] {
+      color: #f0f001 !important;
+    }
+    html.colorMode--system [style*="background-color: rgb(241, 243, 245)"] {
+      background-color: #f0f003 !important;
+    }
+    html.colorMode--system [style*="color: rgb(11, 15, 20)"] {
+      color: #f0f004 !important;
+    }
+    html.colorMode--system [style*="rgb(165, 178, 197)"],
+    html.colorMode--system [style*="rgb(171, 184, 201)"],
+    html.colorMode--system [style*="rgb(84, 110, 138)"],
+    html.colorMode--system [style*="rgb(66, 87, 108)"] {
+      color: #f0f005 !important;
+    }
+    html.colorMode--system div[style*="background-color: rgb(197, 207, 217)"],
+    html.colorMode--system div[style*="background-color: rgb(201, 210, 219)"],
+    html.colorMode--system div[style*="background-color: rgb(46, 63, 81)"] {
+      background-color: #f0f004 !important;
+    }
+    html.colorMode--system div[style*="background-color: rgb(197, 207, 217)"] > div,
+    html.colorMode--system div[style*="background-color: rgb(201, 210, 219)"] > div,
+    html.colorMode--system div[style*="background-color: rgb(46, 63, 81)"] > div {
+      color: #f0f003 !important;
+    }
+    html.colorMode--system [style*="color: rgb(0, 106, 255)"],
+    html.colorMode--system [style*="color: rgb(15, 115, 255)"] {
+      color: #f0f01b !important;
+    }
+    html.colorMode--system [style*="text-decoration-color: rgb(0, 106, 255)"],
+    html.colorMode--system [style*="text-decoration-color: rgb(15, 115, 255)"] {
+      text-decoration-color: #f0f01b !important;
+    }
+    html.colorMode--system [style*="background-color: rgb(0, 106, 255)"],
+    html.colorMode--system [style*="background-color: rgb(15, 115, 255)"] {
+      background-color: #f0f01b !important;
+      /* notification count contrast fix, also chat message contrast fix (> div) */
+      /* icon color fix */
+    }
+    html.colorMode--system [style*="background-color: rgb(0, 106, 255)"][style*="color: rgb(241, 243, 245)"],
+    html.colorMode--system [style*="background-color: rgb(15, 115, 255)"][style*="color: rgb(241, 243, 245)"],
+    html.colorMode--system [style*="background-color: rgb(0, 106, 255)"][style*="color: rgb(255, 255, 255)"],
+    html.colorMode--system [style*="background-color: rgb(15, 115, 255)"][style*="color: rgb(255, 255, 255)"],
+    html.colorMode--system [style*="background-color: rgb(0, 106, 255)"] > div,
+    html.colorMode--system [style*="background-color: rgb(15, 115, 255)"] > div {
+      color: #f0f003 !important;
+    }
+    html.colorMode--system [style*="background-color: rgb(0, 106, 255)"] path[fill="#ffffff"],
+    html.colorMode--system [style*="background-color: rgb(15, 115, 255)"] path[fill="#ffffff"],
+    html.colorMode--system [style*="background-color: rgb(0, 106, 255)"] path[fill="hsl(211, 20%, 95.3%)"],
+    html.colorMode--system [style*="background-color: rgb(15, 115, 255)"] path[fill="hsl(211, 20%, 95.3%)"] {
+      fill: #f0f003 !important;
+    }
+    html.colorMode--system [style*="background-color: rgb(1, 64, 132)"] {
+      background-color: rgba(240, 240, 27, 0.3) !important;
+    }
+    html.colorMode--system .r-wzwllv,
+    html.colorMode--system div[style*="background-color: rgb(0, 133, 255)"] {
+      background-color: #f0f01b !important;
+      /* notification count contrast fix, also chat message contrast fix (> div) */
+    }
+    html.colorMode--system .r-wzwllv[style*="color: rgb(241, 243, 245)"],
+    html.colorMode--system div[style*="background-color: rgb(0, 133, 255)"][style*="color: rgb(241, 243, 245)"],
+    html.colorMode--system .r-wzwllv > div,
+    html.colorMode--system div[style*="background-color: rgb(0, 133, 255)"] > div {
+      color: #f0f003 !important;
+    }
+    html.colorMode--system button[data-testid="toggleSubscribeBtn"] > div {
+      background-color: #f0f010 !important;
+    }
+    html.colorMode--system button[data-testid="toggleSubscribeBtn"] > div > div {
+      color: #f0f003 !important;
+    }
+    html.colorMode--system span[style*="color: rgb(205, 10, 55)"] {
+      color: #f0f011 !important;
+    }
+    html.colorMode--system [style*="color: rgb(233, 22, 70)"],
+    html.colorMode--system [style*="color: rgb(235, 36, 82)"] {
+      color: #f0f011 !important;
+    }
+    html.colorMode--system button[style*="background-color: rgb(244, 11, 66)"],
+    html.colorMode--system button[style*="background-color: rgb(246, 60, 103)"],
+    html.colorMode--system button[style*="background-color: rgb(245, 41, 88)"],
+    html.colorMode--system button[style*="background-color: rgb(247, 84, 122)"],
+    html.colorMode--system button[style*="background-color: rgb(205, 10, 55)"] {
+      background-color: #f0f011 !important;
+    }
+    html.colorMode--system button[style*="background-color: rgb(244, 11, 66)"]:hover,
+    html.colorMode--system button[style*="background-color: rgb(246, 60, 103)"]:hover,
+    html.colorMode--system button[style*="background-color: rgb(245, 41, 88)"]:hover,
+    html.colorMode--system button[style*="background-color: rgb(247, 84, 122)"]:hover,
+    html.colorMode--system button[style*="background-color: rgb(205, 10, 55)"]:hover {
+      background-color: rgba(240, 240, 17, 0.7) !important;
+    }
+    html.colorMode--system button[style*="background-color: rgb(244, 11, 66)"] > div,
+    html.colorMode--system button[style*="background-color: rgb(246, 60, 103)"] > div,
+    html.colorMode--system button[style*="background-color: rgb(245, 41, 88)"] > div,
+    html.colorMode--system button[style*="background-color: rgb(247, 84, 122)"] > div,
+    html.colorMode--system button[style*="background-color: rgb(205, 10, 55)"] > div {
+      color: #f0f003 !important;
+    }
+    html.colorMode--system [style^="background-color: rgb(79, 3, 20)"] {
+      background-color: #f0f011 !important;
+    }
+    html.colorMode--system path[fill="#fba2b2"] {
+      fill: #f0f003;
+    }
+    html.colorMode--system [style*="background-color: rgb(255, 255, 255)"],
+    html.colorMode--system [style*="background-color: rgb(0, 0, 0)"],
+    html.colorMode--system [style*="background-color: rgb(21, 29, 40)"] {
+      background-color: #f0f001 !important;
+      /* fix button colors in latte */
+    }
+    html.colorMode--system [style*="background-color: rgb(255, 255, 255)"] [style*="background-color: rgb(0, 0, 0)"],
+    html.colorMode--system [style*="background-color: rgb(0, 0, 0)"] [style*="background-color: rgb(0, 0, 0)"],
+    html.colorMode--system [style*="background-color: rgb(21, 29, 40)"] [style*="background-color: rgb(0, 0, 0)"] {
+      background-color: #f0f004 !important;
+    }
+    html.colorMode--system [style*="background-color: rgb(17, 24, 34)"],
+    html.colorMode--system [style*="background-color: rgb(28, 39, 54)"] {
+      background-color: #f0f002 !important;
+    }
+    html.colorMode--system [style*="background-color: rgb(25, 34, 46)"],
+    html.colorMode--system [style*="background-color: rgb(34, 46, 63)"] {
+      background-color: #f0f003 !important;
+    }
+    html.colorMode--system [style*="background-color: rgb(0, 25, 51)"] {
+      background-color: rgba(240, 240, 27, 0.3) !important;
+    }
+    html.colorMode--system circle[style^="stroke: rgb(25, 118, 210)"] {
+      stroke: #f0f01b !important;
+    }
+    html.colorMode--system button[style*="background-color: rgb(0, 106, 255)"],
+    html.colorMode--system button[style*="background-color: rgb(66, 145, 255)"],
+    html.colorMode--system button[style*="background-color: rgb(15, 115, 255)"],
+    html.colorMode--system button[style*="background-color: rgb(77, 151, 255)"] {
+      background-color: #f0f01b !important;
+    }
+    html.colorMode--system button[style*="background-color: rgb(0, 106, 255)"]:hover,
+    html.colorMode--system button[style*="background-color: rgb(66, 145, 255)"]:hover,
+    html.colorMode--system button[style*="background-color: rgb(15, 115, 255)"]:hover,
+    html.colorMode--system button[style*="background-color: rgb(77, 151, 255)"]:hover {
+      background-color: rgba(240, 240, 27, 0.7) !important;
+    }
+    html.colorMode--system button[style*="background-color: rgb(0, 106, 255)"] > div,
+    html.colorMode--system button[style*="background-color: rgb(66, 145, 255)"] > div,
+    html.colorMode--system button[style*="background-color: rgb(15, 115, 255)"] > div,
+    html.colorMode--system button[style*="background-color: rgb(77, 151, 255)"] > div {
+      color: #f0f003 !important;
+    }
+    html.colorMode--system button[style*="background-color: rgb(0, 106, 255)"] svg > path,
+    html.colorMode--system button[style*="background-color: rgb(66, 145, 255)"] svg > path,
+    html.colorMode--system button[style*="background-color: rgb(15, 115, 255)"] svg > path,
+    html.colorMode--system button[style*="background-color: rgb(77, 151, 255)"] svg > path {
+      fill: #f0f003 !important;
+    }
+    html.colorMode--system .css-175oi2r {
+      border-color: #f0f00c !important;
+    }
+    html.colorMode--system .css-175oi2r[style*="border-bottom-color: rgb(0, 106, 255)"] {
+      border-bottom-color: #f0f01b !important;
+    }
+    html.colorMode--system .r-oucylx {
+      border-bottom-color: #f0f001 !important;
+    }
+    html.colorMode--system [style*="border-color: rgb(255, 255, 255)"] {
+      border-color: #f0f01b !important;
+    }
+    html.colorMode--system [style="background-color: rgb(38, 39, 45)"] {
+      background-color: #f0f003 !important;
+    }
+    html.colorMode--system .r-yovm8p {
+      color: #f0f019;
+    }
+    html.colorMode--system .r-wuyfte {
+      background-color: #f0f019;
+    }
+    html.colorMode--system [style*="color: rgb(236, 72, 104); border-color: rgb(209, 16, 67)"] {
+      color: #f0f011 !important;
+      border-color: #f0f011 !important;
+    }
+    html.colorMode--system .r-1521r3q {
+      color: #f0f008;
+    }
+    html.colorMode--system [data-testid="drawer"] {
+      background-color: #f0f001;
+    }
+    html.colorMode--system .r-m7buhn {
+      background-color: #f0f019;
+    }
+    html.colorMode--system [data-testid="sendReportBtn"],
+    html.colorMode--system [data-testid="composerPublishBtn"],
+    html.colorMode--system [data-testid="editProfileSaveBtn"] {
+      background: unset !important;
+      /* "save changes" button in edit profile */
+      /* fix contrast issues */
+    }
+    html.colorMode--system [data-testid="sendReportBtn"] > div[style*="background-image: linear-gradient(94.0544deg, rgb(90, 113, 250), rgb(0, 133, 255))"],
+    html.colorMode--system [data-testid="composerPublishBtn"] > div[style*="background-image: linear-gradient(94.0544deg, rgb(90, 113, 250), rgb(0, 133, 255))"],
+    html.colorMode--system [data-testid="editProfileSaveBtn"] > div[style*="background-image: linear-gradient(94.0544deg, rgb(90, 113, 250), rgb(0, 133, 255))"] {
+      background: #f0f01b !important;
+    }
+    html.colorMode--system [data-testid="sendReportBtn"] > div,
+    html.colorMode--system [data-testid="composerPublishBtn"] > div,
+    html.colorMode--system [data-testid="editProfileSaveBtn"] > div,
+    html.colorMode--system [data-testid="sendReportBtn"] > div > div,
+    html.colorMode--system [data-testid="composerPublishBtn"] > div > div,
+    html.colorMode--system [data-testid="editProfileSaveBtn"] > div > div {
+      color: #f0f003 !important;
+    }
+    html.colorMode--system [data-testid="saveBtn"] > div[style*="background-image: linear-gradient"] {
+      background: unset !important;
+      background-color: #f0f01b !important;
+    }
+    html.colorMode--system [data-testid="saveBtn"] > div[style*="background-image: linear-gradient"] > div {
+      color: #f0f003 !important;
+    }
+    html.colorMode--system .r-17c3jg3:has(> div[dir="auto"]) {
+      background-color: #f0f003 !important;
+    }
+    html.colorMode--system .r-17c3jg3:has(> div[dir="auto"]) .r-jwli3a {
+      color: #f0f004 !important;
+    }
+    html.colorMode--system .r-17c3jg3:has(> div[dir="auto"]) > svg > path {
+      fill: #f0f004 !important;
+    }
+    html.colorMode--system [style^="background-color: rgb(209, 16, 67)"] {
+      background-color: #f0f011 !important;
+    }
+    html.colorMode--system [style*="border-color: rgb(35, 46, 62)"],
+    html.colorMode--system [style*="border-color: rgb(44, 58, 78)"] {
+      border-color: #f0f00a !important;
+    }
+    html.colorMode--system [data-testid="composeFAB"] > div {
+      background: unset !important;
+      background-color: #f0f01b !important;
+    }
+    html.colorMode--system [data-testid="composeFAB"] > div .r-jwli3a {
+      color: #f0f003 !important;
+    }
+    html.colorMode--system div[style*="color: rgb(66, 145, 255)"],
+    html.colorMode--system div[style*="color: rgb(77, 151, 255)"],
+    html.colorMode--system div[style*="color: rgb(0, 89, 214)"] {
+      color: #f0f01b !important;
+    }
+    html.colorMode--system .ProseMirror,
+    html.colorMode--system .ProseMirror-dark {
+      color: #f0f004;
+    }
+    html.colorMode--system [style*="background-color: rgb(0, 40, 97)"],
+    html.colorMode--system [style*="background-color: rgb(18, 52, 100)"],
+    html.colorMode--system [style*="background-color: rgb(204, 225, 255)"],
+    html.colorMode--system [style*="background-color: rgb(14, 73, 137)"] {
+      background-color: rgba(240, 240, 27, 0.3) !important;
+    }
+    html.colorMode--system [style*="color: rgb(0, 0, 0)"] {
+      color: #f0f004 !important;
+    }
+    html.colorMode--system path[fill="#000000"] {
+      fill: #f0f004;
+    }
+    html.colorMode--system button[data-testid="suggestedFollowsBtn"][style*="background-color: rgb(255, 255, 255)"] > svg > path {
+      fill: #f0f001 !important;
+    }
+    html.colorMode--system button > div > div[style~="color: rgb(0, 0, 0)"] {
+      color: #f0f001 !important;
+    }
+    html.colorMode--system [role="search"],
+    html.colorMode--system [data-testid="confirmCodeInput"] {
+      --placeholderTextColor: #f0f005 !important;
+    }
+    html.colorMode--system svg[style^="color: rgb(102, 123, 153"],
+    html.colorMode--system svg[style^="color: rgb(111, 131, 159)"] {
+      color: #f0f005 !important;
+    }
+    html.colorMode--system path[fill="#FFFFFF"] {
+      fill: #f0f004;
+      fill: #f0f001;
+    }
+    html.colorMode--system path[fill="#667B99"],
+    html.colorMode--system path[fill="#6F839F"],
+    html.colorMode--system [style*="color: rgb(111, 131, 159)"],
+    html.colorMode--system [style*="color: rgb(111, 131, 159)"] {
+      color: #f0f005 !important;
+      fill: #f0f005 !important;
+    }
+    html.colorMode--system path[fill="#8798B0"],
+    html.colorMode--system path[fill="#8D9DB4"] {
+      fill: #f0f005;
+    }
+    html.colorMode--system div[style*="background-color: rgb(191, 225, 255)"],
+    html.colorMode--system div[style*="background-color: rgb(1, 37, 97)"] {
+      background-color: rgba(240, 240, 27, 0.3) !important;
+    }
+    html.colorMode--system div[style*="background-color: rgb(191, 225, 255)"] > svg > path[fill="#52acfe"],
+    html.colorMode--system div[style*="background-color: rgb(1, 37, 97)"] > svg > path[fill="#52acfe"] {
+      fill: #f0f01b;
+    }
+    html.colorMode--system .r-84gixx,
+    html.colorMode--system .r-1i89l9k,
+    html.colorMode--system div[style*="color: rgb(236, 72, 153)"],
+    html.colorMode--system button[data-testid="toggleLikeBtn"] > svg:has(path[fill^="hsl(346,"]) {
+      color: #f0f011 !important;
+    }
+    html.colorMode--system .r-84gixx > path,
+    html.colorMode--system .r-1i89l9k > path,
+    html.colorMode--system div[style*="color: rgb(236, 72, 153)"] > path,
+    html.colorMode--system button[data-testid="toggleLikeBtn"] > svg:has(path[fill^="hsl(346,"]) > path {
+      fill: #f0f011 !important;
+    }
+    html.colorMode--system .r-5ld2xk,
+    html.colorMode--system [style*="color: rgb(92, 239, 170)"] {
+      color: #f0f015 !important;
+    }
+    html.colorMode--system .r-5ld2xk > path,
+    html.colorMode--system [style*="color: rgb(92, 239, 170)"] > path {
+      fill: #f0f015 !important;
+    }
+    html.colorMode--system path[fill="#006AFF"],
+    html.colorMode--system path[fill="#0F73FF"] {
+      fill: #f0f01b;
+    }
+    html.colorMode--system path[fill="hsl(211, 24%, 43.6%)"],
+    html.colorMode--system path[fill="hsl(211, 24%, 34.2%)"] {
+      fill: #f0f006;
+    }
+    html.colorMode--system [data-testid="continueBtn"] {
+      background-color: #f0f01b !important;
+    }
+    html.colorMode--system [data-testid="continueBtn"] > div > div {
+      color: #f0f001 !important;
+    }
+    html.colorMode--system [data-testid="continueBtn"] > div > svg > path {
+      fill: #f0f001 !important;
+    }
+    html.colorMode--system .mention {
+      color: #f0f01b;
+    }
+    html.colorMode--system div[style*="background-color: rgb(0, 17, 36)"],
+    html.colorMode--system div[style*="background-color: rgb(21, 41, 63)"],
+    html.colorMode--system div[style*="background-color: rgb(240, 247, 255)"],
+    html.colorMode--system a[style*="background-color: rgb(0, 17, 36)"],
+    html.colorMode--system a[style*="background-color: rgb(21, 41, 63)"],
+    html.colorMode--system a[style*="background-color: rgb(240, 247, 255)"] {
+      background-color: rgba(240, 240, 27, 0.3) !important;
+    }
+    html.colorMode--system div[style*="background-color: rgb(0, 17, 36)"] .css-175oi2r:not([role="checkbox"] *),
+    html.colorMode--system div[style*="background-color: rgb(21, 41, 63)"] .css-175oi2r:not([role="checkbox"] *),
+    html.colorMode--system div[style*="background-color: rgb(240, 247, 255)"] .css-175oi2r:not([role="checkbox"] *),
+    html.colorMode--system a[style*="background-color: rgb(0, 17, 36)"] .css-175oi2r:not([role="checkbox"] *),
+    html.colorMode--system a[style*="background-color: rgb(21, 41, 63)"] .css-175oi2r:not([role="checkbox"] *),
+    html.colorMode--system a[style*="background-color: rgb(240, 247, 255)"] .css-175oi2r:not([role="checkbox"] *) {
+      background-color: transparent !important;
+    }
+    html.colorMode--system button[style*="background-color: rgb(0, 133, 255)"] {
+      background-color: #f0f01b !important;
+    }
+    html.colorMode--system button[style*="background-color: rgb(0, 133, 255)"] > div > div {
+      color: #f0f001 !important;
+    }
+    html.colorMode--system [style*="border-color: rgb(49, 63, 84)"],
+    html.colorMode--system [style*="border-color: rgb(57, 73, 96)"] {
+      border-color: #f0f00b !important;
+    }
+    html.colorMode--system div[style*="color: rgb(82, 172, 254)"] {
+      color: #f0f01b !important;
+    }
+    html.colorMode--system div[style*="color: rgb(141, 142, 150)"] {
+      color: #f0f006 !important;
+    }
+    html.colorMode--system .r-w7hjet {
+      background-color: #f0f011;
+    }
+    html.colorMode--system circle[fill="#20BC07"] {
+      fill: #f0f015;
+    }
+    html.colorMode--system [style*="background-color: rgb(185, 185, 193)"] {
+      background-color: #f0f007 !important;
+    }
+    html.colorMode--system .r-kdyh1x[style*="background-color: rgb(20, 27, 35);"],
+    html.colorMode--system .r-cpet4d[style*="background-color: rgb(20, 27, 35);"] {
+      background-color: #f0f00c !important;
+    }
+    html.colorMode--system div[style*="background-color: rgb(35, 46, 62)"].r-m5arl1 {
+      background: #f0f00b !important;
+    }
+    html.colorMode--system path[stroke="#006AFF"],
+    html.colorMode--system path[stroke="#0F73FF"],
+    html.colorMode--system path[stroke="#006AFF"] {
+      stroke: #f0f01b !important;
+    }
+    html.colorMode--system path[stroke="#232E3E"],
+    html.colorMode--system path[stroke="#2C3A4E"],
+    html.colorMode--system path[stroke="#DCE2EA"] {
+      stroke: #f0f00b !important;
+    }
+    html.colorMode--system button[style*="border-color: rgb(35, 46, 62); background-color: rgb(0, 30, 71)"],
+    html.colorMode--system button[style*="border-color: rgb(44, 58, 78); background-color: rgb(18, 41, 73)"],
+    html.colorMode--system button[style*="border-color: rgb(220, 226, 234); background-color: rgb(229, 240, 255)"] {
+      background-color: #f0f00c !important;
+      border-color: #f0f009 !important;
+    }
+    html.colorMode--system button[disabled] > svg > path {
+      fill: #f0f009;
+    }
+    html.colorMode--system div[style*="border-color: rgb(46, 64, 82)"] {
+      border-color: #f0f00b !important;
+    }
+    html.colorMode--system div[style*="border-color: rgb(0, 106, 255)"],
+    html.colorMode--system div[style*="border-color: rgb(15, 115, 255)"] {
+      border-color: #f0f01b !important;
+    }
+    html.colorMode--system [style*="border-color: rgb(74, 97, 121)"] {
+      border-color: #f0f00a !important;
+    }
+    html.colorMode--system [style*="background-color: rgb(142, 9, 40)"] {
+      background-color: #f0f011 !important;
+    }
+    html.colorMode--system [style*="background-color: rgb(142, 9, 40)"] div {
+      color: #f0f003 !important;
+    }
+    html.colorMode--system [style*="background-color: rgb(142, 9, 40)"] svg > path {
+      fill: #f0f003;
+    }
+    html.colorMode--system div[style*="background-color: rgb(21, 52, 85)"] {
+      background-color: #f0f00c !important;
+    }
+    html.colorMode--system div[style*="border-color: rgb(76, 162, 254);"] {
+      border-color: #f0f01b !important;
+    }
+    html.colorMode--system div[style*="background-color: rgb(18, 52, 100)"] {
+      background-color: rgba(240, 240, 27, 0.4) !important;
+    }
+    html.colorMode--system div[style*="background-color: rgb(91, 119, 149)"] {
+      background-color: #f0f00a !important;
+    }
+    html.colorMode--system div[style*="border-color: rgb(120, 142, 165)"] {
+      border-color: #f0f008 !important;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    html.colorMode--system {
+      color-scheme: dark;
+      background-color: #f0f001;
+      --text: #f0f004;
+      --background: #f0f001;
+      --backgroundLight: #f0f001;
+      /* generic text */
+      /* some background color of follow button + hover */
+      /* secondary text [contrast_700] */
+      /* generic blue inline (e.g. link text, etc) [primary_500] */
+      /* generic blue inline underline (links) [primary_500] */
+      /* generic blue inline bg color (e.g. notification count) [primary_500] */
+      /* sending/pending/failed direct message */
+      /* a lot of blue things (buttons etc) */
+      /* subscribe to labeler button */
+      /* direct message "failed to send" text */
+      /* red button text (delete my account) [negative_500] */
+      /* red button (delete, etc) */
+      /* delete account button */
+      /* generic background color */
+      /* secondary background color + sidebar button hover [contrast_25] */
+      /* secondary background color (when active?) (e.g. search bar, hovering some buttons like cancel) */
+      /* some sort of tertiary background color with a slight accent */
+      /* loading circle */
+      /* wide site: new post button (w text) */
+      /* borders */
+      /* fix selected tab bottom border issue caused by selector above */
+      /* fixes the bottom border on tabs (timeline) having a darker color */
+      /* current selected tab (acc page) !! KEEP THIS BELOW ABOVE DEFINITION !! */
+      /* settings highlight thing */
+      /* thin site: bluesky text */
+      /* empty profile banner */
+      /* "invalid handle" warning */
+      /* end of feed text */
+      /* mobile side drawer */
+      /* feedback */
+      /* save, report, post modal button */
+      /* draft "Discard" button */
+      /* Discard draft modal border, bunch of other borders around the app [contrast_100] */
+      /* the round gradient post button in the bottom right when the page is thinner than usual */
+      /* blue text only button (e.g. cancel post button) */
+      /* text color when writing a post */
+      /* some button background color (when hovering) [primary_100] */
+      /* several white buttons */
+      /* the white buttons text */
+      /* replace dark fill icons with crust ones */
+      /* fixes a contrast issue when the suggested follows button is enabled (very ugly selector) */
+      /* text inside most buttons */
+      /* search bar text */
+      /* search bar icon (this doesn't actually apply because path fill. keeping anyways) [contrast_500] */
+      /* small icons */
+      /* more gray small icons (e.g. search bar icon, icons below posts [contrast_500] */
+      /* settings button at the top of the timeline, hashtag button/icon at top of timeline [contrast_600] */
+      /* x invite codes available icon */
+      /* heart/like */
+      /* repost */
+      /* saved icon on post + trending icon */
+      /* tiny people icon on post view ("Everybody can reply") */
+      /* onboarding: continue/next button */
+      /* pretty self explanatory, user mentions in the post create modal */
+      /* mentions in the notification tab (highlighted notifications) */
+      /* generic blue background color inline (used for buttons in notifications tab) */
+      /* contrast fix for above */
+      /* miscellaneous lines around the app [contrast_200] */
+      /* other button in notifications tab, inner text */
+      /* "No notifications yet!" text in the notifications tab */
+      /* login: wrong password highlight */
+      /* please verify your email popup (green checkmark) */
+      /* toggle circle */
+      /* skeletons */
+      /* thread lines */
+      /* character limit progress circle [primary_500] */
+      /* bg circle [contrast_100] */
+      /* load new posts button (border: [contrast_100]; bg: [primary_50]) */
+      /* any button that's disabled (we should start using broader overrides) */
+      /* sitewide text inputs */
+      /* the divs are styled separately from the input areas */
+      /* search bar [primary_500] */
+      /* image preview borders across app */
+      /* search tab trending buttons */
+      /* TODO: new which is green but I can't get the right class cause nothing on bsky is a new trending topic atm */
+      /* round icon backgrounds (e.g. feeds) */
+      /* pill toggle button styles (e.g. account activity notifications) */
+      /* active, hover */
+      /* inactive, circle in pill */
+      /* inactive, hover */
+    }
+    html.colorMode--system ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    html.colorMode--system input::placeholder,
+    html.colorMode--system textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    html.colorMode--system [style*="color: rgb(255, 255, 255)"],
+    html.colorMode--system [style*="color: rgb(241, 243, 245)"] {
+      color: #f0f004 !important;
+    }
+    html.colorMode--system [style*="background-color: rgb(241, 243, 245)"] {
+      background-color: #f0f004 !important;
+    }
+    html.colorMode--system [style*="color: rgb(11, 15, 20)"] {
+      color: #f0f003 !important;
+    }
+    html.colorMode--system [style*="rgb(165, 178, 197)"],
+    html.colorMode--system [style*="rgb(171, 184, 201)"],
+    html.colorMode--system [style*="rgb(84, 110, 138)"],
+    html.colorMode--system [style*="rgb(66, 87, 108)"] {
+      color: #f0f005 !important;
+    }
+    html.colorMode--system div[style*="background-color: rgb(197, 207, 217)"],
+    html.colorMode--system div[style*="background-color: rgb(201, 210, 219)"],
+    html.colorMode--system div[style*="background-color: rgb(46, 63, 81)"] {
+      background-color: #f0f004 !important;
+    }
+    html.colorMode--system div[style*="background-color: rgb(197, 207, 217)"] > div,
+    html.colorMode--system div[style*="background-color: rgb(201, 210, 219)"] > div,
+    html.colorMode--system div[style*="background-color: rgb(46, 63, 81)"] > div {
+      color: #f0f003 !important;
+    }
+    html.colorMode--system [style*="color: rgb(0, 106, 255)"],
+    html.colorMode--system [style*="color: rgb(15, 115, 255)"] {
+      color: #f0f01b !important;
+    }
+    html.colorMode--system [style*="text-decoration-color: rgb(0, 106, 255)"],
+    html.colorMode--system [style*="text-decoration-color: rgb(15, 115, 255)"] {
+      text-decoration-color: #f0f01b !important;
+    }
+    html.colorMode--system [style*="background-color: rgb(0, 106, 255)"],
+    html.colorMode--system [style*="background-color: rgb(15, 115, 255)"] {
+      background-color: #f0f01b !important;
+      /* notification count contrast fix, also chat message contrast fix (> div) */
+      /* icon color fix */
+    }
+    html.colorMode--system [style*="background-color: rgb(0, 106, 255)"][style*="color: rgb(241, 243, 245)"],
+    html.colorMode--system [style*="background-color: rgb(15, 115, 255)"][style*="color: rgb(241, 243, 245)"],
+    html.colorMode--system [style*="background-color: rgb(0, 106, 255)"][style*="color: rgb(255, 255, 255)"],
+    html.colorMode--system [style*="background-color: rgb(15, 115, 255)"][style*="color: rgb(255, 255, 255)"],
+    html.colorMode--system [style*="background-color: rgb(0, 106, 255)"] > div,
+    html.colorMode--system [style*="background-color: rgb(15, 115, 255)"] > div {
+      color: #f0f003 !important;
+    }
+    html.colorMode--system [style*="background-color: rgb(0, 106, 255)"] path[fill="#ffffff"],
+    html.colorMode--system [style*="background-color: rgb(15, 115, 255)"] path[fill="#ffffff"],
+    html.colorMode--system [style*="background-color: rgb(0, 106, 255)"] path[fill="hsl(211, 20%, 95.3%)"],
+    html.colorMode--system [style*="background-color: rgb(15, 115, 255)"] path[fill="hsl(211, 20%, 95.3%)"] {
+      fill: #f0f003 !important;
+    }
+    html.colorMode--system [style*="background-color: rgb(1, 64, 132)"] {
+      background-color: rgba(240, 240, 27, 0.3) !important;
+    }
+    html.colorMode--system .r-wzwllv,
+    html.colorMode--system div[style*="background-color: rgb(0, 133, 255)"] {
+      background-color: #f0f01b !important;
+      /* notification count contrast fix, also chat message contrast fix (> div) */
+    }
+    html.colorMode--system .r-wzwllv[style*="color: rgb(241, 243, 245)"],
+    html.colorMode--system div[style*="background-color: rgb(0, 133, 255)"][style*="color: rgb(241, 243, 245)"],
+    html.colorMode--system .r-wzwllv > div,
+    html.colorMode--system div[style*="background-color: rgb(0, 133, 255)"] > div {
+      color: #f0f003 !important;
+    }
+    html.colorMode--system button[data-testid="toggleSubscribeBtn"] > div {
+      background-color: #f0f010 !important;
+    }
+    html.colorMode--system button[data-testid="toggleSubscribeBtn"] > div > div {
+      color: #f0f003 !important;
+    }
+    html.colorMode--system span[style*="color: rgb(205, 10, 55)"] {
+      color: #f0f011 !important;
+    }
+    html.colorMode--system [style*="color: rgb(233, 22, 70)"],
+    html.colorMode--system [style*="color: rgb(235, 36, 82)"] {
+      color: #f0f011 !important;
+    }
+    html.colorMode--system button[style*="background-color: rgb(244, 11, 66)"],
+    html.colorMode--system button[style*="background-color: rgb(246, 60, 103)"],
+    html.colorMode--system button[style*="background-color: rgb(245, 41, 88)"],
+    html.colorMode--system button[style*="background-color: rgb(247, 84, 122)"],
+    html.colorMode--system button[style*="background-color: rgb(205, 10, 55)"] {
+      background-color: #f0f011 !important;
+    }
+    html.colorMode--system button[style*="background-color: rgb(244, 11, 66)"]:hover,
+    html.colorMode--system button[style*="background-color: rgb(246, 60, 103)"]:hover,
+    html.colorMode--system button[style*="background-color: rgb(245, 41, 88)"]:hover,
+    html.colorMode--system button[style*="background-color: rgb(247, 84, 122)"]:hover,
+    html.colorMode--system button[style*="background-color: rgb(205, 10, 55)"]:hover {
+      background-color: rgba(240, 240, 17, 0.7) !important;
+    }
+    html.colorMode--system button[style*="background-color: rgb(244, 11, 66)"] > div,
+    html.colorMode--system button[style*="background-color: rgb(246, 60, 103)"] > div,
+    html.colorMode--system button[style*="background-color: rgb(245, 41, 88)"] > div,
+    html.colorMode--system button[style*="background-color: rgb(247, 84, 122)"] > div,
+    html.colorMode--system button[style*="background-color: rgb(205, 10, 55)"] > div {
+      color: #f0f003 !important;
+    }
+    html.colorMode--system [style^="background-color: rgb(79, 3, 20)"] {
+      background-color: #f0f011 !important;
+    }
+    html.colorMode--system path[fill="#fba2b2"] {
+      fill: #f0f003;
+    }
+    html.colorMode--system [style*="background-color: rgb(255, 255, 255)"],
+    html.colorMode--system [style*="background-color: rgb(0, 0, 0)"],
+    html.colorMode--system [style*="background-color: rgb(21, 29, 40)"] {
+      background-color: #f0f001 !important;
+    }
+    html.colorMode--system [style*="background-color: rgb(17, 24, 34)"],
+    html.colorMode--system [style*="background-color: rgb(28, 39, 54)"] {
+      background-color: #f0f002 !important;
+    }
+    html.colorMode--system [style*="background-color: rgb(25, 34, 46)"],
+    html.colorMode--system [style*="background-color: rgb(34, 46, 63)"] {
+      background-color: #f0f003 !important;
+    }
+    html.colorMode--system [style*="background-color: rgb(0, 25, 51)"] {
+      background-color: rgba(240, 240, 27, 0.3) !important;
+    }
+    html.colorMode--system circle[style^="stroke: rgb(25, 118, 210)"] {
+      stroke: #f0f01b !important;
+    }
+    html.colorMode--system button[style*="background-color: rgb(0, 106, 255)"],
+    html.colorMode--system button[style*="background-color: rgb(66, 145, 255)"],
+    html.colorMode--system button[style*="background-color: rgb(15, 115, 255)"],
+    html.colorMode--system button[style*="background-color: rgb(77, 151, 255)"] {
+      background-color: #f0f01b !important;
+    }
+    html.colorMode--system button[style*="background-color: rgb(0, 106, 255)"]:hover,
+    html.colorMode--system button[style*="background-color: rgb(66, 145, 255)"]:hover,
+    html.colorMode--system button[style*="background-color: rgb(15, 115, 255)"]:hover,
+    html.colorMode--system button[style*="background-color: rgb(77, 151, 255)"]:hover {
+      background-color: rgba(240, 240, 27, 0.7) !important;
+    }
+    html.colorMode--system button[style*="background-color: rgb(0, 106, 255)"] > div,
+    html.colorMode--system button[style*="background-color: rgb(66, 145, 255)"] > div,
+    html.colorMode--system button[style*="background-color: rgb(15, 115, 255)"] > div,
+    html.colorMode--system button[style*="background-color: rgb(77, 151, 255)"] > div {
+      color: #f0f003 !important;
+    }
+    html.colorMode--system button[style*="background-color: rgb(0, 106, 255)"] svg > path,
+    html.colorMode--system button[style*="background-color: rgb(66, 145, 255)"] svg > path,
+    html.colorMode--system button[style*="background-color: rgb(15, 115, 255)"] svg > path,
+    html.colorMode--system button[style*="background-color: rgb(77, 151, 255)"] svg > path {
+      fill: #f0f003 !important;
+    }
+    html.colorMode--system .css-175oi2r {
+      border-color: #f0f00c !important;
+    }
+    html.colorMode--system .css-175oi2r[style*="border-bottom-color: rgb(0, 106, 255)"] {
+      border-bottom-color: #f0f01b !important;
+    }
+    html.colorMode--system .r-oucylx {
+      border-bottom-color: #f0f001 !important;
+    }
+    html.colorMode--system [style*="border-color: rgb(255, 255, 255)"] {
+      border-color: #f0f01b !important;
+    }
+    html.colorMode--system [style="background-color: rgb(38, 39, 45)"] {
+      background-color: #f0f003 !important;
+    }
+    html.colorMode--system .r-yovm8p {
+      color: #f0f019;
+    }
+    html.colorMode--system .r-wuyfte {
+      background-color: #f0f019;
+    }
+    html.colorMode--system [style*="color: rgb(236, 72, 104); border-color: rgb(209, 16, 67)"] {
+      color: #f0f011 !important;
+      border-color: #f0f011 !important;
+    }
+    html.colorMode--system .r-1521r3q {
+      color: #f0f008;
+    }
+    html.colorMode--system [data-testid="drawer"] {
+      background-color: #f0f001;
+    }
+    html.colorMode--system .r-m7buhn {
+      background-color: #f0f019;
+    }
+    html.colorMode--system [data-testid="sendReportBtn"],
+    html.colorMode--system [data-testid="composerPublishBtn"],
+    html.colorMode--system [data-testid="editProfileSaveBtn"] {
+      background: unset !important;
+      /* "save changes" button in edit profile */
+      /* fix contrast issues */
+    }
+    html.colorMode--system [data-testid="sendReportBtn"] > div[style*="background-image: linear-gradient(94.0544deg, rgb(90, 113, 250), rgb(0, 133, 255))"],
+    html.colorMode--system [data-testid="composerPublishBtn"] > div[style*="background-image: linear-gradient(94.0544deg, rgb(90, 113, 250), rgb(0, 133, 255))"],
+    html.colorMode--system [data-testid="editProfileSaveBtn"] > div[style*="background-image: linear-gradient(94.0544deg, rgb(90, 113, 250), rgb(0, 133, 255))"] {
+      background: #f0f01b !important;
+    }
+    html.colorMode--system [data-testid="sendReportBtn"] > div,
+    html.colorMode--system [data-testid="composerPublishBtn"] > div,
+    html.colorMode--system [data-testid="editProfileSaveBtn"] > div,
+    html.colorMode--system [data-testid="sendReportBtn"] > div > div,
+    html.colorMode--system [data-testid="composerPublishBtn"] > div > div,
+    html.colorMode--system [data-testid="editProfileSaveBtn"] > div > div {
+      color: #f0f003 !important;
+    }
+    html.colorMode--system [data-testid="saveBtn"] > div[style*="background-image: linear-gradient"] {
+      background: unset !important;
+      background-color: #f0f01b !important;
+    }
+    html.colorMode--system [data-testid="saveBtn"] > div[style*="background-image: linear-gradient"] > div {
+      color: #f0f003 !important;
+    }
+    html.colorMode--system .r-17c3jg3:has(> div[dir="auto"]) {
+      background-color: #f0f003 !important;
+    }
+    html.colorMode--system .r-17c3jg3:has(> div[dir="auto"]) .r-jwli3a {
+      color: #f0f004 !important;
+    }
+    html.colorMode--system .r-17c3jg3:has(> div[dir="auto"]) > svg > path {
+      fill: #f0f004 !important;
+    }
+    html.colorMode--system [style^="background-color: rgb(209, 16, 67)"] {
+      background-color: #f0f011 !important;
+    }
+    html.colorMode--system [style*="border-color: rgb(35, 46, 62)"],
+    html.colorMode--system [style*="border-color: rgb(44, 58, 78)"] {
+      border-color: #f0f00a !important;
+    }
+    html.colorMode--system [data-testid="composeFAB"] > div {
+      background: unset !important;
+      background-color: #f0f01b !important;
+    }
+    html.colorMode--system [data-testid="composeFAB"] > div .r-jwli3a {
+      color: #f0f003 !important;
+    }
+    html.colorMode--system div[style*="color: rgb(66, 145, 255)"],
+    html.colorMode--system div[style*="color: rgb(77, 151, 255)"],
+    html.colorMode--system div[style*="color: rgb(0, 89, 214)"] {
+      color: #f0f01b !important;
+    }
+    html.colorMode--system .ProseMirror,
+    html.colorMode--system .ProseMirror-dark {
+      color: #f0f004;
+    }
+    html.colorMode--system [style*="background-color: rgb(0, 40, 97)"],
+    html.colorMode--system [style*="background-color: rgb(18, 52, 100)"],
+    html.colorMode--system [style*="background-color: rgb(204, 225, 255)"],
+    html.colorMode--system [style*="background-color: rgb(14, 73, 137)"] {
+      background-color: rgba(240, 240, 27, 0.3) !important;
+    }
+    html.colorMode--system button[style*="background-color: rgb(255, 255, 255)"] {
+      background-color: #f0f004 !important;
+    }
+    html.colorMode--system [style*="color: rgb(0, 0, 0)"] {
+      color: #f0f003 !important;
+    }
+    html.colorMode--system path[fill="#000000"] {
+      fill: #f0f003;
+    }
+    html.colorMode--system button[data-testid="suggestedFollowsBtn"][style*="background-color: rgb(255, 255, 255)"] > svg > path {
+      fill: #f0f001 !important;
+    }
+    html.colorMode--system button > div > div[style~="color: rgb(0, 0, 0)"] {
+      color: #f0f001 !important;
+    }
+    html.colorMode--system [role="search"],
+    html.colorMode--system [data-testid="confirmCodeInput"] {
+      --placeholderTextColor: #f0f005 !important;
+    }
+    html.colorMode--system svg[style^="color: rgb(102, 123, 153"],
+    html.colorMode--system svg[style^="color: rgb(111, 131, 159)"] {
+      color: #f0f005 !important;
+    }
+    html.colorMode--system path[fill="#FFFFFF"] {
+      fill: #f0f004;
+    }
+    html.colorMode--system path[fill="#667B99"],
+    html.colorMode--system path[fill="#6F839F"],
+    html.colorMode--system [style*="color: rgb(111, 131, 159)"],
+    html.colorMode--system [style*="color: rgb(111, 131, 159)"] {
+      color: #f0f005 !important;
+      fill: #f0f005 !important;
+    }
+    html.colorMode--system path[fill="#8798B0"],
+    html.colorMode--system path[fill="#8D9DB4"] {
+      fill: #f0f005;
+    }
+    html.colorMode--system div[style*="background-color: rgb(191, 225, 255)"],
+    html.colorMode--system div[style*="background-color: rgb(1, 37, 97)"] {
+      background-color: rgba(240, 240, 27, 0.3) !important;
+    }
+    html.colorMode--system div[style*="background-color: rgb(191, 225, 255)"] > svg > path[fill="#52acfe"],
+    html.colorMode--system div[style*="background-color: rgb(1, 37, 97)"] > svg > path[fill="#52acfe"] {
+      fill: #f0f01b;
+    }
+    html.colorMode--system .r-84gixx,
+    html.colorMode--system .r-1i89l9k,
+    html.colorMode--system div[style*="color: rgb(236, 72, 153)"],
+    html.colorMode--system button[data-testid="toggleLikeBtn"] > svg:has(path[fill^="hsl(346,"]) {
+      color: #f0f011 !important;
+    }
+    html.colorMode--system .r-84gixx > path,
+    html.colorMode--system .r-1i89l9k > path,
+    html.colorMode--system div[style*="color: rgb(236, 72, 153)"] > path,
+    html.colorMode--system button[data-testid="toggleLikeBtn"] > svg:has(path[fill^="hsl(346,"]) > path {
+      fill: #f0f011 !important;
+    }
+    html.colorMode--system .r-5ld2xk,
+    html.colorMode--system [style*="color: rgb(92, 239, 170)"] {
+      color: #f0f015 !important;
+    }
+    html.colorMode--system .r-5ld2xk > path,
+    html.colorMode--system [style*="color: rgb(92, 239, 170)"] > path {
+      fill: #f0f015 !important;
+    }
+    html.colorMode--system path[fill="#006AFF"],
+    html.colorMode--system path[fill="#0F73FF"] {
+      fill: #f0f01b;
+    }
+    html.colorMode--system path[fill="hsl(211, 24%, 43.6%)"],
+    html.colorMode--system path[fill="hsl(211, 24%, 34.2%)"] {
+      fill: #f0f006;
+    }
+    html.colorMode--system [data-testid="continueBtn"] {
+      background-color: #f0f01b !important;
+    }
+    html.colorMode--system [data-testid="continueBtn"] > div > div {
+      color: #f0f001 !important;
+    }
+    html.colorMode--system [data-testid="continueBtn"] > div > svg > path {
+      fill: #f0f001 !important;
+    }
+    html.colorMode--system .mention {
+      color: #f0f01b;
+    }
+    html.colorMode--system div[style*="background-color: rgb(0, 17, 36)"],
+    html.colorMode--system div[style*="background-color: rgb(21, 41, 63)"],
+    html.colorMode--system div[style*="background-color: rgb(240, 247, 255)"],
+    html.colorMode--system a[style*="background-color: rgb(0, 17, 36)"],
+    html.colorMode--system a[style*="background-color: rgb(21, 41, 63)"],
+    html.colorMode--system a[style*="background-color: rgb(240, 247, 255)"] {
+      background-color: rgba(240, 240, 27, 0.3) !important;
+    }
+    html.colorMode--system div[style*="background-color: rgb(0, 17, 36)"] .css-175oi2r:not([role="checkbox"] *),
+    html.colorMode--system div[style*="background-color: rgb(21, 41, 63)"] .css-175oi2r:not([role="checkbox"] *),
+    html.colorMode--system div[style*="background-color: rgb(240, 247, 255)"] .css-175oi2r:not([role="checkbox"] *),
+    html.colorMode--system a[style*="background-color: rgb(0, 17, 36)"] .css-175oi2r:not([role="checkbox"] *),
+    html.colorMode--system a[style*="background-color: rgb(21, 41, 63)"] .css-175oi2r:not([role="checkbox"] *),
+    html.colorMode--system a[style*="background-color: rgb(240, 247, 255)"] .css-175oi2r:not([role="checkbox"] *) {
+      background-color: transparent !important;
+    }
+    html.colorMode--system button[style*="background-color: rgb(0, 133, 255)"] {
+      background-color: #f0f01b !important;
+    }
+    html.colorMode--system button[style*="background-color: rgb(0, 133, 255)"] > div > div {
+      color: #f0f001 !important;
+    }
+    html.colorMode--system [style*="border-color: rgb(49, 63, 84)"],
+    html.colorMode--system [style*="border-color: rgb(57, 73, 96)"] {
+      border-color: #f0f00b !important;
+    }
+    html.colorMode--system div[style*="color: rgb(82, 172, 254)"] {
+      color: #f0f01b !important;
+    }
+    html.colorMode--system div[style*="color: rgb(141, 142, 150)"] {
+      color: #f0f006 !important;
+    }
+    html.colorMode--system .r-w7hjet {
+      background-color: #f0f011;
+    }
+    html.colorMode--system circle[fill="#20BC07"] {
+      fill: #f0f015;
+    }
+    html.colorMode--system [style*="background-color: rgb(185, 185, 193)"] {
+      background-color: #f0f007 !important;
+    }
+    html.colorMode--system .r-kdyh1x[style*="background-color: rgb(20, 27, 35);"],
+    html.colorMode--system .r-cpet4d[style*="background-color: rgb(20, 27, 35);"] {
+      background-color: #f0f00c !important;
+    }
+    html.colorMode--system div[style*="background-color: rgb(35, 46, 62)"].r-m5arl1 {
+      background: #f0f00b !important;
+    }
+    html.colorMode--system path[stroke="#006AFF"],
+    html.colorMode--system path[stroke="#0F73FF"],
+    html.colorMode--system path[stroke="#006AFF"] {
+      stroke: #f0f01b !important;
+    }
+    html.colorMode--system path[stroke="#232E3E"],
+    html.colorMode--system path[stroke="#2C3A4E"],
+    html.colorMode--system path[stroke="#DCE2EA"] {
+      stroke: #f0f00b !important;
+    }
+    html.colorMode--system button[style*="border-color: rgb(35, 46, 62); background-color: rgb(0, 30, 71)"],
+    html.colorMode--system button[style*="border-color: rgb(44, 58, 78); background-color: rgb(18, 41, 73)"],
+    html.colorMode--system button[style*="border-color: rgb(220, 226, 234); background-color: rgb(229, 240, 255)"] {
+      background-color: #f0f00c !important;
+      border-color: #f0f009 !important;
+    }
+    html.colorMode--system button[disabled] > svg > path {
+      fill: #f0f009;
+    }
+    html.colorMode--system div[style*="border-color: rgb(46, 64, 82)"] {
+      border-color: #f0f00b !important;
+    }
+    html.colorMode--system div[style*="border-color: rgb(0, 106, 255)"],
+    html.colorMode--system div[style*="border-color: rgb(15, 115, 255)"] {
+      border-color: #f0f01b !important;
+    }
+    html.colorMode--system [style*="border-color: rgb(74, 97, 121)"] {
+      border-color: #f0f00a !important;
+    }
+    html.colorMode--system [style*="background-color: rgb(142, 9, 40)"] {
+      background-color: #f0f011 !important;
+    }
+    html.colorMode--system [style*="background-color: rgb(142, 9, 40)"] div {
+      color: #f0f003 !important;
+    }
+    html.colorMode--system [style*="background-color: rgb(142, 9, 40)"] svg > path {
+      fill: #f0f003;
+    }
+    html.colorMode--system div[style*="background-color: rgb(21, 52, 85)"] {
+      background-color: #f0f00c !important;
+    }
+    html.colorMode--system div[style*="border-color: rgb(76, 162, 254);"] {
+      border-color: #f0f01b !important;
+    }
+    html.colorMode--system div[style*="background-color: rgb(18, 52, 100)"] {
+      background-color: rgba(240, 240, 27, 0.4) !important;
+    }
+    html.colorMode--system div[style*="background-color: rgb(91, 119, 149)"] {
+      background-color: #f0f00a !important;
+    }
+    html.colorMode--system div[style*="border-color: rgb(120, 142, 165)"] {
+      border-color: #f0f008 !important;
+    }
+  }
+  html.theme--light {
+    color-scheme: light;
+    background-color: #f0f001;
+    --text: #f0f004;
+    --background: #f0f001;
+    --backgroundLight: #f0f001;
+    /* generic text */
+    /* some background color of follow button + hover */
+    /* secondary text [contrast_700] */
+    /* generic blue inline (e.g. link text, etc) [primary_500] */
+    /* generic blue inline underline (links) [primary_500] */
+    /* generic blue inline bg color (e.g. notification count) [primary_500] */
+    /* sending/pending/failed direct message */
+    /* a lot of blue things (buttons etc) */
+    /* subscribe to labeler button */
+    /* direct message "failed to send" text */
+    /* red button text (delete my account) [negative_500] */
+    /* red button (delete, etc) */
+    /* delete account button */
+    /* generic background color */
+    /* secondary background color + sidebar button hover [contrast_25] */
+    /* secondary background color (when active?) (e.g. search bar, hovering some buttons like cancel) */
+    /* some sort of tertiary background color with a slight accent */
+    /* loading circle */
+    /* wide site: new post button (w text) */
+    /* borders */
+    /* fix selected tab bottom border issue caused by selector above */
+    /* fixes the bottom border on tabs (timeline) having a darker color */
+    /* current selected tab (acc page) !! KEEP THIS BELOW ABOVE DEFINITION !! */
+    /* settings highlight thing */
+    /* thin site: bluesky text */
+    /* empty profile banner */
+    /* "invalid handle" warning */
+    /* end of feed text */
+    /* mobile side drawer */
+    /* feedback */
+    /* save, report, post modal button */
+    /* draft "Discard" button */
+    /* Discard draft modal border, bunch of other borders around the app [contrast_100] */
+    /* the round gradient post button in the bottom right when the page is thinner than usual */
+    /* blue text only button (e.g. cancel post button) */
+    /* text color when writing a post */
+    /* some button background color (when hovering) [primary_100] */
+    /* several white buttons */
+    /* the white buttons text */
+    /* replace dark fill icons with crust ones */
+    /* fixes a contrast issue when the suggested follows button is enabled (very ugly selector) */
+    /* text inside most buttons */
+    /* search bar text */
+    /* search bar icon (this doesn't actually apply because path fill. keeping anyways) [contrast_500] */
+    /* small icons */
+    /* more gray small icons (e.g. search bar icon, icons below posts [contrast_500] */
+    /* settings button at the top of the timeline, hashtag button/icon at top of timeline [contrast_600] */
+    /* x invite codes available icon */
+    /* heart/like */
+    /* repost */
+    /* saved icon on post + trending icon */
+    /* tiny people icon on post view ("Everybody can reply") */
+    /* onboarding: continue/next button */
+    /* pretty self explanatory, user mentions in the post create modal */
+    /* mentions in the notification tab (highlighted notifications) */
+    /* generic blue background color inline (used for buttons in notifications tab) */
+    /* contrast fix for above */
+    /* miscellaneous lines around the app [contrast_200] */
+    /* other button in notifications tab, inner text */
+    /* "No notifications yet!" text in the notifications tab */
+    /* login: wrong password highlight */
+    /* please verify your email popup (green checkmark) */
+    /* toggle circle */
+    /* skeletons */
+    /* thread lines */
+    /* character limit progress circle [primary_500] */
+    /* bg circle [contrast_100] */
+    /* load new posts button (border: [contrast_100]; bg: [primary_50]) */
+    /* any button that's disabled (we should start using broader overrides) */
+    /* sitewide text inputs */
+    /* the divs are styled separately from the input areas */
+    /* search bar [primary_500] */
+    /* image preview borders across app */
+    /* search tab trending buttons */
+    /* TODO: new which is green but I can't get the right class cause nothing on bsky is a new trending topic atm */
+    /* round icon backgrounds (e.g. feeds) */
+    /* pill toggle button styles (e.g. account activity notifications) */
+    /* active, hover */
+    /* inactive, circle in pill */
+    /* inactive, hover */
+  }
+  html.theme--light ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  html.theme--light input::placeholder,
+  html.theme--light textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  html.theme--light [style*="color: rgb(255, 255, 255)"],
+  html.theme--light [style*="color: rgb(241, 243, 245)"] {
+    color: #f0f001 !important;
+  }
+  html.theme--light [style*="background-color: rgb(241, 243, 245)"] {
+    background-color: #f0f003 !important;
+  }
+  html.theme--light [style*="color: rgb(11, 15, 20)"] {
+    color: #f0f004 !important;
+  }
+  html.theme--light [style*="rgb(165, 178, 197)"],
+  html.theme--light [style*="rgb(171, 184, 201)"],
+  html.theme--light [style*="rgb(84, 110, 138)"],
+  html.theme--light [style*="rgb(66, 87, 108)"] {
+    color: #f0f005 !important;
+  }
+  html.theme--light div[style*="background-color: rgb(197, 207, 217)"],
+  html.theme--light div[style*="background-color: rgb(201, 210, 219)"],
+  html.theme--light div[style*="background-color: rgb(46, 63, 81)"] {
+    background-color: #f0f004 !important;
+  }
+  html.theme--light div[style*="background-color: rgb(197, 207, 217)"] > div,
+  html.theme--light div[style*="background-color: rgb(201, 210, 219)"] > div,
+  html.theme--light div[style*="background-color: rgb(46, 63, 81)"] > div {
+    color: #f0f003 !important;
+  }
+  html.theme--light [style*="color: rgb(0, 106, 255)"],
+  html.theme--light [style*="color: rgb(15, 115, 255)"] {
+    color: #f0f01b !important;
+  }
+  html.theme--light [style*="text-decoration-color: rgb(0, 106, 255)"],
+  html.theme--light [style*="text-decoration-color: rgb(15, 115, 255)"] {
+    text-decoration-color: #f0f01b !important;
+  }
+  html.theme--light [style*="background-color: rgb(0, 106, 255)"],
+  html.theme--light [style*="background-color: rgb(15, 115, 255)"] {
+    background-color: #f0f01b !important;
+    /* notification count contrast fix, also chat message contrast fix (> div) */
+    /* icon color fix */
+  }
+  html.theme--light [style*="background-color: rgb(0, 106, 255)"][style*="color: rgb(241, 243, 245)"],
+  html.theme--light [style*="background-color: rgb(15, 115, 255)"][style*="color: rgb(241, 243, 245)"],
+  html.theme--light [style*="background-color: rgb(0, 106, 255)"][style*="color: rgb(255, 255, 255)"],
+  html.theme--light [style*="background-color: rgb(15, 115, 255)"][style*="color: rgb(255, 255, 255)"],
+  html.theme--light [style*="background-color: rgb(0, 106, 255)"] > div,
+  html.theme--light [style*="background-color: rgb(15, 115, 255)"] > div {
+    color: #f0f003 !important;
+  }
+  html.theme--light [style*="background-color: rgb(0, 106, 255)"] path[fill="#ffffff"],
+  html.theme--light [style*="background-color: rgb(15, 115, 255)"] path[fill="#ffffff"],
+  html.theme--light [style*="background-color: rgb(0, 106, 255)"] path[fill="hsl(211, 20%, 95.3%)"],
+  html.theme--light [style*="background-color: rgb(15, 115, 255)"] path[fill="hsl(211, 20%, 95.3%)"] {
+    fill: #f0f003 !important;
+  }
+  html.theme--light [style*="background-color: rgb(1, 64, 132)"] {
+    background-color: rgba(240, 240, 27, 0.3) !important;
+  }
+  html.theme--light .r-wzwllv,
+  html.theme--light div[style*="background-color: rgb(0, 133, 255)"] {
+    background-color: #f0f01b !important;
+    /* notification count contrast fix, also chat message contrast fix (> div) */
+  }
+  html.theme--light .r-wzwllv[style*="color: rgb(241, 243, 245)"],
+  html.theme--light div[style*="background-color: rgb(0, 133, 255)"][style*="color: rgb(241, 243, 245)"],
+  html.theme--light .r-wzwllv > div,
+  html.theme--light div[style*="background-color: rgb(0, 133, 255)"] > div {
+    color: #f0f003 !important;
+  }
+  html.theme--light button[data-testid="toggleSubscribeBtn"] > div {
+    background-color: #f0f010 !important;
+  }
+  html.theme--light button[data-testid="toggleSubscribeBtn"] > div > div {
+    color: #f0f003 !important;
+  }
+  html.theme--light span[style*="color: rgb(205, 10, 55)"] {
+    color: #f0f011 !important;
+  }
+  html.theme--light [style*="color: rgb(233, 22, 70)"],
+  html.theme--light [style*="color: rgb(235, 36, 82)"] {
+    color: #f0f011 !important;
+  }
+  html.theme--light button[style*="background-color: rgb(244, 11, 66)"],
+  html.theme--light button[style*="background-color: rgb(246, 60, 103)"],
+  html.theme--light button[style*="background-color: rgb(245, 41, 88)"],
+  html.theme--light button[style*="background-color: rgb(247, 84, 122)"],
+  html.theme--light button[style*="background-color: rgb(205, 10, 55)"] {
+    background-color: #f0f011 !important;
+  }
+  html.theme--light button[style*="background-color: rgb(244, 11, 66)"]:hover,
+  html.theme--light button[style*="background-color: rgb(246, 60, 103)"]:hover,
+  html.theme--light button[style*="background-color: rgb(245, 41, 88)"]:hover,
+  html.theme--light button[style*="background-color: rgb(247, 84, 122)"]:hover,
+  html.theme--light button[style*="background-color: rgb(205, 10, 55)"]:hover {
+    background-color: rgba(240, 240, 17, 0.7) !important;
+  }
+  html.theme--light button[style*="background-color: rgb(244, 11, 66)"] > div,
+  html.theme--light button[style*="background-color: rgb(246, 60, 103)"] > div,
+  html.theme--light button[style*="background-color: rgb(245, 41, 88)"] > div,
+  html.theme--light button[style*="background-color: rgb(247, 84, 122)"] > div,
+  html.theme--light button[style*="background-color: rgb(205, 10, 55)"] > div {
+    color: #f0f003 !important;
+  }
+  html.theme--light [style^="background-color: rgb(79, 3, 20)"] {
+    background-color: #f0f011 !important;
+  }
+  html.theme--light path[fill="#fba2b2"] {
+    fill: #f0f003;
+  }
+  html.theme--light [style*="background-color: rgb(255, 255, 255)"],
+  html.theme--light [style*="background-color: rgb(0, 0, 0)"],
+  html.theme--light [style*="background-color: rgb(21, 29, 40)"] {
+    background-color: #f0f001 !important;
+    /* fix button colors in latte */
+  }
+  html.theme--light [style*="background-color: rgb(255, 255, 255)"] [style*="background-color: rgb(0, 0, 0)"],
+  html.theme--light [style*="background-color: rgb(0, 0, 0)"] [style*="background-color: rgb(0, 0, 0)"],
+  html.theme--light [style*="background-color: rgb(21, 29, 40)"] [style*="background-color: rgb(0, 0, 0)"] {
+    background-color: #f0f004 !important;
+  }
+  html.theme--light [style*="background-color: rgb(17, 24, 34)"],
+  html.theme--light [style*="background-color: rgb(28, 39, 54)"] {
+    background-color: #f0f002 !important;
+  }
+  html.theme--light [style*="background-color: rgb(25, 34, 46)"],
+  html.theme--light [style*="background-color: rgb(34, 46, 63)"] {
+    background-color: #f0f003 !important;
+  }
+  html.theme--light [style*="background-color: rgb(0, 25, 51)"] {
+    background-color: rgba(240, 240, 27, 0.3) !important;
+  }
+  html.theme--light circle[style^="stroke: rgb(25, 118, 210)"] {
+    stroke: #f0f01b !important;
+  }
+  html.theme--light button[style*="background-color: rgb(0, 106, 255)"],
+  html.theme--light button[style*="background-color: rgb(66, 145, 255)"],
+  html.theme--light button[style*="background-color: rgb(15, 115, 255)"],
+  html.theme--light button[style*="background-color: rgb(77, 151, 255)"] {
+    background-color: #f0f01b !important;
+  }
+  html.theme--light button[style*="background-color: rgb(0, 106, 255)"]:hover,
+  html.theme--light button[style*="background-color: rgb(66, 145, 255)"]:hover,
+  html.theme--light button[style*="background-color: rgb(15, 115, 255)"]:hover,
+  html.theme--light button[style*="background-color: rgb(77, 151, 255)"]:hover {
+    background-color: rgba(240, 240, 27, 0.7) !important;
+  }
+  html.theme--light button[style*="background-color: rgb(0, 106, 255)"] > div,
+  html.theme--light button[style*="background-color: rgb(66, 145, 255)"] > div,
+  html.theme--light button[style*="background-color: rgb(15, 115, 255)"] > div,
+  html.theme--light button[style*="background-color: rgb(77, 151, 255)"] > div {
+    color: #f0f003 !important;
+  }
+  html.theme--light button[style*="background-color: rgb(0, 106, 255)"] svg > path,
+  html.theme--light button[style*="background-color: rgb(66, 145, 255)"] svg > path,
+  html.theme--light button[style*="background-color: rgb(15, 115, 255)"] svg > path,
+  html.theme--light button[style*="background-color: rgb(77, 151, 255)"] svg > path {
+    fill: #f0f003 !important;
+  }
+  html.theme--light .css-175oi2r {
+    border-color: #f0f00c !important;
+  }
+  html.theme--light .css-175oi2r[style*="border-bottom-color: rgb(0, 106, 255)"] {
+    border-bottom-color: #f0f01b !important;
+  }
+  html.theme--light .r-oucylx {
+    border-bottom-color: #f0f001 !important;
+  }
+  html.theme--light [style*="border-color: rgb(255, 255, 255)"] {
+    border-color: #f0f01b !important;
+  }
+  html.theme--light [style="background-color: rgb(38, 39, 45)"] {
+    background-color: #f0f003 !important;
+  }
+  html.theme--light .r-yovm8p {
+    color: #f0f019;
+  }
+  html.theme--light .r-wuyfte {
+    background-color: #f0f019;
+  }
+  html.theme--light [style*="color: rgb(236, 72, 104); border-color: rgb(209, 16, 67)"] {
+    color: #f0f011 !important;
+    border-color: #f0f011 !important;
+  }
+  html.theme--light .r-1521r3q {
+    color: #f0f008;
+  }
+  html.theme--light [data-testid="drawer"] {
+    background-color: #f0f001;
+  }
+  html.theme--light .r-m7buhn {
+    background-color: #f0f019;
+  }
+  html.theme--light [data-testid="sendReportBtn"],
+  html.theme--light [data-testid="composerPublishBtn"],
+  html.theme--light [data-testid="editProfileSaveBtn"] {
+    background: unset !important;
+    /* "save changes" button in edit profile */
+    /* fix contrast issues */
+  }
+  html.theme--light [data-testid="sendReportBtn"] > div[style*="background-image: linear-gradient(94.0544deg, rgb(90, 113, 250), rgb(0, 133, 255))"],
+  html.theme--light [data-testid="composerPublishBtn"] > div[style*="background-image: linear-gradient(94.0544deg, rgb(90, 113, 250), rgb(0, 133, 255))"],
+  html.theme--light [data-testid="editProfileSaveBtn"] > div[style*="background-image: linear-gradient(94.0544deg, rgb(90, 113, 250), rgb(0, 133, 255))"] {
+    background: #f0f01b !important;
+  }
+  html.theme--light [data-testid="sendReportBtn"] > div,
+  html.theme--light [data-testid="composerPublishBtn"] > div,
+  html.theme--light [data-testid="editProfileSaveBtn"] > div,
+  html.theme--light [data-testid="sendReportBtn"] > div > div,
+  html.theme--light [data-testid="composerPublishBtn"] > div > div,
+  html.theme--light [data-testid="editProfileSaveBtn"] > div > div {
+    color: #f0f003 !important;
+  }
+  html.theme--light [data-testid="saveBtn"] > div[style*="background-image: linear-gradient"] {
+    background: unset !important;
+    background-color: #f0f01b !important;
+  }
+  html.theme--light [data-testid="saveBtn"] > div[style*="background-image: linear-gradient"] > div {
+    color: #f0f003 !important;
+  }
+  html.theme--light .r-17c3jg3:has(> div[dir="auto"]) {
+    background-color: #f0f003 !important;
+  }
+  html.theme--light .r-17c3jg3:has(> div[dir="auto"]) .r-jwli3a {
+    color: #f0f004 !important;
+  }
+  html.theme--light .r-17c3jg3:has(> div[dir="auto"]) > svg > path {
+    fill: #f0f004 !important;
+  }
+  html.theme--light [style^="background-color: rgb(209, 16, 67)"] {
+    background-color: #f0f011 !important;
+  }
+  html.theme--light [style*="border-color: rgb(35, 46, 62)"],
+  html.theme--light [style*="border-color: rgb(44, 58, 78)"] {
+    border-color: #f0f00a !important;
+  }
+  html.theme--light [data-testid="composeFAB"] > div {
+    background: unset !important;
+    background-color: #f0f01b !important;
+  }
+  html.theme--light [data-testid="composeFAB"] > div .r-jwli3a {
+    color: #f0f003 !important;
+  }
+  html.theme--light div[style*="color: rgb(66, 145, 255)"],
+  html.theme--light div[style*="color: rgb(77, 151, 255)"],
+  html.theme--light div[style*="color: rgb(0, 89, 214)"] {
+    color: #f0f01b !important;
+  }
+  html.theme--light .ProseMirror,
+  html.theme--light .ProseMirror-dark {
+    color: #f0f004;
+  }
+  html.theme--light [style*="background-color: rgb(0, 40, 97)"],
+  html.theme--light [style*="background-color: rgb(18, 52, 100)"],
+  html.theme--light [style*="background-color: rgb(204, 225, 255)"],
+  html.theme--light [style*="background-color: rgb(14, 73, 137)"] {
+    background-color: rgba(240, 240, 27, 0.3) !important;
+  }
+  html.theme--light [style*="color: rgb(0, 0, 0)"] {
+    color: #f0f004 !important;
+  }
+  html.theme--light path[fill="#000000"] {
+    fill: #f0f004;
+  }
+  html.theme--light button[data-testid="suggestedFollowsBtn"][style*="background-color: rgb(255, 255, 255)"] > svg > path {
+    fill: #f0f001 !important;
+  }
+  html.theme--light button > div > div[style~="color: rgb(0, 0, 0)"] {
+    color: #f0f001 !important;
+  }
+  html.theme--light [role="search"],
+  html.theme--light [data-testid="confirmCodeInput"] {
+    --placeholderTextColor: #f0f005 !important;
+  }
+  html.theme--light svg[style^="color: rgb(102, 123, 153"],
+  html.theme--light svg[style^="color: rgb(111, 131, 159)"] {
+    color: #f0f005 !important;
+  }
+  html.theme--light path[fill="#FFFFFF"] {
+    fill: #f0f004;
+    fill: #f0f001;
+  }
+  html.theme--light path[fill="#667B99"],
+  html.theme--light path[fill="#6F839F"],
+  html.theme--light [style*="color: rgb(111, 131, 159)"],
+  html.theme--light [style*="color: rgb(111, 131, 159)"] {
+    color: #f0f005 !important;
+    fill: #f0f005 !important;
+  }
+  html.theme--light path[fill="#8798B0"],
+  html.theme--light path[fill="#8D9DB4"] {
+    fill: #f0f005;
+  }
+  html.theme--light div[style*="background-color: rgb(191, 225, 255)"],
+  html.theme--light div[style*="background-color: rgb(1, 37, 97)"] {
+    background-color: rgba(240, 240, 27, 0.3) !important;
+  }
+  html.theme--light div[style*="background-color: rgb(191, 225, 255)"] > svg > path[fill="#52acfe"],
+  html.theme--light div[style*="background-color: rgb(1, 37, 97)"] > svg > path[fill="#52acfe"] {
+    fill: #f0f01b;
+  }
+  html.theme--light .r-84gixx,
+  html.theme--light .r-1i89l9k,
+  html.theme--light div[style*="color: rgb(236, 72, 153)"],
+  html.theme--light button[data-testid="toggleLikeBtn"] > svg:has(path[fill^="hsl(346,"]) {
+    color: #f0f011 !important;
+  }
+  html.theme--light .r-84gixx > path,
+  html.theme--light .r-1i89l9k > path,
+  html.theme--light div[style*="color: rgb(236, 72, 153)"] > path,
+  html.theme--light button[data-testid="toggleLikeBtn"] > svg:has(path[fill^="hsl(346,"]) > path {
+    fill: #f0f011 !important;
+  }
+  html.theme--light .r-5ld2xk,
+  html.theme--light [style*="color: rgb(92, 239, 170)"] {
+    color: #f0f015 !important;
+  }
+  html.theme--light .r-5ld2xk > path,
+  html.theme--light [style*="color: rgb(92, 239, 170)"] > path {
+    fill: #f0f015 !important;
+  }
+  html.theme--light path[fill="#006AFF"],
+  html.theme--light path[fill="#0F73FF"] {
+    fill: #f0f01b;
+  }
+  html.theme--light path[fill="hsl(211, 24%, 43.6%)"],
+  html.theme--light path[fill="hsl(211, 24%, 34.2%)"] {
+    fill: #f0f006;
+  }
+  html.theme--light [data-testid="continueBtn"] {
+    background-color: #f0f01b !important;
+  }
+  html.theme--light [data-testid="continueBtn"] > div > div {
+    color: #f0f001 !important;
+  }
+  html.theme--light [data-testid="continueBtn"] > div > svg > path {
+    fill: #f0f001 !important;
+  }
+  html.theme--light .mention {
+    color: #f0f01b;
+  }
+  html.theme--light div[style*="background-color: rgb(0, 17, 36)"],
+  html.theme--light div[style*="background-color: rgb(21, 41, 63)"],
+  html.theme--light div[style*="background-color: rgb(240, 247, 255)"],
+  html.theme--light a[style*="background-color: rgb(0, 17, 36)"],
+  html.theme--light a[style*="background-color: rgb(21, 41, 63)"],
+  html.theme--light a[style*="background-color: rgb(240, 247, 255)"] {
+    background-color: rgba(240, 240, 27, 0.3) !important;
+  }
+  html.theme--light div[style*="background-color: rgb(0, 17, 36)"] .css-175oi2r:not([role="checkbox"] *),
+  html.theme--light div[style*="background-color: rgb(21, 41, 63)"] .css-175oi2r:not([role="checkbox"] *),
+  html.theme--light div[style*="background-color: rgb(240, 247, 255)"] .css-175oi2r:not([role="checkbox"] *),
+  html.theme--light a[style*="background-color: rgb(0, 17, 36)"] .css-175oi2r:not([role="checkbox"] *),
+  html.theme--light a[style*="background-color: rgb(21, 41, 63)"] .css-175oi2r:not([role="checkbox"] *),
+  html.theme--light a[style*="background-color: rgb(240, 247, 255)"] .css-175oi2r:not([role="checkbox"] *) {
+    background-color: transparent !important;
+  }
+  html.theme--light button[style*="background-color: rgb(0, 133, 255)"] {
+    background-color: #f0f01b !important;
+  }
+  html.theme--light button[style*="background-color: rgb(0, 133, 255)"] > div > div {
+    color: #f0f001 !important;
+  }
+  html.theme--light [style*="border-color: rgb(49, 63, 84)"],
+  html.theme--light [style*="border-color: rgb(57, 73, 96)"] {
+    border-color: #f0f00b !important;
+  }
+  html.theme--light div[style*="color: rgb(82, 172, 254)"] {
+    color: #f0f01b !important;
+  }
+  html.theme--light div[style*="color: rgb(141, 142, 150)"] {
+    color: #f0f006 !important;
+  }
+  html.theme--light .r-w7hjet {
+    background-color: #f0f011;
+  }
+  html.theme--light circle[fill="#20BC07"] {
+    fill: #f0f015;
+  }
+  html.theme--light [style*="background-color: rgb(185, 185, 193)"] {
+    background-color: #f0f007 !important;
+  }
+  html.theme--light .r-kdyh1x[style*="background-color: rgb(20, 27, 35);"],
+  html.theme--light .r-cpet4d[style*="background-color: rgb(20, 27, 35);"] {
+    background-color: #f0f00c !important;
+  }
+  html.theme--light div[style*="background-color: rgb(35, 46, 62)"].r-m5arl1 {
+    background: #f0f00b !important;
+  }
+  html.theme--light path[stroke="#006AFF"],
+  html.theme--light path[stroke="#0F73FF"],
+  html.theme--light path[stroke="#006AFF"] {
+    stroke: #f0f01b !important;
+  }
+  html.theme--light path[stroke="#232E3E"],
+  html.theme--light path[stroke="#2C3A4E"],
+  html.theme--light path[stroke="#DCE2EA"] {
+    stroke: #f0f00b !important;
+  }
+  html.theme--light button[style*="border-color: rgb(35, 46, 62); background-color: rgb(0, 30, 71)"],
+  html.theme--light button[style*="border-color: rgb(44, 58, 78); background-color: rgb(18, 41, 73)"],
+  html.theme--light button[style*="border-color: rgb(220, 226, 234); background-color: rgb(229, 240, 255)"] {
+    background-color: #f0f00c !important;
+    border-color: #f0f009 !important;
+  }
+  html.theme--light button[disabled] > svg > path {
+    fill: #f0f009;
+  }
+  html.theme--light div[style*="border-color: rgb(46, 64, 82)"] {
+    border-color: #f0f00b !important;
+  }
+  html.theme--light div[style*="border-color: rgb(0, 106, 255)"],
+  html.theme--light div[style*="border-color: rgb(15, 115, 255)"] {
+    border-color: #f0f01b !important;
+  }
+  html.theme--light [style*="border-color: rgb(74, 97, 121)"] {
+    border-color: #f0f00a !important;
+  }
+  html.theme--light [style*="background-color: rgb(142, 9, 40)"] {
+    background-color: #f0f011 !important;
+  }
+  html.theme--light [style*="background-color: rgb(142, 9, 40)"] div {
+    color: #f0f003 !important;
+  }
+  html.theme--light [style*="background-color: rgb(142, 9, 40)"] svg > path {
+    fill: #f0f003;
+  }
+  html.theme--light div[style*="background-color: rgb(21, 52, 85)"] {
+    background-color: #f0f00c !important;
+  }
+  html.theme--light div[style*="border-color: rgb(76, 162, 254);"] {
+    border-color: #f0f01b !important;
+  }
+  html.theme--light div[style*="background-color: rgb(18, 52, 100)"] {
+    background-color: rgba(240, 240, 27, 0.4) !important;
+  }
+  html.theme--light div[style*="background-color: rgb(91, 119, 149)"] {
+    background-color: #f0f00a !important;
+  }
+  html.theme--light div[style*="border-color: rgb(120, 142, 165)"] {
+    border-color: #f0f008 !important;
+  }
+  html.theme--dim,
+  html.theme--dark {
+    color-scheme: dark;
+    background-color: #f0f001;
+    --text: #f0f004;
+    --background: #f0f001;
+    --backgroundLight: #f0f001;
+    /* generic text */
+    /* some background color of follow button + hover */
+    /* secondary text [contrast_700] */
+    /* generic blue inline (e.g. link text, etc) [primary_500] */
+    /* generic blue inline underline (links) [primary_500] */
+    /* generic blue inline bg color (e.g. notification count) [primary_500] */
+    /* sending/pending/failed direct message */
+    /* a lot of blue things (buttons etc) */
+    /* subscribe to labeler button */
+    /* direct message "failed to send" text */
+    /* red button text (delete my account) [negative_500] */
+    /* red button (delete, etc) */
+    /* delete account button */
+    /* generic background color */
+    /* secondary background color + sidebar button hover [contrast_25] */
+    /* secondary background color (when active?) (e.g. search bar, hovering some buttons like cancel) */
+    /* some sort of tertiary background color with a slight accent */
+    /* loading circle */
+    /* wide site: new post button (w text) */
+    /* borders */
+    /* fix selected tab bottom border issue caused by selector above */
+    /* fixes the bottom border on tabs (timeline) having a darker color */
+    /* current selected tab (acc page) !! KEEP THIS BELOW ABOVE DEFINITION !! */
+    /* settings highlight thing */
+    /* thin site: bluesky text */
+    /* empty profile banner */
+    /* "invalid handle" warning */
+    /* end of feed text */
+    /* mobile side drawer */
+    /* feedback */
+    /* save, report, post modal button */
+    /* draft "Discard" button */
+    /* Discard draft modal border, bunch of other borders around the app [contrast_100] */
+    /* the round gradient post button in the bottom right when the page is thinner than usual */
+    /* blue text only button (e.g. cancel post button) */
+    /* text color when writing a post */
+    /* some button background color (when hovering) [primary_100] */
+    /* several white buttons */
+    /* the white buttons text */
+    /* replace dark fill icons with crust ones */
+    /* fixes a contrast issue when the suggested follows button is enabled (very ugly selector) */
+    /* text inside most buttons */
+    /* search bar text */
+    /* search bar icon (this doesn't actually apply because path fill. keeping anyways) [contrast_500] */
+    /* small icons */
+    /* more gray small icons (e.g. search bar icon, icons below posts [contrast_500] */
+    /* settings button at the top of the timeline, hashtag button/icon at top of timeline [contrast_600] */
+    /* x invite codes available icon */
+    /* heart/like */
+    /* repost */
+    /* saved icon on post + trending icon */
+    /* tiny people icon on post view ("Everybody can reply") */
+    /* onboarding: continue/next button */
+    /* pretty self explanatory, user mentions in the post create modal */
+    /* mentions in the notification tab (highlighted notifications) */
+    /* generic blue background color inline (used for buttons in notifications tab) */
+    /* contrast fix for above */
+    /* miscellaneous lines around the app [contrast_200] */
+    /* other button in notifications tab, inner text */
+    /* "No notifications yet!" text in the notifications tab */
+    /* login: wrong password highlight */
+    /* please verify your email popup (green checkmark) */
+    /* toggle circle */
+    /* skeletons */
+    /* thread lines */
+    /* character limit progress circle [primary_500] */
+    /* bg circle [contrast_100] */
+    /* load new posts button (border: [contrast_100]; bg: [primary_50]) */
+    /* any button that's disabled (we should start using broader overrides) */
+    /* sitewide text inputs */
+    /* the divs are styled separately from the input areas */
+    /* search bar [primary_500] */
+    /* image preview borders across app */
+    /* search tab trending buttons */
+    /* TODO: new which is green but I can't get the right class cause nothing on bsky is a new trending topic atm */
+    /* round icon backgrounds (e.g. feeds) */
+    /* pill toggle button styles (e.g. account activity notifications) */
+    /* active, hover */
+    /* inactive, circle in pill */
+    /* inactive, hover */
+  }
+  html.theme--dim ::selection,
+  html.theme--dark ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  html.theme--dim input::placeholder,
+  html.theme--dark input::placeholder,
+  html.theme--dim textarea::placeholder,
+  html.theme--dark textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  html.theme--dim [style*="color: rgb(255, 255, 255)"],
+  html.theme--dark [style*="color: rgb(255, 255, 255)"],
+  html.theme--dim [style*="color: rgb(241, 243, 245)"],
+  html.theme--dark [style*="color: rgb(241, 243, 245)"] {
+    color: #f0f004 !important;
+  }
+  html.theme--dim [style*="background-color: rgb(241, 243, 245)"],
+  html.theme--dark [style*="background-color: rgb(241, 243, 245)"] {
+    background-color: #f0f004 !important;
+  }
+  html.theme--dim [style*="color: rgb(11, 15, 20)"],
+  html.theme--dark [style*="color: rgb(11, 15, 20)"] {
+    color: #f0f003 !important;
+  }
+  html.theme--dim [style*="rgb(165, 178, 197)"],
+  html.theme--dark [style*="rgb(165, 178, 197)"],
+  html.theme--dim [style*="rgb(171, 184, 201)"],
+  html.theme--dark [style*="rgb(171, 184, 201)"],
+  html.theme--dim [style*="rgb(84, 110, 138)"],
+  html.theme--dark [style*="rgb(84, 110, 138)"],
+  html.theme--dim [style*="rgb(66, 87, 108)"],
+  html.theme--dark [style*="rgb(66, 87, 108)"] {
+    color: #f0f005 !important;
+  }
+  html.theme--dim div[style*="background-color: rgb(197, 207, 217)"],
+  html.theme--dark div[style*="background-color: rgb(197, 207, 217)"],
+  html.theme--dim div[style*="background-color: rgb(201, 210, 219)"],
+  html.theme--dark div[style*="background-color: rgb(201, 210, 219)"],
+  html.theme--dim div[style*="background-color: rgb(46, 63, 81)"],
+  html.theme--dark div[style*="background-color: rgb(46, 63, 81)"] {
+    background-color: #f0f004 !important;
+  }
+  html.theme--dim div[style*="background-color: rgb(197, 207, 217)"] > div,
+  html.theme--dark div[style*="background-color: rgb(197, 207, 217)"] > div,
+  html.theme--dim div[style*="background-color: rgb(201, 210, 219)"] > div,
+  html.theme--dark div[style*="background-color: rgb(201, 210, 219)"] > div,
+  html.theme--dim div[style*="background-color: rgb(46, 63, 81)"] > div,
+  html.theme--dark div[style*="background-color: rgb(46, 63, 81)"] > div {
+    color: #f0f003 !important;
+  }
+  html.theme--dim [style*="color: rgb(0, 106, 255)"],
+  html.theme--dark [style*="color: rgb(0, 106, 255)"],
+  html.theme--dim [style*="color: rgb(15, 115, 255)"],
+  html.theme--dark [style*="color: rgb(15, 115, 255)"] {
+    color: #f0f01b !important;
+  }
+  html.theme--dim [style*="text-decoration-color: rgb(0, 106, 255)"],
+  html.theme--dark [style*="text-decoration-color: rgb(0, 106, 255)"],
+  html.theme--dim [style*="text-decoration-color: rgb(15, 115, 255)"],
+  html.theme--dark [style*="text-decoration-color: rgb(15, 115, 255)"] {
+    text-decoration-color: #f0f01b !important;
+  }
+  html.theme--dim [style*="background-color: rgb(0, 106, 255)"],
+  html.theme--dark [style*="background-color: rgb(0, 106, 255)"],
+  html.theme--dim [style*="background-color: rgb(15, 115, 255)"],
+  html.theme--dark [style*="background-color: rgb(15, 115, 255)"] {
+    background-color: #f0f01b !important;
+    /* notification count contrast fix, also chat message contrast fix (> div) */
+    /* icon color fix */
+  }
+  html.theme--dim [style*="background-color: rgb(0, 106, 255)"][style*="color: rgb(241, 243, 245)"],
+  html.theme--dark [style*="background-color: rgb(0, 106, 255)"][style*="color: rgb(241, 243, 245)"],
+  html.theme--dim [style*="background-color: rgb(15, 115, 255)"][style*="color: rgb(241, 243, 245)"],
+  html.theme--dark [style*="background-color: rgb(15, 115, 255)"][style*="color: rgb(241, 243, 245)"],
+  html.theme--dim [style*="background-color: rgb(0, 106, 255)"][style*="color: rgb(255, 255, 255)"],
+  html.theme--dark [style*="background-color: rgb(0, 106, 255)"][style*="color: rgb(255, 255, 255)"],
+  html.theme--dim [style*="background-color: rgb(15, 115, 255)"][style*="color: rgb(255, 255, 255)"],
+  html.theme--dark [style*="background-color: rgb(15, 115, 255)"][style*="color: rgb(255, 255, 255)"],
+  html.theme--dim [style*="background-color: rgb(0, 106, 255)"] > div,
+  html.theme--dark [style*="background-color: rgb(0, 106, 255)"] > div,
+  html.theme--dim [style*="background-color: rgb(15, 115, 255)"] > div,
+  html.theme--dark [style*="background-color: rgb(15, 115, 255)"] > div {
+    color: #f0f003 !important;
+  }
+  html.theme--dim [style*="background-color: rgb(0, 106, 255)"] path[fill="#ffffff"],
+  html.theme--dark [style*="background-color: rgb(0, 106, 255)"] path[fill="#ffffff"],
+  html.theme--dim [style*="background-color: rgb(15, 115, 255)"] path[fill="#ffffff"],
+  html.theme--dark [style*="background-color: rgb(15, 115, 255)"] path[fill="#ffffff"],
+  html.theme--dim [style*="background-color: rgb(0, 106, 255)"] path[fill="hsl(211, 20%, 95.3%)"],
+  html.theme--dark [style*="background-color: rgb(0, 106, 255)"] path[fill="hsl(211, 20%, 95.3%)"],
+  html.theme--dim [style*="background-color: rgb(15, 115, 255)"] path[fill="hsl(211, 20%, 95.3%)"],
+  html.theme--dark [style*="background-color: rgb(15, 115, 255)"] path[fill="hsl(211, 20%, 95.3%)"] {
+    fill: #f0f003 !important;
+  }
+  html.theme--dim [style*="background-color: rgb(1, 64, 132)"],
+  html.theme--dark [style*="background-color: rgb(1, 64, 132)"] {
+    background-color: rgba(240, 240, 27, 0.3) !important;
+  }
+  html.theme--dim .r-wzwllv,
+  html.theme--dark .r-wzwllv,
+  html.theme--dim div[style*="background-color: rgb(0, 133, 255)"],
+  html.theme--dark div[style*="background-color: rgb(0, 133, 255)"] {
+    background-color: #f0f01b !important;
+    /* notification count contrast fix, also chat message contrast fix (> div) */
+  }
+  html.theme--dim .r-wzwllv[style*="color: rgb(241, 243, 245)"],
+  html.theme--dark .r-wzwllv[style*="color: rgb(241, 243, 245)"],
+  html.theme--dim div[style*="background-color: rgb(0, 133, 255)"][style*="color: rgb(241, 243, 245)"],
+  html.theme--dark div[style*="background-color: rgb(0, 133, 255)"][style*="color: rgb(241, 243, 245)"],
+  html.theme--dim .r-wzwllv > div,
+  html.theme--dark .r-wzwllv > div,
+  html.theme--dim div[style*="background-color: rgb(0, 133, 255)"] > div,
+  html.theme--dark div[style*="background-color: rgb(0, 133, 255)"] > div {
+    color: #f0f003 !important;
+  }
+  html.theme--dim button[data-testid="toggleSubscribeBtn"] > div,
+  html.theme--dark button[data-testid="toggleSubscribeBtn"] > div {
+    background-color: #f0f010 !important;
+  }
+  html.theme--dim button[data-testid="toggleSubscribeBtn"] > div > div,
+  html.theme--dark button[data-testid="toggleSubscribeBtn"] > div > div {
+    color: #f0f003 !important;
+  }
+  html.theme--dim span[style*="color: rgb(205, 10, 55)"],
+  html.theme--dark span[style*="color: rgb(205, 10, 55)"] {
+    color: #f0f011 !important;
+  }
+  html.theme--dim [style*="color: rgb(233, 22, 70)"],
+  html.theme--dark [style*="color: rgb(233, 22, 70)"],
+  html.theme--dim [style*="color: rgb(235, 36, 82)"],
+  html.theme--dark [style*="color: rgb(235, 36, 82)"] {
+    color: #f0f011 !important;
+  }
+  html.theme--dim button[style*="background-color: rgb(244, 11, 66)"],
+  html.theme--dark button[style*="background-color: rgb(244, 11, 66)"],
+  html.theme--dim button[style*="background-color: rgb(246, 60, 103)"],
+  html.theme--dark button[style*="background-color: rgb(246, 60, 103)"],
+  html.theme--dim button[style*="background-color: rgb(245, 41, 88)"],
+  html.theme--dark button[style*="background-color: rgb(245, 41, 88)"],
+  html.theme--dim button[style*="background-color: rgb(247, 84, 122)"],
+  html.theme--dark button[style*="background-color: rgb(247, 84, 122)"],
+  html.theme--dim button[style*="background-color: rgb(205, 10, 55)"],
+  html.theme--dark button[style*="background-color: rgb(205, 10, 55)"] {
+    background-color: #f0f011 !important;
+  }
+  html.theme--dim button[style*="background-color: rgb(244, 11, 66)"]:hover,
+  html.theme--dark button[style*="background-color: rgb(244, 11, 66)"]:hover,
+  html.theme--dim button[style*="background-color: rgb(246, 60, 103)"]:hover,
+  html.theme--dark button[style*="background-color: rgb(246, 60, 103)"]:hover,
+  html.theme--dim button[style*="background-color: rgb(245, 41, 88)"]:hover,
+  html.theme--dark button[style*="background-color: rgb(245, 41, 88)"]:hover,
+  html.theme--dim button[style*="background-color: rgb(247, 84, 122)"]:hover,
+  html.theme--dark button[style*="background-color: rgb(247, 84, 122)"]:hover,
+  html.theme--dim button[style*="background-color: rgb(205, 10, 55)"]:hover,
+  html.theme--dark button[style*="background-color: rgb(205, 10, 55)"]:hover {
+    background-color: rgba(240, 240, 17, 0.7) !important;
+  }
+  html.theme--dim button[style*="background-color: rgb(244, 11, 66)"] > div,
+  html.theme--dark button[style*="background-color: rgb(244, 11, 66)"] > div,
+  html.theme--dim button[style*="background-color: rgb(246, 60, 103)"] > div,
+  html.theme--dark button[style*="background-color: rgb(246, 60, 103)"] > div,
+  html.theme--dim button[style*="background-color: rgb(245, 41, 88)"] > div,
+  html.theme--dark button[style*="background-color: rgb(245, 41, 88)"] > div,
+  html.theme--dim button[style*="background-color: rgb(247, 84, 122)"] > div,
+  html.theme--dark button[style*="background-color: rgb(247, 84, 122)"] > div,
+  html.theme--dim button[style*="background-color: rgb(205, 10, 55)"] > div,
+  html.theme--dark button[style*="background-color: rgb(205, 10, 55)"] > div {
+    color: #f0f003 !important;
+  }
+  html.theme--dim [style^="background-color: rgb(79, 3, 20)"],
+  html.theme--dark [style^="background-color: rgb(79, 3, 20)"] {
+    background-color: #f0f011 !important;
+  }
+  html.theme--dim path[fill="#fba2b2"],
+  html.theme--dark path[fill="#fba2b2"] {
+    fill: #f0f003;
+  }
+  html.theme--dim [style*="background-color: rgb(255, 255, 255)"],
+  html.theme--dark [style*="background-color: rgb(255, 255, 255)"],
+  html.theme--dim [style*="background-color: rgb(0, 0, 0)"],
+  html.theme--dark [style*="background-color: rgb(0, 0, 0)"],
+  html.theme--dim [style*="background-color: rgb(21, 29, 40)"],
+  html.theme--dark [style*="background-color: rgb(21, 29, 40)"] {
+    background-color: #f0f001 !important;
+  }
+  html.theme--dim [style*="background-color: rgb(17, 24, 34)"],
+  html.theme--dark [style*="background-color: rgb(17, 24, 34)"],
+  html.theme--dim [style*="background-color: rgb(28, 39, 54)"],
+  html.theme--dark [style*="background-color: rgb(28, 39, 54)"] {
+    background-color: #f0f002 !important;
+  }
+  html.theme--dim [style*="background-color: rgb(25, 34, 46)"],
+  html.theme--dark [style*="background-color: rgb(25, 34, 46)"],
+  html.theme--dim [style*="background-color: rgb(34, 46, 63)"],
+  html.theme--dark [style*="background-color: rgb(34, 46, 63)"] {
+    background-color: #f0f003 !important;
+  }
+  html.theme--dim [style*="background-color: rgb(0, 25, 51)"],
+  html.theme--dark [style*="background-color: rgb(0, 25, 51)"] {
+    background-color: rgba(240, 240, 27, 0.3) !important;
+  }
+  html.theme--dim circle[style^="stroke: rgb(25, 118, 210)"],
+  html.theme--dark circle[style^="stroke: rgb(25, 118, 210)"] {
+    stroke: #f0f01b !important;
+  }
+  html.theme--dim button[style*="background-color: rgb(0, 106, 255)"],
+  html.theme--dark button[style*="background-color: rgb(0, 106, 255)"],
+  html.theme--dim button[style*="background-color: rgb(66, 145, 255)"],
+  html.theme--dark button[style*="background-color: rgb(66, 145, 255)"],
+  html.theme--dim button[style*="background-color: rgb(15, 115, 255)"],
+  html.theme--dark button[style*="background-color: rgb(15, 115, 255)"],
+  html.theme--dim button[style*="background-color: rgb(77, 151, 255)"],
+  html.theme--dark button[style*="background-color: rgb(77, 151, 255)"] {
+    background-color: #f0f01b !important;
+  }
+  html.theme--dim button[style*="background-color: rgb(0, 106, 255)"]:hover,
+  html.theme--dark button[style*="background-color: rgb(0, 106, 255)"]:hover,
+  html.theme--dim button[style*="background-color: rgb(66, 145, 255)"]:hover,
+  html.theme--dark button[style*="background-color: rgb(66, 145, 255)"]:hover,
+  html.theme--dim button[style*="background-color: rgb(15, 115, 255)"]:hover,
+  html.theme--dark button[style*="background-color: rgb(15, 115, 255)"]:hover,
+  html.theme--dim button[style*="background-color: rgb(77, 151, 255)"]:hover,
+  html.theme--dark button[style*="background-color: rgb(77, 151, 255)"]:hover {
+    background-color: rgba(240, 240, 27, 0.7) !important;
+  }
+  html.theme--dim button[style*="background-color: rgb(0, 106, 255)"] > div,
+  html.theme--dark button[style*="background-color: rgb(0, 106, 255)"] > div,
+  html.theme--dim button[style*="background-color: rgb(66, 145, 255)"] > div,
+  html.theme--dark button[style*="background-color: rgb(66, 145, 255)"] > div,
+  html.theme--dim button[style*="background-color: rgb(15, 115, 255)"] > div,
+  html.theme--dark button[style*="background-color: rgb(15, 115, 255)"] > div,
+  html.theme--dim button[style*="background-color: rgb(77, 151, 255)"] > div,
+  html.theme--dark button[style*="background-color: rgb(77, 151, 255)"] > div {
+    color: #f0f003 !important;
+  }
+  html.theme--dim button[style*="background-color: rgb(0, 106, 255)"] svg > path,
+  html.theme--dark button[style*="background-color: rgb(0, 106, 255)"] svg > path,
+  html.theme--dim button[style*="background-color: rgb(66, 145, 255)"] svg > path,
+  html.theme--dark button[style*="background-color: rgb(66, 145, 255)"] svg > path,
+  html.theme--dim button[style*="background-color: rgb(15, 115, 255)"] svg > path,
+  html.theme--dark button[style*="background-color: rgb(15, 115, 255)"] svg > path,
+  html.theme--dim button[style*="background-color: rgb(77, 151, 255)"] svg > path,
+  html.theme--dark button[style*="background-color: rgb(77, 151, 255)"] svg > path {
+    fill: #f0f003 !important;
+  }
+  html.theme--dim .css-175oi2r,
+  html.theme--dark .css-175oi2r {
+    border-color: #f0f00c !important;
+  }
+  html.theme--dim .css-175oi2r[style*="border-bottom-color: rgb(0, 106, 255)"],
+  html.theme--dark .css-175oi2r[style*="border-bottom-color: rgb(0, 106, 255)"] {
+    border-bottom-color: #f0f01b !important;
+  }
+  html.theme--dim .r-oucylx,
+  html.theme--dark .r-oucylx {
+    border-bottom-color: #f0f001 !important;
+  }
+  html.theme--dim [style*="border-color: rgb(255, 255, 255)"],
+  html.theme--dark [style*="border-color: rgb(255, 255, 255)"] {
+    border-color: #f0f01b !important;
+  }
+  html.theme--dim [style="background-color: rgb(38, 39, 45)"],
+  html.theme--dark [style="background-color: rgb(38, 39, 45)"] {
+    background-color: #f0f003 !important;
+  }
+  html.theme--dim .r-yovm8p,
+  html.theme--dark .r-yovm8p {
+    color: #f0f019;
+  }
+  html.theme--dim .r-wuyfte,
+  html.theme--dark .r-wuyfte {
+    background-color: #f0f019;
+  }
+  html.theme--dim [style*="color: rgb(236, 72, 104); border-color: rgb(209, 16, 67)"],
+  html.theme--dark [style*="color: rgb(236, 72, 104); border-color: rgb(209, 16, 67)"] {
+    color: #f0f011 !important;
+    border-color: #f0f011 !important;
+  }
+  html.theme--dim .r-1521r3q,
+  html.theme--dark .r-1521r3q {
+    color: #f0f008;
+  }
+  html.theme--dim [data-testid="drawer"],
+  html.theme--dark [data-testid="drawer"] {
+    background-color: #f0f001;
+  }
+  html.theme--dim .r-m7buhn,
+  html.theme--dark .r-m7buhn {
+    background-color: #f0f019;
+  }
+  html.theme--dim [data-testid="sendReportBtn"],
+  html.theme--dark [data-testid="sendReportBtn"],
+  html.theme--dim [data-testid="composerPublishBtn"],
+  html.theme--dark [data-testid="composerPublishBtn"],
+  html.theme--dim [data-testid="editProfileSaveBtn"],
+  html.theme--dark [data-testid="editProfileSaveBtn"] {
+    background: unset !important;
+    /* "save changes" button in edit profile */
+    /* fix contrast issues */
+  }
+  html.theme--dim [data-testid="sendReportBtn"] > div[style*="background-image: linear-gradient(94.0544deg, rgb(90, 113, 250), rgb(0, 133, 255))"],
+  html.theme--dark [data-testid="sendReportBtn"] > div[style*="background-image: linear-gradient(94.0544deg, rgb(90, 113, 250), rgb(0, 133, 255))"],
+  html.theme--dim [data-testid="composerPublishBtn"] > div[style*="background-image: linear-gradient(94.0544deg, rgb(90, 113, 250), rgb(0, 133, 255))"],
+  html.theme--dark [data-testid="composerPublishBtn"] > div[style*="background-image: linear-gradient(94.0544deg, rgb(90, 113, 250), rgb(0, 133, 255))"],
+  html.theme--dim [data-testid="editProfileSaveBtn"] > div[style*="background-image: linear-gradient(94.0544deg, rgb(90, 113, 250), rgb(0, 133, 255))"],
+  html.theme--dark [data-testid="editProfileSaveBtn"] > div[style*="background-image: linear-gradient(94.0544deg, rgb(90, 113, 250), rgb(0, 133, 255))"] {
+    background: #f0f01b !important;
+  }
+  html.theme--dim [data-testid="sendReportBtn"] > div,
+  html.theme--dark [data-testid="sendReportBtn"] > div,
+  html.theme--dim [data-testid="composerPublishBtn"] > div,
+  html.theme--dark [data-testid="composerPublishBtn"] > div,
+  html.theme--dim [data-testid="editProfileSaveBtn"] > div,
+  html.theme--dark [data-testid="editProfileSaveBtn"] > div,
+  html.theme--dim [data-testid="sendReportBtn"] > div > div,
+  html.theme--dark [data-testid="sendReportBtn"] > div > div,
+  html.theme--dim [data-testid="composerPublishBtn"] > div > div,
+  html.theme--dark [data-testid="composerPublishBtn"] > div > div,
+  html.theme--dim [data-testid="editProfileSaveBtn"] > div > div,
+  html.theme--dark [data-testid="editProfileSaveBtn"] > div > div {
+    color: #f0f003 !important;
+  }
+  html.theme--dim [data-testid="saveBtn"] > div[style*="background-image: linear-gradient"],
+  html.theme--dark [data-testid="saveBtn"] > div[style*="background-image: linear-gradient"] {
+    background: unset !important;
+    background-color: #f0f01b !important;
+  }
+  html.theme--dim [data-testid="saveBtn"] > div[style*="background-image: linear-gradient"] > div,
+  html.theme--dark [data-testid="saveBtn"] > div[style*="background-image: linear-gradient"] > div {
+    color: #f0f003 !important;
+  }
+  html.theme--dim .r-17c3jg3:has(> div[dir="auto"]),
+  html.theme--dark .r-17c3jg3:has(> div[dir="auto"]) {
+    background-color: #f0f003 !important;
+  }
+  html.theme--dim .r-17c3jg3:has(> div[dir="auto"]) .r-jwli3a,
+  html.theme--dark .r-17c3jg3:has(> div[dir="auto"]) .r-jwli3a {
+    color: #f0f004 !important;
+  }
+  html.theme--dim .r-17c3jg3:has(> div[dir="auto"]) > svg > path,
+  html.theme--dark .r-17c3jg3:has(> div[dir="auto"]) > svg > path {
+    fill: #f0f004 !important;
+  }
+  html.theme--dim [style^="background-color: rgb(209, 16, 67)"],
+  html.theme--dark [style^="background-color: rgb(209, 16, 67)"] {
+    background-color: #f0f011 !important;
+  }
+  html.theme--dim [style*="border-color: rgb(35, 46, 62)"],
+  html.theme--dark [style*="border-color: rgb(35, 46, 62)"],
+  html.theme--dim [style*="border-color: rgb(44, 58, 78)"],
+  html.theme--dark [style*="border-color: rgb(44, 58, 78)"] {
+    border-color: #f0f00a !important;
+  }
+  html.theme--dim [data-testid="composeFAB"] > div,
+  html.theme--dark [data-testid="composeFAB"] > div {
+    background: unset !important;
+    background-color: #f0f01b !important;
+  }
+  html.theme--dim [data-testid="composeFAB"] > div .r-jwli3a,
+  html.theme--dark [data-testid="composeFAB"] > div .r-jwli3a {
+    color: #f0f003 !important;
+  }
+  html.theme--dim div[style*="color: rgb(66, 145, 255)"],
+  html.theme--dark div[style*="color: rgb(66, 145, 255)"],
+  html.theme--dim div[style*="color: rgb(77, 151, 255)"],
+  html.theme--dark div[style*="color: rgb(77, 151, 255)"],
+  html.theme--dim div[style*="color: rgb(0, 89, 214)"],
+  html.theme--dark div[style*="color: rgb(0, 89, 214)"] {
+    color: #f0f01b !important;
+  }
+  html.theme--dim .ProseMirror,
+  html.theme--dark .ProseMirror,
+  html.theme--dim .ProseMirror-dark,
+  html.theme--dark .ProseMirror-dark {
+    color: #f0f004;
+  }
+  html.theme--dim [style*="background-color: rgb(0, 40, 97)"],
+  html.theme--dark [style*="background-color: rgb(0, 40, 97)"],
+  html.theme--dim [style*="background-color: rgb(18, 52, 100)"],
+  html.theme--dark [style*="background-color: rgb(18, 52, 100)"],
+  html.theme--dim [style*="background-color: rgb(204, 225, 255)"],
+  html.theme--dark [style*="background-color: rgb(204, 225, 255)"],
+  html.theme--dim [style*="background-color: rgb(14, 73, 137)"],
+  html.theme--dark [style*="background-color: rgb(14, 73, 137)"] {
+    background-color: rgba(240, 240, 27, 0.3) !important;
+  }
+  html.theme--dim button[style*="background-color: rgb(255, 255, 255)"],
+  html.theme--dark button[style*="background-color: rgb(255, 255, 255)"] {
+    background-color: #f0f004 !important;
+  }
+  html.theme--dim [style*="color: rgb(0, 0, 0)"],
+  html.theme--dark [style*="color: rgb(0, 0, 0)"] {
+    color: #f0f003 !important;
+  }
+  html.theme--dim path[fill="#000000"],
+  html.theme--dark path[fill="#000000"] {
+    fill: #f0f003;
+  }
+  html.theme--dim button[data-testid="suggestedFollowsBtn"][style*="background-color: rgb(255, 255, 255)"] > svg > path,
+  html.theme--dark button[data-testid="suggestedFollowsBtn"][style*="background-color: rgb(255, 255, 255)"] > svg > path {
+    fill: #f0f001 !important;
+  }
+  html.theme--dim button > div > div[style~="color: rgb(0, 0, 0)"],
+  html.theme--dark button > div > div[style~="color: rgb(0, 0, 0)"] {
+    color: #f0f001 !important;
+  }
+  html.theme--dim [role="search"],
+  html.theme--dark [role="search"],
+  html.theme--dim [data-testid="confirmCodeInput"],
+  html.theme--dark [data-testid="confirmCodeInput"] {
+    --placeholderTextColor: #f0f005 !important;
+  }
+  html.theme--dim svg[style^="color: rgb(102, 123, 153"],
+  html.theme--dark svg[style^="color: rgb(102, 123, 153"],
+  html.theme--dim svg[style^="color: rgb(111, 131, 159)"],
+  html.theme--dark svg[style^="color: rgb(111, 131, 159)"] {
+    color: #f0f005 !important;
+  }
+  html.theme--dim path[fill="#FFFFFF"],
+  html.theme--dark path[fill="#FFFFFF"] {
+    fill: #f0f004;
+  }
+  html.theme--dim path[fill="#667B99"],
+  html.theme--dark path[fill="#667B99"],
+  html.theme--dim path[fill="#6F839F"],
+  html.theme--dark path[fill="#6F839F"],
+  html.theme--dim [style*="color: rgb(111, 131, 159)"],
+  html.theme--dark [style*="color: rgb(111, 131, 159)"],
+  html.theme--dim [style*="color: rgb(111, 131, 159)"],
+  html.theme--dark [style*="color: rgb(111, 131, 159)"] {
+    color: #f0f005 !important;
+    fill: #f0f005 !important;
+  }
+  html.theme--dim path[fill="#8798B0"],
+  html.theme--dark path[fill="#8798B0"],
+  html.theme--dim path[fill="#8D9DB4"],
+  html.theme--dark path[fill="#8D9DB4"] {
+    fill: #f0f005;
+  }
+  html.theme--dim div[style*="background-color: rgb(191, 225, 255)"],
+  html.theme--dark div[style*="background-color: rgb(191, 225, 255)"],
+  html.theme--dim div[style*="background-color: rgb(1, 37, 97)"],
+  html.theme--dark div[style*="background-color: rgb(1, 37, 97)"] {
+    background-color: rgba(240, 240, 27, 0.3) !important;
+  }
+  html.theme--dim div[style*="background-color: rgb(191, 225, 255)"] > svg > path[fill="#52acfe"],
+  html.theme--dark div[style*="background-color: rgb(191, 225, 255)"] > svg > path[fill="#52acfe"],
+  html.theme--dim div[style*="background-color: rgb(1, 37, 97)"] > svg > path[fill="#52acfe"],
+  html.theme--dark div[style*="background-color: rgb(1, 37, 97)"] > svg > path[fill="#52acfe"] {
+    fill: #f0f01b;
+  }
+  html.theme--dim .r-84gixx,
+  html.theme--dark .r-84gixx,
+  html.theme--dim .r-1i89l9k,
+  html.theme--dark .r-1i89l9k,
+  html.theme--dim div[style*="color: rgb(236, 72, 153)"],
+  html.theme--dark div[style*="color: rgb(236, 72, 153)"],
+  html.theme--dim button[data-testid="toggleLikeBtn"] > svg:has(path[fill^="hsl(346,"]),
+  html.theme--dark button[data-testid="toggleLikeBtn"] > svg:has(path[fill^="hsl(346,"]) {
+    color: #f0f011 !important;
+  }
+  html.theme--dim .r-84gixx > path,
+  html.theme--dark .r-84gixx > path,
+  html.theme--dim .r-1i89l9k > path,
+  html.theme--dark .r-1i89l9k > path,
+  html.theme--dim div[style*="color: rgb(236, 72, 153)"] > path,
+  html.theme--dark div[style*="color: rgb(236, 72, 153)"] > path,
+  html.theme--dim button[data-testid="toggleLikeBtn"] > svg:has(path[fill^="hsl(346,"]) > path,
+  html.theme--dark button[data-testid="toggleLikeBtn"] > svg:has(path[fill^="hsl(346,"]) > path {
+    fill: #f0f011 !important;
+  }
+  html.theme--dim .r-5ld2xk,
+  html.theme--dark .r-5ld2xk,
+  html.theme--dim [style*="color: rgb(92, 239, 170)"],
+  html.theme--dark [style*="color: rgb(92, 239, 170)"] {
+    color: #f0f015 !important;
+  }
+  html.theme--dim .r-5ld2xk > path,
+  html.theme--dark .r-5ld2xk > path,
+  html.theme--dim [style*="color: rgb(92, 239, 170)"] > path,
+  html.theme--dark [style*="color: rgb(92, 239, 170)"] > path {
+    fill: #f0f015 !important;
+  }
+  html.theme--dim path[fill="#006AFF"],
+  html.theme--dark path[fill="#006AFF"],
+  html.theme--dim path[fill="#0F73FF"],
+  html.theme--dark path[fill="#0F73FF"] {
+    fill: #f0f01b;
+  }
+  html.theme--dim path[fill="hsl(211, 24%, 43.6%)"],
+  html.theme--dark path[fill="hsl(211, 24%, 43.6%)"],
+  html.theme--dim path[fill="hsl(211, 24%, 34.2%)"],
+  html.theme--dark path[fill="hsl(211, 24%, 34.2%)"] {
+    fill: #f0f006;
+  }
+  html.theme--dim [data-testid="continueBtn"],
+  html.theme--dark [data-testid="continueBtn"] {
+    background-color: #f0f01b !important;
+  }
+  html.theme--dim [data-testid="continueBtn"] > div > div,
+  html.theme--dark [data-testid="continueBtn"] > div > div {
+    color: #f0f001 !important;
+  }
+  html.theme--dim [data-testid="continueBtn"] > div > svg > path,
+  html.theme--dark [data-testid="continueBtn"] > div > svg > path {
+    fill: #f0f001 !important;
+  }
+  html.theme--dim .mention,
+  html.theme--dark .mention {
+    color: #f0f01b;
+  }
+  html.theme--dim div[style*="background-color: rgb(0, 17, 36)"],
+  html.theme--dark div[style*="background-color: rgb(0, 17, 36)"],
+  html.theme--dim div[style*="background-color: rgb(21, 41, 63)"],
+  html.theme--dark div[style*="background-color: rgb(21, 41, 63)"],
+  html.theme--dim div[style*="background-color: rgb(240, 247, 255)"],
+  html.theme--dark div[style*="background-color: rgb(240, 247, 255)"],
+  html.theme--dim a[style*="background-color: rgb(0, 17, 36)"],
+  html.theme--dark a[style*="background-color: rgb(0, 17, 36)"],
+  html.theme--dim a[style*="background-color: rgb(21, 41, 63)"],
+  html.theme--dark a[style*="background-color: rgb(21, 41, 63)"],
+  html.theme--dim a[style*="background-color: rgb(240, 247, 255)"],
+  html.theme--dark a[style*="background-color: rgb(240, 247, 255)"] {
+    background-color: rgba(240, 240, 27, 0.3) !important;
+  }
+  html.theme--dim div[style*="background-color: rgb(0, 17, 36)"] .css-175oi2r:not([role="checkbox"] *),
+  html.theme--dark div[style*="background-color: rgb(0, 17, 36)"] .css-175oi2r:not([role="checkbox"] *),
+  html.theme--dim div[style*="background-color: rgb(21, 41, 63)"] .css-175oi2r:not([role="checkbox"] *),
+  html.theme--dark div[style*="background-color: rgb(21, 41, 63)"] .css-175oi2r:not([role="checkbox"] *),
+  html.theme--dim div[style*="background-color: rgb(240, 247, 255)"] .css-175oi2r:not([role="checkbox"] *),
+  html.theme--dark div[style*="background-color: rgb(240, 247, 255)"] .css-175oi2r:not([role="checkbox"] *),
+  html.theme--dim a[style*="background-color: rgb(0, 17, 36)"] .css-175oi2r:not([role="checkbox"] *),
+  html.theme--dark a[style*="background-color: rgb(0, 17, 36)"] .css-175oi2r:not([role="checkbox"] *),
+  html.theme--dim a[style*="background-color: rgb(21, 41, 63)"] .css-175oi2r:not([role="checkbox"] *),
+  html.theme--dark a[style*="background-color: rgb(21, 41, 63)"] .css-175oi2r:not([role="checkbox"] *),
+  html.theme--dim a[style*="background-color: rgb(240, 247, 255)"] .css-175oi2r:not([role="checkbox"] *),
+  html.theme--dark a[style*="background-color: rgb(240, 247, 255)"] .css-175oi2r:not([role="checkbox"] *) {
+    background-color: transparent !important;
+  }
+  html.theme--dim button[style*="background-color: rgb(0, 133, 255)"],
+  html.theme--dark button[style*="background-color: rgb(0, 133, 255)"] {
+    background-color: #f0f01b !important;
+  }
+  html.theme--dim button[style*="background-color: rgb(0, 133, 255)"] > div > div,
+  html.theme--dark button[style*="background-color: rgb(0, 133, 255)"] > div > div {
+    color: #f0f001 !important;
+  }
+  html.theme--dim [style*="border-color: rgb(49, 63, 84)"],
+  html.theme--dark [style*="border-color: rgb(49, 63, 84)"],
+  html.theme--dim [style*="border-color: rgb(57, 73, 96)"],
+  html.theme--dark [style*="border-color: rgb(57, 73, 96)"] {
+    border-color: #f0f00b !important;
+  }
+  html.theme--dim div[style*="color: rgb(82, 172, 254)"],
+  html.theme--dark div[style*="color: rgb(82, 172, 254)"] {
+    color: #f0f01b !important;
+  }
+  html.theme--dim div[style*="color: rgb(141, 142, 150)"],
+  html.theme--dark div[style*="color: rgb(141, 142, 150)"] {
+    color: #f0f006 !important;
+  }
+  html.theme--dim .r-w7hjet,
+  html.theme--dark .r-w7hjet {
+    background-color: #f0f011;
+  }
+  html.theme--dim circle[fill="#20BC07"],
+  html.theme--dark circle[fill="#20BC07"] {
+    fill: #f0f015;
+  }
+  html.theme--dim [style*="background-color: rgb(185, 185, 193)"],
+  html.theme--dark [style*="background-color: rgb(185, 185, 193)"] {
+    background-color: #f0f007 !important;
+  }
+  html.theme--dim .r-kdyh1x[style*="background-color: rgb(20, 27, 35);"],
+  html.theme--dark .r-kdyh1x[style*="background-color: rgb(20, 27, 35);"],
+  html.theme--dim .r-cpet4d[style*="background-color: rgb(20, 27, 35);"],
+  html.theme--dark .r-cpet4d[style*="background-color: rgb(20, 27, 35);"] {
+    background-color: #f0f00c !important;
+  }
+  html.theme--dim div[style*="background-color: rgb(35, 46, 62)"].r-m5arl1,
+  html.theme--dark div[style*="background-color: rgb(35, 46, 62)"].r-m5arl1 {
+    background: #f0f00b !important;
+  }
+  html.theme--dim path[stroke="#006AFF"],
+  html.theme--dark path[stroke="#006AFF"],
+  html.theme--dim path[stroke="#0F73FF"],
+  html.theme--dark path[stroke="#0F73FF"],
+  html.theme--dim path[stroke="#006AFF"],
+  html.theme--dark path[stroke="#006AFF"] {
+    stroke: #f0f01b !important;
+  }
+  html.theme--dim path[stroke="#232E3E"],
+  html.theme--dark path[stroke="#232E3E"],
+  html.theme--dim path[stroke="#2C3A4E"],
+  html.theme--dark path[stroke="#2C3A4E"],
+  html.theme--dim path[stroke="#DCE2EA"],
+  html.theme--dark path[stroke="#DCE2EA"] {
+    stroke: #f0f00b !important;
+  }
+  html.theme--dim button[style*="border-color: rgb(35, 46, 62); background-color: rgb(0, 30, 71)"],
+  html.theme--dark button[style*="border-color: rgb(35, 46, 62); background-color: rgb(0, 30, 71)"],
+  html.theme--dim button[style*="border-color: rgb(44, 58, 78); background-color: rgb(18, 41, 73)"],
+  html.theme--dark button[style*="border-color: rgb(44, 58, 78); background-color: rgb(18, 41, 73)"],
+  html.theme--dim button[style*="border-color: rgb(220, 226, 234); background-color: rgb(229, 240, 255)"],
+  html.theme--dark button[style*="border-color: rgb(220, 226, 234); background-color: rgb(229, 240, 255)"] {
+    background-color: #f0f00c !important;
+    border-color: #f0f009 !important;
+  }
+  html.theme--dim button[disabled] > svg > path,
+  html.theme--dark button[disabled] > svg > path {
+    fill: #f0f009;
+  }
+  html.theme--dim div[style*="border-color: rgb(46, 64, 82)"],
+  html.theme--dark div[style*="border-color: rgb(46, 64, 82)"] {
+    border-color: #f0f00b !important;
+  }
+  html.theme--dim div[style*="border-color: rgb(0, 106, 255)"],
+  html.theme--dark div[style*="border-color: rgb(0, 106, 255)"],
+  html.theme--dim div[style*="border-color: rgb(15, 115, 255)"],
+  html.theme--dark div[style*="border-color: rgb(15, 115, 255)"] {
+    border-color: #f0f01b !important;
+  }
+  html.theme--dim [style*="border-color: rgb(74, 97, 121)"],
+  html.theme--dark [style*="border-color: rgb(74, 97, 121)"] {
+    border-color: #f0f00a !important;
+  }
+  html.theme--dim [style*="background-color: rgb(142, 9, 40)"],
+  html.theme--dark [style*="background-color: rgb(142, 9, 40)"] {
+    background-color: #f0f011 !important;
+  }
+  html.theme--dim [style*="background-color: rgb(142, 9, 40)"] div,
+  html.theme--dark [style*="background-color: rgb(142, 9, 40)"] div {
+    color: #f0f003 !important;
+  }
+  html.theme--dim [style*="background-color: rgb(142, 9, 40)"] svg > path,
+  html.theme--dark [style*="background-color: rgb(142, 9, 40)"] svg > path {
+    fill: #f0f003;
+  }
+  html.theme--dim div[style*="background-color: rgb(21, 52, 85)"],
+  html.theme--dark div[style*="background-color: rgb(21, 52, 85)"] {
+    background-color: #f0f00c !important;
+  }
+  html.theme--dim div[style*="border-color: rgb(76, 162, 254);"],
+  html.theme--dark div[style*="border-color: rgb(76, 162, 254);"] {
+    border-color: #f0f01b !important;
+  }
+  html.theme--dim div[style*="background-color: rgb(18, 52, 100)"],
+  html.theme--dark div[style*="background-color: rgb(18, 52, 100)"] {
+    background-color: rgba(240, 240, 27, 0.4) !important;
+  }
+  html.theme--dim div[style*="background-color: rgb(91, 119, 149)"],
+  html.theme--dark div[style*="background-color: rgb(91, 119, 149)"] {
+    background-color: #f0f00a !important;
+  }
+  html.theme--dim div[style*="border-color: rgb(120, 142, 165)"],
+  html.theme--dark div[style*="border-color: rgb(120, 142, 165)"] {
+    border-color: #f0f008 !important;
+  }
+}

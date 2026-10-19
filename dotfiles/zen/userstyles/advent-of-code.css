@@ -1,0 +1,323 @@
+/* ==UserStyle==
+@name           pwnbox-advent-of-code
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Advent Of Code (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("adventofcode.com") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root body {
+      background: #f0f001;
+      color: #f0f004;
+    }
+    :root body header h1 a,
+    :root body header h1 span {
+      color: #f0f015;
+      text-shadow: 0 0 2px #f0f015, 0 0 5px #f0f015;
+    }
+    :root body a {
+      color: #f0f015;
+    }
+    :root body .star-count {
+      color: #f0f014;
+    }
+    :root body .quiet {
+      color: #f0f006;
+      opacity: 1;
+    }
+    :root body .share,
+    :root body .share:hover,
+    :root body input[type="submit"] {
+      color: #f0f015;
+    }
+    :root body main article em {
+      color: #f0f004;
+      text-shadow: 0 0 5px #f0f004;
+    }
+    :root body main article h2 {
+      color: #f0f004;
+    }
+    :root body main article input[type="radio"]:checked ~ span,
+    :root body main article input[type="checkbox"]:checked ~ span {
+      color: #f0f004;
+    }
+    :root body main article input[type="radio"] ~ span:hover,
+    :root body main article input[type="radio"] ~ span:focus,
+    :root body main article input[type="checkbox"]:hover ~ span,
+    :root body main article input[type="checkbox"]:focus ~ span {
+      background-color: #f0f003;
+    }
+    :root body main .supporter-badge {
+      color: #f0f014;
+    }
+    :root body main .supporter-badge:hover {
+      color: #f0f014;
+      text-shadow: 0 0 5px #f0f014;
+    }
+    :root body main .sponsor-badge {
+      color: #f0f019;
+    }
+    :root body main .sponsor-badge:hover,
+    :root body main .sponsor-badge:focus {
+      color: #f0f019;
+      text-shadow: 0 0 5px #f0f019;
+    }
+    :root body main .leaderboard-entry .leaderboard-position {
+      color: #f0f005;
+    }
+    :root body main .leaderboard-entry .leaderboard-totalscore {
+      color: #f0f004;
+    }
+    :root body main .leaderboard-daylinks-selected {
+      color: #f0f004;
+      text-shadow: 0 0 5px #f0f004;
+    }
+    :root body main .leaderboard-daylinks-selected:hover {
+      color: #f0f015;
+    }
+    :root body main .leaderboard-anon {
+      opacity: 1;
+      color: #f0f006;
+    }
+    :root body main .calendar .calendar-color-w {
+      color: #f0f004;
+    }
+    :root body main .calendar .calendar-color-s {
+      color: #f0f014;
+    }
+    :root body main .calendar .calendar-color-c {
+      color: #f0f005;
+    }
+    :root body main .calendar .calendar-color-g3 {
+      color: #e7e70f;
+    }
+    :root body main .calendar .calendar-color-g2 {
+      color: #f0f015;
+    }
+    :root body main .calendar .calendar-color-g4 {
+      color: #e5e50f;
+    }
+    :root body main .calendar .calendar-color-u {
+      color: #f0f017;
+    }
+    :root body main .calendar .calendar-color-a {
+      color: #f0f006;
+    }
+    :root body main .calendar .calendar-color-g1 {
+      color: #e9e90f;
+    }
+    :root body main .calendar .calendar-color-g0 {
+      color: #ecec0f;
+    }
+    :root body main .calendar .calendar-color-l {
+      color: #f0f011;
+    }
+    :root body main .calendar .calendar-mark-complete {
+      color: #f0f014;
+    }
+    :root body main .calendar .calendar-mark-verycomplete {
+      color: #f0f014;
+    }
+    :root body main .calendar .calendar-day {
+      color: #f0f005;
+    }
+    :root body main .calendar #calendar-countdown {
+      color: #f0f005;
+    }
+    :root body main .calendar span {
+      color: #f0f00c;
+    }
+    :root body main .calendar a {
+      color: #f0f00a;
+    }
+    :root body main .day-success {
+      color: #f0f014;
+      text-shadow: 0 0 5px #f0f014;
+    }
+    :root body main .stats-both {
+      color: #f0f014;
+    }
+    :root body main .stats-firstonly {
+      color: #f0f009;
+    }
+    :root body main a:hover {
+      background-color: #f0f002 !important;
+    }
+    :root body main input[type="text"],
+    :root body main textarea,
+    :root body main code::before {
+      border-color: #f0f00c;
+      background: #f0f003;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root body {
+      background: #f0f001;
+      color: #f0f004;
+    }
+    :root body header h1 a,
+    :root body header h1 span {
+      color: #f0f015;
+      text-shadow: 0 0 2px #f0f015, 0 0 5px #f0f015;
+    }
+    :root body a {
+      color: #f0f015;
+    }
+    :root body .star-count {
+      color: #f0f014;
+    }
+    :root body .quiet {
+      color: #f0f006;
+      opacity: 1;
+    }
+    :root body .share,
+    :root body .share:hover,
+    :root body input[type="submit"] {
+      color: #f0f015;
+    }
+    :root body main article em {
+      color: #f0f004;
+      text-shadow: 0 0 5px #f0f004;
+    }
+    :root body main article h2 {
+      color: #f0f004;
+    }
+    :root body main article input[type="radio"]:checked ~ span,
+    :root body main article input[type="checkbox"]:checked ~ span {
+      color: #f0f004;
+    }
+    :root body main article input[type="radio"] ~ span:hover,
+    :root body main article input[type="radio"] ~ span:focus,
+    :root body main article input[type="checkbox"]:hover ~ span,
+    :root body main article input[type="checkbox"]:focus ~ span {
+      background-color: #f0f003;
+    }
+    :root body main .supporter-badge {
+      color: #f0f014;
+    }
+    :root body main .supporter-badge:hover {
+      color: #f0f014;
+      text-shadow: 0 0 5px #f0f014;
+    }
+    :root body main .sponsor-badge {
+      color: #f0f019;
+    }
+    :root body main .sponsor-badge:hover,
+    :root body main .sponsor-badge:focus {
+      color: #f0f019;
+      text-shadow: 0 0 5px #f0f019;
+    }
+    :root body main .leaderboard-entry .leaderboard-position {
+      color: #f0f005;
+    }
+    :root body main .leaderboard-entry .leaderboard-totalscore {
+      color: #f0f004;
+    }
+    :root body main .leaderboard-daylinks-selected {
+      color: #f0f004;
+      text-shadow: 0 0 5px #f0f004;
+    }
+    :root body main .leaderboard-daylinks-selected:hover {
+      color: #f0f015;
+    }
+    :root body main .leaderboard-anon {
+      opacity: 1;
+      color: #f0f006;
+    }
+    :root body main .calendar .calendar-color-w {
+      color: #f0f004;
+    }
+    :root body main .calendar .calendar-color-s {
+      color: #f0f014;
+    }
+    :root body main .calendar .calendar-color-c {
+      color: #f0f005;
+    }
+    :root body main .calendar .calendar-color-g3 {
+      color: #e7e70f;
+    }
+    :root body main .calendar .calendar-color-g2 {
+      color: #f0f015;
+    }
+    :root body main .calendar .calendar-color-g4 {
+      color: #e5e50f;
+    }
+    :root body main .calendar .calendar-color-u {
+      color: #f0f017;
+    }
+    :root body main .calendar .calendar-color-a {
+      color: #f0f006;
+    }
+    :root body main .calendar .calendar-color-g1 {
+      color: #e9e90f;
+    }
+    :root body main .calendar .calendar-color-g0 {
+      color: #ecec0f;
+    }
+    :root body main .calendar .calendar-color-l {
+      color: #f0f011;
+    }
+    :root body main .calendar .calendar-mark-complete {
+      color: #f0f014;
+    }
+    :root body main .calendar .calendar-mark-verycomplete {
+      color: #f0f014;
+    }
+    :root body main .calendar .calendar-day {
+      color: #f0f005;
+    }
+    :root body main .calendar #calendar-countdown {
+      color: #f0f005;
+    }
+    :root body main .calendar span {
+      color: #f0f00c;
+    }
+    :root body main .calendar a {
+      color: #f0f00a;
+    }
+    :root body main .day-success {
+      color: #f0f014;
+      text-shadow: 0 0 5px #f0f014;
+    }
+    :root body main .stats-both {
+      color: #f0f014;
+    }
+    :root body main .stats-firstonly {
+      color: #f0f009;
+    }
+    :root body main a:hover {
+      background-color: #f0f002 !important;
+    }
+    :root body main input[type="text"],
+    :root body main textarea,
+    :root body main code::before {
+      border-color: #f0f00c;
+      background: #f0f003;
+    }
+  }
+}

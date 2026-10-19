@@ -1,0 +1,197 @@
+/* ==UserStyle==
+@name           pwnbox-neovim.io
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for neovim.io (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("neovim.io") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+      --ctp-rosewater: #f0f00d;
+      --ctp-flamingo: #f0f00e;
+      --ctp-pink: #f0f00f;
+      --ctp-mauve: #f0f010;
+      --ctp-red: #f0f011;
+      --ctp-maroon: #f0f012;
+      --ctp-peach: #f0f013;
+      --ctp-yellow: #f0f014;
+      --ctp-green: #f0f015;
+      --ctp-teal: #f0f016;
+      --ctp-sky: #f0f017;
+      --ctp-sapphire: #f0f018;
+      --ctp-blue: #f0f019;
+      --ctp-lavender: #f0f01a;
+      --ctp-text: #f0f004;
+      --ctp-subtext1: #f0f005;
+      --ctp-subtext0: #f0f006;
+      --ctp-overlay2: #f0f007;
+      --ctp-overlay1: #f0f008;
+      --ctp-overlay0: #f0f009;
+      --ctp-surface2: #f0f00a;
+      --ctp-surface1: #f0f00b;
+      --ctp-surface0: #f0f00c;
+      --ctp-base: #f0f001;
+      --ctp-mantle: #f0f002;
+      --ctp-crust: #f0f003;
+      --fg-color: #f0f004;
+      --inverse-fg-color: #f0f00c;
+      --bg-color: #f0f001;
+      --accent-bg-color: #f0f002;
+      --link-color: #f0f019;
+      --accent-color: #f0f01b;
+      --border-color: #f0f01b;
+      --code-color: #f0f01b;
+      --bs-btn-active-color: #f0f001;
+      --tag-color: #f0f01b;
+      --docsearch-container-background: rgba(240, 240, 1, 0.3);
+      --docsearch-modal-background: #f0f002;
+      --docsearch-highlight-color: #f0f01b;
+      --docsearch-logo-color: #f0f01b;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root a:not([class]) {
+      text-decoration-color: var(--link-color);
+    }
+    :root a:not([class]):hover,
+    :root a:not([class]):focus {
+      color: var(--link-color);
+    }
+    :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#a)"] {
+      fill: #f0f019;
+    }
+    :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#b)"],
+    :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#c)"] {
+      fill: #f0f015;
+    }
+    :root a[aria-label="logo"] svg[aria-label="Neovim"] g[fill="#444"] path {
+      fill: #f0f019;
+    }
+    :root .btn {
+      color: #f0f001;
+      background: linear-gradient(#f0f01b 0% 95%, #cbcb0d 95% 100%);
+    }
+    :root .btn:hover,
+    :root .btn:focus {
+      box-shadow: 0 0 10px #f0f01b;
+      outline-color: #f0f004;
+    }
+    :root code,
+    :root code.hljs,
+    :root pre,
+    :root samp {
+      background-color: #f0f002 !important;
+      color: #f0f004;
+    }
+    :root .generator-stats {
+      color: #f0f006;
+    }
+    :root .DocSearch-Logo .cls-1,
+    :root .DocSearch-Logo .cls-2 {
+      fill: var(--docsearch-logo-color);
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --ctp-rosewater: #f0f00d;
+      --ctp-flamingo: #f0f00e;
+      --ctp-pink: #f0f00f;
+      --ctp-mauve: #f0f010;
+      --ctp-red: #f0f011;
+      --ctp-maroon: #f0f012;
+      --ctp-peach: #f0f013;
+      --ctp-yellow: #f0f014;
+      --ctp-green: #f0f015;
+      --ctp-teal: #f0f016;
+      --ctp-sky: #f0f017;
+      --ctp-sapphire: #f0f018;
+      --ctp-blue: #f0f019;
+      --ctp-lavender: #f0f01a;
+      --ctp-text: #f0f004;
+      --ctp-subtext1: #f0f005;
+      --ctp-subtext0: #f0f006;
+      --ctp-overlay2: #f0f007;
+      --ctp-overlay1: #f0f008;
+      --ctp-overlay0: #f0f009;
+      --ctp-surface2: #f0f00a;
+      --ctp-surface1: #f0f00b;
+      --ctp-surface0: #f0f00c;
+      --ctp-base: #f0f001;
+      --ctp-mantle: #f0f002;
+      --ctp-crust: #f0f003;
+      --fg-color: #f0f004;
+      --inverse-fg-color: #f0f00c;
+      --bg-color: #f0f001;
+      --accent-bg-color: #f0f002;
+      --link-color: #f0f019;
+      --accent-color: #f0f01b;
+      --border-color: #f0f01b;
+      --code-color: #f0f01b;
+      --bs-btn-active-color: #f0f001;
+      --tag-color: #f0f01b;
+      --docsearch-container-background: rgba(240, 240, 1, 0.3);
+      --docsearch-modal-background: #f0f002;
+      --docsearch-highlight-color: #f0f01b;
+      --docsearch-logo-color: #f0f01b;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root a:not([class]) {
+      text-decoration-color: var(--link-color);
+    }
+    :root a:not([class]):hover,
+    :root a:not([class]):focus {
+      color: var(--link-color);
+    }
+    :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#a)"] {
+      fill: #f0f019;
+    }
+    :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#b)"],
+    :root a[aria-label="logo"] svg[aria-label="Neovim"] path[fill="url(#c)"] {
+      fill: #f0f015;
+    }
+    :root a[aria-label="logo"] svg[aria-label="Neovim"] g[fill="#444"] path {
+      fill: #f0f019;
+    }
+    :root .btn {
+      color: #f0f001;
+      background: linear-gradient(#f0f01b 0% 95%, #cbcb0d 95% 100%);
+    }
+    :root .btn:hover,
+    :root .btn:focus {
+      box-shadow: 0 0 10px #f0f01b;
+      outline-color: #f0f004;
+    }
+    :root code,
+    :root code.hljs,
+    :root pre,
+    :root samp {
+      background-color: #f0f002 !important;
+      color: #f0f004;
+    }
+    :root .generator-stats {
+      color: #f0f006;
+    }
+    :root .DocSearch-Logo .cls-1,
+    :root .DocSearch-Logo .cls-2 {
+      fill: var(--docsearch-logo-color);
+    }
+  }
+}

@@ -1,0 +1,101 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+export POSIXLY_CORRECT=1
+
+exec 9>"${XDG_RUNTIME_DIR:-/tmp}/pwnbox-vdesk.lock"
+flock -w 2 9 || exit 0
+
+cursor="$(hyprctl cursorpos 2>/dev/null || true)"
+monitors_json="$(hyprctl -j monitors)"
+workspaces_json="$(hyprctl -j workspaces)"
+active_json="$(hyprctl -j activeworkspace)"
+
+mon_names="$(printf '%s' "$monitors_json" | jq -r '.[].name')"
+count="$(printf '%s\n' "$mon_names" | sed '/^$/d' | wc -l)"
+[ "$count" -gt 0 ] || exit 0
+focused_mon="$(printf '%s' "$active_json" | jq -r '.monitor')"
+
+mode="${1:-sync}"
+arg="${2:-}"
+
+ws_of() {
+    echo $(( ($1 - 1) * count + $2 + 1 ))
+}
+
+wsmon() {
+    printf '%s' "$workspaces_json" | jq -r --argjson w "$1" '.[] | select(.id == $w) | .monitor' | head -1
+}
+
+mon_idx() {
+    local n
+    n="$(printf '%s\n' "$mon_names" | grep -n "^${1}$" | cut -d: -f1)"
+    [ -n "$n" ] || n=1
+    echo $(( n - 1 ))
+}
+
+desk=""
+case "$mode" in
+    move)
+        desk="$arg"
+        [ -n "$desk" ] || exit 0
+        cur_mon="$(printf '%s' "$active_json" | jq -r '.monitor')"
+        ws="$(ws_of "$desk" "$(mon_idx "$cur_mon")")"
+        wmon="$(wsmon "$ws")"
+        batch=""
+        if [ -n "$wmon" ] && [ "$wmon" != "$cur_mon" ]; then
+            batch="dispatch moveworkspacetomonitor $ws,$cur_mon; "
+        fi
+        hyprctl --batch "${batch}dispatch movetoworkspacesilent $ws" >/dev/null
+        exit 0
+        ;;
+    prev|next)
+        cur="$(printf '%s' "$active_json" | jq -r '.id')"
+        [ -n "$cur" ] || cur=1
+        d=$(( (cur - 1) / count + 1 ))
+        if [ "$mode" = "prev" ]; then
+            d=$((d - 1))
+        else
+            d=$((d + 1))
+        fi
+        [ "$d" -lt 1 ] && d=1
+        [ "$d" -gt 10 ] && d=10
+        desk="$d"
+        ;;
+    sync)
+        cur="$(printf '%s' "$active_json" | jq -r '.id')"
+        [ -n "$cur" ] || cur=1
+        desk=$(( (cur - 1) / count + 1 ))
+        ;;
+    *)
+        desk="$mode"
+        ;;
+esac
+
+[ -n "$desk" ] || desk=1
+[ "$desk" -gt 10 ] && desk=10
+[ "$desk" -lt 1 ] && desk=1
+
+batch=""
+i=0
+for mon in $mon_names; do
+    ws="$(ws_of "$desk" "$i")"
+    wmon="$(wsmon "$ws")"
+    if [ -n "$wmon" ] && [ "$wmon" != "$mon" ]; then
+        batch="${batch}dispatch moveworkspacetomonitor $ws,$mon; "
+    fi
+    batch="${batch}dispatch focusmonitor $mon; dispatch workspace $ws; "
+    i=$((i + 1))
+done
+
+if [ -n "$focused_mon" ]; then
+    batch="${batch}dispatch focusmonitor $focused_mon; "
+fi
+
+if [ -n "$cursor" ]; then
+    x="$(printf '%s' "$cursor" | sed 's/[ ,].*//')"
+    y="$(printf '%s' "$cursor" | sed 's/.*, *//')"
+    batch="${batch}dispatch movecursor $x $y"
+fi
+
+[ -n "$batch" ] && hyprctl --batch "$batch" >/dev/null

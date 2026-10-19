@@ -1,0 +1,454 @@
+/* ==UserStyle==
+@name           pwnbox-cinny
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Cinny (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("cinny.in") {
+  code .token {
+    opacity: 1 !important;
+  }
+  :root,
+  .silver-theme {
+    color-scheme: light;
+    --ctp-rosewater: #f0f00d;
+    --ctp-flamingo: #f0f00e;
+    --ctp-pink: #f0f00f;
+    --ctp-mauve: #f0f010;
+    --ctp-red: #f0f011;
+    --ctp-maroon: #f0f012;
+    --ctp-peach: #f0f013;
+    --ctp-yellow: #f0f014;
+    --ctp-green: #f0f015;
+    --ctp-teal: #f0f016;
+    --ctp-sky: #f0f017;
+    --ctp-sapphire: #f0f018;
+    --ctp-blue: #f0f019;
+    --ctp-lavender: #f0f01a;
+    --ctp-text: #f0f004;
+    --ctp-subtext1: #f0f005;
+    --ctp-subtext0: #f0f006;
+    --ctp-overlay2: #f0f007;
+    --ctp-overlay1: #f0f008;
+    --ctp-overlay0: #f0f009;
+    --ctp-surface2: #f0f00a;
+    --ctp-surface1: #f0f00b;
+    --ctp-surface0: #f0f00c;
+    --ctp-base: #f0f001;
+    --ctp-mantle: #f0f002;
+    --ctp-crust: #f0f003;
+    /* Legacy user colors */
+    --mx-uc-1: #f0f019;
+    --mx-uc-2: #f0f00f;
+    --mx-uc-3: #f0f016;
+    --mx-uc-4: #f0f011;
+    --mx-uc-5: #f0f013;
+    --mx-uc-6: #f0f017;
+    --mx-uc-7: #f0f010;
+    --mx-uc-8: #f0f015;
+    /* Search results */
+    /* Footer */
+    /* I don't think these actually do anything anymore, but they are
+    still defined in the app. They _might_ be removed in a future release. */
+    /* Backgrounds */
+    --bg-surface: #f0f001;
+    --bg-surface-transparent: rgba(240, 240, 1, 0);
+    --bg-surface-low: #f0f002;
+    --bg-surface-low-transparent: rgba(240, 240, 2, 0);
+    --bg-surface-extra-low: #f0f003;
+    --bg-surface-extra-low-transparent: rgba(240, 240, 3, 0);
+    --bg-surface-border: rgba(240, 240, 3, 0.2);
+    --bg-surface-hover: #f0f00c;
+    --bg-surface-active: #f0f00b;
+    --bg-overlay: rgba(240, 240, 3, 0.6);
+    --bg-overlay-low: rgba(240, 240, 3, 0.8);
+    --bg-primary: #f0f01b;
+    --bg-primary-hover: rgba(240, 240, 27, 0.8);
+    --bg-primary-active: rgba(240, 240, 27, 0.7);
+    --bg-primary-border: rgba(240, 240, 27, 0.38);
+    --bg-tooltip: #f0f00c;
+    --bg-badge: #f0f01a;
+    --bg-positive: #f0f015;
+    --bg-positive-hover: rgba(240, 240, 21, 0.08);
+    --bg-positive-active: rgba(240, 240, 21, 0.15);
+    --bg-positive-border: rgba(240, 240, 21, 0.4);
+    --bg-caution: #f0f013;
+    --bg-caution-hover: rgba(240, 240, 19, 0.08);
+    --bg-caution-active: rgba(240, 240, 19, 0.15);
+    --bg-caution-border: rgba(240, 240, 19, 0.4);
+    --bg-danger: #f0f012;
+    --bg-danger-hover: rgba(240, 240, 18, 0.05);
+    --bg-danger-active: rgba(240, 240, 18, 0.1);
+    --bg-danger-border: rgba(240, 240, 18, 0.2);
+    --bg-ping: rgba(240, 240, 21, 0.4);
+    --bg-ping-hover: rgba(240, 240, 21, 0.5);
+    /* Texts */
+    --tc-surface-high: #f0f004;
+    --tc-surface-normal: #f0f004;
+    --tc-surface-normal-low: #f0f005;
+    --tc-surface-low: #f0f006;
+    --tc-primary-high: #f0f003;
+    --tc-primary-normal: #f0f004;
+    --tc-primary-low: #f0f005;
+    --tc-tooltip: #f0f006;
+    --tc-code: #f0f010;
+    --tc-link: #f0f019;
+    --tc-badge: #f0f003;
+    --tc-positive-high: #f0f015;
+    --tc-positive-normal: #f0f015;
+    --tc-positive-low: #f0f015;
+    --tc-caution-high: #f0f013;
+    --tc-caution-normal: #f0f013;
+    --tc-caution-low: #f0f013;
+    --tc-danger-high: #f0f012;
+    --tc-danger-normal: #f0f012;
+    --tc-danger-low: #f0f012;
+    /* Icons */
+    --ic-surface-high: #f0f004;
+    --ic-surface-normal: #f0f004;
+    --ic-surface-low: #f0f005;
+    --ic-primary-high: #f0f003;
+    --ic-primary-normal: #f0f003;
+    --ic-primary-low: #f0f003;
+    --ic-positive-high: #f0f015;
+    --ic-positive-normal: #f0f012;
+    --ic-caution-high: #f0f013;
+    --ic-caution-normal: #f0f013;
+    --ic-danger-high: #f0f012;
+    --ic-danger-normal: #f0f012;
+  }
+  :root ::selection,
+  .silver-theme ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root input::placeholder,
+  .silver-theme input::placeholder,
+  :root textarea::placeholder,
+  .silver-theme textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root body.oq6d071w,
+  .silver-theme body.oq6d071w,
+  :root._15q3ngn0,
+  .silver-theme._15q3ngn0,
+  :root._15q3ngn1,
+  .silver-theme._15q3ngn1,
+  :root._15q3ngn2,
+  .silver-theme._15q3ngn2 {
+    --oq6d070: #f0f002;
+    --oq6d071: #f0f001;
+    --oq6d072: #f0f00c;
+    --oq6d073: #f0f00b;
+    --oq6d074: #f0f004;
+    --oq6d075: #f0f001;
+    --oq6d076: #f0f00c;
+    --oq6d077: #f0f00b;
+    --oq6d078: #f0f00a;
+    --oq6d079: #f0f004;
+    --oq6d07a: #f0f002;
+    --oq6d07b: #f0f001;
+    --oq6d07c: #f0f00c;
+    --oq6d07d: #f0f00b;
+    --oq6d07e: #f0f004;
+    --oq6d07f: #f0f006;
+    --oq6d07g: #f0f007;
+    --oq6d07h: #f0f008;
+    --oq6d07i: #f0f009;
+    --oq6d07j: #f0f001;
+    --oq6d07k: rgba(240, 240, 27, 0.5);
+    --oq6d07l: rgba(240, 240, 27, 0.4);
+    --oq6d07m: rgba(240, 240, 27, 0.3);
+    --oq6d07n: rgba(240, 240, 27, 0.2);
+    --oq6d07o: #f0f004;
+    --oq6d07p: #f0f005;
+    --oq6d07q: #f0f006;
+    --oq6d07r: #f0f007;
+    --oq6d07s: #f0f008;
+    --oq6d07t: #f0f002;
+    --oq6d07u: #f0f00c;
+    --oq6d07v: #f0f00b;
+    --oq6d07w: #f0f00a;
+    --oq6d07x: #f0f009;
+    --oq6d07y: #f0f004;
+    --oq6d07z: rgba(240, 240, 21, 0.9);
+    --oq6d0710: rgba(240, 240, 21, 0.95);
+    --oq6d0711: rgba(240, 240, 21, 0.975);
+    --oq6d0712: #f0f015;
+    --oq6d0713: #f0f00c;
+    --oq6d0714: rgba(240, 240, 12, 0.975);
+    --oq6d0715: rgba(240, 240, 12, 0.95);
+    --oq6d0716: rgba(240, 240, 12, 0.9);
+    --oq6d0717: rgba(240, 240, 12, 0.8);
+    --oq6d0718: #f0f015;
+    --oq6d0719: rgba(240, 240, 19, 0.9);
+    --oq6d071a: rgba(240, 240, 19, 0.95);
+    --oq6d071b: rgba(240, 240, 19, 0.975);
+    --oq6d071c: #f0f013;
+    --oq6d071d: rgba(240, 240, 12, 0.975);
+    --oq6d071e: rgba(240, 240, 12, 0.95);
+    --oq6d071f: rgba(240, 240, 12, 0.9);
+    --oq6d071g: rgba(240, 240, 12, 0.8);
+    --oq6d071h: rgba(240, 240, 12, 0.7);
+    --oq6d071i: rgba(240, 240, 18, 0.9);
+    --oq6d071j: rgba(240, 240, 18, 0.95);
+    --oq6d071k: rgba(240, 240, 18, 0.975);
+    --oq6d071l: #f0f012;
+    --oq6d071m: rgba(240, 240, 12, 0.975);
+    --oq6d071n: rgba(240, 240, 12, 0.95);
+    --oq6d071o: rgba(240, 240, 12, 0.9);
+    --oq6d071p: rgba(240, 240, 12, 0.8);
+    --oq6d071q: rgba(240, 240, 12, 0.7);
+    --oq6d071r: rgba(240, 240, 12, 0.6);
+    --oq6d071s: rgba(240, 240, 18, 0.9);
+    --oq6d071t: rgba(240, 240, 4, 0.5);
+    --oq6d071u: #f0f003;
+    --oq6d071v: rgba(240, 240, 3, 0.6);
+  }
+  :root ._1m2qi7rq,
+  .silver-theme ._1m2qi7rq {
+    background-color: #f0f01b;
+    color: #f0f001;
+  }
+  :root .footer,
+  .silver-theme .footer {
+    background-color: #f0f001;
+  }
+  :root .footer .text-s1,
+  .silver-theme .footer .text-s1,
+  :root .footer .text-h2,
+  .silver-theme .footer .text-h2,
+  :root .footer a,
+  .silver-theme .footer a {
+    color: #f0f004;
+  }
+  :root .footer .footer__creator,
+  .silver-theme .footer .footer__creator,
+  :root .footer .footer__menu-container .text-b3,
+  .silver-theme .footer .footer__menu-container .text-b3 {
+    color: #f0f006;
+  }
+  .dark-theme,
+  .butter-theme {
+    color-scheme: dark;
+    --ctp-rosewater: #f0f00d;
+    --ctp-flamingo: #f0f00e;
+    --ctp-pink: #f0f00f;
+    --ctp-mauve: #f0f010;
+    --ctp-red: #f0f011;
+    --ctp-maroon: #f0f012;
+    --ctp-peach: #f0f013;
+    --ctp-yellow: #f0f014;
+    --ctp-green: #f0f015;
+    --ctp-teal: #f0f016;
+    --ctp-sky: #f0f017;
+    --ctp-sapphire: #f0f018;
+    --ctp-blue: #f0f019;
+    --ctp-lavender: #f0f01a;
+    --ctp-text: #f0f004;
+    --ctp-subtext1: #f0f005;
+    --ctp-subtext0: #f0f006;
+    --ctp-overlay2: #f0f007;
+    --ctp-overlay1: #f0f008;
+    --ctp-overlay0: #f0f009;
+    --ctp-surface2: #f0f00a;
+    --ctp-surface1: #f0f00b;
+    --ctp-surface0: #f0f00c;
+    --ctp-base: #f0f001;
+    --ctp-mantle: #f0f002;
+    --ctp-crust: #f0f003;
+    /* Legacy user colors */
+    --mx-uc-1: #f0f019;
+    --mx-uc-2: #f0f00f;
+    --mx-uc-3: #f0f016;
+    --mx-uc-4: #f0f011;
+    --mx-uc-5: #f0f013;
+    --mx-uc-6: #f0f017;
+    --mx-uc-7: #f0f010;
+    --mx-uc-8: #f0f015;
+    /* Search results */
+    /* Footer */
+    /* I don't think these actually do anything anymore, but they are
+    still defined in the app. They _might_ be removed in a future release. */
+    /* Backgrounds */
+    --bg-surface: #f0f001;
+    --bg-surface-transparent: rgba(240, 240, 1, 0);
+    --bg-surface-low: #f0f002;
+    --bg-surface-low-transparent: rgba(240, 240, 2, 0);
+    --bg-surface-extra-low: #f0f003;
+    --bg-surface-extra-low-transparent: rgba(240, 240, 3, 0);
+    --bg-surface-border: rgba(240, 240, 3, 0.2);
+    --bg-surface-hover: #f0f00c;
+    --bg-surface-active: #f0f00b;
+    --bg-overlay: rgba(240, 240, 3, 0.6);
+    --bg-overlay-low: rgba(240, 240, 3, 0.8);
+    --bg-primary: #f0f01b;
+    --bg-primary-hover: rgba(240, 240, 27, 0.8);
+    --bg-primary-active: rgba(240, 240, 27, 0.7);
+    --bg-primary-border: rgba(240, 240, 27, 0.38);
+    --bg-tooltip: #f0f00c;
+    --bg-badge: #f0f01a;
+    --bg-positive: #f0f015;
+    --bg-positive-hover: rgba(240, 240, 21, 0.08);
+    --bg-positive-active: rgba(240, 240, 21, 0.15);
+    --bg-positive-border: rgba(240, 240, 21, 0.4);
+    --bg-caution: #f0f013;
+    --bg-caution-hover: rgba(240, 240, 19, 0.08);
+    --bg-caution-active: rgba(240, 240, 19, 0.15);
+    --bg-caution-border: rgba(240, 240, 19, 0.4);
+    --bg-danger: #f0f012;
+    --bg-danger-hover: rgba(240, 240, 18, 0.05);
+    --bg-danger-active: rgba(240, 240, 18, 0.1);
+    --bg-danger-border: rgba(240, 240, 18, 0.2);
+    --bg-ping: rgba(240, 240, 21, 0.4);
+    --bg-ping-hover: rgba(240, 240, 21, 0.5);
+    /* Texts */
+    --tc-surface-high: #f0f004;
+    --tc-surface-normal: #f0f004;
+    --tc-surface-normal-low: #f0f005;
+    --tc-surface-low: #f0f006;
+    --tc-primary-high: #f0f003;
+    --tc-primary-normal: #f0f004;
+    --tc-primary-low: #f0f005;
+    --tc-tooltip: #f0f006;
+    --tc-code: #f0f010;
+    --tc-link: #f0f019;
+    --tc-badge: #f0f003;
+    --tc-positive-high: #f0f015;
+    --tc-positive-normal: #f0f015;
+    --tc-positive-low: #f0f015;
+    --tc-caution-high: #f0f013;
+    --tc-caution-normal: #f0f013;
+    --tc-caution-low: #f0f013;
+    --tc-danger-high: #f0f012;
+    --tc-danger-normal: #f0f012;
+    --tc-danger-low: #f0f012;
+    /* Icons */
+    --ic-surface-high: #f0f004;
+    --ic-surface-normal: #f0f004;
+    --ic-surface-low: #f0f005;
+    --ic-primary-high: #f0f003;
+    --ic-primary-normal: #f0f003;
+    --ic-primary-low: #f0f003;
+    --ic-positive-high: #f0f015;
+    --ic-positive-normal: #f0f012;
+    --ic-caution-high: #f0f013;
+    --ic-caution-normal: #f0f013;
+    --ic-danger-high: #f0f012;
+    --ic-danger-normal: #f0f012;
+  }
+  .dark-theme ::selection,
+  .butter-theme ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  .dark-theme input::placeholder,
+  .butter-theme input::placeholder,
+  .dark-theme textarea::placeholder,
+  .butter-theme textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  .dark-theme body.oq6d071w,
+  .butter-theme body.oq6d071w,
+  .dark-theme._15q3ngn0,
+  .butter-theme._15q3ngn0,
+  .dark-theme._15q3ngn1,
+  .butter-theme._15q3ngn1,
+  .dark-theme._15q3ngn2,
+  .butter-theme._15q3ngn2 {
+    --oq6d070: #f0f002;
+    --oq6d071: #f0f001;
+    --oq6d072: #f0f00c;
+    --oq6d073: #f0f00b;
+    --oq6d074: #f0f004;
+    --oq6d075: #f0f001;
+    --oq6d076: #f0f00c;
+    --oq6d077: #f0f00b;
+    --oq6d078: #f0f00a;
+    --oq6d079: #f0f004;
+    --oq6d07a: #f0f002;
+    --oq6d07b: #f0f001;
+    --oq6d07c: #f0f00c;
+    --oq6d07d: #f0f00b;
+    --oq6d07e: #f0f004;
+    --oq6d07f: #f0f006;
+    --oq6d07g: #f0f007;
+    --oq6d07h: #f0f008;
+    --oq6d07i: #f0f009;
+    --oq6d07j: #f0f001;
+    --oq6d07k: rgba(240, 240, 27, 0.5);
+    --oq6d07l: rgba(240, 240, 27, 0.4);
+    --oq6d07m: rgba(240, 240, 27, 0.3);
+    --oq6d07n: rgba(240, 240, 27, 0.2);
+    --oq6d07o: #f0f004;
+    --oq6d07p: #f0f005;
+    --oq6d07q: #f0f006;
+    --oq6d07r: #f0f007;
+    --oq6d07s: #f0f008;
+    --oq6d07t: #f0f002;
+    --oq6d07u: #f0f00c;
+    --oq6d07v: #f0f00b;
+    --oq6d07w: #f0f00a;
+    --oq6d07x: #f0f009;
+    --oq6d07y: #f0f004;
+    --oq6d07z: rgba(240, 240, 21, 0.9);
+    --oq6d0710: rgba(240, 240, 21, 0.95);
+    --oq6d0711: rgba(240, 240, 21, 0.975);
+    --oq6d0712: #f0f015;
+    --oq6d0713: #f0f00c;
+    --oq6d0714: rgba(240, 240, 12, 0.975);
+    --oq6d0715: rgba(240, 240, 12, 0.95);
+    --oq6d0716: rgba(240, 240, 12, 0.9);
+    --oq6d0717: rgba(240, 240, 12, 0.8);
+    --oq6d0718: #f0f015;
+    --oq6d0719: rgba(240, 240, 19, 0.9);
+    --oq6d071a: rgba(240, 240, 19, 0.95);
+    --oq6d071b: rgba(240, 240, 19, 0.975);
+    --oq6d071c: #f0f013;
+    --oq6d071d: rgba(240, 240, 12, 0.975);
+    --oq6d071e: rgba(240, 240, 12, 0.95);
+    --oq6d071f: rgba(240, 240, 12, 0.9);
+    --oq6d071g: rgba(240, 240, 12, 0.8);
+    --oq6d071h: rgba(240, 240, 12, 0.7);
+    --oq6d071i: rgba(240, 240, 18, 0.9);
+    --oq6d071j: rgba(240, 240, 18, 0.95);
+    --oq6d071k: rgba(240, 240, 18, 0.975);
+    --oq6d071l: #f0f012;
+    --oq6d071m: rgba(240, 240, 12, 0.975);
+    --oq6d071n: rgba(240, 240, 12, 0.95);
+    --oq6d071o: rgba(240, 240, 12, 0.9);
+    --oq6d071p: rgba(240, 240, 12, 0.8);
+    --oq6d071q: rgba(240, 240, 12, 0.7);
+    --oq6d071r: rgba(240, 240, 12, 0.6);
+    --oq6d071s: rgba(240, 240, 18, 0.9);
+    --oq6d071t: rgba(240, 240, 4, 0.5);
+    --oq6d071u: #f0f003;
+    --oq6d071v: rgba(240, 240, 3, 0.6);
+  }
+  .dark-theme ._1m2qi7rq,
+  .butter-theme ._1m2qi7rq {
+    background-color: #f0f01b;
+    color: #f0f001;
+  }
+  .dark-theme .footer,
+  .butter-theme .footer {
+    background-color: #f0f001;
+  }
+  .dark-theme .footer .text-s1,
+  .butter-theme .footer .text-s1,
+  .dark-theme .footer .text-h2,
+  .butter-theme .footer .text-h2,
+  .dark-theme .footer a,
+  .butter-theme .footer a {
+    color: #f0f004;
+  }
+  .dark-theme .footer .footer__creator,
+  .butter-theme .footer .footer__creator,
+  .dark-theme .footer .footer__menu-container .text-b3,
+  .butter-theme .footer .footer__menu-container .text-b3 {
+    color: #f0f006;
+  }
+}

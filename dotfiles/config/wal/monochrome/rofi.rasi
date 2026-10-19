@@ -1,0 +1,13 @@
+
+* {
+    background:     #080808;
+    background-alt: #171717;
+    brdr:           #353535;
+    foreground:     #cccccc;
+    foresel:        #cccccc;
+    selected:       #353535;
+    urgent:         #6b6b6b;
+    on:             #c4c4c4;
+    off:            #6b6b6b;
+    radius:         9px;
+}

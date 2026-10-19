@@ -1,0 +1,1355 @@
+/* ==UserStyle==
+@name           pwnbox-bstats
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for bStats (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("bstats.org") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+      /* slide out nav text & icons */
+      /* code box */
+      /* discord logo on homepage */
+      /* checkbox */
+      /* table hover */
+      /* nav hover */
+      /* search unfocused */
+      /* search focused */
+      /* valid input */
+      /* modals found in custom chart settings */
+      /* custom chart dropdown menu */
+      /* custom chart lever */
+      /* custom chart filter data */
+      /* HIGHCHARTS "let's hope this does'nt break"-section */
+      /* all the charts */
+      /* "shadow" area below graph in time navigator */
+      /* charts background */
+      /* map blends in with background on latte flavor */
+      /* graph chart grid */
+      /* bottom timeline line */
+      /* bottom timeline & y axis text text */
+      /* vertical line on graph hover */
+      /* circle marker on graph */
+      /* time navigator on bottom */
+      /* active time span */
+      /* navigator handles on the left & right */
+      /* vertical timestamp lines */
+      /* time navigator timestamp text */
+      /* scrollbar */
+      /* buttons */
+      /* normal state */
+      /* hover state */
+      /* pressed state */
+      /* disabled state */
+      /* "Load full data" button */
+      /* pie text "shadow" */
+      /* pie text */
+      /* drilldown pie text */
+      /* pie subtitle */
+      /* pie hover text */
+      /* hover text */
+      /* hover text red dot */
+      /* map hover text */
+      /* "No data to display" */
+      /* axis label */
+      /* hover text background */
+      /* legend */
+      /* legend title */
+      /* legend labels */
+      /* vertical lines */
+      /* background only for bar chart legend */
+      /* bar chart entries */
+      /* bar chart circle outline */
+      /* disabled bar chart circle */
+      /* bar & pie chart colors */
+      /* color 0 */
+      /* color 1 */
+      /* color 2 */
+      /* color 3 */
+      /* color 4 */
+      /* color 5 */
+      /* color 6 */
+      /* color 7 */
+      /* color 8 */
+      /* color 9 */
+      /* color 10 */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root body,
+    :root .collection-header,
+    :root .collection-item,
+    :root .grey.lighten-4,
+    :root .page-footer .footer-copyright {
+      background: #f0f001 !important;
+    }
+    :root .teal.darken-3,
+    :root .teal.darken-2,
+    :root .dropdown-content,
+    :root .side-nav {
+      background-color: #f0f002 !important;
+    }
+    :root .teal {
+      background-color: #f0f00c !important;
+    }
+    :root .subheader,
+    :root .left {
+      color: #f0f004 !important;
+    }
+    :root .collection {
+      border-color: #f0f00c;
+    }
+    :root .collection.with-header .collection-header,
+    :root .collection .collection-item {
+      border-bottom-color: #f0f00c;
+    }
+    :root .collapsible {
+      border-top-color: #f0f00b;
+      border-right-color: #f0f00b;
+      border-left-color: #f0f00b;
+    }
+    :root .collapsible-body {
+      border-bottom-color: #f0f00b;
+    }
+    :root .collapsible-header {
+      background-color: #f0f00c !important;
+      border-bottom-color: #f0f00b;
+    }
+    :root blockquote {
+      border-left-color: #f0f012;
+    }
+    :root .prettyprint,
+    :root .withBox,
+    :root .prettyprinted {
+      background-color: #f0f002 !important;
+      outline-color: #f0f002;
+      color: #f0f007;
+    }
+    :root .tag,
+    :root .boolean {
+      color: #f0f019;
+    }
+    :root .pln {
+      color: #f0f004;
+    }
+    :root .com {
+      color: #f0f009;
+    }
+    :root .key {
+      color: #f0f011;
+    }
+    :root .clo,
+    :root .opn,
+    :root .pun {
+      color: #f0f014;
+    }
+    :root .str,
+    :root .string,
+    :root .atv {
+      color: #f0f015;
+    }
+    :root .atn {
+      color: #f0f010;
+    }
+    :root .number {
+      color: #f0f013;
+    }
+    :root p,
+    :root h5,
+    :root b,
+    :root table,
+    :root th,
+    :root td,
+    :root .white-text,
+    :root nav .brand-logo,
+    :root nav a,
+    :root div.material-table .table-title,
+    :root div.material-table table th,
+    :root .card-title,
+    :root .card-content,
+    :root .container,
+    :root .center {
+      color: #f0f004 !important;
+    }
+    :root html,
+    :root div.material-table table tr td,
+    :root .grey-text.text-lighten-4,
+    :root .page-footer .footer-copyright {
+      color: #f0f005 !important;
+    }
+    :root .grey-text,
+    :root .grey-text.text-darken-2,
+    :root .input-field label,
+    :root div.material-table .table-footer label,
+    :root div.material-table .table-footer,
+    :root label {
+      color: #f0f006 !important;
+    }
+    :root .blue-text {
+      color: #f0f019 !important;
+    }
+    :root .red-text {
+      color: #f0f011 !important;
+    }
+    :root .red {
+      background-color: #f0f011;
+    }
+    :root img[src="/images/discord.svg"] {
+      filter: saturate(210%) hue-rotate(-20deg) brightness(82%);
+    }
+    :root [type="checkbox"] + label::before,
+    :root [type="checkbox"]:not(.filled-in) + label::after {
+      border-color: #f0f006;
+    }
+    :root [type="checkbox"]:checked + label::before {
+      border-color: rgba(0, 0, 0, 0);
+      border-right-color: #f0f015;
+      border-bottom-color: #f0f015;
+    }
+    :root div.material-table table tbody tr:hover {
+      background-color: rgba(240, 240, 10, 0.4);
+    }
+    :root nav ul a:hover {
+      background-color: rgba(240, 240, 10, 0.4);
+    }
+    :root .dropdown-content li:hover,
+    :root .dropdown-content li.active,
+    :root .dropdown-content li.selected {
+      background-color: rgba(240, 240, 10, 0.05);
+    }
+    :root .input-field label {
+      color: #f0f01b !important;
+    }
+    :root input:not([type]),
+    :root input[type="text"],
+    :root input[type="password"],
+    :root input[type="email"],
+    :root input[type="url"],
+    :root input[type="time"],
+    :root input[type="date"],
+    :root input[type="datetime"],
+    :root input[type="datetime-local"],
+    :root input[type="tel"],
+    :root input[type="number"],
+    :root input[type="search"],
+    :root textarea.materialize-textarea {
+      border-bottom-color: #f0f006;
+      box-shadow: 1 1px 0 0 #f0f006;
+    }
+    :root input:not([type]):focus:not([readonly]),
+    :root input[type="text"]:focus:not([readonly]),
+    :root input[type="password"]:focus:not([readonly]),
+    :root input[type="email"]:focus:not([readonly]),
+    :root input[type="url"]:focus:not([readonly]),
+    :root input[type="time"]:focus:not([readonly]),
+    :root input[type="date"]:focus:not([readonly]),
+    :root input[type="datetime"]:focus:not([readonly]),
+    :root input[type="datetime-local"]:focus:not([readonly]),
+    :root input[type="tel"]:focus:not([readonly]),
+    :root input[type="number"]:focus:not([readonly]),
+    :root input[type="search"]:focus:not([readonly]),
+    :root textarea.materialize-textarea:focus:not([readonly]) {
+      border-bottom-color: #f0f01b;
+      box-shadow: 0 1px 0 0 #f0f01b;
+    }
+    :root input:not([type]).valid,
+    :root input:not([type]):focus.valid,
+    :root input[type="text"].valid,
+    :root input[type="text"]:focus.valid,
+    :root input[type="password"].valid,
+    :root input[type="password"]:focus.valid,
+    :root input[type="email"].valid,
+    :root input[type="email"]:focus.valid,
+    :root input[type="url"].valid,
+    :root input[type="url"]:focus.valid,
+    :root input[type="time"].valid,
+    :root input[type="time"]:focus.valid,
+    :root input[type="date"].valid,
+    :root input[type="date"]:focus.valid,
+    :root input[type="datetime"].valid,
+    :root input[type="datetime"]:focus.valid,
+    :root input[type="datetime-local"].valid,
+    :root input[type="datetime-local"]:focus.valid,
+    :root input[type="tel"].valid,
+    :root input[type="tel"]:focus.valid,
+    :root input[type="number"].valid,
+    :root input[type="number"]:focus.valid,
+    :root input[type="search"].valid,
+    :root input[type="search"]:focus.valid,
+    :root textarea.materialize-textarea.valid,
+    :root textarea.materialize-textarea:focus.valid {
+      border-bottom-color: #f0f015;
+      box-shadow: 0 1px 0 0 #f0f015;
+    }
+    :root .teal-text,
+    :root .teal-text.text-darken-2,
+    :root .teal-text.text-lighten-3,
+    :root a {
+      color: #f0f01b !important;
+    }
+    :root .btn,
+    :root .btn-large {
+      color: #f0f004 !important;
+    }
+    :root .btn.disabled,
+    :root .disabled.btn-large,
+    :root .btn-floating.disabled,
+    :root .btn-large.disabled,
+    :root .btn-flat.disabled,
+    :root .btn:disabled,
+    :root .btn-floating:disabled,
+    :root .btn-large:disabled,
+    :root .btn-flat:disabled,
+    :root .btn[disabled],
+    :root [disabled].btn-large,
+    :root .btn-floating[disabled],
+    :root .btn-large[disabled],
+    :root .btn-flat[disabled],
+    :root .btn-large.red[disabled],
+    :root .btn-large.red.disabled[id="delete_button"] {
+      background-color: #f0f002 !important;
+      color: #f0f006 !important;
+    }
+    :root .btn-large.red[id="delete_button"] {
+      color: #f0f002 !important;
+      background-color: #f0f011 !important;
+    }
+    :root .card {
+      background-color: #f0f001;
+      border-color: #f0f00c;
+    }
+    :root thead,
+    :root div.material-table table tr td,
+    :root div.material-table .table-header {
+      border-bottom-color: #f0f00c;
+    }
+    :root .modal .modal-content,
+    :root .modal .modal-footer {
+      background-color: #f0f00c;
+    }
+    :root .select-wrapper input.select-dropdown {
+      border-bottom-color: #f0f006;
+    }
+    :root .select-dropdown li.optgroup {
+      border-top-color: #f0f00b;
+    }
+    :root .select-dropdown li.disabled,
+    :root .select-dropdown li.disabled > span,
+    :root .select-dropdown li.optgroup {
+      color: #f0f004;
+    }
+    :root .select-dropdown li.optgroup > span {
+      color: #f0f005;
+    }
+    :root .dropdown-content li > a,
+    :root .dropdown-content li > span {
+      color: #f0f01b;
+    }
+    :root .divider {
+      background-color: #f0f00b;
+    }
+    :root .caret {
+      color: #f0f008 !important;
+    }
+    :root .switch label .lever {
+      background-color: #f0f009;
+    }
+    :root .switch label .lever::after {
+      background-color: #f0f007;
+    }
+    :root .switch label input[type="checkbox"]:checked + .lever {
+      background-color: #60602b;
+      background-color: #d9d970;
+    }
+    :root .switch label input[type="checkbox"]:checked + .lever::after {
+      background-color: #f0f01b;
+    }
+    :root .chip {
+      color: #f0f004;
+      background-color: #f0f00b;
+    }
+    :root .chips .chip.selected {
+      background-color: #f0f01b;
+      color: #f0f001;
+    }
+    :root .chips.focus {
+      border-bottom-color: #f0f01b;
+      box-shadow: 0 1px 0 0 #f0f01b;
+    }
+    :root .chips .input {
+      color: #f0f004;
+    }
+    :root input[placeholder="Add an other value"] {
+      border-bottom-color: #f0f007;
+    }
+    :root .highcharts-graph {
+      stroke: #f0f011;
+    }
+    :root .highcharts-area {
+      fill: rgba(240, 240, 17, 0.05) !important;
+    }
+    :root .highcharts-container {
+      background: #f0f001 !important;
+    }
+    :root .highcharts-map-series .highcharts-point {
+      stroke: #f0f001 !important;
+      stroke: #f0f009 !important;
+    }
+    :root .highcharts-grid.highcharts-yaxis-grid .highcharts-grid-line {
+      stroke: #f0f00c;
+    }
+    :root .highcharts-tick,
+    :root .highcharts-xaxis .highcharts-axis-line {
+      stroke: #f0f00b;
+    }
+    :root .highcharts-axis-labels.highcharts-xaxis-labels text,
+    :root .highcharts-axis-labels.highcharts-yaxis-labels text {
+      fill: #f0f005 !important;
+    }
+    :root .highcharts-crosshair,
+    :root .highcharts-crosshair-thin {
+      stroke: #f0f007;
+    }
+    :root .highcharts-markers .highcharts-halo.highcharts-color-0 {
+      fill: #f0f011 !important;
+      stroke: none !important;
+    }
+    :root .highcharts-markers path {
+      fill: #f0f011 !important;
+      stroke: #f0f001 !important;
+    }
+    :root .highcharts-navigator,
+    :root .highcharts-navigator-mask-inside {
+      fill: rgba(240, 240, 11, 0.33);
+    }
+    :root .highcharts-navigator .highcharts-navigator-outline {
+      stroke: #f0f00b;
+    }
+    :root .highcharts-navigator .highcharts-navigator-handle {
+      fill: #f0f00c;
+      stroke: #f0f008;
+    }
+    :root .highcharts-grid.highcharts-xaxis-grid.highcharts-navigator-xaxis .highcharts-grid-line {
+      stroke: #f0f00b;
+    }
+    :root .highcharts-xaxis-labels.highcharts-navigator-xaxis tspan {
+      fill: #f0f006 !important;
+    }
+    :root .highcharts-scrollbar,
+    :root .highcharts-scrollbar-track {
+      fill: #f0f00c;
+      stroke: #f0f00b;
+    }
+    :root .highcharts-scrollbar,
+    :root .highcharts-scrollbar-thumb {
+      fill: #f0f008;
+      stroke: #f0f008;
+    }
+    :root .highcharts-scrollbar .highcharts-scrollbar-rifles {
+      stroke: #f0f002;
+    }
+    :root .highcharts-scrollbar-button {
+      fill: #f0f008;
+      stroke: #f0f008;
+    }
+    :root .highcharts-scrollbar-arrow {
+      fill: #f0f002;
+    }
+    :root .highcharts-button text {
+      fill: #f0f005 !important;
+    }
+    :root .highcharts-button-box {
+      fill: #f0f00c !important;
+      stroke: #f0f00c !important;
+    }
+    :root .highcharts-button-symbol {
+      fill: #f0f006 !important;
+      stroke: #f0f006 !important;
+    }
+    :root .highcharts-button.highcharts-button-normal text {
+      fill: #f0f005 !important;
+    }
+    :root .highcharts-button.highcharts-button-normal .highcharts-button-box {
+      fill: #f0f00c !important;
+      stroke: #f0f00c !important;
+    }
+    :root .highcharts-button.highcharts-button-hover text {
+      fill: #f0f004 !important;
+    }
+    :root .highcharts-button.highcharts-button-hover .highcharts-button-box {
+      fill: #f0f00a !important;
+      stroke: #f0f00a !important;
+    }
+    :root .highcharts-button.highcharts-button-pressed text {
+      fill: #f0f004 !important;
+    }
+    :root .highcharts-button.highcharts-button-pressed .highcharts-button-box {
+      fill: #f0f00a !important;
+      stroke: #f0f00a !important;
+    }
+    :root .highcharts-button.highcharts-button-disabled text {
+      fill: #f0f009 !important;
+    }
+    :root .highcharts-button.highcharts-button-disabled .highcharts-button-box {
+      fill: #f0f001 !important;
+      stroke: #f0f00c !important;
+    }
+    :root .highcharts-menu {
+      background: #f0f00c !important;
+      border-color: #f0f00b !important;
+      box-shadow: #f0f002 3px 3px 10px !important;
+    }
+    :root .highcharts-menu-item {
+      color: #f0f004 !important;
+    }
+    :root .highcharts-menu-item:hover {
+      color: #f0f001 !important;
+      background: #f0f01b !important;
+    }
+    :root .highcharts-text-outline {
+      stroke: #f0f002;
+      stroke-width: 2px;
+    }
+    :root .highcharts-label.highcharts-data-label tspan {
+      fill: #f0f005;
+    }
+    :root .highcharts-label.highcharts-data-label.highcharts-drilldown-data-label tspan {
+      fill: #f0f019;
+    }
+    :root .highcharts-label.highcharts-data-label.highcharts-drilldown-data-label text {
+      fill: #f0f019 !important;
+      color: #f0f019 !important;
+    }
+    :root .highcharts-subtitle tspan {
+      fill: #f0f006;
+    }
+    :root .highcharts-label.highcharts-tooltip text {
+      fill: #f0f005 !important;
+      color: #f0f005 !important;
+    }
+    :root .highcharts-label.highcharts-tooltip-box tspan {
+      fill: #f0f005;
+    }
+    :root .highcharts-label.highcharts-tooltip-box tspan[style="fill:#F44336"] {
+      fill: #f0f011 !important;
+    }
+    :root .highcharts-label.highcharts-tooltip span:not(div.highcharts-label > span:nth-child(1) > span:nth-child(1)) {
+      color: #f0f005 !important;
+    }
+    :root .highcharts-label.highcharts-no-data tspan {
+      fill: #f0f005;
+    }
+    :root .highcharts-axis-title tspan {
+      fill: #f0f005;
+    }
+    :root .highcharts-label-box,
+    :root .highcharts-tooltip-box {
+      fill: #f0f00c;
+    }
+    :root .highcharts-label.highcharts-legend-title text {
+      fill: #f0f005 !important;
+    }
+    :root .highcharts-axis-labels,
+    :root .highcharts-coloraxis-labels text {
+      fill: #f0f006 !important;
+    }
+    :root .highcharts-legend-item .highcharts-grid.highcharts-coloraxis-grid .highcharts-grid-line {
+      stroke: #f0f001;
+    }
+    :root .highcharts-legend .highcharts-legend-box[fill="#FFFFFF"][stroke="#999999"] {
+      fill: #f0f00c !important;
+      stroke: #f0f00b !important;
+    }
+    :root .highcharts-legend .highcharts-legend-item.highcharts-bar-series tspan {
+      fill: #f0f005 !important;
+    }
+    :root .highcharts-legend .highcharts-legend-item.highcharts-bar-series tspan:hover {
+      fill: #f0f004 !important;
+    }
+    :root .highcharts-legend .highcharts-legend-item.highcharts-bar-series.highcharts-legend-item-hidden tspan {
+      fill: #f0f007 !important;
+    }
+    :root .highcharts-legend .highcharts-legend-item.highcharts-bar-series.highcharts-legend-item-hidden tspan:hover {
+      fill: #f0f006 !important;
+    }
+    :root .highcharts-point {
+      stroke: #f0f001 !important;
+    }
+    :root .highcharts-legend .highcharts-legend-item.highcharts-bar-series rect {
+      stroke: none !important;
+    }
+    :root .highcharts-legend .highcharts-legend-item.highcharts-bar-series.highcharts-legend-item-hidden rect {
+      fill: #f0f009 !important;
+      stroke: none !important;
+    }
+    :root .highcharts-point.highcharts-color-0,
+    :root .highcharts-halo.highcharts-color-0,
+    :root .highcharts-legend-item.highcharts-bar-series.highcharts-color-0 rect {
+      fill: #f0f011 !important;
+    }
+    :root .highcharts-data-label-connector.highcharts-color-0 {
+      stroke: #f0f011 !important;
+    }
+    :root .highcharts-point.highcharts-color-1,
+    :root .highcharts-halo.highcharts-color-1,
+    :root .highcharts-legend-item.highcharts-bar-series.highcharts-color-1 rect {
+      fill: #f0f015 !important;
+    }
+    :root .highcharts-data-label-connector.highcharts-color-1 {
+      stroke: #f0f015 !important;
+    }
+    :root .highcharts-point.highcharts-color-2,
+    :root .highcharts-halo.highcharts-color-2,
+    :root .highcharts-legend-item.highcharts-bar-series.highcharts-color-2 rect {
+      fill: #f0f017 !important;
+    }
+    :root .highcharts-data-label-connector.highcharts-color-2 {
+      stroke: #f0f017 !important;
+    }
+    :root .highcharts-point.highcharts-color-3,
+    :root .highcharts-halo.highcharts-color-3,
+    :root .highcharts-legend-item.highcharts-bar-series.highcharts-color-3 rect {
+      fill: #f0f013 !important;
+    }
+    :root .highcharts-data-label-connector.highcharts-color-3 {
+      stroke: #f0f013 !important;
+    }
+    :root .highcharts-point.highcharts-color-4,
+    :root .highcharts-halo.highcharts-color-4,
+    :root .highcharts-legend-item.highcharts-bar-series.highcharts-color-4 rect {
+      fill: #f0f014 !important;
+    }
+    :root .highcharts-data-label-connector.highcharts-color-4 {
+      stroke: #f0f014 !important;
+    }
+    :root .highcharts-point.highcharts-color-5,
+    :root .highcharts-halo.highcharts-color-5,
+    :root .highcharts-legend-item.highcharts-bar-series.highcharts-color-5 rect {
+      fill: #f0f016 !important;
+    }
+    :root .highcharts-data-label-connector.highcharts-color-5 {
+      stroke: #f0f016 !important;
+    }
+    :root .highcharts-point.highcharts-color-6,
+    :root .highcharts-halo.highcharts-color-6,
+    :root .highcharts-legend-item.highcharts-bar-series.highcharts-color-6 rect {
+      fill: #f0f00f !important;
+    }
+    :root .highcharts-data-label-connector.highcharts-color-6 {
+      stroke: #f0f00f !important;
+    }
+    :root .highcharts-point.highcharts-color-7,
+    :root .highcharts-halo.highcharts-color-7,
+    :root .highcharts-legend-item.highcharts-bar-series.highcharts-color-7 rect {
+      fill: #f0f00e !important;
+    }
+    :root .highcharts-data-label-connector.highcharts-color-7 {
+      stroke: #f0f00e !important;
+    }
+    :root .highcharts-point.highcharts-color-8,
+    :root .highcharts-halo.highcharts-color-8,
+    :root .highcharts-legend-item.highcharts-bar-series.highcharts-color-8 rect {
+      fill: #f0f006 !important;
+    }
+    :root .highcharts-data-label-connector.highcharts-color-8 {
+      stroke: #f0f006 !important;
+    }
+    :root .highcharts-point.highcharts-color-9,
+    :root .highcharts-halo.highcharts-color-9,
+    :root .highcharts-legend-item.highcharts-bar-series.highcharts-color-9 rect {
+      fill: #f0f019 !important;
+    }
+    :root .highcharts-data-label-connector.highcharts-color-9 {
+      stroke: #f0f019 !important;
+    }
+    :root .highcharts-point.highcharts-color-10,
+    :root .highcharts-halo.highcharts-color-10,
+    :root .highcharts-legend-item.highcharts-bar-series.highcharts-color-10 rect {
+      fill: #f0f010 !important;
+    }
+    :root .highcharts-data-label-connector.highcharts-color-10 {
+      stroke: #f0f010 !important;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      /* slide out nav text & icons */
+      /* code box */
+      /* discord logo on homepage */
+      /* checkbox */
+      /* table hover */
+      /* nav hover */
+      /* search unfocused */
+      /* search focused */
+      /* valid input */
+      /* modals found in custom chart settings */
+      /* custom chart dropdown menu */
+      /* custom chart lever */
+      /* custom chart filter data */
+      /* HIGHCHARTS "let's hope this does'nt break"-section */
+      /* all the charts */
+      /* "shadow" area below graph in time navigator */
+      /* charts background */
+      /* map blends in with background on latte flavor */
+      /* graph chart grid */
+      /* bottom timeline line */
+      /* bottom timeline & y axis text text */
+      /* vertical line on graph hover */
+      /* circle marker on graph */
+      /* time navigator on bottom */
+      /* active time span */
+      /* navigator handles on the left & right */
+      /* vertical timestamp lines */
+      /* time navigator timestamp text */
+      /* scrollbar */
+      /* buttons */
+      /* normal state */
+      /* hover state */
+      /* pressed state */
+      /* disabled state */
+      /* "Load full data" button */
+      /* pie text "shadow" */
+      /* pie text */
+      /* drilldown pie text */
+      /* pie subtitle */
+      /* pie hover text */
+      /* hover text */
+      /* hover text red dot */
+      /* map hover text */
+      /* "No data to display" */
+      /* axis label */
+      /* hover text background */
+      /* legend */
+      /* legend title */
+      /* legend labels */
+      /* vertical lines */
+      /* background only for bar chart legend */
+      /* bar chart entries */
+      /* bar chart circle outline */
+      /* disabled bar chart circle */
+      /* bar & pie chart colors */
+      /* color 0 */
+      /* color 1 */
+      /* color 2 */
+      /* color 3 */
+      /* color 4 */
+      /* color 5 */
+      /* color 6 */
+      /* color 7 */
+      /* color 8 */
+      /* color 9 */
+      /* color 10 */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root body,
+    :root .collection-header,
+    :root .collection-item,
+    :root .grey.lighten-4,
+    :root .page-footer .footer-copyright {
+      background: #f0f001 !important;
+    }
+    :root .teal.darken-3,
+    :root .teal.darken-2,
+    :root .dropdown-content,
+    :root .side-nav {
+      background-color: #f0f002 !important;
+    }
+    :root .teal {
+      background-color: #f0f00c !important;
+    }
+    :root .subheader,
+    :root .left {
+      color: #f0f004 !important;
+    }
+    :root .collection {
+      border-color: #f0f00c;
+    }
+    :root .collection.with-header .collection-header,
+    :root .collection .collection-item {
+      border-bottom-color: #f0f00c;
+    }
+    :root .collapsible {
+      border-top-color: #f0f00b;
+      border-right-color: #f0f00b;
+      border-left-color: #f0f00b;
+    }
+    :root .collapsible-body {
+      border-bottom-color: #f0f00b;
+    }
+    :root .collapsible-header {
+      background-color: #f0f00c !important;
+      border-bottom-color: #f0f00b;
+    }
+    :root blockquote {
+      border-left-color: #f0f012;
+    }
+    :root .prettyprint,
+    :root .withBox,
+    :root .prettyprinted {
+      background-color: #f0f002 !important;
+      outline-color: #f0f002;
+      color: #f0f007;
+    }
+    :root .tag,
+    :root .boolean {
+      color: #f0f019;
+    }
+    :root .pln {
+      color: #f0f004;
+    }
+    :root .com {
+      color: #f0f009;
+    }
+    :root .key {
+      color: #f0f011;
+    }
+    :root .clo,
+    :root .opn,
+    :root .pun {
+      color: #f0f014;
+    }
+    :root .str,
+    :root .string,
+    :root .atv {
+      color: #f0f015;
+    }
+    :root .atn {
+      color: #f0f010;
+    }
+    :root .number {
+      color: #f0f013;
+    }
+    :root p,
+    :root h5,
+    :root b,
+    :root table,
+    :root th,
+    :root td,
+    :root .white-text,
+    :root nav .brand-logo,
+    :root nav a,
+    :root div.material-table .table-title,
+    :root div.material-table table th,
+    :root .card-title,
+    :root .card-content,
+    :root .container,
+    :root .center {
+      color: #f0f004 !important;
+    }
+    :root html,
+    :root div.material-table table tr td,
+    :root .grey-text.text-lighten-4,
+    :root .page-footer .footer-copyright {
+      color: #f0f005 !important;
+    }
+    :root .grey-text,
+    :root .grey-text.text-darken-2,
+    :root .input-field label,
+    :root div.material-table .table-footer label,
+    :root div.material-table .table-footer,
+    :root label {
+      color: #f0f006 !important;
+    }
+    :root .blue-text {
+      color: #f0f019 !important;
+    }
+    :root .red-text {
+      color: #f0f011 !important;
+    }
+    :root .red {
+      background-color: #f0f011;
+    }
+    :root img[src="/images/discord.svg"] {
+      filter: saturate(38%) hue-rotate(-25deg) brightness(153%) sepia(6%);
+    }
+    :root [type="checkbox"] + label::before,
+    :root [type="checkbox"]:not(.filled-in) + label::after {
+      border-color: #f0f006;
+    }
+    :root [type="checkbox"]:checked + label::before {
+      border-color: rgba(0, 0, 0, 0);
+      border-right-color: #f0f015;
+      border-bottom-color: #f0f015;
+    }
+    :root div.material-table table tbody tr:hover {
+      background-color: rgba(240, 240, 10, 0.4);
+    }
+    :root nav ul a:hover {
+      background-color: rgba(240, 240, 10, 0.4);
+    }
+    :root .dropdown-content li:hover,
+    :root .dropdown-content li.active,
+    :root .dropdown-content li.selected {
+      background-color: rgba(240, 240, 10, 0.05);
+    }
+    :root .input-field label {
+      color: #f0f01b !important;
+    }
+    :root input:not([type]),
+    :root input[type="text"],
+    :root input[type="password"],
+    :root input[type="email"],
+    :root input[type="url"],
+    :root input[type="time"],
+    :root input[type="date"],
+    :root input[type="datetime"],
+    :root input[type="datetime-local"],
+    :root input[type="tel"],
+    :root input[type="number"],
+    :root input[type="search"],
+    :root textarea.materialize-textarea {
+      border-bottom-color: #f0f006;
+      box-shadow: 1 1px 0 0 #f0f006;
+    }
+    :root input:not([type]):focus:not([readonly]),
+    :root input[type="text"]:focus:not([readonly]),
+    :root input[type="password"]:focus:not([readonly]),
+    :root input[type="email"]:focus:not([readonly]),
+    :root input[type="url"]:focus:not([readonly]),
+    :root input[type="time"]:focus:not([readonly]),
+    :root input[type="date"]:focus:not([readonly]),
+    :root input[type="datetime"]:focus:not([readonly]),
+    :root input[type="datetime-local"]:focus:not([readonly]),
+    :root input[type="tel"]:focus:not([readonly]),
+    :root input[type="number"]:focus:not([readonly]),
+    :root input[type="search"]:focus:not([readonly]),
+    :root textarea.materialize-textarea:focus:not([readonly]) {
+      border-bottom-color: #f0f01b;
+      box-shadow: 0 1px 0 0 #f0f01b;
+    }
+    :root input:not([type]).valid,
+    :root input:not([type]):focus.valid,
+    :root input[type="text"].valid,
+    :root input[type="text"]:focus.valid,
+    :root input[type="password"].valid,
+    :root input[type="password"]:focus.valid,
+    :root input[type="email"].valid,
+    :root input[type="email"]:focus.valid,
+    :root input[type="url"].valid,
+    :root input[type="url"]:focus.valid,
+    :root input[type="time"].valid,
+    :root input[type="time"]:focus.valid,
+    :root input[type="date"].valid,
+    :root input[type="date"]:focus.valid,
+    :root input[type="datetime"].valid,
+    :root input[type="datetime"]:focus.valid,
+    :root input[type="datetime-local"].valid,
+    :root input[type="datetime-local"]:focus.valid,
+    :root input[type="tel"].valid,
+    :root input[type="tel"]:focus.valid,
+    :root input[type="number"].valid,
+    :root input[type="number"]:focus.valid,
+    :root input[type="search"].valid,
+    :root input[type="search"]:focus.valid,
+    :root textarea.materialize-textarea.valid,
+    :root textarea.materialize-textarea:focus.valid {
+      border-bottom-color: #f0f015;
+      box-shadow: 0 1px 0 0 #f0f015;
+    }
+    :root .teal-text,
+    :root .teal-text.text-darken-2,
+    :root .teal-text.text-lighten-3,
+    :root a {
+      color: #f0f01b !important;
+    }
+    :root .btn,
+    :root .btn-large {
+      color: #f0f004 !important;
+    }
+    :root .btn.disabled,
+    :root .disabled.btn-large,
+    :root .btn-floating.disabled,
+    :root .btn-large.disabled,
+    :root .btn-flat.disabled,
+    :root .btn:disabled,
+    :root .btn-floating:disabled,
+    :root .btn-large:disabled,
+    :root .btn-flat:disabled,
+    :root .btn[disabled],
+    :root [disabled].btn-large,
+    :root .btn-floating[disabled],
+    :root .btn-large[disabled],
+    :root .btn-flat[disabled],
+    :root .btn-large.red[disabled],
+    :root .btn-large.red.disabled[id="delete_button"] {
+      background-color: #f0f002 !important;
+      color: #f0f006 !important;
+    }
+    :root .btn-large.red[id="delete_button"] {
+      color: #f0f002 !important;
+      background-color: #f0f011 !important;
+    }
+    :root .card {
+      background-color: #f0f001;
+      border-color: #f0f00c;
+    }
+    :root thead,
+    :root div.material-table table tr td,
+    :root div.material-table .table-header {
+      border-bottom-color: #f0f00c;
+    }
+    :root .modal .modal-content,
+    :root .modal .modal-footer {
+      background-color: #f0f00c;
+    }
+    :root .select-wrapper input.select-dropdown {
+      border-bottom-color: #f0f006;
+    }
+    :root .select-dropdown li.optgroup {
+      border-top-color: #f0f00b;
+    }
+    :root .select-dropdown li.disabled,
+    :root .select-dropdown li.disabled > span,
+    :root .select-dropdown li.optgroup {
+      color: #f0f004;
+    }
+    :root .select-dropdown li.optgroup > span {
+      color: #f0f005;
+    }
+    :root .dropdown-content li > a,
+    :root .dropdown-content li > span {
+      color: #f0f01b;
+    }
+    :root .divider {
+      background-color: #f0f00b;
+    }
+    :root .caret {
+      color: #f0f008 !important;
+    }
+    :root .switch label .lever {
+      background-color: #f0f009;
+    }
+    :root .switch label .lever::after {
+      background-color: #f0f007;
+    }
+    :root .switch label input[type="checkbox"]:checked + .lever {
+      background-color: #60602b;
+    }
+    :root .switch label input[type="checkbox"]:checked + .lever::after {
+      background-color: #f0f01b;
+    }
+    :root .chip {
+      color: #f0f004;
+      background-color: #f0f00b;
+    }
+    :root .chips .chip.selected {
+      background-color: #f0f01b;
+      color: #f0f001;
+    }
+    :root .chips.focus {
+      border-bottom-color: #f0f01b;
+      box-shadow: 0 1px 0 0 #f0f01b;
+    }
+    :root .chips .input {
+      color: #f0f004;
+    }
+    :root input[placeholder="Add an other value"] {
+      border-bottom-color: #f0f007;
+    }
+    :root .highcharts-graph {
+      stroke: #f0f011;
+    }
+    :root .highcharts-area {
+      fill: rgba(240, 240, 17, 0.05) !important;
+    }
+    :root .highcharts-container {
+      background: #f0f001 !important;
+    }
+    :root .highcharts-map-series .highcharts-point {
+      stroke: #f0f001 !important;
+    }
+    :root .highcharts-grid.highcharts-yaxis-grid .highcharts-grid-line {
+      stroke: #f0f00c;
+    }
+    :root .highcharts-tick,
+    :root .highcharts-xaxis .highcharts-axis-line {
+      stroke: #f0f00b;
+    }
+    :root .highcharts-axis-labels.highcharts-xaxis-labels text,
+    :root .highcharts-axis-labels.highcharts-yaxis-labels text {
+      fill: #f0f005 !important;
+    }
+    :root .highcharts-crosshair,
+    :root .highcharts-crosshair-thin {
+      stroke: #f0f007;
+    }
+    :root .highcharts-markers .highcharts-halo.highcharts-color-0 {
+      fill: #f0f011 !important;
+      stroke: none !important;
+    }
+    :root .highcharts-markers path {
+      fill: #f0f011 !important;
+      stroke: #f0f001 !important;
+    }
+    :root .highcharts-navigator,
+    :root .highcharts-navigator-mask-inside {
+      fill: rgba(240, 240, 11, 0.33);
+    }
+    :root .highcharts-navigator .highcharts-navigator-outline {
+      stroke: #f0f00b;
+    }
+    :root .highcharts-navigator .highcharts-navigator-handle {
+      fill: #f0f00c;
+      stroke: #f0f008;
+    }
+    :root .highcharts-grid.highcharts-xaxis-grid.highcharts-navigator-xaxis .highcharts-grid-line {
+      stroke: #f0f00b;
+    }
+    :root .highcharts-xaxis-labels.highcharts-navigator-xaxis tspan {
+      fill: #f0f006 !important;
+    }
+    :root .highcharts-scrollbar,
+    :root .highcharts-scrollbar-track {
+      fill: #f0f00c;
+      stroke: #f0f00b;
+    }
+    :root .highcharts-scrollbar,
+    :root .highcharts-scrollbar-thumb {
+      fill: #f0f008;
+      stroke: #f0f008;
+    }
+    :root .highcharts-scrollbar .highcharts-scrollbar-rifles {
+      stroke: #f0f002;
+    }
+    :root .highcharts-scrollbar-button {
+      fill: #f0f008;
+      stroke: #f0f008;
+    }
+    :root .highcharts-scrollbar-arrow {
+      fill: #f0f002;
+    }
+    :root .highcharts-button text {
+      fill: #f0f005 !important;
+    }
+    :root .highcharts-button-box {
+      fill: #f0f00c !important;
+      stroke: #f0f00c !important;
+    }
+    :root .highcharts-button-symbol {
+      fill: #f0f006 !important;
+      stroke: #f0f006 !important;
+    }
+    :root .highcharts-button.highcharts-button-normal text {
+      fill: #f0f005 !important;
+    }
+    :root .highcharts-button.highcharts-button-normal .highcharts-button-box {
+      fill: #f0f00c !important;
+      stroke: #f0f00c !important;
+    }
+    :root .highcharts-button.highcharts-button-hover text {
+      fill: #f0f004 !important;
+    }
+    :root .highcharts-button.highcharts-button-hover .highcharts-button-box {
+      fill: #f0f00a !important;
+      stroke: #f0f00a !important;
+    }
+    :root .highcharts-button.highcharts-button-pressed text {
+      fill: #f0f004 !important;
+    }
+    :root .highcharts-button.highcharts-button-pressed .highcharts-button-box {
+      fill: #f0f00a !important;
+      stroke: #f0f00a !important;
+    }
+    :root .highcharts-button.highcharts-button-disabled text {
+      fill: #f0f009 !important;
+    }
+    :root .highcharts-button.highcharts-button-disabled .highcharts-button-box {
+      fill: #f0f001 !important;
+      stroke: #f0f00c !important;
+    }
+    :root .highcharts-menu {
+      background: #f0f00c !important;
+      border-color: #f0f00b !important;
+      box-shadow: #f0f002 3px 3px 10px !important;
+    }
+    :root .highcharts-menu-item {
+      color: #f0f004 !important;
+    }
+    :root .highcharts-menu-item:hover {
+      color: #f0f001 !important;
+      background: #f0f01b !important;
+    }
+    :root .highcharts-text-outline {
+      stroke: #f0f002;
+      stroke-width: 2px;
+    }
+    :root .highcharts-label.highcharts-data-label tspan {
+      fill: #f0f005;
+    }
+    :root .highcharts-label.highcharts-data-label.highcharts-drilldown-data-label tspan {
+      fill: #f0f019;
+    }
+    :root .highcharts-label.highcharts-data-label.highcharts-drilldown-data-label text {
+      fill: #f0f019 !important;
+      color: #f0f019 !important;
+    }
+    :root .highcharts-subtitle tspan {
+      fill: #f0f006;
+    }
+    :root .highcharts-label.highcharts-tooltip text {
+      fill: #f0f005 !important;
+      color: #f0f005 !important;
+    }
+    :root .highcharts-label.highcharts-tooltip-box tspan {
+      fill: #f0f005;
+    }
+    :root .highcharts-label.highcharts-tooltip-box tspan[style="fill:#F44336"] {
+      fill: #f0f011 !important;
+    }
+    :root .highcharts-label.highcharts-tooltip span:not(div.highcharts-label > span:nth-child(1) > span:nth-child(1)) {
+      color: #f0f005 !important;
+    }
+    :root .highcharts-label.highcharts-no-data tspan {
+      fill: #f0f005;
+    }
+    :root .highcharts-axis-title tspan {
+      fill: #f0f005;
+    }
+    :root .highcharts-label-box,
+    :root .highcharts-tooltip-box {
+      fill: #f0f00c;
+    }
+    :root .highcharts-label.highcharts-legend-title text {
+      fill: #f0f005 !important;
+    }
+    :root .highcharts-axis-labels,
+    :root .highcharts-coloraxis-labels text {
+      fill: #f0f006 !important;
+    }
+    :root .highcharts-legend-item .highcharts-grid.highcharts-coloraxis-grid .highcharts-grid-line {
+      stroke: #f0f001;
+    }
+    :root .highcharts-legend .highcharts-legend-box[fill="#FFFFFF"][stroke="#999999"] {
+      fill: #f0f00c !important;
+      stroke: #f0f00b !important;
+    }
+    :root .highcharts-legend .highcharts-legend-item.highcharts-bar-series tspan {
+      fill: #f0f005 !important;
+    }
+    :root .highcharts-legend .highcharts-legend-item.highcharts-bar-series tspan:hover {
+      fill: #f0f004 !important;
+    }
+    :root .highcharts-legend .highcharts-legend-item.highcharts-bar-series.highcharts-legend-item-hidden tspan {
+      fill: #f0f007 !important;
+    }
+    :root .highcharts-legend .highcharts-legend-item.highcharts-bar-series.highcharts-legend-item-hidden tspan:hover {
+      fill: #f0f006 !important;
+    }
+    :root .highcharts-point {
+      stroke: #f0f001 !important;
+    }
+    :root .highcharts-legend .highcharts-legend-item.highcharts-bar-series rect {
+      stroke: none !important;
+    }
+    :root .highcharts-legend .highcharts-legend-item.highcharts-bar-series.highcharts-legend-item-hidden rect {
+      fill: #f0f009 !important;
+      stroke: none !important;
+    }
+    :root .highcharts-point.highcharts-color-0,
+    :root .highcharts-halo.highcharts-color-0,
+    :root .highcharts-legend-item.highcharts-bar-series.highcharts-color-0 rect {
+      fill: #f0f011 !important;
+    }
+    :root .highcharts-data-label-connector.highcharts-color-0 {
+      stroke: #f0f011 !important;
+    }
+    :root .highcharts-point.highcharts-color-1,
+    :root .highcharts-halo.highcharts-color-1,
+    :root .highcharts-legend-item.highcharts-bar-series.highcharts-color-1 rect {
+      fill: #f0f015 !important;
+    }
+    :root .highcharts-data-label-connector.highcharts-color-1 {
+      stroke: #f0f015 !important;
+    }
+    :root .highcharts-point.highcharts-color-2,
+    :root .highcharts-halo.highcharts-color-2,
+    :root .highcharts-legend-item.highcharts-bar-series.highcharts-color-2 rect {
+      fill: #f0f017 !important;
+    }
+    :root .highcharts-data-label-connector.highcharts-color-2 {
+      stroke: #f0f017 !important;
+    }
+    :root .highcharts-point.highcharts-color-3,
+    :root .highcharts-halo.highcharts-color-3,
+    :root .highcharts-legend-item.highcharts-bar-series.highcharts-color-3 rect {
+      fill: #f0f013 !important;
+    }
+    :root .highcharts-data-label-connector.highcharts-color-3 {
+      stroke: #f0f013 !important;
+    }
+    :root .highcharts-point.highcharts-color-4,
+    :root .highcharts-halo.highcharts-color-4,
+    :root .highcharts-legend-item.highcharts-bar-series.highcharts-color-4 rect {
+      fill: #f0f014 !important;
+    }
+    :root .highcharts-data-label-connector.highcharts-color-4 {
+      stroke: #f0f014 !important;
+    }
+    :root .highcharts-point.highcharts-color-5,
+    :root .highcharts-halo.highcharts-color-5,
+    :root .highcharts-legend-item.highcharts-bar-series.highcharts-color-5 rect {
+      fill: #f0f016 !important;
+    }
+    :root .highcharts-data-label-connector.highcharts-color-5 {
+      stroke: #f0f016 !important;
+    }
+    :root .highcharts-point.highcharts-color-6,
+    :root .highcharts-halo.highcharts-color-6,
+    :root .highcharts-legend-item.highcharts-bar-series.highcharts-color-6 rect {
+      fill: #f0f00f !important;
+    }
+    :root .highcharts-data-label-connector.highcharts-color-6 {
+      stroke: #f0f00f !important;
+    }
+    :root .highcharts-point.highcharts-color-7,
+    :root .highcharts-halo.highcharts-color-7,
+    :root .highcharts-legend-item.highcharts-bar-series.highcharts-color-7 rect {
+      fill: #f0f00e !important;
+    }
+    :root .highcharts-data-label-connector.highcharts-color-7 {
+      stroke: #f0f00e !important;
+    }
+    :root .highcharts-point.highcharts-color-8,
+    :root .highcharts-halo.highcharts-color-8,
+    :root .highcharts-legend-item.highcharts-bar-series.highcharts-color-8 rect {
+      fill: #f0f006 !important;
+    }
+    :root .highcharts-data-label-connector.highcharts-color-8 {
+      stroke: #f0f006 !important;
+    }
+    :root .highcharts-point.highcharts-color-9,
+    :root .highcharts-halo.highcharts-color-9,
+    :root .highcharts-legend-item.highcharts-bar-series.highcharts-color-9 rect {
+      fill: #f0f019 !important;
+    }
+    :root .highcharts-data-label-connector.highcharts-color-9 {
+      stroke: #f0f019 !important;
+    }
+    :root .highcharts-point.highcharts-color-10,
+    :root .highcharts-halo.highcharts-color-10,
+    :root .highcharts-legend-item.highcharts-bar-series.highcharts-color-10 rect {
+      fill: #f0f010 !important;
+    }
+    :root .highcharts-data-label-connector.highcharts-color-10 {
+      stroke: #f0f010 !important;
+    }
+  }
+}

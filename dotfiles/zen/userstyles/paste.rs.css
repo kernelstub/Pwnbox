@@ -1,0 +1,265 @@
+/* ==UserStyle==
+@name           pwnbox-paste.rs
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for paste.rs (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("paste.rs") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+      /* Web UI */
+      /* Syntax-highlighted code */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root body {
+      background-color: #f0f001;
+      color: #f0f004;
+    }
+    :root a {
+      color: #f0f01b;
+    }
+    :root textarea,
+    :root select,
+    :root input[type="submit"] {
+      background-color: #f0f001;
+      color: #f0f004;
+      border-color: #f0f009;
+      border-radius: 4px;
+    }
+    :root textarea:focus,
+    :root select:focus,
+    :root input[type="submit"]:focus {
+      border-color: #f0f01b;
+      outline-color: #f0f009;
+    }
+    :root input[type="submit"]:hover {
+      background-color: #f0f002;
+    }
+    :root main {
+      color: #f0f004;
+      border-color: #f0f00c;
+    }
+    :root .code.gutter {
+      background-color: #f0f001 !important;
+    }
+    :root .code.gutter span {
+      /* Line Numbers */
+      color: #f0f009 !important;
+    }
+    :root article.markdown-body {
+      color: #f0f004;
+    }
+    :root article.markdown-body h6 {
+      color: #f0f004;
+    }
+    :root article.markdown-body a {
+      color: #f0f01b;
+    }
+    :root article.markdown-body img {
+      background: none;
+    }
+    :root article.markdown-body pre {
+      background: #f0f00c;
+    }
+    :root article.markdown-body h1,
+    :root article.markdown-body h2,
+    :root article.markdown-body h3,
+    :root article.markdown-body h4,
+    :root article.markdown-body h5,
+    :root article.markdown-body h6 {
+      border-color: #f0f00c;
+    }
+    :root article.markdown-body blockquote {
+      border-color: #f0f00b;
+    }
+    :root article.markdown-body blockquote p {
+      color: #f0f004;
+    }
+    :root article.markdown-body table {
+      border-color: #f0f00c !important;
+    }
+    :root article.markdown-body table tr,
+    :root article.markdown-body table th,
+    :root article.markdown-body table td {
+      border-color: #f0f00b;
+      background: none !important;
+    }
+    :root .code.text > pre {
+      background-color: #f0f001 !important;
+      background-image: none;
+      /* General Text, Braces, Delimiters, Parameters, Classes, Metadata */
+      /* Keywords, Operators */
+      /* Strings */
+      /* Comments */
+      /* Constants, Numbers */
+      /* Methods, Functions */
+      /* Errors */
+    }
+    :root .code.text > pre span {
+      color: red !important;
+    }
+    :root .code.text > pre span[style*="color:#323232"] {
+      color: #f0f004 !important;
+    }
+    :root .code.text > pre span[style*="color:#a71d5d"] {
+      color: #f0f010 !important;
+    }
+    :root .code.text > pre span[style*="color:#183691"],
+    :root .code.text > pre span[style*="color:#ed6a43"] {
+      color: #f0f015 !important;
+    }
+    :root .code.text > pre span[style*="color:#969896"] {
+      color: #f0f007 !important;
+    }
+    :root .code.text > pre span[style*="color:#0086b3"] {
+      color: #f0f013 !important;
+    }
+    :root .code.text > pre span[style*="color:#795da3"],
+    :root .code.text > pre span[style*="color:#62a35c"],
+    :root .code.text > pre span[style*="color:#63a35c"] {
+      color: #f0f019 !important;
+    }
+    :root .code.text > pre span[style*="background-color:#f5f5f5"][style*="color:#b52a1d"] {
+      color: #f0f004 !important;
+      background: rgba(240, 240, 17, 0.6) !important;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      /* Web UI */
+      /* Syntax-highlighted code */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root body {
+      background-color: #f0f001;
+      color: #f0f004;
+    }
+    :root a {
+      color: #f0f01b;
+    }
+    :root textarea,
+    :root select,
+    :root input[type="submit"] {
+      background-color: #f0f001;
+      color: #f0f004;
+      border-color: #f0f009;
+      border-radius: 4px;
+    }
+    :root textarea:focus,
+    :root select:focus,
+    :root input[type="submit"]:focus {
+      border-color: #f0f01b;
+      outline-color: #f0f009;
+    }
+    :root input[type="submit"]:hover {
+      background-color: #f0f002;
+    }
+    :root main {
+      color: #f0f004;
+      border-color: #f0f00c;
+    }
+    :root .code.gutter {
+      background-color: #f0f001 !important;
+    }
+    :root .code.gutter span {
+      /* Line Numbers */
+      color: #f0f009 !important;
+    }
+    :root article.markdown-body {
+      color: #f0f004;
+    }
+    :root article.markdown-body h6 {
+      color: #f0f004;
+    }
+    :root article.markdown-body a {
+      color: #f0f01b;
+    }
+    :root article.markdown-body img {
+      background: none;
+    }
+    :root article.markdown-body pre {
+      background: #f0f00c;
+    }
+    :root article.markdown-body h1,
+    :root article.markdown-body h2,
+    :root article.markdown-body h3,
+    :root article.markdown-body h4,
+    :root article.markdown-body h5,
+    :root article.markdown-body h6 {
+      border-color: #f0f00c;
+    }
+    :root article.markdown-body blockquote {
+      border-color: #f0f00b;
+    }
+    :root article.markdown-body blockquote p {
+      color: #f0f004;
+    }
+    :root article.markdown-body table {
+      border-color: #f0f00c !important;
+    }
+    :root article.markdown-body table tr,
+    :root article.markdown-body table th,
+    :root article.markdown-body table td {
+      border-color: #f0f00b;
+      background: none !important;
+    }
+    :root .code.text > pre {
+      background-color: #f0f001 !important;
+      background-image: none;
+      /* General Text, Braces, Delimiters, Parameters, Classes, Metadata */
+      /* Keywords, Operators */
+      /* Strings */
+      /* Comments */
+      /* Constants, Numbers */
+      /* Methods, Functions */
+      /* Errors */
+    }
+    :root .code.text > pre span {
+      color: red !important;
+    }
+    :root .code.text > pre span[style*="color:#323232"] {
+      color: #f0f004 !important;
+    }
+    :root .code.text > pre span[style*="color:#a71d5d"] {
+      color: #f0f010 !important;
+    }
+    :root .code.text > pre span[style*="color:#183691"],
+    :root .code.text > pre span[style*="color:#ed6a43"] {
+      color: #f0f015 !important;
+    }
+    :root .code.text > pre span[style*="color:#969896"] {
+      color: #f0f007 !important;
+    }
+    :root .code.text > pre span[style*="color:#0086b3"] {
+      color: #f0f013 !important;
+    }
+    :root .code.text > pre span[style*="color:#795da3"],
+    :root .code.text > pre span[style*="color:#62a35c"],
+    :root .code.text > pre span[style*="color:#63a35c"] {
+      color: #f0f019 !important;
+    }
+    :root .code.text > pre span[style*="background-color:#f5f5f5"][style*="color:#b52a1d"] {
+      color: #f0f004 !important;
+      background: rgba(240, 240, 17, 0.6) !important;
+    }
+  }
+}

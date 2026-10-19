@@ -1,0 +1,25 @@
+set zoom-min 50
+set zoom-max 150
+
+set font "Iosevka Nerd Font Mono Regular" 11
+
+set default-bg "#000000"
+set default-fg "#ffffff"
+
+set recolor true
+set recolor-lightcolor "#000000"
+set recolor-darkcolor "#ffffff"
+set recolor-reverse-video true
+set recolor-keephue false
+
+set notification-error-bg "#AC4142"
+set notification-error-fg "#000000"
+set notification-warning-bg "#AC4142"
+set notification-warning-fg "#000000"
+set highlight-color "#F4BF75"
+set highlight-active-color "#6A9FB5"
+
+set scroll-step 100
+set scroll-full-overlap 0.1
+
+include @HOME@/.cache/pwnbox/theme/zathura.conf

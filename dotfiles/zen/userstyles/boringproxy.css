@@ -1,0 +1,249 @@
+/* ==UserStyle==
+@name           pwnbox-boringproxy
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for boringproxy (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("boring.example.com") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root body {
+      background: #f0f001;
+    }
+    :root main {
+      background: #f0f003;
+    }
+    :root .content {
+      border-color: #f0f009;
+    }
+    :root .menu {
+      background: #f0f002;
+    }
+    :root .menu-item {
+      background: #f0f003;
+    }
+    :root .menu-item:hover {
+      background: #f0f00a;
+      color: #f0f01b;
+    }
+    :root .menu-item:any-link {
+      color: #f0f004;
+    }
+    :root .button {
+      border-color: #f0f01b;
+      background-color: #f0f003;
+      color: #f0f005;
+    }
+    :root .button:hover {
+      color: #f0f00c;
+      background-color: #f0f01b;
+      border-color: #f0f003;
+    }
+    :root .list {
+      background-color: #f0f003;
+    }
+    :root .list-item {
+      color: #f0f01b;
+    }
+    :root .tn-tunnel-link {
+      color: #f0f005;
+      text-decoration: none;
+    }
+    :root .tn-tunnel-table__cell {
+      color: #f0f004;
+    }
+    :root body a {
+      color: #f0f004;
+    }
+    :root body a:visited {
+      color: #f0f01b;
+    }
+    :root .tn-attribute__name {
+      color: #f0f004;
+    }
+    :root .tn-attribute__value {
+      color: #f0f006;
+    }
+    :root .tunnel-adder h1 {
+      color: #f0f004;
+    }
+    :root .input {
+      color: #f0f004;
+    }
+    :root .input input {
+      background-color: #f0f003;
+      color: #f0f006;
+      border-color: #f0f01b;
+    }
+    :root .input select {
+      background-color: #f0f003;
+      color: #f0f006;
+      border-color: #f0f01b;
+    }
+    :root .token-adder {
+      color: #f0f004;
+    }
+    :root .token-adder select {
+      background-color: #f0f003;
+      color: #f0f006;
+      border-color: #f0f01b;
+    }
+    :root .client-adder {
+      color: #f0f004;
+    }
+    :root .client-adder select {
+      background-color: #f0f003;
+      color: #f0f006;
+      border-color: #f0f01b;
+    }
+    :root .client-adder input {
+      background-color: #f0f003;
+      color: #f0f006;
+      border-color: #f0f01b;
+    }
+    :root .user-adder {
+      color: #f0f004;
+    }
+    :root .user-adder input {
+      background-color: #f0f003;
+      color: #f0f006;
+      border-color: #f0f01b;
+    }
+    :root .dialog__content {
+      background-color: #f0f003;
+      color: #f0f004;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root body {
+      background: #f0f001;
+    }
+    :root main {
+      background: #f0f003;
+    }
+    :root .content {
+      border-color: #f0f009;
+    }
+    :root .menu {
+      background: #f0f002;
+    }
+    :root .menu-item {
+      background: #f0f003;
+    }
+    :root .menu-item:hover {
+      background: #f0f00a;
+      color: #f0f01b;
+    }
+    :root .menu-item:any-link {
+      color: #f0f004;
+    }
+    :root .button {
+      border-color: #f0f01b;
+      background-color: #f0f003;
+      color: #f0f005;
+    }
+    :root .button:hover {
+      color: #f0f00c;
+      background-color: #f0f01b;
+      border-color: #f0f003;
+    }
+    :root .list {
+      background-color: #f0f003;
+    }
+    :root .list-item {
+      color: #f0f01b;
+    }
+    :root .tn-tunnel-link {
+      color: #f0f005;
+      text-decoration: none;
+    }
+    :root .tn-tunnel-table__cell {
+      color: #f0f004;
+    }
+    :root body a {
+      color: #f0f004;
+    }
+    :root body a:visited {
+      color: #f0f01b;
+    }
+    :root .tn-attribute__name {
+      color: #f0f004;
+    }
+    :root .tn-attribute__value {
+      color: #f0f006;
+    }
+    :root .tunnel-adder h1 {
+      color: #f0f004;
+    }
+    :root .input {
+      color: #f0f004;
+    }
+    :root .input input {
+      background-color: #f0f003;
+      color: #f0f006;
+      border-color: #f0f01b;
+    }
+    :root .input select {
+      background-color: #f0f003;
+      color: #f0f006;
+      border-color: #f0f01b;
+    }
+    :root .token-adder {
+      color: #f0f004;
+    }
+    :root .token-adder select {
+      background-color: #f0f003;
+      color: #f0f006;
+      border-color: #f0f01b;
+    }
+    :root .client-adder {
+      color: #f0f004;
+    }
+    :root .client-adder select {
+      background-color: #f0f003;
+      color: #f0f006;
+      border-color: #f0f01b;
+    }
+    :root .client-adder input {
+      background-color: #f0f003;
+      color: #f0f006;
+      border-color: #f0f01b;
+    }
+    :root .user-adder {
+      color: #f0f004;
+    }
+    :root .user-adder input {
+      background-color: #f0f003;
+      color: #f0f006;
+      border-color: #f0f01b;
+    }
+    :root .dialog__content {
+      background-color: #f0f003;
+      color: #f0f004;
+    }
+  }
+}

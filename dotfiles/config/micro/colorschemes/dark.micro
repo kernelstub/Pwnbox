@@ -1,0 +1,36 @@
+color-link default "#fff,#000"
+color-link comment "#fff,#000"
+color-link identifier "#fff,#000"
+color-link constant "#fff,#000"
+color-link constant.string "#fff,#000"
+color-link statement "#fff,#000"
+color-link symbol "#fff,#000"
+color-link preproc "#fff,#000"
+color-link type "#fff,#000"
+color-link special "#fff,#000"
+color-link underlined "#fff,#000"
+
+color-link error "bold #fff,#000"
+color-link todo "bold #fff,#000"
+
+color-link hlsearch "#000,#fff"
+color-link statusline "#000,#fff"
+color-link tabbar "#000,#fff"
+
+color-link indent-char "#fff,#000"
+color-link line-number "#fff,#000"
+color-link current-line-number "#fff,#000"
+
+color-link diff-added "#fff,#000"
+color-link diff-modified "#fff,#000"
+color-link diff-deleted "#fff,#000"
+
+color-link gutter-error "#fff,#000"
+color-link gutter-warning "#fff,#000"
+
+color-link cursor-line "#000"
+color-link color-column "#000"
+
+color-link match-brace "#000,#fff"
+color-link tab-error "#fff,#000"
+color-link trailingws "#fff,#000"

@@ -1,0 +1,211 @@
+/* ==UserStyle==
+@name           pwnbox-homepage
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for homepage (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("homepage.example.com"), regexp("https?://homepage\\..*") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root :is(.dark .dark\:bg-theme-800) {
+      --tw-bg-opacity: 1;
+      background-color: #f0f001;
+    }
+    :root .dark {
+      --bg-color: #f0f001;
+      --scrollbar-thumb: #f0f01b;
+      --scrollbar-track: #f0f002;
+    }
+    :root :is(.dark .dark\:bg-theme-200\/20) {
+      background-color: #f0f009;
+    }
+    :root :is(.dark .dark\:bg-theme-200\/50) {
+      background-color: #f0f004;
+    }
+    :root .border-theme-300 {
+      --tw-border-opacity: 1;
+      border-color: #f0f00c !important;
+    }
+    :root :is(.dark .dark\:bg-white\/10) {
+      background-color: #f0f001;
+    }
+    :root :is(.dark .dark\:focus\:ring-white\/50:focus) {
+      --tw-ring-color: #f0f004;
+    }
+    :root :is(.dark .dark\:text-white) {
+      --tw-text-opacity: 1;
+      color: #f0f01b;
+    }
+    :root :is(.dark .dark\:bg-white\/5) {
+      background-color: #f0f002;
+    }
+    :root :is(.dark .dark\:shadow-theme-900\/20) {
+      --tw-shadow-color: #f0f002;
+      --tw-shadow: var(--tw-shadow-colored);
+    }
+    :root :is(.dark .dark\:hover\:bg-white\/10:hover) {
+      background-color: #f0f00b;
+    }
+    :root :is(.dark .dark\:bg-theme-900\/50) {
+      background-color: #f0f003;
+    }
+    :root :is(.dark .dark\:bg-theme-900\/20) {
+      background-color: #f0f00c;
+    }
+    :root :is(.dark .dark\:bg-theme-900\/40) {
+      background-color: #f0f01b;
+    }
+    :root :is(.dark .dark\:text-theme-300) {
+      color: #f0f004;
+    }
+    :root .text-theme-900 {
+      --tw-border-opacity: 1;
+      color: #f0f001;
+    }
+    :root .bg-rose-900\/80 {
+      --tw-border-opacity: 1;
+      background-color: #f0f011;
+    }
+    :root :is(.dark .dark\:text-theme-400) {
+      --tw-border-opacity: 1;
+      color: #f0f004;
+    }
+    :root .text-white {
+      color: #f0f005;
+    }
+    :root :is(.dark .dark\:border-theme-200\/50) {
+      --tw-border-opacity: 1;
+      border-color: #f0f00a;
+    }
+    :root :is(.dark .dark\:hover\:text-theme-300:hover) {
+      --tw-text-opacity: 1;
+      color: #cbcb0d;
+    }
+    :root :is(.dark .dark\:text-theme-200) {
+      --tw-text-opacity: 1;
+      color: #f0f004;
+    }
+    :root .text-emerald-500\/80 {
+      color: #f3f345;
+    }
+    :root .text-orange-400\/50 {
+      color: #f3f344;
+    }
+    :root .text-rose-500\/80 {
+      color: #c2c20c;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root :is(.dark .dark\:bg-theme-800) {
+      --tw-bg-opacity: 1;
+      background-color: #f0f001;
+    }
+    :root .dark {
+      --bg-color: #f0f001;
+      --scrollbar-thumb: #f0f01b;
+      --scrollbar-track: #f0f002;
+    }
+    :root :is(.dark .dark\:bg-theme-200\/20) {
+      background-color: #f0f009;
+    }
+    :root :is(.dark .dark\:bg-theme-200\/50) {
+      background-color: #f0f004;
+    }
+    :root .border-theme-300 {
+      --tw-border-opacity: 1;
+      border-color: #f0f00c !important;
+    }
+    :root :is(.dark .dark\:bg-white\/10) {
+      background-color: #f0f001;
+    }
+    :root :is(.dark .dark\:focus\:ring-white\/50:focus) {
+      --tw-ring-color: #f0f004;
+    }
+    :root :is(.dark .dark\:text-white) {
+      --tw-text-opacity: 1;
+      color: #f0f01b;
+    }
+    :root :is(.dark .dark\:bg-white\/5) {
+      background-color: #f0f002;
+    }
+    :root :is(.dark .dark\:shadow-theme-900\/20) {
+      --tw-shadow-color: #f0f002;
+      --tw-shadow: var(--tw-shadow-colored);
+    }
+    :root :is(.dark .dark\:hover\:bg-white\/10:hover) {
+      background-color: #f0f00b;
+    }
+    :root :is(.dark .dark\:bg-theme-900\/50) {
+      background-color: #f0f003;
+    }
+    :root :is(.dark .dark\:bg-theme-900\/20) {
+      background-color: #f0f00c;
+    }
+    :root :is(.dark .dark\:bg-theme-900\/40) {
+      background-color: #f0f01b;
+    }
+    :root :is(.dark .dark\:text-theme-300) {
+      color: #f0f004;
+    }
+    :root .text-theme-900 {
+      --tw-border-opacity: 1;
+      color: #f0f001;
+    }
+    :root .bg-rose-900\/80 {
+      --tw-border-opacity: 1;
+      background-color: #f0f011;
+    }
+    :root :is(.dark .dark\:text-theme-400) {
+      --tw-border-opacity: 1;
+      color: #f0f004;
+    }
+    :root .text-white {
+      color: #f0f005;
+    }
+    :root :is(.dark .dark\:border-theme-200\/50) {
+      --tw-border-opacity: 1;
+      border-color: #f0f00a;
+    }
+    :root :is(.dark .dark\:hover\:text-theme-300:hover) {
+      --tw-text-opacity: 1;
+      color: #cbcb0d;
+    }
+    :root :is(.dark .dark\:text-theme-200) {
+      --tw-text-opacity: 1;
+      color: #f0f004;
+    }
+    :root .text-emerald-500\/80 {
+      color: #f3f345;
+    }
+    :root .text-orange-400\/50 {
+      color: #f3f344;
+    }
+    :root .text-rose-500\/80 {
+      color: #c2c20c;
+    }
+  }
+}

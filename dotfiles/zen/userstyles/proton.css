@@ -1,0 +1,647 @@
+/* ==UserStyle==
+@name           pwnbox-proton
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Proton (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document regexp("https://(account|mail|drive|calendar|lumo).proton.me/.*$") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+      /* Proton Lumo */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root svg.logo {
+      /* deno-fmt-ignore */
+      /* deno-fmt-ignore */
+    }
+    :root svg.logo path[fill="#B8D7FF"] {
+      fill: hsl(22.20060696, 70%, 86.07843137%);
+    }
+    :root svg.logo path[fill="#8F69FF"] {
+      fill: hsl(63.59779006, 70%, 70.58823529%);
+    }
+    :root svg.logo path[fill="#6D4AFF"] {
+      fill: hsl(60, 70%, 64.50980392%);
+    }
+    :root svg.logo path[fill="#FFBB93"] {
+      fill: hsl(190.62001228, 70%, 78.82352941%);
+    }
+    :root svg.logo path[fill="#85D4F5"] {
+      fill: hsl(6.07636148, 54.84848485%, 74.11764706%);
+    }
+    :root svg.logo path[fill="#D6F1FC"] {
+      fill: hsl(5.76621111, 56.36363636%, 91.37254902%);
+    }
+    :root svg.logo defs stop[stop-color="#E3D9FF"] {
+      stop-color: hsl(64.18726374, 70%, 92.54901961%);
+    }
+    :root svg.logo defs stop[stop-color="#7341FF"] {
+      stop-color: hsl(64.18726374, 70%, 62.74509804%);
+    }
+    :root svg.logo defs stop[stop-color="#6D4AFF"] {
+      stop-color: hsl(60, 70%, 64.50980392%);
+    }
+    :root svg.logo defs stop[stop-color="#AA8EFF"] {
+      stop-color: hsl(63.26504669, 70%, 77.84313725%);
+    }
+    :root svg.logo defs stop[stop-color="#06B8FF"] {
+      stop-color: hsl(5.50622379, 70%, 51.17647059%);
+    }
+    :root svg.logo defs stop[stop-color="#BFE8FF"] {
+      stop-color: hsl(9.96029006, 70%, 87.45098039%);
+    }
+    :root svg.logo defs stop[stop-color="#BFABFF"] {
+      stop-color: hsl(62.68350434, 70%, 83.52941176%);
+    }
+    :root svg.logo defs stop[stop-color="#FF50C3"] {
+      stop-color: hsl(128.96921863, 70%, 65.68627451%);
+    }
+    :root svg.logo defs stop[stop-color="#B487FF"] {
+      stop-color: hsl(70.89779006, 70%, 76.47058824%);
+    }
+    :root svg.logo defs stop[stop-color="#FFC8FF"] {
+      stop-color: hsl(108.39779006, 70%, 89.21568627%);
+    }
+    :root svg.logo defs stop[stop-color="#8EFFEE"] {
+      stop-color: hsl(339.37124138, 70%, 77.84313725%);
+    }
+    :root svg.logo defs stop[stop-color="#C9C7FF"] {
+      stop-color: hsl(50.5406472, 70%, 89.01960784%);
+    }
+    :root svg.logo defs stop[stop-color="#00F0C3"] {
+      stop-color: hsl(337.14779006, 70%, 47.05882353%);
+    }
+    :root svg.logo defs stop[stop-color="#FFD580"] {
+      stop-color: hsl(208.55527037, 70%, 75.09803922%);
+    }
+    :root svg.logo defs stop[stop-color="#F6C592"] {
+      stop-color: hsl(198.99779006, 54.74576271%, 76.8627451%);
+    }
+    :root svg.logo defs stop[stop-color="#EBB6A2"] {
+      stop-color: hsl(184.83614622, 34.60176991%, 77.84313725%);
+    }
+    :root svg.logo defs stop[stop-color="#DFA5AF"] {
+      stop-color: hsl(158.05296247, 17.54098361%, 76.07843137%);
+    }
+    :root svg.logo defs stop[stop-color="#D397BE"] {
+      stop-color: hsl(129.39779006, 10.54054054%, 70.98039216%);
+    }
+    :root svg.logo defs stop[stop-color="#C486CB"] {
+      stop-color: hsl(102.31083353, 9.88439306%, 66.07843137%);
+    }
+    :root svg.logo defs stop[stop-color="#B578D9"] {
+      stop-color: hsl(86.12974882, 26.06936416%, 66.07843137%);
+    }
+    :root svg.logo defs stop[stop-color="#A166E5"] {
+      stop-color: hsl(76.2718058, 40.94972067%, 64.90196078%);
+    }
+    :root svg.logo defs stop[stop-color="#8B57F2"] {
+      stop-color: hsl(68.52682231, 55.63535912%, 64.50980392%);
+    }
+    :root svg.logo defs stop[stop-color="#704CFF"] {
+      stop-color: hsl(60.46482916, 70%, 64.90196078%);
+    }
+    :root svg.logo defs stop[stop-color="#B39FFB"] {
+      stop-color: hsl(61.44126832, 62%, 80.39215686%);
+    }
+    :root svg.logo defs stop[stop-color="#FFE8DB"] {
+      stop-color: hsl(190.06445672, 70%, 92.94117647%);
+    }
+    :root svg.logo defs stop[stop-color="#957AFD"] {
+      stop-color: hsl(60.76420227, 67.03703704%, 73.52941176%);
+    }
+    :root svg.logo defs stop[stop-color="#FFC6C6"] {
+      stop-color: hsl(168.39779006, 70%, 88.82352941%);
+    }
+    :root svg.logo defs stop[stop-color="#FA528E"] {
+      stop-color: hsl(146.96921863, 64.38202247%, 65.09803922%);
+    }
+    :root svg.logo defs stop[stop-color="#FF8065"] {
+      stop-color: hsl(178.91727057, 70%, 69.80392157%);
+    }
+    :root svg.logo defs stop[stop-color="#FFA51F"] {
+      stop-color: hsl(204.2906472, 70%, 56.07843137%);
+    }
+    :root svg.logo defs stop[stop-color="#34B8EE"] {
+      stop-color: hsl(5.81714489, 54.54545455%, 56.8627451%);
+    }
+    :root,
+    :root .ui-prominent,
+    :root .ui-standard {
+      --primary-minor-2: #ffffff;
+      --primary-minor-1: #ffffff;
+      --primary: #f0f01b;
+      --primary-major-1: #e7e70f;
+      --primary-major-2: #d4d40e;
+      --primary-major-3: #c1c10d;
+      --primary-contrast: #f0f002;
+      --signal-danger-minor-2: #fcfcd2;
+      --signal-danger-minor-1: #f9f9a2;
+      --signal-danger: #f0f012;
+      --signal-danger-major-1: #dfdf0e;
+      --signal-danger-major-2: #cccc0d;
+      --signal-danger-major-3: #b9b90c;
+      --signal-danger-contrast: #f0f002;
+      --signal-warning-minor-2: #fcfcd3;
+      --signal-warning-minor-1: #f9f9a3;
+      --signal-warning: #f0f013;
+      --signal-warning-major-1: #e0e00e;
+      --signal-warning-major-2: #cdcd0d;
+      --signal-warning-major-3: #baba0c;
+      --signal-warning-contrast: #f0f002;
+      --signal-success-minor-2: #fcfcd5;
+      --signal-success-minor-1: #f9f9a5;
+      --signal-success: #f0f015;
+      --signal-success-major-1: #e2e20e;
+      --signal-success-major-2: #cfcf0d;
+      --signal-success-major-3: #bcbc0c;
+      --signal-success-contrast: #f0f002;
+      --signal-info-minor-2: #fcfcd9;
+      --signal-info-minor-1: #f9f9a9;
+      --signal-info: #f0f019;
+      --signal-info-major-1: #e6e60f;
+      --signal-info-major-2: #d2d20e;
+      --signal-info-major-3: #bfbf0c;
+      --signal-info-contrast: #f0f002;
+      --interaction-norm-minor-2: #fdfdda;
+      --interaction-norm-minor-1: #f9f9ab;
+      --interaction-norm: #f0f01b;
+      --interaction-norm-major-1: #e7e70f;
+      --interaction-norm-major-2: #d4d40e;
+      --interaction-norm-major-3: #c1c10d;
+      --interaction-norm-contrast: #f0f002;
+      --interaction-weak-minor-2: #f8f86a;
+      --interaction-weak-minor-1: #f5f53a;
+      --interaction-weak: #f0f00c;
+      --interaction-weak-major-1: #dddd0b;
+      --interaction-weak-major-2: #c9c90a;
+      --interaction-weak-major-3: #b6b609;
+      --interaction-weak-contrast: #f0f004;
+      --text-norm: #f0f004;
+      --text-weak: #f0f006;
+      --text-hint: #f0f005;
+      --text-disabled: #f0f008;
+      --text-invert: #f0f003;
+      --text-markdown: #f0f004;
+      --field-norm: #f0f007;
+      --field-hover: #f0f008;
+      --field-disabled: #f0f009;
+      --field-focus: #f0f01b;
+      --field-highlight: rgba(240, 240, 27, 0.7);
+      --focus-outline: #f0f01b;
+      --focus-ring: rgba(240, 240, 27, 0.4);
+      --link-norm: #f0f019;
+      --link-hover: #f0f01a;
+      --link-active: #f0f017;
+      --markdown-pre-background: #f0f002;
+      --border-norm: #f0f009;
+      --border-weak: #f0f00b;
+      --background-norm: #f0f001;
+      --background-weak: #f0f002;
+      --background-strong: #f0f003;
+      --background-invert: #f0f004;
+      --interaction-default: transparent;
+      --interaction-default-hover: rgba(240, 240, 8, 0.2);
+      --interaction-default-active: rgba(240, 240, 8, 0.4);
+      --shadow-primary-color: 240 240 27;
+      --shadow-norm-opacity: 0.5;
+      --shadow-raised-opacity: 1;
+      --shadow-lifted-opacity: 0.75;
+      --backdrop-norm: rgba(240, 240, 3, 0.5);
+      --optional-scrollbar-thumb-color: #f0f00c;
+      --optional-scrollbar-thumb-hover-color: #f0f00a;
+      --optional-link-norm: var(--interaction-norm-major-1);
+      --optional-link-hover: var(--interaction-norm-major-2);
+      --optional-link-active: var(--interaction-norm-major-3);
+      --optional-background-elevated: #f0f00c;
+      --optional-background-lowered: var(--background-norm);
+      --optional-email-item-unread-background-color: var(--background-weak);
+      --optional-email-item-read-background-color: var(--background-norm);
+      --optional-email-item-read-text-color: var(--text-weak);
+      --optional-mini-calendar-today-color: #f0f004;
+      --optional-logo-text-proton-color: #f0f004;
+      --optional-logo-text-product-color: #f0f004;
+      --favorite-icon-color: #f0f013;
+    }
+    :root .ui-prominent {
+      --background-norm: #f0f002;
+      --background-weak: #f0f001;
+      --background-strong: #f0f003;
+    }
+    :root .button-promotion {
+      --upgrade-color-stop-1: #f0f011;
+      --upgrade-color-stop-2: #f0f019;
+    }
+    :root .item-container-row:not(.item-is-selected):hover,
+    :root .item-container:not(.item-is-selected):hover {
+      box-shadow: none;
+      background-color: var(--navigation-current-item-background-color);
+      color: var(--email-item-unread-text-color);
+    }
+    :root .message-content:not(.plain) .message-iframe iframe {
+      color-scheme: light;
+    }
+    :root header a[aria-label="Go to Lumo homepage"] img {
+      filter: brightness(0) saturate(100%) invert(26%) sepia(31%) saturate(3766%) hue-rotate(247deg) brightness(114%) contrast(114%);
+    }
+    :root .whats-new-section {
+      background: #f0f01b;
+    }
+    :root .new-label {
+      background-color: #f0f01b;
+      color: #f0f003;
+    }
+    :root .lumo-sidebar {
+      background: #f0f002;
+    }
+    :root .lumo-sidebar a.lumo-plus-button svg path {
+      fill: #f0f01b;
+    }
+    :root .lumo-input-container.ghost-mode {
+      background-color: #f0f003;
+      --ghost-text: #f0f004;
+      --ghost-text-weak: #f0f006;
+    }
+    :root .lumo-input-container.ghost-mode .lumo-input {
+      background-color: #f0f002;
+    }
+    :root div[style*="background: rgb(40, 44, 52);"],
+    :root div[style*="background: rgb(250, 250, 250);"] {
+      background: #f0f002 !important;
+    }
+    :root div[style*="background: rgb(40, 44, 52);"] span,
+    :root div[style*="background: rgb(250, 250, 250);"] span {
+      color: #f0f004 !important;
+    }
+    :root div[style*="background: rgb(40, 44, 52);"] span.token[style*="color: rgb(92, 99, 112);"],
+    :root div[style*="background: rgb(250, 250, 250);"] span.token[style*="color: rgb(92, 99, 112);"],
+    :root div[style*="background: rgb(40, 44, 52);"] span.token[style*="color: rgb(160, 161, 167);"],
+    :root div[style*="background: rgb(250, 250, 250);"] span.token[style*="color: rgb(160, 161, 167);"] {
+      color: #f0f007 !important;
+    }
+    :root div[style*="background: rgb(40, 44, 52);"] span.token[style*="color: rgb(97, 175, 239);"],
+    :root div[style*="background: rgb(250, 250, 250);"] span.token[style*="color: rgb(97, 175, 239);"],
+    :root div[style*="background: rgb(40, 44, 52);"] span.token[style*="color: rgb(64, 120, 242);"],
+    :root div[style*="background: rgb(250, 250, 250);"] span.token[style*="color: rgb(64, 120, 242);"] {
+      color: #f0f019 !important;
+    }
+    :root div[style*="background: rgb(40, 44, 52);"] span.token[style*="color: rgb(152, 195, 121);"],
+    :root div[style*="background: rgb(250, 250, 250);"] span.token[style*="color: rgb(152, 195, 121);"],
+    :root div[style*="background: rgb(40, 44, 52);"] span.token[style*="color: rgb(80, 161, 79);"],
+    :root div[style*="background: rgb(250, 250, 250);"] span.token[style*="color: rgb(80, 161, 79);"] {
+      color: #f0f015 !important;
+    }
+    :root div[style*="background: rgb(40, 44, 52);"] span.token[style*="color: rgb(209, 154, 102);"],
+    :root div[style*="background: rgb(250, 250, 250);"] span.token[style*="color: rgb(209, 154, 102);"],
+    :root div[style*="background: rgb(40, 44, 52);"] span.token[style*="color: rgb(183, 107, 1);"],
+    :root div[style*="background: rgb(250, 250, 250);"] span.token[style*="color: rgb(183, 107, 1);"] {
+      color: #f0f013 !important;
+    }
+    :root div[style*="background: rgb(40, 44, 52);"] span.token[style*="color: rgb(198, 120, 221);"],
+    :root div[style*="background: rgb(250, 250, 250);"] span.token[style*="color: rgb(198, 120, 221);"],
+    :root div[style*="background: rgb(40, 44, 52);"] span.token[style*="color: rgb(166, 38, 164);"],
+    :root div[style*="background: rgb(250, 250, 250);"] span.token[style*="color: rgb(166, 38, 164);"] {
+      color: #f0f010 !important;
+    }
+    :root div[style*="background: rgb(40, 44, 52);"] span.token[style*="color: rgb(224, 108, 117);"],
+    :root div[style*="background: rgb(250, 250, 250);"] span.token[style*="color: rgb(224, 108, 117);"],
+    :root div[style*="background: rgb(40, 44, 52);"] span.token[style*="color: rgb(228, 86, 73);"],
+    :root div[style*="background: rgb(250, 250, 250);"] span.token[style*="color: rgb(228, 86, 73);"] {
+      color: #f0f011 !important;
+    }
+  }
+  @media (prefers-color-scheme: light) and (min-width: 28.135em) {
+    :root .sign-layout-bg {
+      background: linear-gradient(68.66deg, #eaea08 1.3%, #eaea07 50%);
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      /* Proton Lumo */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root svg.logo {
+      /* deno-fmt-ignore */
+      /* deno-fmt-ignore */
+    }
+    :root svg.logo path[fill="#B8D7FF"] {
+      fill: hsl(22.20060696, 70%, 86.07843137%);
+    }
+    :root svg.logo path[fill="#8F69FF"] {
+      fill: hsl(63.59779006, 70%, 70.58823529%);
+    }
+    :root svg.logo path[fill="#6D4AFF"] {
+      fill: hsl(60, 70%, 64.50980392%);
+    }
+    :root svg.logo path[fill="#FFBB93"] {
+      fill: hsl(190.62001228, 70%, 78.82352941%);
+    }
+    :root svg.logo path[fill="#85D4F5"] {
+      fill: hsl(6.07636148, 54.84848485%, 74.11764706%);
+    }
+    :root svg.logo path[fill="#D6F1FC"] {
+      fill: hsl(5.76621111, 56.36363636%, 91.37254902%);
+    }
+    :root svg.logo defs stop[stop-color="#E3D9FF"] {
+      stop-color: hsl(64.18726374, 70%, 92.54901961%);
+    }
+    :root svg.logo defs stop[stop-color="#7341FF"] {
+      stop-color: hsl(64.18726374, 70%, 62.74509804%);
+    }
+    :root svg.logo defs stop[stop-color="#6D4AFF"] {
+      stop-color: hsl(60, 70%, 64.50980392%);
+    }
+    :root svg.logo defs stop[stop-color="#AA8EFF"] {
+      stop-color: hsl(63.26504669, 70%, 77.84313725%);
+    }
+    :root svg.logo defs stop[stop-color="#06B8FF"] {
+      stop-color: hsl(5.50622379, 70%, 51.17647059%);
+    }
+    :root svg.logo defs stop[stop-color="#BFE8FF"] {
+      stop-color: hsl(9.96029006, 70%, 87.45098039%);
+    }
+    :root svg.logo defs stop[stop-color="#BFABFF"] {
+      stop-color: hsl(62.68350434, 70%, 83.52941176%);
+    }
+    :root svg.logo defs stop[stop-color="#FF50C3"] {
+      stop-color: hsl(128.96921863, 70%, 65.68627451%);
+    }
+    :root svg.logo defs stop[stop-color="#B487FF"] {
+      stop-color: hsl(70.89779006, 70%, 76.47058824%);
+    }
+    :root svg.logo defs stop[stop-color="#FFC8FF"] {
+      stop-color: hsl(108.39779006, 70%, 89.21568627%);
+    }
+    :root svg.logo defs stop[stop-color="#8EFFEE"] {
+      stop-color: hsl(339.37124138, 70%, 77.84313725%);
+    }
+    :root svg.logo defs stop[stop-color="#C9C7FF"] {
+      stop-color: hsl(50.5406472, 70%, 89.01960784%);
+    }
+    :root svg.logo defs stop[stop-color="#00F0C3"] {
+      stop-color: hsl(337.14779006, 70%, 47.05882353%);
+    }
+    :root svg.logo defs stop[stop-color="#FFD580"] {
+      stop-color: hsl(208.55527037, 70%, 75.09803922%);
+    }
+    :root svg.logo defs stop[stop-color="#F6C592"] {
+      stop-color: hsl(198.99779006, 54.74576271%, 76.8627451%);
+    }
+    :root svg.logo defs stop[stop-color="#EBB6A2"] {
+      stop-color: hsl(184.83614622, 34.60176991%, 77.84313725%);
+    }
+    :root svg.logo defs stop[stop-color="#DFA5AF"] {
+      stop-color: hsl(158.05296247, 17.54098361%, 76.07843137%);
+    }
+    :root svg.logo defs stop[stop-color="#D397BE"] {
+      stop-color: hsl(129.39779006, 10.54054054%, 70.98039216%);
+    }
+    :root svg.logo defs stop[stop-color="#C486CB"] {
+      stop-color: hsl(102.31083353, 9.88439306%, 66.07843137%);
+    }
+    :root svg.logo defs stop[stop-color="#B578D9"] {
+      stop-color: hsl(86.12974882, 26.06936416%, 66.07843137%);
+    }
+    :root svg.logo defs stop[stop-color="#A166E5"] {
+      stop-color: hsl(76.2718058, 40.94972067%, 64.90196078%);
+    }
+    :root svg.logo defs stop[stop-color="#8B57F2"] {
+      stop-color: hsl(68.52682231, 55.63535912%, 64.50980392%);
+    }
+    :root svg.logo defs stop[stop-color="#704CFF"] {
+      stop-color: hsl(60.46482916, 70%, 64.90196078%);
+    }
+    :root svg.logo defs stop[stop-color="#B39FFB"] {
+      stop-color: hsl(61.44126832, 62%, 80.39215686%);
+    }
+    :root svg.logo defs stop[stop-color="#FFE8DB"] {
+      stop-color: hsl(190.06445672, 70%, 92.94117647%);
+    }
+    :root svg.logo defs stop[stop-color="#957AFD"] {
+      stop-color: hsl(60.76420227, 67.03703704%, 73.52941176%);
+    }
+    :root svg.logo defs stop[stop-color="#FFC6C6"] {
+      stop-color: hsl(168.39779006, 70%, 88.82352941%);
+    }
+    :root svg.logo defs stop[stop-color="#FA528E"] {
+      stop-color: hsl(146.96921863, 64.38202247%, 65.09803922%);
+    }
+    :root svg.logo defs stop[stop-color="#FF8065"] {
+      stop-color: hsl(178.91727057, 70%, 69.80392157%);
+    }
+    :root svg.logo defs stop[stop-color="#FFA51F"] {
+      stop-color: hsl(204.2906472, 70%, 56.07843137%);
+    }
+    :root svg.logo defs stop[stop-color="#34B8EE"] {
+      stop-color: hsl(5.81714489, 54.54545455%, 56.8627451%);
+    }
+    :root,
+    :root .ui-prominent,
+    :root .ui-standard {
+      --primary-minor-2: #000000;
+      --primary-minor-1: #0b0b01;
+      --primary: #f0f01b;
+      --primary-major-1: #f1f12e;
+      --primary-major-2: #f3f341;
+      --primary-major-3: #f4f454;
+      --primary-contrast: #f0f002;
+      --signal-danger-minor-2: #333303;
+      --signal-danger-minor-1: #636306;
+      --signal-danger: #f0f012;
+      --signal-danger-major-1: #f1f125;
+      --signal-danger-major-2: #f2f238;
+      --signal-danger-major-3: #f4f44c;
+      --signal-danger-contrast: #f0f002;
+      --signal-warning-minor-2: #343403;
+      --signal-warning-minor-1: #646406;
+      --signal-warning: #f0f013;
+      --signal-warning-major-1: #f1f126;
+      --signal-warning-major-2: #f2f239;
+      --signal-warning-major-3: #f4f44d;
+      --signal-warning-contrast: #f0f002;
+      --signal-success-minor-2: #363603;
+      --signal-success-minor-1: #656507;
+      --signal-success: #f0f015;
+      --signal-success-major-1: #f1f128;
+      --signal-success-major-2: #f2f23b;
+      --signal-success-major-3: #f4f44f;
+      --signal-success-contrast: #f0f002;
+      --signal-info-minor-2: #393904;
+      --signal-info-minor-1: #696907;
+      --signal-info: #f0f019;
+      --signal-info-major-1: #f1f12c;
+      --signal-info-major-2: #f2f23f;
+      --signal-info-major-3: #f4f452;
+      --signal-info-contrast: #f0f002;
+      --interaction-norm-minor-2: #3b3b04;
+      --interaction-norm-minor-1: #6b6b07;
+      --interaction-norm: #f0f01b;
+      --interaction-norm-major-1: #f1f12e;
+      --interaction-norm-major-2: #f3f341;
+      --interaction-norm-major-3: #f4f454;
+      --interaction-norm-contrast: #f0f002;
+      --interaction-weak-minor-2: #8f8f07;
+      --interaction-weak-minor-1: #bfbf0a;
+      --interaction-weak: #f0f00c;
+      --interaction-weak-major-1: #f4f41d;
+      --interaction-weak-major-2: #f5f530;
+      --interaction-weak-major-3: #f6f644;
+      --interaction-weak-contrast: #f0f004;
+      --text-norm: #f0f004;
+      --text-weak: #f0f006;
+      --text-hint: #f0f005;
+      --text-disabled: #f0f008;
+      --text-invert: #f0f003;
+      --text-markdown: #f0f004;
+      --field-norm: #f0f007;
+      --field-hover: #f0f008;
+      --field-disabled: #f0f009;
+      --field-focus: #f0f01b;
+      --field-highlight: rgba(240, 240, 27, 0.7);
+      --focus-outline: #f0f01b;
+      --focus-ring: rgba(240, 240, 27, 0.4);
+      --link-norm: #f0f019;
+      --link-hover: #f0f01a;
+      --link-active: #f0f017;
+      --markdown-pre-background: #f0f002;
+      --border-norm: #f0f009;
+      --border-weak: #f0f00b;
+      --background-norm: #f0f001;
+      --background-weak: #f0f002;
+      --background-strong: #f0f003;
+      --background-invert: #f0f004;
+      --interaction-default: transparent;
+      --interaction-default-hover: rgba(240, 240, 8, 0.2);
+      --interaction-default-active: rgba(240, 240, 8, 0.4);
+      --shadow-primary-color: 240 240 27;
+      --shadow-norm-opacity: 0.5;
+      --shadow-raised-opacity: 1;
+      --shadow-lifted-opacity: 0.75;
+      --backdrop-norm: rgba(240, 240, 3, 0.5);
+      --optional-scrollbar-thumb-color: #f0f00c;
+      --optional-scrollbar-thumb-hover-color: #f0f00a;
+      --optional-link-norm: var(--interaction-norm-major-1);
+      --optional-link-hover: var(--interaction-norm-major-2);
+      --optional-link-active: var(--interaction-norm-major-3);
+      --optional-background-elevated: #f0f00c;
+      --optional-background-lowered: var(--background-norm);
+      --optional-email-item-unread-background-color: var(--background-weak);
+      --optional-email-item-read-background-color: var(--background-norm);
+      --optional-email-item-read-text-color: var(--text-weak);
+      --optional-mini-calendar-today-color: #f0f004;
+      --optional-logo-text-proton-color: #f0f004;
+      --optional-logo-text-product-color: #f0f004;
+      --favorite-icon-color: #f0f013;
+    }
+    :root .ui-prominent {
+      --background-norm: #f0f002;
+      --background-weak: #f0f001;
+      --background-strong: #f0f003;
+    }
+    :root .button-promotion {
+      --upgrade-color-stop-1: #f0f011;
+      --upgrade-color-stop-2: #f0f019;
+    }
+    :root .item-container-row:not(.item-is-selected):hover,
+    :root .item-container:not(.item-is-selected):hover {
+      box-shadow: none;
+      background-color: var(--navigation-current-item-background-color);
+      color: var(--email-item-unread-text-color);
+    }
+    :root .message-content:not(.plain) .message-iframe iframe {
+      color-scheme: light;
+    }
+    :root header a[aria-label="Go to Lumo homepage"] img {
+      filter: brightness(0) saturate(100%) invert(63%) sepia(71%) saturate(1021%) hue-rotate(208deg) brightness(110%) contrast(94%);
+    }
+    :root .whats-new-section {
+      background: #f0f01b;
+    }
+    :root .new-label {
+      background-color: #f0f01b;
+      color: #f0f003;
+    }
+    :root .lumo-sidebar {
+      background: #f0f002;
+    }
+    :root .lumo-sidebar a.lumo-plus-button svg path {
+      fill: #f0f01b;
+    }
+    :root .lumo-input-container.ghost-mode {
+      background-color: #f0f003;
+      --ghost-text: #f0f004;
+      --ghost-text-weak: #f0f006;
+    }
+    :root .lumo-input-container.ghost-mode .lumo-input {
+      background-color: #f0f002;
+    }
+    :root div[style*="background: rgb(40, 44, 52);"],
+    :root div[style*="background: rgb(250, 250, 250);"] {
+      background: #f0f002 !important;
+    }
+    :root div[style*="background: rgb(40, 44, 52);"] span,
+    :root div[style*="background: rgb(250, 250, 250);"] span {
+      color: #f0f004 !important;
+    }
+    :root div[style*="background: rgb(40, 44, 52);"] span.token[style*="color: rgb(92, 99, 112);"],
+    :root div[style*="background: rgb(250, 250, 250);"] span.token[style*="color: rgb(92, 99, 112);"],
+    :root div[style*="background: rgb(40, 44, 52);"] span.token[style*="color: rgb(160, 161, 167);"],
+    :root div[style*="background: rgb(250, 250, 250);"] span.token[style*="color: rgb(160, 161, 167);"] {
+      color: #f0f007 !important;
+    }
+    :root div[style*="background: rgb(40, 44, 52);"] span.token[style*="color: rgb(97, 175, 239);"],
+    :root div[style*="background: rgb(250, 250, 250);"] span.token[style*="color: rgb(97, 175, 239);"],
+    :root div[style*="background: rgb(40, 44, 52);"] span.token[style*="color: rgb(64, 120, 242);"],
+    :root div[style*="background: rgb(250, 250, 250);"] span.token[style*="color: rgb(64, 120, 242);"] {
+      color: #f0f019 !important;
+    }
+    :root div[style*="background: rgb(40, 44, 52);"] span.token[style*="color: rgb(152, 195, 121);"],
+    :root div[style*="background: rgb(250, 250, 250);"] span.token[style*="color: rgb(152, 195, 121);"],
+    :root div[style*="background: rgb(40, 44, 52);"] span.token[style*="color: rgb(80, 161, 79);"],
+    :root div[style*="background: rgb(250, 250, 250);"] span.token[style*="color: rgb(80, 161, 79);"] {
+      color: #f0f015 !important;
+    }
+    :root div[style*="background: rgb(40, 44, 52);"] span.token[style*="color: rgb(209, 154, 102);"],
+    :root div[style*="background: rgb(250, 250, 250);"] span.token[style*="color: rgb(209, 154, 102);"],
+    :root div[style*="background: rgb(40, 44, 52);"] span.token[style*="color: rgb(183, 107, 1);"],
+    :root div[style*="background: rgb(250, 250, 250);"] span.token[style*="color: rgb(183, 107, 1);"] {
+      color: #f0f013 !important;
+    }
+    :root div[style*="background: rgb(40, 44, 52);"] span.token[style*="color: rgb(198, 120, 221);"],
+    :root div[style*="background: rgb(250, 250, 250);"] span.token[style*="color: rgb(198, 120, 221);"],
+    :root div[style*="background: rgb(40, 44, 52);"] span.token[style*="color: rgb(166, 38, 164);"],
+    :root div[style*="background: rgb(250, 250, 250);"] span.token[style*="color: rgb(166, 38, 164);"] {
+      color: #f0f010 !important;
+    }
+    :root div[style*="background: rgb(40, 44, 52);"] span.token[style*="color: rgb(224, 108, 117);"],
+    :root div[style*="background: rgb(250, 250, 250);"] span.token[style*="color: rgb(224, 108, 117);"],
+    :root div[style*="background: rgb(40, 44, 52);"] span.token[style*="color: rgb(228, 86, 73);"],
+    :root div[style*="background: rgb(250, 250, 250);"] span.token[style*="color: rgb(228, 86, 73);"] {
+      color: #f0f011 !important;
+    }
+  }
+  @media (prefers-color-scheme: dark) and (min-width: 28.135em) {
+    :root .sign-layout-bg {
+      background: linear-gradient(68.66deg, #eaea08 1.3%, #eaea07 50%);
+    }
+  }
+}

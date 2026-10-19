@@ -1,0 +1,1462 @@
+/* pwnbox pywal theme for IDA Pro 9.x
+   based on catppuccin-ida (https://github.com/Pistonight/catppuccin-ida) */
+@importtheme "_base";
+
+/* Qt widgets */
+
+/* ------------------------------------------------------------------ *
+ * Base widget colours and validation hints
+ * ------------------------------------------------------------------ */
+
+QWidget
+{
+    background-color: {background};
+    color: {foreground};
+}
+
+/* Dialogs are a level lighter than the window. Their children are included, or check boxes,
+ * group boxes etc. keep the window colour; widgets with a colour of their own
+ * (inputs, lists, buttons, ...) repeat their rule for QDialog descendants,
+ * which outranks this one by coming later. */
+QDialog,
+QDialog QWidget
+{
+    background-color: {background};
+}
+
+QWidget[field_validity=false]
+{
+    border-color: {color1};
+}
+
+.hint
+{
+    background-color: {background};
+    border-color: {color3};
+    color: {foreground};
+}
+
+/* ------------------------------------------------------------------ *
+ * Plain QFrames drawn as boxes, panels or lines
+ * ------------------------------------------------------------------ */
+
+/* Plain QFrames drawn as boxes/panels/lines (Box=1, Panel=2, HLine=4,
+ * VLine=5) otherwise get the native light frame */
+QFrame[frameShape="1"],
+QFrame[frameShape="2"]
+{
+    border: 1px solid {background.lighten(12)};
+}
+
+QFrame[frameShape="4"],
+QFrame[frameShape="5"]
+{
+    border: none;
+    background-color: {background.lighten(12)};
+    max-height: 1px;
+}
+
+QFrame[frameShape="5"]
+{
+    max-height: 16777215px;
+    max-width: 1px;
+}
+
+/* ------------------------------------------------------------------ *
+ * Labels
+ * ------------------------------------------------------------------ */
+
+QLabel
+{
+    background: transparent;
+}
+
+QLabel:disabled
+{
+    color: {color8};
+}
+
+/* ------------------------------------------------------------------ *
+ * Group boxes
+ * ------------------------------------------------------------------ */
+
+QGroupBox
+{
+    margin-top: 5px;
+}
+
+QGroupBox::title
+{
+    subcontrol-origin: margin;
+    subcontrol-position: top center;
+}
+
+LabeledWidgetContainer
+{
+    border: 0;
+    padding: 0;
+}
+
+/* ------------------------------------------------------------------ *
+ * Status bar
+ * ------------------------------------------------------------------ */
+
+QStatusBar QLabel
+{
+    border: none;
+}
+
+QStatusBar::item
+{
+    border: 1px solid {background.lighten(12)};
+    border-radius: 2px;
+}
+
+/* ------------------------------------------------------------------ *
+ * Tooltips
+ * ------------------------------------------------------------------ */
+
+QToolTip,
+QTipLabel
+{
+    border: 1px solid {background.lighten(12)};
+    border-radius: 2px;
+    background: {background};
+    color: {foreground};
+    margin: 0;
+    padding: 0;
+}
+
+/* ------------------------------------------------------------------ *
+ * Splitter handles
+ * ------------------------------------------------------------------ */
+
+QSplitter::handle
+{
+    background-color: {background};
+}
+
+QSplitter::handle:horizontal
+{
+    width: 4px;
+}
+
+QSplitter::handle:vertical
+{
+    height: 4px;
+}
+
+/* ------------------------------------------------------------------ *
+ * Individual IDA dialogs
+ * ------------------------------------------------------------------ */
+
+JumpAnywhereDialog
+{
+    background-color: {background};
+}
+
+ActionsInspector QLineEdit,
+ActionsInspector QKeySequenceEdit
+{
+    width: 16em;
+}
+
+/* ------------------------------------------------------------------ *
+ * Dock widgets
+ * ------------------------------------------------------------------ */
+
+DockWidgetTitle,
+DockAreaDragTitle
+{
+    border: none;
+    background-color: {background};
+}
+
+DockWidgetTitle
+{
+    padding: 0px;
+    margin-bottom: 2px;
+}
+
+DockWidgetTitle[active="true"],
+DockAreaDragTitle
+{
+    background-color: {background};
+}
+
+DockWidgetTitle > QPushButton,
+DockAreaDragTitle > QPushButton
+{
+    min-width: 20px;
+    min-height: 20px;
+}
+
+DockWidgetTitle > QPushButton:!hover,
+DockAreaDragTitle > QPushButton:!hover
+{
+    border: none;
+}
+
+DockWidget > QWidget > QAbstractButton
+{
+    background-color: {background};
+    border-radius: 3px;
+}
+
+@ifdef __MAC__
+/* drawing borders on macOS seems to be glitchy with Qt 5.15.2. see IDA-3041 */
+DockWidgetTitle > QPushButton,
+DockAreaDragTitle > QPushButton
+{
+    border: none;
+}
+@endif
+
+/* ------------------------------------------------------------------ *
+ * Menu bar and menus
+ * ------------------------------------------------------------------ */
+
+QMenuBar,
+QMenuBar::item
+{
+    background-color: {background};
+    color: {foreground};
+}
+
+QMenuBar::item:selected
+{
+    background-color: {color8};
+}
+
+QMenu,
+QDialog QMenu
+{
+    background-color: {background};
+    border: 1px solid {background.lighten(12)};
+}
+
+QMenu::item:selected
+{
+    background-color: {color8};
+}
+
+QMenu::item:disabled
+{
+    color: {color8};
+}
+
+QMenu::separator
+{
+    height: 1px;
+    background-color: {background.lighten(12)};
+}
+
+/* ------------------------------------------------------------------ *
+ * Text inputs
+ * ------------------------------------------------------------------ */
+
+QTextEdit,
+QPlainTextEdit,
+QDialog QTextEdit,
+QDialog QPlainTextEdit
+{
+    background-color: {background};
+    border: 1px solid {background.lighten(12)};
+    border-radius: 2px;
+}
+
+QLineEdit,
+QDialog QLineEdit
+{
+    background-color: {background};
+    border: 1px solid {background.lighten(12)};
+    min-height: 20px;
+    border-radius: 2px;
+}
+
+QLineEdit:hover,
+QLineEdit:focus
+{
+    border: 1px solid {color4};
+}
+
+QLineEdit:disabled
+{
+    color: {color8};
+}
+
+/* ------------------------------------------------------------------ *
+ * Spin boxes (number inputs with up/down buttons)
+ * ------------------------------------------------------------------ */
+
+/* Styled like QLineEdit; the buttons sit inside the frame on the right
+ * (arrow images are in icons_arrow.css). */
+QAbstractSpinBox,
+QDialog QAbstractSpinBox
+{
+    background-color: {background};
+    border: 1px solid {background.lighten(12)};
+    border-radius: 2px;
+    min-height: 20px;
+    padding-right: 16px;
+}
+
+QAbstractSpinBox:hover,
+QAbstractSpinBox:focus
+{
+    border: 1px solid {color4};
+}
+
+QAbstractSpinBox:disabled
+{
+    color: {color8};
+}
+
+QAbstractSpinBox::up-button,
+QAbstractSpinBox::down-button
+{
+    subcontrol-origin: border;
+    width: 16px;
+    background-color: {background};
+    border: none;
+    border-left: 1px solid {background.lighten(12)};
+}
+
+QAbstractSpinBox::up-button
+{
+    subcontrol-position: top right;
+    border-top-right-radius: 2px;
+}
+
+QAbstractSpinBox::down-button
+{
+    subcontrol-position: bottom right;
+    border-bottom-right-radius: 2px;
+}
+
+QAbstractSpinBox::up-button:hover,
+QAbstractSpinBox::down-button:hover
+{
+    background-color: {color8};
+}
+
+QAbstractSpinBox::up-button:pressed,
+QAbstractSpinBox::down-button:pressed
+{
+    background-color: {background.lighten(12)};
+}
+
+/* ------------------------------------------------------------------ *
+ * Push buttons, tool buttons, toolbars
+ * ------------------------------------------------------------------ */
+
+QToolBar
+{
+    border: none;
+}
+
+QPushButton,
+QDialog QPushButton
+{
+    background-color: {background};
+    border: 1px solid {background.lighten(12)};
+    text-align: center;
+    min-height: 20px;
+    min-width: 50px;
+    padding: 0 6px 0 6px;
+    border-radius: 2px;
+}
+
+QPushButton:hover,
+QPushButton:default
+{
+    border: 1px solid {color4};
+}
+
+QPushButton:pressed
+{
+    background-color: {color8};
+    border: 1px solid {color14};
+}
+
+QPushButton:disabled
+{
+    color: {color8};
+}
+
+quick_filter_widget_t > QPushButton
+{
+    min-width: 20px;
+}
+
+TNavBand > QPushButton,
+nav_scroll_button_t,
+RegJumpButton
+{
+    min-height: 0;
+    min-width: 0;
+    padding: 0;
+    border: none;
+}
+
+/* Remove border from IDC/Python switch button */
+CLIWidget > QGroupBox > QPushButton,
+CLIWidget > QGroupBox > QPushButton:hover,
+CLIWidget > QGroupBox > QPushButton:focus
+{
+    border: none;
+}
+
+CLIWidget > QGroupBox
+{
+    margin-top: 0;
+}
+
+/* Toolbar icon buttons: replace the native (light blue) hover/pressed/checked
+ * boxes. The transparent border keeps the size the same in every state. */
+QToolButton
+{
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 3px;
+}
+
+QToolButton:hover
+{
+    background-color: {color8};
+}
+
+QToolButton:pressed
+{
+    background-color: {color8};
+}
+
+QToolButton:checked
+{
+    background-color: {color8};
+    border: 1px solid {color4};
+}
+
+/* Buttons with a separate menu part (e.g. Back/Forward): once QToolButton is
+ * styled, Qt no longer reserves room for it, so the arrow would overlap the
+ * icon. The padding matches the menu-button width. */
+QToolButton[popupMode="1"]
+{
+    padding-right: 12px;
+}
+
+QToolButton::menu-button
+{
+    border: none;
+    width: 12px;
+}
+
+/* ------------------------------------------------------------------ *
+ * Combo boxes
+ * ------------------------------------------------------------------ */
+
+/* it seems Qt doesn't account for the checkmark icon when calculating the width
+ * of a combobox menu in dark mode on macOS and linux. we should add it to the margins
+ * so that text isn't clipped */
+@ifndef __NT__
+@def combobox_right_margin 20px;
+@else
+@def combobox_right_margin 0px;
+@endif
+
+QComboBox
+{
+    border: 1px solid {background.lighten(12)};
+    border-radius: 2px;
+    color: {foreground};
+    padding: 1px 20px 1px 3px;
+}
+
+QComboBox:!editable
+{
+    background-color: {background};
+}
+
+QComboBox:hover,
+QComboBox:focus
+{
+    border: 1px solid {color4};
+}
+
+QComboBox > QLineEdit,
+QComboBox > QLineEdit:hover,
+QComboBox > QLineEdit:focus
+{
+    border: none;
+    min-height: default;
+}
+
+QComboBox::drop-down
+{
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 15px;
+    border-left: 1px solid {background.lighten(12)};
+}
+
+QComboBox QAbstractItemView
+{
+    background-color: {background};
+    border: 1px solid {background.lighten(12)};
+    selection-background-color: {color8};
+}
+
+/* ------------------------------------------------------------------ *
+ * Check boxes and radio buttons
+ * ------------------------------------------------------------------ */
+
+QCheckBox::indicator,
+QRadioButton::indicator
+{
+    background-color: {background};
+    border: 1px solid {background.lighten(12)};
+    width: 12px;
+    height: 12px;
+}
+
+QRadioButton::indicator
+{
+    border-radius: 7px;
+}
+
+QCheckBox::indicator:hover,
+QRadioButton::indicator:hover
+{
+    border: 1px solid {color4};
+}
+
+/* The check mark, dash and radio dot are images (icons_indicator.css): once
+ * the indicator is styled, Qt no longer draws them. */
+QCheckBox::indicator:checked,
+QCheckBox::indicator:indeterminate
+{
+    background-color: {color4};
+}
+
+QRadioButton::indicator:checked
+{
+    border: 1px solid {color4};
+}
+
+/* ------------------------------------------------------------------ *
+ * Tab bars and tab panes
+ * ------------------------------------------------------------------ */
+
+QTabBar::tab
+{
+    background-color: {background};
+    color: {color7};
+    padding: 3px 8px;
+}
+
+QTabBar::tab:selected
+{
+    background-color: {color8};
+    color: {foreground};
+}
+
+QTabBar::tab:hover
+{
+    background-color: {background};
+}
+
+QTabWidget::pane
+{
+    border: 1px solid {background.lighten(12)};
+    background-color: {background};
+    top: -1px;
+}
+
+QTabWidget::tab-bar
+{
+    left: 2px;
+}
+
+QTabBar QToolButton
+{
+    background-color: {background};
+    border: none;
+}
+
+/* Tab close buttons: with an image from the style sheet (icons_indicator.css),
+ * Qt no longer draws a hover state for them */
+QTabBar::close-button
+{
+    border-radius: 2px;
+}
+
+QTabBar::close-button:hover
+{
+    background-color: {color8};
+}
+
+QTabBar::close-button:pressed
+{
+    background-color: {color8};
+}
+
+/* ------------------------------------------------------------------ *
+ * Tables, lists and trees
+ * ------------------------------------------------------------------ */
+
+QTableView,
+QDialog QTableView
+{
+    border: 1px solid {background.lighten(12)};
+    background-color: {background};
+    alternate-background-color: {background};
+    gridline-color: {background.lighten(12)};
+}
+
+EditContainer,
+ChooserContainer,
+QGroupBox,
+QListView,
+QTreeView
+{
+    border: 1px solid {background.lighten(12)};
+    border-radius: 2px;
+}
+
+QListView,
+QTreeView,
+QDialog QListView,
+QDialog QTreeView
+{
+    background-color: {background};
+}
+
+/* Use default selection color on macOS, it matches the native dark theme */
+@ifndef __MAC__
+
+QTreeView::item:selected,
+QListView::item:selected,
+QTableView::item:selected,
+QTreeView::branch:selected
+{
+    background-color: {color8};
+    color: {foreground};
+}
+
+@endif
+
+/* ------------------------------------------------------------------ *
+ * Table and tree headers
+ * ------------------------------------------------------------------ */
+
+QHeaderView::section
+{
+    background-color: {background};
+    color: {color7};
+    border: none;
+    border-left: 1px solid {background.lighten(12)};
+    padding: 3px;
+}
+
+QHeaderView:horizontal::section
+{
+    min-height: 20px;
+}
+
+QTableCornerButton::section
+{
+    background: {background};
+    border: none;
+}
+
+/* ------------------------------------------------------------------ *
+ * Scrollbars
+ * ------------------------------------------------------------------ */
+
+QScrollBar,
+QDialog QScrollBar
+{
+    background-color: {background};
+    width: 14px;
+    height: 14px;
+    margin: 0;
+}
+
+QScrollBar::sub-line,
+QScrollBar::add-line
+{
+    width: 0;
+    height: 0;
+}
+
+QScrollBar::add-page,
+QScrollBar::sub-page
+{
+    background: none;
+}
+
+QScrollBar::handle
+{
+    background-color: {background.lighten(12)};
+    margin: 3px;
+    border-radius: 4px;
+}
+
+QScrollBar::handle:hover
+{
+    background-color: {color8};
+}
+
+QScrollBar::handle:vertical
+{
+    min-height: 20px;
+}
+
+QScrollBar::handle:horizontal
+{
+    min-width: 20px;
+}
+
+/* ------------------------------------------------------------------ *
+ * Choosers (lists like Functions, Names)
+ * ------------------------------------------------------------------ */
+
+chooser_widget_t,
+chooser_widget_t[os-dark-theme="true"],
+standalone_dirtree_widget_t,
+standalone_dirtree_widget_t[os-dark-theme="true"]
+{
+    qproperty-highlight-bg-default    : {background};
+    qproperty-highlight-bg-selected   : {background};
+    qproperty-cut-text-color-default  : {color8};
+    qproperty-cut-text-color-selected : {foreground};
+}
+
+/* Arrow images: Qt draws these black by default, so every arrow sub-control gets an image from icons/ */
+
+QComboBox::down-arrow
+{
+    image: url("$RELPATH/icons/arrow-down.svg");
+}
+
+QToolButton::menu-indicator,
+QToolButton::menu-arrow
+{
+    image: url("$RELPATH/icons/arrow-down.svg");
+}
+
+QToolButton::menu-arrow:hover,
+QToolButton::menu-indicator:hover
+{
+    image: url("$RELPATH/icons/arrow-down-hover.svg");
+}
+
+QToolButton::up-arrow       {{ image: url("$RELPATH/icons/arrow-up.svg"); }}
+
+QToolButton::down-arrow     {{ image: url("$RELPATH/icons/arrow-down.svg"); }}
+
+QToolButton::left-arrow     {{ image: url("$RELPATH/icons/arrow-left.svg"); }}
+
+QToolButton::right-arrow    {{ image: url("$RELPATH/icons/arrow-right.svg"); }}
+
+QToolButton::up-arrow:hover    {{ image: url("$RELPATH/icons/arrow-up-hover.svg"); }}
+
+QToolButton::down-arrow:hover  {{ image: url("$RELPATH/icons/arrow-down-hover.svg"); }}
+
+QToolButton::left-arrow:hover  {{ image: url("$RELPATH/icons/arrow-left-hover.svg"); }}
+
+QToolButton::right-arrow:hover {{ image: url("$RELPATH/icons/arrow-right-hover.svg"); }}
+
+QToolButton::up-arrow:disabled    {{ image: url("$RELPATH/icons/arrow-up-disabled.svg"); }}
+
+QToolButton::down-arrow:disabled  {{ image: url("$RELPATH/icons/arrow-down-disabled.svg"); }}
+
+QToolButton::left-arrow:disabled  {{ image: url("$RELPATH/icons/arrow-left-disabled.svg"); }}
+
+QToolButton::right-arrow:disabled {{ image: url("$RELPATH/icons/arrow-right-disabled.svg"); }}
+
+QMenu::right-arrow
+{
+    image: url("$RELPATH/icons/arrow-right.svg");
+}
+
+QHeaderView::up-arrow
+{
+    image: url("$RELPATH/icons/arrow-up.svg");
+    width: 8px;
+}
+
+QHeaderView::down-arrow
+{
+    image: url("$RELPATH/icons/arrow-down.svg");
+    width: 8px;
+}
+
+/* Spin boxes. (Qt does not apply `:off` at the minimum / maximum, so only a
+ * disabled spin box gets the dimmed arrows.) */
+QAbstractSpinBox::up-arrow
+{
+    image: url("$RELPATH/icons/arrow-up.svg");
+    width: 8px;
+    height: 8px;
+}
+
+QAbstractSpinBox::down-arrow
+{
+    image: url("$RELPATH/icons/arrow-down.svg");
+    width: 8px;
+    height: 8px;
+}
+
+QAbstractSpinBox::up-arrow:hover
+{
+    image: url("$RELPATH/icons/arrow-up-hover.svg");
+}
+
+QAbstractSpinBox::down-arrow:hover
+{
+    image: url("$RELPATH/icons/arrow-down-hover.svg");
+}
+
+QAbstractSpinBox::up-arrow:disabled
+{
+    image: url("$RELPATH/icons/arrow-up-disabled.svg");
+}
+
+QAbstractSpinBox::down-arrow:disabled
+{
+    image: url("$RELPATH/icons/arrow-down-disabled.svg");
+}
+
+QComboBox::down-arrow:disabled
+{
+    image: url("$RELPATH/icons/arrow-down-disabled.svg");
+}
+
+/* Tree expanders (styling ::branch disables native rendering, so all four
+ * states are needed) */
+QTreeView::branch:has-children:!has-siblings:closed,
+QTreeView::branch:closed:has-children:has-siblings
+{
+    border-image: none;
+    image: url("$RELPATH/icons/arrow-right.svg");
+}
+
+QTreeView::branch:open:has-children:!has-siblings,
+QTreeView::branch:open:has-children:has-siblings
+{
+    border-image: none;
+    image: url("$RELPATH/icons/arrow-down.svg");
+}
+
+/* Re-introduce branch indicators (styling ::branch disables native rendering) */
+xref_tree_t QTreeView::branch:has-children:!has-siblings:closed,
+xref_tree_t QTreeView::branch:closed:has-children:has-siblings
+{
+    border-image: none;
+    image: url("$RELPATH/icons/arrow-right.svg");
+}
+
+xref_tree_t QTreeView::branch:open:has-children:!has-siblings,
+xref_tree_t QTreeView::branch:open:has-children:has-siblings
+{
+    border-image: none;
+    image: url("$RELPATH/icons/arrow-down.svg");
+}
+
+/* Check box and radio button marks: once the indicators are styled, Qt no longer draws the check mark or dot, so they are images from icons/ */
+
+QCheckBox::indicator:checked
+{
+    image: url("$RELPATH/icons/checkbox-checked.svg");
+}
+
+QCheckBox::indicator:indeterminate
+{
+    image: url("$RELPATH/icons/checkbox-indeterminate.svg");
+}
+
+QRadioButton::indicator:checked
+{
+    image: url("$RELPATH/icons/radio-checked.svg");
+}
+
+/* Checked menu entries (e.g. "C-like format"): otherwise the native style
+ * draws its own grey check. Sized like a menu icon, so it sits in the icon
+ * column; unchecked entries draw nothing, as before. An entry with both an
+ * icon and a check state shows only its icon (Qt, with a style sheet). */
+
+QMenu::indicator
+{
+    width: 16px;
+    height: 16px;
+}
+
+QMenu::indicator:non-exclusive:checked
+{
+    image: url("$RELPATH/icons/menu-checked.svg");
+}
+
+QMenu::indicator:exclusive:checked
+{
+    image: url("$RELPATH/icons/menu-selected.svg");
+}
+
+/* Tab close buttons (e.g. tabbed dock windows): drawn by the style, red in IDA's own theme */
+
+QTabBar::close-button
+{
+    image: url("$RELPATH/extra/window-close.svg");
+}
+
+/* Syntax highlighting: listing, xref tree, output window, script editor */
+
+/* ------------------------------------------------------------------ *
+ * Output window and script text areas
+ * ------------------------------------------------------------------ */
+
+/* Without a border rule, Qt draws the native (light) frame around it */
+log_widget_t,
+log_widget_t[os-dark-theme="true"]
+{
+    color: {foreground};
+    background-color: {background};
+    border: none;
+}
+
+/* Output window / script text areas */
+text_area_t,
+text_area_t[os-dark-theme="true"]
+{
+    qproperty-keyword1-fg: {color5};
+    qproperty-keyword1-weight: 0;
+    qproperty-keyword1-italic: 0;
+
+    qproperty-keyword2-fg: {color5};
+    qproperty-keyword2-weight: 0;
+    qproperty-keyword2-italic: 0;
+
+    qproperty-keyword3-fg: {color4};
+    qproperty-keyword3-weight: 0;
+    qproperty-keyword3-italic: 0;
+
+    qproperty-string-fg: {color2};
+    qproperty-string-weight: 0;
+    qproperty-string-italic: 0;
+
+    qproperty-comment-fg: {color8};
+    qproperty-comment-weight: 0;
+    qproperty-comment-italic: 1;
+
+    qproperty-preprocessor-fg: {color5};
+    qproperty-preprocessor-weight: 0;
+    qproperty-preprocessor-italic: 0;
+
+    qproperty-number-fg: {color3};
+    qproperty-number-weight: 0;
+    qproperty-number-italic: 0;
+
+    /* Edit type > C syntax: built-in types (bool, int) use user1 */
+    qproperty-user1-fg: {color4};
+    qproperty-user1-weight: 0;
+    qproperty-user1-italic: 0;
+
+    qproperty-user2-fg: {color8};
+    qproperty-user2-weight: 0;
+    qproperty-user2-italic: 0;
+
+    qproperty-user3-fg: {color14};
+    qproperty-user3-weight: 0;
+    qproperty-user3-italic: 0;
+
+    qproperty-user4-fg: {color3};
+    qproperty-user4-weight: 0;
+    qproperty-user4-italic: 0;
+
+    qproperty-match-line-bg: rgba({color3},0.1);
+    qproperty-match-text-bg: rgba({color3},0.25);
+}
+
+text_area_t QWidget
+{
+    background-color: transparent;
+}
+
+text_area_t text_area_margin_widget_t
+{
+    color: {color8};
+    qproperty-header-color: {foreground};
+}
+
+text_area_dialog_t QLabel#counter_label
+{
+    color: {foreground};
+}
+
+text_area_dialog_t QLabel#counter_label[invalid=true]
+{
+    color: {color1};
+}
+
+/* ------------------------------------------------------------------ *
+ * Script editor (IDC / IDAPython snippets)
+ * ------------------------------------------------------------------ */
+
+TextEdit
+{
+    qproperty-keyword1-fg: {color5};
+    qproperty-keyword2-fg: {color5};
+    qproperty-keyword3-fg: {color4};
+    qproperty-string-fg: {color2};
+    qproperty-comment-fg: {color8};
+    qproperty-comment-italic: 1;
+    qproperty-preprocessor-fg: {color5};
+    qproperty-number-fg: {color3};
+}
+
+/* ------------------------------------------------------------------ *
+ * Disassembly, pseudocode and hex view text
+ * ------------------------------------------------------------------ */
+
+CustomIDAMemo,
+CustomIDAMemo[os-dark-theme="true"]
+{
+    border: none;
+
+    /* Pseudocode tokens are re-tagged by the plugin (src/ida/hexrays.py); the
+     * "pc:" notes say which pseudocode token each property ends up colouring. */
+
+    /* Text and comments */
+    qproperty-line-fg-default             : {foreground};        /* Default                                       */
+    qproperty-line-fg-regular-comment     : {color8};     /* Regular comment            pc: comments       */
+    qproperty-line-fg-repeatable-comment  : {color8};     /* Repeatable comment                            */
+    qproperty-line-fg-automatic-comment   : {color8};         /* Automatic comment                             */
+    qproperty-line-fg-extra-line          : {color8};     /* Extra line                                    */
+
+    /* Keywords, operators, delimiters */
+    qproperty-line-fg-insn                : {color5};     /* Instruction mnemonic                          */
+    qproperty-line-fg-keyword             : {color5};     /* Keywords                   pc: if, return     */
+    qproperty-line-fg-asm-directive       : {color4};    /* Assembler directive        pc: = == + -> * &  */
+    qproperty-line-fg-punctuation         : {color8};   /* Punctuation                pc: ( ) ; , .      */
+
+    /* Functions */
+    qproperty-line-fg-code-name           : {color3};    /* Regular code name          pc: functions      */
+    qproperty-line-fg-dummy-code-name     : {color3};    /* Dummy code name (sub_, loc_)                  */
+    qproperty-line-fg-demangled-name      : {color3};    /* Demangled name                                */
+    qproperty-line-fg-libfunc             : {color3};    /* Library function name                         */
+    qproperty-line-fg-import-name         : {color3};    /* Imported name              pc: imported calls */
+
+    /* Types / modules */
+    qproperty-line-fg-hidden              : {color4};        /* Hidden name                pc: types, casts   */
+    qproperty-line-fg-segment-name        : {color4};        /* Segment name                                  */
+
+    /* Variables */
+    qproperty-line-fg-locvar              : {color14};    /* Local variable name        pc: vars, members  */
+    qproperty-line-fg-register-name       : {color1};     /* Register name              pc: this           */
+
+    /* Constants and globals */
+    qproperty-line-fg-regular-data-name   : {color3};    /* Regular data name          pc: globals        */
+    qproperty-line-fg-dummy-data-name     : {color3};    /* Dummy data name (dword_, off_)                */
+    qproperty-line-fg-unknown-name        : {color3};    /* Regular unknown name                          */
+    qproperty-line-fg-dummy-unknown-name  : {color3};    /* Dummy unknown name (unk_)                     */
+    qproperty-line-fg-numlit-in-insn      : {color3};    /* Numeric constant           pc: numbers        */
+    qproperty-line-fg-numlit-in-data      : {color3};    /* Numeric constant in data directive            */
+    qproperty-line-fg-void-opnd           : {color3};    /* Void operand                                  */
+    qproperty-line-fg-macro               : {color3};       /* Macro / enum member        pc: LODWORD, BYTE1 */
+
+    /* Strings */
+    qproperty-line-fg-strlit-in-insn      : {color2};      /* String constant            pc: strings        */
+    qproperty-line-fg-charlit-in-insn     : {color2};      /* Char constant              pc: chars          */
+    qproperty-line-fg-strlit-in-data      : {color2};      /* String constant in data directive             */
+    qproperty-line-fg-charlit-in-data     : {color2};      /* Char constant in data directive               */
+
+    /* Labels, xrefs, errors */
+    qproperty-line-fg-alt-opnd            : {color5};       /* Alternative operand        pc: LABEL_12       */
+    qproperty-line-fg-code-xref           : {color8};     /* Code reference                                */
+    qproperty-line-fg-data-xref           : {color8};         /* Data reference                                */
+    qproperty-line-fg-code-xref-to-tail   : {color1};       /* Code reference to tail byte                   */
+    qproperty-line-fg-data-xref-to-tail   : {color1};     /* Data reference to tail byte                   */
+    qproperty-line-fg-error               : {color1};       /* Error or problem           pc: MEMORY[], JUMPOUT */
+
+    /* Marks */
+    qproperty-line-fg-collapsed-line      : {color8};     /* Collapsed line                                */
+    qproperty-line-fg-patched-bytes       : {color1};     /* Patched bytes                                 */
+    qproperty-line-fg-unsaved-changes     : {color3};       /* Unsaved changes                               */
+    qproperty-caret                       : {color15};         /* Caret                                         */
+}
+
+/* Local Types: the type printer tags differently from pseudocode. Struct
+ * names and member names share CNAME (code name), so both get the member
+ * colour; numbers in __attribute__((aligned(1))) are tagged LIBNAME. Base
+ * classes and member types are HIDNAME (types) and keep that colour. */
+type_listing_t,
+type_listing_t[os-dark-theme="true"]
+{
+    qproperty-line-fg-code-name           : {color14};    /* Struct and member names   */
+    qproperty-line-fg-libfunc             : {color3};    /* Numbers in attributes      */
+}
+
+/* ------------------------------------------------------------------ *
+ * Xref tree
+ * ------------------------------------------------------------------ */
+
+xref_tree_t,
+xref_tree_t[os-dark-theme="true"]
+{
+    qproperty-function-name-color         : {color3};
+    qproperty-library-function-color      : {color3};
+    qproperty-imported-function-color     : {color3};
+    qproperty-data-name-color             : {color3};
+    qproperty-regular-data-name-color     : {color3};
+    qproperty-string-literal-color        : {color2};
+    qproperty-data-string-color           : {color2};
+    qproperty-numeric-constant-color      : {color3};
+    qproperty-data-numeric-color          : {color3};
+    qproperty-keyword-color               : {color5};
+    qproperty-symbol-color                : {color8};
+    qproperty-register-color              : {color1};
+    qproperty-local-name-color            : {color14};
+    qproperty-code-reference-color        : {color8};
+    qproperty-data-reference-color        : {color8};
+    qproperty-prefix-color                : {color8};
+    qproperty-tree-background-color       : {background};
+    qproperty-search-match-color          : {color8};
+}
+
+xref_tree_t QTreeView::item:selected,
+xref_tree_t QTreeView::branch:selected
+{
+    background-color: {color8};
+    color: {foreground};
+}
+
+/* IDA views: listing backgrounds, gutter, diff, debugger, graphs, navigation band */
+
+/* ------------------------------------------------------------------ *
+ * Listing gutter: address prefix, opcode bytes, jump arrows
+ * ------------------------------------------------------------------ */
+
+CustomIDAMemo,
+CustomIDAMemo[os-dark-theme="true"]
+{
+    /* Address prefix and opcode bytes */
+    qproperty-line-fg-line-prefix         : {color8};         /* Line prefix                                   */
+    qproperty-line-fg-opcode-byte         : {color8};       /* Opcode bytes                                  */
+
+    /* Line prefix colours */
+    qproperty-line-pfx-libfunc            : {color14};    /* Library function                              */
+    qproperty-line-pfx-func               : {color8};       /* Regular function                              */
+    qproperty-line-pfx-insn               : {color1};       /* Single instruction                            */
+    qproperty-line-pfx-data               : {color8};       /* Data bytes                                    */
+    qproperty-line-pfx-unexplored         : {color3}; /* Unexplored byte                               */
+    qproperty-line-pfx-extern             : {color5};     /* External name definition segment              */
+    qproperty-line-pfx-current-line       : {color3};        /* Current line                                  */
+    qproperty-line-pfx-current-item       : {color8};        /* Current item (IDA: transparent, black in hints) */
+    qproperty-line-pfx-hidden-line        : {color8};        /* Hidden line                                   */
+    qproperty-line-pfx-lumina             : {color2};     /* Lumina                                        */
+}
+
+/* Jump arrows left of the disassembly */
+TextArrows
+{
+    qproperty-jump-in-function          : {color8};
+    qproperty-jump-external-to-function : {color1};
+    qproperty-jump-under-cursor         : {foreground};
+    qproperty-jump-target               : {color2};
+    qproperty-register-target           : {color4};
+    qproperty-bpt-possible              : {color4};
+}
+
+/* ------------------------------------------------------------------ *
+ * Listing backgrounds, highlights and overlays
+ * ------------------------------------------------------------------ */
+
+CustomIDAMemo,
+CustomIDAMemo[os-dark-theme="true"]
+{
+    /* Backgrounds */
+    qproperty-line-bg-default             : {background};          /* Default background                            */
+    qproperty-line-bg-selected            : {color8};     /* Selected background                           */
+    qproperty-line-bg-hint                : {background};            /* Hint background                               */
+    qproperty-line-bg-highlight           : {background};     /* Same-identifier highlight                     */
+    qproperty-line-bg-highlight-2         : {background};
+    qproperty-line-bg-highlight-3         : {background};
+    qproperty-line-bg-highlight-4         : {background};
+    qproperty-line-bg-highlight-5         : {background};
+    qproperty-line-bg-highlight-6         : {background};
+    qproperty-line-bg-highlight-7         : {background};
+    qproperty-line-bg-highlight-8         : {background};
+
+    /* Background overlays */
+    qproperty-line-bgovl-current-line     : rgba({foreground},0.06);
+    qproperty-line-bgovl-trace            : rgba({color4},0.15);
+    qproperty-line-bgovl-trace-ovl        : rgba({color4},0.15);
+    qproperty-line-bgovl-bookmark         : {background};
+    qproperty-line-bgovl-extra-1          : {background};       /* Extra overlay #1 (synced views band?)        */
+    qproperty-bookmark-star-outline       : {color3};
+}
+
+CustomIDAMemo[hints="true"]
+{
+    qproperty-line-bg-default             : {background};
+    qproperty-line-fg-default             : {color6};    /* Untagged text (e.g. decompiler hints) */
+}
+
+/* Hover hint popups (pseudocode, Local Types, disassembly): a listing in a
+ * frameless window, lost against the views behind it without a border */
+hintview_t,
+hintview_t[os-dark-theme="true"]
+{
+    border: 1px solid {color4};
+}
+
+/* ------------------------------------------------------------------ *
+ * Diff / merge regions
+ * ------------------------------------------------------------------ */
+
+TChooser,
+generic_dirtree_widget_t
+{
+    qproperty-highlight-bg-diff-region-pick:             {color2};
+    qproperty-highlight-bg-diff-region-leave:            {color8};
+    qproperty-highlight-bg-diff-region-conflict:         {color3};
+
+    qproperty-highlight-bg-diff-region-pick-current:     {color2};
+    qproperty-highlight-bg-diff-region-leave-current:    {color8};
+    qproperty-highlight-bg-diff-region-conflict-current: {color3};
+}
+
+diff_fringe_t
+{
+    background-color: {background};
+
+    qproperty-diff-region-pick:                        {color2};
+    qproperty-diff-region-pick-boundaries:             {color2};
+    qproperty-diff-region-pick-current:                {color2};
+    qproperty-diff-region-pick-current-boundaries:     {color2};
+
+    qproperty-diff-region-leave:                       {color8};
+    qproperty-diff-region-leave-boundaries:            {color8};
+    qproperty-diff-region-leave-current:               {color8};
+    qproperty-diff-region-leave-current-boundaries:    {color8};
+
+    qproperty-diff-region-conflict:                    {color3};
+    qproperty-diff-region-conflict-boundaries:         {color3};
+    qproperty-diff-region-conflict-current:            {color3};
+    qproperty-diff-region-conflict-current-boundaries: {color3};
+}
+
+CustomIDAMemo,
+CustomIDAMemo[os-dark-theme="true"]
+{
+    /* Diff / merge */
+    qproperty-line-bgovl-diff-region-pick             : {color2};
+    qproperty-line-bgovl-diff-region-leave            : {color8};
+    qproperty-line-bgovl-diff-region-conflict         : {color3};
+    qproperty-line-bgovl-diff-region-pick-current     : {color2};
+    qproperty-line-bgovl-diff-region-leave-current    : {color8};
+    qproperty-line-bgovl-diff-region-conflict-current : {color3};
+}
+
+/* ------------------------------------------------------------------ *
+ * Breakpoint line backgrounds
+ * ------------------------------------------------------------------ */
+
+CustomIDAMemo,
+CustomIDAMemo[os-dark-theme="true"]
+{
+    /* Breakpoints */
+    qproperty-line-bg-bpt-enabled         : {color1};
+    qproperty-line-bg-bpt-disabled        : {color2};
+    qproperty-line-bg-bpt-unavailable     : {color3};
+}
+
+/* ------------------------------------------------------------------ *
+ * Debugger: pointer dereferencing and the debugging listing
+ * ------------------------------------------------------------------ */
+
+CustomIDAMemo,
+CustomIDAMemo[os-dark-theme="true"]
+{
+    /* Pointer dereferencing */
+    qproperty-line-fg-deref-code          : {color3};
+    qproperty-line-fg-deref-writable-code : {color1};
+    qproperty-line-fg-deref-data          : {color3};
+    qproperty-line-fg-deref-rodata        : {color6};
+    qproperty-line-fg-deref-stack         : {color6};
+    qproperty-line-fg-deref-number        : {color8};
+}
+
+CustomIDAMemo[debugging="true"]
+{
+    qproperty-line-bg-default             : {background};
+    qproperty-line-bgovl-current-ip       : rgba({color4},0.2);
+}
+
+/* ------------------------------------------------------------------ *
+ * Debugger register view
+ * ------------------------------------------------------------------ */
+
+TCpuRegs,
+TCpuRegs[os-dark-theme="true"]
+{
+    background-color: {background};
+    qproperty-register-defined     : {foreground};
+    qproperty-register-changed     : {color3};
+    qproperty-register-edited      : {color3};
+    qproperty-register-unavailable : {color8};
+}
+
+TCpuRegs QPushButton
+{
+    background: transparent;
+}
+
+TCpuRegs ui_label_t,
+TCpuRegs ui_label_t[os-dark-theme="true"]
+{
+    color: {color1};
+}
+
+/* ------------------------------------------------------------------ *
+ * Graph view
+ * ------------------------------------------------------------------ */
+
+CustomIDAMemo,
+CustomIDAMemo[os-dark-theme="true"]
+{
+    qproperty-graph-bg-top                : {background};
+    qproperty-graph-bg-bottom             : {background};
+    qproperty-graph-node-title-normal     : {background};
+    qproperty-graph-node-title-selected   : {background};
+    qproperty-graph-node-title-current    : {background};
+    qproperty-graph-node-frame-group      : {color3};
+    qproperty-graph-node-frame-selected   : {color3};
+    qproperty-graph-node-shadow           : {background};
+    qproperty-graph-node-high1            : {background};
+    qproperty-graph-node-high2            : {background};
+    qproperty-graph-node-foreign          : {color1};
+    qproperty-graph-edge-normal           : {color4};
+    qproperty-graph-edge-yes              : {color2};
+    qproperty-graph-edge-no               : {color1};
+    qproperty-graph-edge-high             : {color3};
+    qproperty-graph-edge-current          : {foreground};
+    qproperty-graph-edge-selected         : {color3};
+}
+
+/* ------------------------------------------------------------------ *
+ * Graph overview
+ * ------------------------------------------------------------------ */
+
+GraphMiniView
+{
+    qproperty-fog        : rgba({background},0.55);
+    qproperty-crosshairs : {color3};
+}
+
+/* ------------------------------------------------------------------ *
+ * Generic graph viewer (e.g. function call graph)
+ * ------------------------------------------------------------------ */
+
+viewer_t,
+viewer_t[os-dark-theme="true"]
+{
+    qproperty-node-bg-import  : {background};
+    qproperty-node-bg-code    : {background};
+    qproperty-node-bg-data    : {background};
+    qproperty-node-bg-default : {background};
+    qproperty-node-border     : {background.lighten(12)};
+    qproperty-node-text       : {foreground};
+    qproperty-edge-default    : {color8};
+    qproperty-edge-highlighted: {color4};
+    qproperty-viewer-bg       : {background};
+}
+
+viewer_t QWidget,
+viewer_t[os-dark-theme="true"] QWidget
+{
+    color: {foreground};
+    background-color: {background};
+}
+
+/* ------------------------------------------------------------------ *
+ * Navigation band
+ * ------------------------------------------------------------------ */
+
+navband_t,
+navband_t[os-dark-theme="true"]
+{
+    qproperty-lib-function    : {color4};
+    qproperty-function        : {color4};
+    qproperty-code            : {color1};
+    qproperty-data            : {color8};
+    qproperty-undefined       : {color3};
+    qproperty-extern          : {color5};
+    qproperty-lumina-function : {color2};
+
+    qproperty-hl-lib-function    : @lighten({color4}, 115);
+    qproperty-hl-function        : @lighten({color4}, 115);
+    qproperty-hl-code            : @lighten({color1}, 115);
+    qproperty-hl-data            : @lighten({color8}, 115);
+    qproperty-hl-undefined       : @lighten({color3}, 115);
+    qproperty-hl-extern          : @lighten({color5}, 115);
+    qproperty-hl-lumina-function : @lighten({color2}, 115);
+    qproperty-hl-outline         : {foreground};
+
+    qproperty-error                : {color1};
+    qproperty-gap                  : {background};
+    qproperty-cursor               : {color3};
+    qproperty-auto-analysis-cursor : {color4};
+}
+
+/* pwnbox flat separations: subtle borders between regions */
+
+CustomIDAMemo,
+CustomIDAMemo[os-dark-theme="true"]
+{
+    border: 1px solid {background.lighten(12)};
+}
+
+QMenuBar
+{
+    border-bottom: 1px solid {background.lighten(12)};
+}
+
+QToolBar
+{
+    border-bottom: 1px solid {background.lighten(12)};
+}
+
+QStatusBar
+{
+    border-top: 1px solid {background.lighten(12)};
+}
+
+QDockWidget
+{
+    border: 1px solid {background.lighten(12)};
+}
+
+DockWidgetTitle,
+DockAreaDragTitle
+{
+    border-bottom: 1px solid {background.lighten(12)};
+}
+
+log_widget_t,
+log_widget_t[os-dark-theme="true"]
+{
+    border: 1px solid {background.lighten(12)};
+}
+
+chooser_widget_t,
+standalone_dirtree_widget_t
+{
+    border: 1px solid {background.lighten(12)};
+}
+
+navband_t,
+navband_t[os-dark-theme="true"]
+{
+    border-left: 1px solid {background.lighten(12)};
+}

@@ -1,0 +1,139 @@
+/* ==UserStyle==
+@name           pwnbox-lingva
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Lingva (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("lingva.ml"), domain("translate.plausibility.cloud"), domain("lingva.lunar.icu"), domain("translate.projectsegfau.lt"), domain("lingva.garudalinux.org") {
+  .chakra-ui-light {
+    color-scheme: light;
+  }
+  .chakra-ui-light ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  .chakra-ui-light input::placeholder,
+  .chakra-ui-light textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  .chakra-ui-light body {
+    background: #f0f001;
+    color: #f0f004;
+  }
+  .chakra-ui-light header {
+    background-color: #f0f01b;
+  }
+  .chakra-ui-light header .chakra-button {
+    color: #0b0b01;
+    background: #f2f233;
+  }
+  .chakra-ui-light header .chakra-button:hover {
+    background: #e3e30f;
+  }
+  .chakra-ui-light footer {
+    background-color: #f0f01b;
+    color: #0b0b01;
+  }
+  .chakra-ui-light #__next > div {
+    background: #f0f001;
+  }
+  .chakra-ui-light main {
+    background: #f0f001;
+    color: #f0f004;
+  }
+  .chakra-ui-light main select {
+    border-color: #f0f01b;
+    color: #f0f004;
+  }
+  .chakra-ui-light main .chakra-select__icon {
+    color: #f0f004;
+  }
+  .chakra-ui-light main .chakra-button {
+    color: #f0f01b;
+    border-color: #f0f01b;
+  }
+  .chakra-ui-light main .chakra-button:hover:not(:disabled) {
+    background-color: rgba(240, 240, 27, 0.12);
+  }
+  .chakra-ui-light main .chakra-button.css-1huvcr7,
+  .chakra-ui-light main .chakra-button.css-q22xb2 {
+    background: #f0f01b;
+    color: #f0f003;
+  }
+  .chakra-ui-light main .chakra-stack {
+    border-color: #f0f01b;
+  }
+  .chakra-ui-light main textarea {
+    color: #f0f004;
+  }
+  .chakra-ui-light main .chakra-text {
+    color: #f0f005;
+  }
+  .chakra-ui-dark {
+    color-scheme: dark;
+  }
+  .chakra-ui-dark ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  .chakra-ui-dark input::placeholder,
+  .chakra-ui-dark textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  .chakra-ui-dark body {
+    background: #f0f001;
+    color: #f0f004;
+  }
+  .chakra-ui-dark header {
+    background-color: #f0f01b;
+  }
+  .chakra-ui-dark header .chakra-button {
+    color: #0b0b01;
+    background: #f2f233;
+  }
+  .chakra-ui-dark header .chakra-button:hover {
+    background: #e3e30f;
+  }
+  .chakra-ui-dark footer {
+    background-color: #f0f01b;
+    color: #0b0b01;
+  }
+  .chakra-ui-dark #__next > div {
+    background: #f0f001;
+  }
+  .chakra-ui-dark main {
+    background: #f0f001;
+    color: #f0f004;
+  }
+  .chakra-ui-dark main select {
+    border-color: #f0f01b;
+    color: #f0f004;
+  }
+  .chakra-ui-dark main .chakra-select__icon {
+    color: #f0f004;
+  }
+  .chakra-ui-dark main .chakra-button {
+    color: #f0f01b;
+    border-color: #f0f01b;
+  }
+  .chakra-ui-dark main .chakra-button:hover:not(:disabled) {
+    background-color: rgba(240, 240, 27, 0.12);
+  }
+  .chakra-ui-dark main .chakra-button.css-1huvcr7,
+  .chakra-ui-dark main .chakra-button.css-q22xb2 {
+    background: #f0f01b;
+    color: #f0f003;
+  }
+  .chakra-ui-dark main .chakra-stack {
+    border-color: #f0f01b;
+  }
+  .chakra-ui-dark main textarea {
+    color: #f0f004;
+  }
+  .chakra-ui-dark main .chakra-text {
+    color: #f0f005;
+  }
+}

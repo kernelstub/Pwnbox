@@ -1,0 +1,160 @@
+#!/usr/bin/env python3
+"""Patch IDA's ~/.idapro/ida.reg: set the active theme and fonts.
+
+The IDA "iDa7" registry is a compact binary tree. This script edits it
+surgically (byte-level splices) instead of rewriting it, so everything
+else in the file stays byte-identical:
+
+  * the value of the "ThemeName" key        (name  len:u32le  type:u8  data)
+  * the "Name" / "Size" values of the seven font entries under "Font"
+    ("Disassembly", "Hex view", "Output window", "Text input" get the
+    mono font; "Debug registers", "Structured data views", "Tabular
+    views" get the UI font). Sizes are DWORDs and replaced in place.
+
+Usage:
+  pwnbox-ida-reg IDA.REG --theme NAME
+      [--mono-font FONT --mono-size PT --ui-font FONT --ui-size PT]
+"""
+
+import argparse
+import os
+import struct
+import sys
+import tempfile
+import zlib
+
+CRC_SEED = 0x37614469
+
+MONO_VIEWS = {"Disassembly", "Hex view", "Output window", "Text input"}
+UI_VIEWS = {"Debug registers", "Structured data views", "Tabular views"}
+
+
+def find_value(data, name, start=0, end=None):
+    """Locate a value token b'<name>\\x00 <len:u32le> <type:u8> <data>'.
+
+    Returns (offset_of_len, len, type, data_offset) or None.
+    """
+    if end is None:
+        end = len(data)
+    needle = name.encode() + b"\x00"
+    pos = start
+    while True:
+        pos = data.find(needle, pos, end)
+        if pos < 0:
+            return None
+        off = pos + len(needle)
+        if off + 5 <= end:
+            (ln,) = struct.unpack_from("<I", data, off)
+            vtype = data[off + 4]
+            if ln < 4096 and vtype in (0, 1, 3, 4) and off + 5 + ln <= end:
+                return (off, ln, vtype, off + 5)
+        pos += 1
+
+
+def replace_value(data, off, ln, vtype, new):
+    """Replace a value's data, adjusting its length field."""
+    new_len = struct.pack("<I", len(new))
+    return data[:off] + new_len + bytes([vtype]) + new + data[off + 4 + 1 + ln :]
+
+
+def main():
+    p = argparse.ArgumentParser()
+    p.add_argument("reg")
+    p.add_argument("--theme", required=True)
+    p.add_argument("--mono-font")
+    p.add_argument("--mono-size", type=int)
+    p.add_argument("--ui-font")
+    p.add_argument("--ui-size", type=int)
+    args = p.parse_args()
+
+    if not os.path.isfile(args.reg):
+        sys.exit(0)
+
+    with open(args.reg, "rb") as f:
+        data = f.read()
+    if data[:4] != b"iDa7":
+        sys.exit(0)
+
+    edits = []
+
+    ti = data.find(b"\x01ThemeName\x00")
+    if ti >= 0:
+        off = ti + len(b"\x01ThemeName\x00")
+        if off + 5 <= len(data):
+            (ln,) = struct.unpack_from("<I", data, off)
+            vtype = data[off + 4]
+            if 0 < ln < 4096 and vtype == 1 and off + 5 + ln <= len(data):
+                new = args.theme.encode()
+                if data[off + 5 : off + 5 + ln] != new:
+                    edits.append((off, ln, vtype, new))
+
+    gend = data.find(b"\x01Geometry\x00")
+    font_end = gend if gend >= 0 else len(data)
+
+    seen = {}
+    for view in sorted(MONO_VIEWS | UI_VIEWS):
+        v = data.find(b"\x01" + view.encode() + b"\x00", 0, font_end)
+        if v >= 0:
+            seen[view] = v
+    if not seen:
+        seen = {}
+
+    font = {"mono": args.mono_font, "ui": args.ui_font}
+    size = {"mono": args.mono_size, "ui": args.ui_size}
+
+    bounds = sorted(seen.values()) + [font_end]
+    for name, kind in (("Name", "name"), ("Size", "size")):
+        pos = 0
+        while True:
+            r = find_value(data, name, pos, font_end)
+            if r is None:
+                break
+            off, ln, vtype, doff = r
+            pos = off + 1
+            owner = None
+            for i, b in enumerate(bounds[:-1]):
+                if bounds[i] <= off < bounds[i + 1]:
+                    owner = list(seen)[i]
+                    break
+            if owner is None:
+                continue
+            which = "mono" if owner in MONO_VIEWS else "ui"
+            if kind == "name":
+                if vtype == 1 and font[which]:
+                    new = font[which].encode()
+                    if data[doff : doff + ln] != new:
+                        edits.append((off, ln, vtype, new))
+            else:
+                if vtype == 4 and size[which] is not None:
+                    new = struct.pack("<I", size[which])
+                    if data[doff : doff + ln] != new:
+                        edits.append((off, ln, vtype, new))
+
+    if not edits:
+        sys.exit(0)
+
+    edits.sort(key=lambda e: e[0], reverse=True)
+    for off, ln, vtype, new in edits:
+        data = replace_value(data, off, ln, vtype, new)
+
+    crc = zlib.crc32(data[4:-4], CRC_SEED) & 0xFFFFFFFF
+    data = data[:-4] + struct.pack("<I", crc)
+
+    fd, tmp = tempfile.mkstemp(dir=os.path.dirname(args.reg), prefix=".ida.reg.")
+    try:
+        with os.fdopen(fd, "wb") as f:
+            f.write(data)
+            f.flush()
+            os.fsync(f.fileno())
+        os.chmod(tmp, 0o644)
+        os.replace(tmp, args.reg)
+    finally:
+        if os.path.exists(tmp):
+            try:
+                os.unlink(tmp)
+            except OSError:
+                pass
+
+
+if __name__ == "__main__":
+    main()

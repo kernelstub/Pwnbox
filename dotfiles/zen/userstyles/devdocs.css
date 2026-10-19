@@ -1,0 +1,203 @@
+/* ==UserStyle==
+@name           pwnbox-devdocs
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for DevDocs (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("devdocs.io") {
+  html._theme-default {
+    color-scheme: light;
+    --ctp-rosewater: #f0f00d;
+    --ctp-flamingo: #f0f00e;
+    --ctp-pink: #f0f00f;
+    --ctp-mauve: #f0f010;
+    --ctp-red: #f0f011;
+    --ctp-maroon: #f0f012;
+    --ctp-peach: #f0f013;
+    --ctp-yellow: #f0f014;
+    --ctp-green: #f0f015;
+    --ctp-teal: #f0f016;
+    --ctp-sky: #f0f017;
+    --ctp-sapphire: #f0f018;
+    --ctp-blue: #f0f019;
+    --ctp-lavender: #f0f01a;
+    --ctp-text: #f0f004;
+    --ctp-subtext1: #f0f005;
+    --ctp-subtext0: #f0f006;
+    --ctp-overlay2: #f0f007;
+    --ctp-overlay1: #f0f008;
+    --ctp-overlay0: #f0f009;
+    --ctp-surface2: #f0f00a;
+    --ctp-surface1: #f0f00b;
+    --ctp-surface0: #f0f00c;
+    --ctp-base: #f0f001;
+    --ctp-mantle: #f0f002;
+    --ctp-crust: #f0f003;
+    --documentBackground: #f0f001;
+    --contentBackground: #f0f001;
+    --textColor: #f0f004;
+    --textColorLight: #f0f005;
+    --textColorLighter: #f0f006;
+    --textColorRed: #f0f011;
+    --focusBackground: #f0f00c;
+    --focusBorder: #f0f00b;
+    --focusText: #f0f004;
+    --selectionBackground: #f0f01b;
+    --selectionText: #f0f001;
+    --selectionBorder: #f0f00b;
+    --highlightBackground: #f0f00a;
+    --loadingText: #f0f007;
+    --linkColor: #f0f019;
+    --linkColorHover: #f0f017;
+    --headerBackground: #f0f003;
+    --headerBorder: #f0f00b;
+    --searchTagBackground: #f0f003;
+    --searchBorder: #f0f00b;
+    --inputFocusBorder: #f0f01b;
+    --sidebarBackground: #f0f002;
+    --sidebarBorder: #f0f00b;
+    --scrollbarColor: #f0f009;
+    --scrollbarColorHover: #f0f008;
+    --boxHeaderBackground: #f0f002;
+    --boxHeaderColor: #f0f004;
+    --boxBackground: #f0f002;
+    --boxBorder: #f0f00b;
+    --boxBorderLight: #f0f00b;
+    --noteBackground: #f0f00c;
+    --noteBorder: #f0f00b;
+    --noteGreenBackground: rgba(240, 240, 21, 0.3);
+    --noteGreenBorder: #f0f00b;
+    --noteBlueBackground: rgba(240, 240, 25, 0.3);
+    --noteBlueBorder: #f0f00b;
+    --noteOrangeBackground: rgba(240, 240, 19, 0.3);
+    --noteOrangeBorder: #f0f00b;
+    --noteRedBackground: rgba(240, 240, 17, 0.3);
+    --noteRedBorder: #f0f00b;
+    --notifBackground: #f0f00c;
+    --notifBorder: 1px solid #f0f00b;
+    --notifColor: #f0f004;
+    --tipBackground: #f0f00c;
+    --tipBorder: 1px solid #f0f00b;
+    --noticeBackground: #f0f00c;
+    --noticeBorder: #f0f00b;
+    --labelBackground: #f0f00c;
+  }
+  html._theme-default ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  html._theme-default input::placeholder,
+  html._theme-default textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  html._theme-default ._list-arrow {
+    fill: #f0f009;
+    opacity: 1;
+  }
+  html._theme-default ._list-arrow:hover {
+    fill: #f0f008;
+  }
+  html._theme-default ._search > svg {
+    fill: #f0f007;
+    opacity: 1;
+  }
+  html._theme-dark {
+    color-scheme: dark;
+    --ctp-rosewater: #f0f00d;
+    --ctp-flamingo: #f0f00e;
+    --ctp-pink: #f0f00f;
+    --ctp-mauve: #f0f010;
+    --ctp-red: #f0f011;
+    --ctp-maroon: #f0f012;
+    --ctp-peach: #f0f013;
+    --ctp-yellow: #f0f014;
+    --ctp-green: #f0f015;
+    --ctp-teal: #f0f016;
+    --ctp-sky: #f0f017;
+    --ctp-sapphire: #f0f018;
+    --ctp-blue: #f0f019;
+    --ctp-lavender: #f0f01a;
+    --ctp-text: #f0f004;
+    --ctp-subtext1: #f0f005;
+    --ctp-subtext0: #f0f006;
+    --ctp-overlay2: #f0f007;
+    --ctp-overlay1: #f0f008;
+    --ctp-overlay0: #f0f009;
+    --ctp-surface2: #f0f00a;
+    --ctp-surface1: #f0f00b;
+    --ctp-surface0: #f0f00c;
+    --ctp-base: #f0f001;
+    --ctp-mantle: #f0f002;
+    --ctp-crust: #f0f003;
+    --documentBackground: #f0f001;
+    --contentBackground: #f0f001;
+    --textColor: #f0f004;
+    --textColorLight: #f0f005;
+    --textColorLighter: #f0f006;
+    --textColorRed: #f0f011;
+    --focusBackground: #f0f00c;
+    --focusBorder: #f0f00b;
+    --focusText: #f0f004;
+    --selectionBackground: #f0f01b;
+    --selectionText: #f0f001;
+    --selectionBorder: #f0f00b;
+    --highlightBackground: #f0f00a;
+    --loadingText: #f0f007;
+    --linkColor: #f0f019;
+    --linkColorHover: #f0f017;
+    --headerBackground: #f0f003;
+    --headerBorder: #f0f00b;
+    --searchTagBackground: #f0f003;
+    --searchBorder: #f0f00b;
+    --inputFocusBorder: #f0f01b;
+    --sidebarBackground: #f0f002;
+    --sidebarBorder: #f0f00b;
+    --scrollbarColor: #f0f009;
+    --scrollbarColorHover: #f0f008;
+    --boxHeaderBackground: #f0f002;
+    --boxHeaderColor: #f0f004;
+    --boxBackground: #f0f002;
+    --boxBorder: #f0f00b;
+    --boxBorderLight: #f0f00b;
+    --noteBackground: #f0f00c;
+    --noteBorder: #f0f00b;
+    --noteGreenBackground: rgba(240, 240, 21, 0.3);
+    --noteGreenBorder: #f0f00b;
+    --noteBlueBackground: rgba(240, 240, 25, 0.3);
+    --noteBlueBorder: #f0f00b;
+    --noteOrangeBackground: rgba(240, 240, 19, 0.3);
+    --noteOrangeBorder: #f0f00b;
+    --noteRedBackground: rgba(240, 240, 17, 0.3);
+    --noteRedBorder: #f0f00b;
+    --notifBackground: #f0f00c;
+    --notifBorder: 1px solid #f0f00b;
+    --notifColor: #f0f004;
+    --tipBackground: #f0f00c;
+    --tipBorder: 1px solid #f0f00b;
+    --noticeBackground: #f0f00c;
+    --noticeBorder: #f0f00b;
+    --labelBackground: #f0f00c;
+  }
+  html._theme-dark ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  html._theme-dark input::placeholder,
+  html._theme-dark textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  html._theme-dark ._list-arrow {
+    fill: #f0f009;
+    opacity: 1;
+  }
+  html._theme-dark ._list-arrow:hover {
+    fill: #f0f008;
+  }
+  html._theme-dark ._search > svg {
+    fill: #f0f007;
+    opacity: 1;
+  }
+}

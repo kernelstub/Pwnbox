@@ -1,0 +1,74 @@
+
+@import "@HOME@/.cache/pwnbox/theme/rofi.rasi"
+
+configuration {
+    show-icons: true;
+    icon-theme: "Papirus";
+}
+
+* {
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+window {
+    location: center;
+    anchor: center;
+    width: 1200px;
+    border: 2px;
+    border-color: @brdr;
+    border-radius: @radius;
+    background-color: @background;
+}
+
+mainbox {
+    spacing: 12px;
+    padding: 16px;
+    border: 0px;
+}
+
+inputbar {
+    children: [ prompt ];
+    padding: 0px;
+    background-color: transparent;
+}
+
+prompt {
+    background-color: @background-alt;
+    text-color: @foreground;
+    padding: 6px 16px;
+    border-radius: @radius;
+}
+
+listview {
+    columns: 5;
+    lines: 1;
+    cycle: true;
+    fixed-height: false;
+    scrollbar: false;
+    spacing: 16px;
+    padding: 0px;
+    border: 0px;
+}
+
+element {
+    padding: 8px;
+    border: 3px;
+    border-color: transparent;
+    border-radius: @radius;
+    background-color: transparent;
+}
+
+element-icon {
+    size: 196px;
+    border-radius: @radius;
+}
+
+element-text {
+    enabled: false;
+}
+
+element selected.normal {
+    background-color: @background-alt;
+    border-color: @brdr;
+}

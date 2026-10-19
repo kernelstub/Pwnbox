@@ -1,0 +1,393 @@
+/* ==UserStyle==
+@name           pwnbox-substack
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Substack (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("substack.com") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+      color: #f0f004;
+      background-color: #f0f001 !important;
+      /* Substack logos */
+      /* Inverted logo colors */
+      /* Footer */
+      /* Signup, onboarding, and profile */
+      /* Misc inputs */
+      /* Dashboard */
+      /* Icons */
+      /* Import posts */
+      /* Stats */
+      /* Editor */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root,
+    :root .dark-mode,
+    :root .dark-theme,
+    :root [class*="_pubTheme_"] {
+      --color-bg-primary: #f0f001;
+      --color-bg-primary-rgb: 240, 240, 1;
+      --color-bg-primary-raw: 240, 240, 1;
+      --color-bg-primary-hover: #f0f00c;
+      --color-bg-secondary: #f0f00c;
+      --color-bg-tertiary: #f0f00b;
+      --color-bg-elevated-primary: #f0f002;
+      --color-bg-elevated-secondary: #f0f003;
+      --color-fg-primary: #f0f004;
+      --color-fg-secondary: #f0f005;
+      --color-fg-tertiary: #f0f006;
+      --color-utility-detail: #f0f00b;
+      --color-utility-white: #f0f004;
+      --color-detail-themed: #f0f00b;
+      --color-accent-themed: #f0f01b;
+      --color-accent-fg-red: #f0f011;
+      --color-accent-bg-red: rgba(240, 240, 17, 0.2);
+      --color-semantic-error-bg-primary: #f0f011;
+      --color-semantic-error-utility-contrast: #f0f003;
+      --color-accent-fg-orange: #f0f01b;
+      --color-accent-bg-orange: rgba(240, 240, 27, 0.2);
+      --color-accent-fg-green: #f0f015;
+      --color-accent-bg-green: rgba(240, 240, 21, 0.2);
+      --color-accent-fg-cyan: #f0f019;
+      --color-accent-bg-cyan: rgba(240, 240, 25, 0.2);
+      /* Buttons */
+      --color-button-primary-bg: #f0f01b;
+      --color-button-primary-bg-hover: #e3e30f;
+      --color-button-primary-fg: #f0f003;
+      --color-button-secondary-bg: #f0f00c;
+      --color-button-secondary-bg-hover: #f0f00b;
+      --color-button-secondary-fg: #f0f004;
+      --color-button-tertiary-bg-hover: #f0f00b;
+      --color-button-tertiary-fg: #f0f004;
+      --color-button-mono-bg: #f0f004;
+      --color-button-mono-bg-hover: #f0f005;
+      --color-button-mono-fg: #f0f003;
+      --color-button-disabled-fg: #f0f006;
+      /* Tooltips & Toasts */
+      --color-bg-tooltip: #f0f002;
+      --material-thick: #f0f002;
+      --print_pop: #f0f01b;
+      --print_secondary: #f0f005;
+      --background_pop: #f0f01b;
+      --print_on_pop: #f0f003;
+      --color_theme_bg_pop: #f0f01b;
+      --color_theme_bg_pop_darken: #e3e30f;
+      --color_theme_print_on_pop: #f0f003;
+      --border_subtle: #f0f00b;
+      --background_contrast_1: #f0f002;
+      --background_contrast_2: #f0f00a;
+      --color_theme_bg_contrast_1: #f0f00b;
+      --color_theme_bg_contrast_2: #f0f009;
+      --color_theme_bg_contrast_4: #f0f006;
+      --color-chat-other-fg-secondary: #f0f005;
+      --color-semantic-select-fg-primary: #f0f01b;
+      --color-semantic-select-utility-detail: rgba(240, 240, 27, 0.2);
+      --color-semantic-highlight-fg-primary: #f0f01b;
+      /* Weird variables issue fixes */
+      --color-light-bg-primary: #f0f002;
+      /* Was text, changing to mantle for (select text) -> Share -> Download button color. Might break things */
+      --color-light-bg-secondary: #f0f00c;
+      /* substack.com homepage sections */
+      --color-dark-bg-primary: #f0f002;
+      --color-dark-bg-secondary: #f0f001;
+      --color-dark-bg-tertiary: #f0f00c;
+      /* Publications with different variables */
+      --color-primary-themed: #f0f004;
+      --color-secondary-themed: #f0f005;
+      --color-bg-secondary-themed: #f0f00c;
+      --web_bg_color: #f0f002;
+      --print_on_web_bg_color: #f0f004;
+      --print_secondary_on_web_bg_color: #f0f005;
+      /* Share button */
+      --material-dark-regular: #f0f002;
+      /* Copy (heading link) to clipboard notification */
+      --material-dark-thick: #f0f003;
+      /* Button hover, faded to 0.1 */
+      --color-primitive-white-rgb: 240, 240, 4;
+      /* Various full screen modals for singing up, subscribing etc */
+      --cover_print_primary: #f0f004;
+      --cover_print_secondary: #f0f005;
+      --cover_print_tertiary: #f0f006;
+      --cover_bg_color: #f0f001;
+      --cover_input_background: #f0f002;
+    }
+    :root [fill="#ff6719" i] {
+      fill: #f0f01b !important;
+    }
+    :root [fill="#FFFFFF" i] {
+      fill: #f0f003 !important;
+    }
+    :root .footer-wrap,
+    :root .footer-wrap .footer {
+      background-color: #f0f002;
+    }
+    :root .footer-wrap .home-footer,
+    :root .footer-wrap .home-footer a,
+    :root .footer-wrap .home-footer .footer-info .footer-info-col h3 {
+      color: #f0f004;
+    }
+    :root .subscribe-footer .button.primary {
+      border-color: #f0f003;
+    }
+    :root .homepage-nav .homepage-nav-bar .homepage-nav-wrap.grey {
+      background-color: #f0f001;
+    }
+    :root .signup-page {
+      background-color: #f0f001;
+    }
+    :root .signup-page .signup-box-wrap .error {
+      color: #f0f011;
+    }
+    :root .onboarding-profile-page .accept-tos * {
+      color: #f0f005;
+    }
+    :root .onboarding-profile-page .skip-button {
+      color: #f0f004;
+    }
+    :root .profile-page .set-up-profile-button {
+      color: #f0f003;
+    }
+    :root .edit-profile-page .publication-section .all-toggle {
+      color: #f0f005;
+    }
+    :root button[role="switch"],
+    :root input[type="radio"] + span {
+      --color-utility-white: #f0f00c;
+    }
+    :root input[type="text"],
+    :root input[type="date"],
+    :root select {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root .themed-select > div {
+      background-color: #f0f002;
+      border-color: #f0f00c;
+    }
+    :root .themed-select > div * {
+      color: #f0f004;
+    }
+    :root [aria-label="File Picker"] {
+      background-color: #f0f001;
+    }
+    :root [stroke="#888888"],
+    :root [stroke="#555555"] {
+      stroke: #f0f005 !important;
+    }
+    :root .signup-page > .container .signup-box {
+      background-color: #f0f001;
+    }
+    :root .subscriber-stats-page .heading .options .header-option .header-button {
+      background-color: #f0f00c;
+    }
+    :root .subscriber-stats-page table td,
+    :root .subscriber-stats-page table th {
+      background-color: #f0f001;
+    }
+    :root .tw-bg-pub-accent {
+      background-color: #f0f01b !important;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      color: #f0f004;
+      background-color: #f0f001 !important;
+      /* Substack logos */
+      /* Inverted logo colors */
+      /* Footer */
+      /* Signup, onboarding, and profile */
+      /* Misc inputs */
+      /* Dashboard */
+      /* Icons */
+      /* Import posts */
+      /* Stats */
+      /* Editor */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root,
+    :root .dark-mode,
+    :root .dark-theme,
+    :root [class*="_pubTheme_"] {
+      --color-bg-primary: #f0f001;
+      --color-bg-primary-rgb: 240, 240, 1;
+      --color-bg-primary-raw: 240, 240, 1;
+      --color-bg-primary-hover: #f0f00c;
+      --color-bg-secondary: #f0f00c;
+      --color-bg-tertiary: #f0f00b;
+      --color-bg-elevated-primary: #f0f002;
+      --color-bg-elevated-secondary: #f0f003;
+      --color-fg-primary: #f0f004;
+      --color-fg-secondary: #f0f005;
+      --color-fg-tertiary: #f0f006;
+      --color-utility-detail: #f0f00b;
+      --color-utility-white: #f0f004;
+      --color-detail-themed: #f0f00b;
+      --color-accent-themed: #f0f01b;
+      --color-accent-fg-red: #f0f011;
+      --color-accent-bg-red: rgba(240, 240, 17, 0.2);
+      --color-semantic-error-bg-primary: #f0f011;
+      --color-semantic-error-utility-contrast: #f0f003;
+      --color-accent-fg-orange: #f0f01b;
+      --color-accent-bg-orange: rgba(240, 240, 27, 0.2);
+      --color-accent-fg-green: #f0f015;
+      --color-accent-bg-green: rgba(240, 240, 21, 0.2);
+      --color-accent-fg-cyan: #f0f019;
+      --color-accent-bg-cyan: rgba(240, 240, 25, 0.2);
+      /* Buttons */
+      --color-button-primary-bg: #f0f01b;
+      --color-button-primary-bg-hover: #e3e30f;
+      --color-button-primary-fg: #f0f003;
+      --color-button-secondary-bg: #f0f00c;
+      --color-button-secondary-bg-hover: #f0f00b;
+      --color-button-secondary-fg: #f0f004;
+      --color-button-tertiary-bg-hover: #f0f00b;
+      --color-button-tertiary-fg: #f0f004;
+      --color-button-mono-bg: #f0f004;
+      --color-button-mono-bg-hover: #f0f005;
+      --color-button-mono-fg: #f0f003;
+      --color-button-disabled-fg: #f0f006;
+      /* Tooltips & Toasts */
+      --color-bg-tooltip: #f0f002;
+      --material-thick: #f0f002;
+      --print_pop: #f0f01b;
+      --print_secondary: #f0f005;
+      --background_pop: #f0f01b;
+      --print_on_pop: #f0f003;
+      --color_theme_bg_pop: #f0f01b;
+      --color_theme_bg_pop_darken: #e3e30f;
+      --color_theme_print_on_pop: #f0f003;
+      --border_subtle: #f0f00b;
+      --background_contrast_1: #f0f002;
+      --background_contrast_2: #f0f00a;
+      --color_theme_bg_contrast_1: #f0f00b;
+      --color_theme_bg_contrast_2: #f0f009;
+      --color_theme_bg_contrast_4: #f0f006;
+      --color-chat-other-fg-secondary: #f0f005;
+      --color-semantic-select-fg-primary: #f0f01b;
+      --color-semantic-select-utility-detail: rgba(240, 240, 27, 0.2);
+      --color-semantic-highlight-fg-primary: #f0f01b;
+      /* Weird variables issue fixes */
+      --color-light-bg-primary: #f0f002;
+      /* Was text, changing to mantle for (select text) -> Share -> Download button color. Might break things */
+      --color-light-bg-secondary: #f0f00c;
+      /* substack.com homepage sections */
+      --color-dark-bg-primary: #f0f002;
+      --color-dark-bg-secondary: #f0f001;
+      --color-dark-bg-tertiary: #f0f00c;
+      /* Publications with different variables */
+      --color-primary-themed: #f0f004;
+      --color-secondary-themed: #f0f005;
+      --color-bg-secondary-themed: #f0f00c;
+      --web_bg_color: #f0f002;
+      --print_on_web_bg_color: #f0f004;
+      --print_secondary_on_web_bg_color: #f0f005;
+      /* Share button */
+      --material-dark-regular: #f0f002;
+      /* Copy (heading link) to clipboard notification */
+      --material-dark-thick: #f0f003;
+      /* Button hover, faded to 0.1 */
+      --color-primitive-white-rgb: 240, 240, 4;
+      /* Various full screen modals for singing up, subscribing etc */
+      --cover_print_primary: #f0f004;
+      --cover_print_secondary: #f0f005;
+      --cover_print_tertiary: #f0f006;
+      --cover_bg_color: #f0f001;
+      --cover_input_background: #f0f002;
+    }
+    :root [fill="#ff6719" i] {
+      fill: #f0f01b !important;
+    }
+    :root [fill="#FFFFFF" i] {
+      fill: #f0f003 !important;
+    }
+    :root .footer-wrap,
+    :root .footer-wrap .footer {
+      background-color: #f0f002;
+    }
+    :root .footer-wrap .home-footer,
+    :root .footer-wrap .home-footer a,
+    :root .footer-wrap .home-footer .footer-info .footer-info-col h3 {
+      color: #f0f004;
+    }
+    :root .subscribe-footer .button.primary {
+      border-color: #f0f003;
+    }
+    :root .homepage-nav .homepage-nav-bar .homepage-nav-wrap.grey {
+      background-color: #f0f001;
+    }
+    :root .signup-page {
+      background-color: #f0f001;
+    }
+    :root .signup-page .signup-box-wrap .error {
+      color: #f0f011;
+    }
+    :root .onboarding-profile-page .accept-tos * {
+      color: #f0f005;
+    }
+    :root .onboarding-profile-page .skip-button {
+      color: #f0f004;
+    }
+    :root .profile-page .set-up-profile-button {
+      color: #f0f003;
+    }
+    :root .edit-profile-page .publication-section .all-toggle {
+      color: #f0f005;
+    }
+    :root button[role="switch"],
+    :root input[type="radio"] + span {
+      --color-utility-white: #f0f00c;
+    }
+    :root input[type="text"],
+    :root input[type="date"],
+    :root select {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root .themed-select > div {
+      background-color: #f0f002;
+      border-color: #f0f00c;
+    }
+    :root .themed-select > div * {
+      color: #f0f004;
+    }
+    :root [aria-label="File Picker"] {
+      background-color: #f0f001;
+    }
+    :root [stroke="#888888"],
+    :root [stroke="#555555"] {
+      stroke: #f0f005 !important;
+    }
+    :root .signup-page > .container .signup-box {
+      background-color: #f0f001;
+    }
+    :root .subscriber-stats-page .heading .options .header-option .header-button {
+      background-color: #f0f00c;
+    }
+    :root .subscriber-stats-page table td,
+    :root .subscriber-stats-page table th {
+      background-color: #f0f001;
+    }
+    :root .tw-bg-pub-accent {
+      background-color: #f0f01b !important;
+    }
+  }
+}

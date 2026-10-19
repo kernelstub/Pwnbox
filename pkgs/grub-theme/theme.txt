@@ -1,0 +1,59 @@
+desktop-image: "background.png"
+desktop-color: "#080808"
+
+title-text: ""
+
+message-color: "#cccccc"
+message-bg-color: "#080808"
+
+terminal-font: "Manrope Regular 16"
+terminal-left: "10%"
+terminal-top: "10%"
+terminal-width: "80%"
+terminal-height: "80%"
+terminal-border: "0"
+terminal-box: "terminal_box_*.png"
+
++ image {
+  left = 50%-96
+  top = 6%
+  width = 192
+  height = 192
+  file = "logo.png"
+}
+
++ boot_menu {
+  left = 50%-20%
+  top = 40%
+  width = 40%
+  height = 44%
+  item_font = "Manrope Regular 16"
+  item_color = "#999999"
+  selected_item_color = "#ffffff"
+  item_height = 44
+  item_spacing = 8
+  item_padding = 12
+  item_icon_space = 0
+  selected_item_pixmap_style = "select_*.png"
+}
+
++ label {
+  top = 92%
+  left = 0
+  width = 100%
+  align = "center"
+  color = "#444444"
+  font = "Manrope Regular 14"
+  text = "pwnbox"
+}
+
++ progress_bar {
+  id = "__timeout__"
+  left = 50%-4%
+  top = 96%
+  width = 8%
+  height = 2
+  fg_color = "#cccccc"
+  bg_color = "#252525"
+  border_color = "#252525"
+}

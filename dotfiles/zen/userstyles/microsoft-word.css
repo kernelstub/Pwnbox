@@ -1,0 +1,559 @@
+/* ==UserStyle==
+@name           pwnbox-microsoft-word
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Microsoft Word (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("live.com") {
+  color-scheme: light;
+  ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  .fui-FluentProvider2,
+  .fui-FluentProvider86,
+  .fui-FluentProvider102 {
+    --colorNeutralStroke1: #f0f00b;
+    --colorBrandForeground1: #f0f01b;
+    --colorNeutralForeground1: #f0f004;
+    --colorNeutralBackground1: #f0f00c;
+    --colorNeutralForeground2: #f0f004;
+    --colorNeutralBackground3: #f0f001;
+    --colorNeutralStroke1Hover: #f0f00a;
+    --colorNeutralForeground1Hover: #f0f004;
+    --colorNeutralStrokeAccessible: #f0f00a;
+    --colorNeutralBackground1Hover: #f0f00b;
+    --colorNeutralBackground3Hover: #f0f00c;
+    --colorNeutralForegroundOnBrand: #f0f001;
+    --colorNeutralBackground1Selected: #f0f00b;
+  }
+  .o365sx-navbar,
+  .o365cs-base .o365sx-button,
+  [data-unique-id="GoPremiumButton"],
+  [data-unique-id="DocumentTitleButton"],
+  #SearchButton {
+    background-color: #f0f001 !important;
+    color: #f0f004 !important;
+  }
+  .OfficeIconColors_mUpgradeProductGlyphColorless,
+  [aria-label="Saved to OneDrive"] > i:nth-child(1) > svg:nth-child(1),
+  #SearchButton > span:nth-child(1) > i:nth-child(1),
+  ._3_LjxRBZZiG458goXcTPLs.o365sx-neutral-dark-font,
+  ._3eLVxYuaVkSqw02CcIH8ec.o365sx-neutral-dark-font.o365sx-neutral-lighter-hover-background,
+  span.ms-Icon--WaffleOffice365._2hFKF2Ng35BcYrXwyNH86a {
+    fill: #f0f004 !important;
+    color: #f0f004 !important;
+  }
+  #RibbonContainer > div:nth-child(1) > div:nth-child(2) > div:nth-child(1),
+  #RibbonContainer > div:nth-child(1) > div:nth-child(2) > div:nth-child(2),
+  #RibbonTopBarContainer {
+    background-color: #f0f001 !important;
+  }
+  #tablist > div:nth-child(1) > div > div:nth-child(1) > button:nth-child(1) {
+    color: #f0f004 !important;
+  }
+  #Home-tabpanel,
+  #Home-tabpanel > div:nth-child(2),
+  #appLauncherTop,
+  #appLauncherMainView,
+  #ContextMenu-ContextMenu {
+    background-color: #f0f00c !important;
+  }
+  #ShareMenu {
+    background-color: #f0f01b;
+    color: #f0f001;
+  }
+  #Floatie-FontPicker-Floatie > div:nth-child(1),
+  #Floatie-FontSize-Floatie > div:nth-child(2) {
+    background-color: #f0f001;
+  }
+  #Floatie-FontPicker-Floatie > div:nth-child(1) > input:nth-child(1),
+  #Floatie-FontSize-Floatie-input {
+    color: #f0f004;
+  }
+  #Floatie-FontPicker-Floatie > div:nth-child(1) {
+    border-color: 1px solid #f0f00a;
+  }
+  #Floatie-FontSize-Floatiewrapper {
+    border-color: #f0f00a;
+  }
+  [data-unique-id="ReactTabbedPanelMenuContainer"] > div:nth-child(1) {
+    background-color: #f0f001 !important;
+  }
+  #TellMe-Menu > div:nth-child(1) {
+    background-color: #f0f00c !important;
+  }
+  #TellMe-Menu > div:nth-child(1) > ul:nth-child(1) > li div:nth-child(1) > ul:nth-child(1) > li,
+  #TellMe-Menu > div:nth-child(1) ul:nth-child(1) > li:nth-child(2) div:nth-child(1) > ul:nth-child(1) > li {
+    background-color: #f0f00c !important;
+  }
+  #TellMe-Menu > div:nth-child(1) > ul:nth-child(1) > li div:nth-child(1) > ul:nth-child(1) > li > button:nth-child(1),
+  #TellMe-Menu > div:nth-child(1) ul:nth-child(1) > li:nth-child(2) div:nth-child(1) > ul:nth-child(1) > li > button:nth-child(1) {
+    color: #f0f004;
+  }
+  #TellMe-Menu > div:nth-child(1) > ul:nth-child(1) > li div:nth-child(1) > ul:nth-child(1) > li > button:nth-child(1):hover,
+  #TellMe-Menu > div:nth-child(1) ul:nth-child(1) > li:nth-child(2) div:nth-child(1) > ul:nth-child(1) > li > button:nth-child(1):hover {
+    background-color: #f0f00b !important;
+  }
+  ._1acxHZf6WaSGxss7AMw7aZ.o365sx-neutral-lighter-hover-background:hover,
+  ._3eLVxYuaVkSqw02CcIH8ec.o365sx-neutral-dark-font.o365sx-neutral-lighter-hover-background:hover,
+  .ribbon-bottom-bar-divider,
+  .divider-745,
+  .divider-766 {
+    background-color: #f0f00b !important;
+  }
+  #WACViewPanel {
+    background-color: #f0f002 !important;
+  }
+  .Paragraph,
+  #TellMe-Menusection-0-title > div:nth-child(1) > span:nth-child(2),
+  #TellMe-Menusection-1-title > div:nth-child(1) > span:nth-child(2) {
+    color: #f0f004 !important;
+  }
+  .PageAdornmentHeaderLabelThemed,
+  .PageAdornmentFooterLabelThemed {
+    background-color: #f0f001 !important;
+    border-color: #f0f004 !important;
+    color: #f0f006;
+  }
+  [id="WACStatusBarContainer"] > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) div:nth-child(1) > button:hover,
+  [id="WACStatusBarContainer"] > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) div:nth-child(3) > button:hover,
+  [id="WACStatusBarContainer"] > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) div:nth-child(1) div:nth-child(2) > div:nth-child(1):hover,
+  [id="WACStatusBarContainer"] > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) div:nth-child(3) div:nth-child(2) > div:nth-child(1):hover {
+    background-color: #f0f00b !important;
+  }
+  [id="WACStatusBarContainer"] > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > span:nth-child(1) {
+    background: #f0f01b !important;
+  }
+  [id="WACStatusBarContainer"] > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) div:nth-child(1) > span:nth-child(1) {
+    background: #f0f006 !important;
+  }
+  [id="WACStatusBarContainer"] > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) div:nth-child(1) > span:nth-child(3) {
+    background: #f0f006 !important;
+  }
+  [id="WACStatusBarContainer"] > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) div:nth-child(1) > span:nth-child(4) {
+    background: #f0f006 !important;
+  }
+  #ReactFloatie > div:nth-child(1) {
+    background: #f0f00c !important;
+  }
+  #documentTitle > span:nth-child(1) > div:nth-child(2) > i:nth-child(1) > svg:nth-child(1) {
+    fill: #f0f004;
+  }
+  #ProgressBar {
+    background-color: #f0f00c;
+  }
+  #ProgressBar:hover {
+    background-color: #f0f00b;
+  }
+  #ProgressBar > div:nth-child(2) {
+    background-color: #f0f00a !important;
+  }
+  #ProgressBar > div:nth-child(2) > div:nth-child(1) {
+    background: #f0f01b;
+  }
+  #ProgressBar > div:nth-child(3) > span:nth-child(1) {
+    color: #f0f004;
+  }
+  #ProgressBar > div:nth-child(3) > span:nth-child(2) {
+    color: #f0f01b;
+  }
+  #ProgressBar > div:nth-child(3) > span:nth-child(3) {
+    color: #f0f004;
+  }
+  #AppBrand > div:nth-child(1) > div:nth-child(1) > a:nth-child(1):hover {
+    background-color: #f0f00c;
+  }
+  #appLauncherTop > div:nth-child(1) > div:nth-child(1) > button:nth-child(1):hover {
+    background-color: #f0f00b;
+  }
+  #appLauncherTop > div:nth-child(1) > a:nth-child(2) {
+    color: #f0f01b;
+  }
+  #allAppsLink {
+    color: #f0f01b;
+  }
+  #ProgressCardScore > div:nth-child(1) {
+    color: #f0f01b;
+  }
+  #ProgressCardScore > div:nth-child(2) {
+    color: #f0f01b;
+  }
+  #WACStatusBarContainer > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) {
+    background-color: #f0f00c;
+    border-top-color: #f0f00b;
+  }
+  #WACStatusBarContainer > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > button,
+  #WACStatusBarContainer > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) div:nth-child(3) > button {
+    color: #f0f006 !important;
+  }
+  [data-unique-id="TellMeControl"] {
+    background: #f0f00c !important;
+  }
+  [data-unique-id="TellMeControl"] > div:nth-child(2) > label:nth-child(1),
+  [data-unique-id="TellMeControl"] [data-icon-name="Search"] {
+    color: #f0f006 !important;
+  }
+  #ReactTabbedPanelMenuPageContainer {
+    background-color: #f0f00c !important;
+  }
+  #UploadDocumentFromHomeTab,
+  #pageSection2CompoundButtonSectionProps > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > button {
+    background-color: #f0f00c !important;
+  }
+  #UploadDocumentFromHomeTab:hover,
+  #pageSection2CompoundButtonSectionProps > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > button:hover {
+    background-color: #f0f00b !important;
+  }
+  #MultilineRibbon-RibbonModeToggleDropdown,
+  #FarPeripheralControls-ModeSwitcherDropdown,
+  #MultilineRibbon-RibbonModeToggleDropdownsection-0-title,
+  #MultilineRibbon-RibbonModeToggleDropdownsection-1-title {
+    background-color: #f0f00c !important;
+  }
+  #MultilineRibbon-RibbonModeToggleDropdown > div:nth-child(1) > span:nth-child(2),
+  #FarPeripheralControls-ModeSwitcherDropdown > div:nth-child(1) > span:nth-child(2),
+  #MultilineRibbon-RibbonModeToggleDropdownsection-0-title > div:nth-child(1) > span:nth-child(2),
+  #MultilineRibbon-RibbonModeToggleDropdownsection-1-title > div:nth-child(1) > span:nth-child(2) {
+    color: #f0f004 !important;
+  }
+  .PageAdornmentNumberLabel,
+  .FileMenuButtonSecondaryText,
+  #New,
+  #Open,
+  #Recent {
+    color: #f0f006 !important;
+  }
+  #Clipboard_MLR-label,
+  #Font_MLR-label,
+  #Paragraph_MLR-label,
+  #Styles-label,
+  #Editing-label,
+  #Dictation-label,
+  #GetAddins-label,
+  #Editor-label {
+    color: #f0f006 !important;
+  }
+  svg path.OfficeIconColors_m22 {
+    fill: #f0f004;
+  }
+  svg path.OfficeIconColors_m24,
+  svg path.OfficeIconColors_m25,
+  svg path.OfficeIconColors_m26,
+  svg path.OfficeIconColors_m2262 {
+    fill: #f0f01b;
+  }
+  svg path.OfficeIconColors_m27 {
+    fill: #f0f015;
+  }
+  svg path.OfficeIconColors_m211 {
+    fill: #f0f014;
+  }
+  svg path.OfficeIconColors_m212 {
+    fill: #f0f013;
+  }
+  svg path.OfficeIconColors_m220,
+  svg path.OfficeIconColors_m221 {
+    fill: #f0f010;
+  }
+  svg path.OfficeIconColors_m213 {
+    fill: #f0f011;
+  }
+  svg path.OfficeIconColors_m229 {
+    fill: #f0f011;
+  }
+  svg path.OfficeIconColors_m295 {
+    fill: #f0f019;
+  }
+  svg path.OfficeIconColors_m2131 {
+    fill: #f0f015;
+  }
+  svg path.OfficeIconColors_m2227 {
+    fill: #f0f013;
+  }
+  svg path.OfficeIconColors_m2251 {
+    fill: #f0f004;
+  }
+  .UxDarkMode {
+    color-scheme: dark;
+  }
+  .UxDarkMode ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  .UxDarkMode input::placeholder,
+  .UxDarkMode textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  .UxDarkMode .fui-FluentProvider2,
+  .UxDarkMode .fui-FluentProvider86,
+  .UxDarkMode .fui-FluentProvider102 {
+    --colorNeutralStroke1: #f0f00b;
+    --colorBrandForeground1: #f0f01b;
+    --colorNeutralForeground1: #f0f004;
+    --colorNeutralBackground1: #f0f00c;
+    --colorNeutralForeground2: #f0f004;
+    --colorNeutralBackground3: #f0f001;
+    --colorNeutralStroke1Hover: #f0f00a;
+    --colorNeutralForeground1Hover: #f0f004;
+    --colorNeutralStrokeAccessible: #f0f00a;
+    --colorNeutralBackground1Hover: #f0f00b;
+    --colorNeutralBackground3Hover: #f0f00c;
+    --colorNeutralForegroundOnBrand: #f0f001;
+    --colorNeutralBackground1Selected: #f0f00b;
+  }
+  .UxDarkMode .o365sx-navbar,
+  .UxDarkMode .o365cs-base .o365sx-button,
+  .UxDarkMode [data-unique-id="GoPremiumButton"],
+  .UxDarkMode [data-unique-id="DocumentTitleButton"],
+  .UxDarkMode #SearchButton {
+    background-color: #f0f001 !important;
+    color: #f0f004 !important;
+  }
+  .UxDarkMode .OfficeIconColors_mUpgradeProductGlyphColorless,
+  .UxDarkMode [aria-label="Saved to OneDrive"] > i:nth-child(1) > svg:nth-child(1),
+  .UxDarkMode #SearchButton > span:nth-child(1) > i:nth-child(1),
+  .UxDarkMode ._3_LjxRBZZiG458goXcTPLs.o365sx-neutral-dark-font,
+  .UxDarkMode ._3eLVxYuaVkSqw02CcIH8ec.o365sx-neutral-dark-font.o365sx-neutral-lighter-hover-background,
+  .UxDarkMode span.ms-Icon--WaffleOffice365._2hFKF2Ng35BcYrXwyNH86a {
+    fill: #f0f004 !important;
+    color: #f0f004 !important;
+  }
+  .UxDarkMode #RibbonContainer > div:nth-child(1) > div:nth-child(2) > div:nth-child(1),
+  .UxDarkMode #RibbonContainer > div:nth-child(1) > div:nth-child(2) > div:nth-child(2),
+  .UxDarkMode #RibbonTopBarContainer {
+    background-color: #f0f001 !important;
+  }
+  .UxDarkMode #tablist > div:nth-child(1) > div > div:nth-child(1) > button:nth-child(1) {
+    color: #f0f004 !important;
+  }
+  .UxDarkMode #Home-tabpanel,
+  .UxDarkMode #Home-tabpanel > div:nth-child(2),
+  .UxDarkMode #appLauncherTop,
+  .UxDarkMode #appLauncherMainView,
+  .UxDarkMode #ContextMenu-ContextMenu {
+    background-color: #f0f00c !important;
+  }
+  .UxDarkMode #ShareMenu {
+    background-color: #f0f01b;
+    color: #f0f001;
+  }
+  .UxDarkMode #Floatie-FontPicker-Floatie > div:nth-child(1),
+  .UxDarkMode #Floatie-FontSize-Floatie > div:nth-child(2) {
+    background-color: #f0f001;
+  }
+  .UxDarkMode #Floatie-FontPicker-Floatie > div:nth-child(1) > input:nth-child(1),
+  .UxDarkMode #Floatie-FontSize-Floatie-input {
+    color: #f0f004;
+  }
+  .UxDarkMode #Floatie-FontPicker-Floatie > div:nth-child(1) {
+    border-color: 1px solid #f0f00a;
+  }
+  .UxDarkMode #Floatie-FontSize-Floatiewrapper {
+    border-color: #f0f00a;
+  }
+  .UxDarkMode [data-unique-id="ReactTabbedPanelMenuContainer"] > div:nth-child(1) {
+    background-color: #f0f001 !important;
+  }
+  .UxDarkMode #TellMe-Menu > div:nth-child(1) {
+    background-color: #f0f00c !important;
+  }
+  .UxDarkMode #TellMe-Menu > div:nth-child(1) > ul:nth-child(1) > li div:nth-child(1) > ul:nth-child(1) > li,
+  .UxDarkMode #TellMe-Menu > div:nth-child(1) ul:nth-child(1) > li:nth-child(2) div:nth-child(1) > ul:nth-child(1) > li {
+    background-color: #f0f00c !important;
+  }
+  .UxDarkMode #TellMe-Menu > div:nth-child(1) > ul:nth-child(1) > li div:nth-child(1) > ul:nth-child(1) > li > button:nth-child(1),
+  .UxDarkMode #TellMe-Menu > div:nth-child(1) ul:nth-child(1) > li:nth-child(2) div:nth-child(1) > ul:nth-child(1) > li > button:nth-child(1) {
+    color: #f0f004;
+  }
+  .UxDarkMode #TellMe-Menu > div:nth-child(1) > ul:nth-child(1) > li div:nth-child(1) > ul:nth-child(1) > li > button:nth-child(1):hover,
+  .UxDarkMode #TellMe-Menu > div:nth-child(1) ul:nth-child(1) > li:nth-child(2) div:nth-child(1) > ul:nth-child(1) > li > button:nth-child(1):hover {
+    background-color: #f0f00b !important;
+  }
+  .UxDarkMode ._1acxHZf6WaSGxss7AMw7aZ.o365sx-neutral-lighter-hover-background:hover,
+  .UxDarkMode ._3eLVxYuaVkSqw02CcIH8ec.o365sx-neutral-dark-font.o365sx-neutral-lighter-hover-background:hover,
+  .UxDarkMode .ribbon-bottom-bar-divider,
+  .UxDarkMode .divider-745,
+  .UxDarkMode .divider-766 {
+    background-color: #f0f00b !important;
+  }
+  .UxDarkMode #WACViewPanel {
+    background-color: #f0f002 !important;
+  }
+  .UxDarkMode .Paragraph,
+  .UxDarkMode #TellMe-Menusection-0-title > div:nth-child(1) > span:nth-child(2),
+  .UxDarkMode #TellMe-Menusection-1-title > div:nth-child(1) > span:nth-child(2) {
+    color: #f0f004 !important;
+  }
+  .UxDarkMode .PageAdornmentHeaderLabelThemed,
+  .UxDarkMode .PageAdornmentFooterLabelThemed {
+    background-color: #f0f001 !important;
+    border-color: #f0f004 !important;
+    color: #f0f006;
+  }
+  .UxDarkMode [id="WACStatusBarContainer"] > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) div:nth-child(1) > button:hover,
+  .UxDarkMode [id="WACStatusBarContainer"] > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) div:nth-child(3) > button:hover,
+  .UxDarkMode [id="WACStatusBarContainer"] > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) div:nth-child(1) div:nth-child(2) > div:nth-child(1):hover,
+  .UxDarkMode [id="WACStatusBarContainer"] > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) div:nth-child(3) div:nth-child(2) > div:nth-child(1):hover {
+    background-color: #f0f00b !important;
+  }
+  .UxDarkMode [id="WACStatusBarContainer"] > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > span:nth-child(1) {
+    background: #f0f01b !important;
+  }
+  .UxDarkMode [id="WACStatusBarContainer"] > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) div:nth-child(1) > span:nth-child(1) {
+    background: #f0f006 !important;
+  }
+  .UxDarkMode [id="WACStatusBarContainer"] > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) div:nth-child(1) > span:nth-child(3) {
+    background: #f0f006 !important;
+  }
+  .UxDarkMode [id="WACStatusBarContainer"] > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) div:nth-child(1) > span:nth-child(4) {
+    background: #f0f006 !important;
+  }
+  .UxDarkMode #ReactFloatie > div:nth-child(1) {
+    background: #f0f00c !important;
+  }
+  .UxDarkMode #documentTitle > span:nth-child(1) > div:nth-child(2) > i:nth-child(1) > svg:nth-child(1) {
+    fill: #f0f004;
+  }
+  .UxDarkMode #ProgressBar {
+    background-color: #f0f00c;
+  }
+  .UxDarkMode #ProgressBar:hover {
+    background-color: #f0f00b;
+  }
+  .UxDarkMode #ProgressBar > div:nth-child(2) {
+    background-color: #f0f00a !important;
+  }
+  .UxDarkMode #ProgressBar > div:nth-child(2) > div:nth-child(1) {
+    background: #f0f01b;
+  }
+  .UxDarkMode #ProgressBar > div:nth-child(3) > span:nth-child(1) {
+    color: #f0f004;
+  }
+  .UxDarkMode #ProgressBar > div:nth-child(3) > span:nth-child(2) {
+    color: #f0f01b;
+  }
+  .UxDarkMode #ProgressBar > div:nth-child(3) > span:nth-child(3) {
+    color: #f0f004;
+  }
+  .UxDarkMode #AppBrand > div:nth-child(1) > div:nth-child(1) > a:nth-child(1):hover {
+    background-color: #f0f00c;
+  }
+  .UxDarkMode #appLauncherTop > div:nth-child(1) > div:nth-child(1) > button:nth-child(1):hover {
+    background-color: #f0f00b;
+  }
+  .UxDarkMode #appLauncherTop > div:nth-child(1) > a:nth-child(2) {
+    color: #f0f01b;
+  }
+  .UxDarkMode #allAppsLink {
+    color: #f0f01b;
+  }
+  .UxDarkMode #ProgressCardScore > div:nth-child(1) {
+    color: #f0f01b;
+  }
+  .UxDarkMode #ProgressCardScore > div:nth-child(2) {
+    color: #f0f01b;
+  }
+  .UxDarkMode #WACStatusBarContainer > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) {
+    background-color: #f0f00c;
+    border-top-color: #f0f00b;
+  }
+  .UxDarkMode #WACStatusBarContainer > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > button,
+  .UxDarkMode #WACStatusBarContainer > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) div:nth-child(3) > button {
+    color: #f0f006 !important;
+  }
+  .UxDarkMode [data-unique-id="TellMeControl"] {
+    background: #f0f00c !important;
+  }
+  .UxDarkMode [data-unique-id="TellMeControl"] > div:nth-child(2) > label:nth-child(1),
+  .UxDarkMode [data-unique-id="TellMeControl"] [data-icon-name="Search"] {
+    color: #f0f006 !important;
+  }
+  .UxDarkMode #ReactTabbedPanelMenuPageContainer {
+    background-color: #f0f00c !important;
+  }
+  .UxDarkMode #UploadDocumentFromHomeTab,
+  .UxDarkMode #pageSection2CompoundButtonSectionProps > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > button {
+    background-color: #f0f00c !important;
+  }
+  .UxDarkMode #UploadDocumentFromHomeTab:hover,
+  .UxDarkMode #pageSection2CompoundButtonSectionProps > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > button:hover {
+    background-color: #f0f00b !important;
+  }
+  .UxDarkMode #MultilineRibbon-RibbonModeToggleDropdown,
+  .UxDarkMode #FarPeripheralControls-ModeSwitcherDropdown,
+  .UxDarkMode #MultilineRibbon-RibbonModeToggleDropdownsection-0-title,
+  .UxDarkMode #MultilineRibbon-RibbonModeToggleDropdownsection-1-title {
+    background-color: #f0f00c !important;
+  }
+  .UxDarkMode #MultilineRibbon-RibbonModeToggleDropdown > div:nth-child(1) > span:nth-child(2),
+  .UxDarkMode #FarPeripheralControls-ModeSwitcherDropdown > div:nth-child(1) > span:nth-child(2),
+  .UxDarkMode #MultilineRibbon-RibbonModeToggleDropdownsection-0-title > div:nth-child(1) > span:nth-child(2),
+  .UxDarkMode #MultilineRibbon-RibbonModeToggleDropdownsection-1-title > div:nth-child(1) > span:nth-child(2) {
+    color: #f0f004 !important;
+  }
+  .UxDarkMode .PageAdornmentNumberLabel,
+  .UxDarkMode .FileMenuButtonSecondaryText,
+  .UxDarkMode #New,
+  .UxDarkMode #Open,
+  .UxDarkMode #Recent {
+    color: #f0f006 !important;
+  }
+  .UxDarkMode #Clipboard_MLR-label,
+  .UxDarkMode #Font_MLR-label,
+  .UxDarkMode #Paragraph_MLR-label,
+  .UxDarkMode #Styles-label,
+  .UxDarkMode #Editing-label,
+  .UxDarkMode #Dictation-label,
+  .UxDarkMode #GetAddins-label,
+  .UxDarkMode #Editor-label {
+    color: #f0f006 !important;
+  }
+  .UxDarkMode svg path.OfficeIconColors_m22 {
+    fill: #f0f004;
+  }
+  .UxDarkMode svg path.OfficeIconColors_m24,
+  .UxDarkMode svg path.OfficeIconColors_m25,
+  .UxDarkMode svg path.OfficeIconColors_m26,
+  .UxDarkMode svg path.OfficeIconColors_m2262 {
+    fill: #f0f01b;
+  }
+  .UxDarkMode svg path.OfficeIconColors_m27 {
+    fill: #f0f015;
+  }
+  .UxDarkMode svg path.OfficeIconColors_m211 {
+    fill: #f0f014;
+  }
+  .UxDarkMode svg path.OfficeIconColors_m212 {
+    fill: #f0f013;
+  }
+  .UxDarkMode svg path.OfficeIconColors_m220,
+  .UxDarkMode svg path.OfficeIconColors_m221 {
+    fill: #f0f010;
+  }
+  .UxDarkMode svg path.OfficeIconColors_m213 {
+    fill: #f0f011;
+  }
+  .UxDarkMode svg path.OfficeIconColors_m229 {
+    fill: #f0f011;
+  }
+  .UxDarkMode svg path.OfficeIconColors_m295 {
+    fill: #f0f019;
+  }
+  .UxDarkMode svg path.OfficeIconColors_m2131 {
+    fill: #f0f015;
+  }
+  .UxDarkMode svg path.OfficeIconColors_m2227 {
+    fill: #f0f013;
+  }
+  .UxDarkMode svg path.OfficeIconColors_m2251 {
+    fill: #f0f004;
+  }
+}

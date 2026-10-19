@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <style>
+            body {
+                font-family: monospace;
+                background: #111;
+                color: #ccc;
+                padding: 2em;
+                max-width: 720px;
+                margin: 0 auto;
+            }
+            h2 {
+                color: #fff;
+            }
+            label {
+                display: block;
+                margin: 0.35em 0;
+                cursor: pointer;
+            }
+            label.big {
+                font-weight: bold;
+                color: #fff;
+                margin: 1em 0 0.5em;
+            }
+            button {
+                background: #222;
+                color: #ccc;
+                border: 1px solid #444;
+                padding: 0.4em 1em;
+                cursor: pointer;
+                font-family: inherit;
+            }
+            button:hover {
+                background: #333;
+            }
+            #status {
+                color: #888;
+                margin-top: 1em;
+                min-height: 1.2em;
+            }
+            input[type="checkbox"] {
+                accent-color: #888;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>pwnbox styles</h2>
+
+        <label class="big"
+            ><input type="checkbox" id="enabled" /> enable all site
+            themes</label
+        >
+        <label
+            ><input type="checkbox" id="flatBorders" /> flat borders (subtle
+            background-tinted borders)</label
+        >
+
+        <p style="color: #888">
+            change a setting and it applies to every open page instantly.
+        </p>
+        <p>
+            <button id="refresh">check for updates now</button>
+            <button id="enableAll">enable all sites</button>
+        </p>
+
+        <label class="big">per-site themes</label>
+        <div id="sites"></div>
+
+        <div id="status"></div>
+
+        <script src="options.js"></script>
+    </body>
+</html>

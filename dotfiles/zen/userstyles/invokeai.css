@@ -1,0 +1,149 @@
+/* ==UserStyle==
+@name           pwnbox-invokeai
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for InvokeAI (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document regexp("http:\\/\\/(127\\.0\\.0\\.1|localhost):9090(.*)") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root :root,
+    :root [data-theme]:root {
+      --accent-color-dim: #cbcb0d;
+      --accent-color: #f0f01b;
+      --accent-color-bright: #f3f34b;
+      --accent-color-hover: var(--accent-color-bright);
+      --root-bg-color: #f0f002;
+      --background-color: #f0f001;
+      --background-color-light: #f0f00c;
+      --background-color-secondary: #f0f001;
+      --text-color: #f0f004;
+      --text-color-secondary: #f0f006;
+      --subtext-color: #f0f005;
+      --subtext-color-bright: #f0f006;
+      --border-color: #f0f00b;
+      --border-color-light: #f0f00a;
+      --tab-color: #f0f01b;
+      --tab-list-bg: #f0f01b;
+      --btn-delete-image: #f0f011;
+      --status-good-color: #f0f015;
+      --status-good-color-glow: #f3f345;
+      --border-color-invalid: #f0f011;
+      --box-shadow-color-invalid: #f2f229;
+      --tab-panel-bg: var(--background-color-light);
+      --tab-hover-color: var(--background-color-secondary);
+      --tab-list-text: white;
+      --prompt-bg-color: var(--background-color-light);
+      --switch-bg-color: var(--background-color-secondary);
+      --btn-base-color: var(--background-color-light);
+      --btn-base-color-hover: var(--background-color-secondary);
+      --destructive-color: #f0f011;
+      --slider-color: #f0f01a;
+      --slider-mark-color: var(--slider-color);
+      --switch-bg-active-color: var(--accent-color);
+      --console-icon-button-bg-color: var(--btn-base-color);
+      --console-icon-button-bg-color-hover: var(--btn-base-color-hover);
+      --console-bg-color: var(--background-color-light);
+      --svg-color: var(--text-color);
+      --btn-load-more: var(--background-color-light);
+      --tab-list-text-inactive: var(--text-color-secondary);
+    }
+    :root .invokeai-style-cache-1m5jnul {
+      --number-input-color: var(--text-color-secondary) !important;
+    }
+    :root .invoke-btn,
+    :root .invokeai__button[data-active],
+    :root .site-header-right-side .lang-select-btn[data-selected="true"],
+    :root .site-header-right-side .lang-select-btn[data-selected="true"]:hover,
+    :root button.chakra-button.invokeai__icon-button[data-selected="true"] {
+      --svg-color: var(--root-bg-color);
+      color: var(--root-bg-color) !important;
+    }
+    :root .invokeai-style-cache-vs1g06,
+    :root .invokeai-style-cache-vs1g06:hover {
+      background-color: var(--background-color-light);
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root :root,
+    :root [data-theme]:root {
+      --accent-color-dim: #cbcb0d;
+      --accent-color: #f0f01b;
+      --accent-color-bright: #f3f34b;
+      --accent-color-hover: var(--accent-color-bright);
+      --root-bg-color: #f0f002;
+      --background-color: #f0f001;
+      --background-color-light: #f0f00c;
+      --background-color-secondary: #f0f001;
+      --text-color: #f0f004;
+      --text-color-secondary: #f0f006;
+      --subtext-color: #f0f005;
+      --subtext-color-bright: #f0f006;
+      --border-color: #f0f00b;
+      --border-color-light: #f0f00a;
+      --tab-color: #f0f01b;
+      --tab-list-bg: #f0f01b;
+      --btn-delete-image: #f0f011;
+      --status-good-color: #f0f015;
+      --status-good-color-glow: #f3f345;
+      --border-color-invalid: #f0f011;
+      --box-shadow-color-invalid: #f2f229;
+      --tab-panel-bg: var(--background-color-light);
+      --tab-hover-color: var(--background-color-secondary);
+      --tab-list-text: white;
+      --prompt-bg-color: var(--background-color-light);
+      --switch-bg-color: var(--background-color-secondary);
+      --btn-base-color: var(--background-color-light);
+      --btn-base-color-hover: var(--background-color-secondary);
+      --destructive-color: #f0f011;
+      --slider-color: #f0f01a;
+      --slider-mark-color: var(--slider-color);
+      --switch-bg-active-color: var(--accent-color);
+      --console-icon-button-bg-color: var(--btn-base-color);
+      --console-icon-button-bg-color-hover: var(--btn-base-color-hover);
+      --console-bg-color: var(--background-color-light);
+      --svg-color: var(--text-color);
+      --btn-load-more: var(--background-color-light);
+      --tab-list-text-inactive: var(--text-color-secondary);
+    }
+    :root .invokeai-style-cache-1m5jnul {
+      --number-input-color: var(--text-color-secondary) !important;
+    }
+    :root .invoke-btn,
+    :root .invokeai__button[data-active],
+    :root .site-header-right-side .lang-select-btn[data-selected="true"],
+    :root .site-header-right-side .lang-select-btn[data-selected="true"]:hover,
+    :root button.chakra-button.invokeai__icon-button[data-selected="true"] {
+      --svg-color: var(--root-bg-color);
+      color: var(--root-bg-color) !important;
+    }
+    :root .invokeai-style-cache-vs1g06,
+    :root .invokeai-style-cache-vs1g06:hover {
+      background-color: var(--background-color-light);
+    }
+  }
+}

@@ -1,0 +1,733 @@
+/* ==UserStyle==
+@name           pwnbox-migadu-webmail
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Migadu Webmail (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("webmail.migadu.com") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+      --main-color: #f0f004;
+      --main-bg-color: #f0f001;
+      --border-color: #f0f00c;
+      --dropdown-menu-color: #f0f004;
+      --dropdown-menu-bg-color: #f0f001;
+      --dropdown-menu-hover-bg-color: #f0f00b;
+      --dropdown-menu-hover-color: #f0f004;
+      --dropdown-menu-disabled-color: #f0f006;
+      --dropdown-menu-border-clr: #f0f00c;
+      --folders-color: #f0f004;
+      --folders-disabled-color: #f0f00a;
+      --folders-selected-color: #f0f019;
+      --folders-selected-bg-color: rgba(240, 240, 25, 0.1);
+      --folders-focused-color: #f0f019;
+      --folders-hover-color: #f0f004;
+      --folders-hover-bg-color: #f0f001;
+      --folders-drop-color: #f0f004;
+      --settings-menu-color: #f0f004;
+      --settings-menu-selected-color: #f0f019;
+      --settings-menu-selected-bg-color: rgba(240, 240, 25, 0.1);
+      --settings-menu-hover-color: #f0f004;
+      --settings-menu-hover-bg-color: #f0f001;
+      --message-list-toolbar-bg-color: #f0f009;
+      --panel-bg-clr: #f0f001;
+      --message-header-bg-clr: #f0f002;
+      --hr-color: #f0f00c;
+      --dialog-bg-clr: #f0f001;
+      --dialog-clr: #f0f004;
+      --tr-hover-bg-clr: #f0f003;
+      --loading-color: #f0f004;
+      --login-color: #f0f004;
+      --login-bg-color: #f0f003;
+      --tab-hover-border-clr: #f0f00c;
+      --tab-active-bg-clr: #f0f003;
+      --tr-odd-bg-clr: #f0f002;
+      /* Login page */
+      /* Inbox */
+      /* Buttons */
+      --btn-clr: #f0f004;
+      --btn-border-clr: #f0f009;
+      /* Links */
+      --link-color: #f0f019;
+      /* Inputs */
+      --input-bg-clr: #f0f001;
+      --input-border-clr: #f0f00c;
+      --input-focus-border-clr: #f0f009;
+      --input-clr: #f0f005;
+      /* stylelint-disable property-disallowed-list */
+      /* stylelint-enable property-disallowed-list */
+      /* Nothing selected */
+      /* Loading messages */
+      /* Tags */
+      /* Profile pictures */
+      /* Settings */
+      /* Send mail modal */
+      /* Minimize and close icons */
+      /* Email address field */
+      /* Untheme message content */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root .LoginView .btn,
+    :root .LoginView input {
+      border-color: #f0f00c;
+    }
+    :root .LoginView input:focus,
+    :root .LoginView input:hover {
+      border-color: #f0f00b;
+    }
+    :root .messageItemHeader,
+    :root .bodySubHeader,
+    :root .thm-message-list-top-toolbar,
+    :root .thm-message-list-bottom-toolbar {
+      background: #f0f002 !important;
+    }
+    :root .btn [class^="icon-"] {
+      color: #f0f004;
+    }
+    :root .btn.btn-success {
+      background-color: rgba(240, 240, 21, 0.2);
+    }
+    :root .btn.btn-success,
+    :root .btn.btn-success [class^="icon-"] {
+      color: #f0f015 !important;
+    }
+    :root .btn.btn-success:hover,
+    :root .btn.btn-success:active {
+      background-color: rgba(240, 240, 21, 0.4);
+    }
+    :root .btn.btn-warning {
+      background-color: rgba(240, 240, 20, 0.2);
+    }
+    :root .btn.btn-warning,
+    :root .btn.btn-warning [class^="icon-"] {
+      color: #f0f014 !important;
+    }
+    :root .btn.btn-warning:hover,
+    :root .btn.btn-warning:active {
+      background-color: rgba(240, 240, 20, 0.4);
+    }
+    :root .btn.btn-danger {
+      background-color: rgba(240, 240, 17, 0.2);
+    }
+    :root .btn.btn-danger,
+    :root .btn.btn-danger [class^="icon-"] {
+      color: #f0f011 !important;
+    }
+    :root .btn.btn-danger:hover,
+    :root .btn.btn-danger:active {
+      background-color: rgba(240, 240, 17, 0.4);
+    }
+    :root .btn.disabled,
+    :root .btn.disabled.fontastic,
+    :root .btn.disabled .fontastic {
+      color: #f0f00c !important;
+    }
+    :root .btn,
+    :root .btn.disabled,
+    :root .btn[disabled],
+    :root .btn.disabled:hover,
+    :root .btn[disabled]:hover {
+      border-color: #f0f00c !important;
+      text-shadow: none !important;
+      background-color: #f0f001;
+    }
+    :root .btn:hover {
+      background-color: #f0f002;
+    }
+    :root #messageItem .b-text-part a:visited {
+      color: #f0f010;
+    }
+    :root .select,
+    :root select {
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20height%3D%2210px%22%20width%3D%2215px%22%3E%3Ctext%20x%3D%220%22%20y%3D%2210%22%20fill%3D%22%23f0f005%22%3E%E2%96%BE%3C/text%3E%3C/svg%3E") !important;
+    }
+    :root .e-checkbox.material-design input:checked + div {
+      border-color: #c5c50d;
+    }
+    @keyframes checkmark-to-box {
+      0% {
+        top: -1px;
+        left: 5px;
+        width: 10px;
+        height: 18px;
+        border: 2px solid #c5c50d;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+      50% {
+        top: 13px;
+        left: 5px;
+        width: 4px;
+        height: 4px;
+        transform: rotate(45deg);
+      }
+      100% {
+        top: 0;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        border: 2px solid #f0f009;
+        transform: rotate(0);
+      }
+    }
+    @keyframes box-to-checkmark {
+      0% {
+        top: 0;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        border: 2px solid #f0f009;
+        transform: rotate(0);
+      }
+      50% {
+        top: 13px;
+        left: 5px;
+        width: 4px;
+        height: 4px;
+        transform: rotate(45deg);
+      }
+      100% {
+        top: -1px;
+        left: 5px;
+        width: 10px;
+        height: 18px;
+        border: 2px solid #c5c50d;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+    }
+    :root .messageView .b-message-view-desc,
+    :root #V-PopupsContacts .b-view-content .b-contact-view-desc {
+      color: #f0f009;
+    }
+    :root .messageList .b-content .listDragOver,
+    :root .messageList .b-content .listEmptyMessage,
+    :root .messageList .b-content .listError,
+    :root .messageList .b-content .listLoading {
+      color: #f0f009;
+    }
+    :root .messageList .b-content .listError {
+      color: #f0f011;
+    }
+    :root #messageItem .loading,
+    :root #V-PopupsContacts .b-list-content .listEmptyList,
+    :root #V-PopupsContacts .b-list-content .listEmptyListLoading,
+    :root #V-PopupsContacts .b-list-content .listEmptySearchList {
+      color: #f0f009;
+    }
+    :root .icon-spinner {
+      border-color: #f0f00b;
+      border-top-color: #f0f004;
+    }
+    :root .iconcolor-green {
+      color: #f0f015;
+    }
+    :root .iconcolor-red {
+      color: #f0f011;
+    }
+    :root .b-folders .is-flagged .flag-icon::after,
+    :root .messageListItem.hasFlaggedSubMessage .flagParent::after,
+    :root .messageListItem.msgflag-\\flagged .flagParent::after {
+      color: #f0f014;
+    }
+    :root .msgflag-\$important .checkboxMessage {
+      background-color: #f0f011;
+    }
+    :root .msgflag-\$important.focused {
+      background-color: rgba(240, 240, 17, 0.3);
+    }
+    :root .msgflag-\$important:not(.focused) {
+      color: #f0f011;
+    }
+    :root .msgflag-\$todo .checkboxMessage {
+      background-color: #f0f019;
+      color: #f0f004;
+    }
+    :root .msgflag-\$todo.focused {
+      background-color: rgba(240, 240, 25, 0.3);
+    }
+    :root .msgflag-\$todo:not(.focused) {
+      color: #f0f019;
+    }
+    :root .msgflag-\$label5 .checkboxMessage {
+      background-color: #c0c00c;
+      color: #f0f004;
+    }
+    :root .msgflag-\$label4 .checkboxMessage {
+      background-color: #f0f019;
+      color: #f0f004;
+    }
+    :root .msgflag-\$label3 .checkboxMessage {
+      background-color: #f0f015;
+      color: #f0f004;
+    }
+    :root .msgflag-\$label2 .checkboxMessage {
+      background-color: #f0f014;
+      color: #f0f004;
+    }
+    :root .msgflag-\$label1 .checkboxMessage {
+      background-color: #f0f011;
+      color: #f0f004;
+    }
+    :root .msgflag-\$label5.focused {
+      background-color: rgba(240, 240, 15, 0.3);
+    }
+    :root .msgflag-\$label4.focused {
+      background-color: rgba(240, 240, 25, 0.3);
+    }
+    :root .msgflag-\$label3.focused {
+      background-color: rgba(240, 240, 21, 0.3);
+    }
+    :root .msgflag-\$label2.focused {
+      background-color: rgba(240, 240, 18, 0.3);
+    }
+    :root .msgflag-\$label1.focused {
+      background-color: rgba(240, 240, 17, 0.3);
+    }
+    :root .msgflag-\$label5:not(.focused) {
+      color: #c0c00c;
+    }
+    :root .msgflag-\$label4:not(.focused) {
+      color: #f0f019;
+    }
+    :root .msgflag-\$label3:not(.focused) {
+      color: #f0f015;
+    }
+    :root .msgflag-\$label2:not(.focused) {
+      color: #f0f014;
+    }
+    :root .msgflag-\$label1:not(.focused) {
+      color: #f0f011;
+    }
+    :root .messageList .b-content .listSearchDesc {
+      border-bottom-color: #f0f00c;
+    }
+    :root #V-Settings-Themes figure.selected {
+      background-color: rgba(240, 240, 21, 0.4);
+      border-color: #f0f004;
+    }
+    :root #V-Settings-Themes figure:hover {
+      border-color: #f0f00c;
+    }
+    :root #V-PopupsContacts .e-contact-item.focused,
+    :root .messageListItem.focused {
+      border-left-color: #f0f00a;
+      background-color: #f0f00c;
+    }
+    :root #V-PopupsContacts .e-contact-item.checked,
+    :root .messageListItem.checked {
+      border-left-color: #f3f34b;
+    }
+    :root #V-PopupsContacts .e-contact-item.checked.focused,
+    :root .messageListItem.checked.focused,
+    :root #V-PopupsContacts .e-contact-item.selected,
+    :root .messageListItem.selected {
+      border-left-color: #f0f01b;
+    }
+    :root #V-PopupsContacts .e-contact-item.selected,
+    :root .messageListItem.selected {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root #V-PopupsContacts .e-contact-item {
+      border-left-color: #f0f00c;
+    }
+    :root .squire-toolbar,
+    :root #V-PopupsCompose .attachmentAreaParent {
+      border-color: #f0f00c;
+    }
+    :root #V-PopupsCompose header {
+      color: #f0f004;
+    }
+    :root #V-PopupsCompose header div.pull-right a.minimize-custom,
+    :root #V-PopupsCompose .close,
+    :root .close {
+      border-color: #f0f004;
+      color: #f0f004;
+    }
+    :root .emailaddresses li[draggable] {
+      background-color: #f0f002;
+      border-color: #f0f00c;
+      box-shadow: 0 1px 0 rgba(240, 240, 2, 0.75) inset;
+      color: #f0f004;
+    }
+    :root .emailaddresses li a {
+      color: #f0f00c;
+    }
+    :root div:has(> .bodyText) {
+      color: #333;
+      background-color: #fff;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --main-color: #f0f004;
+      --main-bg-color: #f0f001;
+      --border-color: #f0f00c;
+      --dropdown-menu-color: #f0f004;
+      --dropdown-menu-bg-color: #f0f001;
+      --dropdown-menu-hover-bg-color: #f0f00b;
+      --dropdown-menu-hover-color: #f0f004;
+      --dropdown-menu-disabled-color: #f0f006;
+      --dropdown-menu-border-clr: #f0f00c;
+      --folders-color: #f0f004;
+      --folders-disabled-color: #f0f00a;
+      --folders-selected-color: #f0f019;
+      --folders-selected-bg-color: rgba(240, 240, 25, 0.1);
+      --folders-focused-color: #f0f019;
+      --folders-hover-color: #f0f004;
+      --folders-hover-bg-color: #f0f001;
+      --folders-drop-color: #f0f004;
+      --settings-menu-color: #f0f004;
+      --settings-menu-selected-color: #f0f019;
+      --settings-menu-selected-bg-color: rgba(240, 240, 25, 0.1);
+      --settings-menu-hover-color: #f0f004;
+      --settings-menu-hover-bg-color: #f0f001;
+      --message-list-toolbar-bg-color: #f0f009;
+      --panel-bg-clr: #f0f001;
+      --message-header-bg-clr: #f0f002;
+      --hr-color: #f0f00c;
+      --dialog-bg-clr: #f0f001;
+      --dialog-clr: #f0f004;
+      --tr-hover-bg-clr: #f0f003;
+      --loading-color: #f0f004;
+      --login-color: #f0f004;
+      --login-bg-color: #f0f003;
+      --tab-hover-border-clr: #f0f00c;
+      --tab-active-bg-clr: #f0f003;
+      --tr-odd-bg-clr: #f0f002;
+      /* Login page */
+      /* Inbox */
+      /* Buttons */
+      --btn-clr: #f0f004;
+      --btn-border-clr: #f0f009;
+      /* Links */
+      --link-color: #f0f019;
+      /* Inputs */
+      --input-bg-clr: #f0f001;
+      --input-border-clr: #f0f00c;
+      --input-focus-border-clr: #f0f009;
+      --input-clr: #f0f005;
+      /* stylelint-disable property-disallowed-list */
+      /* stylelint-enable property-disallowed-list */
+      /* Nothing selected */
+      /* Loading messages */
+      /* Tags */
+      /* Profile pictures */
+      /* Settings */
+      /* Send mail modal */
+      /* Minimize and close icons */
+      /* Email address field */
+      /* Untheme message content */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root .LoginView .btn,
+    :root .LoginView input {
+      border-color: #f0f00c;
+    }
+    :root .LoginView input:focus,
+    :root .LoginView input:hover {
+      border-color: #f0f00b;
+    }
+    :root .messageItemHeader,
+    :root .bodySubHeader,
+    :root .thm-message-list-top-toolbar,
+    :root .thm-message-list-bottom-toolbar {
+      background: #f0f002 !important;
+    }
+    :root .btn [class^="icon-"] {
+      color: #f0f004;
+    }
+    :root .btn.btn-success {
+      background-color: rgba(240, 240, 21, 0.2);
+    }
+    :root .btn.btn-success,
+    :root .btn.btn-success [class^="icon-"] {
+      color: #f0f015 !important;
+    }
+    :root .btn.btn-success:hover,
+    :root .btn.btn-success:active {
+      background-color: rgba(240, 240, 21, 0.4);
+    }
+    :root .btn.btn-warning {
+      background-color: rgba(240, 240, 20, 0.2);
+    }
+    :root .btn.btn-warning,
+    :root .btn.btn-warning [class^="icon-"] {
+      color: #f0f014 !important;
+    }
+    :root .btn.btn-warning:hover,
+    :root .btn.btn-warning:active {
+      background-color: rgba(240, 240, 20, 0.4);
+    }
+    :root .btn.btn-danger {
+      background-color: rgba(240, 240, 17, 0.2);
+    }
+    :root .btn.btn-danger,
+    :root .btn.btn-danger [class^="icon-"] {
+      color: #f0f011 !important;
+    }
+    :root .btn.btn-danger:hover,
+    :root .btn.btn-danger:active {
+      background-color: rgba(240, 240, 17, 0.4);
+    }
+    :root .btn.disabled,
+    :root .btn.disabled.fontastic,
+    :root .btn.disabled .fontastic {
+      color: #f0f00c !important;
+    }
+    :root .btn,
+    :root .btn.disabled,
+    :root .btn[disabled],
+    :root .btn.disabled:hover,
+    :root .btn[disabled]:hover {
+      border-color: #f0f00c !important;
+      text-shadow: none !important;
+      background-color: #f0f001;
+    }
+    :root .btn:hover {
+      background-color: #f0f002;
+    }
+    :root #messageItem .b-text-part a:visited {
+      color: #f0f010;
+    }
+    :root .select,
+    :root select {
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20height%3D%2210px%22%20width%3D%2215px%22%3E%3Ctext%20x%3D%220%22%20y%3D%2210%22%20fill%3D%22%23f0f005%22%3E%E2%96%BE%3C/text%3E%3C/svg%3E") !important;
+    }
+    :root .e-checkbox.material-design input:checked + div {
+      border-color: #c5c50d;
+    }
+    @keyframes checkmark-to-box {
+      0% {
+        top: -1px;
+        left: 5px;
+        width: 10px;
+        height: 18px;
+        border: 2px solid #c5c50d;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+      50% {
+        top: 13px;
+        left: 5px;
+        width: 4px;
+        height: 4px;
+        transform: rotate(45deg);
+      }
+      100% {
+        top: 0;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        border: 2px solid #f0f009;
+        transform: rotate(0);
+      }
+    }
+    @keyframes box-to-checkmark {
+      0% {
+        top: 0;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        border: 2px solid #f0f009;
+        transform: rotate(0);
+      }
+      50% {
+        top: 13px;
+        left: 5px;
+        width: 4px;
+        height: 4px;
+        transform: rotate(45deg);
+      }
+      100% {
+        top: -1px;
+        left: 5px;
+        width: 10px;
+        height: 18px;
+        border: 2px solid #c5c50d;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+    }
+    :root .messageView .b-message-view-desc,
+    :root #V-PopupsContacts .b-view-content .b-contact-view-desc {
+      color: #f0f009;
+    }
+    :root .messageList .b-content .listDragOver,
+    :root .messageList .b-content .listEmptyMessage,
+    :root .messageList .b-content .listError,
+    :root .messageList .b-content .listLoading {
+      color: #f0f009;
+    }
+    :root .messageList .b-content .listError {
+      color: #f0f011;
+    }
+    :root #messageItem .loading,
+    :root #V-PopupsContacts .b-list-content .listEmptyList,
+    :root #V-PopupsContacts .b-list-content .listEmptyListLoading,
+    :root #V-PopupsContacts .b-list-content .listEmptySearchList {
+      color: #f0f009;
+    }
+    :root .icon-spinner {
+      border-color: #f0f00b;
+      border-top-color: #f0f004;
+    }
+    :root .iconcolor-green {
+      color: #f0f015;
+    }
+    :root .iconcolor-red {
+      color: #f0f011;
+    }
+    :root .b-folders .is-flagged .flag-icon::after,
+    :root .messageListItem.hasFlaggedSubMessage .flagParent::after,
+    :root .messageListItem.msgflag-\\flagged .flagParent::after {
+      color: #f0f014;
+    }
+    :root .msgflag-\$important .checkboxMessage {
+      background-color: #f0f011;
+    }
+    :root .msgflag-\$important.focused {
+      background-color: rgba(240, 240, 17, 0.3);
+    }
+    :root .msgflag-\$important:not(.focused) {
+      color: #f0f011;
+    }
+    :root .msgflag-\$todo .checkboxMessage {
+      background-color: #f0f019;
+      color: #f0f004;
+    }
+    :root .msgflag-\$todo.focused {
+      background-color: rgba(240, 240, 25, 0.3);
+    }
+    :root .msgflag-\$todo:not(.focused) {
+      color: #f0f019;
+    }
+    :root .msgflag-\$label5 .checkboxMessage {
+      background-color: #c0c00c;
+      color: #f0f004;
+    }
+    :root .msgflag-\$label4 .checkboxMessage {
+      background-color: #f0f019;
+      color: #f0f004;
+    }
+    :root .msgflag-\$label3 .checkboxMessage {
+      background-color: #f0f015;
+      color: #f0f004;
+    }
+    :root .msgflag-\$label2 .checkboxMessage {
+      background-color: #f0f014;
+      color: #f0f004;
+    }
+    :root .msgflag-\$label1 .checkboxMessage {
+      background-color: #f0f011;
+      color: #f0f004;
+    }
+    :root .msgflag-\$label5.focused {
+      background-color: rgba(240, 240, 15, 0.3);
+    }
+    :root .msgflag-\$label4.focused {
+      background-color: rgba(240, 240, 25, 0.3);
+    }
+    :root .msgflag-\$label3.focused {
+      background-color: rgba(240, 240, 21, 0.3);
+    }
+    :root .msgflag-\$label2.focused {
+      background-color: rgba(240, 240, 18, 0.3);
+    }
+    :root .msgflag-\$label1.focused {
+      background-color: rgba(240, 240, 17, 0.3);
+    }
+    :root .msgflag-\$label5:not(.focused) {
+      color: #c0c00c;
+    }
+    :root .msgflag-\$label4:not(.focused) {
+      color: #f0f019;
+    }
+    :root .msgflag-\$label3:not(.focused) {
+      color: #f0f015;
+    }
+    :root .msgflag-\$label2:not(.focused) {
+      color: #f0f014;
+    }
+    :root .msgflag-\$label1:not(.focused) {
+      color: #f0f011;
+    }
+    :root .messageList .b-content .listSearchDesc {
+      border-bottom-color: #f0f00c;
+    }
+    :root #V-Settings-Themes figure.selected {
+      background-color: rgba(240, 240, 21, 0.4);
+      border-color: #f0f004;
+    }
+    :root #V-Settings-Themes figure:hover {
+      border-color: #f0f00c;
+    }
+    :root #V-PopupsContacts .e-contact-item.focused,
+    :root .messageListItem.focused {
+      border-left-color: #f0f00a;
+      background-color: #f0f00c;
+    }
+    :root #V-PopupsContacts .e-contact-item.checked,
+    :root .messageListItem.checked {
+      border-left-color: #f3f34b;
+    }
+    :root #V-PopupsContacts .e-contact-item.checked.focused,
+    :root .messageListItem.checked.focused,
+    :root #V-PopupsContacts .e-contact-item.selected,
+    :root .messageListItem.selected {
+      border-left-color: #f0f01b;
+    }
+    :root #V-PopupsContacts .e-contact-item.selected,
+    :root .messageListItem.selected {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root #V-PopupsContacts .e-contact-item {
+      border-left-color: #f0f00c;
+    }
+    :root .squire-toolbar,
+    :root #V-PopupsCompose .attachmentAreaParent {
+      border-color: #f0f00c;
+    }
+    :root #V-PopupsCompose header {
+      color: #f0f004;
+    }
+    :root #V-PopupsCompose header div.pull-right a.minimize-custom,
+    :root #V-PopupsCompose .close,
+    :root .close {
+      border-color: #f0f004;
+      color: #f0f004;
+    }
+    :root .emailaddresses li[draggable] {
+      background-color: #f0f002;
+      border-color: #f0f00c;
+      box-shadow: 0 1px 0 rgba(240, 240, 2, 0.75) inset;
+      color: #f0f004;
+    }
+    :root .emailaddresses li a {
+      color: #f0f00c;
+    }
+    :root div:has(> .bodyText) {
+      color: #333;
+      background-color: #fff;
+    }
+  }
+}

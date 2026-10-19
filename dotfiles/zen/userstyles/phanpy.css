@@ -1,0 +1,133 @@
+/* ==UserStyle==
+@name           pwnbox-phanpy
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Phanpy (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("phanpy.social") {
+  :root:not(:has(.is-light)) {
+    color-scheme: dark;
+    --text-color: #f0f004;
+    --text-insignificant-color: #f0f006;
+    --link-color: #f0f01b;
+    --link-text-color: #f0f01b;
+    --link-faded-color: #f0f01b;
+    --link-light-color: #f0f01b;
+    --button-bg-blur-color: #f0f01b;
+    --button-bg-color: #f0f01b;
+    --button-text-color: #f0f001;
+    --bg-faded-color: #f0f001;
+    --bg-faded-blur-color: #f0f002;
+    --bg-blur-color: #f0f002;
+    --close-button-bg-color: #f0f002;
+    --close-button-color: #f0f006;
+    --bg-color: #f0f001;
+    --link-bg-hover-color: #f0f002;
+    --divider-color: #f0f00c;
+    --outline-color: #f0f00c;
+    --outline-hover-color: #f0f00a;
+    --reblog-faded-color: rgba(240, 240, 16, 0.2);
+    --reblog-color: #f0f010;
+    --reply-to-faded-color: rgba(240, 240, 20, 0.2);
+    --reply-to-text-color: #f0f014;
+    --reply-to-color: #f0f014;
+    --favourite-color: #f0f011;
+    --green-color: #f0f015;
+    --red-color: #f0f011;
+    --comment-line-color: #f0f00b;
+    --media-bg-color: #f0f001;
+    --media-fg-color: #f0f004;
+    --media-outline-color: #f0f004;
+  }
+  :root:not(:has(.is-light)) ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root:not(:has(.is-light)) input::placeholder,
+  :root:not(:has(.is-light)) textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root:not(:has(.is-light)) .szh-menu__item--disabled {
+    color: #f0f006;
+  }
+  :root:not(:has(.is-light)) .button.plain2 {
+    background-color: #f0f002;
+  }
+  :root:not(:has(.is-light)) .replies-parent-link {
+    background-color: #f0f00c !important;
+  }
+  :root:not(:has(.is-light)) .account-container {
+    --original-color: #f0f019;
+  }
+  :root:not(:has(.is-light)) .account-container .profile-field,
+  :root:not(:has(.is-light)) .account-container .stats,
+  :root:not(:has(.is-light)) .account-container .posting-stats-button {
+    background-color: #f0f002;
+    -webkit-filter: none;
+    filter: none;
+  }
+  :root.is-light {
+    color-scheme: light;
+    --text-color: #f0f004;
+    --text-insignificant-color: #f0f006;
+    --link-color: #f0f01b;
+    --link-text-color: #f0f01b;
+    --link-faded-color: #f0f01b;
+    --link-light-color: #f0f01b;
+    --button-bg-blur-color: #f0f01b;
+    --button-bg-color: #f0f01b;
+    --button-text-color: #f0f001;
+    --bg-faded-color: #f0f001;
+    --bg-faded-blur-color: #f0f002;
+    --bg-blur-color: #f0f002;
+    --close-button-bg-color: #f0f002;
+    --close-button-color: #f0f006;
+    --bg-color: #f0f001;
+    --link-bg-hover-color: #f0f002;
+    --divider-color: #f0f00c;
+    --outline-color: #f0f00c;
+    --outline-hover-color: #f0f00a;
+    --reblog-faded-color: rgba(240, 240, 16, 0.2);
+    --reblog-color: #f0f010;
+    --reply-to-faded-color: rgba(240, 240, 20, 0.2);
+    --reply-to-text-color: #f0f014;
+    --reply-to-color: #f0f014;
+    --favourite-color: #f0f011;
+    --green-color: #f0f015;
+    --red-color: #f0f011;
+    --comment-line-color: #f0f00b;
+    --media-bg-color: #f0f001;
+    --media-fg-color: #f0f004;
+    --media-outline-color: #f0f004;
+  }
+  :root.is-light ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root.is-light input::placeholder,
+  :root.is-light textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root.is-light .szh-menu__item--disabled {
+    color: #f0f006;
+  }
+  :root.is-light .button.plain2 {
+    background-color: #f0f002;
+  }
+  :root.is-light .replies-parent-link {
+    background-color: #f0f00c !important;
+  }
+  :root.is-light .account-container {
+    --original-color: #f0f019;
+  }
+  :root.is-light .account-container .profile-field,
+  :root.is-light .account-container .stats,
+  :root.is-light .account-container .posting-stats-button {
+    background-color: #f0f002;
+    -webkit-filter: none;
+    filter: none;
+  }
+}

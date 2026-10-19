@@ -1,0 +1,227 @@
+/* ==UserStyle==
+@name           pwnbox-web.dev
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for web.dev (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document url-prefix("https://web.dev") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+      --webdev-background-gray: #f0f00c;
+      --webdev-background-gray-2: #f0f00b;
+      --webdev-background-oficial-gray: #f0f00c;
+      --webdev-background-white: #f0f001;
+      --webdev-google-colors-blue-50: #f0f001;
+      --webdev-google-colors-blue-600: #f0f01b;
+      --webdev-google-colors-blue-800: #f0f01b;
+      --webdev-primary: #f0f01b;
+      --webdev-text-text-1: #f0f004;
+      --webdev-text-text-2: #f0f005;
+      --webdev-text-text-3: #f0f006;
+      --webdev-illustration-colors-blue: #f0f019;
+      --webdev-illustration-colors-gray: #f0f00a;
+      --webdev-illustration-colors-green: #f0f015;
+      --webdev-illustration-colors-red: #f0f011;
+      --devsite-secondary-text-color: #f0f005;
+      --devsite-primary-border: 1px solid #f0f00c;
+      --devsite-secondary-border: 1px solid #f0f00a;
+      --devsite-contrast-link-color: #f0f01b;
+      --devsite-header-link-color-active: #f0f004;
+      --devsite-button-disabled-background: #f0f00c;
+      --devsite-button-disabled-color: #f0f006;
+      --devsite-button-primary-background-active: #f0f01b;
+      --devsite-button-primary-color-active: #f0f003;
+      --devsite-button-primary-border-hover: 2px solid transparent;
+      --devsite-input-background: #f0f00c;
+      --devsite-input-background-focus: rgba(240, 240, 27, 0.3);
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root :focus-visible {
+      outline-color: #f0f01b;
+    }
+    :root devsite-multiple-choice {
+      --devsite-multiple-choice-background: #f0f00c;
+      --devsite-multiple-choice-correct-background: rgba(240, 240, 21, 0.1);
+      --devsite-multiple-choice-correct-color: #f0f015;
+      --devsite-multiple-choice-incorrect-background: rgba(240, 240, 17, 0.1);
+      --devsite-multiple-choice-incorrect-color: #f0f011;
+    }
+    :root devsite-multiple-choice .devsite-multiple-choice-question {
+      color: #f0f004;
+    }
+    :root body:not([codelabs-content-type="paginated"]) {
+      --devsite-notice-link-background-hover: #f0f002;
+      --devsite-caution-notice-background: rgba(240, 240, 17, 0.1);
+      --devsite-caution-notice-color: #f0f011;
+      --devsite-key-point-notice-background: rgba(240, 240, 24, 0.1);
+      --devsite-key-point-notice-color: #f0f018;
+      --devsite-key-term-notice-background: rgba(240, 240, 16, 0.1);
+      --devsite-key-term-notice-color: #f0f010;
+      --devsite-note-notice-background: rgba(240, 240, 25, 0.1);
+      --devsite-note-notice-color: #f0f019;
+      --devsite-status-notice-color: #f0f016;
+      --devsite-success-notice-background: rgba(240, 240, 21, 0.1);
+      --devsite-success-notice-color: #f0f015;
+      --devsite-warning-notice-background: rgba(240, 240, 19, 0.1);
+      --devsite-warning-notice-color: #f0f013;
+    }
+    :root devsite-code,
+    :root devsite-code[dark-code],
+    :root devsite-content {
+      --devsite-code-background: #f0f002;
+      --devsite-code-color: #f0f004;
+      --devsite-code-buttons-color: #f0f007;
+      --devsite-code-buttons-hover: #f0f005;
+      --devsite-var-color: #f0f010;
+      --devsite-code-comments-color: #f0f007;
+      --devsite-code-keywords-color: #f0f010;
+      --devsite-code-numbers-color: #f0f013;
+      --devsite-code-strings-color: #f0f015;
+      --devsite-code-types-color: #f0f014;
+    }
+    :root devsite-header devsite-language-selector {
+      --devsite-select-color: #f0f004;
+    }
+    :root devsite-playlist .devsite-playlist--header h1:first-of-type,
+    :root devsite-playlist .devsite-playlist--header-badge-info,
+    :root devsite-playlist .devsite-playlist--header-details-info {
+      color: #f0f003;
+    }
+    :root devsite-playlist .devsite-playlist--sections .devsite-playlist--section[expanded] {
+      color: #f0f003;
+    }
+    :root devsite-playlist devsite-bookmark {
+      --devsite-bookmark-icon-color: #f0f003;
+      --devsite-bookmark-icon-arrow-color: #f0f003;
+      --devsite-dropdown-list-toggle-color-hover: #f0f003;
+    }
+    :root devsite-content {
+      --devsite-search-results-breadcrumb-color: #f0f006;
+    }
+    :root .devsite-site-logo {
+      content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%20215%2064%22%3E%3Cpath%20d%3D%22M1.075%2045.08c0-2.88%202.35-5.213%205.248-5.213h27.989c2.898%200%205.248%202.334%205.248%205.212s-2.35%205.213-5.248%205.213H6.322c-2.897%200-5.247-2.334-5.247-5.213%22%20fill%3D%22%23f0f017%22/%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M2.612%2013.594a5.273%205.273%200%200%201%207.422%200l13.994%2013.9a5.187%205.187%200%200%201%200%207.371l-13.994%2013.9a5.273%205.273%200%200%201-7.422%200%205.187%205.187%200%200%201%200-7.371l9.665-9.6a.865.865%200%200%200%200-1.229l-9.665-9.6a5.187%205.187%200%200%201%200-7.37%22%20fill%3D%22%23f0f019%22/%3E%3Cpath%20d%3D%22m18.993%2039.867-8.96%208.898a5.273%205.273%200%200%201-7.42%200%205.187%205.187%200%200%201%200-7.371l1.536-1.527z%22%20fill%3D%22%23f0f00f%22/%3E%3Cpath%20d%3D%22M34.312%2050.292c2.898%200%205.248-2.334%205.248-5.213s-2.35-5.212-5.248-5.212-5.248%202.334-5.248%205.212%202.35%205.213%205.248%205.213%22%20fill%3D%22%23f0f019%22/%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M200.552%2045.338h-3.784l-8.256-20.33h4.128l6.02%2015.717%206.02-15.717h4.128zm-28.896-12.471h11.696c-.172-2.734-2.408-4.954-5.848-4.954-2.924%200-5.16%201.879-5.848%204.954m6.192%2013.154c-6.02%200-10.32-4.613-10.32-10.763s4.3-10.762%2010.148-10.762c6.02%200%209.976%204.1%209.976%2011.104v.342h-15.996c.172%203.929%203.096%206.662%206.536%206.662%202.408%200%204.472-1.196%205.676-3.587l3.44%201.708c-1.892%203.246-5.332%205.296-9.46%205.296m-24.08%200c-5.332%200-9.804-4.783-9.804-10.763s4.472-10.762%209.804-10.762c2.924%200%205.676%201.367%207.052%203.417h.172l-.172-2.734v-9.396h3.784v29.555h-3.612v-2.734h-.172c-1.548%202.05-4.128%203.417-7.052%203.417m.516-3.417c3.784%200%206.536-2.904%206.536-7.346%200-4.27-2.752-7.345-6.536-7.345-3.612%200-6.536%203.075-6.536%207.345%200%204.271%202.924%207.346%206.536%207.346m-11.696.171c0%201.538-1.204%202.733-2.924%202.733-1.548%200-2.924-1.366-2.924-2.733%200-1.537%201.376-2.733%202.924-2.733%201.72%200%202.924%201.196%202.924%202.733m-18.06-.17c3.612%200%206.536-3.076%206.536-7.347s-2.924-7.345-6.536-7.345c-3.784%200-6.536%203.075-6.536%207.345%200%204.271%202.752%207.346%206.536%207.346m.688%203.416c-2.924%200-5.676-1.367-7.052-3.417h-.172v2.734h-3.612V15.783h3.784v9.396l-.172%202.734h.172c1.376-2.05%203.956-3.417%207.052-3.417%205.332%200%209.804%204.783%209.804%2010.762-.172%205.98-4.472%2010.763-9.804%2010.763M95.288%2032.867h11.696c-.172-2.734-2.408-4.954-5.848-4.954-2.924%200-5.16%201.879-5.848%204.954m6.192%2013.154c-6.02%200-10.32-4.613-10.32-10.763s4.3-10.762%2010.148-10.762c6.02%200%209.976%204.1%209.976%2011.104v.342H95.288c.172%203.929%203.096%206.662%206.536%206.662q3.612%200%205.676-3.587l3.44%201.708c-1.892%203.246-5.332%205.296-9.46%205.296M90.644%2025.179l-6.536%2020.33h-3.956l-5.16-15.546-4.988%2015.545h-3.956L59.34%2025.18h3.956l4.472%2015.375%204.988-15.375h3.956L81.7%2040.554l4.472-15.375z%22%20fill%3D%22%23f0f004%22/%3E%3C/svg%3E");
+    }
+    :root .wd-footer-promo {
+      background-image: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20125%2024%22%20aria-label%3D%22web.dev%22%20fill%3D%22%23f0f004%22%20height%3D%2224%22%20width%3D%22125%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M.625%2019.949a3.05%203.05%200%200%201%203.051-3.051H19.95a3.051%203.051%200%200%201%200%206.102H3.676a3.05%203.05%200%200%201-3.051-3.051%22%20fill%3D%22%23f0f017%22/%3E%3Cpath%20d%3D%22M1.519%201.519a3.05%203.05%200%200%201%204.315%200l8.136%208.136a3.05%203.05%200%200%201%200%204.315l-8.136%208.136a3.051%203.051%200%201%201-4.315-4.315l5.619-5.619a.51.51%200%200%200%200-.72l-5.62-5.618a3.05%203.05%200%200%201%200-4.315%22%20clip-rule%3D%22evenodd%22%20fill%3D%22%23f0f019%22%20fill-rule%3D%22evenodd%22/%3E%3Cpath%20d%3D%22m11.042%2016.898-5.208%205.208a3.051%203.051%200%201%201-4.315-4.315l.893-.893z%22%20fill%3D%22%23f0f00f%22/%3E%3Cpath%20d%3D%22M19.949%2023a3.051%203.051%200%201%200%200-6.102%203.051%203.051%200%200%200%200%206.102%22%20fill%3D%22%23f0f019%22/%3E%3Cpath%20d%3D%22M116.6%2020.1h-2.2l-4.8-11.9h2.4l3.5%209.2%203.5-9.2h2.4zm-16.8-7.3h6.8c-.1-1.6-1.4-2.9-3.4-2.9-1.7%200-3%201.1-3.4%202.9m3.6%207.7c-3.5%200-6-2.7-6-6.3s2.5-6.3%205.9-6.3c3.5%200%205.8%202.4%205.8%206.5v.2h-9.3c.1%202.3%201.8%203.9%203.8%203.9%201.4%200%202.6-.7%203.3-2.1l2%201c-1.1%201.9-3.1%203.1-5.5%203.1m-14%200c-3.1%200-5.7-2.8-5.7-6.3s2.6-6.3%205.7-6.3c1.7%200%203.3.8%204.1%202h.1l-.1-1.6V2.8h2.2v17.3h-2.1v-1.6h-.1c-.9%201.2-2.4%202-4.1%202m.3-2c2.2%200%203.8-1.7%203.8-4.3%200-2.5-1.6-4.3-3.8-4.3-2.1%200-3.8%201.8-3.8%204.3s1.7%204.3%203.8%204.3m-6.8.1c0%20.9-.7%201.6-1.7%201.6-.9%200-1.7-.8-1.7-1.6%200-.9.8-1.6%201.7-1.6%201%200%201.7.7%201.7%201.6m-10.5-.1c2.1%200%203.8-1.8%203.8-4.3s-1.7-4.3-3.8-4.3c-2.2%200-3.8%201.8-3.8%204.3s1.6%204.3%203.8%204.3m.4%202c-1.7%200-3.3-.8-4.1-2h-.1v1.6h-2.1V2.8h2.2v5.5l-.1%201.6h.1c.8-1.2%202.3-2%204.1-2%203.1%200%205.7%202.8%205.7%206.3-.1%203.5-2.6%206.3-5.7%206.3m-17.4-7.7h6.8c-.1-1.6-1.4-2.9-3.4-2.9-1.7%200-3%201.1-3.4%202.9m3.6%207.7c-3.5%200-6-2.7-6-6.3s2.5-6.3%205.9-6.3c3.5%200%205.8%202.4%205.8%206.5v.2h-9.3c.1%202.3%201.8%203.9%203.8%203.9q2.1%200%203.3-2.1l2%201c-1.1%201.9-3.1%203.1-5.5%203.1M52.7%208.3l-3.8%2011.9h-2.3l-3-9.1-2.9%209.1h-2.3L34.5%208.3h2.3l2.6%209%202.9-9h2.3l2.9%209%202.6-9z%22%20clip-rule%3D%22evenodd%22%20fill-rule%3D%22evenodd%22/%3E%3C/svg%3E");
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --webdev-background-gray: #f0f00c;
+      --webdev-background-gray-2: #f0f00b;
+      --webdev-background-oficial-gray: #f0f00c;
+      --webdev-background-white: #f0f001;
+      --webdev-google-colors-blue-50: #f0f001;
+      --webdev-google-colors-blue-600: #f0f01b;
+      --webdev-google-colors-blue-800: #f0f01b;
+      --webdev-primary: #f0f01b;
+      --webdev-text-text-1: #f0f004;
+      --webdev-text-text-2: #f0f005;
+      --webdev-text-text-3: #f0f006;
+      --webdev-illustration-colors-blue: #f0f019;
+      --webdev-illustration-colors-gray: #f0f00a;
+      --webdev-illustration-colors-green: #f0f015;
+      --webdev-illustration-colors-red: #f0f011;
+      --devsite-secondary-text-color: #f0f005;
+      --devsite-primary-border: 1px solid #f0f00c;
+      --devsite-secondary-border: 1px solid #f0f00a;
+      --devsite-contrast-link-color: #f0f01b;
+      --devsite-header-link-color-active: #f0f004;
+      --devsite-button-disabled-background: #f0f00c;
+      --devsite-button-disabled-color: #f0f006;
+      --devsite-button-primary-background-active: #f0f01b;
+      --devsite-button-primary-color-active: #f0f003;
+      --devsite-button-primary-border-hover: 2px solid transparent;
+      --devsite-input-background: #f0f00c;
+      --devsite-input-background-focus: rgba(240, 240, 27, 0.3);
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root :focus-visible {
+      outline-color: #f0f01b;
+    }
+    :root devsite-multiple-choice {
+      --devsite-multiple-choice-background: #f0f00c;
+      --devsite-multiple-choice-correct-background: rgba(240, 240, 21, 0.1);
+      --devsite-multiple-choice-correct-color: #f0f015;
+      --devsite-multiple-choice-incorrect-background: rgba(240, 240, 17, 0.1);
+      --devsite-multiple-choice-incorrect-color: #f0f011;
+    }
+    :root devsite-multiple-choice .devsite-multiple-choice-question {
+      color: #f0f004;
+    }
+    :root body:not([codelabs-content-type="paginated"]) {
+      --devsite-notice-link-background-hover: #f0f002;
+      --devsite-caution-notice-background: rgba(240, 240, 17, 0.1);
+      --devsite-caution-notice-color: #f0f011;
+      --devsite-key-point-notice-background: rgba(240, 240, 24, 0.1);
+      --devsite-key-point-notice-color: #f0f018;
+      --devsite-key-term-notice-background: rgba(240, 240, 16, 0.1);
+      --devsite-key-term-notice-color: #f0f010;
+      --devsite-note-notice-background: rgba(240, 240, 25, 0.1);
+      --devsite-note-notice-color: #f0f019;
+      --devsite-status-notice-color: #f0f016;
+      --devsite-success-notice-background: rgba(240, 240, 21, 0.1);
+      --devsite-success-notice-color: #f0f015;
+      --devsite-warning-notice-background: rgba(240, 240, 19, 0.1);
+      --devsite-warning-notice-color: #f0f013;
+    }
+    :root devsite-code,
+    :root devsite-code[dark-code],
+    :root devsite-content {
+      --devsite-code-background: #f0f002;
+      --devsite-code-color: #f0f004;
+      --devsite-code-buttons-color: #f0f007;
+      --devsite-code-buttons-hover: #f0f005;
+      --devsite-var-color: #f0f010;
+      --devsite-code-comments-color: #f0f007;
+      --devsite-code-keywords-color: #f0f010;
+      --devsite-code-numbers-color: #f0f013;
+      --devsite-code-strings-color: #f0f015;
+      --devsite-code-types-color: #f0f014;
+    }
+    :root devsite-header devsite-language-selector {
+      --devsite-select-color: #f0f004;
+    }
+    :root devsite-playlist .devsite-playlist--header h1:first-of-type,
+    :root devsite-playlist .devsite-playlist--header-badge-info,
+    :root devsite-playlist .devsite-playlist--header-details-info {
+      color: #f0f003;
+    }
+    :root devsite-playlist .devsite-playlist--sections .devsite-playlist--section[expanded] {
+      color: #f0f003;
+    }
+    :root devsite-playlist devsite-bookmark {
+      --devsite-bookmark-icon-color: #f0f003;
+      --devsite-bookmark-icon-arrow-color: #f0f003;
+      --devsite-dropdown-list-toggle-color-hover: #f0f003;
+    }
+    :root devsite-content {
+      --devsite-search-results-breadcrumb-color: #f0f006;
+    }
+    :root .devsite-site-logo {
+      content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%20215%2064%22%3E%3Cpath%20d%3D%22M1.075%2045.08c0-2.88%202.35-5.213%205.248-5.213h27.989c2.898%200%205.248%202.334%205.248%205.212s-2.35%205.213-5.248%205.213H6.322c-2.897%200-5.247-2.334-5.247-5.213%22%20fill%3D%22%23f0f017%22/%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M2.612%2013.594a5.273%205.273%200%200%201%207.422%200l13.994%2013.9a5.187%205.187%200%200%201%200%207.371l-13.994%2013.9a5.273%205.273%200%200%201-7.422%200%205.187%205.187%200%200%201%200-7.371l9.665-9.6a.865.865%200%200%200%200-1.229l-9.665-9.6a5.187%205.187%200%200%201%200-7.37%22%20fill%3D%22%23f0f019%22/%3E%3Cpath%20d%3D%22m18.993%2039.867-8.96%208.898a5.273%205.273%200%200%201-7.42%200%205.187%205.187%200%200%201%200-7.371l1.536-1.527z%22%20fill%3D%22%23f0f00f%22/%3E%3Cpath%20d%3D%22M34.312%2050.292c2.898%200%205.248-2.334%205.248-5.213s-2.35-5.212-5.248-5.212-5.248%202.334-5.248%205.212%202.35%205.213%205.248%205.213%22%20fill%3D%22%23f0f019%22/%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M200.552%2045.338h-3.784l-8.256-20.33h4.128l6.02%2015.717%206.02-15.717h4.128zm-28.896-12.471h11.696c-.172-2.734-2.408-4.954-5.848-4.954-2.924%200-5.16%201.879-5.848%204.954m6.192%2013.154c-6.02%200-10.32-4.613-10.32-10.763s4.3-10.762%2010.148-10.762c6.02%200%209.976%204.1%209.976%2011.104v.342h-15.996c.172%203.929%203.096%206.662%206.536%206.662%202.408%200%204.472-1.196%205.676-3.587l3.44%201.708c-1.892%203.246-5.332%205.296-9.46%205.296m-24.08%200c-5.332%200-9.804-4.783-9.804-10.763s4.472-10.762%209.804-10.762c2.924%200%205.676%201.367%207.052%203.417h.172l-.172-2.734v-9.396h3.784v29.555h-3.612v-2.734h-.172c-1.548%202.05-4.128%203.417-7.052%203.417m.516-3.417c3.784%200%206.536-2.904%206.536-7.346%200-4.27-2.752-7.345-6.536-7.345-3.612%200-6.536%203.075-6.536%207.345%200%204.271%202.924%207.346%206.536%207.346m-11.696.171c0%201.538-1.204%202.733-2.924%202.733-1.548%200-2.924-1.366-2.924-2.733%200-1.537%201.376-2.733%202.924-2.733%201.72%200%202.924%201.196%202.924%202.733m-18.06-.17c3.612%200%206.536-3.076%206.536-7.347s-2.924-7.345-6.536-7.345c-3.784%200-6.536%203.075-6.536%207.345%200%204.271%202.752%207.346%206.536%207.346m.688%203.416c-2.924%200-5.676-1.367-7.052-3.417h-.172v2.734h-3.612V15.783h3.784v9.396l-.172%202.734h.172c1.376-2.05%203.956-3.417%207.052-3.417%205.332%200%209.804%204.783%209.804%2010.762-.172%205.98-4.472%2010.763-9.804%2010.763M95.288%2032.867h11.696c-.172-2.734-2.408-4.954-5.848-4.954-2.924%200-5.16%201.879-5.848%204.954m6.192%2013.154c-6.02%200-10.32-4.613-10.32-10.763s4.3-10.762%2010.148-10.762c6.02%200%209.976%204.1%209.976%2011.104v.342H95.288c.172%203.929%203.096%206.662%206.536%206.662q3.612%200%205.676-3.587l3.44%201.708c-1.892%203.246-5.332%205.296-9.46%205.296M90.644%2025.179l-6.536%2020.33h-3.956l-5.16-15.546-4.988%2015.545h-3.956L59.34%2025.18h3.956l4.472%2015.375%204.988-15.375h3.956L81.7%2040.554l4.472-15.375z%22%20fill%3D%22%23f0f004%22/%3E%3C/svg%3E");
+    }
+    :root .wd-footer-promo {
+      background-image: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20125%2024%22%20aria-label%3D%22web.dev%22%20fill%3D%22%23f0f004%22%20height%3D%2224%22%20width%3D%22125%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M.625%2019.949a3.05%203.05%200%200%201%203.051-3.051H19.95a3.051%203.051%200%200%201%200%206.102H3.676a3.05%203.05%200%200%201-3.051-3.051%22%20fill%3D%22%23f0f017%22/%3E%3Cpath%20d%3D%22M1.519%201.519a3.05%203.05%200%200%201%204.315%200l8.136%208.136a3.05%203.05%200%200%201%200%204.315l-8.136%208.136a3.051%203.051%200%201%201-4.315-4.315l5.619-5.619a.51.51%200%200%200%200-.72l-5.62-5.618a3.05%203.05%200%200%201%200-4.315%22%20clip-rule%3D%22evenodd%22%20fill%3D%22%23f0f019%22%20fill-rule%3D%22evenodd%22/%3E%3Cpath%20d%3D%22m11.042%2016.898-5.208%205.208a3.051%203.051%200%201%201-4.315-4.315l.893-.893z%22%20fill%3D%22%23f0f00f%22/%3E%3Cpath%20d%3D%22M19.949%2023a3.051%203.051%200%201%200%200-6.102%203.051%203.051%200%200%200%200%206.102%22%20fill%3D%22%23f0f019%22/%3E%3Cpath%20d%3D%22M116.6%2020.1h-2.2l-4.8-11.9h2.4l3.5%209.2%203.5-9.2h2.4zm-16.8-7.3h6.8c-.1-1.6-1.4-2.9-3.4-2.9-1.7%200-3%201.1-3.4%202.9m3.6%207.7c-3.5%200-6-2.7-6-6.3s2.5-6.3%205.9-6.3c3.5%200%205.8%202.4%205.8%206.5v.2h-9.3c.1%202.3%201.8%203.9%203.8%203.9%201.4%200%202.6-.7%203.3-2.1l2%201c-1.1%201.9-3.1%203.1-5.5%203.1m-14%200c-3.1%200-5.7-2.8-5.7-6.3s2.6-6.3%205.7-6.3c1.7%200%203.3.8%204.1%202h.1l-.1-1.6V2.8h2.2v17.3h-2.1v-1.6h-.1c-.9%201.2-2.4%202-4.1%202m.3-2c2.2%200%203.8-1.7%203.8-4.3%200-2.5-1.6-4.3-3.8-4.3-2.1%200-3.8%201.8-3.8%204.3s1.7%204.3%203.8%204.3m-6.8.1c0%20.9-.7%201.6-1.7%201.6-.9%200-1.7-.8-1.7-1.6%200-.9.8-1.6%201.7-1.6%201%200%201.7.7%201.7%201.6m-10.5-.1c2.1%200%203.8-1.8%203.8-4.3s-1.7-4.3-3.8-4.3c-2.2%200-3.8%201.8-3.8%204.3s1.6%204.3%203.8%204.3m.4%202c-1.7%200-3.3-.8-4.1-2h-.1v1.6h-2.1V2.8h2.2v5.5l-.1%201.6h.1c.8-1.2%202.3-2%204.1-2%203.1%200%205.7%202.8%205.7%206.3-.1%203.5-2.6%206.3-5.7%206.3m-17.4-7.7h6.8c-.1-1.6-1.4-2.9-3.4-2.9-1.7%200-3%201.1-3.4%202.9m3.6%207.7c-3.5%200-6-2.7-6-6.3s2.5-6.3%205.9-6.3c3.5%200%205.8%202.4%205.8%206.5v.2h-9.3c.1%202.3%201.8%203.9%203.8%203.9q2.1%200%203.3-2.1l2%201c-1.1%201.9-3.1%203.1-5.5%203.1M52.7%208.3l-3.8%2011.9h-2.3l-3-9.1-2.9%209.1h-2.3L34.5%208.3h2.3l2.6%209%202.9-9h2.3l2.9%209%202.6-9z%22%20clip-rule%3D%22evenodd%22%20fill-rule%3D%22evenodd%22/%3E%3C/svg%3E");
+    }
+  }
+}

@@ -1,0 +1,367 @@
+/* ==UserStyle==
+@name           pwnbox-claude
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Claude (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("claude.ai") {
+  :root[data-color-version="v2"][data-mode="dark"] {
+    color-scheme: dark;
+    --accent-brand: 60 87.65432098765432% 52.352941176470594%;
+    --accent-000: 60 87.65432098765432% 52.352941176470594%;
+    --accent-100: 60 87.65432098765432% 52.352941176470594%;
+    --accent-200: 60 87.65432098765432% 57.352941176470594%;
+    --accent-900: 60.00000000000003 87.65432098765432% 42.352941176470594%;
+    --accent-main-000: 60 87.65432098765432% 52.352941176470594%;
+    --accent-main-100: 60 87.65432098765432% 52.352941176470594%;
+    --accent-main-200: 60 87.65432098765432% 52.352941176470594%;
+    --accent-main-900: 60 87.65432098765432% 52.352941176470594%;
+    --accent-pro-000: 60 87.65432098765432% 52.352941176470594%;
+    --accent-pro-100: 60 87.65432098765432% 52.352941176470594%;
+    --accent-pro-200: 60 87.65432098765432% 52.352941176470594%;
+    --accent-pro-900: 60 87.65432098765432% 52.352941176470594%;
+    --accent-secondary-000: 60 87.65432098765432% 52.352941176470594%;
+    --accent-secondary-100: 60 87.65432098765432% 52.352941176470594%;
+    --accent-secondary-200: 60 87.65432098765432% 52.352941176470594%;
+    --accent-secondary-900: 60 87.65432098765432% 52.352941176470594%;
+    --bg-000: 60 90.47619047619047% 49.411764705882355%;
+    --bg-100: 60 99.1701244813278% 47.25490196078431%;
+    --bg-200: 60 98.34710743801654% 47.45098039215686%;
+    --bg-300: 60 90.47619047619047% 49.411764705882355%;
+    --bg-400: 60 91.23505976095618% 49.2156862745098%;
+    --bg-500: 60 92% 49.01960784313725%;
+    --brand-000: 60 87.65432098765432% 52.352941176470594%;
+    --brand-100: 60 87.65432098765432% 57.352941176470594%;
+    --brand-200: 60 87.65432098765432% 57.352941176470594%;
+    --brand-900: 60 97.53086419753087% 47.647058823529406%;
+    --border-000: 60 99.1701244813278% 47.25490196078431%;
+    --border-100: 60 97.53086419753087% 47.647058823529406%;
+    --border-200: 60 97.53086419753087% 47.647058823529406%;
+    --border-300: 60 92.7710843373494% 48.8235294117647%;
+    --border-400: 60 93.54838709677419% 48.627450980392155%;
+    --border-500: 60 94.33198380566802% 48.431372549019606%;
+    --danger-000: 60 88.09523809523809% 50.588235294117645%;
+    --danger-100: 60 88.14229249011858% 50.3921568627451%;
+    --danger-200: 60 88.14229249011858% 50.3921568627451%;
+    --danger-900: 60 88.23529411764706% 50%;
+    --oncolor-000: 60 98.34710743801654% 42.450980392156865%;
+    --oncolor-100: 60 98.34710743801654% 47.45098039215686%;
+    --oncolor-200: 60 98.34710743801654% 47.45098039215686%;
+    --oncolor-300: 60.000000000000014 98.34710743801651% 52.450980392156865%;
+    --success-000: 60 87.95180722891565% 51.17647058823529%;
+    --success-100: 60.00000000000003 87.95180722891568% 56.1764705882353%;
+    --success-200: 60.00000000000003 87.95180722891568% 56.1764705882353%;
+    --success-900: 60.000000000000014 87.95180722891565% 66.17647058823529%;
+    --text-000: 60.000000000000014 96.72131147540985% 42.84313725490196%;
+    --text-100: 60 96.72131147540985% 47.843137254901954%;
+    --text-200: 60 96.72131147540985% 47.843137254901954%;
+    --text-300: 60 95.1219512195122% 48.23529411764706%;
+    --text-400: 60 95.91836734693877% 48.03921568627451%;
+    --text-500: 60 95.1219512195122% 48.23529411764706%;
+    --warning-000: 60 88% 50.98039215686274%;
+    --warning-100: 60.00000000000003 88.00000000000001% 55.98039215686275%;
+    --warning-200: 60.00000000000003 88.00000000000001% 55.98039215686275%;
+    --warning-900: 60.00000000000003 88% 65.98039215686275%;
+    /* Side bar */
+    /* Code blocks */
+    /* Inline code */
+    /* Tooltip */
+    /* Logo */
+    /* "New chat" plus icon */
+    /* "Subscribe to Pro" and "Create Team Account" buttons */
+    /* Pay monthly/annually buttons */
+    /* Delete conversation button */
+    /* Checkbox */
+    /* "Add writing example" button */
+    /* "Describe your style" list */
+    /* "Be as descriptive as possible..." helper text */
+    /* "Preview with an example..." pills */
+    /* "Previewing with ..." dropdown button */
+    /* White background (e.g., toggle switch thumb) */
+  }
+  :root[data-color-version="v2"][data-mode="dark"] ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root[data-color-version="v2"][data-mode="dark"] input::placeholder,
+  :root[data-color-version="v2"][data-mode="dark"] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root[data-color-version="v2"][data-mode="dark"] nav.\!bg-bg-200 {
+    background: #f0f002 !important;
+  }
+  :root[data-color-version="v2"][data-mode="dark"] .code-block__code {
+    background: #f0f003 !important;
+  }
+  :root[data-color-version="v2"][data-mode="dark"] .code-block__code code {
+    /* Default color */
+    /* Green */
+    /* Yellow */
+    /* Blue */
+    /* Red */
+    /* Magenta */
+    /* Gray */
+  }
+  :root[data-color-version="v2"][data-mode="dark"] .code-block__code code span {
+    color: #f0f004 !important;
+  }
+  :root[data-color-version="v2"][data-mode="dark"] .code-block__code code span.token[style="color: rgb(152, 195, 121);"] {
+    color: #f0f015 !important;
+  }
+  :root[data-color-version="v2"][data-mode="dark"] .code-block__code code span.token[style="color: rgb(209, 154, 102);"] {
+    color: #f0f014 !important;
+  }
+  :root[data-color-version="v2"][data-mode="dark"] .code-block__code code span.token[style="color: rgb(97, 175, 239);"] {
+    color: #f0f019 !important;
+  }
+  :root[data-color-version="v2"][data-mode="dark"] .code-block__code code span.token[style="color: rgb(224, 108, 117);"] {
+    color: #f0f011 !important;
+  }
+  :root[data-color-version="v2"][data-mode="dark"] .code-block__code code span.token[style="color: rgb(198, 120, 221);"] {
+    color: #f0f010 !important;
+  }
+  :root[data-color-version="v2"][data-mode="dark"] .code-block__code code span.token[style="color: rgb(171, 178, 191);"] {
+    color: #f0f007 !important;
+  }
+  :root[data-color-version="v2"][data-mode="dark"] code.text-danger-000 {
+    color: #f0f01b !important;
+  }
+  :root[data-color-version="v2"][data-mode="dark"] div.bg-black\/80 {
+    background: #f0f003 !important;
+  }
+  :root[data-color-version="v2"][data-mode="dark"] div.text-white {
+    color: #f0f004 !important;
+  }
+  :root[data-color-version="v2"][data-mode="dark"] div.text-\[\#D97757\] {
+    color: #f0f01b !important;
+  }
+  :root[data-color-version="v2"][data-mode="dark"] div.text-always-white svg {
+    color: #f0f001 !important;
+  }
+  :root[data-color-version="v2"][data-mode="dark"] button.bg-accent-pro-100 > span.inline-block {
+    color: #f0f001 !important;
+  }
+  :root[data-color-version="v2"][data-mode="dark"] button.bg-accent-secondary-900 span.text-text-000 {
+    color: #f0f001 !important;
+  }
+  :root[data-color-version="v2"][data-mode="dark"] button.bg-accent-secondary-900 span.text-text-300 {
+    color: #f0f00a !important;
+  }
+  :root[data-color-version="v2"][data-mode="dark"] button.bg-accent-secondary-900 div.bg-accent-secondary-000 {
+    background: #b3b30c !important;
+  }
+  :root[data-color-version="v2"][data-mode="dark"] div.\!text-danger-000.\[\&\[data-highlighted\]\]\:bg-danger-900[data-highlighted] {
+    background: rgba(240, 240, 17, 0.2) !important;
+  }
+  :root[data-color-version="v2"][data-mode="dark"] input[type="checkbox"] + div.bg-bg-000 {
+    background: #f0f004 !important;
+  }
+  :root[data-color-version="v2"][data-mode="dark"] button.\!text-accent-secondary-100.bg-accent-secondary-900 {
+    color: #f0f001 !important;
+  }
+  :root[data-color-version="v2"][data-mode="dark"] button.\!text-accent-secondary-100.bg-accent-secondary-900:hover {
+    color: #f0f004 !important;
+  }
+  :root[data-color-version="v2"][data-mode="dark"] button.\!bg-accent-secondary-900.text-accent-secondary-000 {
+    color: #f0f001 !important;
+  }
+  :root[data-color-version="v2"][data-mode="dark"] div.bg-accent-secondary-900.text-text-200 {
+    color: #f0f001 !important;
+  }
+  :root[data-color-version="v2"][data-mode="dark"] button.hover\:bg-accent-secondary-900.hover\:text-accent-secondary-000 {
+    color: #f0f01b !important;
+  }
+  :root[data-color-version="v2"][data-mode="dark"] button.hover\:bg-accent-secondary-900.hover\:text-accent-secondary-000:hover {
+    color: #f0f001 !important;
+  }
+  :root[data-color-version="v2"][data-mode="dark"] button.\!text-accent-secondary-100.hover\:\!bg-accent-secondary-900 {
+    color: #f0f01b !important;
+  }
+  :root[data-color-version="v2"][data-mode="dark"] button.\!text-accent-secondary-100.hover\:\!bg-accent-secondary-900:hover {
+    color: #f0f001 !important;
+  }
+  :root[data-color-version="v2"][data-mode="dark"] .bg-white {
+    background-color: #f0f004;
+  }
+  :root[data-color-version="v2"][data-mode="light"] {
+    color-scheme: light;
+    --accent-brand: 60 87.65432098765432% 52.352941176470594%;
+    --accent-000: 60 87.65432098765432% 52.352941176470594%;
+    --accent-100: 60 87.65432098765432% 52.352941176470594%;
+    --accent-200: 60 87.65432098765432% 57.352941176470594%;
+    --accent-900: 60.00000000000003 87.65432098765432% 42.352941176470594%;
+    --accent-main-000: 60 87.65432098765432% 52.352941176470594%;
+    --accent-main-100: 60 87.65432098765432% 52.352941176470594%;
+    --accent-main-200: 60 87.65432098765432% 52.352941176470594%;
+    --accent-main-900: 60 87.65432098765432% 52.352941176470594%;
+    --accent-pro-000: 60 87.65432098765432% 52.352941176470594%;
+    --accent-pro-100: 60 87.65432098765432% 52.352941176470594%;
+    --accent-pro-200: 60 87.65432098765432% 52.352941176470594%;
+    --accent-pro-900: 60 87.65432098765432% 52.352941176470594%;
+    --accent-secondary-000: 60 87.65432098765432% 52.352941176470594%;
+    --accent-secondary-100: 60 87.65432098765432% 52.352941176470594%;
+    --accent-secondary-200: 60 87.65432098765432% 52.352941176470594%;
+    --accent-secondary-900: 60 87.65432098765432% 52.352941176470594%;
+    --bg-000: 60 90.47619047619047% 49.411764705882355%;
+    --bg-100: 60 99.1701244813278% 47.25490196078431%;
+    --bg-200: 60 98.34710743801654% 47.45098039215686%;
+    --bg-300: 60 90.47619047619047% 49.411764705882355%;
+    --bg-400: 60 91.23505976095618% 49.2156862745098%;
+    --bg-500: 60 92% 49.01960784313725%;
+    --brand-000: 60 87.65432098765432% 52.352941176470594%;
+    --brand-100: 60 87.65432098765432% 57.352941176470594%;
+    --brand-200: 60 87.65432098765432% 57.352941176470594%;
+    --brand-900: 60 97.53086419753087% 47.647058823529406%;
+    --border-000: 60 99.1701244813278% 47.25490196078431%;
+    --border-100: 60 97.53086419753087% 47.647058823529406%;
+    --border-200: 60 97.53086419753087% 47.647058823529406%;
+    --border-300: 60 92.7710843373494% 48.8235294117647%;
+    --border-400: 60 93.54838709677419% 48.627450980392155%;
+    --border-500: 60 94.33198380566802% 48.431372549019606%;
+    --danger-000: 60 88.09523809523809% 50.588235294117645%;
+    --danger-100: 60 88.14229249011858% 50.3921568627451%;
+    --danger-200: 60 88.14229249011858% 50.3921568627451%;
+    --danger-900: 60 88.23529411764706% 50%;
+    --oncolor-000: 60 98.34710743801654% 42.450980392156865%;
+    --oncolor-100: 60 98.34710743801654% 47.45098039215686%;
+    --oncolor-200: 60 98.34710743801654% 47.45098039215686%;
+    --oncolor-300: 60.000000000000014 98.34710743801651% 52.450980392156865%;
+    --success-000: 60 87.95180722891565% 51.17647058823529%;
+    --success-100: 60.00000000000003 87.95180722891568% 56.1764705882353%;
+    --success-200: 60.00000000000003 87.95180722891568% 56.1764705882353%;
+    --success-900: 60.000000000000014 87.95180722891565% 66.17647058823529%;
+    --text-000: 60.000000000000014 96.72131147540985% 42.84313725490196%;
+    --text-100: 60 96.72131147540985% 47.843137254901954%;
+    --text-200: 60 96.72131147540985% 47.843137254901954%;
+    --text-300: 60 95.1219512195122% 48.23529411764706%;
+    --text-400: 60 95.91836734693877% 48.03921568627451%;
+    --text-500: 60 95.1219512195122% 48.23529411764706%;
+    --warning-000: 60 88% 50.98039215686274%;
+    --warning-100: 60.00000000000003 88.00000000000001% 55.98039215686275%;
+    --warning-200: 60.00000000000003 88.00000000000001% 55.98039215686275%;
+    --warning-900: 60.00000000000003 88% 65.98039215686275%;
+    /* Side bar */
+    /* Code blocks */
+    /* Inline code */
+    /* Tooltip */
+    /* Logo */
+    /* "New chat" plus icon */
+    /* "Subscribe to Pro" and "Create Team Account" buttons */
+    /* Pay monthly/annually buttons */
+    /* Delete conversation button */
+    /* Checkbox */
+    /* "Add writing example" button */
+    /* "Describe your style" list */
+    /* "Be as descriptive as possible..." helper text */
+    /* "Preview with an example..." pills */
+    /* "Previewing with ..." dropdown button */
+    /* White background (e.g., toggle switch thumb) */
+  }
+  :root[data-color-version="v2"][data-mode="light"] ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root[data-color-version="v2"][data-mode="light"] input::placeholder,
+  :root[data-color-version="v2"][data-mode="light"] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root[data-color-version="v2"][data-mode="light"] nav.\!bg-bg-200 {
+    background: #f0f002 !important;
+  }
+  :root[data-color-version="v2"][data-mode="light"] .code-block__code {
+    background: #f0f003 !important;
+  }
+  :root[data-color-version="v2"][data-mode="light"] .code-block__code code {
+    /* Default color */
+    /* Green */
+    /* Yellow */
+    /* Blue */
+    /* Red */
+    /* Magenta */
+    /* Gray */
+  }
+  :root[data-color-version="v2"][data-mode="light"] .code-block__code code span {
+    color: #f0f004 !important;
+  }
+  :root[data-color-version="v2"][data-mode="light"] .code-block__code code span.token[style="color: rgb(152, 195, 121);"] {
+    color: #f0f015 !important;
+  }
+  :root[data-color-version="v2"][data-mode="light"] .code-block__code code span.token[style="color: rgb(209, 154, 102);"] {
+    color: #f0f014 !important;
+  }
+  :root[data-color-version="v2"][data-mode="light"] .code-block__code code span.token[style="color: rgb(97, 175, 239);"] {
+    color: #f0f019 !important;
+  }
+  :root[data-color-version="v2"][data-mode="light"] .code-block__code code span.token[style="color: rgb(224, 108, 117);"] {
+    color: #f0f011 !important;
+  }
+  :root[data-color-version="v2"][data-mode="light"] .code-block__code code span.token[style="color: rgb(198, 120, 221);"] {
+    color: #f0f010 !important;
+  }
+  :root[data-color-version="v2"][data-mode="light"] .code-block__code code span.token[style="color: rgb(171, 178, 191);"] {
+    color: #f0f007 !important;
+  }
+  :root[data-color-version="v2"][data-mode="light"] code.text-danger-000 {
+    color: #f0f01b !important;
+  }
+  :root[data-color-version="v2"][data-mode="light"] div.bg-black\/80 {
+    background: #f0f003 !important;
+  }
+  :root[data-color-version="v2"][data-mode="light"] div.text-white {
+    color: #f0f004 !important;
+  }
+  :root[data-color-version="v2"][data-mode="light"] div.text-\[\#D97757\] {
+    color: #f0f01b !important;
+  }
+  :root[data-color-version="v2"][data-mode="light"] div.text-always-white svg {
+    color: #f0f001 !important;
+  }
+  :root[data-color-version="v2"][data-mode="light"] button.bg-accent-pro-100 > span.inline-block {
+    color: #f0f001 !important;
+  }
+  :root[data-color-version="v2"][data-mode="light"] button.bg-accent-secondary-900 span.text-text-000 {
+    color: #f0f001 !important;
+  }
+  :root[data-color-version="v2"][data-mode="light"] button.bg-accent-secondary-900 span.text-text-300 {
+    color: #f0f00a !important;
+  }
+  :root[data-color-version="v2"][data-mode="light"] button.bg-accent-secondary-900 div.bg-accent-secondary-000 {
+    background: #b3b30c !important;
+  }
+  :root[data-color-version="v2"][data-mode="light"] div.\!text-danger-000.\[\&\[data-highlighted\]\]\:bg-danger-900[data-highlighted] {
+    background: rgba(240, 240, 17, 0.2) !important;
+  }
+  :root[data-color-version="v2"][data-mode="light"] input[type="checkbox"] + div.bg-bg-000 {
+    background: #f0f004 !important;
+  }
+  :root[data-color-version="v2"][data-mode="light"] button.\!text-accent-secondary-100.bg-accent-secondary-900 {
+    color: #f0f001 !important;
+  }
+  :root[data-color-version="v2"][data-mode="light"] button.\!text-accent-secondary-100.bg-accent-secondary-900:hover {
+    color: #f0f004 !important;
+  }
+  :root[data-color-version="v2"][data-mode="light"] button.\!bg-accent-secondary-900.text-accent-secondary-000 {
+    color: #f0f001 !important;
+  }
+  :root[data-color-version="v2"][data-mode="light"] div.bg-accent-secondary-900.text-text-200 {
+    color: #f0f001 !important;
+  }
+  :root[data-color-version="v2"][data-mode="light"] button.hover\:bg-accent-secondary-900.hover\:text-accent-secondary-000 {
+    color: #f0f01b !important;
+  }
+  :root[data-color-version="v2"][data-mode="light"] button.hover\:bg-accent-secondary-900.hover\:text-accent-secondary-000:hover {
+    color: #f0f001 !important;
+  }
+  :root[data-color-version="v2"][data-mode="light"] button.\!text-accent-secondary-100.hover\:\!bg-accent-secondary-900 {
+    color: #f0f01b !important;
+  }
+  :root[data-color-version="v2"][data-mode="light"] button.\!text-accent-secondary-100.hover\:\!bg-accent-secondary-900:hover {
+    color: #f0f001 !important;
+  }
+  :root[data-color-version="v2"][data-mode="light"] .bg-white {
+    background-color: #f0f004;
+  }
+}

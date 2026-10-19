@@ -1,0 +1,983 @@
+/* ==UserStyle==
+@name           pwnbox-react.dev
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for React.dev (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("react.dev") {
+  html.dark {
+    color-scheme: dark;
+    --docsearch-modal-background: #f0f001 !important;
+    --docsearch-hit-background: #f0f002 !important;
+    --docsearch-highlight-color: #f0f01b !important;
+    --docsearch-primary-color: #f0f01b !important;
+    --docsearch-container-background: rgba(127, 132, 156, 0.8) !important;
+    --docsearch-text-color: #f0f004 !important;
+    --docsearch-logo-color: #f0f019 !important;
+    --docsearch-muted-color: #f0f006 !important;
+    --docsearch-searchbox-background: #f0f01b !important;
+    --docsearch-searchbox-focus-background: #f0f01b !important;
+    --docsearch-hit-color: #f0f003 !important;
+    --docsearch-hit-active-color: #f0f001 !important;
+    --docsearch-footer-background: #f0f009 !important;
+    --docsearch-key-gradient: linear-gradient(-225deg, #f0f001, #f0f003) !important;
+  }
+  html.dark ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  html.dark input::placeholder,
+  html.dark textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  html.dark svg {
+    color: #f0f01b !important;
+  }
+  html.dark .text-primary {
+    color: #f0f004;
+  }
+  html.dark .dark\:text-primary-dark {
+    color: #f0f004;
+  }
+  html.dark .dark\:text-white {
+    color: #f0f004;
+  }
+  html.dark .text-secondary {
+    color: #f0f004;
+  }
+  html.dark .text-gray-30 {
+    color: #f0f005;
+  }
+  html.dark .text-red-50,
+  html.dark .text-red-30 {
+    color: #f0f011 !important;
+  }
+  html.dark .text-gray-50 {
+    color: #f0f006;
+  }
+  html.dark .text-red-50,
+  html.dark .text-red-40 {
+    color: #f0f011 !important;
+  }
+  html.dark .text-red-50 svg,
+  html.dark .text-red-40 svg {
+    color: #f0f011 !important;
+  }
+  html.dark .text-purple-50,
+  html.dark .text-purple-30,
+  html.dark .text-purple-60 {
+    color: #f0f010 !important;
+  }
+  html.dark .text-purple-50 svg,
+  html.dark .text-purple-30 svg,
+  html.dark .text-purple-60 svg {
+    color: #f0f010 !important;
+  }
+  html.dark .text-blue-50,
+  html.dark .text-blue-40,
+  html.dark .text-blue-60 {
+    color: #f0f019 !important;
+  }
+  html.dark .text-blue-50 svg,
+  html.dark .text-blue-40 svg,
+  html.dark .text-blue-60 svg {
+    color: #f0f019 !important;
+  }
+  html.dark .text-yellow-40,
+  html.dark .text-yellow-50,
+  html.dark .text-yellow-60 {
+    color: #f0f014 !important;
+  }
+  html.dark .text-yellow-40 svg,
+  html.dark .text-yellow-50 svg,
+  html.dark .text-yellow-60 svg {
+    color: #f0f014 !important;
+  }
+  html.dark .text-green-60,
+  html.dark .text-green-40 {
+    color: #f0f015 !important;
+  }
+  html.dark .text-tertiary,
+  html.dark .text-tertiary-dark {
+    color: #f0f006;
+  }
+  html.dark .text-link,
+  html.dark .text-link-dark {
+    color: #f0f01b;
+  }
+  html.dark .hover\:text-link:hover,
+  html.dark .text-link:hover,
+  html.dark .text-link-dark:hover {
+    color: #f0f01b;
+  }
+  html.dark .hover\:bg-gray-80:hover,
+  html.dark .hover\:bg-gray-5:hover {
+    background-color: #f0f002;
+  }
+  html.dark .hover\:bg-card:hover {
+    background-color: #f0f003;
+  }
+  html.dark a > code {
+    color: #f0f01b !important;
+  }
+  html.dark .console-block code {
+    background-color: #f0f00b !important;
+    color: #f0f011 !important;
+  }
+  html.dark .sp-wrapper {
+    --sp-colors-accent: #f0f01b;
+    --sp-colors-clickable: #f0f00e;
+    --sp-colors-disabled: #f0f004;
+    --sp-colors-error: #f0f011;
+    --sp-colors-error-surface: #f0f012;
+    --sp-colors-surface1: #f0f00c;
+    --sp-colors-surface2: #f0f00b;
+    --sp-syntax-color-plain: #f0f004;
+    --sp-syntax-color-comment: #f0f007;
+    --sp-syntax-color-keyword: #f0f010;
+    --sp-syntax-color-tag: #f0f019;
+    --sp-syntax-color-punctuation: #f0f007;
+    --sp-syntax-color-definition: #f0f014;
+    --sp-syntax-color-property: #f0f019;
+    --sp-syntax-color-static: #f0f013;
+    --sp-syntax-color-string: #f0f015;
+  }
+  html.dark .border-blue-40 {
+    border-color: #f0f019;
+  }
+  html.dark .border-b-4 {
+    border-color: #f0f004;
+  }
+  html.dark .border-yellow-40 {
+    border-color: #f0f014;
+  }
+  html.dark .border-purple-40 {
+    border-color: #f0f01a;
+  }
+  html.dark .border-purple-10 {
+    border-color: #f0f010;
+  }
+  html.dark .dark\:border-purple-30,
+  html.dark .border-purple-30 {
+    border-color: #f0f010;
+  }
+  html.dark .border-green-40 {
+    border-color: #f0f015;
+  }
+  html.dark .hover\:border-gray-10:hover {
+    border-color: #f0f01b;
+  }
+  html.dark .border-gray-300,
+  html.dark .bg-gray-90 {
+    border-color: #f0f007;
+  }
+  html.dark .border-gray-20 {
+    border-color: #f0f008;
+  }
+  html.dark .border-link:hover {
+    border-color: #f0f01b;
+  }
+  html.dark .dark\:border-link-dark {
+    border-color: #f0f01b;
+  }
+  html.dark .bg-card-dark,
+  html.dark .bg-card {
+    background-color: #f0f00c;
+  }
+  html.dark .bg-highlight {
+    background-color: #f0f00c;
+  }
+  html.dark .bg-highlight-dark {
+    background-color: #f0f00c;
+  }
+  html.dark .bg-github-highlight {
+    background-color: #f0f00c;
+  }
+  html.dark .bg-link {
+    color: #f0f00c;
+    background-color: #f0f01b;
+  }
+  html.dark .bg-gradient-left,
+  html.dark .bg-gradient-left-dark {
+    background-image: conic-gradient(from 90deg at -10% 100%, #f0f002 0deg, #f0f001 90deg, #f0f003 1turn);
+  }
+  html.dark .bg-gray-3,
+  html.dark .bg-gray-5 {
+    background-color: #f0f003;
+  }
+  html.dark .bg-gray-40\/5,
+  html.dark .bg-gray-60\/5 {
+    background-color: #f0f008;
+  }
+  html.dark .bg-gray-40\/10,
+  html.dark .bg-gray-60\/10 {
+    background-color: #f0f009;
+  }
+  html.dark .bg-gray-30,
+  html.dark .bg-gray-300,
+  html.dark .bg-gray-70,
+  html.dark .bg-gray-700 {
+    background-color: #f0f00c;
+  }
+  html.dark .bg-gray-80,
+  html.dark .bg-gray-200,
+  html.dark .bg-gray-95 {
+    background-color: #f0f002;
+  }
+  html.dark .bg-black {
+    background-color: #f0f001;
+  }
+  html.dark .bg-green-5,
+  html.dark .bg-green-60,
+  html.dark .bg-green-40 {
+    background-color: rgba(240, 240, 21, 0.4);
+    color: #f0f004;
+  }
+  html.dark .bg-green-5 p,
+  html.dark .bg-green-60 p,
+  html.dark .bg-green-40 p {
+    color: #f0f004;
+  }
+  html.dark .bg-green-5 button,
+  html.dark .bg-green-60 button,
+  html.dark .bg-green-40 button {
+    color: #f0f001 !important;
+    background-color: #f0f015 !important;
+  }
+  html.dark .bg-green-5 button svg,
+  html.dark .bg-green-60 button svg,
+  html.dark .bg-green-40 button svg {
+    color: #f0f001 !important;
+  }
+  html.dark .bg-green-5 .text-primary,
+  html.dark .bg-green-60 .text-primary,
+  html.dark .bg-green-40 .text-primary {
+    color: #f0f004;
+  }
+  html.dark .bg-green-5 .text-link,
+  html.dark .bg-green-60 .text-link,
+  html.dark .bg-green-40 .text-link {
+    color: #f0f01b;
+  }
+  html.dark .bg-green-5 .bg-highlight,
+  html.dark .bg-green-60 .bg-highlight,
+  html.dark .bg-green-40 .bg-highlight {
+    color: #f0f01b;
+  }
+  html.dark .bg-green-5 .bg-link,
+  html.dark .bg-green-60 .bg-link,
+  html.dark .bg-green-40 .bg-link {
+    background-color: #f0f01b;
+    color: #f0f004;
+  }
+  html.dark .bg-red-5,
+  html.dark .bg-red-60 {
+    background-color: rgba(240, 240, 17, 0.4);
+    color: #f0f004;
+  }
+  html.dark .bg-red-5 p,
+  html.dark .bg-red-60 p {
+    color: #f0f004;
+  }
+  html.dark .bg-red-5 button,
+  html.dark .bg-red-60 button {
+    color: #f0f001 !important;
+    background-color: #f0f011 !important;
+  }
+  html.dark .bg-red-5 button svg,
+  html.dark .bg-red-60 button svg {
+    color: #f0f001 !important;
+  }
+  html.dark .bg-red-5 .text-primary,
+  html.dark .bg-red-60 .text-primary {
+    color: #f0f004;
+  }
+  html.dark .bg-red-5 .text-link,
+  html.dark .bg-red-60 .text-link {
+    color: #f0f01b;
+  }
+  html.dark .bg-red-5 .bg-highlight,
+  html.dark .bg-red-60 .bg-highlight {
+    color: #f0f01b;
+  }
+  html.dark .bg-red-5 .bg-link,
+  html.dark .bg-red-60 .bg-link {
+    background-color: #f0f01b;
+    color: #f0f004;
+  }
+  html.dark .bg-yellow-5,
+  html.dark .bg-yellow-60,
+  html.dark .bg-yellow-40 {
+    background-color: rgba(240, 240, 19, 0.4);
+    color: #f0f004;
+  }
+  html.dark .bg-yellow-5 p,
+  html.dark .bg-yellow-60 p,
+  html.dark .bg-yellow-40 p {
+    color: #f0f004;
+  }
+  html.dark .bg-yellow-5 button,
+  html.dark .bg-yellow-60 button,
+  html.dark .bg-yellow-40 button {
+    color: #f0f001 !important;
+    background-color: #f0f013 !important;
+  }
+  html.dark .bg-yellow-5 button svg,
+  html.dark .bg-yellow-60 button svg,
+  html.dark .bg-yellow-40 button svg {
+    color: #f0f001 !important;
+  }
+  html.dark .bg-yellow-5 .text-primary,
+  html.dark .bg-yellow-60 .text-primary,
+  html.dark .bg-yellow-40 .text-primary {
+    color: #f0f004;
+  }
+  html.dark .bg-yellow-5 .text-link,
+  html.dark .bg-yellow-60 .text-link,
+  html.dark .bg-yellow-40 .text-link {
+    color: #f0f01b;
+  }
+  html.dark .bg-yellow-5 .bg-highlight,
+  html.dark .bg-yellow-60 .bg-highlight,
+  html.dark .bg-yellow-40 .bg-highlight {
+    color: #f0f01b;
+  }
+  html.dark .bg-yellow-5 .bg-link,
+  html.dark .bg-yellow-60 .bg-link,
+  html.dark .bg-yellow-40 .bg-link {
+    background-color: #f0f01b;
+    color: #f0f004;
+  }
+  html.dark .bg-purple-5,
+  html.dark .bg-purple-60,
+  html.dark .bg-purple-40 {
+    background-color: rgba(240, 240, 16, 0.4);
+    color: #f0f004;
+  }
+  html.dark .bg-purple-5 p,
+  html.dark .bg-purple-60 p,
+  html.dark .bg-purple-40 p {
+    color: #f0f004;
+  }
+  html.dark .bg-purple-5 button,
+  html.dark .bg-purple-60 button,
+  html.dark .bg-purple-40 button {
+    color: #f0f001 !important;
+    background-color: #f0f010 !important;
+  }
+  html.dark .bg-purple-5 button svg,
+  html.dark .bg-purple-60 button svg,
+  html.dark .bg-purple-40 button svg {
+    color: #f0f001 !important;
+  }
+  html.dark .bg-purple-5 .text-primary,
+  html.dark .bg-purple-60 .text-primary,
+  html.dark .bg-purple-40 .text-primary {
+    color: #f0f004;
+  }
+  html.dark .bg-purple-5 .text-link,
+  html.dark .bg-purple-60 .text-link,
+  html.dark .bg-purple-40 .text-link {
+    color: #f0f01b;
+  }
+  html.dark .bg-purple-5 .bg-highlight,
+  html.dark .bg-purple-60 .bg-highlight,
+  html.dark .bg-purple-40 .bg-highlight {
+    color: #f0f01b;
+  }
+  html.dark .bg-purple-5 .bg-link,
+  html.dark .bg-purple-60 .bg-link,
+  html.dark .bg-purple-40 .bg-link {
+    background-color: #f0f01b;
+    color: #f0f004;
+  }
+  html.dark .bg-blue-10,
+  html.dark .bg-blue-60,
+  html.dark .bg-blue-40 {
+    background-color: rgba(240, 240, 25, 0.4);
+    color: #f0f004;
+  }
+  html.dark .bg-blue-10 p,
+  html.dark .bg-blue-60 p,
+  html.dark .bg-blue-40 p {
+    color: #f0f004;
+  }
+  html.dark .bg-blue-10 button,
+  html.dark .bg-blue-60 button,
+  html.dark .bg-blue-40 button {
+    color: #f0f001 !important;
+    background-color: #f0f019 !important;
+  }
+  html.dark .bg-blue-10 button svg,
+  html.dark .bg-blue-60 button svg,
+  html.dark .bg-blue-40 button svg {
+    color: #f0f001 !important;
+  }
+  html.dark .bg-blue-10 .text-primary,
+  html.dark .bg-blue-60 .text-primary,
+  html.dark .bg-blue-40 .text-primary {
+    color: #f0f004;
+  }
+  html.dark .bg-blue-10 .text-link,
+  html.dark .bg-blue-60 .text-link,
+  html.dark .bg-blue-40 .text-link {
+    color: #f0f01b;
+  }
+  html.dark .bg-blue-10 .bg-highlight,
+  html.dark .bg-blue-60 .bg-highlight,
+  html.dark .bg-blue-40 .bg-highlight {
+    color: #f0f01b;
+  }
+  html.dark .bg-blue-10 .bg-link,
+  html.dark .bg-blue-60 .bg-link,
+  html.dark .bg-blue-40 .bg-link {
+    background-color: #f0f01b;
+    color: #f0f004;
+  }
+  html.dark .bg-red-30 {
+    background-color: rgba(240, 240, 17, 0.1);
+  }
+  html.dark .bg-gradient-right,
+  html.dark .bg-gradient-right-dark {
+    background-image: conic-gradient(from -90deg at 110% 100%, #f0f003 0deg, #f0f001 90deg, #f0f002 1turn);
+  }
+  html.dark .bg-white,
+  html.dark .bg-wash {
+    background-color: #f0f001 !important;
+  }
+  html.dark .bg-secondary-button {
+    background-color: #f0f00b;
+  }
+  html.dark .outline-link {
+    outline-color: #f0f01b;
+  }
+  html.dark .focus\:outline-link:focus {
+    outline-color: #f0f01b;
+  }
+  html.dark .DocSearch-Form {
+    background-color: #f0f002;
+  }
+  html.dark .DocSearch-Form input {
+    color: #f0f004;
+  }
+  html.dark .DocSearch-Form :focus-visible {
+    outline-color: 2px solid #f0f01b !important;
+  }
+  html.dark .DocSearch-Hit .DocSearch-Hit-title {
+    color: #f0f004;
+  }
+  html.dark .DocSearch-Hit svg {
+    color: currentcolor !important;
+  }
+  html.dark .DocSearch-Hit .DocSearch-Hit-Tree {
+    color: #f0f001 !important;
+  }
+  html.dark .DocSearch-Hit[aria-selected="false"] mark {
+    color: #f0f01b !important;
+  }
+  html.dark .DocSearch-Hit[aria-selected="false"] .DocSearch-Hit-Tree {
+    color: #f0f006 !important;
+  }
+  html.dark .DocSearch-Hit-source {
+    color: #f0f004;
+  }
+  html.dark .DocSearch-Cancel {
+    color: #f0f01b;
+  }
+  html.dark .DocSearch-Footer {
+    background-color: #f0f001;
+  }
+  html.dark .DocSearch-Footer [aria-label="Algolia"] .cls-1,
+  html.dark .DocSearch-Footer [aria-label="Algolia"] .cls-2 {
+    fill: #f0f01b !important;
+  }
+  html {
+    color-scheme: light;
+    --docsearch-modal-background: #f0f001 !important;
+    --docsearch-hit-background: #f0f002 !important;
+    --docsearch-highlight-color: #f0f01b !important;
+    --docsearch-primary-color: #f0f01b !important;
+    --docsearch-container-background: rgba(127, 132, 156, 0.8) !important;
+    --docsearch-text-color: #f0f004 !important;
+    --docsearch-logo-color: #f0f019 !important;
+    --docsearch-muted-color: #f0f006 !important;
+    --docsearch-searchbox-background: #f0f01b !important;
+    --docsearch-searchbox-focus-background: #f0f01b !important;
+    --docsearch-hit-color: #f0f003 !important;
+    --docsearch-hit-active-color: #f0f001 !important;
+    --docsearch-footer-background: #f0f009 !important;
+    --docsearch-key-gradient: linear-gradient(-225deg, #f0f001, #f0f003) !important;
+  }
+  html ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  html input::placeholder,
+  html textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  html svg {
+    color: #f0f01b !important;
+  }
+  html .text-primary {
+    color: #f0f004;
+  }
+  html .dark\:text-primary-dark {
+    color: #f0f004;
+  }
+  html .dark\:text-white {
+    color: #f0f004;
+  }
+  html .text-secondary {
+    color: #f0f004;
+  }
+  html .text-gray-30 {
+    color: #f0f005;
+  }
+  html .text-red-50,
+  html .text-red-30 {
+    color: #f0f011 !important;
+  }
+  html .text-gray-50 {
+    color: #f0f006;
+  }
+  html .text-red-50,
+  html .text-red-40 {
+    color: #f0f011 !important;
+  }
+  html .text-red-50 svg,
+  html .text-red-40 svg {
+    color: #f0f011 !important;
+  }
+  html .text-purple-50,
+  html .text-purple-30,
+  html .text-purple-60 {
+    color: #f0f010 !important;
+  }
+  html .text-purple-50 svg,
+  html .text-purple-30 svg,
+  html .text-purple-60 svg {
+    color: #f0f010 !important;
+  }
+  html .text-blue-50,
+  html .text-blue-40,
+  html .text-blue-60 {
+    color: #f0f019 !important;
+  }
+  html .text-blue-50 svg,
+  html .text-blue-40 svg,
+  html .text-blue-60 svg {
+    color: #f0f019 !important;
+  }
+  html .text-yellow-40,
+  html .text-yellow-50,
+  html .text-yellow-60 {
+    color: #f0f014 !important;
+  }
+  html .text-yellow-40 svg,
+  html .text-yellow-50 svg,
+  html .text-yellow-60 svg {
+    color: #f0f014 !important;
+  }
+  html .text-green-60,
+  html .text-green-40 {
+    color: #f0f015 !important;
+  }
+  html .text-tertiary,
+  html .text-tertiary-dark {
+    color: #f0f006;
+  }
+  html .text-link,
+  html .text-link-dark {
+    color: #f0f01b;
+  }
+  html .hover\:text-link:hover,
+  html .text-link:hover,
+  html .text-link-dark:hover {
+    color: #f0f01b;
+  }
+  html .hover\:bg-gray-80:hover,
+  html .hover\:bg-gray-5:hover {
+    background-color: #f0f002;
+  }
+  html .hover\:bg-card:hover {
+    background-color: #f0f003;
+  }
+  html a > code {
+    color: #f0f01b !important;
+  }
+  html .console-block code {
+    background-color: #f0f00b !important;
+    color: #f0f011 !important;
+  }
+  html .sp-wrapper {
+    --sp-colors-accent: #f0f01b;
+    --sp-colors-clickable: #f0f00e;
+    --sp-colors-disabled: #f0f004;
+    --sp-colors-error: #f0f011;
+    --sp-colors-error-surface: #f0f012;
+    --sp-colors-surface1: #f0f00c;
+    --sp-colors-surface2: #f0f00b;
+    --sp-syntax-color-plain: #f0f004;
+    --sp-syntax-color-comment: #f0f007;
+    --sp-syntax-color-keyword: #f0f010;
+    --sp-syntax-color-tag: #f0f019;
+    --sp-syntax-color-punctuation: #f0f007;
+    --sp-syntax-color-definition: #f0f014;
+    --sp-syntax-color-property: #f0f019;
+    --sp-syntax-color-static: #f0f013;
+    --sp-syntax-color-string: #f0f015;
+  }
+  html .border-blue-40 {
+    border-color: #f0f019;
+  }
+  html .border-b-4 {
+    border-color: #f0f004;
+  }
+  html .border-yellow-40 {
+    border-color: #f0f014;
+  }
+  html .border-purple-40 {
+    border-color: #f0f01a;
+  }
+  html .border-purple-10 {
+    border-color: #f0f010;
+  }
+  html .dark\:border-purple-30,
+  html .border-purple-30 {
+    border-color: #f0f010;
+  }
+  html .border-green-40 {
+    border-color: #f0f015;
+  }
+  html .hover\:border-gray-10:hover {
+    border-color: #f0f01b;
+  }
+  html .border-gray-300,
+  html .bg-gray-90 {
+    border-color: #f0f007;
+  }
+  html .border-gray-20 {
+    border-color: #f0f008;
+  }
+  html .border-link:hover {
+    border-color: #f0f01b;
+  }
+  html .dark\:border-link-dark {
+    border-color: #f0f01b;
+  }
+  html .bg-card-dark,
+  html .bg-card {
+    background-color: #f0f00c;
+  }
+  html .bg-highlight {
+    background-color: #f0f00c;
+  }
+  html .bg-highlight-dark {
+    background-color: #f0f00c;
+  }
+  html .bg-github-highlight {
+    background-color: #f0f00c;
+  }
+  html .bg-link {
+    color: #f0f00c;
+    background-color: #f0f01b;
+  }
+  html .bg-gradient-left,
+  html .bg-gradient-left-dark {
+    background-image: conic-gradient(from 90deg at -10% 100%, #f0f002 0deg, #f0f001 90deg, #f0f003 1turn);
+  }
+  html .bg-gray-3,
+  html .bg-gray-5 {
+    background-color: #f0f003;
+  }
+  html .bg-gray-40\/5,
+  html .bg-gray-60\/5 {
+    background-color: #f0f008;
+  }
+  html .bg-gray-40\/10,
+  html .bg-gray-60\/10 {
+    background-color: #f0f009;
+  }
+  html .bg-gray-30,
+  html .bg-gray-300,
+  html .bg-gray-70,
+  html .bg-gray-700 {
+    background-color: #f0f00c;
+  }
+  html .bg-gray-80,
+  html .bg-gray-200,
+  html .bg-gray-95 {
+    background-color: #f0f002;
+  }
+  html .bg-black {
+    background-color: #f0f001;
+  }
+  html .bg-green-5,
+  html .bg-green-60,
+  html .bg-green-40 {
+    background-color: rgba(240, 240, 21, 0.4);
+    color: #f0f004;
+  }
+  html .bg-green-5 p,
+  html .bg-green-60 p,
+  html .bg-green-40 p {
+    color: #f0f004;
+  }
+  html .bg-green-5 button,
+  html .bg-green-60 button,
+  html .bg-green-40 button {
+    color: #f0f001 !important;
+    background-color: #f0f015 !important;
+  }
+  html .bg-green-5 button svg,
+  html .bg-green-60 button svg,
+  html .bg-green-40 button svg {
+    color: #f0f001 !important;
+  }
+  html .bg-green-5 .text-primary,
+  html .bg-green-60 .text-primary,
+  html .bg-green-40 .text-primary {
+    color: #f0f004;
+  }
+  html .bg-green-5 .text-link,
+  html .bg-green-60 .text-link,
+  html .bg-green-40 .text-link {
+    color: #f0f01b;
+  }
+  html .bg-green-5 .bg-highlight,
+  html .bg-green-60 .bg-highlight,
+  html .bg-green-40 .bg-highlight {
+    color: #f0f01b;
+  }
+  html .bg-green-5 .bg-link,
+  html .bg-green-60 .bg-link,
+  html .bg-green-40 .bg-link {
+    background-color: #f0f01b;
+    color: #f0f004;
+  }
+  html .bg-red-5,
+  html .bg-red-60 {
+    background-color: rgba(240, 240, 17, 0.4);
+    color: #f0f004;
+  }
+  html .bg-red-5 p,
+  html .bg-red-60 p {
+    color: #f0f004;
+  }
+  html .bg-red-5 button,
+  html .bg-red-60 button {
+    color: #f0f001 !important;
+    background-color: #f0f011 !important;
+  }
+  html .bg-red-5 button svg,
+  html .bg-red-60 button svg {
+    color: #f0f001 !important;
+  }
+  html .bg-red-5 .text-primary,
+  html .bg-red-60 .text-primary {
+    color: #f0f004;
+  }
+  html .bg-red-5 .text-link,
+  html .bg-red-60 .text-link {
+    color: #f0f01b;
+  }
+  html .bg-red-5 .bg-highlight,
+  html .bg-red-60 .bg-highlight {
+    color: #f0f01b;
+  }
+  html .bg-red-5 .bg-link,
+  html .bg-red-60 .bg-link {
+    background-color: #f0f01b;
+    color: #f0f004;
+  }
+  html .bg-yellow-5,
+  html .bg-yellow-60,
+  html .bg-yellow-40 {
+    background-color: rgba(240, 240, 19, 0.4);
+    color: #f0f004;
+  }
+  html .bg-yellow-5 p,
+  html .bg-yellow-60 p,
+  html .bg-yellow-40 p {
+    color: #f0f004;
+  }
+  html .bg-yellow-5 button,
+  html .bg-yellow-60 button,
+  html .bg-yellow-40 button {
+    color: #f0f001 !important;
+    background-color: #f0f013 !important;
+  }
+  html .bg-yellow-5 button svg,
+  html .bg-yellow-60 button svg,
+  html .bg-yellow-40 button svg {
+    color: #f0f001 !important;
+  }
+  html .bg-yellow-5 .text-primary,
+  html .bg-yellow-60 .text-primary,
+  html .bg-yellow-40 .text-primary {
+    color: #f0f004;
+  }
+  html .bg-yellow-5 .text-link,
+  html .bg-yellow-60 .text-link,
+  html .bg-yellow-40 .text-link {
+    color: #f0f01b;
+  }
+  html .bg-yellow-5 .bg-highlight,
+  html .bg-yellow-60 .bg-highlight,
+  html .bg-yellow-40 .bg-highlight {
+    color: #f0f01b;
+  }
+  html .bg-yellow-5 .bg-link,
+  html .bg-yellow-60 .bg-link,
+  html .bg-yellow-40 .bg-link {
+    background-color: #f0f01b;
+    color: #f0f004;
+  }
+  html .bg-purple-5,
+  html .bg-purple-60,
+  html .bg-purple-40 {
+    background-color: rgba(240, 240, 16, 0.4);
+    color: #f0f004;
+  }
+  html .bg-purple-5 p,
+  html .bg-purple-60 p,
+  html .bg-purple-40 p {
+    color: #f0f004;
+  }
+  html .bg-purple-5 button,
+  html .bg-purple-60 button,
+  html .bg-purple-40 button {
+    color: #f0f001 !important;
+    background-color: #f0f010 !important;
+  }
+  html .bg-purple-5 button svg,
+  html .bg-purple-60 button svg,
+  html .bg-purple-40 button svg {
+    color: #f0f001 !important;
+  }
+  html .bg-purple-5 .text-primary,
+  html .bg-purple-60 .text-primary,
+  html .bg-purple-40 .text-primary {
+    color: #f0f004;
+  }
+  html .bg-purple-5 .text-link,
+  html .bg-purple-60 .text-link,
+  html .bg-purple-40 .text-link {
+    color: #f0f01b;
+  }
+  html .bg-purple-5 .bg-highlight,
+  html .bg-purple-60 .bg-highlight,
+  html .bg-purple-40 .bg-highlight {
+    color: #f0f01b;
+  }
+  html .bg-purple-5 .bg-link,
+  html .bg-purple-60 .bg-link,
+  html .bg-purple-40 .bg-link {
+    background-color: #f0f01b;
+    color: #f0f004;
+  }
+  html .bg-blue-10,
+  html .bg-blue-60,
+  html .bg-blue-40 {
+    background-color: rgba(240, 240, 25, 0.4);
+    color: #f0f004;
+  }
+  html .bg-blue-10 p,
+  html .bg-blue-60 p,
+  html .bg-blue-40 p {
+    color: #f0f004;
+  }
+  html .bg-blue-10 button,
+  html .bg-blue-60 button,
+  html .bg-blue-40 button {
+    color: #f0f001 !important;
+    background-color: #f0f019 !important;
+  }
+  html .bg-blue-10 button svg,
+  html .bg-blue-60 button svg,
+  html .bg-blue-40 button svg {
+    color: #f0f001 !important;
+  }
+  html .bg-blue-10 .text-primary,
+  html .bg-blue-60 .text-primary,
+  html .bg-blue-40 .text-primary {
+    color: #f0f004;
+  }
+  html .bg-blue-10 .text-link,
+  html .bg-blue-60 .text-link,
+  html .bg-blue-40 .text-link {
+    color: #f0f01b;
+  }
+  html .bg-blue-10 .bg-highlight,
+  html .bg-blue-60 .bg-highlight,
+  html .bg-blue-40 .bg-highlight {
+    color: #f0f01b;
+  }
+  html .bg-blue-10 .bg-link,
+  html .bg-blue-60 .bg-link,
+  html .bg-blue-40 .bg-link {
+    background-color: #f0f01b;
+    color: #f0f004;
+  }
+  html .bg-red-30 {
+    background-color: rgba(240, 240, 17, 0.1);
+  }
+  html .bg-gradient-right,
+  html .bg-gradient-right-dark {
+    background-image: conic-gradient(from -90deg at 110% 100%, #f0f003 0deg, #f0f001 90deg, #f0f002 1turn);
+  }
+  html .bg-white,
+  html .bg-wash {
+    background-color: #f0f001 !important;
+  }
+  html .bg-secondary-button {
+    background-color: #f0f00b;
+  }
+  html .outline-link {
+    outline-color: #f0f01b;
+  }
+  html .focus\:outline-link:focus {
+    outline-color: #f0f01b;
+  }
+  html .DocSearch-Form {
+    background-color: #f0f002;
+  }
+  html .DocSearch-Form input {
+    color: #f0f004;
+  }
+  html .DocSearch-Form :focus-visible {
+    outline-color: 2px solid #f0f01b !important;
+  }
+  html .DocSearch-Hit .DocSearch-Hit-title {
+    color: #f0f004;
+  }
+  html .DocSearch-Hit svg {
+    color: currentcolor !important;
+  }
+  html .DocSearch-Hit .DocSearch-Hit-Tree {
+    color: #f0f001 !important;
+  }
+  html .DocSearch-Hit[aria-selected="false"] mark {
+    color: #f0f01b !important;
+  }
+  html .DocSearch-Hit[aria-selected="false"] .DocSearch-Hit-Tree {
+    color: #f0f006 !important;
+  }
+  html .DocSearch-Hit-source {
+    color: #f0f004;
+  }
+  html .DocSearch-Cancel {
+    color: #f0f01b;
+  }
+  html .DocSearch-Footer {
+    background-color: #f0f001;
+  }
+  html .DocSearch-Footer [aria-label="Algolia"] .cls-1,
+  html .DocSearch-Footer [aria-label="Algolia"] .cls-2 {
+    fill: #f0f01b !important;
+  }
+}

@@ -1,0 +1,1889 @@
+/* ==UserStyle==
+@name           pwnbox-seventv
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for 7TV (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("7tv.app") {
+  .light-theme {
+    color-scheme: light;
+    background-color: #f0f001;
+    --secondary: #f0f00c;
+    --secondary-text: #f0f004;
+    --secondary-hover: #f0f00c;
+    --secondary-active: #f0f00c;
+    --secondary-disabled: #f0f003;
+    --secondary-border: transparent;
+    --primary: #f0f01b;
+    --primary-text: #f0f003;
+    --primary-hover: #e3e30f;
+    --primary-active: #e3e30f;
+    --primary-disabled: #f0f006;
+    --primary-border: transparent;
+    --bg-dark: #f0f003;
+    --bg-medium: #f0f002;
+    --bg-light: #f0f001;
+    --text: #f0f004;
+    --text-light: #f0f006;
+    --layout-border: transparent;
+    --border-active: #f0f001;
+    --store: #f0f010;
+    --preview: #f0f002;
+    --danger: #f0f013;
+    --approve: #f0f015;
+    --rename: #f0f018;
+    --staff: #f0f011;
+    --staff-bg: rgba(240, 240, 17, 0.2);
+    --admin-merge: #f0f010;
+    --admin-unlist: #f0f013;
+    /* Sub progress bar */
+    /* Subscribe gradients */
+    /* Home page glow */
+    /* Sub badge progress bar */
+  }
+  .light-theme ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  .light-theme input::placeholder,
+  .light-theme textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  .light-theme .flag {
+    /* Emote is in selected emote set */
+    /* Emote is unlisted */
+    /* Emote is trending */
+    /* Emote is overlaying */
+    /* Personal emote set */
+  }
+  .light-theme .flag[style*="#57ab5a"] {
+    color: #f0f015 !important;
+    background-color: rgba(240, 240, 21, 0.2) !important;
+  }
+  .light-theme .flag[style*="#529bf5"] {
+    color: #f0f01b !important;
+    background-color: rgba(240, 240, 27, 0.2) !important;
+  }
+  .light-theme .flag[style*="#eb3d26"] {
+    color: #f0f011 !important;
+  }
+  .light-theme .flag[style*="#eb3d26"][style*="background-color"] {
+    background-color: rgba(240, 240, 17, 0.2) !important;
+  }
+  .light-theme .flag[style*="#e0823d"] {
+    color: #f0f013 !important;
+  }
+  .light-theme .flag[style*="#e0823d"][style*="background-color"] {
+    background-color: rgba(240, 240, 19, 0.2) !important;
+  }
+  .light-theme .flag[style*="#fc8dc7"] {
+    color: #f0f00f !important;
+  }
+  .light-theme .flag[style*="#fc8dc7"][style*="background-color"] {
+    background-color: rgba(240, 240, 15, 0.2) !important;
+  }
+  .light-theme .flag[style*="#b083f0"] {
+    color: #f0f010 !important;
+  }
+  .light-theme .badge {
+    color: #f0f001;
+  }
+  .light-theme .emote,
+  .light-theme .emote-set {
+    /* Emote is in selected emote set */
+    /* Emote is unlisted */
+    /* Emote is trending */
+    /* Emote is overlaying */
+    /* Emote set is a personal emote set */
+    /* Emote set is a special emote set */
+  }
+  .light-theme .emote[style*="--highlight-active: #529bf5"],
+  .light-theme .emote-set[style*="--highlight-active: #529bf5"] {
+    --highlight: rgba(240, 240, 27, 0.8) !important;
+    --highlight-active: #f0f01b !important;
+  }
+  .light-theme .emote[style*="--highlight-active: #529bf5"].emote-set .name,
+  .light-theme .emote-set[style*="--highlight-active: #529bf5"].emote-set .name {
+    color: #f0f01b !important;
+  }
+  .light-theme .emote[style*="--highlight-active: #eb3d26"],
+  .light-theme .emote-set[style*="--highlight-active: #eb3d26"] {
+    --highlight: rgba(240, 240, 17, 0.8) !important;
+    --highlight-active: #f0f011 !important;
+  }
+  .light-theme .emote[style*="--highlight-active: #e0823d"],
+  .light-theme .emote-set[style*="--highlight-active: #e0823d"] {
+    --highlight: rgba(240, 240, 19, 0.8) !important;
+    --highlight-active: #f0f013 !important;
+  }
+  .light-theme .emote[style*="--highlight-active: #fc8dc7"],
+  .light-theme .emote-set[style*="--highlight-active: #fc8dc7"] {
+    --highlight: rgba(240, 240, 15, 0.8) !important;
+    --highlight-active: #f0f00f !important;
+  }
+  .light-theme .emote.emote-set[style*="--highlight-active: #b083f0"],
+  .light-theme .emote-set.emote-set[style*="--highlight-active: #b083f0"] {
+    --highlight: rgba(240, 240, 16, 0.8) !important;
+    --highlight-active: #f0f010 !important;
+  }
+  .light-theme .emote.emote-set[style*="--highlight-active: #b083f0"].emote-set .name,
+  .light-theme .emote-set.emote-set[style*="--highlight-active: #b083f0"].emote-set .name {
+    color: #f0f010 !important;
+  }
+  .light-theme .emote.emote-set[style*="--highlight-active: #fcc200"],
+  .light-theme .emote-set.emote-set[style*="--highlight-active: #fcc200"] {
+    --highlight: rgba(240, 240, 20, 0.8) !important;
+    --highlight-active: #f0f014 !important;
+  }
+  .light-theme .emote.emote-set[style*="--highlight-active: #fcc200"].emote-set .name,
+  .light-theme .emote-set.emote-set[style*="--highlight-active: #fcc200"].emote-set .name,
+  .light-theme .emote.emote-set[style*="--highlight-active: #fcc200"].emote-set .flag,
+  .light-theme .emote-set.emote-set[style*="--highlight-active: #fcc200"].emote-set .flag {
+    color: #f0f014 !important;
+  }
+  .light-theme img.image,
+  .light-theme .profile-picture,
+  .light-theme .profile-name .name,
+  .light-theme .user,
+  .light-theme .user-link,
+  .light-theme .username .name,
+  .light-theme .role > span,
+  .light-theme .side-bar .name,
+  .light-theme .roles > span {
+    /* Admin */
+    /* Moderator */
+    /* Event coordinator */
+    /* Verified */
+    /* Subscriber */
+  }
+  .light-theme img.image[style*="255, 70, 70"],
+  .light-theme .profile-picture[style*="255, 70, 70"],
+  .light-theme .profile-name .name[style*="255, 70, 70"],
+  .light-theme .user[style*="255, 70, 70"],
+  .light-theme .user-link[style*="255, 70, 70"],
+  .light-theme .username .name[style*="255, 70, 70"],
+  .light-theme .role > span[style*="255, 70, 70"],
+  .light-theme .side-bar .name[style*="255, 70, 70"],
+  .light-theme .roles > span[style*="255, 70, 70"],
+  .light-theme img.image[style*="255, 70, 70"] span,
+  .light-theme .profile-picture[style*="255, 70, 70"] span,
+  .light-theme .profile-name .name[style*="255, 70, 70"] span,
+  .light-theme .user[style*="255, 70, 70"] span,
+  .light-theme .user-link[style*="255, 70, 70"] span,
+  .light-theme .username .name[style*="255, 70, 70"] span,
+  .light-theme .role > span[style*="255, 70, 70"] span,
+  .light-theme .side-bar .name[style*="255, 70, 70"] span,
+  .light-theme .roles > span[style*="255, 70, 70"] span,
+  .light-theme img.image[style*="255, 70, 70"] img,
+  .light-theme .profile-picture[style*="255, 70, 70"] img,
+  .light-theme .profile-name .name[style*="255, 70, 70"] img,
+  .light-theme .user[style*="255, 70, 70"] img,
+  .light-theme .user-link[style*="255, 70, 70"] img,
+  .light-theme .username .name[style*="255, 70, 70"] img,
+  .light-theme .role > span[style*="255, 70, 70"] img,
+  .light-theme .side-bar .name[style*="255, 70, 70"] img,
+  .light-theme .roles > span[style*="255, 70, 70"] img {
+    color: #f0f011 !important;
+    border-color: #f0f011 !important;
+  }
+  .light-theme img.image[style*="50, 168, 82"],
+  .light-theme .profile-picture[style*="50, 168, 82"],
+  .light-theme .profile-name .name[style*="50, 168, 82"],
+  .light-theme .user[style*="50, 168, 82"],
+  .light-theme .user-link[style*="50, 168, 82"],
+  .light-theme .username .name[style*="50, 168, 82"],
+  .light-theme .role > span[style*="50, 168, 82"],
+  .light-theme .side-bar .name[style*="50, 168, 82"],
+  .light-theme .roles > span[style*="50, 168, 82"],
+  .light-theme img.image[style*="50, 168, 82"] span,
+  .light-theme .profile-picture[style*="50, 168, 82"] span,
+  .light-theme .profile-name .name[style*="50, 168, 82"] span,
+  .light-theme .user[style*="50, 168, 82"] span,
+  .light-theme .user-link[style*="50, 168, 82"] span,
+  .light-theme .username .name[style*="50, 168, 82"] span,
+  .light-theme .role > span[style*="50, 168, 82"] span,
+  .light-theme .side-bar .name[style*="50, 168, 82"] span,
+  .light-theme .roles > span[style*="50, 168, 82"] span,
+  .light-theme img.image[style*="50, 168, 82"] img,
+  .light-theme .profile-picture[style*="50, 168, 82"] img,
+  .light-theme .profile-name .name[style*="50, 168, 82"] img,
+  .light-theme .user[style*="50, 168, 82"] img,
+  .light-theme .user-link[style*="50, 168, 82"] img,
+  .light-theme .username .name[style*="50, 168, 82"] img,
+  .light-theme .role > span[style*="50, 168, 82"] img,
+  .light-theme .side-bar .name[style*="50, 168, 82"] img,
+  .light-theme .roles > span[style*="50, 168, 82"] img {
+    color: #f0f015 !important;
+    border-color: #f0f015 !important;
+  }
+  .light-theme img.image[style*="23, 235, 182"],
+  .light-theme .profile-picture[style*="23, 235, 182"],
+  .light-theme .profile-name .name[style*="23, 235, 182"],
+  .light-theme .user[style*="23, 235, 182"],
+  .light-theme .user-link[style*="23, 235, 182"],
+  .light-theme .username .name[style*="23, 235, 182"],
+  .light-theme .role > span[style*="23, 235, 182"],
+  .light-theme .side-bar .name[style*="23, 235, 182"],
+  .light-theme .roles > span[style*="23, 235, 182"],
+  .light-theme img.image[style*="177, 235, 52"],
+  .light-theme .profile-picture[style*="177, 235, 52"],
+  .light-theme .profile-name .name[style*="177, 235, 52"],
+  .light-theme .user[style*="177, 235, 52"],
+  .light-theme .user-link[style*="177, 235, 52"],
+  .light-theme .username .name[style*="177, 235, 52"],
+  .light-theme .role > span[style*="177, 235, 52"],
+  .light-theme .side-bar .name[style*="177, 235, 52"],
+  .light-theme .roles > span[style*="177, 235, 52"],
+  .light-theme img.image[style*="68, 194, 135"],
+  .light-theme .profile-picture[style*="68, 194, 135"],
+  .light-theme .profile-name .name[style*="68, 194, 135"],
+  .light-theme .user[style*="68, 194, 135"],
+  .light-theme .user-link[style*="68, 194, 135"],
+  .light-theme .username .name[style*="68, 194, 135"],
+  .light-theme .role > span[style*="68, 194, 135"],
+  .light-theme .side-bar .name[style*="68, 194, 135"],
+  .light-theme .roles > span[style*="68, 194, 135"],
+  .light-theme img.image[style*="23, 235, 182"] span,
+  .light-theme .profile-picture[style*="23, 235, 182"] span,
+  .light-theme .profile-name .name[style*="23, 235, 182"] span,
+  .light-theme .user[style*="23, 235, 182"] span,
+  .light-theme .user-link[style*="23, 235, 182"] span,
+  .light-theme .username .name[style*="23, 235, 182"] span,
+  .light-theme .role > span[style*="23, 235, 182"] span,
+  .light-theme .side-bar .name[style*="23, 235, 182"] span,
+  .light-theme .roles > span[style*="23, 235, 182"] span,
+  .light-theme img.image[style*="177, 235, 52"] span,
+  .light-theme .profile-picture[style*="177, 235, 52"] span,
+  .light-theme .profile-name .name[style*="177, 235, 52"] span,
+  .light-theme .user[style*="177, 235, 52"] span,
+  .light-theme .user-link[style*="177, 235, 52"] span,
+  .light-theme .username .name[style*="177, 235, 52"] span,
+  .light-theme .role > span[style*="177, 235, 52"] span,
+  .light-theme .side-bar .name[style*="177, 235, 52"] span,
+  .light-theme .roles > span[style*="177, 235, 52"] span,
+  .light-theme img.image[style*="68, 194, 135"] span,
+  .light-theme .profile-picture[style*="68, 194, 135"] span,
+  .light-theme .profile-name .name[style*="68, 194, 135"] span,
+  .light-theme .user[style*="68, 194, 135"] span,
+  .light-theme .user-link[style*="68, 194, 135"] span,
+  .light-theme .username .name[style*="68, 194, 135"] span,
+  .light-theme .role > span[style*="68, 194, 135"] span,
+  .light-theme .side-bar .name[style*="68, 194, 135"] span,
+  .light-theme .roles > span[style*="68, 194, 135"] span {
+    color: #f0f016 !important;
+    border-color: #f0f016 !important;
+  }
+  .light-theme img.image[style*="182, 56, 181"],
+  .light-theme .profile-picture[style*="182, 56, 181"],
+  .light-theme .profile-name .name[style*="182, 56, 181"],
+  .light-theme .user[style*="182, 56, 181"],
+  .light-theme .user-link[style*="182, 56, 181"],
+  .light-theme .username .name[style*="182, 56, 181"],
+  .light-theme .role > span[style*="182, 56, 181"],
+  .light-theme .side-bar .name[style*="182, 56, 181"],
+  .light-theme .roles > span[style*="182, 56, 181"],
+  .light-theme img.image[style*="182, 56, 181"] span,
+  .light-theme .profile-picture[style*="182, 56, 181"] span,
+  .light-theme .profile-name .name[style*="182, 56, 181"] span,
+  .light-theme .user[style*="182, 56, 181"] span,
+  .light-theme .user-link[style*="182, 56, 181"] span,
+  .light-theme .username .name[style*="182, 56, 181"] span,
+  .light-theme .role > span[style*="182, 56, 181"] span,
+  .light-theme .side-bar .name[style*="182, 56, 181"] span,
+  .light-theme .roles > span[style*="182, 56, 181"] span,
+  .light-theme img.image[style*="182, 56, 181"] img,
+  .light-theme .profile-picture[style*="182, 56, 181"] img,
+  .light-theme .profile-name .name[style*="182, 56, 181"] img,
+  .light-theme .user[style*="182, 56, 181"] img,
+  .light-theme .user-link[style*="182, 56, 181"] img,
+  .light-theme .username .name[style*="182, 56, 181"] img,
+  .light-theme .role > span[style*="182, 56, 181"] img,
+  .light-theme .side-bar .name[style*="182, 56, 181"] img,
+  .light-theme .roles > span[style*="182, 56, 181"] img {
+    color: #f0f00f !important;
+    border-color: #f0f00f !important;
+  }
+  .light-theme img.image[style*="145, 70, 255"],
+  .light-theme .profile-picture[style*="145, 70, 255"],
+  .light-theme .profile-name .name[style*="145, 70, 255"],
+  .light-theme .user[style*="145, 70, 255"],
+  .light-theme .user-link[style*="145, 70, 255"],
+  .light-theme .username .name[style*="145, 70, 255"],
+  .light-theme .role > span[style*="145, 70, 255"],
+  .light-theme .side-bar .name[style*="145, 70, 255"],
+  .light-theme .roles > span[style*="145, 70, 255"],
+  .light-theme img.image[style*="145, 70, 255"] span,
+  .light-theme .profile-picture[style*="145, 70, 255"] span,
+  .light-theme .profile-name .name[style*="145, 70, 255"] span,
+  .light-theme .user[style*="145, 70, 255"] span,
+  .light-theme .user-link[style*="145, 70, 255"] span,
+  .light-theme .username .name[style*="145, 70, 255"] span,
+  .light-theme .role > span[style*="145, 70, 255"] span,
+  .light-theme .side-bar .name[style*="145, 70, 255"] span,
+  .light-theme .roles > span[style*="145, 70, 255"] span,
+  .light-theme img.image[style*="145, 70, 255"] img,
+  .light-theme .profile-picture[style*="145, 70, 255"] img,
+  .light-theme .profile-name .name[style*="145, 70, 255"] img,
+  .light-theme .user[style*="145, 70, 255"] img,
+  .light-theme .user-link[style*="145, 70, 255"] img,
+  .light-theme .username .name[style*="145, 70, 255"] img,
+  .light-theme .role > span[style*="145, 70, 255"] img,
+  .light-theme .side-bar .name[style*="145, 70, 255"] img,
+  .light-theme .roles > span[style*="145, 70, 255"] img {
+    color: #f0f010 !important;
+    border-color: #f0f010 !important;
+  }
+  .light-theme img.image[style*="255, 170, 0"],
+  .light-theme .profile-picture[style*="255, 170, 0"],
+  .light-theme .profile-name .name[style*="255, 170, 0"],
+  .light-theme .user[style*="255, 170, 0"],
+  .light-theme .user-link[style*="255, 170, 0"],
+  .light-theme .username .name[style*="255, 170, 0"],
+  .light-theme .role > span[style*="255, 170, 0"],
+  .light-theme .side-bar .name[style*="255, 170, 0"],
+  .light-theme .roles > span[style*="255, 170, 0"],
+  .light-theme img.image[style*="255, 170, 0"] span,
+  .light-theme .profile-picture[style*="255, 170, 0"] span,
+  .light-theme .profile-name .name[style*="255, 170, 0"] span,
+  .light-theme .user[style*="255, 170, 0"] span,
+  .light-theme .user-link[style*="255, 170, 0"] span,
+  .light-theme .username .name[style*="255, 170, 0"] span,
+  .light-theme .role > span[style*="255, 170, 0"] span,
+  .light-theme .side-bar .name[style*="255, 170, 0"] span,
+  .light-theme .roles > span[style*="255, 170, 0"] span,
+  .light-theme img.image[style*="255, 170, 0"] img,
+  .light-theme .profile-picture[style*="255, 170, 0"] img,
+  .light-theme .profile-name .name[style*="255, 170, 0"] img,
+  .light-theme .user[style*="255, 170, 0"] img,
+  .light-theme .user-link[style*="255, 170, 0"] img,
+  .light-theme .username .name[style*="255, 170, 0"] img,
+  .light-theme .role > span[style*="255, 170, 0"] img,
+  .light-theme .side-bar .name[style*="255, 170, 0"] img,
+  .light-theme .roles > span[style*="255, 170, 0"] img {
+    color: #f0f014 !important;
+    border-color: #f0f014 !important;
+  }
+  .light-theme .hero {
+    color: #f0f004;
+  }
+  .light-theme .hero svg {
+    color: #f0f004 !important;
+  }
+  .light-theme .hero .for-all {
+    -webkit-text-stroke-color: #f0f004 !important;
+  }
+  .light-theme .hero::before {
+    background: radial-gradient(180% 80% at 0% 100%, #f0f004 0%, #f0f019 25%, rgba(240, 240, 16, 0.9) 56%, rgba(240, 240, 16, 0.5) 79%, transparent 100%), #f0f003;
+  }
+  .light-theme .progress-circle #progress {
+    stroke: #f0f01b;
+  }
+  .light-theme .subgrid .badge {
+    color: #f0f006 !important;
+  }
+  .light-theme .gradient {
+    color: #f0f004 !important;
+  }
+  .light-theme .gradient.g1 {
+    background: radial-gradient(150% 180% at 50% 180%, #f0f013, #f0f014 1%, #f0f014 25%, #f0f002 75%), var(--secondary) !important;
+  }
+  .light-theme .gradient.g2 {
+    background: radial-gradient(150% 180% at 50% 180%, #f0f004, #f0f011 1%, #f0f011 25%, #f0f002 75%), var(--secondary) !important;
+  }
+  .light-theme .gradient.g3 {
+    background: radial-gradient(150% 180% at 50% 180%, #f0f013, #f0f00f 1%, #f0f010 25%, #f0f002 75%), var(--secondary) !important;
+  }
+  .light-theme .gradient.g5 {
+    background: radial-gradient(150% 180% at 50% 180%, #f0f013, #f0f018 1%, #f0f018 25%, #f0f002 75%), var(--secondary) !important;
+  }
+  .light-theme .weird-smiley::before,
+  .light-theme .feature .background {
+    background-image: radial-gradient(circle at bottom, rgba(240, 240, 16, 0.2), rgba(240, 240, 24, 0.2)) !important;
+  }
+  .light-theme .banner {
+    color: #f0f001;
+  }
+  .light-theme .banner[style="--gradient-color: #9227cf"] {
+    --gradient-color: #f0f010 !important;
+  }
+  .light-theme .banner[style="--gradient-color: #27cfb1"] {
+    --gradient-color: #f0f016 !important;
+  }
+  .light-theme .banner[style="--gradient-color: #ff11bc"] {
+    --gradient-color: #f0f011 !important;
+  }
+  .light-theme .banner::before {
+    background: radial-gradient(100% 100% at 50% 0%, #f0f004 0%, var(--gradient-color) 33%, #f0f010 64%, rgba(240, 240, 16, 0.5) 80%, #f0f002 100%), var(--bg-medium) !important;
+  }
+  .light-theme progress[value].bar::-webkit-progress-bar,
+  .light-theme progress[value].bar::-moz-progress-bar {
+    background: #f0f01b !important;
+  }
+  .dark-theme {
+    color-scheme: dark;
+    background-color: #f0f001;
+    --secondary: #f0f00c;
+    --secondary-text: #f0f004;
+    --secondary-hover: #f0f00c;
+    --secondary-active: #f0f00c;
+    --secondary-disabled: #f0f003;
+    --secondary-border: transparent;
+    --primary: #f0f01b;
+    --primary-text: #f0f003;
+    --primary-hover: #e3e30f;
+    --primary-active: #e3e30f;
+    --primary-disabled: #f0f006;
+    --primary-border: transparent;
+    --bg-dark: #f0f003;
+    --bg-medium: #f0f002;
+    --bg-light: #f0f001;
+    --text: #f0f004;
+    --text-light: #f0f006;
+    --layout-border: transparent;
+    --border-active: #f0f001;
+    --store: #f0f010;
+    --preview: #f0f002;
+    --danger: #f0f013;
+    --approve: #f0f015;
+    --rename: #f0f018;
+    --staff: #f0f011;
+    --staff-bg: rgba(240, 240, 17, 0.2);
+    --admin-merge: #f0f010;
+    --admin-unlist: #f0f013;
+    /* Sub progress bar */
+    /* Subscribe gradients */
+    /* Home page glow */
+    /* Sub badge progress bar */
+  }
+  .dark-theme ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  .dark-theme input::placeholder,
+  .dark-theme textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  .dark-theme .flag {
+    /* Emote is in selected emote set */
+    /* Emote is unlisted */
+    /* Emote is trending */
+    /* Emote is overlaying */
+    /* Personal emote set */
+  }
+  .dark-theme .flag[style*="#57ab5a"] {
+    color: #f0f015 !important;
+    background-color: rgba(240, 240, 21, 0.2) !important;
+  }
+  .dark-theme .flag[style*="#529bf5"] {
+    color: #f0f01b !important;
+    background-color: rgba(240, 240, 27, 0.2) !important;
+  }
+  .dark-theme .flag[style*="#eb3d26"] {
+    color: #f0f011 !important;
+  }
+  .dark-theme .flag[style*="#eb3d26"][style*="background-color"] {
+    background-color: rgba(240, 240, 17, 0.2) !important;
+  }
+  .dark-theme .flag[style*="#e0823d"] {
+    color: #f0f013 !important;
+  }
+  .dark-theme .flag[style*="#e0823d"][style*="background-color"] {
+    background-color: rgba(240, 240, 19, 0.2) !important;
+  }
+  .dark-theme .flag[style*="#fc8dc7"] {
+    color: #f0f00f !important;
+  }
+  .dark-theme .flag[style*="#fc8dc7"][style*="background-color"] {
+    background-color: rgba(240, 240, 15, 0.2) !important;
+  }
+  .dark-theme .flag[style*="#b083f0"] {
+    color: #f0f010 !important;
+  }
+  .dark-theme .badge {
+    color: #f0f001;
+  }
+  .dark-theme .emote,
+  .dark-theme .emote-set {
+    /* Emote is in selected emote set */
+    /* Emote is unlisted */
+    /* Emote is trending */
+    /* Emote is overlaying */
+    /* Emote set is a personal emote set */
+    /* Emote set is a special emote set */
+  }
+  .dark-theme .emote[style*="--highlight-active: #529bf5"],
+  .dark-theme .emote-set[style*="--highlight-active: #529bf5"] {
+    --highlight: rgba(240, 240, 27, 0.8) !important;
+    --highlight-active: #f0f01b !important;
+  }
+  .dark-theme .emote[style*="--highlight-active: #529bf5"].emote-set .name,
+  .dark-theme .emote-set[style*="--highlight-active: #529bf5"].emote-set .name {
+    color: #f0f01b !important;
+  }
+  .dark-theme .emote[style*="--highlight-active: #eb3d26"],
+  .dark-theme .emote-set[style*="--highlight-active: #eb3d26"] {
+    --highlight: rgba(240, 240, 17, 0.8) !important;
+    --highlight-active: #f0f011 !important;
+  }
+  .dark-theme .emote[style*="--highlight-active: #e0823d"],
+  .dark-theme .emote-set[style*="--highlight-active: #e0823d"] {
+    --highlight: rgba(240, 240, 19, 0.8) !important;
+    --highlight-active: #f0f013 !important;
+  }
+  .dark-theme .emote[style*="--highlight-active: #fc8dc7"],
+  .dark-theme .emote-set[style*="--highlight-active: #fc8dc7"] {
+    --highlight: rgba(240, 240, 15, 0.8) !important;
+    --highlight-active: #f0f00f !important;
+  }
+  .dark-theme .emote.emote-set[style*="--highlight-active: #b083f0"],
+  .dark-theme .emote-set.emote-set[style*="--highlight-active: #b083f0"] {
+    --highlight: rgba(240, 240, 16, 0.8) !important;
+    --highlight-active: #f0f010 !important;
+  }
+  .dark-theme .emote.emote-set[style*="--highlight-active: #b083f0"].emote-set .name,
+  .dark-theme .emote-set.emote-set[style*="--highlight-active: #b083f0"].emote-set .name {
+    color: #f0f010 !important;
+  }
+  .dark-theme .emote.emote-set[style*="--highlight-active: #fcc200"],
+  .dark-theme .emote-set.emote-set[style*="--highlight-active: #fcc200"] {
+    --highlight: rgba(240, 240, 20, 0.8) !important;
+    --highlight-active: #f0f014 !important;
+  }
+  .dark-theme .emote.emote-set[style*="--highlight-active: #fcc200"].emote-set .name,
+  .dark-theme .emote-set.emote-set[style*="--highlight-active: #fcc200"].emote-set .name,
+  .dark-theme .emote.emote-set[style*="--highlight-active: #fcc200"].emote-set .flag,
+  .dark-theme .emote-set.emote-set[style*="--highlight-active: #fcc200"].emote-set .flag {
+    color: #f0f014 !important;
+  }
+  .dark-theme img.image,
+  .dark-theme .profile-picture,
+  .dark-theme .profile-name .name,
+  .dark-theme .user,
+  .dark-theme .user-link,
+  .dark-theme .username .name,
+  .dark-theme .role > span,
+  .dark-theme .side-bar .name,
+  .dark-theme .roles > span {
+    /* Admin */
+    /* Moderator */
+    /* Event coordinator */
+    /* Verified */
+    /* Subscriber */
+  }
+  .dark-theme img.image[style*="255, 70, 70"],
+  .dark-theme .profile-picture[style*="255, 70, 70"],
+  .dark-theme .profile-name .name[style*="255, 70, 70"],
+  .dark-theme .user[style*="255, 70, 70"],
+  .dark-theme .user-link[style*="255, 70, 70"],
+  .dark-theme .username .name[style*="255, 70, 70"],
+  .dark-theme .role > span[style*="255, 70, 70"],
+  .dark-theme .side-bar .name[style*="255, 70, 70"],
+  .dark-theme .roles > span[style*="255, 70, 70"],
+  .dark-theme img.image[style*="255, 70, 70"] span,
+  .dark-theme .profile-picture[style*="255, 70, 70"] span,
+  .dark-theme .profile-name .name[style*="255, 70, 70"] span,
+  .dark-theme .user[style*="255, 70, 70"] span,
+  .dark-theme .user-link[style*="255, 70, 70"] span,
+  .dark-theme .username .name[style*="255, 70, 70"] span,
+  .dark-theme .role > span[style*="255, 70, 70"] span,
+  .dark-theme .side-bar .name[style*="255, 70, 70"] span,
+  .dark-theme .roles > span[style*="255, 70, 70"] span,
+  .dark-theme img.image[style*="255, 70, 70"] img,
+  .dark-theme .profile-picture[style*="255, 70, 70"] img,
+  .dark-theme .profile-name .name[style*="255, 70, 70"] img,
+  .dark-theme .user[style*="255, 70, 70"] img,
+  .dark-theme .user-link[style*="255, 70, 70"] img,
+  .dark-theme .username .name[style*="255, 70, 70"] img,
+  .dark-theme .role > span[style*="255, 70, 70"] img,
+  .dark-theme .side-bar .name[style*="255, 70, 70"] img,
+  .dark-theme .roles > span[style*="255, 70, 70"] img {
+    color: #f0f011 !important;
+    border-color: #f0f011 !important;
+  }
+  .dark-theme img.image[style*="50, 168, 82"],
+  .dark-theme .profile-picture[style*="50, 168, 82"],
+  .dark-theme .profile-name .name[style*="50, 168, 82"],
+  .dark-theme .user[style*="50, 168, 82"],
+  .dark-theme .user-link[style*="50, 168, 82"],
+  .dark-theme .username .name[style*="50, 168, 82"],
+  .dark-theme .role > span[style*="50, 168, 82"],
+  .dark-theme .side-bar .name[style*="50, 168, 82"],
+  .dark-theme .roles > span[style*="50, 168, 82"],
+  .dark-theme img.image[style*="50, 168, 82"] span,
+  .dark-theme .profile-picture[style*="50, 168, 82"] span,
+  .dark-theme .profile-name .name[style*="50, 168, 82"] span,
+  .dark-theme .user[style*="50, 168, 82"] span,
+  .dark-theme .user-link[style*="50, 168, 82"] span,
+  .dark-theme .username .name[style*="50, 168, 82"] span,
+  .dark-theme .role > span[style*="50, 168, 82"] span,
+  .dark-theme .side-bar .name[style*="50, 168, 82"] span,
+  .dark-theme .roles > span[style*="50, 168, 82"] span,
+  .dark-theme img.image[style*="50, 168, 82"] img,
+  .dark-theme .profile-picture[style*="50, 168, 82"] img,
+  .dark-theme .profile-name .name[style*="50, 168, 82"] img,
+  .dark-theme .user[style*="50, 168, 82"] img,
+  .dark-theme .user-link[style*="50, 168, 82"] img,
+  .dark-theme .username .name[style*="50, 168, 82"] img,
+  .dark-theme .role > span[style*="50, 168, 82"] img,
+  .dark-theme .side-bar .name[style*="50, 168, 82"] img,
+  .dark-theme .roles > span[style*="50, 168, 82"] img {
+    color: #f0f015 !important;
+    border-color: #f0f015 !important;
+  }
+  .dark-theme img.image[style*="23, 235, 182"],
+  .dark-theme .profile-picture[style*="23, 235, 182"],
+  .dark-theme .profile-name .name[style*="23, 235, 182"],
+  .dark-theme .user[style*="23, 235, 182"],
+  .dark-theme .user-link[style*="23, 235, 182"],
+  .dark-theme .username .name[style*="23, 235, 182"],
+  .dark-theme .role > span[style*="23, 235, 182"],
+  .dark-theme .side-bar .name[style*="23, 235, 182"],
+  .dark-theme .roles > span[style*="23, 235, 182"],
+  .dark-theme img.image[style*="177, 235, 52"],
+  .dark-theme .profile-picture[style*="177, 235, 52"],
+  .dark-theme .profile-name .name[style*="177, 235, 52"],
+  .dark-theme .user[style*="177, 235, 52"],
+  .dark-theme .user-link[style*="177, 235, 52"],
+  .dark-theme .username .name[style*="177, 235, 52"],
+  .dark-theme .role > span[style*="177, 235, 52"],
+  .dark-theme .side-bar .name[style*="177, 235, 52"],
+  .dark-theme .roles > span[style*="177, 235, 52"],
+  .dark-theme img.image[style*="68, 194, 135"],
+  .dark-theme .profile-picture[style*="68, 194, 135"],
+  .dark-theme .profile-name .name[style*="68, 194, 135"],
+  .dark-theme .user[style*="68, 194, 135"],
+  .dark-theme .user-link[style*="68, 194, 135"],
+  .dark-theme .username .name[style*="68, 194, 135"],
+  .dark-theme .role > span[style*="68, 194, 135"],
+  .dark-theme .side-bar .name[style*="68, 194, 135"],
+  .dark-theme .roles > span[style*="68, 194, 135"],
+  .dark-theme img.image[style*="23, 235, 182"] span,
+  .dark-theme .profile-picture[style*="23, 235, 182"] span,
+  .dark-theme .profile-name .name[style*="23, 235, 182"] span,
+  .dark-theme .user[style*="23, 235, 182"] span,
+  .dark-theme .user-link[style*="23, 235, 182"] span,
+  .dark-theme .username .name[style*="23, 235, 182"] span,
+  .dark-theme .role > span[style*="23, 235, 182"] span,
+  .dark-theme .side-bar .name[style*="23, 235, 182"] span,
+  .dark-theme .roles > span[style*="23, 235, 182"] span,
+  .dark-theme img.image[style*="177, 235, 52"] span,
+  .dark-theme .profile-picture[style*="177, 235, 52"] span,
+  .dark-theme .profile-name .name[style*="177, 235, 52"] span,
+  .dark-theme .user[style*="177, 235, 52"] span,
+  .dark-theme .user-link[style*="177, 235, 52"] span,
+  .dark-theme .username .name[style*="177, 235, 52"] span,
+  .dark-theme .role > span[style*="177, 235, 52"] span,
+  .dark-theme .side-bar .name[style*="177, 235, 52"] span,
+  .dark-theme .roles > span[style*="177, 235, 52"] span,
+  .dark-theme img.image[style*="68, 194, 135"] span,
+  .dark-theme .profile-picture[style*="68, 194, 135"] span,
+  .dark-theme .profile-name .name[style*="68, 194, 135"] span,
+  .dark-theme .user[style*="68, 194, 135"] span,
+  .dark-theme .user-link[style*="68, 194, 135"] span,
+  .dark-theme .username .name[style*="68, 194, 135"] span,
+  .dark-theme .role > span[style*="68, 194, 135"] span,
+  .dark-theme .side-bar .name[style*="68, 194, 135"] span,
+  .dark-theme .roles > span[style*="68, 194, 135"] span {
+    color: #f0f016 !important;
+    border-color: #f0f016 !important;
+  }
+  .dark-theme img.image[style*="182, 56, 181"],
+  .dark-theme .profile-picture[style*="182, 56, 181"],
+  .dark-theme .profile-name .name[style*="182, 56, 181"],
+  .dark-theme .user[style*="182, 56, 181"],
+  .dark-theme .user-link[style*="182, 56, 181"],
+  .dark-theme .username .name[style*="182, 56, 181"],
+  .dark-theme .role > span[style*="182, 56, 181"],
+  .dark-theme .side-bar .name[style*="182, 56, 181"],
+  .dark-theme .roles > span[style*="182, 56, 181"],
+  .dark-theme img.image[style*="182, 56, 181"] span,
+  .dark-theme .profile-picture[style*="182, 56, 181"] span,
+  .dark-theme .profile-name .name[style*="182, 56, 181"] span,
+  .dark-theme .user[style*="182, 56, 181"] span,
+  .dark-theme .user-link[style*="182, 56, 181"] span,
+  .dark-theme .username .name[style*="182, 56, 181"] span,
+  .dark-theme .role > span[style*="182, 56, 181"] span,
+  .dark-theme .side-bar .name[style*="182, 56, 181"] span,
+  .dark-theme .roles > span[style*="182, 56, 181"] span,
+  .dark-theme img.image[style*="182, 56, 181"] img,
+  .dark-theme .profile-picture[style*="182, 56, 181"] img,
+  .dark-theme .profile-name .name[style*="182, 56, 181"] img,
+  .dark-theme .user[style*="182, 56, 181"] img,
+  .dark-theme .user-link[style*="182, 56, 181"] img,
+  .dark-theme .username .name[style*="182, 56, 181"] img,
+  .dark-theme .role > span[style*="182, 56, 181"] img,
+  .dark-theme .side-bar .name[style*="182, 56, 181"] img,
+  .dark-theme .roles > span[style*="182, 56, 181"] img {
+    color: #f0f00f !important;
+    border-color: #f0f00f !important;
+  }
+  .dark-theme img.image[style*="145, 70, 255"],
+  .dark-theme .profile-picture[style*="145, 70, 255"],
+  .dark-theme .profile-name .name[style*="145, 70, 255"],
+  .dark-theme .user[style*="145, 70, 255"],
+  .dark-theme .user-link[style*="145, 70, 255"],
+  .dark-theme .username .name[style*="145, 70, 255"],
+  .dark-theme .role > span[style*="145, 70, 255"],
+  .dark-theme .side-bar .name[style*="145, 70, 255"],
+  .dark-theme .roles > span[style*="145, 70, 255"],
+  .dark-theme img.image[style*="145, 70, 255"] span,
+  .dark-theme .profile-picture[style*="145, 70, 255"] span,
+  .dark-theme .profile-name .name[style*="145, 70, 255"] span,
+  .dark-theme .user[style*="145, 70, 255"] span,
+  .dark-theme .user-link[style*="145, 70, 255"] span,
+  .dark-theme .username .name[style*="145, 70, 255"] span,
+  .dark-theme .role > span[style*="145, 70, 255"] span,
+  .dark-theme .side-bar .name[style*="145, 70, 255"] span,
+  .dark-theme .roles > span[style*="145, 70, 255"] span,
+  .dark-theme img.image[style*="145, 70, 255"] img,
+  .dark-theme .profile-picture[style*="145, 70, 255"] img,
+  .dark-theme .profile-name .name[style*="145, 70, 255"] img,
+  .dark-theme .user[style*="145, 70, 255"] img,
+  .dark-theme .user-link[style*="145, 70, 255"] img,
+  .dark-theme .username .name[style*="145, 70, 255"] img,
+  .dark-theme .role > span[style*="145, 70, 255"] img,
+  .dark-theme .side-bar .name[style*="145, 70, 255"] img,
+  .dark-theme .roles > span[style*="145, 70, 255"] img {
+    color: #f0f010 !important;
+    border-color: #f0f010 !important;
+  }
+  .dark-theme img.image[style*="255, 170, 0"],
+  .dark-theme .profile-picture[style*="255, 170, 0"],
+  .dark-theme .profile-name .name[style*="255, 170, 0"],
+  .dark-theme .user[style*="255, 170, 0"],
+  .dark-theme .user-link[style*="255, 170, 0"],
+  .dark-theme .username .name[style*="255, 170, 0"],
+  .dark-theme .role > span[style*="255, 170, 0"],
+  .dark-theme .side-bar .name[style*="255, 170, 0"],
+  .dark-theme .roles > span[style*="255, 170, 0"],
+  .dark-theme img.image[style*="255, 170, 0"] span,
+  .dark-theme .profile-picture[style*="255, 170, 0"] span,
+  .dark-theme .profile-name .name[style*="255, 170, 0"] span,
+  .dark-theme .user[style*="255, 170, 0"] span,
+  .dark-theme .user-link[style*="255, 170, 0"] span,
+  .dark-theme .username .name[style*="255, 170, 0"] span,
+  .dark-theme .role > span[style*="255, 170, 0"] span,
+  .dark-theme .side-bar .name[style*="255, 170, 0"] span,
+  .dark-theme .roles > span[style*="255, 170, 0"] span,
+  .dark-theme img.image[style*="255, 170, 0"] img,
+  .dark-theme .profile-picture[style*="255, 170, 0"] img,
+  .dark-theme .profile-name .name[style*="255, 170, 0"] img,
+  .dark-theme .user[style*="255, 170, 0"] img,
+  .dark-theme .user-link[style*="255, 170, 0"] img,
+  .dark-theme .username .name[style*="255, 170, 0"] img,
+  .dark-theme .role > span[style*="255, 170, 0"] img,
+  .dark-theme .side-bar .name[style*="255, 170, 0"] img,
+  .dark-theme .roles > span[style*="255, 170, 0"] img {
+    color: #f0f014 !important;
+    border-color: #f0f014 !important;
+  }
+  .dark-theme .hero {
+    color: #f0f004;
+  }
+  .dark-theme .hero svg {
+    color: #f0f004 !important;
+  }
+  .dark-theme .hero .for-all {
+    -webkit-text-stroke-color: #f0f004 !important;
+  }
+  .dark-theme .hero::before {
+    background: radial-gradient(180% 80% at 0% 100%, #f0f004 0%, #f0f019 25%, rgba(240, 240, 16, 0.9) 56%, rgba(240, 240, 16, 0.5) 79%, transparent 100%), #f0f003;
+  }
+  .dark-theme .progress-circle #progress {
+    stroke: #f0f01b;
+  }
+  .dark-theme .subgrid .badge {
+    color: #f0f006 !important;
+  }
+  .dark-theme .gradient {
+    color: #f0f004 !important;
+  }
+  .dark-theme .gradient.g1 {
+    background: radial-gradient(150% 180% at 50% 180%, #f0f013, #f0f014 1%, #f0f014 25%, #f0f002 75%), var(--secondary) !important;
+  }
+  .dark-theme .gradient.g2 {
+    background: radial-gradient(150% 180% at 50% 180%, #f0f004, #f0f011 1%, #f0f011 25%, #f0f002 75%), var(--secondary) !important;
+  }
+  .dark-theme .gradient.g3 {
+    background: radial-gradient(150% 180% at 50% 180%, #f0f013, #f0f00f 1%, #f0f010 25%, #f0f002 75%), var(--secondary) !important;
+  }
+  .dark-theme .gradient.g5 {
+    background: radial-gradient(150% 180% at 50% 180%, #f0f013, #f0f018 1%, #f0f018 25%, #f0f002 75%), var(--secondary) !important;
+  }
+  .dark-theme .weird-smiley::before,
+  .dark-theme .feature .background {
+    background-image: radial-gradient(circle at bottom, rgba(240, 240, 16, 0.2), rgba(240, 240, 24, 0.2)) !important;
+  }
+  .dark-theme .banner {
+    color: #f0f001;
+  }
+  .dark-theme .banner[style="--gradient-color: #9227cf"] {
+    --gradient-color: #f0f010 !important;
+  }
+  .dark-theme .banner[style="--gradient-color: #27cfb1"] {
+    --gradient-color: #f0f016 !important;
+  }
+  .dark-theme .banner[style="--gradient-color: #ff11bc"] {
+    --gradient-color: #f0f011 !important;
+  }
+  .dark-theme .banner::before {
+    background: radial-gradient(100% 100% at 50% 0%, #f0f004 0%, var(--gradient-color) 33%, #f0f010 64%, rgba(240, 240, 16, 0.5) 80%, #f0f002 100%), var(--bg-medium) !important;
+  }
+  .dark-theme progress[value].bar::-webkit-progress-bar,
+  .dark-theme progress[value].bar::-moz-progress-bar {
+    background: #f0f01b !important;
+  }
+  @media (prefers-color-scheme: light) {
+    .system-theme {
+      color-scheme: light;
+      background-color: #f0f001;
+      --secondary: #f0f00c;
+      --secondary-text: #f0f004;
+      --secondary-hover: #f0f00c;
+      --secondary-active: #f0f00c;
+      --secondary-disabled: #f0f003;
+      --secondary-border: transparent;
+      --primary: #f0f01b;
+      --primary-text: #f0f003;
+      --primary-hover: #e3e30f;
+      --primary-active: #e3e30f;
+      --primary-disabled: #f0f006;
+      --primary-border: transparent;
+      --bg-dark: #f0f003;
+      --bg-medium: #f0f002;
+      --bg-light: #f0f001;
+      --text: #f0f004;
+      --text-light: #f0f006;
+      --layout-border: transparent;
+      --border-active: #f0f001;
+      --store: #f0f010;
+      --preview: #f0f002;
+      --danger: #f0f013;
+      --approve: #f0f015;
+      --rename: #f0f018;
+      --staff: #f0f011;
+      --staff-bg: rgba(240, 240, 17, 0.2);
+      --admin-merge: #f0f010;
+      --admin-unlist: #f0f013;
+      /* Sub progress bar */
+      /* Subscribe gradients */
+      /* Home page glow */
+      /* Sub badge progress bar */
+    }
+    .system-theme ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    .system-theme input::placeholder,
+    .system-theme textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    .system-theme .flag {
+      /* Emote is in selected emote set */
+      /* Emote is unlisted */
+      /* Emote is trending */
+      /* Emote is overlaying */
+      /* Personal emote set */
+    }
+    .system-theme .flag[style*="#57ab5a"] {
+      color: #f0f015 !important;
+      background-color: rgba(240, 240, 21, 0.2) !important;
+    }
+    .system-theme .flag[style*="#529bf5"] {
+      color: #f0f01b !important;
+      background-color: rgba(240, 240, 27, 0.2) !important;
+    }
+    .system-theme .flag[style*="#eb3d26"] {
+      color: #f0f011 !important;
+    }
+    .system-theme .flag[style*="#eb3d26"][style*="background-color"] {
+      background-color: rgba(240, 240, 17, 0.2) !important;
+    }
+    .system-theme .flag[style*="#e0823d"] {
+      color: #f0f013 !important;
+    }
+    .system-theme .flag[style*="#e0823d"][style*="background-color"] {
+      background-color: rgba(240, 240, 19, 0.2) !important;
+    }
+    .system-theme .flag[style*="#fc8dc7"] {
+      color: #f0f00f !important;
+    }
+    .system-theme .flag[style*="#fc8dc7"][style*="background-color"] {
+      background-color: rgba(240, 240, 15, 0.2) !important;
+    }
+    .system-theme .flag[style*="#b083f0"] {
+      color: #f0f010 !important;
+    }
+    .system-theme .badge {
+      color: #f0f001;
+    }
+    .system-theme .emote,
+    .system-theme .emote-set {
+      /* Emote is in selected emote set */
+      /* Emote is unlisted */
+      /* Emote is trending */
+      /* Emote is overlaying */
+      /* Emote set is a personal emote set */
+      /* Emote set is a special emote set */
+    }
+    .system-theme .emote[style*="--highlight-active: #529bf5"],
+    .system-theme .emote-set[style*="--highlight-active: #529bf5"] {
+      --highlight: rgba(240, 240, 27, 0.8) !important;
+      --highlight-active: #f0f01b !important;
+    }
+    .system-theme .emote[style*="--highlight-active: #529bf5"].emote-set .name,
+    .system-theme .emote-set[style*="--highlight-active: #529bf5"].emote-set .name {
+      color: #f0f01b !important;
+    }
+    .system-theme .emote[style*="--highlight-active: #eb3d26"],
+    .system-theme .emote-set[style*="--highlight-active: #eb3d26"] {
+      --highlight: rgba(240, 240, 17, 0.8) !important;
+      --highlight-active: #f0f011 !important;
+    }
+    .system-theme .emote[style*="--highlight-active: #e0823d"],
+    .system-theme .emote-set[style*="--highlight-active: #e0823d"] {
+      --highlight: rgba(240, 240, 19, 0.8) !important;
+      --highlight-active: #f0f013 !important;
+    }
+    .system-theme .emote[style*="--highlight-active: #fc8dc7"],
+    .system-theme .emote-set[style*="--highlight-active: #fc8dc7"] {
+      --highlight: rgba(240, 240, 15, 0.8) !important;
+      --highlight-active: #f0f00f !important;
+    }
+    .system-theme .emote.emote-set[style*="--highlight-active: #b083f0"],
+    .system-theme .emote-set.emote-set[style*="--highlight-active: #b083f0"] {
+      --highlight: rgba(240, 240, 16, 0.8) !important;
+      --highlight-active: #f0f010 !important;
+    }
+    .system-theme .emote.emote-set[style*="--highlight-active: #b083f0"].emote-set .name,
+    .system-theme .emote-set.emote-set[style*="--highlight-active: #b083f0"].emote-set .name {
+      color: #f0f010 !important;
+    }
+    .system-theme .emote.emote-set[style*="--highlight-active: #fcc200"],
+    .system-theme .emote-set.emote-set[style*="--highlight-active: #fcc200"] {
+      --highlight: rgba(240, 240, 20, 0.8) !important;
+      --highlight-active: #f0f014 !important;
+    }
+    .system-theme .emote.emote-set[style*="--highlight-active: #fcc200"].emote-set .name,
+    .system-theme .emote-set.emote-set[style*="--highlight-active: #fcc200"].emote-set .name,
+    .system-theme .emote.emote-set[style*="--highlight-active: #fcc200"].emote-set .flag,
+    .system-theme .emote-set.emote-set[style*="--highlight-active: #fcc200"].emote-set .flag {
+      color: #f0f014 !important;
+    }
+    .system-theme img.image,
+    .system-theme .profile-picture,
+    .system-theme .profile-name .name,
+    .system-theme .user,
+    .system-theme .user-link,
+    .system-theme .username .name,
+    .system-theme .role > span,
+    .system-theme .side-bar .name,
+    .system-theme .roles > span {
+      /* Admin */
+      /* Moderator */
+      /* Event coordinator */
+      /* Verified */
+      /* Subscriber */
+    }
+    .system-theme img.image[style*="255, 70, 70"],
+    .system-theme .profile-picture[style*="255, 70, 70"],
+    .system-theme .profile-name .name[style*="255, 70, 70"],
+    .system-theme .user[style*="255, 70, 70"],
+    .system-theme .user-link[style*="255, 70, 70"],
+    .system-theme .username .name[style*="255, 70, 70"],
+    .system-theme .role > span[style*="255, 70, 70"],
+    .system-theme .side-bar .name[style*="255, 70, 70"],
+    .system-theme .roles > span[style*="255, 70, 70"],
+    .system-theme img.image[style*="255, 70, 70"] span,
+    .system-theme .profile-picture[style*="255, 70, 70"] span,
+    .system-theme .profile-name .name[style*="255, 70, 70"] span,
+    .system-theme .user[style*="255, 70, 70"] span,
+    .system-theme .user-link[style*="255, 70, 70"] span,
+    .system-theme .username .name[style*="255, 70, 70"] span,
+    .system-theme .role > span[style*="255, 70, 70"] span,
+    .system-theme .side-bar .name[style*="255, 70, 70"] span,
+    .system-theme .roles > span[style*="255, 70, 70"] span,
+    .system-theme img.image[style*="255, 70, 70"] img,
+    .system-theme .profile-picture[style*="255, 70, 70"] img,
+    .system-theme .profile-name .name[style*="255, 70, 70"] img,
+    .system-theme .user[style*="255, 70, 70"] img,
+    .system-theme .user-link[style*="255, 70, 70"] img,
+    .system-theme .username .name[style*="255, 70, 70"] img,
+    .system-theme .role > span[style*="255, 70, 70"] img,
+    .system-theme .side-bar .name[style*="255, 70, 70"] img,
+    .system-theme .roles > span[style*="255, 70, 70"] img {
+      color: #f0f011 !important;
+      border-color: #f0f011 !important;
+    }
+    .system-theme img.image[style*="50, 168, 82"],
+    .system-theme .profile-picture[style*="50, 168, 82"],
+    .system-theme .profile-name .name[style*="50, 168, 82"],
+    .system-theme .user[style*="50, 168, 82"],
+    .system-theme .user-link[style*="50, 168, 82"],
+    .system-theme .username .name[style*="50, 168, 82"],
+    .system-theme .role > span[style*="50, 168, 82"],
+    .system-theme .side-bar .name[style*="50, 168, 82"],
+    .system-theme .roles > span[style*="50, 168, 82"],
+    .system-theme img.image[style*="50, 168, 82"] span,
+    .system-theme .profile-picture[style*="50, 168, 82"] span,
+    .system-theme .profile-name .name[style*="50, 168, 82"] span,
+    .system-theme .user[style*="50, 168, 82"] span,
+    .system-theme .user-link[style*="50, 168, 82"] span,
+    .system-theme .username .name[style*="50, 168, 82"] span,
+    .system-theme .role > span[style*="50, 168, 82"] span,
+    .system-theme .side-bar .name[style*="50, 168, 82"] span,
+    .system-theme .roles > span[style*="50, 168, 82"] span,
+    .system-theme img.image[style*="50, 168, 82"] img,
+    .system-theme .profile-picture[style*="50, 168, 82"] img,
+    .system-theme .profile-name .name[style*="50, 168, 82"] img,
+    .system-theme .user[style*="50, 168, 82"] img,
+    .system-theme .user-link[style*="50, 168, 82"] img,
+    .system-theme .username .name[style*="50, 168, 82"] img,
+    .system-theme .role > span[style*="50, 168, 82"] img,
+    .system-theme .side-bar .name[style*="50, 168, 82"] img,
+    .system-theme .roles > span[style*="50, 168, 82"] img {
+      color: #f0f015 !important;
+      border-color: #f0f015 !important;
+    }
+    .system-theme img.image[style*="23, 235, 182"],
+    .system-theme .profile-picture[style*="23, 235, 182"],
+    .system-theme .profile-name .name[style*="23, 235, 182"],
+    .system-theme .user[style*="23, 235, 182"],
+    .system-theme .user-link[style*="23, 235, 182"],
+    .system-theme .username .name[style*="23, 235, 182"],
+    .system-theme .role > span[style*="23, 235, 182"],
+    .system-theme .side-bar .name[style*="23, 235, 182"],
+    .system-theme .roles > span[style*="23, 235, 182"],
+    .system-theme img.image[style*="177, 235, 52"],
+    .system-theme .profile-picture[style*="177, 235, 52"],
+    .system-theme .profile-name .name[style*="177, 235, 52"],
+    .system-theme .user[style*="177, 235, 52"],
+    .system-theme .user-link[style*="177, 235, 52"],
+    .system-theme .username .name[style*="177, 235, 52"],
+    .system-theme .role > span[style*="177, 235, 52"],
+    .system-theme .side-bar .name[style*="177, 235, 52"],
+    .system-theme .roles > span[style*="177, 235, 52"],
+    .system-theme img.image[style*="68, 194, 135"],
+    .system-theme .profile-picture[style*="68, 194, 135"],
+    .system-theme .profile-name .name[style*="68, 194, 135"],
+    .system-theme .user[style*="68, 194, 135"],
+    .system-theme .user-link[style*="68, 194, 135"],
+    .system-theme .username .name[style*="68, 194, 135"],
+    .system-theme .role > span[style*="68, 194, 135"],
+    .system-theme .side-bar .name[style*="68, 194, 135"],
+    .system-theme .roles > span[style*="68, 194, 135"],
+    .system-theme img.image[style*="23, 235, 182"] span,
+    .system-theme .profile-picture[style*="23, 235, 182"] span,
+    .system-theme .profile-name .name[style*="23, 235, 182"] span,
+    .system-theme .user[style*="23, 235, 182"] span,
+    .system-theme .user-link[style*="23, 235, 182"] span,
+    .system-theme .username .name[style*="23, 235, 182"] span,
+    .system-theme .role > span[style*="23, 235, 182"] span,
+    .system-theme .side-bar .name[style*="23, 235, 182"] span,
+    .system-theme .roles > span[style*="23, 235, 182"] span,
+    .system-theme img.image[style*="177, 235, 52"] span,
+    .system-theme .profile-picture[style*="177, 235, 52"] span,
+    .system-theme .profile-name .name[style*="177, 235, 52"] span,
+    .system-theme .user[style*="177, 235, 52"] span,
+    .system-theme .user-link[style*="177, 235, 52"] span,
+    .system-theme .username .name[style*="177, 235, 52"] span,
+    .system-theme .role > span[style*="177, 235, 52"] span,
+    .system-theme .side-bar .name[style*="177, 235, 52"] span,
+    .system-theme .roles > span[style*="177, 235, 52"] span,
+    .system-theme img.image[style*="68, 194, 135"] span,
+    .system-theme .profile-picture[style*="68, 194, 135"] span,
+    .system-theme .profile-name .name[style*="68, 194, 135"] span,
+    .system-theme .user[style*="68, 194, 135"] span,
+    .system-theme .user-link[style*="68, 194, 135"] span,
+    .system-theme .username .name[style*="68, 194, 135"] span,
+    .system-theme .role > span[style*="68, 194, 135"] span,
+    .system-theme .side-bar .name[style*="68, 194, 135"] span,
+    .system-theme .roles > span[style*="68, 194, 135"] span {
+      color: #f0f016 !important;
+      border-color: #f0f016 !important;
+    }
+    .system-theme img.image[style*="182, 56, 181"],
+    .system-theme .profile-picture[style*="182, 56, 181"],
+    .system-theme .profile-name .name[style*="182, 56, 181"],
+    .system-theme .user[style*="182, 56, 181"],
+    .system-theme .user-link[style*="182, 56, 181"],
+    .system-theme .username .name[style*="182, 56, 181"],
+    .system-theme .role > span[style*="182, 56, 181"],
+    .system-theme .side-bar .name[style*="182, 56, 181"],
+    .system-theme .roles > span[style*="182, 56, 181"],
+    .system-theme img.image[style*="182, 56, 181"] span,
+    .system-theme .profile-picture[style*="182, 56, 181"] span,
+    .system-theme .profile-name .name[style*="182, 56, 181"] span,
+    .system-theme .user[style*="182, 56, 181"] span,
+    .system-theme .user-link[style*="182, 56, 181"] span,
+    .system-theme .username .name[style*="182, 56, 181"] span,
+    .system-theme .role > span[style*="182, 56, 181"] span,
+    .system-theme .side-bar .name[style*="182, 56, 181"] span,
+    .system-theme .roles > span[style*="182, 56, 181"] span,
+    .system-theme img.image[style*="182, 56, 181"] img,
+    .system-theme .profile-picture[style*="182, 56, 181"] img,
+    .system-theme .profile-name .name[style*="182, 56, 181"] img,
+    .system-theme .user[style*="182, 56, 181"] img,
+    .system-theme .user-link[style*="182, 56, 181"] img,
+    .system-theme .username .name[style*="182, 56, 181"] img,
+    .system-theme .role > span[style*="182, 56, 181"] img,
+    .system-theme .side-bar .name[style*="182, 56, 181"] img,
+    .system-theme .roles > span[style*="182, 56, 181"] img {
+      color: #f0f00f !important;
+      border-color: #f0f00f !important;
+    }
+    .system-theme img.image[style*="145, 70, 255"],
+    .system-theme .profile-picture[style*="145, 70, 255"],
+    .system-theme .profile-name .name[style*="145, 70, 255"],
+    .system-theme .user[style*="145, 70, 255"],
+    .system-theme .user-link[style*="145, 70, 255"],
+    .system-theme .username .name[style*="145, 70, 255"],
+    .system-theme .role > span[style*="145, 70, 255"],
+    .system-theme .side-bar .name[style*="145, 70, 255"],
+    .system-theme .roles > span[style*="145, 70, 255"],
+    .system-theme img.image[style*="145, 70, 255"] span,
+    .system-theme .profile-picture[style*="145, 70, 255"] span,
+    .system-theme .profile-name .name[style*="145, 70, 255"] span,
+    .system-theme .user[style*="145, 70, 255"] span,
+    .system-theme .user-link[style*="145, 70, 255"] span,
+    .system-theme .username .name[style*="145, 70, 255"] span,
+    .system-theme .role > span[style*="145, 70, 255"] span,
+    .system-theme .side-bar .name[style*="145, 70, 255"] span,
+    .system-theme .roles > span[style*="145, 70, 255"] span,
+    .system-theme img.image[style*="145, 70, 255"] img,
+    .system-theme .profile-picture[style*="145, 70, 255"] img,
+    .system-theme .profile-name .name[style*="145, 70, 255"] img,
+    .system-theme .user[style*="145, 70, 255"] img,
+    .system-theme .user-link[style*="145, 70, 255"] img,
+    .system-theme .username .name[style*="145, 70, 255"] img,
+    .system-theme .role > span[style*="145, 70, 255"] img,
+    .system-theme .side-bar .name[style*="145, 70, 255"] img,
+    .system-theme .roles > span[style*="145, 70, 255"] img {
+      color: #f0f010 !important;
+      border-color: #f0f010 !important;
+    }
+    .system-theme img.image[style*="255, 170, 0"],
+    .system-theme .profile-picture[style*="255, 170, 0"],
+    .system-theme .profile-name .name[style*="255, 170, 0"],
+    .system-theme .user[style*="255, 170, 0"],
+    .system-theme .user-link[style*="255, 170, 0"],
+    .system-theme .username .name[style*="255, 170, 0"],
+    .system-theme .role > span[style*="255, 170, 0"],
+    .system-theme .side-bar .name[style*="255, 170, 0"],
+    .system-theme .roles > span[style*="255, 170, 0"],
+    .system-theme img.image[style*="255, 170, 0"] span,
+    .system-theme .profile-picture[style*="255, 170, 0"] span,
+    .system-theme .profile-name .name[style*="255, 170, 0"] span,
+    .system-theme .user[style*="255, 170, 0"] span,
+    .system-theme .user-link[style*="255, 170, 0"] span,
+    .system-theme .username .name[style*="255, 170, 0"] span,
+    .system-theme .role > span[style*="255, 170, 0"] span,
+    .system-theme .side-bar .name[style*="255, 170, 0"] span,
+    .system-theme .roles > span[style*="255, 170, 0"] span,
+    .system-theme img.image[style*="255, 170, 0"] img,
+    .system-theme .profile-picture[style*="255, 170, 0"] img,
+    .system-theme .profile-name .name[style*="255, 170, 0"] img,
+    .system-theme .user[style*="255, 170, 0"] img,
+    .system-theme .user-link[style*="255, 170, 0"] img,
+    .system-theme .username .name[style*="255, 170, 0"] img,
+    .system-theme .role > span[style*="255, 170, 0"] img,
+    .system-theme .side-bar .name[style*="255, 170, 0"] img,
+    .system-theme .roles > span[style*="255, 170, 0"] img {
+      color: #f0f014 !important;
+      border-color: #f0f014 !important;
+    }
+    .system-theme .hero {
+      color: #f0f004;
+    }
+    .system-theme .hero svg {
+      color: #f0f004 !important;
+    }
+    .system-theme .hero .for-all {
+      -webkit-text-stroke-color: #f0f004 !important;
+    }
+    .system-theme .hero::before {
+      background: radial-gradient(180% 80% at 0% 100%, #f0f004 0%, #f0f019 25%, rgba(240, 240, 16, 0.9) 56%, rgba(240, 240, 16, 0.5) 79%, transparent 100%), #f0f003;
+    }
+    .system-theme .progress-circle #progress {
+      stroke: #f0f01b;
+    }
+    .system-theme .subgrid .badge {
+      color: #f0f006 !important;
+    }
+    .system-theme .gradient {
+      color: #f0f004 !important;
+    }
+    .system-theme .gradient.g1 {
+      background: radial-gradient(150% 180% at 50% 180%, #f0f013, #f0f014 1%, #f0f014 25%, #f0f002 75%), var(--secondary) !important;
+    }
+    .system-theme .gradient.g2 {
+      background: radial-gradient(150% 180% at 50% 180%, #f0f004, #f0f011 1%, #f0f011 25%, #f0f002 75%), var(--secondary) !important;
+    }
+    .system-theme .gradient.g3 {
+      background: radial-gradient(150% 180% at 50% 180%, #f0f013, #f0f00f 1%, #f0f010 25%, #f0f002 75%), var(--secondary) !important;
+    }
+    .system-theme .gradient.g5 {
+      background: radial-gradient(150% 180% at 50% 180%, #f0f013, #f0f018 1%, #f0f018 25%, #f0f002 75%), var(--secondary) !important;
+    }
+    .system-theme .weird-smiley::before,
+    .system-theme .feature .background {
+      background-image: radial-gradient(circle at bottom, rgba(240, 240, 16, 0.2), rgba(240, 240, 24, 0.2)) !important;
+    }
+    .system-theme .banner {
+      color: #f0f001;
+    }
+    .system-theme .banner[style="--gradient-color: #9227cf"] {
+      --gradient-color: #f0f010 !important;
+    }
+    .system-theme .banner[style="--gradient-color: #27cfb1"] {
+      --gradient-color: #f0f016 !important;
+    }
+    .system-theme .banner[style="--gradient-color: #ff11bc"] {
+      --gradient-color: #f0f011 !important;
+    }
+    .system-theme .banner::before {
+      background: radial-gradient(100% 100% at 50% 0%, #f0f004 0%, var(--gradient-color) 33%, #f0f010 64%, rgba(240, 240, 16, 0.5) 80%, #f0f002 100%), var(--bg-medium) !important;
+    }
+    .system-theme progress[value].bar::-webkit-progress-bar,
+    .system-theme progress[value].bar::-moz-progress-bar {
+      background: #f0f01b !important;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    .system-theme {
+      color-scheme: dark;
+      background-color: #f0f001;
+      --secondary: #f0f00c;
+      --secondary-text: #f0f004;
+      --secondary-hover: #f0f00c;
+      --secondary-active: #f0f00c;
+      --secondary-disabled: #f0f003;
+      --secondary-border: transparent;
+      --primary: #f0f01b;
+      --primary-text: #f0f003;
+      --primary-hover: #e3e30f;
+      --primary-active: #e3e30f;
+      --primary-disabled: #f0f006;
+      --primary-border: transparent;
+      --bg-dark: #f0f003;
+      --bg-medium: #f0f002;
+      --bg-light: #f0f001;
+      --text: #f0f004;
+      --text-light: #f0f006;
+      --layout-border: transparent;
+      --border-active: #f0f001;
+      --store: #f0f010;
+      --preview: #f0f002;
+      --danger: #f0f013;
+      --approve: #f0f015;
+      --rename: #f0f018;
+      --staff: #f0f011;
+      --staff-bg: rgba(240, 240, 17, 0.2);
+      --admin-merge: #f0f010;
+      --admin-unlist: #f0f013;
+      /* Sub progress bar */
+      /* Subscribe gradients */
+      /* Home page glow */
+      /* Sub badge progress bar */
+    }
+    .system-theme ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    .system-theme input::placeholder,
+    .system-theme textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    .system-theme .flag {
+      /* Emote is in selected emote set */
+      /* Emote is unlisted */
+      /* Emote is trending */
+      /* Emote is overlaying */
+      /* Personal emote set */
+    }
+    .system-theme .flag[style*="#57ab5a"] {
+      color: #f0f015 !important;
+      background-color: rgba(240, 240, 21, 0.2) !important;
+    }
+    .system-theme .flag[style*="#529bf5"] {
+      color: #f0f01b !important;
+      background-color: rgba(240, 240, 27, 0.2) !important;
+    }
+    .system-theme .flag[style*="#eb3d26"] {
+      color: #f0f011 !important;
+    }
+    .system-theme .flag[style*="#eb3d26"][style*="background-color"] {
+      background-color: rgba(240, 240, 17, 0.2) !important;
+    }
+    .system-theme .flag[style*="#e0823d"] {
+      color: #f0f013 !important;
+    }
+    .system-theme .flag[style*="#e0823d"][style*="background-color"] {
+      background-color: rgba(240, 240, 19, 0.2) !important;
+    }
+    .system-theme .flag[style*="#fc8dc7"] {
+      color: #f0f00f !important;
+    }
+    .system-theme .flag[style*="#fc8dc7"][style*="background-color"] {
+      background-color: rgba(240, 240, 15, 0.2) !important;
+    }
+    .system-theme .flag[style*="#b083f0"] {
+      color: #f0f010 !important;
+    }
+    .system-theme .badge {
+      color: #f0f001;
+    }
+    .system-theme .emote,
+    .system-theme .emote-set {
+      /* Emote is in selected emote set */
+      /* Emote is unlisted */
+      /* Emote is trending */
+      /* Emote is overlaying */
+      /* Emote set is a personal emote set */
+      /* Emote set is a special emote set */
+    }
+    .system-theme .emote[style*="--highlight-active: #529bf5"],
+    .system-theme .emote-set[style*="--highlight-active: #529bf5"] {
+      --highlight: rgba(240, 240, 27, 0.8) !important;
+      --highlight-active: #f0f01b !important;
+    }
+    .system-theme .emote[style*="--highlight-active: #529bf5"].emote-set .name,
+    .system-theme .emote-set[style*="--highlight-active: #529bf5"].emote-set .name {
+      color: #f0f01b !important;
+    }
+    .system-theme .emote[style*="--highlight-active: #eb3d26"],
+    .system-theme .emote-set[style*="--highlight-active: #eb3d26"] {
+      --highlight: rgba(240, 240, 17, 0.8) !important;
+      --highlight-active: #f0f011 !important;
+    }
+    .system-theme .emote[style*="--highlight-active: #e0823d"],
+    .system-theme .emote-set[style*="--highlight-active: #e0823d"] {
+      --highlight: rgba(240, 240, 19, 0.8) !important;
+      --highlight-active: #f0f013 !important;
+    }
+    .system-theme .emote[style*="--highlight-active: #fc8dc7"],
+    .system-theme .emote-set[style*="--highlight-active: #fc8dc7"] {
+      --highlight: rgba(240, 240, 15, 0.8) !important;
+      --highlight-active: #f0f00f !important;
+    }
+    .system-theme .emote.emote-set[style*="--highlight-active: #b083f0"],
+    .system-theme .emote-set.emote-set[style*="--highlight-active: #b083f0"] {
+      --highlight: rgba(240, 240, 16, 0.8) !important;
+      --highlight-active: #f0f010 !important;
+    }
+    .system-theme .emote.emote-set[style*="--highlight-active: #b083f0"].emote-set .name,
+    .system-theme .emote-set.emote-set[style*="--highlight-active: #b083f0"].emote-set .name {
+      color: #f0f010 !important;
+    }
+    .system-theme .emote.emote-set[style*="--highlight-active: #fcc200"],
+    .system-theme .emote-set.emote-set[style*="--highlight-active: #fcc200"] {
+      --highlight: rgba(240, 240, 20, 0.8) !important;
+      --highlight-active: #f0f014 !important;
+    }
+    .system-theme .emote.emote-set[style*="--highlight-active: #fcc200"].emote-set .name,
+    .system-theme .emote-set.emote-set[style*="--highlight-active: #fcc200"].emote-set .name,
+    .system-theme .emote.emote-set[style*="--highlight-active: #fcc200"].emote-set .flag,
+    .system-theme .emote-set.emote-set[style*="--highlight-active: #fcc200"].emote-set .flag {
+      color: #f0f014 !important;
+    }
+    .system-theme img.image,
+    .system-theme .profile-picture,
+    .system-theme .profile-name .name,
+    .system-theme .user,
+    .system-theme .user-link,
+    .system-theme .username .name,
+    .system-theme .role > span,
+    .system-theme .side-bar .name,
+    .system-theme .roles > span {
+      /* Admin */
+      /* Moderator */
+      /* Event coordinator */
+      /* Verified */
+      /* Subscriber */
+    }
+    .system-theme img.image[style*="255, 70, 70"],
+    .system-theme .profile-picture[style*="255, 70, 70"],
+    .system-theme .profile-name .name[style*="255, 70, 70"],
+    .system-theme .user[style*="255, 70, 70"],
+    .system-theme .user-link[style*="255, 70, 70"],
+    .system-theme .username .name[style*="255, 70, 70"],
+    .system-theme .role > span[style*="255, 70, 70"],
+    .system-theme .side-bar .name[style*="255, 70, 70"],
+    .system-theme .roles > span[style*="255, 70, 70"],
+    .system-theme img.image[style*="255, 70, 70"] span,
+    .system-theme .profile-picture[style*="255, 70, 70"] span,
+    .system-theme .profile-name .name[style*="255, 70, 70"] span,
+    .system-theme .user[style*="255, 70, 70"] span,
+    .system-theme .user-link[style*="255, 70, 70"] span,
+    .system-theme .username .name[style*="255, 70, 70"] span,
+    .system-theme .role > span[style*="255, 70, 70"] span,
+    .system-theme .side-bar .name[style*="255, 70, 70"] span,
+    .system-theme .roles > span[style*="255, 70, 70"] span,
+    .system-theme img.image[style*="255, 70, 70"] img,
+    .system-theme .profile-picture[style*="255, 70, 70"] img,
+    .system-theme .profile-name .name[style*="255, 70, 70"] img,
+    .system-theme .user[style*="255, 70, 70"] img,
+    .system-theme .user-link[style*="255, 70, 70"] img,
+    .system-theme .username .name[style*="255, 70, 70"] img,
+    .system-theme .role > span[style*="255, 70, 70"] img,
+    .system-theme .side-bar .name[style*="255, 70, 70"] img,
+    .system-theme .roles > span[style*="255, 70, 70"] img {
+      color: #f0f011 !important;
+      border-color: #f0f011 !important;
+    }
+    .system-theme img.image[style*="50, 168, 82"],
+    .system-theme .profile-picture[style*="50, 168, 82"],
+    .system-theme .profile-name .name[style*="50, 168, 82"],
+    .system-theme .user[style*="50, 168, 82"],
+    .system-theme .user-link[style*="50, 168, 82"],
+    .system-theme .username .name[style*="50, 168, 82"],
+    .system-theme .role > span[style*="50, 168, 82"],
+    .system-theme .side-bar .name[style*="50, 168, 82"],
+    .system-theme .roles > span[style*="50, 168, 82"],
+    .system-theme img.image[style*="50, 168, 82"] span,
+    .system-theme .profile-picture[style*="50, 168, 82"] span,
+    .system-theme .profile-name .name[style*="50, 168, 82"] span,
+    .system-theme .user[style*="50, 168, 82"] span,
+    .system-theme .user-link[style*="50, 168, 82"] span,
+    .system-theme .username .name[style*="50, 168, 82"] span,
+    .system-theme .role > span[style*="50, 168, 82"] span,
+    .system-theme .side-bar .name[style*="50, 168, 82"] span,
+    .system-theme .roles > span[style*="50, 168, 82"] span,
+    .system-theme img.image[style*="50, 168, 82"] img,
+    .system-theme .profile-picture[style*="50, 168, 82"] img,
+    .system-theme .profile-name .name[style*="50, 168, 82"] img,
+    .system-theme .user[style*="50, 168, 82"] img,
+    .system-theme .user-link[style*="50, 168, 82"] img,
+    .system-theme .username .name[style*="50, 168, 82"] img,
+    .system-theme .role > span[style*="50, 168, 82"] img,
+    .system-theme .side-bar .name[style*="50, 168, 82"] img,
+    .system-theme .roles > span[style*="50, 168, 82"] img {
+      color: #f0f015 !important;
+      border-color: #f0f015 !important;
+    }
+    .system-theme img.image[style*="23, 235, 182"],
+    .system-theme .profile-picture[style*="23, 235, 182"],
+    .system-theme .profile-name .name[style*="23, 235, 182"],
+    .system-theme .user[style*="23, 235, 182"],
+    .system-theme .user-link[style*="23, 235, 182"],
+    .system-theme .username .name[style*="23, 235, 182"],
+    .system-theme .role > span[style*="23, 235, 182"],
+    .system-theme .side-bar .name[style*="23, 235, 182"],
+    .system-theme .roles > span[style*="23, 235, 182"],
+    .system-theme img.image[style*="177, 235, 52"],
+    .system-theme .profile-picture[style*="177, 235, 52"],
+    .system-theme .profile-name .name[style*="177, 235, 52"],
+    .system-theme .user[style*="177, 235, 52"],
+    .system-theme .user-link[style*="177, 235, 52"],
+    .system-theme .username .name[style*="177, 235, 52"],
+    .system-theme .role > span[style*="177, 235, 52"],
+    .system-theme .side-bar .name[style*="177, 235, 52"],
+    .system-theme .roles > span[style*="177, 235, 52"],
+    .system-theme img.image[style*="68, 194, 135"],
+    .system-theme .profile-picture[style*="68, 194, 135"],
+    .system-theme .profile-name .name[style*="68, 194, 135"],
+    .system-theme .user[style*="68, 194, 135"],
+    .system-theme .user-link[style*="68, 194, 135"],
+    .system-theme .username .name[style*="68, 194, 135"],
+    .system-theme .role > span[style*="68, 194, 135"],
+    .system-theme .side-bar .name[style*="68, 194, 135"],
+    .system-theme .roles > span[style*="68, 194, 135"],
+    .system-theme img.image[style*="23, 235, 182"] span,
+    .system-theme .profile-picture[style*="23, 235, 182"] span,
+    .system-theme .profile-name .name[style*="23, 235, 182"] span,
+    .system-theme .user[style*="23, 235, 182"] span,
+    .system-theme .user-link[style*="23, 235, 182"] span,
+    .system-theme .username .name[style*="23, 235, 182"] span,
+    .system-theme .role > span[style*="23, 235, 182"] span,
+    .system-theme .side-bar .name[style*="23, 235, 182"] span,
+    .system-theme .roles > span[style*="23, 235, 182"] span,
+    .system-theme img.image[style*="177, 235, 52"] span,
+    .system-theme .profile-picture[style*="177, 235, 52"] span,
+    .system-theme .profile-name .name[style*="177, 235, 52"] span,
+    .system-theme .user[style*="177, 235, 52"] span,
+    .system-theme .user-link[style*="177, 235, 52"] span,
+    .system-theme .username .name[style*="177, 235, 52"] span,
+    .system-theme .role > span[style*="177, 235, 52"] span,
+    .system-theme .side-bar .name[style*="177, 235, 52"] span,
+    .system-theme .roles > span[style*="177, 235, 52"] span,
+    .system-theme img.image[style*="68, 194, 135"] span,
+    .system-theme .profile-picture[style*="68, 194, 135"] span,
+    .system-theme .profile-name .name[style*="68, 194, 135"] span,
+    .system-theme .user[style*="68, 194, 135"] span,
+    .system-theme .user-link[style*="68, 194, 135"] span,
+    .system-theme .username .name[style*="68, 194, 135"] span,
+    .system-theme .role > span[style*="68, 194, 135"] span,
+    .system-theme .side-bar .name[style*="68, 194, 135"] span,
+    .system-theme .roles > span[style*="68, 194, 135"] span {
+      color: #f0f016 !important;
+      border-color: #f0f016 !important;
+    }
+    .system-theme img.image[style*="182, 56, 181"],
+    .system-theme .profile-picture[style*="182, 56, 181"],
+    .system-theme .profile-name .name[style*="182, 56, 181"],
+    .system-theme .user[style*="182, 56, 181"],
+    .system-theme .user-link[style*="182, 56, 181"],
+    .system-theme .username .name[style*="182, 56, 181"],
+    .system-theme .role > span[style*="182, 56, 181"],
+    .system-theme .side-bar .name[style*="182, 56, 181"],
+    .system-theme .roles > span[style*="182, 56, 181"],
+    .system-theme img.image[style*="182, 56, 181"] span,
+    .system-theme .profile-picture[style*="182, 56, 181"] span,
+    .system-theme .profile-name .name[style*="182, 56, 181"] span,
+    .system-theme .user[style*="182, 56, 181"] span,
+    .system-theme .user-link[style*="182, 56, 181"] span,
+    .system-theme .username .name[style*="182, 56, 181"] span,
+    .system-theme .role > span[style*="182, 56, 181"] span,
+    .system-theme .side-bar .name[style*="182, 56, 181"] span,
+    .system-theme .roles > span[style*="182, 56, 181"] span,
+    .system-theme img.image[style*="182, 56, 181"] img,
+    .system-theme .profile-picture[style*="182, 56, 181"] img,
+    .system-theme .profile-name .name[style*="182, 56, 181"] img,
+    .system-theme .user[style*="182, 56, 181"] img,
+    .system-theme .user-link[style*="182, 56, 181"] img,
+    .system-theme .username .name[style*="182, 56, 181"] img,
+    .system-theme .role > span[style*="182, 56, 181"] img,
+    .system-theme .side-bar .name[style*="182, 56, 181"] img,
+    .system-theme .roles > span[style*="182, 56, 181"] img {
+      color: #f0f00f !important;
+      border-color: #f0f00f !important;
+    }
+    .system-theme img.image[style*="145, 70, 255"],
+    .system-theme .profile-picture[style*="145, 70, 255"],
+    .system-theme .profile-name .name[style*="145, 70, 255"],
+    .system-theme .user[style*="145, 70, 255"],
+    .system-theme .user-link[style*="145, 70, 255"],
+    .system-theme .username .name[style*="145, 70, 255"],
+    .system-theme .role > span[style*="145, 70, 255"],
+    .system-theme .side-bar .name[style*="145, 70, 255"],
+    .system-theme .roles > span[style*="145, 70, 255"],
+    .system-theme img.image[style*="145, 70, 255"] span,
+    .system-theme .profile-picture[style*="145, 70, 255"] span,
+    .system-theme .profile-name .name[style*="145, 70, 255"] span,
+    .system-theme .user[style*="145, 70, 255"] span,
+    .system-theme .user-link[style*="145, 70, 255"] span,
+    .system-theme .username .name[style*="145, 70, 255"] span,
+    .system-theme .role > span[style*="145, 70, 255"] span,
+    .system-theme .side-bar .name[style*="145, 70, 255"] span,
+    .system-theme .roles > span[style*="145, 70, 255"] span,
+    .system-theme img.image[style*="145, 70, 255"] img,
+    .system-theme .profile-picture[style*="145, 70, 255"] img,
+    .system-theme .profile-name .name[style*="145, 70, 255"] img,
+    .system-theme .user[style*="145, 70, 255"] img,
+    .system-theme .user-link[style*="145, 70, 255"] img,
+    .system-theme .username .name[style*="145, 70, 255"] img,
+    .system-theme .role > span[style*="145, 70, 255"] img,
+    .system-theme .side-bar .name[style*="145, 70, 255"] img,
+    .system-theme .roles > span[style*="145, 70, 255"] img {
+      color: #f0f010 !important;
+      border-color: #f0f010 !important;
+    }
+    .system-theme img.image[style*="255, 170, 0"],
+    .system-theme .profile-picture[style*="255, 170, 0"],
+    .system-theme .profile-name .name[style*="255, 170, 0"],
+    .system-theme .user[style*="255, 170, 0"],
+    .system-theme .user-link[style*="255, 170, 0"],
+    .system-theme .username .name[style*="255, 170, 0"],
+    .system-theme .role > span[style*="255, 170, 0"],
+    .system-theme .side-bar .name[style*="255, 170, 0"],
+    .system-theme .roles > span[style*="255, 170, 0"],
+    .system-theme img.image[style*="255, 170, 0"] span,
+    .system-theme .profile-picture[style*="255, 170, 0"] span,
+    .system-theme .profile-name .name[style*="255, 170, 0"] span,
+    .system-theme .user[style*="255, 170, 0"] span,
+    .system-theme .user-link[style*="255, 170, 0"] span,
+    .system-theme .username .name[style*="255, 170, 0"] span,
+    .system-theme .role > span[style*="255, 170, 0"] span,
+    .system-theme .side-bar .name[style*="255, 170, 0"] span,
+    .system-theme .roles > span[style*="255, 170, 0"] span,
+    .system-theme img.image[style*="255, 170, 0"] img,
+    .system-theme .profile-picture[style*="255, 170, 0"] img,
+    .system-theme .profile-name .name[style*="255, 170, 0"] img,
+    .system-theme .user[style*="255, 170, 0"] img,
+    .system-theme .user-link[style*="255, 170, 0"] img,
+    .system-theme .username .name[style*="255, 170, 0"] img,
+    .system-theme .role > span[style*="255, 170, 0"] img,
+    .system-theme .side-bar .name[style*="255, 170, 0"] img,
+    .system-theme .roles > span[style*="255, 170, 0"] img {
+      color: #f0f014 !important;
+      border-color: #f0f014 !important;
+    }
+    .system-theme .hero {
+      color: #f0f004;
+    }
+    .system-theme .hero svg {
+      color: #f0f004 !important;
+    }
+    .system-theme .hero .for-all {
+      -webkit-text-stroke-color: #f0f004 !important;
+    }
+    .system-theme .hero::before {
+      background: radial-gradient(180% 80% at 0% 100%, #f0f004 0%, #f0f019 25%, rgba(240, 240, 16, 0.9) 56%, rgba(240, 240, 16, 0.5) 79%, transparent 100%), #f0f003;
+    }
+    .system-theme .progress-circle #progress {
+      stroke: #f0f01b;
+    }
+    .system-theme .subgrid .badge {
+      color: #f0f006 !important;
+    }
+    .system-theme .gradient {
+      color: #f0f004 !important;
+    }
+    .system-theme .gradient.g1 {
+      background: radial-gradient(150% 180% at 50% 180%, #f0f013, #f0f014 1%, #f0f014 25%, #f0f002 75%), var(--secondary) !important;
+    }
+    .system-theme .gradient.g2 {
+      background: radial-gradient(150% 180% at 50% 180%, #f0f004, #f0f011 1%, #f0f011 25%, #f0f002 75%), var(--secondary) !important;
+    }
+    .system-theme .gradient.g3 {
+      background: radial-gradient(150% 180% at 50% 180%, #f0f013, #f0f00f 1%, #f0f010 25%, #f0f002 75%), var(--secondary) !important;
+    }
+    .system-theme .gradient.g5 {
+      background: radial-gradient(150% 180% at 50% 180%, #f0f013, #f0f018 1%, #f0f018 25%, #f0f002 75%), var(--secondary) !important;
+    }
+    .system-theme .weird-smiley::before,
+    .system-theme .feature .background {
+      background-image: radial-gradient(circle at bottom, rgba(240, 240, 16, 0.2), rgba(240, 240, 24, 0.2)) !important;
+    }
+    .system-theme .banner {
+      color: #f0f001;
+    }
+    .system-theme .banner[style="--gradient-color: #9227cf"] {
+      --gradient-color: #f0f010 !important;
+    }
+    .system-theme .banner[style="--gradient-color: #27cfb1"] {
+      --gradient-color: #f0f016 !important;
+    }
+    .system-theme .banner[style="--gradient-color: #ff11bc"] {
+      --gradient-color: #f0f011 !important;
+    }
+    .system-theme .banner::before {
+      background: radial-gradient(100% 100% at 50% 0%, #f0f004 0%, var(--gradient-color) 33%, #f0f010 64%, rgba(240, 240, 16, 0.5) 80%, #f0f002 100%), var(--bg-medium) !important;
+    }
+    .system-theme progress[value].bar::-webkit-progress-bar,
+    .system-theme progress[value].bar::-moz-progress-bar {
+      background: #f0f01b !important;
+    }
+  }
+}
+@-moz-document domain("twitch.tv") {
+  .tw-root--theme-dark {
+    --seventv-text-color-normal: #f0f004;
+    --seventv-text-color-secondary: #f0f006;
+    --seventv-border-transparent-1: #f0f00c;
+    --seventv-background-shade-1: #f0f001;
+    --seventv-background-shade-2: #f0f002;
+    --seventv-background-shade-3: #f0f003;
+    --seventv-background-transparent-1: #f0f001;
+    --seventv-background-transparent-2: #f0f002;
+    --seventv-background-transparent-3: #f0f002;
+    --seventv-highlight-neutral-1: #f0f00c;
+    --seventv-input-background: #f0f002;
+    --seventv-input-border: #f0f00c;
+    --seventv-subscriber-color: #f0f014;
+    --seventv-highlight-color: #f0f01b;
+    --seventv-highlight-dim-color: rgba(240, 240, 27, 0.2);
+    --seventv-primary: #f0f01b;
+    --seventv-accent: #f0f015;
+    --seventv-warning: #f0f013;
+    --seventv-muted: #f0f006;
+  }
+  .tw-root--theme-dark .seventv-transparent {
+    --seventv-border-transparent-1: rgba(240, 240, 12, 0.77);
+    --seventv-background-transparent-1: rgba(240, 240, 1, 0.77);
+    --seventv-background-transparent-2: rgba(240, 240, 2, 0.59);
+    --seventv-background-transparent-3: rgba(240, 240, 2, 0.71);
+  }
+  .tw-root--theme-dark .seventv-announce-message-container .announce-header {
+    background-color: #f0f003;
+  }
+  .tw-root--theme-dark .seventv-announce-message-container .announce-message {
+    background-color: #f0f001;
+  }
+  .tw-root--theme-dark .grabbable-inner,
+  .tw-root--theme-dark .grabbable-outer {
+    --color-border-input: #f0f006;
+  }
+  .tw-root--theme-dark .seventv-user-message {
+    /* First time chatter */
+    /* Mention */
+    /* Blocked */
+    /* Raider */
+    /* Returning chatter */
+  }
+  .tw-root--theme-dark .seventv-user-message[style*="--seventv-highlight-color: #c832c8"] {
+    --seventv-highlight-color: #f0f010 !important;
+    --seventv-highlight-dim-color: rgba(240, 240, 16, 0.1) !important;
+  }
+  .tw-root--theme-dark .seventv-user-message[style*="--seventv-highlight-color: #e13232"] {
+    --seventv-highlight-color: #f0f011 !important;
+    --seventv-highlight-dim-color: rgba(240, 240, 17, 0.1) !important;
+  }
+  .tw-root--theme-dark .seventv-user-message[style*="--seventv-highlight-color: #9488855A"] {
+    --seventv-highlight-color: #f0f00c !important;
+  }
+  .tw-root--theme-dark .seventv-user-message[style*="--seventv-highlight-color: #6dd126"] {
+    --seventv-highlight-color: #f0f015 !important;
+    --seventv-highlight-dim-color: rgba(240, 240, 21, 0.1) !important;
+  }
+  .tw-root--theme-dark .seventv-user-message[style*="--seventv-highlight-color: #3296e6"] {
+    --seventv-highlight-color: #f0f019 !important;
+    --seventv-highlight-dim-color: rgba(240, 240, 25, 0.1) !important;
+  }
+  .tw-root--theme-dark .seventv-chat-message-container:hover .seventv-chat-message-background {
+    background-color: #f0f00c;
+  }
+  .tw-root--theme-dark .seventv-sub-message-container,
+  .tw-root--theme-dark .seventv-reward-message-container {
+    background-color: #f0f001;
+  }
+  .tw-root--theme-dark .seventv-settings-category .seventv-settings-category-dropdown .seventv-settings-subcategory:hover {
+    background-color: #f0f001 !important;
+  }
+  .tw-root--theme-dark .seventv-settings-category .seventv-settings-category-dropdown .seventv-settings-subcategory.intersect {
+    background-color: #f0f00c !important;
+  }
+  .tw-root--theme-dark .seventv-settings-category .settings-category-header:hover,
+  .tw-root--theme-dark .seventv-settings-category .settings-category-header:focus-within {
+    background-color: #f0f001;
+  }
+  .tw-root--theme-dark .seventv-settings-category[in-view="true"] > .settings-category-header {
+    background-color: #f0f00c;
+  }
+  .tw-root--theme-dark .paint-tool-home h6[style="color: red;"] {
+    color: #f0f013 !important;
+  }
+  .tw-root--theme-dark section[timeline-id="LIVE"] label,
+  .tw-root--theme-dark section[timeline-id="LIVE"] div[selector="date-boundary"] {
+    color: #f0f011;
+    border-color: #f0f011;
+  }
+  .tw-root--theme-dark .seventv-emote-container[zero-width="true"] {
+    border-color: #f0f014;
+  }
+  .tw-root--theme-dark .scope-labels .label-global {
+    color: #f0f015;
+  }
+  .tw-root--theme-dark .scope-labels .label-sub-feature {
+    color: #f0f014;
+  }
+  .tw-root--theme-dark [style*="rgb(255, 255, 255)"] .seventv-chat-user-username span {
+    color: #f0f004 !important;
+  }
+  .tw-root--theme-dark .seventv-chat-mod-buttons {
+    color: #f0f006;
+  }
+  .tw-root--theme-dark .seventv-chat-mod-buttons svg:hover {
+    color: #f0f004;
+  }
+  .tw-root--theme-light {
+    --seventv-text-color-normal: #f0f004;
+    --seventv-text-color-secondary: #f0f006;
+    --seventv-border-transparent-1: #f0f00c;
+    --seventv-background-shade-1: #f0f001;
+    --seventv-background-shade-2: #f0f002;
+    --seventv-background-shade-3: #f0f003;
+    --seventv-background-transparent-1: #f0f001;
+    --seventv-background-transparent-2: #f0f002;
+    --seventv-background-transparent-3: #f0f002;
+    --seventv-highlight-neutral-1: #f0f00c;
+    --seventv-input-background: #f0f002;
+    --seventv-input-border: #f0f00c;
+    --seventv-subscriber-color: #f0f014;
+    --seventv-highlight-color: #f0f01b;
+    --seventv-highlight-dim-color: rgba(240, 240, 27, 0.2);
+    --seventv-primary: #f0f01b;
+    --seventv-accent: #f0f015;
+    --seventv-warning: #f0f013;
+    --seventv-muted: #f0f006;
+  }
+  .tw-root--theme-light .seventv-transparent {
+    --seventv-border-transparent-1: rgba(240, 240, 12, 0.77);
+    --seventv-background-transparent-1: rgba(240, 240, 1, 0.77);
+    --seventv-background-transparent-2: rgba(240, 240, 2, 0.59);
+    --seventv-background-transparent-3: rgba(240, 240, 2, 0.71);
+  }
+  .tw-root--theme-light .seventv-announce-message-container .announce-header {
+    background-color: #f0f003;
+  }
+  .tw-root--theme-light .seventv-announce-message-container .announce-message {
+    background-color: #f0f001;
+  }
+  .tw-root--theme-light .grabbable-inner,
+  .tw-root--theme-light .grabbable-outer {
+    --color-border-input: #f0f006;
+  }
+  .tw-root--theme-light .seventv-user-message {
+    /* First time chatter */
+    /* Mention */
+    /* Blocked */
+    /* Raider */
+    /* Returning chatter */
+  }
+  .tw-root--theme-light .seventv-user-message[style*="--seventv-highlight-color: #c832c8"] {
+    --seventv-highlight-color: #f0f010 !important;
+    --seventv-highlight-dim-color: rgba(240, 240, 16, 0.1) !important;
+  }
+  .tw-root--theme-light .seventv-user-message[style*="--seventv-highlight-color: #e13232"] {
+    --seventv-highlight-color: #f0f011 !important;
+    --seventv-highlight-dim-color: rgba(240, 240, 17, 0.1) !important;
+  }
+  .tw-root--theme-light .seventv-user-message[style*="--seventv-highlight-color: #9488855A"] {
+    --seventv-highlight-color: #f0f00c !important;
+  }
+  .tw-root--theme-light .seventv-user-message[style*="--seventv-highlight-color: #6dd126"] {
+    --seventv-highlight-color: #f0f015 !important;
+    --seventv-highlight-dim-color: rgba(240, 240, 21, 0.1) !important;
+  }
+  .tw-root--theme-light .seventv-user-message[style*="--seventv-highlight-color: #3296e6"] {
+    --seventv-highlight-color: #f0f019 !important;
+    --seventv-highlight-dim-color: rgba(240, 240, 25, 0.1) !important;
+  }
+  .tw-root--theme-light .seventv-chat-message-container:hover .seventv-chat-message-background {
+    background-color: #f0f00c;
+  }
+  .tw-root--theme-light .seventv-sub-message-container,
+  .tw-root--theme-light .seventv-reward-message-container {
+    background-color: #f0f001;
+  }
+  .tw-root--theme-light .seventv-settings-category .seventv-settings-category-dropdown .seventv-settings-subcategory:hover {
+    background-color: #f0f001 !important;
+  }
+  .tw-root--theme-light .seventv-settings-category .seventv-settings-category-dropdown .seventv-settings-subcategory.intersect {
+    background-color: #f0f00c !important;
+  }
+  .tw-root--theme-light .seventv-settings-category .settings-category-header:hover,
+  .tw-root--theme-light .seventv-settings-category .settings-category-header:focus-within {
+    background-color: #f0f001;
+  }
+  .tw-root--theme-light .seventv-settings-category[in-view="true"] > .settings-category-header {
+    background-color: #f0f00c;
+  }
+  .tw-root--theme-light .paint-tool-home h6[style="color: red;"] {
+    color: #f0f013 !important;
+  }
+  .tw-root--theme-light section[timeline-id="LIVE"] label,
+  .tw-root--theme-light section[timeline-id="LIVE"] div[selector="date-boundary"] {
+    color: #f0f011;
+    border-color: #f0f011;
+  }
+  .tw-root--theme-light .seventv-emote-container[zero-width="true"] {
+    border-color: #f0f014;
+  }
+  .tw-root--theme-light .scope-labels .label-global {
+    color: #f0f015;
+  }
+  .tw-root--theme-light .scope-labels .label-sub-feature {
+    color: #f0f014;
+  }
+  .tw-root--theme-light [style*="rgb(255, 255, 255)"] .seventv-chat-user-username span {
+    color: #f0f004 !important;
+  }
+  .tw-root--theme-light .seventv-chat-mod-buttons {
+    color: #f0f006;
+  }
+  .tw-root--theme-light .seventv-chat-mod-buttons svg:hover {
+    color: #f0f004;
+  }
+}

@@ -1,0 +1,383 @@
+/* ==UserStyle==
+@name           pwnbox-holodex
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Holodex (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("holodex.net") {
+  :root:has(.theme--dark) {
+    color-scheme: dark;
+    --v-anchor-base: #f0f01b;
+    --v-primary-base: #f0f01b;
+    --v-primary-lighten1: #f1f12e;
+    --v-primary-lighten2: #f3f341;
+    --v-primary-lighten3: #f3f346;
+    --v-primary-lighten4: #f6f671;
+    --v-primary-lighten5: #f6f676;
+    --v-primary-darken1: #b8b80c;
+    --v-primary-darken2: #666607;
+    --v-primary-darken3: #535305;
+    --v-primary-darken4: #2d2d03;
+    --v-accent-base: #f0f01b;
+    --v-accent-lighten1: #f1f12e;
+    --v-accent-lighten2: #f3f341;
+    --v-accent-lighten3: #f3f346;
+    --v-accent-lighten4: #f6f671;
+    --v-accent-lighten5: #f6f676;
+    --v-accent-darken1: #b8b80c;
+    --v-accent-darken2: #666607;
+    --v-accent-darken3: #535305;
+    --v-accent-darken4: #2d2d03;
+    --v-secondary-base: #f0f01b;
+    --v-secondary-lighten1: #f1f12e;
+    --v-secondary-lighten2: #f3f341;
+    --v-secondary-lighten3: #f3f346;
+    --v-secondary-lighten4: #f6f671;
+    --v-secondary-lighten5: #f6f676;
+    --v-secondary-darken1: #b8b80c;
+    --v-secondary-darken2: #666607;
+    --v-secondary-darken3: #535305;
+    --v-secondary-darken4: #2d2d03;
+    --v-error-base: #f0f011;
+    --v-error-lighten1: #f1f124;
+    --v-error-lighten2: #f2f237;
+    --v-error-lighten3: #f3f33c;
+    --v-error-lighten4: #f5f567;
+    --v-error-lighten5: #f6f66c;
+    --v-error-darken1: #afaf0b;
+    --v-error-darken2: #5d5d06;
+    --v-error-darken3: #4a4a05;
+    --v-error-darken4: #232302;
+    --v-info-base: #f0f019;
+    --v-info-lighten1: #f1f12c;
+    --v-info-lighten2: #f2f23f;
+    --v-info-lighten3: #f3f344;
+    --v-info-lighten4: #f6f66f;
+    --v-info-lighten5: #f6f674;
+    --v-info-darken1: #b6b60c;
+    --v-info-darken2: #646407;
+    --v-info-darken3: #515105;
+    --v-info-darken4: #2b2b03;
+    --v-success-base: #f0f015;
+    --v-success-lighten1: #f1f128;
+    --v-success-lighten2: #f2f23b;
+    --v-success-lighten3: #f3f340;
+    --v-success-lighten4: #f6f66b;
+    --v-success-lighten5: #f6f670;
+    --v-success-darken1: #b2b20b;
+    --v-success-darken2: #616106;
+    --v-success-darken3: #4e4e05;
+    --v-success-darken4: #272703;
+    --v-warning-base: #f0f014;
+    --v-warning-lighten1: #f1f127;
+    --v-warning-lighten2: #f2f23a;
+    --v-warning-lighten3: #f3f33f;
+    --v-warning-lighten4: #f6f66a;
+    --v-warning-lighten5: #f6f66f;
+    --v-warning-darken1: #b1b10b;
+    --v-warning-darken2: #606006;
+    --v-warning-darken3: #4d4d05;
+    --v-warning-darken4: #262602;
+    --v-background-base: #f0f001;
+    --v-background-lighten1: #fefe07;
+    --v-background-lighten2: #fefe1c;
+    --v-background-lighten3: #fefe21;
+    --v-background-lighten4: #fefe4f;
+    --v-background-lighten5: #fefe54;
+    --v-background-darken1: #a9a901;
+    --v-background-darken2: #535300;
+    --v-background-darken3: #3e3e00;
+    --v-background-darken4: #161600;
+  }
+  :root:has(.theme--dark) ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root:has(.theme--dark) input::placeholder,
+  :root:has(.theme--dark) textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root:has(.theme--dark) div.v-application {
+    background: #f0f001 !important;
+    color: #f0f004;
+  }
+  :root:has(.theme--dark) header#top-bar,
+  :root:has(.theme--dark) header.v-toolbar,
+  :root:has(.theme--dark) div.v-navigation-drawer__content,
+  :root:has(.theme--dark) div#bottom-bar,
+  :root:has(.theme--dark) div.v-main__wrap > div,
+  :root:has(.theme--dark) div.v-select__selections,
+  :root:has(.theme--dark) div.v-slide-group__wrapper,
+  :root:has(.theme--dark) div.v-bottom-navigation,
+  :root:has(.theme--dark) div.v-select__slot,
+  :root:has(.theme--dark) div.v-input__slot,
+  :root:has(.theme--dark) div.v-overlay__scrim {
+    background: #f0f001 !important;
+  }
+  :root:has(.theme--dark) div.v-sheet {
+    background: #f0f001;
+    border-color: #f0f001;
+  }
+  :root:has(.theme--dark) .v-btn.v-btn--has-bg:not(.nav-btn) {
+    background-color: #f0f00c !important;
+  }
+  :root:has(.theme--dark) .v-list,
+  :root:has(.theme--dark) .v-list-item,
+  :root:has(.theme--dark) .v-card,
+  :root:has(.theme--dark) .v-sheet,
+  :root:has(.theme--dark) .v-select__selections,
+  :root:has(.theme--dark) .v-label,
+  :root:has(.theme--dark) .text--secondary,
+  :root:has(.theme--dark) .v-input__slot input {
+    color: #f0f004 !important;
+  }
+  :root:has(.theme--dark) .v-list path:not([fill*="iid-1"]),
+  :root:has(.theme--dark) .v-list-item path:not([fill*="iid-1"]),
+  :root:has(.theme--dark) .v-card path:not([fill*="iid-1"]),
+  :root:has(.theme--dark) .v-sheet path:not([fill*="iid-1"]),
+  :root:has(.theme--dark) .v-select__selections path:not([fill*="iid-1"]),
+  :root:has(.theme--dark) .v-label path:not([fill*="iid-1"]),
+  :root:has(.theme--dark) .text--secondary path:not([fill*="iid-1"]),
+  :root:has(.theme--dark) .v-input__slot input path:not([fill*="iid-1"]) {
+    fill: #f0f004;
+  }
+  :root:has(.theme--dark) .v-messages,
+  :root:has(.theme--dark) .v-list-item__subtitle,
+  :root:has(.theme--dark) .v-tab:not(.v-tab--active) {
+    color: #f0f006 !important;
+  }
+  :root:has(.theme--dark) svg.logo path {
+    fill: #efef11 !important;
+  }
+  :root:has(.theme--dark) svg.logo path:last-child {
+    fill: #d2d20e !important;
+  }
+  :root:has(.theme--dark) .v-chip {
+    background: #f0f019;
+  }
+  :root:has(.theme--dark) .primary--text,
+  :root:has(.theme--dark) .name-vtuber {
+    color: #f0f01b !important;
+  }
+  :root:has(.theme--dark) .text-live {
+    color: #f0f011;
+  }
+  :root:has(.theme--dark) .stream-count-chip {
+    color: #f0f003 !important;
+  }
+  :root:has(.theme--dark) .nav-btn.v-btn--active {
+    color: #f0f01b !important;
+  }
+  :root:has(.theme--dark) div.v-sheet.v-alert {
+    background: none !important;
+    color: #f0f014 !important;
+  }
+  :root:has(.theme--dark) div.v-sheet.v-alert .v-icon path {
+    fill: #f0f014 !important;
+  }
+  :root:has(.theme--dark) hr {
+    border-color: #f0f001;
+  }
+  :root:has(.theme--dark) div.v-snack {
+    color: #f0f004;
+  }
+  :root:has(.theme--dark) div.v-snack div.v-sheet {
+    background: #f0f00c !important;
+  }
+  :root:has(.theme--dark) div.v-snack button.v-btn--text {
+    color: #f0f004 !important;
+  }
+  :root:has(.theme--dark) div.v-snack button.v-btn--is-elevated.v-btn--has-bg {
+    background: #f0f01b !important;
+    color: #f0f001;
+  }
+  :root:has(.theme--light) {
+    color-scheme: light;
+    --v-anchor-base: #f0f01b;
+    --v-primary-base: #f0f01b;
+    --v-primary-lighten1: #f1f12e;
+    --v-primary-lighten2: #f3f341;
+    --v-primary-lighten3: #f3f346;
+    --v-primary-lighten4: #f6f671;
+    --v-primary-lighten5: #f6f676;
+    --v-primary-darken1: #b8b80c;
+    --v-primary-darken2: #666607;
+    --v-primary-darken3: #535305;
+    --v-primary-darken4: #2d2d03;
+    --v-accent-base: #f0f01b;
+    --v-accent-lighten1: #f1f12e;
+    --v-accent-lighten2: #f3f341;
+    --v-accent-lighten3: #f3f346;
+    --v-accent-lighten4: #f6f671;
+    --v-accent-lighten5: #f6f676;
+    --v-accent-darken1: #b8b80c;
+    --v-accent-darken2: #666607;
+    --v-accent-darken3: #535305;
+    --v-accent-darken4: #2d2d03;
+    --v-secondary-base: #f0f01b;
+    --v-secondary-lighten1: #f1f12e;
+    --v-secondary-lighten2: #f3f341;
+    --v-secondary-lighten3: #f3f346;
+    --v-secondary-lighten4: #f6f671;
+    --v-secondary-lighten5: #f6f676;
+    --v-secondary-darken1: #b8b80c;
+    --v-secondary-darken2: #666607;
+    --v-secondary-darken3: #535305;
+    --v-secondary-darken4: #2d2d03;
+    --v-error-base: #f0f011;
+    --v-error-lighten1: #f1f124;
+    --v-error-lighten2: #f2f237;
+    --v-error-lighten3: #f3f33c;
+    --v-error-lighten4: #f5f567;
+    --v-error-lighten5: #f6f66c;
+    --v-error-darken1: #afaf0b;
+    --v-error-darken2: #5d5d06;
+    --v-error-darken3: #4a4a05;
+    --v-error-darken4: #232302;
+    --v-info-base: #f0f019;
+    --v-info-lighten1: #f1f12c;
+    --v-info-lighten2: #f2f23f;
+    --v-info-lighten3: #f3f344;
+    --v-info-lighten4: #f6f66f;
+    --v-info-lighten5: #f6f674;
+    --v-info-darken1: #b6b60c;
+    --v-info-darken2: #646407;
+    --v-info-darken3: #515105;
+    --v-info-darken4: #2b2b03;
+    --v-success-base: #f0f015;
+    --v-success-lighten1: #f1f128;
+    --v-success-lighten2: #f2f23b;
+    --v-success-lighten3: #f3f340;
+    --v-success-lighten4: #f6f66b;
+    --v-success-lighten5: #f6f670;
+    --v-success-darken1: #b2b20b;
+    --v-success-darken2: #616106;
+    --v-success-darken3: #4e4e05;
+    --v-success-darken4: #272703;
+    --v-warning-base: #f0f014;
+    --v-warning-lighten1: #f1f127;
+    --v-warning-lighten2: #f2f23a;
+    --v-warning-lighten3: #f3f33f;
+    --v-warning-lighten4: #f6f66a;
+    --v-warning-lighten5: #f6f66f;
+    --v-warning-darken1: #b1b10b;
+    --v-warning-darken2: #606006;
+    --v-warning-darken3: #4d4d05;
+    --v-warning-darken4: #262602;
+    --v-background-base: #f0f001;
+    --v-background-lighten1: #fefe07;
+    --v-background-lighten2: #fefe1c;
+    --v-background-lighten3: #fefe21;
+    --v-background-lighten4: #fefe4f;
+    --v-background-lighten5: #fefe54;
+    --v-background-darken1: #a9a901;
+    --v-background-darken2: #535300;
+    --v-background-darken3: #3e3e00;
+    --v-background-darken4: #161600;
+  }
+  :root:has(.theme--light) ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root:has(.theme--light) input::placeholder,
+  :root:has(.theme--light) textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root:has(.theme--light) div.v-application {
+    background: #f0f001 !important;
+    color: #f0f004;
+  }
+  :root:has(.theme--light) header#top-bar,
+  :root:has(.theme--light) header.v-toolbar,
+  :root:has(.theme--light) div.v-navigation-drawer__content,
+  :root:has(.theme--light) div#bottom-bar,
+  :root:has(.theme--light) div.v-main__wrap > div,
+  :root:has(.theme--light) div.v-select__selections,
+  :root:has(.theme--light) div.v-slide-group__wrapper,
+  :root:has(.theme--light) div.v-bottom-navigation,
+  :root:has(.theme--light) div.v-select__slot,
+  :root:has(.theme--light) div.v-input__slot,
+  :root:has(.theme--light) div.v-overlay__scrim {
+    background: #f0f001 !important;
+  }
+  :root:has(.theme--light) div.v-sheet {
+    background: #f0f001;
+    border-color: #f0f001;
+  }
+  :root:has(.theme--light) .v-btn.v-btn--has-bg:not(.nav-btn) {
+    background-color: #f0f00c !important;
+  }
+  :root:has(.theme--light) .v-list,
+  :root:has(.theme--light) .v-list-item,
+  :root:has(.theme--light) .v-card,
+  :root:has(.theme--light) .v-sheet,
+  :root:has(.theme--light) .v-select__selections,
+  :root:has(.theme--light) .v-label,
+  :root:has(.theme--light) .text--secondary,
+  :root:has(.theme--light) .v-input__slot input {
+    color: #f0f004 !important;
+  }
+  :root:has(.theme--light) .v-list path:not([fill*="iid-1"]),
+  :root:has(.theme--light) .v-list-item path:not([fill*="iid-1"]),
+  :root:has(.theme--light) .v-card path:not([fill*="iid-1"]),
+  :root:has(.theme--light) .v-sheet path:not([fill*="iid-1"]),
+  :root:has(.theme--light) .v-select__selections path:not([fill*="iid-1"]),
+  :root:has(.theme--light) .v-label path:not([fill*="iid-1"]),
+  :root:has(.theme--light) .text--secondary path:not([fill*="iid-1"]),
+  :root:has(.theme--light) .v-input__slot input path:not([fill*="iid-1"]) {
+    fill: #f0f004;
+  }
+  :root:has(.theme--light) .v-messages,
+  :root:has(.theme--light) .v-list-item__subtitle,
+  :root:has(.theme--light) .v-tab:not(.v-tab--active) {
+    color: #f0f006 !important;
+  }
+  :root:has(.theme--light) svg.logo path {
+    fill: #efef11 !important;
+  }
+  :root:has(.theme--light) svg.logo path:last-child {
+    fill: #d2d20e !important;
+  }
+  :root:has(.theme--light) .v-chip {
+    background: #f0f019;
+  }
+  :root:has(.theme--light) .primary--text,
+  :root:has(.theme--light) .name-vtuber {
+    color: #f0f01b !important;
+  }
+  :root:has(.theme--light) .text-live {
+    color: #f0f011;
+  }
+  :root:has(.theme--light) .stream-count-chip {
+    color: #f0f003 !important;
+  }
+  :root:has(.theme--light) .nav-btn.v-btn--active {
+    color: #f0f01b !important;
+  }
+  :root:has(.theme--light) div.v-sheet.v-alert {
+    background: none !important;
+    color: #f0f014 !important;
+  }
+  :root:has(.theme--light) div.v-sheet.v-alert .v-icon path {
+    fill: #f0f014 !important;
+  }
+  :root:has(.theme--light) hr {
+    border-color: #f0f001;
+  }
+  :root:has(.theme--light) div.v-snack {
+    color: #f0f004;
+  }
+  :root:has(.theme--light) div.v-snack div.v-sheet {
+    background: #f0f00c !important;
+  }
+  :root:has(.theme--light) div.v-snack button.v-btn--text {
+    color: #f0f004 !important;
+  }
+  :root:has(.theme--light) div.v-snack button.v-btn--is-elevated.v-btn--has-bg {
+    background: #f0f01b !important;
+    color: #f0f001;
+  }
+}

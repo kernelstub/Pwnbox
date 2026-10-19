@@ -1,0 +1,2817 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cache="${XDG_CACHE_HOME:-$HOME/.cache}/pwnbox/theme"
+wal_out="${XDG_CACHE_HOME:-$HOME/.cache}/wal"
+mono="$HOME/.config/wal/monochrome"
+wall_dir="$HOME/.local/share/pwnbox/wallpapers"
+themes_dir="${XDG_CONFIG_HOME:-$HOME/.config}/pwnbox/themes"
+state="$cache/wallpaper"
+custom_state="$cache/custom-theme"
+style_state="$cache/barstyle"
+default_wall="$HOME/.config/hypr/wall.png"
+picker_cfg="$HOME/.config/rofi/picker.rasi"
+barstyle_cfg="$HOME/.config/rofi/barstyle.rasi"
+menu_cfg="$HOME/.config/rofi/menu.rasi"
+custom_cfg="$HOME/.config/rofi/custom.rasi"
+previews_dir="$HOME/.config/quickshell/previews"
+thumb_dir="$cache/thumbs"
+radius_state="$cache/radius-window"
+uir_state="$cache/radius-ui"
+blur_file="$cache/blur"
+opacity_file="$cache/opacity"
+anim_file="$cache/animations"
+border_file="$cache/borders"
+shadow_file="$cache/shadows"
+font_ui_state="$cache/font-ui"
+font_app_state="$cache/font-app"
+font_ui_size_state="$cache/font-size-ui"
+font_app_size_state="$cache/font-size-app"
+scale_state="$cache/scale"
+
+font_choices=(
+    "Manrope"
+    "Fairfax HD"
+    "Fairfax Hax HD"
+    "Fairfax Pona HD"
+    "Fairfax SM HD"
+    "Ubuntu"
+    "Ubuntu Mono"
+    "Spleen 6x12"
+    "Spleen 8x16"
+    "Spleen 12x24"
+    "Spleen 16x32"
+    "Terminus (TTF)"
+    "Iosevka"
+    "Iosevka Nerd Font"
+    "Iosevka Nerd Font Mono"
+    "Iosevka Nerd Font Propo"
+    "JetBrains Mono"
+    "JetBrainsMono Nerd Font"
+    "JetBrainsMono Nerd Font Mono"
+    "JetBrainsMono Nerd Font Propo"
+    "MesloLGS Nerd Font"
+    "MesloLGS Nerd Font Mono"
+    "MesloLGS Nerd Font Propo"
+    "FiraCode Nerd Font"
+    "FiraCode Nerd Font Mono"
+    "FiraCode Nerd Font Propo"
+    "Inconsolata"
+    "Noto Sans"
+    "Noto Sans Mono"
+    "Noto Serif"
+    "DejaVu Sans"
+    "DejaVu Sans Mono"
+    "DejaVu Serif"
+    "Liberation Sans"
+    "Liberation Mono"
+    "Liberation Serif"
+)
+
+notify() {
+    :
+}
+
+cp_atomic() {
+    local src="$1" dst="$2" tmp
+    [ -e "$src" ] || return 0
+    tmp="$(dirname -- "$dst")/.$(basename -- "$dst").pwnbox-tmp"
+    if cp -f "$src" "$tmp" 2>/dev/null; then
+        chmod u+w "$tmp" 2>/dev/null || true
+        mv -f "$tmp" "$dst" 2>/dev/null || rm -f "$tmp"
+    else
+        rm -f "$tmp"
+    fi
+}
+
+spawn_nice() {
+    local fn="$1" pid
+    (
+        "$fn" >/dev/null 2>&1 &
+        pid=$!
+        renice -n 10 -p "$pid" >/dev/null 2>&1 || true
+    )
+}
+
+inplace_sed() {
+    local file="$1" tmp
+    shift
+    [ -f "$file" ] || return 0
+    tmp="$(dirname -- "$file")/.$(basename -- "$file").pwnbox-tmp"
+    if sed "$@" "$file" >"$tmp" 2>/dev/null; then
+        chmod u+w "$file" 2>/dev/null || true
+        mv -f "$tmp" "$file" 2>/dev/null || rm -f "$tmp"
+    else
+        rm -f "$tmp"
+    fi
+}
+
+read_state() {
+    local file="$1" fallback="$2" value
+    value="$(cat "$file" 2>/dev/null || true)"
+    [ -n "$value" ] || value="$fallback"
+    printf '%s' "$value"
+}
+
+win_radius() { read_state "$radius_state" 9; }
+ui_radius() { read_state "$uir_state" 9; }
+blur_state() { read_state "$blur_file" on; }
+blur_label() { [ "$(blur_state)" = "off" ] && printf 'Off' || printf 'On'; }
+blur_hypr() { [ "$(blur_state)" = "off" ] && printf 'false' || printf 'true'; }
+opacity() { read_state "$opacity_file" 100; }
+opacity_label() { printf '%s%%' "$(opacity)"; }
+opacity_value() {
+    local o
+    o="$(opacity)"
+    printf '%d.%02d' "$((o / 100))" "$((o % 100))"
+}
+anim_state() { read_state "$anim_file" on; }
+anim_label() { [ "$(anim_state)" = "off" ] && printf 'Off' || printf 'On'; }
+anim_hypr() { [ "$(anim_state)" = "off" ] && printf 'false' || printf 'true'; }
+border_state() { read_state "$border_file" on; }
+border_label() { [ "$(border_state)" = "off" ] && printf 'Off' || printf 'On'; }
+border_hypr() { [ "$(border_state)" = "off" ] && printf '0' || printf '2'; }
+shadow_state() { read_state "$shadow_file" on; }
+shadow_label() { [ "$(shadow_state)" = "off" ] && printf 'Off' || printf 'On'; }
+shadow_hypr() { [ "$(shadow_state)" = "off" ] && printf 'false' || printf 'true'; }
+ui_font() { read_state "$font_ui_state" "Manrope"; }
+app_font() { read_state "$font_app_state" "Iosevka Nerd Font Mono"; }
+ui_font_size() { read_state "$font_ui_size_state" 9; }
+app_font_size() { read_state "$font_app_size_state" 9; }
+scale() { read_state "$scale_state" 100; }
+
+theme_color() {
+    local key="$1" value
+    value="$(sed -nE "s/^var ${key}[[:space:]]*=[[:space:]]*\"#?([0-9a-fA-F]{6})\".*/\1/p" \
+        "$HOME/.config/quickshell/Theme.js" 2>/dev/null | head -1)"
+    [ -n "$value" ] && printf '%s' "$value" || printf '8a8a8a'
+}
+
+apply_ui_radius() {
+    local r js rofi
+    r="$(ui_radius)"
+    js="$HOME/.config/quickshell/Theme.js"
+    if [ -f "$js" ]; then
+        sed -i -E "s/^var radius([[:space:]]*)=.*/var radius      = ${r};/" "$js" 2>/dev/null || true
+    fi
+    rofi="$cache/rofi.rasi"
+    if [ -f "$rofi" ]; then
+        sed -i -E '/^[[:space:]]*radius:[[:space:]]*/d' "$rofi" 2>/dev/null || true
+        sed -i -E "0,/^[[:space:]]*\*[[:space:]]*\{/s//&\n    radius: ${r}px;/" "$rofi" 2>/dev/null || true
+    fi
+
+    apply_transparency
+}
+
+apply_transparency() {
+    local js rofi o a aa bg bgalt key val
+    js="$HOME/.config/quickshell/Theme.js"
+    [ -f "$js" ] || return 0
+    o="$(opacity)"
+    case "$o" in '' | *[!0-9]*) o=100 ;; esac
+    [ "$o" -gt 100 ] && o=100
+    a=$((o * 255 / 100))
+    aa="$(printf '%02x' "$a")"
+    bg="$(theme_color bg)"
+    bgalt="$(theme_color bgAlt)"
+
+    local bgA bgAltA
+    bgA="$(printf '#%s%s' "$aa" "$bg")"
+    bgAltA="$(printf '#%s%s' "$aa" "$bgalt")"
+    for pair in "bgA:$bgA" "bgAltA:$bgAltA"; do
+        key="${pair%%:*}"
+        val="${pair#*:}"
+        if grep -q "^var ${key}" "$js" 2>/dev/null; then
+            sed -i -E "s/^var ${key}([[:space:]]*)=.*/var ${key} = \"${val}\";/" "$js" 2>/dev/null || true
+        else
+            printf 'var %s = "%s";\n' "$key" "$val" >>"$js"
+        fi
+    done
+
+    rofi="$cache/rofi.rasi"
+    if [ -f "$rofi" ]; then
+        sed -i -E "s/^([[:space:]]*background:[[:space:]]*)#?[0-9a-fA-F]{6}([0-9a-fA-F]{2})?;/\1#${bg}${aa};/" "$rofi" 2>/dev/null || true
+        sed -i -E "s/^([[:space:]]*background-alt:[[:space:]]*)#?[0-9a-fA-F]{6}([0-9a-fA-F]{2})?;/\1#${bgalt}${aa};/" "$rofi" 2>/dev/null || true
+    fi
+}
+
+apply_fonts() {
+    local ui app uisize appsize js rofi kitty fuzzel gtk eq zed hl sp
+    local zedsize_ui zedsize_buf zed_tmp
+    ui="$(ui_font)"
+    app="$(app_font)"
+    uisize="$(ui_font_size)"
+    appsize="$(app_font_size)"
+    zedsize_ui="$(awk -v s="$appsize" 'BEGIN { printf "%.1f", s + 4 }')"
+    zedsize_buf="$(awk -v s="$appsize" 'BEGIN { printf "%.1f", s + 1.5 }')"
+
+    js="$HOME/.config/quickshell/Theme.js"
+    if [ -f "$js" ]; then
+        sed -i -E "s/^(var fontFamily[[:space:]]*=[[:space:]]*)\"[^\"]*\"/\1\"${ui}\"/" "$js" 2>/dev/null || true
+        sed -i -E "s/^(var fontMono[[:space:]]*=[[:space:]]*)\"[^\"]*\"/\1\"${app}\"/" "$js" 2>/dev/null || true
+        sed -i -E "s/^(var fontSize[[:space:]]*=[[:space:]]*).*/\1${uisize};/" "$js" 2>/dev/null || true
+    fi
+
+    kitty="$cache/kitty.conf"
+    mkdir -p "$cache" 2>/dev/null || true
+    [ -f "$kitty" ] || : >"$kitty"
+    chmod u+w "$kitty" 2>/dev/null || true
+    sed -i '/# pwnbox-fonts-start/,/# pwnbox-fonts-end/d' "$kitty" 2>/dev/null || true
+    {
+        printf '# pwnbox-fonts-start\n'
+        printf 'font_family %s\n' "$app"
+        printf 'font_size %s.0\n' "$appsize"
+        printf '# pwnbox-fonts-end\n'
+    } >>"$kitty" 2>/dev/null || true
+
+    rofi="$cache/rofi.rasi"
+    if [ -f "$rofi" ]; then
+        chmod u+w "$rofi" 2>/dev/null || true
+        sed -i '/\/\* pwnbox-fonts-start \*\//,/\/\* pwnbox-fonts-end \*\//d' "$rofi" 2>/dev/null || true
+        {
+            printf '/* pwnbox-fonts-start */\n'
+            printf '* { font: "%s %s"; }\n' "$ui" "$uisize"
+            printf '/* pwnbox-fonts-end */\n'
+        } >>"$rofi" 2>/dev/null || true
+    fi
+
+    fuzzel="$cache/fuzzel.ini"
+    if [ -f "$fuzzel" ]; then
+        chmod u+w "$fuzzel" 2>/dev/null || true
+        sed -i '/# pwnbox-fonts-start/,/# pwnbox-fonts-end/d' "$fuzzel" 2>/dev/null || true
+        {
+            printf '# pwnbox-fonts-start\n'
+            printf '[main]\nfont=%s:size=%s\n' "$ui" "$uisize"
+            printf '# pwnbox-fonts-end\n'
+        } >>"$fuzzel" 2>/dev/null || true
+    fi
+
+    if command -v gsettings >/dev/null 2>&1; then
+        gsettings set org.gnome.desktop.interface font-name "${ui} ${uisize}" >/dev/null 2>&1 || true
+        gsettings set org.gnome.desktop.interface document-font-name "${ui} ${uisize}" >/dev/null 2>&1 || true
+    fi
+    gtk2="$HOME/.gtkrc-2.0"
+    if [ -f "$gtk2" ]; then
+        chmod u+w "$gtk2" 2>/dev/null || true
+        if grep -q '^gtk-font-name' "$gtk2" 2>/dev/null; then
+            sed -i -E "s/^gtk-font-name[[:space:]]*=.*/gtk-font-name=\"${ui} ${uisize}\"/" "$gtk2" 2>/dev/null || true
+        else
+            printf 'gtk-font-name="%s %s"\n' "$ui" "$uisize" >>"$gtk2" 2>/dev/null || true
+        fi
+    fi
+
+    equibop_fonts
+
+    zed="$HOME/.config/zed/settings.json"
+    if [ ! -s "$zed" ]; then
+        mkdir -p "$(dirname -- "$zed")" 2>/dev/null || true
+        printf '{}\n' >"$zed" 2>/dev/null || true
+    fi
+    if [ -f "$zed" ]; then
+        if [ -L "$zed" ]; then
+            zed_tmp="$(dirname -- "$zed")/.$(basename -- "$zed").pwnbox-tmp"
+            if cp -L "$zed" "$zed_tmp" 2>/dev/null; then
+                mv -f "$zed_tmp" "$zed" 2>/dev/null || rm -f "$zed_tmp"
+            else
+                rm -f "$zed_tmp"
+            fi
+        fi
+        chmod u+w "$zed" 2>/dev/null || true
+        if command -v jq >/dev/null 2>&1 && jq -e . "$zed" >/dev/null 2>&1; then
+            jq --arg uif "$ui" --arg bf "$app" --argjson uis "${zedsize_ui}" --argjson bfs "${zedsize_buf}" \
+                '.ui_font_family = $uif
+                 | .buffer_font_family = $bf
+                 | .ui_font_size = $uis
+                 | .buffer_font_size = $bfs
+                 | .theme = ((.theme // {}) | if type != "object" then {} else . end | .mode = "dark" | .dark = "Pwnbox")' \
+                "$zed" >"$cache/.zed-settings.pwnbox-tmp" 2>/dev/null &&
+                cat "$cache/.zed-settings.pwnbox-tmp" >"$zed" 2>/dev/null
+            rm -f "$cache/.zed-settings.pwnbox-tmp" 2>/dev/null || true
+        else
+            inplace_sed "$zed" -E \
+                -e "s/(\"ui_font_family\"[[:space:]]*:[[:space:]]*)\"[^\"]*\"/\1\"${ui}\"/" \
+                -e "s/(\"buffer_font_family\"[[:space:]]*:[[:space:]]*)\"[^\"]*\"/\1\"${app}\"/" \
+                -e "s/(\"ui_font_size\"[[:space:]]*:[[:space:]]*)[0-9.]+/\1${zedsize_ui}/" \
+                -e "s/(\"buffer_font_size\"[[:space:]]*:[[:space:]]*)[0-9.]+/\1${zedsize_buf}/"
+        fi
+    fi
+
+    hl="$HOME/.config/hypr/hyprlock.conf"
+    if [ -f "$hl" ]; then
+        sed -i -E "s/^([[:space:]]*font_family[[:space:]]*=[[:space:]]*).*/\1${ui}/" "$hl" 2>/dev/null || true
+    fi
+
+    printf 'set font "%s" %s\n' "$app" "$appsize" >"$cache/zathura.conf" 2>/dev/null || true
+
+    sp="$HOME/.scripts/pwnbox-spotify"
+    if [ -x "$sp" ]; then
+        "$sp" fonts >/dev/null 2>&1 || true
+    fi
+
+    sync_ida_theme
+    sync_ida_reg
+    sync_ida_clr
+    sync_obsidian
+    sync_signal
+    sync_telegram_fonts
+}
+
+restart_quickshell() {
+    local tries=0
+    command -v qs >/dev/null 2>&1 || return 0
+
+    pkill -f 'bin/quickshell -n$' 2>/dev/null || true
+    while pgrep -f 'bin/quickshell -n$' >/dev/null 2>&1 && [ "$tries" -lt 40 ]; do
+        sleep 0.1
+        tries=$((tries + 1))
+    done
+
+    tries=0
+    while [ "$tries" -lt 4 ]; do
+        setsid qs -n >/dev/null 2>&1 &
+        sleep 0.5
+        pgrep -f 'bin/quickshell -n$' >/dev/null 2>&1 && return 0
+        tries=$((tries + 1))
+        sleep 0.4
+    done
+}
+
+reload_fonts() {
+    pkill -USR1 kitty 2>/dev/null || true
+    restart_quickshell
+}
+
+seed_monochrome() {
+    mkdir -p "$cache"
+    local f
+    for f in "$mono"/*; do
+        [ -e "$f" ] || continue
+        cp_atomic "$f" "$cache/$(basename -- "$f")"
+    done
+    sync_quickshell "$mono/Theme.js"
+}
+
+sync_quickshell() {
+    local src="$1"
+    [ -f "$src" ] || return 0
+    mkdir -p "$HOME/.config/quickshell" 2>/dev/null || true
+    cp -f "$src" "$HOME/.config/quickshell/Theme.js" 2>/dev/null || true
+    chmod u+w "$HOME/.config/quickshell/Theme.js" 2>/dev/null || true
+}
+
+sync_zed() {
+    local src="$1"
+    [ -f "$src" ] || return 0
+    mkdir -p "$HOME/.config/zed/themes" 2>/dev/null || true
+    cp -f "$src" "$HOME/.config/zed/themes/pwnbox.json" 2>/dev/null || true
+    chmod u+w "$HOME/.config/zed/themes/pwnbox.json" 2>/dev/null || true
+}
+
+ida_home() {
+    printf '%s' "${PWNBOX_IDA_HOME:-$HOME/Software/RE/IDA}"
+}
+
+ida_palette() {
+    local nv="$cache/nvim-palette.lua" key="$1" fb="$2" v
+    v="$(sed -nE "s/^[[:space:]]*${key}[[:space:]]*=[[:space:]]*\"#?([0-9a-fA-F]{6})\".*/\1/p" "$nv" 2>/dev/null | head -1)"
+    [ -n "$v" ] && printf '%s' "$v" || printf '%s' "$fb"
+}
+
+sync_ida_theme() {
+    local ida_home tdir src tmp f fg dim faint accent bg
+    ida_home="$(ida_home)"
+    src="$cache/ida-theme.css"
+    [ -f "$src" ] || return 0
+
+    tdir="$HOME/.idapro/themes/pwnbox"
+    mkdir -p "$tdir/icons" "$tdir/extra" 2>/dev/null || return 0
+
+    tmp="$cache/.ida-theme.css.pwnbox-tmp"
+    perl -pe 's{rgba\(#([0-9a-fA-F]{6}),([0-9.]+)\)}{ my ($h,$a)=($1,$2); "rgba(" . join(", ", map { hex($_) } $h =~ m/../g) . ",$a)" }eg' \
+        "$src" 2>/dev/null |
+        sed -e 's/{{/{/g' -e 's/}}/}/g' >"$tmp"
+    if [ -s "$tmp" ]; then
+        cp -f "$tmp" "$tdir/theme.css" 2>/dev/null || true
+        chmod u+w "$tdir/theme.css" 2>/dev/null || true
+    fi
+    rm -f "$tmp"
+
+    fg="$(ida_palette fg cccccc)"
+    dim="$(ida_palette color7 cccccc)"
+    faint="$(ida_palette color8 353535)"
+    accent="$(ida_palette color4 999999)"
+    bg="$(ida_palette bg 080808)"
+
+    local tpl="$HOME/.config/pwnbox/ida/icons" rel
+    [ -d "$tpl" ] || return 0
+    while IFS= read -r f; do
+        [ -f "$f" ] || continue
+        rel="${f#"$tpl"/}"
+        case "$rel" in
+        extra/*) ;;
+        *) rel="icons/$rel" ;;
+        esac
+        sed -e "s/@@FG@@/#$fg/g" -e "s/@@DIM@@/#$dim/g" \
+            -e "s/@@FAINT@@/#$faint/g" -e "s/@@ACCENT@@/#$accent/g" \
+            -e "s/@@BG@@/#$bg/g" "$f" >"$tdir/$rel" 2>/dev/null || true
+        chmod u+w "$tdir/$rel" 2>/dev/null || true
+    done < <(find "$tpl" -type f -name '*.svg' 2>/dev/null)
+    chmod -R u+w "$tdir" 2>/dev/null || true
+
+    if [ -d "$ida_home" ] && mkdir -p "$ida_home/themes/pwnbox" 2>/dev/null; then
+        cp -a "$tdir/." "$ida_home/themes/pwnbox/" 2>/dev/null || true
+        chmod -R u+w "$ida_home/themes/pwnbox" 2>/dev/null || true
+    fi
+}
+
+sync_ida_reg() {
+    local reg="$HOME/.idapro/ida.reg" patch="$HOME/.scripts/pwnbox-ida-reg"
+    [ -f "$reg" ] || return 0
+    [ -x "$patch" ] || return 0
+    pgrep -x ida >/dev/null 2>&1 && return 0
+    command -v python3 >/dev/null 2>&1 || return 0
+    python3 "$patch" "$reg" \
+        --theme pwnbox \
+        --mono-font "$(app_font)" --mono-size "$(app_font_size)" \
+        --ui-font "$(ui_font)" --ui-size "$(ui_font_size)" >/dev/null 2>&1 || true
+}
+
+sync_ida_clr() {
+    local clr="$HOME/.idapro/cfg/pwnbox.clr" nv="$cache/nvim-palette.lua"
+    [ -d "$HOME/.idapro" ] || return 0
+    [ -f "$nv" ] || return 0
+    mkdir -p "$HOME/.idapro/cfg" 2>/dev/null || true
+
+    read_slot() {
+        sed -nE "s/^[[:space:]]*${1}[[:space:]]*=[[:space:]]*\"#?([0-9a-fA-F]{6})\".*/\1/p" \
+            "$nv" 2>/dev/null | head -1
+    }
+    local bg c0 c1 c2 c3 c4 c5 c6 c7 c8 c12 c13 c14 c15
+    bg="$(read_slot bg)"
+    [ -n "$bg" ] || bg=080808
+    c0="$(read_slot color0)"
+    [ -n "$c0" ] || c0=171717
+    c1="$(read_slot color1)"
+    [ -n "$c1" ] || c1=6b6b6b
+    c2="$(read_slot color2)"
+    [ -n "$c2" ] || c2=c4c4c4
+    c3="$(read_slot color3)"
+    [ -n "$c3" ] || c3=999999
+    c4="$(read_slot color4)"
+    [ -n "$c4" ] || c4=999999
+    c5="$(read_slot color5)"
+    [ -n "$c5" ] || c5=717171
+    c6="$(read_slot color6)"
+    [ -n "$c6" ] || c6=8a8a8a
+    c7="$(read_slot color7)"
+    [ -n "$c7" ] || c7=cccccc
+    c8="$(read_slot color8)"
+    [ -n "$c8" ] || c8=353535
+    c12="$(read_slot color12)"
+    [ -n "$c12" ] || c12=999999
+    c13="$(read_slot color13)"
+    [ -n "$c13" ] || c13=717171
+    c14="$(read_slot color14)"
+    [ -n "$c14" ] || c14=8a8a8a
+    c15="$(read_slot color15)"
+    [ -n "$c15" ] || c15=ffffff
+
+    bgr() {
+        local h="${1:-808080}"
+        printf '0x%s%s%s' "${h:4:2}" "${h:2:2}" "${h:0:2}"
+    }
+
+    {
+        printf '; pwnbox color theme (generated from the active pywal palette)\n'
+        printf '; values are 0xBBGGRR\n\n'
+        printf 'Instruction        = %s\n' "$(bgr "$c7")"
+        printf 'GeneralReg         = %s\n' "$(bgr "$c14")"
+        printf 'SegmentReg         = %s\n' "$(bgr "$c7")"
+        printf 'Immediate          = %s\n' "$(bgr "$c6")"
+        printf 'Data               = %s\n' "$(bgr "$c7")"
+        printf 'Regular            = %s\n' "$(bgr "$c15")"
+        printf 'Comment            = %s\n' "$(bgr "$c8")"
+        printf 'RepeatCmt          = %s\n' "$(bgr "$c8")"
+        printf 'Autocmt            = %s\n' "$(bgr "$c8")"
+        printf 'Name               = %s\n' "$(bgr "$c4")"
+        printf 'DummyName          = %s\n' "$(bgr "$c13")"
+        printf 'DemangledName      = %s\n' "$(bgr "$c15")"
+        printf 'Punctuation        = %s\n' "$(bgr "$c7")"
+        printf 'Chrlit             = %s\n' "$(bgr "$c2")"
+        printf 'Strlit             = %s\n' "$(bgr "$c2")"
+        printf 'Numlit             = %s\n' "$(bgr "$c6")"
+        printf 'VoidOpnd           = %s\n' "$(bgr "$c1")"
+        printf 'CodeXref           = %s\n' "$(bgr "$c3")"
+        printf 'DataXref           = %s\n' "$(bgr "$c6")"
+        printf 'CodeXrefToTail     = %s\n' "$(bgr "$c1")"
+        printf 'DataXrefToTail     = %s\n' "$(bgr "$c3")"
+        printf 'Error              = %s\n' "$(bgr "$c1")"
+        printf 'LinePrefix         = %s\n' "$(bgr "$c8")"
+        printf 'OpcodeByte         = %s\n' "$(bgr "$c8")"
+        printf 'ExtraLine          = %s\n' "$(bgr "$c14")"
+        printf 'AltOpnd            = %s\n' "$(bgr "$c13")"
+        printf 'Hidden             = %s\n' "$(bgr "$c3")"
+        printf 'Libfunc            = %s\n' "$(bgr "$c6")"
+        printf 'Locvar             = %s\n' "$(bgr "$c2")"
+        printf 'CodeName           = %s\n' "$(bgr "$c4")"
+        printf 'UnknownName        = %s\n' "$(bgr "$c13")"
+        printf 'CollapsedLine      = %s\n' "$(bgr "$c3")"
+        printf 'AsmDir             = %s\n' "$(bgr "$c5")"
+        printf 'Macro              = %s\n' "$(bgr "$c13")"
+        printf 'DChrlit            = %s\n' "$(bgr "$c2")"
+        printf 'DStrlit            = %s\n' "$(bgr "$c2")"
+        printf 'DNumlit            = %s\n' "$(bgr "$c6")"
+        printf 'Keyword            = %s\n' "$(bgr "$c12")"
+        printf 'Reg                = %s\n' "$(bgr "$c14")"
+        printf 'Custmem            = %s\n' "$(bgr "$c8")"
+        printf 'DlgBkColor         = %s\n' "$(bgr "$c0")"
+        printf 'DlgFgColor         = %s\n' "$(bgr "$c15")"
+        printf 'Insensitive        = %s\n' "$(bgr "$c8")"
+        printf 'MainWindow         = %s\n' "$(bgr "$c0")"
+        printf 'MainWindowFgColor  = %s\n' "$(bgr "$c15")"
+        printf 'SelItem            = %s\n' "$(bgr "$c8")"
+        printf 'GraphBg            = %s\n' "$(bgr "$bg")"
+        printf 'CurFunc            = %s\n' "$(bgr "$c3")"
+    } >"$clr" 2>/dev/null || true
+    chmod u+w "$clr" 2>/dev/null || true
+}
+
+obsidian_vault() {
+    printf '%s' "${PWNBOX_OBSIDIAN_VAULT:-$HOME/Documents/Notes}"
+}
+
+sync_obsidian() {
+    local vault css nv bg bgalt fg fgdim faint accent c1 c2 radius ui app appjson tmp
+    vault="$(obsidian_vault)"
+    [ -d "$vault/.obsidian" ] || return 0
+    nv="$cache/nvim-palette.lua"
+    [ -f "$nv" ] || return 0
+
+    bg="$(ida_palette bg 080808)"
+    bgalt="$(ida_palette color0 171717)"
+    fg="$(ida_palette fg cccccc)"
+    mix_hex "#$bg" "#$fg" 72
+    fgdim="$MIX_RESULT"
+    mix_hex "#$bg" "#$fg" 48
+    faint="$MIX_RESULT"
+    accent="$(ida_palette accent 999999)"
+    c1="$(ida_palette color1 6b6b6b)"
+    c2="$(ida_palette color2 c4c4c4)"
+    border="$(lighten_hex "$bg" 12)"
+    borderh="$(lighten_hex "$bg" 20)"
+    radius="$(ui_radius)"
+    case "$radius" in '' | *[!0-9]*) radius=9 ;; esac
+
+    mkdir -p "$vault/.obsidian/snippets" 2>/dev/null || return 0
+    css="$vault/.obsidian/snippets/pwnbox.css"
+    {
+        printf '/* pwnbox snippet (generated from the active palette) */\n'
+        printf 'body.theme-dark,\nbody.theme-light {\n'
+        printf '  --background-primary: #%s;\n' "$bg"
+        printf '  --background-primary-alt: #%s;\n' "$bg"
+        printf '  --background-secondary: #%s;\n' "$bgalt"
+        printf '  --background-secondary-alt: #%s;\n' "$bgalt"
+        printf '  --background-tertiary: #%s;\n' "$bgalt"
+        printf '  --background-modifier-border: %s;\n' "$border"
+        printf '  --background-modifier-border-hover: %s;\n' "$borderh"
+        printf '  --background-modifier-border-focus: #%s;\n' "$accent"
+        printf '  --background-modifier-box-shadow: none;\n'
+        printf '  --background-modifier-hover: #%s;\n' "$bgalt"
+        printf '  --background-modifier-active-hover: #%s;\n' "$faint"
+        printf '  --background-modifier-form-field: #%s;\n' "$bgalt"
+        printf '  --background-modifier-error: #%s;\n' "$c1"
+        printf '  --text-normal: #%s;\n' "$fg"
+        printf '  --text-muted: #%s;\n' "$fgdim"
+        printf '  --text-faint: #%s;\n' "$faint"
+        printf '  --text-error: #%s;\n' "$c1"
+        printf '  --text-accent: #%s;\n' "$accent"
+        printf '  --text-accent-hover: #%s;\n' "$fg"
+        printf '  --text-on-accent: #%s;\n' "$bg"
+        printf '  --text-highlight-bg: #%s;\n' "$faint"
+        printf '  --text-selection: #%s;\n' "$faint"
+        printf '  --interactive-normal: #%s;\n' "$bgalt"
+        printf '  --interactive-hover: #%s;\n' "$faint"
+        printf '  --interactive-accent: #%s;\n' "$accent"
+        printf '  --interactive-accent-hover: #%s;\n' "$fg"
+        printf '  --code-background: #%s;\n' "$bgalt"
+        printf '  --inline-code: #%s;\n' "$c2"
+        printf '  --checkbox-color: #%s;\n' "$accent"
+        printf '  --checkbox-border-color: #%s;\n' "$fgdim"
+        printf '  --checklist-done-color: #%s;\n' "$accent"
+        printf '  --list-marker-color: #%s;\n' "$accent"
+        printf '  --tag-background: #%s;\n' "$bgalt"
+        printf '  --tag-color: #%s;\n' "$fgdim"
+        printf '  --blockquote-border-color: #%s;\n' "$accent"
+        printf '  --bold-color: #%s;\n' "$fg"
+        printf '  --italic-color: #%s;\n' "$fg"
+        printf '  --link-color: #%s;\n' "$accent"
+        printf '  --link-external-color: #%s;\n' "$accent"
+        printf '  --h1-color: #%s;\n' "$fg"
+        printf '  --h2-color: #%s;\n' "$fg"
+        printf '  --h3-color: #%s;\n' "$fg"
+        printf '  --h4-color: #%s;\n' "$fg"
+        printf '  --h5-color: #%s;\n' "$fg"
+        printf '  --h6-color: #%s;\n' "$fg"
+        printf '  --table-border-color: %s;\n' "$border"
+        printf '  --table-header-border-color: %s;\n' "$borderh"
+        printf '  --modal-border-color: %s;\n' "$border"
+        printf '  --prompt-border-color: %s;\n' "$border"
+        printf '  --divider-color: %s;\n' "$border"
+        printf '  --graph-line: #%s;\n' "$faint"
+        printf '  --graph-node: #%s;\n' "$fgdim"
+        printf '  --graph-node-tag: #%s;\n' "$accent"
+        printf '  --icon-color: #%s;\n' "$fg"
+        printf '  --icon-color-hover: #%s;\n' "$fg"
+        printf '  --icon-color-active: #%s;\n' "$accent"
+        printf '  --icon-color-focused: #%s;\n' "$accent"
+        printf '  --icon-opacity: 1;\n'
+        printf '  --radius-s: %spx;\n' "$radius"
+        printf '  --radius-m: %spx;\n' "$radius"
+        printf '  --radius-l: %spx;\n' "$radius"
+        printf '  --shadow-s: none;\n  --shadow-m: none;\n  --shadow-l: none;\n'
+        printf '}\n'
+    } >"$css.tmp" 2>/dev/null || {
+        rm -f "$css.tmp"
+        return 0
+    }
+    if ! cmp -s "$css.tmp" "$css" 2>/dev/null; then
+        cat "$css.tmp" >"$css"
+    fi
+    rm -f "$css.tmp"
+
+    appjson="$vault/.obsidian/appearance.json"
+    [ -f "$appjson" ] || printf '{}\n' >"$appjson" 2>/dev/null || return 0
+    if command -v jq >/dev/null 2>&1; then
+        ui="$(ui_font)"
+        app="$(app_font)"
+        tmp="$vault/.obsidian/.appearance.pwnbox-tmp"
+        if jq --arg uif "$ui" --arg appf "$app" \
+            '.theme = "obsidian"
+             | .cssTheme = ""
+             | .interfaceFontFamily = $uif
+             | .textFontFamily = $uif
+             | .monospaceFontFamily = $appf
+             | .enabledCssSnippets = (((.enabledCssSnippets // []) + ["pwnbox"]) | unique)' \
+            "$appjson" >"$tmp" 2>/dev/null && [ -s "$tmp" ]; then
+            mv -f "$tmp" "$appjson"
+        else
+            rm -f "$tmp"
+        fi
+    fi
+}
+
+zen_chrome_dir() {
+    local profiles ini p
+    profiles="${XDG_CONFIG_HOME:-$HOME/.config}/zen"
+    ini="$profiles/profiles.ini"
+    [ -f "$ini" ] || return 1
+    p="$(sed -n 's/^Path=//p' "$ini" | head -n1)"
+    [ -n "$p" ] || return 1
+    printf '%s' "$profiles/$p/chrome"
+}
+
+unpin_extensions() {
+    local profiles ini p prefs
+    command -v python3 >/dev/null 2>&1 || return 0
+    pgrep -x zen >/dev/null 2>&1 && return 0
+    profiles="${XDG_CONFIG_HOME:-$HOME/.config}/zen"
+    ini="$profiles/profiles.ini"
+    [ -f "$ini" ] || return 0
+    p="$(sed -n 's/^Path=//p' "$ini" | head -n1)"
+    [ -n "$p" ] || return 0
+    prefs="$profiles/$p/prefs.js"
+    [ -f "$prefs" ] || return 0
+    python3 - "$prefs" <<'PYEOF' || true
+import json
+import re
+import sys
+
+ids = [
+    "uBlock0@raymondhill.net",
+    "{d19a89b9-76c1-4a61-bcd4-49e8de916403}",
+    "{036a55b4-5e72-4d05-a06c-cba2dfcc134a}",
+    "wappalyzer@crunchlabz.com",
+    "pywalfox@frewacom.org",
+    "{74145f27-f039-47ce-a470-a662b129930a}",
+    "kern@skuntir.com",
+]
+widgets = [i.lower() + "-browser-action" for i in ids]
+widgets = [re.sub(r"[^a-z0-9_-]", "_", w) for w in widgets]
+
+path = sys.argv[1]
+with open(path) as f:
+    text = f.read()
+
+m = re.search(r'user_pref\("browser\.uiCustomization\.state",\s*"(.*?)"\);', text)
+if not m:
+    sys.exit(0)
+raw = m.group(1)
+try:
+    state = json.loads(json.loads('"' + raw + '"'))
+except Exception:
+    sys.exit(0)
+
+placements = state.get("placements")
+if not isinstance(placements, dict):
+    sys.exit(0)
+nav = placements.get("nav-bar")
+area = placements.get("unified-extensions-area")
+if not isinstance(nav, list) or not isinstance(area, list):
+    sys.exit(0)
+
+changed = False
+for w in widgets:
+    while w in nav:
+        nav.remove(w)
+        changed = True
+    if w not in area:
+        area.append(w)
+        changed = True
+if not changed:
+    sys.exit(0)
+
+new = json.dumps(state, separators=(",", ":"), ensure_ascii=False)
+new = new.replace("\\", "\\\\").replace('"', '\\"')
+text = text[: m.start(1)] + new + text[m.end(1):]
+with open(path, "w") as f:
+    f.write(text)
+PYEOF
+}
+
+zen_json_color() {
+    sed -nE "s/.*\"$1\"[[:space:]]*:[[:space:]]*\"#?([0-9a-fA-F]{6})\".*/\1/p" \
+        "$2" 2>/dev/null | head -1
+}
+
+zen_palette() {
+    local wal="$wal_out/colors.json" pwn="$cache/colors.json"
+    local bg="" fg="" c0="" c1="" c2="" c3="" c4="" c5="" c6="" c7="" c8="" key
+    if [ -f "$wal" ]; then
+        bg="$(zen_json_color background "$wal")"
+        fg="$(zen_json_color foreground "$wal")"
+        for key in 0 1 2 3 4 5 6 7 8; do
+            eval "c$key=\$(zen_json_color color$key \"\$wal\")"
+        done
+    fi
+    if [ -f "$pwn" ]; then
+        [ -n "$bg" ] || bg="$(zen_json_color bg "$pwn")"
+        [ -n "$fg" ] || fg="$(zen_json_color fg "$pwn")"
+        [ -n "$c0" ] || c0="$(zen_json_color bgAlt "$pwn")"
+        [ -n "$c4" ] || c4="$(zen_json_color accent "$pwn")"
+        [ -n "$c8" ] || c8="$(zen_json_color fgFaint "$pwn")"
+    fi
+    [ -n "$bg" ] || bg="080808"
+    [ -n "$fg" ] || fg="cccccc"
+    [ -n "$c0" ] || c0="$bg"
+    [ -n "$c4" ] || c4="$fg"
+    [ -n "$c8" ] || c8="353535"
+    [ -n "$c1" ] || c1="$c4"
+    [ -n "$c2" ] || c2="$fg"
+    [ -n "$c3" ] || c3="$c8"
+    [ -n "$c5" ] || c5="$c4"
+    [ -n "$c6" ] || c6="$c8"
+    [ -n "$c7" ] || c7="$fg"
+    printf '%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s\n' \
+        "$bg" "$fg" "$c0" "$c1" "$c2" "$c3" "$c4" "$c5" "$c6" "$c7" "$c8"
+}
+
+sync_zen_chrome() {
+    local chrome="" mantle="" crust="" base="" surface="" text="" accent="" hover="" active="" app="" tmp="" palette=""
+    local s0="" s1=""
+    chrome="$(zen_chrome_dir)" || return 0
+    [ -d "$(dirname "$chrome")" ] || return 0
+    mkdir -p "$chrome" 2>/dev/null || return 0
+
+    palette="$(zen_palette)"
+    mantle="${palette%%|*}"
+    text="$(printf '%s' "$palette" | cut -d'|' -f2)"
+    base="$(printf '%s' "$palette" | cut -d'|' -f3)"
+    surface="$(printf '%s' "$palette" | cut -d'|' -f11)"
+    accent="$(printf '%s' "$palette" | cut -d'|' -f7)"
+
+    mix_hex "#$mantle" "#000000" 20
+    crust="$MIX_RESULT"
+    hover="$(lighten_hex "#$accent" 15)"
+    active="$(lighten_hex "#$accent" 30)"
+    s0="$(lighten_hex "#$mantle" 8)"
+    s0="${s0#\#}"
+    s1="$(lighten_hex "#$mantle" 12)"
+    s1="${s1#\#}"
+
+    app="$(app_font)"
+
+    tmp="$cache/.zen-userchrome.css.pwnbox-tmp"
+    {
+        cat <<EOF
+/* pwnbox zen theme - userChrome.css (generated from pywal, app font from ALT+S) */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --zen-colors-primary: #$surface !important;
+    --zen-primary-color: #$accent !important;
+    --zen-colors-secondary: #$surface !important;
+    --zen-colors-tertiary: #$mantle !important;
+    --zen-colors-border: #$mantle !important;
+    --toolbarbutton-icon-fill: #$accent !important;
+    --lwt-text-color: #$text !important;
+    --toolbar-field-color: #$text !important;
+    --tab-selected-textcolor: #$text !important;
+    --toolbar-field-focus-color: #$text !important;
+    --toolbar-color: #$text !important;
+    --newtab-text-primary-color: #$text !important;
+    --arrowpanel-color: #$text !important;
+    --arrowpanel-background: #$base !important;
+    --sidebar-text-color: #$text !important;
+    --lwt-sidebar-text-color: #$text !important;
+    --lwt-sidebar-background-color: #$crust !important;
+    --toolbar-bgcolor: #$surface !important;
+    --newtab-background-color: #$base !important;
+    --zen-themed-toolbar-bg: #$mantle !important;
+    --zen-main-browser-background: #$mantle !important;
+    --zen-main-browser-background-old: #$mantle !important;
+    --zen-themed-toolbar-bg-transparent: #$mantle !important;
+    --zen-navigator-toolbox-background: #$mantle !important;
+    --zen-grainy-background-opacity: 0 !important;
+    --toolbox-bgcolor-inactive: #$mantle !important;
+    --panel-shadow: none !important;
+    --urlbarView-box-shadow: none !important;
+  }
+
+  /* flat look: no shadows anywhere */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* browser backdrop: solid theme color, no gradient, no grain */
+  .zen-browser-generic-background::after,
+  .zen-browser-generic-background::before,
+  #zen-browser-background,
+  #zen-main-app-wrapper {
+    background-color: #$mantle !important;
+    background-image: none !important;
+  }
+
+  .zen-browser-grain {
+    display: none !important;
+  }
+
+  panel,
+  menupopup,
+  tooltip,
+  .urlbarView,
+  #urlbar-results,
+  #PopupAutoCompleteRichResult,
+  notification,
+  .tabbrowser-tab,
+  toolbarbutton {
+    filter: none !important;
+  }
+
+  #main-window,
+  #browser,
+  #navigator-toolbox {
+    background-color: #$mantle !important;
+  }
+
+  #permissions-granted-icon {
+    color: #$mantle !important;
+  }
+
+  .sidebar-placesTree {
+    background-color: #$base !important;
+  }
+
+  #zen-workspaces-button {
+    background-color: #$base !important;
+  }
+
+  #TabsToolbar {
+    background-color: #$mantle !important;
+  }
+
+  #urlbar,
+  .urlbar-background {
+    background-color: #$base !important;
+  }
+
+  .content-shortcuts {
+    background-color: #$base !important;
+    border-color: #$mantle !important;
+  }
+
+  .urlbarView-url {
+    color: #$accent !important;
+  }
+
+  #zenEditBookmarkPanelFaviconContainer {
+    background: #$crust !important;
+  }
+
+  #zen-media-controls-toolbar {
+    & #zen-media-progress-bar {
+      &::-moz-range-track {
+        background: #$surface !important;
+      }
+    }
+  }
+
+  toolbar .toolbarbutton-1 {
+    &:not([disabled]) {
+      &:is([open], [checked])
+        > :is(
+          .toolbarbutton-icon,
+          .toolbarbutton-text,
+          .toolbarbutton-badge-stack
+        ) {
+        fill: #$mantle;
+      }
+    }
+  }
+
+  menupopup,
+  panel,
+  tooltip,
+  #PopupAutoCompleteRichResult,
+  #urlbar-results {
+    --panel-background: #$base !important;
+    --panel-color: #$text !important;
+    --arrowpanel-background: #$base !important;
+    --arrowpanel-color: #$text !important;
+    --arrowpanel-border-color: #$mantle !important;
+  }
+
+  menupopup {
+    -moz-appearance: none !important;
+    background-color: #$base !important;
+    color: #$text !important;
+  }
+
+  menu[_moz-menuactive="true"],
+  menuitem[_moz-menuactive="true"],
+  menuitem:hover,
+  menu:hover {
+    -moz-appearance: none !important;
+    background-color: #$surface !important;
+    color: #$text !important;
+  }
+
+  menuseparator {
+    -moz-appearance: none !important;
+    border-top: 1px solid #$surface !important;
+  }
+
+  .identity-color-blue {
+    --identity-tab-color: #$accent !important;
+    --identity-icon-color: #$accent !important;
+  }
+
+  .identity-color-turquoise {
+    --identity-tab-color: #$hover !important;
+    --identity-icon-color: #$hover !important;
+  }
+
+  .identity-color-green {
+    --identity-tab-color: #$hover !important;
+    --identity-icon-color: #$hover !important;
+  }
+
+  .identity-color-yellow {
+    --identity-tab-color: #$active !important;
+    --identity-icon-color: #$active !important;
+  }
+
+  .identity-color-orange {
+    --identity-tab-color: #$active !important;
+    --identity-icon-color: #$active !important;
+  }
+
+  .identity-color-red {
+    --identity-tab-color: #$active !important;
+    --identity-icon-color: #$active !important;
+  }
+
+  .identity-color-pink {
+    --identity-tab-color: #$hover !important;
+    --identity-icon-color: #$hover !important;
+  }
+
+  .identity-color-purple {
+    --identity-tab-color: #$accent !important;
+    --identity-icon-color: #$accent !important;
+  }
+
+  hbox#titlebar {
+    background-color: #$mantle !important;
+  }
+
+  #zen-appcontent-navbar-container {
+    background-color: #$mantle !important;
+  }
+
+  /* devtools: follow the theme */
+  @-moz-document url-prefix("chrome://devtools/") {
+    :root {
+      --theme-body-background: #$mantle !important;
+      --theme-sidebar-background: #$base !important;
+      --theme-toolbar-background: #$base !important;
+      --theme-tab-toolbar-background: #$mantle !important;
+      --theme-selection-background: #$surface !important;
+      --theme-selection-color: #$text !important;
+      --theme-body-color: #$text !important;
+      --theme-body-color-alt: #$text !important;
+      --theme-comment: #$surface !important;
+      --theme-highlight-blue: #$accent !important;
+      --theme-highlight-red: #$accent !important;
+      --theme-highlight-green: #$accent !important;
+      --theme-highlight-purple: #$accent !important;
+      --theme-highlight-orange: #$accent !important;
+      --theme-highlight-lightorange: #$accent !important;
+      --theme-splitter-color: #$s0 !important;
+      --theme-contrast-border: #$s0 !important;
+      --theme-toolbarbutton-hover-background: #$surface !important;
+      --theme-toolbarbutton-active-background: #$surface !important;
+      --theme-toolbarbutton-checked-background: #$surface !important;
+      --theme-tab-line-selected-color: #$accent !important;
+    }
+
+    * {
+      box-shadow: none !important;
+      text-shadow: none !important;
+      border-color: #$s0 !important;
+      outline-color: #$s1 !important;
+    }
+
+    .devtools-toolbar,
+    .devtools-sidebar-tabs,
+    .devtools-tab,
+    .CodeMirror {
+      font-family: "$app", monospace !important;
+    }
+  }
+
+  :root,
+  #main-window,
+  #navigator-toolbox,
+  .tabbrowser-tab,
+  #urlbar,
+  #urlbar-input,
+  panel,
+  menupopup,
+  menuitem,
+  toolbarbutton,
+  .sidebar-placesTree,
+  #sidebar-header {
+    font-family: "$app", monospace !important;
+  }
+}
+EOF
+    } >"$tmp"
+    if [ -s "$tmp" ]; then
+        cp -f "$tmp" "$chrome/userChrome.css" 2>/dev/null || true
+    fi
+    rm -f "$tmp"
+
+    if [ -f "$cache/userContent.css" ]; then
+        cp -f "$cache/userContent.css" "$chrome/userContent.css" 2>/dev/null || true
+    elif [ -f "$mono/userContent.css" ]; then
+        cp -f "$mono/userContent.css" "$chrome/userContent.css" 2>/dev/null || true
+    fi
+    chmod u+w "$chrome/userContent.css" 2>/dev/null || true
+    chmod u+w "$chrome/userChrome.css" "$chrome/userContent.css" 2>/dev/null || true
+}
+
+sync_userstyles() {
+    local templates="$HOME/.config/pwnbox/zen/userstyles"
+    local outdir="$cache/userstyles"
+    local p="" bg="" fg="" c0="" c1="" c2="" c3="" c4="" c5="" c6="" c7="" c8=""
+    local crust="" s2="" s1="" i="" hex="" mark="" r="" g="" b="" t="" name="" app=""
+    local -a slot_hex=()
+    local -a sed_args=()
+
+    [ -d "$templates" ] || return 0
+    app="$(app_font)"
+    p="$(zen_palette)"
+    bg="${p%%|*}"
+    p="${p#*|}"
+    fg="${p%%|*}"
+    p="${p#*|}"
+    c0="${p%%|*}"
+    p="${p#*|}"
+    c1="${p%%|*}"
+    p="${p#*|}"
+    c2="${p%%|*}"
+    p="${p#*|}"
+    c3="${p%%|*}"
+    p="${p#*|}"
+    c4="${p%%|*}"
+    p="${p#*|}"
+    c5="${p%%|*}"
+    p="${p#*|}"
+    c6="${p%%|*}"
+    p="${p#*|}"
+    c7="${p%%|*}"
+    p="${p#*|}"
+    c8="$p"
+
+    mix_hex "#$bg" "#000000" 20
+    crust="$MIX_RESULT"
+    s2="$(lighten_hex "#$bg" 16)"
+    s2="${s2#\#}"
+    s1="$(lighten_hex "#$bg" 12)"
+    s1="${s1#\#}"
+    s0="$(lighten_hex "#$bg" 8)"
+    s0="${s0#\#}"
+
+    slot_hex[1]="$c0"
+    slot_hex[2]="$bg"
+    slot_hex[3]="$crust"
+    slot_hex[4]="$fg"
+    slot_hex[5]="$c7"
+    slot_hex[6]="$c8"
+    slot_hex[7]="$s2"
+    slot_hex[8]="$s1"
+    slot_hex[9]="$s0"
+    slot_hex[10]="$s2"
+    slot_hex[11]="$s1"
+    slot_hex[12]="$s0"
+    slot_hex[13]="$c7"
+    slot_hex[14]="$c5"
+    slot_hex[15]="$c5"
+    slot_hex[16]="$c4"
+    slot_hex[17]="$c1"
+    slot_hex[18]="$c5"
+    slot_hex[19]="$c3"
+    slot_hex[20]="$c3"
+    slot_hex[21]="$c2"
+    slot_hex[22]="$c6"
+    slot_hex[23]="$c6"
+    slot_hex[24]="$c4"
+    slot_hex[25]="$c4"
+    slot_hex[26]="$c4"
+    slot_hex[27]="$c4"
+
+    for i in $(seq 27 -1 1); do
+        hex="${slot_hex[$i]}"
+        mark="$(printf 'f0f0%02x' "$i")"
+        r=$((16#${hex:0:2}))
+        g=$((16#${hex:2:2}))
+        b=$((16#${hex:4:2}))
+        sed_args+=(-e "s/#$mark/#$hex/g" -e "s/%23$mark/%23$hex/g" -e "s/240, 240, $i/$r, $g, $b/g")
+    done
+
+    mkdir -p "$outdir" 2>/dev/null || return 0
+    for t in "$templates"/*.css; do
+        [ -f "$t" ] || continue
+        name="$(basename "$t" .css)"
+        sed "${sed_args[@]}" "$t" >"$outdir/$name.user.css" 2>/dev/null || true
+        sed -i -E \
+            -e "s/^@version.*/@version        $(date +%s).0.0/" \
+            -e "/^==\/UserStyle==/i @updateURL      http://localhost:8311/${name}.user.css" \
+            "$outdir/$name.user.css" 2>/dev/null || true
+        printf '\n/* pwnbox flat borders */\n* { border-color: #%s !important; outline-color: #%s !important; }\n' "$s0" "$s1" >>"$outdir/$name.user.css" 2>/dev/null || true
+    done
+    for t in "$outdir"/*.user.css; do
+        [ -f "$t" ] || continue
+        name="$(basename "$t" .user.css)"
+        [ -f "$templates/$name.css" ] || rm -f "$t" 2>/dev/null || true
+    done
+
+    local pfile="" pfiles=()
+    for pfile in youtube github reddit twitter instagram wikipedia duckduckgo twitch spotify-web linkedin stack-overflow mastodon hacker-news nitter libreddit invidious searxng bsky proton; do
+        [ -f "$outdir/$pfile.user.css" ] && pfiles+=("$outdir/$pfile.user.css")
+    done
+    for t in "$outdir"/*.user.css; do
+        [ -f "$t" ] || continue
+        [ "$(basename "$t")" = "pwnbox-all.user.css" ] && continue
+        case " ${pfiles[*]} " in
+        *" $t "*) continue ;;
+        esac
+        pfiles+=("$t")
+    done
+
+    {
+        printf '/* ==UserStyle==\n@name           pwnbox-all\n@namespace      pwnbox\n@version        %s.0.0\n@description    every pwnbox site theme (pywal), follows the active pwnbox theme\n@author         Catppuccin (adapted)\n@license        MIT\n@updateURL      http://localhost:8311/pwnbox-all.user.css\n==/UserStyle== */\n\n' "$(date +%s)"
+        for t in "${pfiles[@]}"; do
+            cat "$t"
+        done
+    } >"$outdir/pwnbox-all.user.css" 2>/dev/null || true
+    printf '%s\n' "$(date +%s)" >"$outdir/version.txt" 2>/dev/null || true
+    printf '{"border":"#%s","outline":"#%s","font":"%s"}\n' "$s0" "$s1" "$app" >"$outdir/theme.json" 2>/dev/null || true
+}
+
+TG_BG=""
+TG_FG=""
+TG_CHROM=()
+declare -A TG_CMAP=()
+
+mix_hex() {
+    local a="${1#\#}" b="${2#\#}" p="${3:-50}"
+    printf -v MIX_RESULT '%02x%02x%02x' \
+        $((16#${a:0:2} + (16#${b:0:2} - 16#${a:0:2}) * p / 100)) \
+        $((16#${a:2:2} + (16#${b:2:2} - 16#${a:2:2}) * p / 100)) \
+        $((16#${a:4:2} + (16#${b:4:2} - 16#${a:4:2}) * p / 100))
+}
+
+lum255() { LUM_RESULT=$(((299 * $1 + 587 * $2 + 114 * $3) / 1000)); }
+
+nearest_color() {
+    local r="$1" g="$2" b="$3" i cr cg cb d
+    local best="${TG_CHROM[0]:-}" bestd=99999999
+    for i in "${TG_CHROM[@]}"; do
+        cr=$((16#${i:0:2}))
+        cg=$((16#${i:2:2}))
+        cb=$((16#${i:4:2}))
+        d=$(((r - cr) * (r - cr) + (g - cg) * (g - cg) + (b - cb) * (b - cb)))
+        if [ "$d" -lt "$bestd" ]; then
+            bestd=$d
+            best="$i"
+        fi
+    done
+    NC_RESULT="$best"
+}
+
+recolor_one() {
+    local hex="${1#\#}" alpha=""
+    if [ ${#hex} -eq 8 ]; then
+        alpha="${hex:6:2}"
+        hex="${hex:0:6}"
+    fi
+    local new="${TG_CMAP[$hex]:-}"
+    if [ -z "$new" ]; then
+        local r=$((16#${hex:0:2})) g=$((16#${hex:2:2})) b=$((16#${hex:4:2}))
+        local mx=$r mn=$r
+        if [ "$g" -gt "$mx" ]; then mx=$g; fi
+        if [ "$g" -lt "$mn" ]; then mn=$g; fi
+        if [ "$b" -gt "$mx" ]; then mx=$b; fi
+        if [ "$b" -lt "$mn" ]; then mn=$b; fi
+        lum255 "$r" "$g" "$b"
+        local ls="$LUM_RESULT"
+        if [ $((mx - mn)) -le 16 ]; then
+            mix_hex "$TG_BG" "$TG_FG" "$((ls * 100 / 255))"
+            new="$MIX_RESULT"
+        else
+            nearest_color "$r" "$g" "$b"
+            local cand="$NC_RESULT"
+            if [ -z "$cand" ]; then
+                new="$TG_FG"
+            else
+                local cr=$((16#${cand:0:2})) cg=$((16#${cand:2:2})) cb=$((16#${cand:4:2}))
+                lum255 "$cr" "$cg" "$cb"
+                local lc="$LUM_RESULT"
+                if [ "$ls" -gt "$lc" ]; then
+                    local den=$((255 - lc))
+                    if [ "$den" -eq 0 ]; then den=1; fi
+                    mix_hex "$cand" "$TG_FG" "$(((ls - lc) * 100 / den))"
+                    new="$MIX_RESULT"
+                else
+                    if [ "$lc" -eq 0 ]; then lc=1; fi
+                    mix_hex "$cand" "$TG_BG" "$(((lc - ls) * 100 / lc))"
+                    new="$MIX_RESULT"
+                fi
+            fi
+        fi
+        TG_CMAP[$hex]="$new"
+    fi
+    RO_RESULT="#${new}${alpha}"
+}
+
+load_recolor_colors() {
+    TG_BG="$(theme_color bg)"
+    [ -n "$TG_BG" ] || TG_BG="080808"
+    TG_FG="$(theme_color fg)"
+    [ -n "$TG_FG" ] || TG_FG="cccccc"
+
+    TG_CHROM=()
+    local nv="$cache/nvim-palette.lua" i v
+    if [ -f "$nv" ]; then
+        for i in 1 2 3 4 5 6 9 10 11 12 13 14; do
+            v="$(sed -nE "s/^[[:space:]]*color${i}[[:space:]]*=[[:space:]]*\"#?([0-9a-fA-F]{6})\".*/\1/p" "$nv" | head -1)"
+            if [ -n "$v" ]; then TG_CHROM+=("$v"); fi
+        done
+    fi
+    if [ ${#TG_CHROM[@]} -eq 0 ]; then
+        for v in "$(theme_color red)" "$(theme_color green)" "$(theme_color yellow)" \
+            "$(theme_color mauve)" "$(theme_color cyan)" "$(theme_color accent)"; do
+            if [ -n "$v" ]; then TG_CHROM+=("$v"); fi
+        done
+    fi
+}
+
+sync_telegram() {
+    local base="$HOME/.config/telegram/awesome.tdesktop-theme"
+    [ -f "$base" ] || return 0
+    mkdir -p "$HOME/.config/telegram" "$cache" 2>/dev/null || true
+
+    load_recolor_colors
+
+    TG_CMAP=()
+    local tmp="$cache/telegram.tdesktop-theme.tmp" line
+    : >"$tmp"
+    while IFS= read -r line; do
+        if [[ "$line" =~ ^([[:space:]]*[A-Za-z0-9_]+:[[:space:]]*)(#[0-9a-fA-F]{6}([0-9a-fA-F]{2})?)(.*)$ ]]; then
+            recolor_one "${BASH_REMATCH[2]}"
+            printf '%s%s%s\n' "${BASH_REMATCH[1]}" "$RO_RESULT" "${BASH_REMATCH[4]}" >>"$tmp"
+        else
+            printf '%s\n' "$line" >>"$tmp"
+        fi
+    done <"$base"
+    local out="$HOME/.config/telegram/pwnbox.tdesktop-theme"
+    if ! cmp -s "$tmp" "$out" 2>/dev/null; then
+        cat "$tmp" >"$out"
+    fi
+    if [ -d "$HOME/Downloads" ]; then
+        cat "$tmp" >"$HOME/Downloads/pwnbox.tdesktop-theme" 2>/dev/null || true
+    fi
+    rm -f "$tmp"
+}
+
+recolor_rgb_triplet() {
+    local r="${1:-0}" g="${2:-0}" b="${3:-0}" hex out
+    [ "$r" -gt 255 ] && r=255
+    [ "$g" -gt 255 ] && g=255
+    [ "$b" -gt 255 ] && b=255
+    printf -v hex '%02x%02x%02x' "$r" "$g" "$b"
+    recolor_one "#$hex"
+    out="${RO_RESULT#\#}"
+    RGB_RESULT="$((16#${out:0:2})), $((16#${out:2:2})), $((16#${out:4:2}))"
+}
+
+recolor_rgb_in_line() {
+    local line="$1"
+    if [[ "$line" =~ ^([[:space:]]*--[A-Za-z0-9_-]+:[[:space:]]*)([0-9]{1,3})[[:space:]]*,[[:space:]]*([0-9]{1,3})[[:space:]]*,[[:space:]]*([0-9]{1,3})(.*)$ ]]; then
+        recolor_rgb_triplet "${BASH_REMATCH[2]}" "${BASH_REMATCH[3]}" "${BASH_REMATCH[4]}"
+        line="${BASH_REMATCH[1]}${RGB_RESULT}${BASH_REMATCH[5]}"
+    fi
+    local rest="$line" out="" pre
+    while [ -n "$rest" ]; do
+        if [[ "$rest" =~ ^(.*rgba?\([[:space:]]*)([0-9]{1,3})[[:space:]]*,[[:space:]]*([0-9]{1,3})[[:space:]]*,[[:space:]]*([0-9]{1,3})(.*)$ ]]; then
+            pre="${BASH_REMATCH[1]}"
+            recolor_rgb_triplet "${BASH_REMATCH[2]}" "${BASH_REMATCH[3]}" "${BASH_REMATCH[4]}"
+            out+="$pre${RGB_RESULT}"
+            rest="${BASH_REMATCH[5]}"
+        else
+            out+="$rest"
+            break
+        fi
+    done
+    RGB_LINE="$out"
+}
+
+recolor_css_line() {
+    recolor_rgb_in_line "$1"
+    local rest="$RGB_LINE" out="" pre tok norm
+    while [ -n "$rest" ]; do
+        if [[ "$rest" =~ ^([^#]*)#([0-9a-fA-F]+)(.*)$ ]]; then
+            pre="${BASH_REMATCH[1]}"
+            tok="${BASH_REMATCH[2]}"
+            rest="${BASH_REMATCH[3]}"
+            out+="$pre#"
+            case "${#tok}" in
+            3) norm="${tok:0:1}${tok:0:1}${tok:1:1}${tok:1:1}${tok:2:1}${tok:2:1}" ;;
+            6 | 8) norm="$tok" ;;
+            *)
+                out+="$tok"
+                continue
+                ;;
+            esac
+            recolor_one "#$norm"
+            out+="${RO_RESULT#\#}"
+        else
+            out+="$rest"
+            break
+        fi
+    done
+    RC_RESULT="$out"
+}
+
+equibop_fonts() {
+    local eq="$HOME/.config/equibop/settings/quickCss.css"
+    local app eqsize uisize
+    [ -f "$eq" ] || return 0
+    app="$(app_font)"
+    uisize="$(ui_font_size)"
+    case "$uisize" in
+    '' | *[!0-9]*) eqsize=12 ;;
+    *) eqsize=$((uisize + 3)) ;;
+    esac
+    chmod u+w "$eq" 2>/dev/null || true
+    sed -i '/\/\* pwnbox-fonts-start \*\//,/\/\* pwnbox-fonts-end \*\//d' "$eq" 2>/dev/null || true
+    {
+        printf '/* pwnbox-fonts-start */\n'
+        printf ':root { --font: "%s" !important; --font-code: "%s" !important; }\n' "$app" "$app"
+        printf 'body, button, input, select, textarea { font-family: var(--font), sans-serif !important; }\n'
+        printf 'code, kbd, pre, samp { font-family: var(--font-code), monospace !important; }\n'
+        printf 'html, body { font-size: %spx !important; }\n' "$eqsize"
+        printf '/* pwnbox-fonts-end */\n'
+    } >>"$eq" 2>/dev/null || true
+}
+
+sync_equibop() {
+    local base="$HOME/.config/equibop/theme-base.css"
+    local out="$HOME/.config/equibop/settings/quickCss.css"
+    [ -f "$base" ] || return 0
+    [ -d "$HOME/.config/equibop" ] || return 0
+    mkdir -p "$(dirname "$out")" "$cache" 2>/dev/null || true
+
+    load_recolor_colors
+    TG_CMAP=()
+
+    local tmp="$cache/equibop.css.tmp" line
+    : >"$tmp"
+    while IFS= read -r line; do
+        recolor_css_line "$line"
+        printf '%s\n' "$RC_RESULT" >>"$tmp"
+    done <"$base"
+    if ! cmp -s "$tmp" "$out" 2>/dev/null; then
+        cat "$tmp" >"$out"
+    fi
+    rm -f "$tmp"
+    equibop_fonts
+}
+
+sync_stremio() {
+    local pwn="$cache/colors.json" wal="$wal_out/colors.json" themes_dir="$HOME/.config/stremio-enhanced/themes"
+    local bg="" bgalt="" fg="" faint="" accent="" soft="" red="" green="" yellow="" cyan=""
+    local s0="" s1="" app="" radius="" tmp=""
+    [ -d "$HOME/.config/stremio-enhanced" ] || return 0
+
+    if [ -f "$wal" ]; then
+        bg="$(zen_json_color background "$wal")"
+        fg="$(zen_json_color foreground "$wal")"
+        bgalt="$(zen_json_color color0 "$wal")"
+        red="$(zen_json_color color1 "$wal")"
+        green="$(zen_json_color color2 "$wal")"
+        yellow="$(zen_json_color color3 "$wal")"
+        cyan="$(zen_json_color color6 "$wal")"
+        soft="$(zen_json_color color7 "$wal")"
+        faint="$(zen_json_color color8 "$wal")"
+        accent="$faint"
+    fi
+    for p in "$pwn" "$mono/colors.json"; do
+        [ -f "$p" ] || continue
+        [ -n "$bg" ] || bg="$(zen_json_color bg "$p")"
+        [ -n "$fg" ] || fg="$(zen_json_color fg "$p")"
+        [ -n "$bgalt" ] || bgalt="$(zen_json_color bgAlt "$p")"
+        [ -n "$red" ] || red="$(zen_json_color red "$p")"
+        [ -n "$green" ] || green="$(zen_json_color green "$p")"
+        [ -n "$yellow" ] || yellow="$(zen_json_color yellow "$p")"
+        [ -n "$cyan" ] || cyan="$(zen_json_color cyan "$p")"
+        [ -n "$soft" ] || soft="$(zen_json_color accentSoft "$p")"
+        [ -n "$faint" ] || faint="$(zen_json_color fgFaint "$p")"
+        [ -n "$accent" ] || accent="$(zen_json_color accent "$p")"
+    done
+
+    [ -n "$bg" ] || return 0
+    [ -n "$bgalt" ] || bgalt="$bg"
+    [ -n "$fg" ] || fg="cccccc"
+    [ -n "$faint" ] || faint="$bgalt"
+    [ -n "$accent" ] || accent="$faint"
+    [ -n "$soft" ] || soft="$fg"
+    [ -n "$red" ] || red="$accent"
+    [ -n "$green" ] || green="$fg"
+    [ -n "$yellow" ] || yellow="$faint"
+    [ -n "$cyan" ] || cyan="$faint"
+
+    s0="$(lighten_hex "#$bg" 8)"
+    s0="${s0#\#}"
+    s1="$(lighten_hex "#$bg" 16)"
+    s1="${s1#\#}"
+
+    app="$(app_font)"
+    radius="$(ui_radius)"
+
+    mkdir -p "$themes_dir" "$cache" 2>/dev/null || return 0
+    tmp="$cache/.stremio.theme.css.pwnbox-tmp"
+    {
+        printf '/**\n * @name pwnbox\n * @description follows the active pwnbox theme (pywal + custom themes)\n * @author pwnbox\n * @version 1.0.0\n */\n\n'
+        printf ':root {\n'
+        printf '    --primary-background-color: #%s !important;\n' "$bg"
+        printf '    --secondary-background-color: #%s !important;\n' "$bg"
+        printf '    --modal-background-color: #%s !important;\n' "$s0"
+        printf '    --primary-foreground-color: #%s !important;\n' "$fg"
+        printf '    --secondary-foreground-color: #%s !important;\n' "$bg"
+        printf '    --primary-accent-color: #%s !important;\n' "$accent"
+        printf '    --secondary-accent-color: #%s !important;\n' "$green"
+        printf '    --tertiary-accent-color: #%s !important;\n' "$yellow"
+        printf '    --quaternary-accent-color: #%s !important;\n' "$cyan"
+        printf '    --danger-accent-color: #%s !important;\n' "$red"
+        printf '    --warning-accent-color: #%s !important;\n' "$yellow"
+        printf '    --overlay-color: #%s14 !important;\n' "$fg"
+        printf '    --outer-glow: 0px 0px 15px #%s33 !important;\n' "$accent"
+        printf '    --color-foreground: #%s !important;\n' "$fg"
+        printf '    --color-surface: #%s !important;\n' "$s1"
+        printf '    --color-background-dark5-20: #%s33 !important;\n' "$bg"
+        printf '    --color-background-dark5-40: #%s66 !important;\n' "$bg"
+        printf '    --color-placeholder: #%s4d !important;\n' "$fg"
+        printf '    --color-placeholder-text: #%s80 !important;\n' "$soft"
+        printf '    --color-placeholder-background: #%s33 !important;\n' "$s0"
+        printf '    --border-radius: %spx !important;\n' "$radius"
+        printf '    --scroll-bar-size: 6px !important;\n'
+        printf '}\n\n'
+        printf 'html, body, button, input, select, textarea {\n'
+        printf '    font-family: "%s", monospace !important;\n' "$app"
+        printf '}\n\n'
+        printf '::selection {\n'
+        printf '    background-color: #%s !important;\n' "$accent"
+        printf '    color: #%s !important;\n' "$fg"
+        printf '}\n\n'
+        printf '::-webkit-scrollbar { width: var(--scroll-bar-size) !important; height: var(--scroll-bar-size) !important; }\n'
+        printf '::-webkit-scrollbar-thumb { background-color: #%s !important; border-radius: calc(var(--scroll-bar-size) / 2) !important; }\n' "$s1"
+        printf '::-webkit-scrollbar-track { background-color: transparent !important; }\n'
+    } >"$tmp" 2>/dev/null
+    if [ -s "$tmp" ]; then
+        cp_atomic "$tmp" "$themes_dir/pwnbox.theme.css"
+    fi
+    rm -f "$tmp" 2>/dev/null || true
+}
+
+sync_signal() {
+    local conf_dir="$HOME/.config/Signal" pwn="$cache/colors.json" wal="$wal_out/colors.json"
+    local bg="" bgalt="" fg="" fgdim="" faint="" accent="" accentsoft="" red="" green="" yellow="" cyan=""
+    local s1="" s2="" s3="" app="" radius="" tmp="" tok="" slot="" alpha="" val=""
+
+    command -v signal-desktop >/dev/null 2>&1 || return 0
+    mkdir -p "$conf_dir" "$cache" 2>/dev/null || return 0
+
+    if [ -f "$wal" ]; then
+        bg="$(zen_json_color background "$wal")"
+        fg="$(zen_json_color foreground "$wal")"
+        bgalt="$(zen_json_color color0 "$wal")"
+        red="$(zen_json_color color1 "$wal")"
+        green="$(zen_json_color color2 "$wal")"
+        yellow="$(zen_json_color color3 "$wal")"
+        cyan="$(zen_json_color color6 "$wal")"
+        faint="$(zen_json_color color8 "$wal")"
+        accentsoft="$(zen_json_color color7 "$wal")"
+    fi
+    for p in "$pwn" "$mono/colors.json"; do
+        [ -f "$p" ] || continue
+        [ -n "$bg" ] || bg="$(zen_json_color bg "$p")"
+        [ -n "$fg" ] || fg="$(zen_json_color fg "$p")"
+        [ -n "$bgalt" ] || bgalt="$(zen_json_color bgAlt "$p")"
+        [ -n "$fgdim" ] || fgdim="$(zen_json_color fgDim "$p")"
+        [ -n "$faint" ] || faint="$(zen_json_color fgFaint "$p")"
+        [ -n "$accent" ] || accent="$(zen_json_color accent "$p")"
+        [ -n "$accentsoft" ] || accentsoft="$(zen_json_color accentSoft "$p")"
+        [ -n "$red" ] || red="$(zen_json_color red "$p")"
+        [ -n "$green" ] || green="$(zen_json_color green "$p")"
+        [ -n "$yellow" ] || yellow="$(zen_json_color yellow "$p")"
+        [ -n "$cyan" ] || cyan="$(zen_json_color cyan "$p")"
+    done
+
+    [ -n "$bg" ] || return 0
+    [ -n "$bgalt" ] || bgalt="$bg"
+    [ -n "$fg" ] || fg="cccccc"
+    [ -n "$fgdim" ] || fgdim="$fg"
+    [ -n "$faint" ] || faint="$bgalt"
+    [ -n "$accent" ] || accent="$faint"
+    [ -n "$accentsoft" ] || accentsoft="$fg"
+    [ -n "$red" ] || red="$accent"
+    [ -n "$green" ] || green="$fg"
+    [ -n "$yellow" ] || yellow="$faint"
+    [ -n "$cyan" ] || cyan="$faint"
+
+    s1="$(lighten_hex "#$bg" 6)"
+    s1="${s1#\#}"
+    s2="$(lighten_hex "#$bg" 10)"
+    s2="${s2#\#}"
+    s3="$(lighten_hex "#$bg" 16)"
+    s3="${s3#\#}"
+    app="$(app_font)"
+    radius="$(ui_radius)"
+    case "$radius" in '' | *[!0-9]*) radius=9 ;; esac
+
+    sig_slot() {
+        case "$1" in
+        bg) printf '%s' "$bg" ;;
+        bgalt) printf '%s' "$bgalt" ;;
+        fg) printf '%s' "$fg" ;;
+        fgdim) printf '%s' "$fgdim" ;;
+        faint) printf '%s' "$faint" ;;
+        accent) printf '%s' "$accent" ;;
+        accentsoft) printf '%s' "$accentsoft" ;;
+        red) printf '%s' "$red" ;;
+        green) printf '%s' "$green" ;;
+        yellow) printf '%s' "$yellow" ;;
+        cyan) printf '%s' "$cyan" ;;
+        s1) printf '%s' "$s1" ;;
+        s2) printf '%s' "$s2" ;;
+        s3) printf '%s' "$s3" ;;
+        esac
+    }
+
+    local -a tokens=(
+        "--axo-color-brand-primary=accent"
+
+        "--axo-color-surface-primary=bg"
+        "--axo-color-surface-secondary=bg"
+        "--axo-color-surface-card=bgalt"
+        "--axo-color-surface-message-incoming=bgalt"
+        "--axo-color-surface-message-outgoing=s3"
+
+        "--axo-color-material-primary=bg"
+        "--axo-color-material-secondary=bgalt"
+        "--axo-color-material-tertiary=bgalt"
+        "--axo-color-material-tertiary-pressed=s1"
+        "--axo-color-material-quaternary=s1"
+        "--axo-color-material-quaternary-pressed=s2"
+        "--axo-color-material-dim-primary=faint"
+        "--axo-color-material-dialog=bgalt"
+
+        "--axo-color-fill-primary=bgalt"
+        "--axo-color-fill-primary-pressed=s1"
+        "--axo-color-fill-secondary=s1"
+        "--axo-color-fill-secondary-pressed=s2"
+        "--axo-color-fill-control=bgalt"
+        "--axo-color-fill-control-pressed=s1"
+        "--axo-color-fill-inverted=fg"
+        "--axo-color-fill-inverted-pressed=fgdim"
+        "--axo-color-fill-overlay=bg:4d"
+        "--axo-color-fill-onmessage-incoming-primary=fg"
+        "--axo-color-fill-onmessage-incoming-primary-pressed=fgdim"
+        "--axo-color-fill-onmessage-outgoing-primary=bg"
+        "--axo-color-fill-onmessage-outgoing-primary-pressed=bgalt"
+        "--axo-color-fill-onmessage-outgoing-secondary=bgalt"
+        "--axo-color-fill-accent=accent"
+        "--axo-color-fill-accent-pressed=faint"
+        "--axo-color-fill-accent-tint=s1"
+        "--axo-color-fill-accent-tint-pressed=s2"
+        "--axo-color-fill-affirmative=green"
+        "--axo-color-fill-affirmative-pressed=faint"
+        "--axo-color-fill-affirmative-tint=s1"
+        "--axo-color-fill-affirmative-tint-pressed=s2"
+        "--axo-color-fill-warning-bright=yellow"
+        "--axo-color-fill-warning-bright-pressed=fgdim"
+        "--axo-color-fill-warning-tint=s1"
+        "--axo-color-fill-warning-tint-pressed=s2"
+        "--axo-color-fill-destructive=red"
+        "--axo-color-fill-destructive-pressed=faint"
+        "--axo-color-fill-destructive-tint=s1"
+        "--axo-color-fill-destructive-tint-pressed=s2"
+
+        "--axo-color-border-primary=s1"
+        "--axo-color-border-secondary=s2"
+        "--axo-color-border-selected=accent"
+        "--axo-color-border-focused-inner=bg"
+        "--axo-color-border-focused-outer=fgdim"
+
+        "--axo-color-label-primary=fg"
+        "--axo-color-label-secondary=fgdim"
+        "--axo-color-label-placeholder=faint"
+        "--axo-color-label-disabled=faint"
+        "--axo-color-label-primary-oncolor=bg"
+        "--axo-color-label-secondary-oncolor=bgalt"
+        "--axo-color-label-disabled-oncolor=faint"
+        "--axo-color-label-primary-onbright=fg"
+        "--axo-color-label-disabled-onbright=faint"
+        "--axo-color-label-primary-inverted=bg"
+        "--axo-color-label-disabled-inverted=faint"
+        "--axo-color-label-accent=accentsoft"
+        "--axo-color-label-accent-disabled=faint"
+        "--axo-color-label-affirmative=green"
+        "--axo-color-label-affirmative-disabled=faint"
+        "--axo-color-label-warning=yellow"
+        "--axo-color-label-warning-disabled=faint"
+        "--axo-color-label-destructive=red"
+        "--axo-color-label-destructive-disabled=faint"
+
+        "--axo-color-deprecated-border-error=red"
+        "--axo-color-deprecated-fill-on-media=faint"
+
+        "--axo-color-legacy-conversation-header-bg=bg"
+        "--axo-color-legacy-signal-conversation-bg=bg"
+        "--axo-color-legacy-official-chat-badge-bg=s1"
+        "--axo-color-legacy-official-chat-badge-text=accentsoft"
+        "--axo-color-legacy-signal-chat-message-bg=bgalt"
+        "--axo-color-legacy-warning-badge=red"
+    )
+
+    tmp="$cache/.signal.css.pwnbox-tmp"
+    {
+        printf '/* pwnbox signal theme (generated from the active palette) */\n'
+        printf ':root {\n'
+        for pair in "${tokens[@]}"; do
+            tok="${pair%%=*}"
+            slot="${pair#*=}"
+            alpha=""
+            case "$slot" in
+            *:*)
+                alpha="${slot#*:}"
+                slot="${slot%%:*}"
+                ;;
+            esac
+            val="$(sig_slot "$slot")"
+            [ -n "$val" ] || continue
+            printf '  %s: #%s%s !important;\n' "$tok" "$val" "$alpha"
+        done
+        printf '  --font-sans: "%s", Inter, "Signal Emoji Large", "Signal Emoji Small", sans-serif !important;\n' "$app"
+        printf '  --font-mono: "%s", ui-monospace, monospace !important;\n' "$app"
+        printf '  --default-font-family: var(--font-sans) !important;\n'
+        printf '  --default-mono-font-family: var(--font-mono) !important;\n'
+        printf '  --radius-xs: %spx !important;\n' "$radius"
+        printf '  --radius-sm: %spx !important;\n' "$radius"
+        printf '  --radius-md: %spx !important;\n' "$radius"
+        printf '  --radius-lg: %spx !important;\n' "$radius"
+        printf '  --radius-xl: %spx !important;\n' "$radius"
+        printf '  --radius-2xl: %spx !important;\n' "$radius"
+        printf '  --radius-3xl: %spx !important;\n' "$radius"
+        printf '  --radius-4xl: %spx !important;\n' "$radius"
+        printf '}\n\n'
+        printf 'html, body, button, input, select, textarea { font-family: var(--font-sans) !important; }\n'
+        printf 'code, pre, kbd, samp { font-family: var(--font-mono) !important; }\n'
+    } >"$tmp" 2>/dev/null || {
+        rm -f "$tmp"
+        return 0
+    }
+
+    if ! cmp -s "$tmp" "$conf_dir/theme.css" 2>/dev/null; then
+        chmod u+w "$conf_dir/theme.css" 2>/dev/null || true
+        cat "$tmp" >"$conf_dir/theme.css" 2>/dev/null || true
+        chmod u+w "$conf_dir/theme.css" 2>/dev/null || true
+    fi
+    rm -f "$tmp"
+}
+
+telegram_running() {
+    pgrep -f '^AyuGram$' >/dev/null 2>&1 || pgrep -x '.AyuGram-wrappe' >/dev/null 2>&1
+}
+
+restart_ayugram() {
+    local bin tries pid
+    telegram_running || return 0
+    bin="$(command -v AyuGram 2>/dev/null || command -v ayugram-desktop 2>/dev/null)"
+    if [ -z "$bin" ]; then
+        pid="$(pgrep -x '.AyuGram-wrappe' 2>/dev/null | head -1)"
+        [ -n "$pid" ] && bin="$(readlink -f "/proc/$pid/exe" 2>/dev/null)"
+    fi
+    [ -n "$bin" ] || return 0
+
+    pkill -x '.AyuGram-wrappe' 2>/dev/null || pkill -f '^AyuGram$' 2>/dev/null || true
+    tries=0
+    while telegram_running && [ "$tries" -lt 25 ]; do
+        sleep 0.2
+        tries=$((tries + 1))
+    done
+    if telegram_running; then
+        pkill -KILL -x '.AyuGram-wrappe' 2>/dev/null || pkill -KILL -f '^AyuGram$' 2>/dev/null || true
+        sleep 0.5
+    fi
+    setsid "$bin" >/dev/null 2>&1 &
+}
+
+sync_telegram_fonts() {
+    local settings="$HOME/.local/share/AyuGramDesktop/tdata/ayu_settings.json"
+    [ -f "$settings" ] || return 0
+    command -v jq >/dev/null 2>&1 || return 0
+
+    local app tmp old
+    app="$(app_font)"
+    old="$(jq -r '.monoFont // empty' "$settings" 2>/dev/null || true)"
+    tmp="$cache/.ayu_settings.json.pwnbox-tmp"
+    if jq --arg f "$app" '
+        def setfont(k): if has(k) then .[k] = $f else . end;
+        def setbool(k; v): if has(k) then .[k] = v else . end;
+        setfont("monoFont") | setfont("fontFamily") | setfont("uiFont") | setfont("interfaceFont")
+        | setbool("disableCustomBackgrounds"; false) | setbool("adaptiveCoverColor"; false)
+    ' "$settings" >"$tmp" 2>/dev/null && [ -s "$tmp" ]; then
+        if ! cmp -s "$tmp" "$settings" 2>/dev/null; then
+            cat "$tmp" >"$settings"
+            if [ -n "$old" ] && [ "$old" != "$app" ]; then
+                restart_ayugram
+            fi
+        fi
+    fi
+    rm -f "$tmp"
+}
+
+apply_telegram_theme() {
+    local theme="$HOME/.config/telegram/pwnbox.tdesktop-theme"
+    local tdata="$HOME/.local/share/AyuGramDesktop/tdata"
+    local cfg="$cache/tg-config.toml"
+    local stamp="$cache/telegram-theme.sha"
+    local sum
+
+    [ -f "$theme" ] || return 0
+    [ -d "$tdata" ] || return 0
+    command -v tg-config >/dev/null 2>&1 || return 0
+
+    sum="$(sha256sum "$theme" 2>/dev/null | awk '{print $1}')"
+
+    if [ -n "$sum" ] && [ -f "$stamp" ] && [ "$(cat "$stamp" 2>/dev/null)" = "$sum" ]; then
+        return 0
+    fi
+
+    sync_telegram_fonts
+
+    printf 'tdata = "%s"\n\n[theme]\npath = "%s"\n' "$tdata" "$theme" >"$cfg" 2>/dev/null || return 0
+
+    tg-config --config "$cfg" --offline >/dev/null 2>&1 || true
+
+    [ -n "$sum" ] && printf '%s' "$sum" >"$stamp"
+}
+
+spotify_theme() {
+    local helper="$HOME/.scripts/pwnbox-spotify"
+    command -v spicetify >/dev/null 2>&1 || return 0
+    [ -x "$helper" ] || return 0
+    "$helper" apply >/dev/null 2>&1 || true
+}
+
+lighten_hex() {
+    local hex="${1#\#}" amt="${2:-6}"
+    local r g b
+    r=$((16#${hex:0:2}))
+    g=$((16#${hex:2:2}))
+    b=$((16#${hex:4:2}))
+    r=$((r + (255 - r) * amt / 100))
+    g=$((g + (255 - g) * amt / 100))
+    b=$((b + (255 - b) * amt / 100))
+    printf '#%02x%02x%02x' "$r" "$g" "$b"
+}
+
+apply_borders() {
+    local bg brdr hypr rofi kitty zed
+    bg="$(sed -nE 's/^var bg[[:space:]]*=[[:space:]]*"#?([0-9a-fA-F]{6})".*/\1/p' \
+        "$HOME/.config/quickshell/Theme.js" 2>/dev/null | head -1)"
+    [ -n "$bg" ] || bg="080808"
+    brdr="$(lighten_hex "#$bg" "${border_lighten:-12}")"
+    brdr="${brdr#\#}"
+
+    hypr="$cache/hyprland.conf"
+    if [ -f "$hypr" ]; then
+        local hypr_tmp="$cache/.hyprland.conf.pwnbox-tmp"
+        if sed '/# pwnbox-borders-start/,/# pwnbox-borders-end/d' "$hypr" 2>/dev/null |
+            sed -e :a -e '/^[[:space:]]*$/{$d;N;ba' -e '}' >"$hypr_tmp"; then
+            {
+                printf '# pwnbox-borders-start\n'
+                printf 'general {\n'
+                printf '    border_size = %s\n' "$(border_hypr)"
+                printf '    col.active_border = rgba(%sff)\n' "$brdr"
+                printf '    col.inactive_border = rgba(%sff)\n' "$brdr"
+                printf '}\n'
+                printf 'windowrule = border_color rgba(%sff) rgba(%sff), match:class ^(spotify)$\n' "$brdr" "$brdr"
+                printf 'decoration {\n'
+                printf '    rounding = %s\n' "$(win_radius)"
+                printf '    active_opacity = %s\n' "$(opacity_value)"
+                printf '    inactive_opacity = %s\n' "$(opacity_value)"
+                printf '    shadow {\n'
+                printf '        enabled = %s\n' "$(shadow_hypr)"
+                printf '        color = rgba(00000055)\n'
+                printf '    }\n'
+                printf '    blur {\n'
+                printf '        enabled = %s\n' "$(blur_hypr)"
+                printf '    }\n'
+                printf '}\n'
+                printf 'animations {\n'
+                printf '    enabled = %s\n' "$(anim_hypr)"
+                printf '}\n# pwnbox-borders-end\n'
+            } >>"$hypr_tmp"
+            if [ "$(tr -cd '{' <"$hypr_tmp" | wc -c)" = "$(tr -cd '}' <"$hypr_tmp" | wc -c)" ]; then
+                mv -f "$hypr_tmp" "$hypr" 2>/dev/null || rm -f "$hypr_tmp"
+            else
+                rm -f "$hypr_tmp"
+            fi
+        else
+            rm -f "$hypr_tmp"
+        fi
+    fi
+
+    rofi="$cache/rofi.rasi"
+    [ -f "$rofi" ] && sed -i -E "s/^([[:space:]]*brdr:[[:space:]]*).*/\1#${brdr};/" "$rofi" 2>/dev/null || true
+
+    kitty="$cache/kitty.conf"
+    if [ -f "$kitty" ]; then
+        sed -i -E \
+            -e "s/^(active_border_color[[:space:]]+).*/\1#${brdr}/" \
+            -e "s/^(inactive_border_color[[:space:]]+).*/\1#${brdr}/" \
+            -e "s/^(inactive_tab_background[[:space:]]+).*/\1#${bg}/" \
+            "$kitty" 2>/dev/null || true
+    fi
+
+    zed_dir="$HOME/.config/zed/themes"
+    if [ -d "$zed_dir" ]; then
+        for zed in "$zed_dir"/*.json; do
+            [ -f "$zed" ] || continue
+            sed -i -E \
+                -e "s/^([[:space:]]*\"[^\"]*border[^\"]*\"[[:space:]]*:[[:space:]]*)\"[^\"]*\"/\1\"#${brdr}\"/" \
+                "$zed" 2>/dev/null || true
+            sed -i -E \
+                -e "s/^([[:space:]]*\"border\.transparent\"[[:space:]]*:[[:space:]]*)\"[^\"]*\"/\1\"#${brdr}80\"/" \
+                "$zed" 2>/dev/null || true
+        done
+        zed_pwnbox="$zed_dir/pwnbox.json"
+        if [ -f "$zed_pwnbox" ]; then
+            sed -i -E \
+                -e "s/^([[:space:]]*\"title_bar\.inactive_background\"[[:space:]]*:[[:space:]]*)\"[^\"]*\"/\1\"#${bg}\"/" \
+                -e "s/^([[:space:]]*\"tab\.inactive_background\"[[:space:]]*:[[:space:]]*)\"[^\"]*\"/\1\"#${bg}\"/" \
+                "$zed_pwnbox" 2>/dev/null || true
+
+            if command -v jq >/dev/null 2>&1; then
+                local ig iact hov zed_tmp
+                ig="$brdr"
+                iact="$(theme_color fgFaint)"
+                hov="$(theme_color fgFaint)"
+                mkdir -p "$cache" 2>/dev/null || true
+                zed_tmp="$cache/.pwnbox-zed.json.pwnbox-tmp"
+                if jq --arg ig "#${ig}" --arg ia "#${iact}" --arg hov "#${hov}" \
+                    '.themes[0].style["editor.indent_guide"] = $ig
+                     | .themes[0].style["editor.indent_guide_active"] = $ia
+                     | .themes[0].style["panel.indent_guide"] = $ig
+                     | .themes[0].style["panel.indent_guide_active"] = $ia
+                     | .themes[0].style["panel.indent_guide_hover"] = $hov' \
+                    "$zed_pwnbox" >"$zed_tmp" 2>/dev/null && [ -s "$zed_tmp" ]; then
+                    mv -f "$zed_tmp" "$zed_pwnbox"
+                else
+                    rm -f "$zed_tmp"
+                fi
+            fi
+        fi
+    fi
+
+    js="$HOME/.config/quickshell/Theme.js"
+    if [ -f "$js" ]; then
+        sed -i '/^var brdr[[:space:]]*=/d' "$js" 2>/dev/null || true
+        printf 'var brdr = "#%s";\n' "$brdr" >>"$js"
+    fi
+
+    apply_ui_radius
+    (sync_telegram && apply_telegram_theme) &
+    sync_equibop
+    sync_stremio
+    sync_signal
+    sync_zen_chrome
+    apply_fonts
+    spawn_nice sync_userstyles
+}
+
+awww_restart() {
+    pkill -f '/awww-daemon$' 2>/dev/null || true
+    sleep 0.3
+    rm -f "${XDG_RUNTIME_DIR:-/run/user/$(id -u)}"/wayland-*-awww-daemon.sock 2>/dev/null || true
+    setsid awww-daemon >/dev/null 2>&1 &
+    local i
+    for i in 1 2 3 4 5 6 7 8 9 10; do
+        awww query >/dev/null 2>&1 && return 0
+        sleep 0.3
+    done
+    return 1
+}
+
+set_wallpaper() {
+    local img="$1"
+    [ -f "$img" ] || return 0
+    if command -v awww >/dev/null 2>&1; then
+        local count
+        count="$(pgrep -cf '/awww-daemon$' 2>/dev/null || printf '0')"
+        if [ "$count" != "1" ] || ! awww query >/dev/null 2>&1; then
+            awww_restart || true
+        fi
+        if awww img "$img" --transition-type fade --transition-duration 0.6 --transition-fps 60 >/dev/null 2>&1; then
+            pkill -f 'swaybg -i' 2>/dev/null || true
+            return 0
+        fi
+        if awww_restart && awww img "$img" --transition-type none >/dev/null 2>&1; then
+            pkill -f 'swaybg -i' 2>/dev/null || true
+            return 0
+        fi
+        pkill -f 'swaybg -i' 2>/dev/null || true
+        command -v swaybg >/dev/null 2>&1 && setsid swaybg -i "$img" -m fill >/dev/null 2>&1 &
+        return 0
+    fi
+    pkill -f 'swaybg -i' 2>/dev/null || true
+    command -v swaybg >/dev/null 2>&1 || return 0
+    setsid swaybg -i "$img" -m fill >/dev/null 2>&1 &
+}
+
+reload_apps() {
+    pkill -USR1 kitty 2>/dev/null || true
+    command -v hyprctl >/dev/null 2>&1 && hyprctl reload >/dev/null 2>&1 || true
+    if command -v gsettings >/dev/null 2>&1; then
+        local theme
+        gsettings set org.gnome.desktop.interface color-scheme 'default' >/dev/null 2>&1 || true
+        sleep 0.2
+        gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' >/dev/null 2>&1 || true
+        theme="$(gsettings get org.gnome.desktop.interface gtk-theme 2>/dev/null | tr -d "'")"
+        gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita' >/dev/null 2>&1 || true
+        sleep 0.2
+        gsettings set org.gnome.desktop.interface gtk-theme "${theme:-Colloid-Dark-Grey}" >/dev/null 2>&1 || true
+    fi
+    restart_quickshell
+
+    (spotify_theme) &
+    (
+        sleep 0.8
+        if command -v pywalfox >/dev/null 2>&1; then pywalfox update >/dev/null 2>&1 || true; fi
+    ) &
+}
+
+build_mono_icons() {
+    command -v magick >/dev/null 2>&1 || return 0
+    local dest="$HOME/.local/share/icons/pwnbox-mono"
+    local fg
+    fg="$(sed -nE 's/^var fg[[:space:]]*=[[:space:]]*"#?([0-9a-fA-F]{6})".*/\1/p' \
+        "$HOME/.config/quickshell/Theme.js" 2>/dev/null | head -1)"
+    [ -n "$fg" ] || fg="cccccc"
+    [ -f "$dest/.tint" ] && [ "$(cat "$dest/.tint" 2>/dev/null)" = "$fg" ] && return 0
+
+    local r g b low high
+    r=$((16#${fg:0:2}))
+    g=$((16#${fg:2:2}))
+    b=$((16#${fg:4:2}))
+    low="#$(printf '%02x%02x%02x' $((r * 25 / 100)) $((g * 25 / 100)) $((b * 25 / 100)))"
+    high="#$fg"
+
+    local apps="$dest/48x48/apps"
+    rm -rf "$dest"
+    mkdir -p "$apps"
+    {
+        printf '[Icon Theme]\nName=pwnbox-mono\n'
+        printf 'Comment=Monochrome icons tinted from the active theme\n'
+        printf 'Directories=48x48/apps\n\n[48x48/apps]\nSize=48\nContext=Applications\nType=Fixed\n'
+    } >"$dest/index.theme"
+    printf '%s' "$fg" >"$dest/.tint"
+
+    local -A map=()
+    local dir p bn nm
+    for dir in "$HOME/.local/share/icons" "$HOME/.icons" \
+        /run/current-system/sw/share/icons/Papirus \
+        /run/current-system/sw/share/icons/hicolor \
+        /run/current-system/sw/share/icons/Adwaita; do
+        [ -d "$dir" ] || continue
+        while IFS= read -r p; do
+            bn="${p##*/}"
+            nm="${bn%.*}"
+            [ -n "${map[$nm]:-}" ] && continue
+            map[$nm]="$p"
+        done < <(find "$dir" \( -type f -o -type l \) 2>/dev/null | grep -E '\.(png|svg)$')
+    done
+
+    local -A want=()
+    local d icon
+    for d in /run/current-system/sw/share/applications \
+        "/etc/profiles/per-user/$USER/share/applications" \
+        "$HOME/.local/share/applications" \
+        "$HOME/.nix-profile/share/applications"; do
+        [ -d "$d" ] || continue
+        while IFS= read -r icon; do
+            [ -n "$icon" ] && want["$icon"]=1
+        done < <(grep -h '^Icon=' "$d"/*.desktop 2>/dev/null | cut -d= -f2-)
+    done
+
+    local name src
+    for name in "${!want[@]}"; do
+        case "$name" in
+        /*) [ -f "$name" ] && src="$name" || src="" ;;
+        *) src="${map[$name]:-}" ;;
+        esac
+        [ -n "$src" ] || continue
+        magick "$src" -background none -resize 64x64 -gravity center -extent 64x64 \
+            -colorspace Gray -auto-level +level-colors "$low,$high" \
+            "$apps/$name.png" 2>/dev/null || true
+    done
+}
+
+install_palette() {
+    local pair src dst
+    for pair in \
+        "pwnbox-kitty.conf:kitty.conf" \
+        "pwnbox-rofi.rasi:rofi.rasi" \
+        "pwnbox-fuzzel.ini:fuzzel.ini" \
+        "pwnbox-hyprland.conf:hyprland.conf" \
+        "pwnbox-gtk.css:gtk-colors.css" \
+        "pwnbox-colors.json:colors.json" \
+        "pwnbox-nvim.lua:nvim-palette.lua" \
+        "pwnbox-ida-theme.css:ida-theme.css" \
+        "pwnbox-zen-usercontent.css:userContent.css"; do
+        src="$wal_out/${pair%%:*}"
+        dst="$cache/${pair##*:}"
+        cp_atomic "$src" "$dst"
+    done
+    if [ -f "$wal_out/pwnbox-theme.js" ]; then
+        sync_quickshell "$wal_out/pwnbox-theme.js"
+    fi
+    sync_zed "$wal_out/pwnbox-zed.json"
+}
+
+custom_theme_dirs() {
+    local d
+    [ -d "$themes_dir" ] || return 0
+    for d in "$themes_dir"/*/; do
+        [ -d "$d" ] || continue
+        [ -f "${d}theme.conf" ] || continue
+        printf '%s\n' "${d%/}"
+    done
+}
+
+theme_dir_of() {
+    local d
+    for d in "$themes_dir"/*/; do
+        [ -d "$d" ] || continue
+        [ "$(basename "${d%/}")" = "$1" ] && {
+            printf '%s' "${d%/}"
+            return 0
+        }
+    done
+    return 1
+}
+
+conf_get() {
+    local file="$1" key="$2" line k v
+    [ -f "$file" ] || return 0
+    while IFS= read -r line || [ -n "$line" ]; do
+        line="${line#"${line%%[![:space:]]*}"}"
+        case "$line" in '' | '#'* | ';'*) continue ;; esac
+        case "$line" in *=*) ;; *) continue ;; esac
+        k="${line%%=*}"
+        v="${line#*=}"
+        k="${k%"${k##*[![:space:]]}"}"
+        v="${v#"${v%%[![:space:]]*}"}"
+        v="${v%"${v##*[![:space:]]}"}"
+        if [ "$k" = "$key" ]; then
+            printf '%s' "$v"
+            return 0
+        fi
+    done <"$file"
+}
+
+norm_hex() {
+    local c="${1#\#}"
+    case "$c" in
+    [0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F])
+        printf '#%s' "$c"
+        ;;
+    *) return 1 ;;
+    esac
+}
+
+mono_color() {
+    sed -nE "s/^[[:space:]]*${1}[[:space:]]*=[[:space:]]*\"(#?[0-9a-fA-F]{6})\".*/\1/p" \
+        "$mono/nvim-palette.lua" 2>/dev/null | head -1
+}
+
+scheme_color() {
+    local conf="$1" key="$2" fb="$3" v
+    v="$(conf_get "$conf" "$key")"
+    if [ -n "$v" ]; then
+        norm_hex "$v"
+    else
+        v="$(mono_color "$fb")"
+        [ -n "$v" ] && norm_hex "$v"
+    fi
+}
+
+build_custom_scheme() {
+    local conf="$1" out="$2" i key c bg fg cursor
+    local -A col=()
+    for i in $(seq 0 15); do
+        key="color$i"
+        c="$(scheme_color "$conf" "$key" "$key")" || return 1
+        col[$key]="$c"
+    done
+    bg="$(scheme_color "$conf" background bg)" || return 1
+    fg="$(scheme_color "$conf" foreground fg)" || return 1
+    cursor="$(scheme_color "$conf" cursor fg)" || return 1
+
+    {
+        printf '{\n  "special": {\n'
+        printf '    "background": "%s",\n    "foreground": "%s",\n    "cursor": "%s"\n' "$bg" "$fg" "$cursor"
+        printf '  },\n  "colors": {\n'
+        for i in $(seq 0 15); do
+            key="color$i"
+            if [ "$i" -lt 15 ]; then
+                printf '    "%s": "%s",\n' "$key" "${col[$key]}"
+            else
+                printf '    "%s": "%s"\n' "$key" "${col[$key]}"
+            fi
+        done
+        printf '  }\n}\n'
+    } >"$out.tmp" || {
+        rm -f "$out.tmp"
+        return 1
+    }
+    mv -f "$out.tmp" "$out" 2>/dev/null || {
+        rm -f "$out.tmp"
+        return 1
+    }
+}
+
+custom_theme_wallpaper() {
+    local dir="$1" wp f
+    wp="$(conf_get "$dir/theme.conf" wallpaper)"
+    if [ -n "$wp" ]; then
+        case "$wp" in
+        /*) [ -f "$wp" ] && {
+            printf '%s' "$wp"
+            return 0
+        } ;;
+        *) [ -f "$dir/$wp" ] && {
+            printf '%s' "$dir/$wp"
+            return 0
+        } ;;
+        esac
+    fi
+    for f in "$dir"/*.png "$dir"/*.jpg "$dir"/*.jpeg "$dir"/*.webp; do
+        [ -f "$f" ] && {
+            printf '%s' "$f"
+            return 0
+        }
+    done
+    printf '%s' "$default_wall"
+}
+
+do_custom() {
+    local dir="${1%/}" quiet="${2:-}" conf name scheme wallpaper
+    conf="$dir/theme.conf"
+    [ -f "$conf" ] || {
+        [ -n "$quiet" ] || notify "Theme" "No theme.conf in $(basename "$dir")"
+        return 1
+    }
+    command -v wal >/dev/null 2>&1 || {
+        [ -n "$quiet" ] || notify "Theme" "pywal not installed"
+        return 1
+    }
+    name="$(conf_get "$conf" name)"
+    [ -n "$name" ] || name="$(basename "$dir")"
+
+    mkdir -p "$cache"
+    scheme="$cache/custom-scheme.json"
+    if ! build_custom_scheme "$conf" "$scheme"; then
+        [ -n "$quiet" ] || notify "Theme" "Invalid colours in $(basename "$dir")/theme.conf"
+        return 1
+    fi
+    if ! wal --theme "$scheme" -n -s -e -q >/dev/null 2>&1; then
+        [ -n "$quiet" ] || notify "Theme" "pywal failed"
+        return 1
+    fi
+
+    install_palette
+    apply_borders
+    spawn_nice build_mono_icons
+
+    wallpaper="$(custom_theme_wallpaper "$dir")"
+    printf '%s\n' "$wallpaper" >"$state"
+    printf '%s\n' "$(basename "$dir")" >"$custom_state"
+    set_wallpaper "$wallpaper"
+    reload_apps
+    [ -n "$quiet" ] || notify "Theme" "$name"
+}
+
+custom_label() {
+    local cur dir name
+    cur="$(read_state "$custom_state" "")"
+    [ -n "$cur" ] || return 0
+    while IFS= read -r dir; do
+        [ "$(basename "$dir")" = "$cur" ] || continue
+        name="$(conf_get "$dir/theme.conf" name)"
+        [ -n "$name" ] || name="$cur"
+        printf '  (%s)' "$name"
+        return 0
+    done < <(custom_theme_dirs)
+}
+
+custom() {
+    local listf mapf dir conf name wp thumb choice
+    listf="$(mktemp)"
+    mapf="$(mktemp)"
+    while IFS= read -r dir; do
+        [ -n "$dir" ] || continue
+        conf="$dir/theme.conf"
+        name="$(conf_get "$conf" name)"
+        [ -n "$name" ] || name="$(basename "$dir")"
+        wp="$(custom_theme_wallpaper "$dir")"
+        printf '%s\t%s\n' "$name" "$dir" >>"$mapf"
+        thumb="$(make_thumb "$wp" "custom-$(basename "$dir")")"
+        if [ -n "$thumb" ]; then
+            printf '%s\0icon\x1f%s\n' "$name" "$thumb" >>"$listf"
+        else
+            printf '%s\n' "$name" >>"$listf"
+        fi
+    done < <(custom_theme_dirs)
+
+    if [ ! -s "$listf" ]; then
+        rm -f "$listf" "$mapf"
+        notify "Theme" "No custom themes in $themes_dir"
+        return 0
+    fi
+
+    choice="$(
+        rofi -dmenu -i -show-icons -no-custom \
+            -kb-move-char-back Control+b -kb-move-char-forward Control+f \
+            -kb-row-left Left -kb-row-right Right \
+            -p "Custom theme" -theme "$custom_cfg" <"$listf" || true
+    )"
+    dir="$(awk -F'\t' -v n="$choice" '$1 == n { print $2; exit }' "$mapf")"
+    rm -f "$listf" "$mapf"
+    [ -n "$choice" ] || return 0
+    [ -n "$dir" ] || return 0
+    do_custom "$dir"
+}
+
+monochrome() {
+    local dir
+    if dir="$(theme_dir_of Monochrome)"; then
+        do_custom "$dir"
+        return 0
+    fi
+    seed_monochrome
+    sync_zed "$mono/pwnbox.json"
+    apply_borders
+    spawn_nice build_mono_icons
+    set_wallpaper "$default_wall"
+    printf '%s\n' "$default_wall" >"$state"
+    rm -f "$custom_state"
+    reload_apps
+    notify "Theme" "Monochrome"
+}
+
+apply() {
+    local img="$1"
+    [ -f "$img" ] || {
+        notify "Theme" "Not found: $img"
+        return 1
+    }
+    command -v wal >/dev/null 2>&1 || {
+        notify "Theme" "pywal not installed"
+        return 1
+    }
+    mkdir -p "$cache"
+    if ! wal -i "$img" -n -s -e -q >/dev/null 2>&1; then
+        notify "Theme" "pywal failed"
+        return 1
+    fi
+    install_palette
+    apply_borders
+    spawn_nice build_mono_icons
+    printf '%s\n' "$img" >"$state"
+    rm -f "$custom_state"
+    set_wallpaper "$img"
+    reload_apps
+    notify "Theme" "$(basename "$img")"
+}
+
+restore() {
+    local img="$default_wall" cur dir sc
+    unpin_extensions
+    sc="$(scale)"
+    [ "$sc" = "100" ] || apply_scale "$sc"
+    cur="$(read_state "$custom_state" "")"
+    if [ -n "$cur" ]; then
+        while IFS= read -r dir; do
+            [ "$(basename "$dir")" = "$cur" ] || continue
+            if [ ! -f "$cache/colors.json" ]; then
+                do_custom "$dir" quiet
+                return 0
+            fi
+            img="$(custom_theme_wallpaper "$dir")"
+            printf '%s\n' "$img" >"$state"
+            set_wallpaper "$img"
+            borders
+            spawn_nice build_mono_icons
+            return 0
+        done < <(custom_theme_dirs)
+        rm -f "$custom_state"
+    fi
+    if [ ! -f "$state" ] && [ ! -f "$cache/colors.json" ]; then
+        if dir="$(theme_dir_of Pwnbox)"; then
+            do_custom "$dir" quiet && return 0
+        fi
+    fi
+    if [ -f "$state" ] && [ -f "$(cat "$state" 2>/dev/null)" ]; then
+        img="$(cat "$state")"
+    fi
+    [ -f "$cache/colors.json" ] || seed_monochrome
+    printf '%s\n' "$img" >"$state"
+    set_wallpaper "$img"
+    borders
+    spawn_nice build_mono_icons
+}
+
+borders() {
+    apply_borders
+    command -v hyprctl >/dev/null 2>&1 && hyprctl reload >/dev/null 2>&1 || true
+}
+
+make_thumb() {
+    local src="$1" key="${2:-}" out
+    [ -f "$src" ] || return 0
+    [ -n "$key" ] || key="$(basename "$src")"
+    mkdir -p "$thumb_dir" 2>/dev/null || true
+    out="$thumb_dir/${key}.png"
+    if [ ! -f "$out" ] || [ "$src" -nt "$out" ]; then
+        if command -v magick >/dev/null 2>&1; then
+            magick "$src" -auto-orient -resize '256x256^' -gravity center -extent 256x256 "$out" >/dev/null 2>&1 || true
+        elif command -v convert >/dev/null 2>&1; then
+            convert "$src" -auto-orient -resize '256x256^' -gravity center -extent 256x256 "$out" >/dev/null 2>&1 || true
+        fi
+    fi
+    [ -f "$out" ] && printf '%s' "$out"
+    return 0
+}
+
+bar_styles=(
+    "islands|Islands (boxed groups)"
+    "floating|Floating islands"
+    "flat|Classic flat"
+    "pill|Centered pill"
+    "capsule|Rounded capsule"
+    "bottom|Bottom dock"
+    "split|Split pills"
+    "blocky|Blocky groups"
+    "minipills|Mini pills"
+    "side|Side bar (left)"
+    "sideright|Side bar (right)"
+    "sidepill|Side pills (left)"
+    "sidepillright|Side pills (right)"
+    "sideminipills|Mini pills (left)"
+    "sideminipillsright|Mini pills (right)"
+)
+
+set_barstyle() {
+    local id="$1" label="$2"
+    mkdir -p "$cache"
+    printf '%s' "$id" >"$style_state"
+    if command -v qs >/dev/null 2>&1; then
+        qs ipc call barstyle set "$id" >/dev/null 2>&1 || true
+    fi
+    notify "Bar style" "$label"
+}
+
+barstyle() {
+    local entry id choice preview
+    choice="$(
+        for entry in "${bar_styles[@]}"; do
+            id="${entry%%|*}"
+            preview="$previews_dir/$id.png"
+            if [ -f "$preview" ]; then
+                printf '%s\0icon\037%s\n' "$id" "$preview"
+            else
+                printf '%s\n' "$id"
+            fi
+        done | rofi -dmenu -i -show-icons -no-custom \
+            -kb-move-char-back Control+b -kb-move-char-forward Control+f \
+            -kb-row-left Left -kb-row-right Right \
+            -p "Bar style" -theme "$barstyle_cfg" || true
+    )"
+    [ -n "$choice" ] || return 0
+    for entry in "${bar_styles[@]}"; do
+        id="${entry%%|*}"
+        if [ "$choice" = "$id" ]; then
+            set_barstyle "$id" "${entry##*|}"
+            return 0
+        fi
+    done
+}
+
+pick() {
+    mkdir -p "$wall_dir" "$thumb_dir"
+    shopt -s nullglob
+    local f choice t d name listf mapf
+    listf="$(mktemp)"
+    mapf="$(mktemp)"
+    local -A seen=()
+    d="$wall_dir"
+    if [ -d "$d" ]; then
+        for f in "$d"/*.png "$d"/*.jpg "$d"/*.jpeg "$d"/*.webp; do
+            name="$(basename "$f")"
+            [ -n "${seen[$name]:-}" ] && continue
+            seen[$name]=1
+            printf '%s\t%s\n' "$name" "$f" >>"$mapf"
+            t="$(make_thumb "$f")"
+            if [ -n "$t" ]; then
+                printf '%s\0icon\037%s\n' "$name" "$t" >>"$listf"
+            else
+                printf '%s\n' "$name" >>"$listf"
+            fi
+        done
+    fi
+    if [ ! -s "$listf" ]; then
+        rm -f "$listf" "$mapf"
+        notify "Wallpaper" "No wallpapers found"
+        return 0
+    fi
+    choice="$(
+        rofi -dmenu -i -show-icons -no-custom \
+            -kb-move-char-back Control+b -kb-move-char-forward Control+f \
+            -kb-row-left Left -kb-row-right Right \
+            -p "Wallpaper" -theme "$picker_cfg" <"$listf" || true
+    )"
+    f="$(awk -F'\t' -v n="$choice" '$1 == n { print $2; exit }' "$mapf")"
+    rm -f "$listf" "$mapf"
+    [ -n "$choice" ] || return 0
+    [ -n "$f" ] || return 0
+    apply "$f"
+}
+
+radius_values=(0 2 4 6 8 9 10 12 14 16 20 24)
+size_values=(7 8 9 10 11 12 13 14 15 16 18 20)
+
+menu_section() {
+    printf '%s\0nonselectable\x1ftrue\x1fpermanent\x1ftrue\n' \
+        "<span foreground='#$(theme_color fgDim)' weight='bold' size='small'>$1</span>"
+}
+
+choose_value() {
+    local prompt="$1" current="$2"
+    shift 2
+    printf '%s\n' "$@" | rofi -dmenu -i -no-custom -select "$current" \
+        -p "$prompt" -theme "$menu_cfg" || true
+}
+
+choose_window_radius() {
+    local choice
+    choice="$(choose_value "Window radius" "$(win_radius)" "${radius_values[@]}")"
+    [ -n "$choice" ] || return 0
+    mkdir -p "$cache"
+    printf '%s' "$choice" >"$radius_state"
+    apply_borders
+    command -v hyprctl >/dev/null 2>&1 && hyprctl reload >/dev/null 2>&1 || true
+    notify "Window radius" "${choice}px"
+}
+
+choose_ui_radius() {
+    local choice
+    choice="$(choose_value "UI radius" "$(ui_radius)" "${radius_values[@]}")"
+    [ -n "$choice" ] || return 0
+    mkdir -p "$cache"
+    printf '%s' "$choice" >"$uir_state"
+    apply_ui_radius
+    sync_stremio
+    sync_signal
+    restart_quickshell
+    notify "UI radius" "${choice}px"
+}
+
+choose_blur() {
+    local choice msg opacity_changed=0
+    choice="$(choose_value "Blur" "$(blur_state)" on off)"
+    [ -n "$choice" ] || return 0
+    mkdir -p "$cache"
+    printf '%s' "$choice" >"$blur_file"
+    msg="Disabled"
+    if [ "$choice" = "on" ]; then
+        msg="Enabled"
+        if [ "$(opacity)" = "100" ]; then
+            printf '%s' 92 >"$opacity_file"
+            msg="Enabled · transparency 92%"
+            opacity_changed=1
+        fi
+    fi
+    apply_borders
+    command -v hyprctl >/dev/null 2>&1 && hyprctl reload >/dev/null 2>&1 || true
+    if [ "$opacity_changed" = "1" ]; then
+        restart_quickshell
+    fi
+    notify "Blur" "$msg"
+}
+
+choose_opacity() {
+    local choice
+    choice="$(choose_value "Transparency" "$(opacity)" 100 96 92 88 85 80 70 60 50)"
+    [ -n "$choice" ] || return 0
+    mkdir -p "$cache"
+    printf '%s' "$choice" >"$opacity_file"
+    apply_borders
+    command -v hyprctl >/dev/null 2>&1 && hyprctl reload >/dev/null 2>&1 || true
+    restart_quickshell
+    if [ "$choice" = "100" ] && [ "$(blur_state)" = "on" ]; then
+        notify "Transparency" "100% — blur has nothing to see through"
+    else
+        notify "Transparency" "${choice}%"
+    fi
+}
+
+choose_animations() {
+    local choice
+    choice="$(choose_value "Animations" "$(anim_state)" on off)"
+    [ -n "$choice" ] || return 0
+    mkdir -p "$cache"
+    printf '%s' "$choice" >"$anim_file"
+    apply_borders
+    command -v hyprctl >/dev/null 2>&1 && hyprctl reload >/dev/null 2>&1 || true
+    notify "Animations" "$([ "$choice" = "on" ] && printf 'Enabled' || printf 'Disabled')"
+}
+
+choose_borders() {
+    local choice
+    choice="$(choose_value "Window borders" "$(border_state)" on off)"
+    [ -n "$choice" ] || return 0
+    mkdir -p "$cache"
+    printf '%s' "$choice" >"$border_file"
+    apply_borders
+    command -v hyprctl >/dev/null 2>&1 && hyprctl reload >/dev/null 2>&1 || true
+    notify "Window borders" "$([ "$choice" = "on" ] && printf 'Enabled' || printf 'Disabled')"
+}
+
+choose_shadows() {
+    local choice
+    choice="$(choose_value "Window shadows" "$(shadow_state)" on off)"
+    [ -n "$choice" ] || return 0
+    mkdir -p "$cache"
+    printf '%s' "$choice" >"$shadow_file"
+    apply_borders
+    command -v hyprctl >/dev/null 2>&1 && hyprctl reload >/dev/null 2>&1 || true
+    notify "Window shadows" "$([ "$choice" = "on" ] && printf 'Enabled' || printf 'Disabled')"
+}
+
+apply_scale() {
+    local sc="$1" factor
+    factor="$(awk -v s="$sc" 'BEGIN { printf "%.2f", s / 100 }')"
+    command -v hyprctl >/dev/null 2>&1 || return 0
+    if command -v jq >/dev/null 2>&1 && hyprctl monitors -j >/dev/null 2>&1; then
+        hyprctl monitors -j 2>/dev/null | jq -r \
+            '.[] | "\(.name) \(.width)x\(.height)@\(.refreshRate) \(.x)x\(.y)"' \
+            | while read -r name res pos; do
+                [ -n "$name" ] || continue
+                hyprctl keyword monitor "$name,$res,$pos,$factor" >/dev/null 2>&1 || true
+            done
+    else
+        hyprctl keyword monitor ",preferred,auto,$factor" >/dev/null 2>&1 || true
+    fi
+}
+
+choose_scale() {
+    local choice
+    choice="$(choose_value "Scale" "$(scale)" 50 75 100 125 150 175 200)"
+    [ -n "$choice" ] || return 0
+    mkdir -p "$cache"
+    printf '%s' "$choice" >"$scale_state"
+    apply_scale "$choice"
+    notify "Scale" "${choice}%"
+}
+
+choose_ui_font() {
+    local choice
+    choice="$(choose_value "System font" "$(ui_font)" "${font_choices[@]}")"
+    [ -n "$choice" ] || return 0
+    mkdir -p "$cache"
+    printf '%s' "$choice" >"$font_ui_state"
+    apply_fonts
+    reload_fonts
+    notify "System font" "$choice"
+}
+
+choose_app_font() {
+    local choice
+    choice="$(choose_value "Application font" "$(app_font)" "${font_choices[@]}")"
+    [ -n "$choice" ] || return 0
+    mkdir -p "$cache"
+    printf '%s' "$choice" >"$font_app_state"
+    apply_fonts
+    sync_stremio
+    reload_fonts
+    notify "Application font" "$choice"
+}
+
+choose_ui_font_size() {
+    local choice
+    choice="$(choose_value "System font size" "$(ui_font_size)" "${size_values[@]}")"
+    [ -n "$choice" ] || return 0
+    mkdir -p "$cache"
+    printf '%s' "$choice" >"$font_ui_size_state"
+    apply_fonts
+    reload_fonts
+    notify "System font size" "${choice}px"
+}
+
+choose_app_font_size() {
+    local choice
+    choice="$(choose_value "Application font size" "$(app_font_size)" "${size_values[@]}")"
+    [ -n "$choice" ] || return 0
+    mkdir -p "$cache"
+    printf '%s' "$choice" >"$font_app_size_state"
+    apply_fonts
+    reload_fonts
+    notify "Application font size" "${choice}px"
+}
+
+menu() {
+    local choice
+    choice="$(
+        {
+            menu_section "THEME"
+            printf 'Pywal\n'
+            printf 'Custom%s\n' "$(custom_label)"
+            menu_section "BAR"
+            printf 'Style\n'
+            menu_section "WINDOWS"
+            printf 'Corner radius: %spx\n' "$(win_radius)"
+            printf 'Window borders: %s\n' "$(border_label)"
+            menu_section "DISPLAY"
+            printf 'Scale: %s%%\n' "$(scale)"
+            menu_section "INTERFACE"
+            printf 'UI corner radius: %spx\n' "$(ui_radius)"
+            printf 'System font: %s\n' "$(ui_font)"
+            printf 'System font size: %s\n' "$(ui_font_size)"
+            printf 'Application font: %s\n' "$(app_font)"
+            printf 'Application font size: %s\n' "$(app_font_size)"
+            menu_section "EFFECTS"
+            printf 'Window shadows: %s\n' "$(shadow_label)"
+            printf 'Blur: %s\n' "$(blur_label)"
+            printf 'Transparency: %s\n' "$(opacity_label)"
+            printf 'Animations: %s\n' "$(anim_label)"
+        } | rofi -dmenu -i -no-custom -markup-rows -p "Theme" -theme "$menu_cfg" || true
+    )"
+    [ -n "$choice" ] || return 0
+    case "$choice" in
+    "Pywal") pick ;;
+    "Custom"*) custom ;;
+    "Style") barstyle ;;
+    "Corner radius:"*) choose_window_radius ;;
+    "Window borders:"*) choose_borders ;;
+    "Scale:"*) choose_scale ;;
+    "UI corner radius:"*) choose_ui_radius ;;
+    "System font:"*) choose_ui_font ;;
+    "System font size:"*) choose_ui_font_size ;;
+    "Application font:"*) choose_app_font ;;
+    "Application font size:"*) choose_app_font_size ;;
+    "Window shadows:"*) choose_shadows ;;
+    "Blur:"*) choose_blur ;;
+    "Transparency:"*) choose_opacity ;;
+    "Animations:"*) choose_animations ;;
+    esac
+}
+
+styles() {
+    local outdir="$cache/userstyles" port=8311 f name
+    if [ ! -d "$outdir" ]; then
+        borders >/dev/null 2>&1 || true
+    fi
+    mkdir -p "$outdir"
+    {
+        printf '<!DOCTYPE html>\n<html><head><meta charset="utf-8"><title>pwnbox styles</title></head>\n'
+        printf '<body style="font-family:monospace;background:#111;color:#ccc;padding:2em">\n'
+        printf '<h2>pwnbox styles</h2>\n'
+        printf '<p>these files feed the pwnbox styles extension and update in real time.</p>\n'
+        printf '<p>server: http://localhost:%s/</p>\n<ul>\n' "$port"
+        for f in "$outdir"/*.user.css; do
+            [ -f "$f" ] || continue
+            name="$(basename "$f")"
+            [ "$name" = "pwnbox-all.user.css" ] && continue
+            printf '<li>%s</li>\n' "$name"
+        done
+        printf '</ul></body></html>\n'
+    } >"$outdir/index.html"
+
+    if ! pgrep -f "http.server $port" >/dev/null 2>&1; then
+        setsid python3 -m http.server "$port" --bind 127.0.0.1 -d "$outdir" >/dev/null 2>&1 &
+    fi
+    printf 'http://localhost:%s/\n' "$port"
+    if command -v zen >/dev/null 2>&1; then
+        setsid zen "http://localhost:$port/" >/dev/null 2>&1 &
+    fi
+    notify "Stylus import" "http://localhost:$port/"
+}
+
+case "${1:-menu}" in
+menu) menu ;;
+pick | wallpaper) pick ;;
+custom | themes) custom ;;
+monochrome) monochrome ;;
+apply) apply "${2:?usage: pwnbox-theme apply <image>}" ;;
+barstyle) barstyle ;;
+radius) choose_window_radius ;;
+uiradius) choose_ui_radius ;;
+uifont | systemfont) choose_ui_font ;;
+appfont | monofont) choose_app_font ;;
+uifontsize | systemsize) choose_ui_font_size ;;
+appfontsize | appsize) choose_app_font_size ;;
+blur) choose_blur ;;
+transparency | opacity) choose_opacity ;;
+animations | animation) choose_animations ;;
+scale) choose_scale ;;
+setscale) apply_scale "${2:-100}" ;;
+borders) borders ;;
+windowborders) choose_borders ;;
+shadows | windowshadows) choose_shadows ;;
+icons) build_mono_icons ;;
+userstyles) sync_userstyles ;;
+stylus | styles) styles ;;
+restore) restore ;;
+-h | --help | help)
+    cat <<'EOF'
+usage: pwnbox-theme <command>
+
+  pick, wallpaper          pick a wallpaper (pywal palette)
+  custom, themes           pick a fixed-palette theme
+  monochrome               apply the built-in monochrome theme
+  apply <image>            apply a wallpaper image
+  barstyle                 pick a bar style
+  radius, uiradius         window / UI corner radius
+  windowborders, shadows   window borders / shadows on-off
+  blur, transparency       window blur / transparency
+  animations               hyprland animations on-off
+  uifont, appfont          system / application font
+  uifontsize, appfontsize  font sizes
+  scale, setscale <n>      display scale
+  icons, userstyles        rebuild mono icons / userstyles
+  borders                  re-apply borders, fonts and app theming
+  restore                  re-apply the current theme
+  menu                     open the rofi theme menu
+EOF
+    ;;
+*)
+    echo "unknown command: $1" >&2
+    exit 2
+    ;;
+esac

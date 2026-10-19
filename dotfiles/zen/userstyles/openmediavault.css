@@ -1,0 +1,341 @@
+/* ==UserStyle==
+@name           pwnbox-openmediavault
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for openmediavault (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("openmediavault.example.com") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root .omv-dark-theme {
+      --mat-color-text: #f0f004;
+      --mat-color-secondary-text: #f0f006;
+      --mat-color-disabled-text: #f0f011;
+      --mat-color-hint-text: #f0f019;
+      --mat-background-color-hover: #f0f01b;
+      --mat-background-color-selected-button: #f0f01b;
+      --mat-background-color-card: #f0f003;
+      --mat-background-color-background: #f0f003;
+      --mat-primary-color-text: #f0f01b;
+      --mat-background-color-body: #f0f001;
+    }
+    :root .omv-dark-theme .mat-toolbar.mat-primary {
+      background: #f0f01b;
+      color: #f0f004;
+    }
+    :root .omv-dark-theme .mat-drawer-container {
+      background-color: #f0f001;
+      color: #f0f004;
+    }
+    :root .omv-dark-theme .mat-card {
+      background: #f0f002;
+      color: #f0f004;
+    }
+    :root .omv-dark-theme .mat-flat-button,
+    :root .mat-fab,
+    :root .mat-mini-fab {
+      color: #f0f004;
+      background-color: #f0f003;
+    }
+    :root .omv-dark-theme .mat-flat-button.mat-button-disabled.mat-button-disabled {
+      background-color: #f0f002;
+    }
+    :root .omv-dark-theme .mat-input-element:disabled {
+      color: #f0f006;
+    }
+    :root .omv-dark-theme .mat-select-placeholder,
+    :root .omv-dark-theme .mat-select-disabled .mat-select-value {
+      color: #f0f006;
+    }
+    :root .omv-dark-theme .mat-form-field-appearance-legacy .mat-form-field-label,
+    :root .omv-dark-theme .mat-form-field-appearance-legacy .mat-hint {
+      color: #f0f01b;
+    }
+    :root .omv-dark-theme .mat-toolbar {
+      background: #f0f003;
+      color: #f0f004;
+    }
+    :root .omv-top-bar[_ngcontent-ydq-c112] button[_ngcontent-ydq-c112] .mat-icon[_ngcontent-ydq-c112] {
+      color: #f0f003;
+    }
+    :root .omv-top-bar[_ngcontent-ydq-c112] .hostname[_ngcontent-ydq-c112] {
+      color: #f0f003;
+    }
+    :root .omv-dark-theme .mat-icon-button.mat-button-disabled.mat-button-disabled {
+      color: #f0f009;
+    }
+    :root .omv-dark-theme .mat-chip.omv-background-color-pair-green {
+      color: #f0f002;
+      background-color: #f0f015;
+    }
+    :root .omv-scrollable-xy,
+    :root .omv-scrollable-y {
+      scrollbar-color: #f0f01b transparent;
+      --scrollbar-thumb-color: #f0f01b !important;
+      --scrollbar-thumb-hover-color: #f0f01b;
+    }
+    :root .omv-dark-theme .mat-button,
+    :root .omv-dark-theme .mat-icon-button,
+    :root .omv-dark-theme .mat-stroked-button {
+      color: #f0f01b;
+      background: inherit;
+    }
+    :root .omv-dark-theme .mat-pseudo-checkbox-checked,
+    :root .omv-dark-theme .mat-pseudo-checkbox-indeterminate,
+    :root .omv-dark-theme .mat-accent .mat-pseudo-checkbox-checked,
+    :root .omv-dark-theme .mat-accent .mat-pseudo-checkbox-indeterminate {
+      background: #f0f01b;
+    }
+    :root .omv-dark-theme .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background,
+    :root .omv-dark-theme .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+      background-color: #f0f01b;
+    }
+    :root .omv-dark-theme .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+      background-color: #f0f01b;
+    }
+    :root .omv-dark-theme .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+      background-color: #f0f01b;
+    }
+    :root .omv-dark-theme .mat-badge-accent .mat-badge-content {
+      background: #f0f003;
+      color: #f0f01b;
+    }
+    :root .omv-dark-theme .mat-select-panel {
+      scrollbar-color: #f0f01b transparent;
+      --scrollbar-thumb-color: #f0f01b !important;
+      --scrollbar-thumb-hover-color: #f0f01b !important;
+      background: #f0f003;
+    }
+    :root .omv-background-color-pair-success {
+      color: #f0f002;
+      background-color: #f0f015;
+    }
+    :root .omv-dark-theme .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+      color: #f0f01b;
+    }
+    :root .ngx-datatable.single-selection .datatable-body-row.active,
+    :root .ngx-datatable.single-selection .datatable-body-row.active .datatable-row-group,
+    :root .ngx-datatable.multi-selection .datatable-body-row.active,
+    :root .ngx-datatable.multi-selection .datatable-body-row.active .datatable-row-group,
+    :root .ngx-datatable.multi-click-selection .datatable-body-row.active,
+    :root .ngx-datatable.multi-click-selection .datatable-body-row.active .datatable-row-group {
+      color: #f0f01b;
+      background-color: #f0f003;
+    }
+    :root .ngx-datatable:not(.cell-selection) .datatable-body-row:hover,
+    :root .ngx-datatable:not(.cell-selection) .datatable-body-row:hover .datatable-row-group {
+      color: #f0f003;
+      background-color: #f0f019;
+    }
+    :root .ngx-datatable.single-selection .datatable-body-row.active:hover,
+    :root .ngx-datatable.single-selection .datatable-body-row.active:hover .datatable-row-group,
+    :root .ngx-datatable.multi-selection .datatable-body-row.active:hover,
+    :root .ngx-datatable.multi-selection .datatable-body-row.active:hover .datatable-row-group,
+    :root .ngx-datatable.multi-click-selection .datatable-body-row.active:hover,
+    :root .ngx-datatable.multi-click-selection .datatable-body-row.active:hover .datatable-row-group {
+      color: #f0f003;
+      background-color: #f0f015;
+    }
+    :root .omv-dark-theme .mat-menu-item {
+      background: #f0f003;
+      color: #f0f004;
+    }
+    :root .omv-dark-theme .mat-menu-panel {
+      background: #f0f003;
+    }
+    :root [_nghost-ckr-c138] .content[_ngcontent-ckr-c138] omv-intuition-form-page[_ngcontent-ckr-c138] .mat-card {
+      color: #f0f004;
+      background-color: #f0f002;
+    }
+    :root .mat-flat-button.omv-background-color-pair-primary {
+      color: #f0f004;
+      background-color: #f0f003;
+    }
+    :root .omv-dark-theme .mat-dialog-container {
+      background: #f0f003;
+      color: #f0f004;
+    }
+    :root .omv-background-color-pair-terminal {
+      color: #f0f015;
+      background-color: #f0f002;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root .omv-dark-theme {
+      --mat-color-text: #f0f004;
+      --mat-color-secondary-text: #f0f006;
+      --mat-color-disabled-text: #f0f011;
+      --mat-color-hint-text: #f0f019;
+      --mat-background-color-hover: #f0f01b;
+      --mat-background-color-selected-button: #f0f01b;
+      --mat-background-color-card: #f0f003;
+      --mat-background-color-background: #f0f003;
+      --mat-primary-color-text: #f0f01b;
+      --mat-background-color-body: #f0f001;
+    }
+    :root .omv-dark-theme .mat-toolbar.mat-primary {
+      background: #f0f01b;
+      color: #f0f004;
+    }
+    :root .omv-dark-theme .mat-drawer-container {
+      background-color: #f0f001;
+      color: #f0f004;
+    }
+    :root .omv-dark-theme .mat-card {
+      background: #f0f002;
+      color: #f0f004;
+    }
+    :root .omv-dark-theme .mat-flat-button,
+    :root .mat-fab,
+    :root .mat-mini-fab {
+      color: #f0f004;
+      background-color: #f0f003;
+    }
+    :root .omv-dark-theme .mat-flat-button.mat-button-disabled.mat-button-disabled {
+      background-color: #f0f002;
+    }
+    :root .omv-dark-theme .mat-input-element:disabled {
+      color: #f0f006;
+    }
+    :root .omv-dark-theme .mat-select-placeholder,
+    :root .omv-dark-theme .mat-select-disabled .mat-select-value {
+      color: #f0f006;
+    }
+    :root .omv-dark-theme .mat-form-field-appearance-legacy .mat-form-field-label,
+    :root .omv-dark-theme .mat-form-field-appearance-legacy .mat-hint {
+      color: #f0f01b;
+    }
+    :root .omv-dark-theme .mat-toolbar {
+      background: #f0f003;
+      color: #f0f004;
+    }
+    :root .omv-top-bar[_ngcontent-ydq-c112] button[_ngcontent-ydq-c112] .mat-icon[_ngcontent-ydq-c112] {
+      color: #f0f003;
+    }
+    :root .omv-top-bar[_ngcontent-ydq-c112] .hostname[_ngcontent-ydq-c112] {
+      color: #f0f003;
+    }
+    :root .omv-dark-theme .mat-icon-button.mat-button-disabled.mat-button-disabled {
+      color: #f0f009;
+    }
+    :root .omv-dark-theme .mat-chip.omv-background-color-pair-green {
+      color: #f0f002;
+      background-color: #f0f015;
+    }
+    :root .omv-scrollable-xy,
+    :root .omv-scrollable-y {
+      scrollbar-color: #f0f01b transparent;
+      --scrollbar-thumb-color: #f0f01b !important;
+      --scrollbar-thumb-hover-color: #f0f01b;
+    }
+    :root .omv-dark-theme .mat-button,
+    :root .omv-dark-theme .mat-icon-button,
+    :root .omv-dark-theme .mat-stroked-button {
+      color: #f0f01b;
+      background: inherit;
+    }
+    :root .omv-dark-theme .mat-pseudo-checkbox-checked,
+    :root .omv-dark-theme .mat-pseudo-checkbox-indeterminate,
+    :root .omv-dark-theme .mat-accent .mat-pseudo-checkbox-checked,
+    :root .omv-dark-theme .mat-accent .mat-pseudo-checkbox-indeterminate {
+      background: #f0f01b;
+    }
+    :root .omv-dark-theme .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background,
+    :root .omv-dark-theme .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+      background-color: #f0f01b;
+    }
+    :root .omv-dark-theme .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+      background-color: #f0f01b;
+    }
+    :root .omv-dark-theme .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+      background-color: #f0f01b;
+    }
+    :root .omv-dark-theme .mat-badge-accent .mat-badge-content {
+      background: #f0f003;
+      color: #f0f01b;
+    }
+    :root .omv-dark-theme .mat-select-panel {
+      scrollbar-color: #f0f01b transparent;
+      --scrollbar-thumb-color: #f0f01b !important;
+      --scrollbar-thumb-hover-color: #f0f01b !important;
+      background: #f0f003;
+    }
+    :root .omv-background-color-pair-success {
+      color: #f0f002;
+      background-color: #f0f015;
+    }
+    :root .omv-dark-theme .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+      color: #f0f01b;
+    }
+    :root .ngx-datatable.single-selection .datatable-body-row.active,
+    :root .ngx-datatable.single-selection .datatable-body-row.active .datatable-row-group,
+    :root .ngx-datatable.multi-selection .datatable-body-row.active,
+    :root .ngx-datatable.multi-selection .datatable-body-row.active .datatable-row-group,
+    :root .ngx-datatable.multi-click-selection .datatable-body-row.active,
+    :root .ngx-datatable.multi-click-selection .datatable-body-row.active .datatable-row-group {
+      color: #f0f01b;
+      background-color: #f0f003;
+    }
+    :root .ngx-datatable:not(.cell-selection) .datatable-body-row:hover,
+    :root .ngx-datatable:not(.cell-selection) .datatable-body-row:hover .datatable-row-group {
+      color: #f0f003;
+      background-color: #f0f019;
+    }
+    :root .ngx-datatable.single-selection .datatable-body-row.active:hover,
+    :root .ngx-datatable.single-selection .datatable-body-row.active:hover .datatable-row-group,
+    :root .ngx-datatable.multi-selection .datatable-body-row.active:hover,
+    :root .ngx-datatable.multi-selection .datatable-body-row.active:hover .datatable-row-group,
+    :root .ngx-datatable.multi-click-selection .datatable-body-row.active:hover,
+    :root .ngx-datatable.multi-click-selection .datatable-body-row.active:hover .datatable-row-group {
+      color: #f0f003;
+      background-color: #f0f015;
+    }
+    :root .omv-dark-theme .mat-menu-item {
+      background: #f0f003;
+      color: #f0f004;
+    }
+    :root .omv-dark-theme .mat-menu-panel {
+      background: #f0f003;
+    }
+    :root [_nghost-ckr-c138] .content[_ngcontent-ckr-c138] omv-intuition-form-page[_ngcontent-ckr-c138] .mat-card {
+      color: #f0f004;
+      background-color: #f0f002;
+    }
+    :root .mat-flat-button.omv-background-color-pair-primary {
+      color: #f0f004;
+      background-color: #f0f003;
+    }
+    :root .omv-dark-theme .mat-dialog-container {
+      background: #f0f003;
+      color: #f0f004;
+    }
+    :root .omv-background-color-pair-terminal {
+      color: #f0f015;
+      background-color: #f0f002;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+require("config.options")
+require("config.theme").setup()
+require("config.keymaps")
+require("config.autocmds")
+require("config.plugins")
+require("config.lsp")

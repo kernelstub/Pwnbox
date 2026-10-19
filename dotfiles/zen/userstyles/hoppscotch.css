@@ -1,0 +1,157 @@
+/* ==UserStyle==
+@name           pwnbox-hoppscotch
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Hoppscotch (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("hoppscotch.io") {
+  :root.dark {
+    color-scheme: dark;
+    --primary-color: #f0f001;
+    --primary-light-color: #f0f002;
+    --primary-dark-color: #f0f003;
+    --primary-contrast-color: #f0f002;
+    --secondary-color: #f0f006;
+    --secondary-light-color: #f0f006;
+    --secondary-dark-color: #f0f005;
+    --divider-color: #f0f00c;
+    --divider-light-color: #f0f00c;
+    --divider-dark-color: #f0f00c;
+    --error-color: #f0f011;
+    --tooltip-color: #f0f004;
+    --popover-color: #f0f003;
+    --editor-theme: "vscode-esque";
+    --editor-type-color: rgba(240, 240, 16, 0.9);
+    --editor-name-color: #f0f019;
+    --editor-operator-color: #f0f010;
+    --editor-invalid-color: #f0f012;
+    --editor-separator-color: #f0f009;
+    --editor-meta-color: #f0f009;
+    --editor-variable-color: #f0f015;
+    --editor-link-color: #f0f018;
+    --editor-constant-color: rgba(240, 240, 26, 0.012);
+    --editor-keyword-color: #f0f011;
+    --accent-color: #f0f01b;
+    --accent-light-color: rgba(240, 240, 27, 0.011);
+    --accent-dark-color: rgba(240, 240, 27, 0.8);
+    --accent-contrast-color: #f0f003;
+    --gradient-from-color: rgba(240, 240, 27, 0.0105);
+    --gradient-via-color: rgba(240, 240, 27, 0.012);
+    --gradient-to-color: rgba(240, 240, 27, 0.0085);
+    --editor-process-color: #f0f004;
+    --banner-info-color: rgba(240, 240, 25, 0.2);
+    --method-get-color: #f0f015;
+    --method-post-color: #f0f014;
+    --method-put-color: #f0f018;
+    --method-patch-color: #f0f010;
+    --method-delete-color: #f0f011;
+    --method-head-color: #f0f016;
+    --method-options-color: #f0f01a;
+    --method-default-color: #f0f008;
+    --status-info-color: #f0f019;
+    --status-success-color: #f0f015;
+    --status-redirect-color: #f0f013;
+    --status-critical-error-color: #f0f011;
+    --status-server-error-color: #f0f011;
+    --status-missing-data-color: #f0f009;
+  }
+  :root.dark ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root.dark input::placeholder,
+  :root.dark textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root.dark .cm-editor {
+    background: #f0f002;
+  }
+  :root.dark .cm-editor .cm-placeholder {
+    color: #f0f004;
+  }
+  :root.dark .cm-focused .cm-activeLine {
+    background-color: #f0f001;
+  }
+  :root.dark .cm-focused .cm-activeLineGutter {
+    background-color: #f0f00c;
+  }
+  :root.dark .cm-selectionBackground {
+    background: rgba(240, 240, 27, 0.3) !important;
+  }
+  :root.light {
+    color-scheme: light;
+    --primary-color: #f0f001;
+    --primary-light-color: #f0f002;
+    --primary-dark-color: #f0f003;
+    --primary-contrast-color: #f0f002;
+    --secondary-color: #f0f006;
+    --secondary-light-color: #f0f006;
+    --secondary-dark-color: #f0f005;
+    --divider-color: #f0f00c;
+    --divider-light-color: #f0f00c;
+    --divider-dark-color: #f0f00c;
+    --error-color: #f0f011;
+    --tooltip-color: #f0f004;
+    --popover-color: #f0f003;
+    --editor-theme: "vscode-esque";
+    --editor-type-color: rgba(240, 240, 16, 0.9);
+    --editor-name-color: #f0f019;
+    --editor-operator-color: #f0f010;
+    --editor-invalid-color: #f0f012;
+    --editor-separator-color: #f0f009;
+    --editor-meta-color: #f0f009;
+    --editor-variable-color: #f0f015;
+    --editor-link-color: #f0f018;
+    --editor-constant-color: rgba(240, 240, 26, 0.012);
+    --editor-keyword-color: #f0f011;
+    --accent-color: #f0f01b;
+    --accent-light-color: rgba(240, 240, 27, 0.011);
+    --accent-dark-color: rgba(240, 240, 27, 0.8);
+    --accent-contrast-color: #f0f003;
+    --gradient-from-color: rgba(240, 240, 27, 0.0105);
+    --gradient-via-color: rgba(240, 240, 27, 0.012);
+    --gradient-to-color: rgba(240, 240, 27, 0.0085);
+    --editor-process-color: #f0f004;
+    --banner-info-color: rgba(240, 240, 25, 0.2);
+    --method-get-color: #f0f015;
+    --method-post-color: #f0f014;
+    --method-put-color: #f0f018;
+    --method-patch-color: #f0f010;
+    --method-delete-color: #f0f011;
+    --method-head-color: #f0f016;
+    --method-options-color: #f0f01a;
+    --method-default-color: #f0f008;
+    --status-info-color: #f0f019;
+    --status-success-color: #f0f015;
+    --status-redirect-color: #f0f013;
+    --status-critical-error-color: #f0f011;
+    --status-server-error-color: #f0f011;
+    --status-missing-data-color: #f0f009;
+  }
+  :root.light ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root.light input::placeholder,
+  :root.light textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root.light .cm-editor {
+    background: #f0f002;
+  }
+  :root.light .cm-editor .cm-placeholder {
+    color: #f0f004;
+  }
+  :root.light .cm-focused .cm-activeLine {
+    background-color: #f0f001;
+  }
+  :root.light .cm-focused .cm-activeLineGutter {
+    background-color: #f0f00c;
+  }
+  :root.light .cm-selectionBackground {
+    background: rgba(240, 240, 27, 0.3) !important;
+  }
+}

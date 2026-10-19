@@ -1,0 +1,462 @@
+/* ==UserStyle==
+@name           pwnbox-searxng
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for SearXNG (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+/* Domains picked from https://searx.space/. */
+@-moz-document domain("search.bus-hit.me"), domain("search.inetol.net") {
+  @media (prefers-color-scheme: light) {
+    :root.theme-auto {
+      color-scheme: light;
+      --color-base-font: #f0f004;
+      --color-base-background: #f0f001;
+      --color-base-background-mobile: #f0f001;
+      --color-url-font: #f0f019;
+      --color-url-visited-font: #f0f01a;
+      --color-header-background: #f0f002;
+      --color-header-border: #f0f002;
+      --color-footer-background: #f0f002;
+      --color-footer-border: #f0f002;
+      --color-sidebar-border: #f0f001;
+      --color-sidebar-font: #f0f004;
+      --color-sidebar-background: #f0f001;
+      --color-backtotop-font: #f0f005;
+      --color-backtotop-border: #f0f00c;
+      --color-backtotop-background: #f0f00c;
+      --color-btn-background: #f0f01b;
+      --color-btn-font: #f0f001;
+      --color-show-btn-background: #f0f01b;
+      --color-show-btn-font: #f0f001;
+      --color-search-border: #f0f00c;
+      --color-search-shadow: 0 2px 8px #f0f003;
+      --color-search-background: #f0f00c;
+      --color-search-font: #f0f004;
+      --color-search-background-hover: #f0f01b;
+      --color-error: #f0f011;
+      --color-error-background: #f0f00c;
+      --color-warning: #f0f014;
+      --color-warning-background: #f0f00c;
+      --color-success: #f0f015;
+      --color-success-background: #f0f00c;
+      --color-categories-item-selected-font: #f0f004;
+      --color-categories-item-border-selected: #f0f01b;
+      --color-autocomplete-font: #f0f005;
+      --color-autocomplete-border: #f0f00c;
+      --color-autocomplete-shadow: 0 2px 8px #f0f003;
+      --color-autocomplete-background: #f0f00c;
+      --color-autocomplete-background-hover: #f0f00b;
+      --color-answer-font: #f0f004;
+      --color-answer-background: #f0f002;
+      --color-result-background: #f0f002;
+      --color-result-border: #f0f001;
+      --color-result-url-font: #f0f005;
+      --color-result-vim-selected: #f0f00c;
+      --color-result-vim-arrow: #f0f01b;
+      --color-result-description-highlight-font: #f0f004;
+      --color-result-link-font: #f0f019;
+      --color-result-link-font-highlight: #f0f019;
+      --color-result-link-visited-font: #f0f01a;
+      --color-result-publishdate-font: #f0f00a;
+      --color-result-engines-font: #f0f00a;
+      --color-result-search-url-border: #f0f00a;
+      --color-result-search-url-font: #f0f004;
+      --color-result-detail-font: #f0f004;
+      --color-result-detail-label-font: #f0f006;
+      --color-result-detail-background: #f0f001;
+      --color-result-detail-hr: #f0f001;
+      --color-result-detail-link: #f0f019;
+      --color-result-detail-loader-border: rgba(255, 255, 255, 0.2);
+      --color-result-detail-loader-borderleft: #f0f003;
+      --color-result-image-span-font: #f0f004;
+      --color-result-image-span-font-selected: #f0f001;
+      --color-result-image-background: #f0f002;
+      --color-settings-tr-hover: #f0f00c;
+      --color-settings-engine-description-font: #f0f004;
+      --color-settings-engine-group-background: #f0f00c;
+      --color-toolkit-badge-font: #f0f004;
+      --color-toolkit-badge-background: #f0f00c;
+      --color-toolkit-kbd-font: #f0f004;
+      --color-toolkit-kbd-background: #f0f002;
+      --color-toolkit-dialog-border: #f0f002;
+      --color-toolkit-dialog-background: #f0f002;
+      --color-toolkit-tabs-label-border: #f0f001;
+      --color-toolkit-tabs-section-border: #f0f001;
+      --color-toolkit-select-background: #f0f00c;
+      --color-toolkit-select-border: #f0f00c;
+      --color-toolkit-select-background-hover: #f0f00b;
+      --color-toolkit-input-text-font: #f0f004;
+      --color-toolkit-checkbox-onoff-off-background: #f0f00c;
+      --color-toolkit-checkbox-onoff-on-background: #f0f00c;
+      --color-toolkit-checkbox-onoff-on-mark-background: #f0f015;
+      --color-toolkit-checkbox-onoff-on-mark-color: #f0f002;
+      --color-toolkit-checkbox-onoff-off-mark-background: #f0f011;
+      --color-toolkit-checkbox-onoff-off-mark-color: #f0f002;
+      --color-toolkit-checkbox-label-background: #f0f001;
+      --color-toolkit-checkbox-label-border: #f0f002;
+      --color-toolkit-checkbox-input-border: #f0f01b;
+      --color-toolkit-engine-tooltip-border: #f0f00c;
+      --color-toolkit-engine-tooltip-background: #f0f00c;
+      --color-toolkit-loader-border: rgba(255, 255, 255, 0.2);
+      --color-toolkit-loader-borderleft: #f0f003;
+      --color-doc-code: #f0f00d;
+      --color-doc-code-background: #f0f002;
+    }
+    :root.theme-auto ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root.theme-auto input::placeholder,
+    :root.theme-auto textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root.theme-auto #search_logo svg :not([fill="none"]) {
+      fill: #f0f01b;
+    }
+    :root.theme-auto #search_logo svg :not([stroke="none"]) {
+      stroke: #f0f01b;
+    }
+    :root.theme-auto .index .title {
+      filter: brightness(0) saturate(100%) invert(26%) sepia(31%) saturate(3766%) hue-rotate(247deg) brightness(114%) contrast(114%);
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root.theme-auto {
+      color-scheme: dark;
+      --color-base-font: #f0f004;
+      --color-base-background: #f0f001;
+      --color-base-background-mobile: #f0f001;
+      --color-url-font: #f0f019;
+      --color-url-visited-font: #f0f01a;
+      --color-header-background: #f0f002;
+      --color-header-border: #f0f002;
+      --color-footer-background: #f0f002;
+      --color-footer-border: #f0f002;
+      --color-sidebar-border: #f0f001;
+      --color-sidebar-font: #f0f004;
+      --color-sidebar-background: #f0f001;
+      --color-backtotop-font: #f0f005;
+      --color-backtotop-border: #f0f00c;
+      --color-backtotop-background: #f0f00c;
+      --color-btn-background: #f0f01b;
+      --color-btn-font: #f0f001;
+      --color-show-btn-background: #f0f01b;
+      --color-show-btn-font: #f0f001;
+      --color-search-border: #f0f00c;
+      --color-search-shadow: 0 2px 8px #f0f003;
+      --color-search-background: #f0f00c;
+      --color-search-font: #f0f004;
+      --color-search-background-hover: #f0f01b;
+      --color-error: #f0f011;
+      --color-error-background: #f0f00c;
+      --color-warning: #f0f014;
+      --color-warning-background: #f0f00c;
+      --color-success: #f0f015;
+      --color-success-background: #f0f00c;
+      --color-categories-item-selected-font: #f0f004;
+      --color-categories-item-border-selected: #f0f01b;
+      --color-autocomplete-font: #f0f005;
+      --color-autocomplete-border: #f0f00c;
+      --color-autocomplete-shadow: 0 2px 8px #f0f003;
+      --color-autocomplete-background: #f0f00c;
+      --color-autocomplete-background-hover: #f0f00b;
+      --color-answer-font: #f0f004;
+      --color-answer-background: #f0f002;
+      --color-result-background: #f0f002;
+      --color-result-border: #f0f001;
+      --color-result-url-font: #f0f005;
+      --color-result-vim-selected: #f0f00c;
+      --color-result-vim-arrow: #f0f01b;
+      --color-result-description-highlight-font: #f0f004;
+      --color-result-link-font: #f0f019;
+      --color-result-link-font-highlight: #f0f019;
+      --color-result-link-visited-font: #f0f01a;
+      --color-result-publishdate-font: #f0f00a;
+      --color-result-engines-font: #f0f00a;
+      --color-result-search-url-border: #f0f00a;
+      --color-result-search-url-font: #f0f004;
+      --color-result-detail-font: #f0f004;
+      --color-result-detail-label-font: #f0f006;
+      --color-result-detail-background: #f0f001;
+      --color-result-detail-hr: #f0f001;
+      --color-result-detail-link: #f0f019;
+      --color-result-detail-loader-border: rgba(255, 255, 255, 0.2);
+      --color-result-detail-loader-borderleft: #f0f003;
+      --color-result-image-span-font: #f0f004;
+      --color-result-image-span-font-selected: #f0f001;
+      --color-result-image-background: #f0f002;
+      --color-settings-tr-hover: #f0f00c;
+      --color-settings-engine-description-font: #f0f004;
+      --color-settings-engine-group-background: #f0f00c;
+      --color-toolkit-badge-font: #f0f004;
+      --color-toolkit-badge-background: #f0f00c;
+      --color-toolkit-kbd-font: #f0f004;
+      --color-toolkit-kbd-background: #f0f002;
+      --color-toolkit-dialog-border: #f0f002;
+      --color-toolkit-dialog-background: #f0f002;
+      --color-toolkit-tabs-label-border: #f0f001;
+      --color-toolkit-tabs-section-border: #f0f001;
+      --color-toolkit-select-background: #f0f00c;
+      --color-toolkit-select-border: #f0f00c;
+      --color-toolkit-select-background-hover: #f0f00b;
+      --color-toolkit-input-text-font: #f0f004;
+      --color-toolkit-checkbox-onoff-off-background: #f0f00c;
+      --color-toolkit-checkbox-onoff-on-background: #f0f00c;
+      --color-toolkit-checkbox-onoff-on-mark-background: #f0f015;
+      --color-toolkit-checkbox-onoff-on-mark-color: #f0f002;
+      --color-toolkit-checkbox-onoff-off-mark-background: #f0f011;
+      --color-toolkit-checkbox-onoff-off-mark-color: #f0f002;
+      --color-toolkit-checkbox-label-background: #f0f001;
+      --color-toolkit-checkbox-label-border: #f0f002;
+      --color-toolkit-checkbox-input-border: #f0f01b;
+      --color-toolkit-engine-tooltip-border: #f0f00c;
+      --color-toolkit-engine-tooltip-background: #f0f00c;
+      --color-toolkit-loader-border: rgba(255, 255, 255, 0.2);
+      --color-toolkit-loader-borderleft: #f0f003;
+      --color-doc-code: #f0f00d;
+      --color-doc-code-background: #f0f002;
+    }
+    :root.theme-auto ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root.theme-auto input::placeholder,
+    :root.theme-auto textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root.theme-auto #search_logo svg :not([fill="none"]) {
+      fill: #f0f01b;
+    }
+    :root.theme-auto #search_logo svg :not([stroke="none"]) {
+      stroke: #f0f01b;
+    }
+    :root.theme-auto .index .title {
+      filter: brightness(0) saturate(100%) invert(63%) sepia(71%) saturate(1021%) hue-rotate(208deg) brightness(110%) contrast(94%);
+    }
+  }
+  :root.theme-dark {
+    color-scheme: dark;
+    --color-base-font: #f0f004;
+    --color-base-background: #f0f001;
+    --color-base-background-mobile: #f0f001;
+    --color-url-font: #f0f019;
+    --color-url-visited-font: #f0f01a;
+    --color-header-background: #f0f002;
+    --color-header-border: #f0f002;
+    --color-footer-background: #f0f002;
+    --color-footer-border: #f0f002;
+    --color-sidebar-border: #f0f001;
+    --color-sidebar-font: #f0f004;
+    --color-sidebar-background: #f0f001;
+    --color-backtotop-font: #f0f005;
+    --color-backtotop-border: #f0f00c;
+    --color-backtotop-background: #f0f00c;
+    --color-btn-background: #f0f01b;
+    --color-btn-font: #f0f001;
+    --color-show-btn-background: #f0f01b;
+    --color-show-btn-font: #f0f001;
+    --color-search-border: #f0f00c;
+    --color-search-shadow: 0 2px 8px #f0f003;
+    --color-search-background: #f0f00c;
+    --color-search-font: #f0f004;
+    --color-search-background-hover: #f0f01b;
+    --color-error: #f0f011;
+    --color-error-background: #f0f00c;
+    --color-warning: #f0f014;
+    --color-warning-background: #f0f00c;
+    --color-success: #f0f015;
+    --color-success-background: #f0f00c;
+    --color-categories-item-selected-font: #f0f004;
+    --color-categories-item-border-selected: #f0f01b;
+    --color-autocomplete-font: #f0f005;
+    --color-autocomplete-border: #f0f00c;
+    --color-autocomplete-shadow: 0 2px 8px #f0f003;
+    --color-autocomplete-background: #f0f00c;
+    --color-autocomplete-background-hover: #f0f00b;
+    --color-answer-font: #f0f004;
+    --color-answer-background: #f0f002;
+    --color-result-background: #f0f002;
+    --color-result-border: #f0f001;
+    --color-result-url-font: #f0f005;
+    --color-result-vim-selected: #f0f00c;
+    --color-result-vim-arrow: #f0f01b;
+    --color-result-description-highlight-font: #f0f004;
+    --color-result-link-font: #f0f019;
+    --color-result-link-font-highlight: #f0f019;
+    --color-result-link-visited-font: #f0f01a;
+    --color-result-publishdate-font: #f0f00a;
+    --color-result-engines-font: #f0f00a;
+    --color-result-search-url-border: #f0f00a;
+    --color-result-search-url-font: #f0f004;
+    --color-result-detail-font: #f0f004;
+    --color-result-detail-label-font: #f0f006;
+    --color-result-detail-background: #f0f001;
+    --color-result-detail-hr: #f0f001;
+    --color-result-detail-link: #f0f019;
+    --color-result-detail-loader-border: rgba(255, 255, 255, 0.2);
+    --color-result-detail-loader-borderleft: #f0f003;
+    --color-result-image-span-font: #f0f004;
+    --color-result-image-span-font-selected: #f0f001;
+    --color-result-image-background: #f0f002;
+    --color-settings-tr-hover: #f0f00c;
+    --color-settings-engine-description-font: #f0f004;
+    --color-settings-engine-group-background: #f0f00c;
+    --color-toolkit-badge-font: #f0f004;
+    --color-toolkit-badge-background: #f0f00c;
+    --color-toolkit-kbd-font: #f0f004;
+    --color-toolkit-kbd-background: #f0f002;
+    --color-toolkit-dialog-border: #f0f002;
+    --color-toolkit-dialog-background: #f0f002;
+    --color-toolkit-tabs-label-border: #f0f001;
+    --color-toolkit-tabs-section-border: #f0f001;
+    --color-toolkit-select-background: #f0f00c;
+    --color-toolkit-select-border: #f0f00c;
+    --color-toolkit-select-background-hover: #f0f00b;
+    --color-toolkit-input-text-font: #f0f004;
+    --color-toolkit-checkbox-onoff-off-background: #f0f00c;
+    --color-toolkit-checkbox-onoff-on-background: #f0f00c;
+    --color-toolkit-checkbox-onoff-on-mark-background: #f0f015;
+    --color-toolkit-checkbox-onoff-on-mark-color: #f0f002;
+    --color-toolkit-checkbox-onoff-off-mark-background: #f0f011;
+    --color-toolkit-checkbox-onoff-off-mark-color: #f0f002;
+    --color-toolkit-checkbox-label-background: #f0f001;
+    --color-toolkit-checkbox-label-border: #f0f002;
+    --color-toolkit-checkbox-input-border: #f0f01b;
+    --color-toolkit-engine-tooltip-border: #f0f00c;
+    --color-toolkit-engine-tooltip-background: #f0f00c;
+    --color-toolkit-loader-border: rgba(255, 255, 255, 0.2);
+    --color-toolkit-loader-borderleft: #f0f003;
+    --color-doc-code: #f0f00d;
+    --color-doc-code-background: #f0f002;
+  }
+  :root.theme-dark ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root.theme-dark input::placeholder,
+  :root.theme-dark textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root.theme-dark #search_logo svg :not([fill="none"]) {
+    fill: #f0f01b;
+  }
+  :root.theme-dark #search_logo svg :not([stroke="none"]) {
+    stroke: #f0f01b;
+  }
+  :root.theme-dark .index .title {
+    filter: brightness(0) saturate(100%) invert(63%) sepia(71%) saturate(1021%) hue-rotate(208deg) brightness(110%) contrast(94%);
+  }
+  :root.theme-light {
+    color-scheme: light;
+    --color-base-font: #f0f004;
+    --color-base-background: #f0f001;
+    --color-base-background-mobile: #f0f001;
+    --color-url-font: #f0f019;
+    --color-url-visited-font: #f0f01a;
+    --color-header-background: #f0f002;
+    --color-header-border: #f0f002;
+    --color-footer-background: #f0f002;
+    --color-footer-border: #f0f002;
+    --color-sidebar-border: #f0f001;
+    --color-sidebar-font: #f0f004;
+    --color-sidebar-background: #f0f001;
+    --color-backtotop-font: #f0f005;
+    --color-backtotop-border: #f0f00c;
+    --color-backtotop-background: #f0f00c;
+    --color-btn-background: #f0f01b;
+    --color-btn-font: #f0f001;
+    --color-show-btn-background: #f0f01b;
+    --color-show-btn-font: #f0f001;
+    --color-search-border: #f0f00c;
+    --color-search-shadow: 0 2px 8px #f0f003;
+    --color-search-background: #f0f00c;
+    --color-search-font: #f0f004;
+    --color-search-background-hover: #f0f01b;
+    --color-error: #f0f011;
+    --color-error-background: #f0f00c;
+    --color-warning: #f0f014;
+    --color-warning-background: #f0f00c;
+    --color-success: #f0f015;
+    --color-success-background: #f0f00c;
+    --color-categories-item-selected-font: #f0f004;
+    --color-categories-item-border-selected: #f0f01b;
+    --color-autocomplete-font: #f0f005;
+    --color-autocomplete-border: #f0f00c;
+    --color-autocomplete-shadow: 0 2px 8px #f0f003;
+    --color-autocomplete-background: #f0f00c;
+    --color-autocomplete-background-hover: #f0f00b;
+    --color-answer-font: #f0f004;
+    --color-answer-background: #f0f002;
+    --color-result-background: #f0f002;
+    --color-result-border: #f0f001;
+    --color-result-url-font: #f0f005;
+    --color-result-vim-selected: #f0f00c;
+    --color-result-vim-arrow: #f0f01b;
+    --color-result-description-highlight-font: #f0f004;
+    --color-result-link-font: #f0f019;
+    --color-result-link-font-highlight: #f0f019;
+    --color-result-link-visited-font: #f0f01a;
+    --color-result-publishdate-font: #f0f00a;
+    --color-result-engines-font: #f0f00a;
+    --color-result-search-url-border: #f0f00a;
+    --color-result-search-url-font: #f0f004;
+    --color-result-detail-font: #f0f004;
+    --color-result-detail-label-font: #f0f006;
+    --color-result-detail-background: #f0f001;
+    --color-result-detail-hr: #f0f001;
+    --color-result-detail-link: #f0f019;
+    --color-result-detail-loader-border: rgba(255, 255, 255, 0.2);
+    --color-result-detail-loader-borderleft: #f0f003;
+    --color-result-image-span-font: #f0f004;
+    --color-result-image-span-font-selected: #f0f001;
+    --color-result-image-background: #f0f002;
+    --color-settings-tr-hover: #f0f00c;
+    --color-settings-engine-description-font: #f0f004;
+    --color-settings-engine-group-background: #f0f00c;
+    --color-toolkit-badge-font: #f0f004;
+    --color-toolkit-badge-background: #f0f00c;
+    --color-toolkit-kbd-font: #f0f004;
+    --color-toolkit-kbd-background: #f0f002;
+    --color-toolkit-dialog-border: #f0f002;
+    --color-toolkit-dialog-background: #f0f002;
+    --color-toolkit-tabs-label-border: #f0f001;
+    --color-toolkit-tabs-section-border: #f0f001;
+    --color-toolkit-select-background: #f0f00c;
+    --color-toolkit-select-border: #f0f00c;
+    --color-toolkit-select-background-hover: #f0f00b;
+    --color-toolkit-input-text-font: #f0f004;
+    --color-toolkit-checkbox-onoff-off-background: #f0f00c;
+    --color-toolkit-checkbox-onoff-on-background: #f0f00c;
+    --color-toolkit-checkbox-onoff-on-mark-background: #f0f015;
+    --color-toolkit-checkbox-onoff-on-mark-color: #f0f002;
+    --color-toolkit-checkbox-onoff-off-mark-background: #f0f011;
+    --color-toolkit-checkbox-onoff-off-mark-color: #f0f002;
+    --color-toolkit-checkbox-label-background: #f0f001;
+    --color-toolkit-checkbox-label-border: #f0f002;
+    --color-toolkit-checkbox-input-border: #f0f01b;
+    --color-toolkit-engine-tooltip-border: #f0f00c;
+    --color-toolkit-engine-tooltip-background: #f0f00c;
+    --color-toolkit-loader-border: rgba(255, 255, 255, 0.2);
+    --color-toolkit-loader-borderleft: #f0f003;
+    --color-doc-code: #f0f00d;
+    --color-doc-code-background: #f0f002;
+  }
+  :root.theme-light ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root.theme-light input::placeholder,
+  :root.theme-light textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root.theme-light #search_logo svg :not([fill="none"]) {
+    fill: #f0f01b;
+  }
+  :root.theme-light #search_logo svg :not([stroke="none"]) {
+    stroke: #f0f01b;
+  }
+  :root.theme-light .index .title {
+    filter: brightness(0) saturate(100%) invert(26%) sepia(31%) saturate(3766%) hue-rotate(247deg) brightness(114%) contrast(114%);
+  }
+}

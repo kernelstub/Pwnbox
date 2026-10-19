@@ -1,0 +1,209 @@
+/* ==UserStyle==
+@name           pwnbox-home-manager-options-search
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Home Manager Options Search (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("home-manager-options.extranix.com") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root body {
+      background-color: #f0f001;
+      color: #f0f004;
+    }
+    :root header {
+      background-color: #f0f002;
+    }
+    :root header nav.shortcuts li a {
+      color: #f0f004;
+    }
+    :root header nav.shortcuts li a:hover {
+      background-color: #f0f00c;
+      color: #f0f004;
+    }
+    :root #lastUpdateElement {
+      color: #f0f004;
+    }
+    :root a,
+    :root a:visited {
+      color: #f0f01b;
+    }
+    :root input,
+    :root textarea,
+    :root select {
+      background-color: #f0f002;
+      color: #f0f004;
+      caret-color: #f0f004;
+      border-color: #f0f00c;
+    }
+    :root .progress-bar-striped {
+      background-image: linear-gradient(45deg, rgba(240, 240, 4, 0.4) 25%, transparent 25%, transparent 50%, rgba(240, 240, 4, 0.4) 50%, rgba(240, 240, 4, 0.4) 75%, transparent 75%, transparent);
+      background-color: #f0f01b;
+      color: #f0f003;
+    }
+    :root .form-control:focus {
+      border-color: #f0f01b;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #f0f01b;
+    }
+    :root .table-striped > tbody > tr:nth-of-type(2n+1) {
+      background-color: #f0f00c;
+    }
+    :root table#indexedOptionsTable tr td,
+    :root .table > thead > tr > th {
+      border-color: #f0f00a !important;
+    }
+    :root table tr.optrow:focus-visible,
+    :root table tr.optrow:hover {
+      background-color: #f0f00b !important;
+    }
+    :root .modal-content {
+      background-color: #f0f001;
+    }
+    :root .modal-content .modal-header,
+    :root .modal-content .modal-footer {
+      border-color: #f0f00c !important;
+    }
+    :root .modal-content .close {
+      color: #f0f004;
+      text-shadow: 0 1px 0 #f0f004;
+    }
+    :root .modal-content pre {
+      color: #f0f004;
+      background-color: #f0f002;
+      border-color: #f0f00c;
+    }
+    :root .btn-default {
+      background: #f0f00c;
+      color: #f0f004;
+      text-shadow: none;
+      box-shadow: none;
+      border-color: #f0f00c;
+    }
+    :root .btn-default:hover,
+    :root .btn-default:focus,
+    :root .btn-default:active,
+    :root .btn-default .focus,
+    :root .btn-default .active {
+      background-color: #f0f00b;
+      color: #f0f004;
+      border-color: #f0f00c;
+    }
+    :root footer {
+      background-color: #f0f002;
+      color: #f0f004;
+      border-color: #f0f00a;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root body {
+      background-color: #f0f001;
+      color: #f0f004;
+    }
+    :root header {
+      background-color: #f0f002;
+    }
+    :root header nav.shortcuts li a {
+      color: #f0f004;
+    }
+    :root header nav.shortcuts li a:hover {
+      background-color: #f0f00c;
+      color: #f0f004;
+    }
+    :root #lastUpdateElement {
+      color: #f0f004;
+    }
+    :root a,
+    :root a:visited {
+      color: #f0f01b;
+    }
+    :root input,
+    :root textarea,
+    :root select {
+      background-color: #f0f002;
+      color: #f0f004;
+      caret-color: #f0f004;
+      border-color: #f0f00c;
+    }
+    :root .progress-bar-striped {
+      background-image: linear-gradient(45deg, rgba(240, 240, 4, 0.4) 25%, transparent 25%, transparent 50%, rgba(240, 240, 4, 0.4) 50%, rgba(240, 240, 4, 0.4) 75%, transparent 75%, transparent);
+      background-color: #f0f01b;
+      color: #f0f003;
+    }
+    :root .form-control:focus {
+      border-color: #f0f01b;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #f0f01b;
+    }
+    :root .table-striped > tbody > tr:nth-of-type(2n+1) {
+      background-color: #f0f00c;
+    }
+    :root table#indexedOptionsTable tr td,
+    :root .table > thead > tr > th {
+      border-color: #f0f00a !important;
+    }
+    :root table tr.optrow:focus-visible,
+    :root table tr.optrow:hover {
+      background-color: #f0f00b !important;
+    }
+    :root .modal-content {
+      background-color: #f0f001;
+    }
+    :root .modal-content .modal-header,
+    :root .modal-content .modal-footer {
+      border-color: #f0f00c !important;
+    }
+    :root .modal-content .close {
+      color: #f0f004;
+      text-shadow: 0 1px 0 #f0f004;
+    }
+    :root .modal-content pre {
+      color: #f0f004;
+      background-color: #f0f002;
+      border-color: #f0f00c;
+    }
+    :root .btn-default {
+      background: #f0f00c;
+      color: #f0f004;
+      text-shadow: none;
+      box-shadow: none;
+      border-color: #f0f00c;
+    }
+    :root .btn-default:hover,
+    :root .btn-default:focus,
+    :root .btn-default:active,
+    :root .btn-default .focus,
+    :root .btn-default .active {
+      background-color: #f0f00b;
+      color: #f0f004;
+      border-color: #f0f00c;
+    }
+    :root footer {
+      background-color: #f0f002;
+      color: #f0f004;
+      border-color: #f0f00a;
+    }
+  }
+}

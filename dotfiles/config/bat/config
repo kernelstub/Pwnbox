@@ -1,0 +1,6 @@
+--theme="base16"
+--style="numbers,changes,header"
+--paging=never
+--tabs=4
+--wrap=never
+--italic-text=always

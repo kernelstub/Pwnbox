@@ -1,0 +1,133 @@
+/* ==UserStyle==
+@name           pwnbox-alacritty.org
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for alacritty.org (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("alacritty.org") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root body {
+      color: #f0f004 !important;
+      background-color: #f0f001 !important;
+    }
+    :root a {
+      color: #f0f01b !important;
+    }
+    :root header {
+      background-color: #f0f002 !important;
+      border-bottom-color: #f0f00c !important;
+    }
+    :root header nav > a {
+      color: #f0f004 !important;
+    }
+    :root em {
+      color: #f0f015 !important;
+    }
+    :root strong,
+    :root strong > a {
+      color: #f0f019 !important;
+    }
+    :root #pick-version select {
+      color: #f0f004 !important;
+      background-color: #f0f00c;
+      border-color: #f0f009;
+    }
+    :root h1 {
+      color: #f0f01b !important;
+    }
+    :root a:not([name]) {
+      text-shadow: none !important;
+    }
+    :root code {
+      background-color: #f0f00c;
+    }
+    :root video {
+      background-color: #f0f009 !important;
+    }
+    :root img:not(img#logo-img) {
+      border-color: #f0f009 !important;
+    }
+    :root img#logo-img {
+      border-color: #f0f002 !important;
+    }
+    :root kbd {
+      background-color: #f0f00b !important;
+      border-color: #f0f009 !important;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root body {
+      color: #f0f004 !important;
+      background-color: #f0f001 !important;
+    }
+    :root a {
+      color: #f0f01b !important;
+    }
+    :root header {
+      background-color: #f0f002 !important;
+      border-bottom-color: #f0f00c !important;
+    }
+    :root header nav > a {
+      color: #f0f004 !important;
+    }
+    :root em {
+      color: #f0f015 !important;
+    }
+    :root strong,
+    :root strong > a {
+      color: #f0f019 !important;
+    }
+    :root #pick-version select {
+      color: #f0f004 !important;
+      background-color: #f0f00c;
+      border-color: #f0f009;
+    }
+    :root h1 {
+      color: #f0f01b !important;
+    }
+    :root a:not([name]) {
+      text-shadow: none !important;
+    }
+    :root code {
+      background-color: #f0f00c;
+    }
+    :root video {
+      background-color: #f0f009 !important;
+    }
+    :root img:not(img#logo-img) {
+      border-color: #f0f009 !important;
+    }
+    :root img#logo-img {
+      border-color: #f0f002 !important;
+    }
+    :root kbd {
+      background-color: #f0f00b !important;
+      border-color: #f0f009 !important;
+    }
+  }
+}

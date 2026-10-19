@@ -1,0 +1,1219 @@
+/* ==UserStyle==
+@name           pwnbox-listenbrainz
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for ListenBrainz (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("listenbrainz.org") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+      --toastify-color-light: #f0f009;
+      --toastify-text-color-light: #f0f004;
+      --toastify-color-info: #f0f019;
+      --toastify-color-success: #f0f015;
+      --toastify-color-warning: #f0f014;
+      --toastify-color-error: #f0f011;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root body {
+      color: #f0f004;
+      background-color: #f0f001;
+    }
+    :root body nav[role="navigation"] .navbar-header .navbar-toggle {
+      border-color: #f0f01b;
+    }
+    :root body nav[role="navigation"] .navbar-header .navbar-toggle .icon-bar {
+      background-color: #f0f01b;
+    }
+    :root body nav[role="navigation"] .navbar-logo > img {
+      content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2027%2030%22%3E%3Cpath%20fill%3D%22%23f0f010%22%20d%3D%22M13%201%201%208v14l12%207z%22/%3E%3Cpath%20fill%3D%22%23f0f013%22%20d%3D%22m14%201%2012%207v14l-12%207z%22/%3E%3C/svg%3E");
+    }
+    :root body nav[role="navigation"] #side-nav {
+      background-color: #f0f002;
+    }
+    :root body nav[role="navigation"] #side-nav a,
+    :root body nav[role="navigation"] #side-nav a:visited {
+      color: #f0f019;
+    }
+    :root body nav[role="navigation"] #side-nav a:hover,
+    :root body nav[role="navigation"] #side-nav a:visited:hover {
+      color: #f0f017;
+    }
+    :root body nav[role="navigation"] #side-nav .search-bar input {
+      background-color: #f0f00c;
+      color: #f0f004;
+    }
+    :root body nav[role="navigation"] #side-nav .search-bar input:focus {
+      box-shadow: inset 1px 2px 4px #f0f00b;
+    }
+    :root body nav[role="navigation"] #side-nav .search-bar input:focus ~ button {
+      box-shadow: inset -3px 2px 4px #f0f00a;
+    }
+    :root body nav[role="navigation"] #side-nav .search-bar input ~ button {
+      background-color: #f0f00b;
+      color: #f0f004;
+    }
+    :root body nav[role="navigation"] #side-nav .mobile-nav-fix {
+      background-color: transparent;
+    }
+    :root body nav[role="navigation"] #side-nav-overlay {
+      background-color: #f0f003;
+    }
+    :root a {
+      color: #f0f019;
+    }
+    :root a:hover {
+      color: #f0f017;
+    }
+    :root a:visited:not(.btn) {
+      color: #f0f01a;
+    }
+    :root a:visited:not(.btn):hover {
+      color: #f0f017;
+    }
+    :root h2,
+    :root h3,
+    :root h4 {
+      color: #f0f004;
+    }
+    :root .text-muted,
+    :root .help-block {
+      color: #f0f006;
+    }
+    :root .text-success {
+      color: #f0f015;
+    }
+    :root .text-danger {
+      color: #f0f011;
+    }
+    :root a > svg.fa-link {
+      color: #f0f004;
+    }
+    :root .form-control {
+      border-color: #f0f001;
+      background-color: #f0f00c;
+      color: #f0f004;
+    }
+    :root .panel {
+      background-color: #f0f00c;
+      color: #f0f004;
+      border-color: #f0f00b;
+    }
+    :root .panel .panel-heading {
+      background-color: #f0f00b;
+      outline-color: #f0f00a;
+    }
+    :root .well {
+      background-color: #f0f00c;
+      border-color: #f0f002;
+    }
+    :root .toggle-switch {
+      background-color: #f0f00c;
+    }
+    :root .toggle-switch::before {
+      background-color: #f0f009;
+    }
+    :root .toggle-checkbox:checked + .toggle-switch {
+      background-color: #f0f00b;
+    }
+    :root .toggle-checkbox:checked + .toggle-switch::before {
+      background-color: #f0f01b;
+    }
+    :root .table tr > td,
+    :root .table tr > th {
+      border-color: #f0f00b;
+    }
+    :root .table.table-striped > tbody > tr:nth-of-type(2n+1) {
+      background-color: #f0f00c;
+    }
+    :root .music-service-selection .music-service-option label {
+      background-color: #f0f00b;
+      border-color: rgba(240, 240, 21, 0.5);
+    }
+    :root .music-service-selection .music-service-option input[type="radio"]:checked + label {
+      background-color: rgba(240, 240, 21, 0.5);
+    }
+    :root .music-service-selection .music-service-option input[type="radio"]:checked + label::after {
+      color: #f0f015;
+      border-color: #f0f015;
+      background-color: #f0f00b;
+    }
+    :root .pill.secondary {
+      color: #f0f004;
+      border-color: #f0f006;
+    }
+    :root .btn-primary,
+    :root .btn-info,
+    :root .btn-outline,
+    :root .musicbrainz-profile-button,
+    :root .lb-follow-button.block,
+    :root .pill.secondary.active {
+      color: #f0f003;
+      background-color: #f0f01b;
+      border-color: transparent;
+    }
+    :root .btn-primary:hover,
+    :root .btn-info:hover,
+    :root .btn-outline:hover,
+    :root .musicbrainz-profile-button:hover,
+    :root .lb-follow-button.block:hover,
+    :root .pill.secondary.active:hover {
+      color: #f0f003;
+      background-color: #e3e30f;
+    }
+    :root .open > .dropdown-toggle.btn-info {
+      color: #f0f003;
+      background-color: #cbcb0d;
+    }
+    :root .secondary-nav > ol.breadcrumb {
+      background-color: #f0f002;
+      border-color: #f0f003;
+    }
+    :root .secondary-nav > ol.breadcrumb > li.active {
+      color: #f0f004;
+      border-color: transparent;
+    }
+    :root .secondary-nav .nav.nav-tabs {
+      background-color: #f0f002;
+      border-color: #f0f003;
+    }
+    :root .secondary-nav .nav.nav-tabs > li {
+      background-color: #f0f002;
+      border-color: #f0f003;
+    }
+    :root .secondary-nav .nav.nav-tabs > li > a {
+      background-color: transparent;
+      border-color: #f0f003;
+      color: #f0f005;
+    }
+    :root .secondary-nav .nav.nav-tabs > li > a.active {
+      border-bottom-color: transparent;
+    }
+    :root .secondary-nav .nav.nav-tabs > li:hover {
+      background-color: #f0f00c;
+    }
+    :root .secondary-nav .nav.nav-tabs > li.active {
+      background-color: #f0f001;
+      border-bottom-color: transparent;
+    }
+    :root .listen-header h3 {
+      color: #f0f006;
+    }
+    :root .listen-header h3::after {
+      border-top-color: #f0f00b;
+    }
+    :root .webSocket-box {
+      border-bottom-color: #f0f002;
+    }
+    :root .webSocket-box .read-more {
+      background-image: linear-gradient(to bottom, transparent, #f0f001);
+    }
+    :root .card {
+      background-color: #f0f00c;
+      border-color: transparent;
+      box-shadow: rgba(240, 240, 12, 0.1) 0 1px 1px, rgba(240, 240, 12, 0.15) 0 2px 2px, rgba(240, 240, 12, 0.2) 0 4px 4px;
+    }
+    :root .card#listen-count-card {
+      margin-bottom: 5px;
+      border-color: #f0f00b;
+    }
+    :root .card.listen-card .listen-thumbnail > div {
+      color: #f0f01b;
+      background-color: #f0f00b;
+      border-top-left-radius: 7px;
+      border-bottom-left-radius: 7px;
+    }
+    :root .card.listen-card .listen-time {
+      color: #f0f006;
+    }
+    :root .card.listen-card .listen-controls .btn.dropdown-toggle,
+    :root .card.listen-card .listen-controls .btn.play-button,
+    :root .card.listen-card .listen-controls .btn-transparent[title="Reset"] {
+      color: #f0f004;
+    }
+    :root .card.listen-card .listen-controls .btn.dropdown-toggle:hover,
+    :root .card.listen-card .listen-controls .btn.play-button:hover,
+    :root .card.listen-card .listen-controls .btn-transparent[title="Reset"]:hover,
+    :root .card.listen-card .listen-controls .btn.dropdown-toggle.playing,
+    :root .card.listen-card .listen-controls .btn.play-button.playing,
+    :root .card.listen-card .listen-controls .btn-transparent[title="Reset"].playing {
+      color: #f0f01b;
+    }
+    :root .card.listen-card .listen-controls .love {
+      stroke: #f0f004;
+    }
+    :root .card.listen-card .listen-controls .love.loved {
+      color: #f0f011;
+      stroke: transparent;
+    }
+    :root .card.listen-card .listen-controls .love:hover {
+      color: transparent;
+      stroke: #f0f011;
+    }
+    :root .card.listen-card .listen-controls .hate {
+      stroke: #f0f004;
+    }
+    :root .card.listen-card .listen-controls .hate.hated {
+      color: #f0f010;
+      stroke: transparent;
+    }
+    :root .card.listen-card .listen-controls .hate:hover {
+      color: transparent;
+      stroke: #f0f010;
+    }
+    :root .card.listen-card.playing-now,
+    :root .card.listen-card.current-listen {
+      background-color: #f0f00b !important;
+    }
+    :root .card.listen-card.playing-now .listen-thumbnail > div,
+    :root .card.listen-card.current-listen .listen-thumbnail > div {
+      background-color: #f0f00a;
+      height: 100%;
+    }
+    :root hr,
+    :root #listen-count-card hr,
+    :root .card-user-sn hr {
+      border-top-color: #f0f00b;
+    }
+    :root .follower-following-list,
+    :root .similar-users-list {
+      box-shadow: inset 0 11px 8px -10px #f0f001;
+    }
+    :root .follower-following-list > :not(:first-child),
+    :root .similar-users-list > :not(:first-child) {
+      border-color: #f0f00b;
+    }
+    :root .progress {
+      background-color: #f0f00b;
+    }
+    :root .progress .progress-bar.purple {
+      background-color: #f0f010;
+    }
+    :root .progress .progress-bar.orange {
+      background-color: #f0f013;
+    }
+    :root .progress .progress-bar.red {
+      background-color: #f0f011;
+    }
+    :root .dropdown-menu {
+      background-color: #f0f009;
+    }
+    :root .dropdown-menu button,
+    :root .dropdown-menu a {
+      color: #f0f004 !important;
+    }
+    :root .dropdown-menu button:visited,
+    :root .dropdown-menu a:visited {
+      color: #f0f004 !important;
+    }
+    :root .dropdown-menu button:hover,
+    :root .dropdown-menu a:hover {
+      background-color: rgba(240, 240, 27, 0.3) !important;
+    }
+    :root .pager li > a,
+    :root .pager li > a:focus,
+    :root .pager li > a:visited,
+    :root .pager li a:active,
+    :root .pager li > span {
+      background-color: #f0f00c;
+      border-color: #f0f00b;
+    }
+    :root .pager li > a:hover,
+    :root .pager li > a:focus:hover,
+    :root .pager li > a:visited:hover,
+    :root .pager li a:active:hover,
+    :root .pager li > span:hover {
+      background-color: #f0f00b;
+    }
+    :root .pager li > a,
+    :root .pager li > a:focus,
+    :root .pager li > a:visited,
+    :root .pager li > a:active {
+      color: #f0f019;
+    }
+    :root .pager li > a:hover,
+    :root .pager li > a:focus:hover,
+    :root .pager li > a:visited:hover,
+    :root .pager li > a:active:hover {
+      color: #f0f017;
+    }
+    :root .pager li.disabled > a,
+    :root .pager li.disabled > a:focus,
+    :root .pager li.disabled > a:visited,
+    :root .pager li.disabled > a:active,
+    :root .pager li.disabled > span {
+      color: #f0f004;
+      background-color: #f0f00c;
+    }
+    :root .pager li.disabled > a:hover,
+    :root .pager li.disabled > a:focus:hover,
+    :root .pager li.disabled > a:visited:hover,
+    :root .pager li.disabled > a:active:hover,
+    :root .pager li.disabled > span:hover {
+      background-color: inherit;
+    }
+    :root .react-datetime-picker .react-datetime-picker__wrapper {
+      border-color: #f0f002;
+    }
+    :root .react-datetime-picker .react-calendar {
+      background-color: #f0f00c;
+      border-color: #f0f00b;
+    }
+    :root .react-datetime-picker .react-calendar .react-calendar__navigation button:disabled,
+    :root .react-datetime-picker .react-calendar .react-calendar__viewContainer button:disabled {
+      background-color: #f0f00a;
+    }
+    :root .react-datetime-picker .react-calendar .react-calendar__navigation button:enabled:hover,
+    :root .react-datetime-picker .react-calendar .react-calendar__viewContainer button:enabled:hover {
+      background-color: #f0f00b;
+    }
+    :root .react-datetime-picker .react-calendar .react-calendar__navigation button:enabled:focus,
+    :root .react-datetime-picker .react-calendar .react-calendar__viewContainer button:enabled:focus {
+      background-color: transparent;
+    }
+    :root .react-datetime-picker .react-calendar .react-calendar__navigation .react-calendar__tile--now,
+    :root .react-datetime-picker .react-calendar .react-calendar__viewContainer .react-calendar__tile--now {
+      background-color: #f0f013;
+      color: #f0f003;
+    }
+    :root .react-datetime-picker .react-calendar .react-calendar__navigation .react-calendar__tile--now:enabled:hover,
+    :root .react-datetime-picker .react-calendar .react-calendar__viewContainer .react-calendar__tile--now:enabled:hover {
+      background-color: #f0f014;
+    }
+    :root .react-datetime-picker .react-calendar .react-calendar__navigation .react-calendar__tile--hasActive,
+    :root .react-datetime-picker .react-calendar .react-calendar__viewContainer .react-calendar__tile--hasActive,
+    :root .react-datetime-picker .react-calendar .react-calendar__navigation .react-calendar__tile--active,
+    :root .react-datetime-picker .react-calendar .react-calendar__viewContainer .react-calendar__tile--active {
+      color: #f0f004;
+      background-color: rgba(240, 240, 27, 0.4);
+    }
+    :root .react-datetime-picker .react-calendar .react-calendar__navigation .react-calendar__tile--hasActive:enabled:hover,
+    :root .react-datetime-picker .react-calendar .react-calendar__viewContainer .react-calendar__tile--hasActive:enabled:hover,
+    :root .react-datetime-picker .react-calendar .react-calendar__navigation .react-calendar__tile--active:enabled:hover,
+    :root .react-datetime-picker .react-calendar .react-calendar__viewContainer .react-calendar__tile--active:enabled:hover {
+      background-color: rgba(240, 240, 27, 0.5);
+    }
+    :root .react-datetime-picker .react-calendar .react-calendar__month-view__days__day--neighboringMonth {
+      color: #f0f006;
+    }
+    :root .react-datetime-picker .react-calendar .react-calendar__month-view__days__day--weekend {
+      color: #f0f011;
+    }
+    :root .stats-full-width-graph line {
+      stroke: #f0f006 !important;
+    }
+    :root .stats-full-width-graph text {
+      fill: #f0f004 !important;
+    }
+    :root .stats-full-width-graph.user-artist-map > div + div > div,
+    :root .stats-full-width-graph svg + div > div {
+      background-color: #f0f009 !important;
+      color: #f0f004 !important;
+    }
+    :root rect[fill="#353070"] {
+      fill: #f0f010;
+    }
+    :root rect[fill="#eb743b"] {
+      fill: #f0f013;
+    }
+    :root .badge-info {
+      background-color: #f0f00b;
+      color: #f0f004;
+    }
+    :root .modal-content {
+      background-color: #f0f002;
+    }
+    :root .modal-content button.close {
+      color: #f0f004;
+      opacity: 1;
+      text-shadow: none;
+    }
+    :root .modal-content .track-search #recording-mbid,
+    :root .modal-content .track-search .track-search-dropdown {
+      background-color: #f0f00c;
+      color: #f0f004;
+      border-color: #f0f003;
+    }
+    :root .modal-content .modal-header,
+    :root .modal-content .modal-footer {
+      border-color: #f0f003;
+    }
+    :root .explore-card {
+      background-color: #f0f00c;
+      filter: drop-shadow(0 4px 4px rgba(240, 240, 9, 0.25));
+    }
+    :root .explore-card .explore-card-img {
+      border-color: #f0f00c;
+    }
+    :root .explore-card .explore-card-text {
+      background-color: #f0f00c;
+    }
+    :root .sidebar {
+      background-color: #f0f002;
+    }
+    :root .sidebar .sidebar-header {
+      background-color: #f0f003;
+      color: #f0f004;
+    }
+    :root .sidebar .sidenav-content-grid {
+      background: transparent;
+    }
+    :root .rc-slider-rail {
+      background-color: #f0f00b;
+    }
+    :root .rc-slider-handle {
+      background-color: #f0f01b;
+    }
+    :root .rc-slider-handle.rc-slider-handle-dragging {
+      background-color: #f0f01b;
+      border-color: #f0f01b;
+    }
+    :root .rc-slider-mark-text {
+      color: #f0f006;
+    }
+    :root .release-card-grid-title {
+      background-color: transparent;
+    }
+    :root .release-card-grid-title::before,
+    :root .release-card-grid-title::after {
+      border-color: #f0f00c;
+    }
+    :root #homepage-container .homepage-upper {
+      background: linear-gradient(288deg, #f0f013 16.96%, #f0f010 98.91%);
+    }
+    :root #homepage-container .homepage-upper h1 {
+      color: #f0f003;
+    }
+    :root #homepage-container .homepage-upper .homepage-info h1 {
+      color: #f0f004;
+    }
+    :root #homepage-container .homepage-upper .homepage-info .homepage-info-links > a {
+      color: #f0f019;
+    }
+    :root #homepage-container .homepage-upper .homepage-info .homepage-info-links > a:hover {
+      color: #f0f017;
+    }
+    :root #homepage-container .homepage-upper .homepage-upper-grey-box {
+      background-color: #f0f001;
+    }
+    :root #homepage-container .homepage-lower {
+      background: linear-gradient(288deg, #f0f013 16.96%, #f0f010 98.91%);
+    }
+    :root #homepage-container .homepage-lower h1 {
+      color: #f0f004;
+    }
+    :root #homepage-container .homepage-lower .homepage-info {
+      color: #f0f003;
+    }
+    :root #homepage-container .homepage-lower .homepage-info h1 {
+      color: #f0f003;
+    }
+    :root #homepage-container .homepage-lower .homepage-info .homepage-info-links > a {
+      color: #f0f019;
+    }
+    :root #homepage-container .homepage-lower .homepage-info .homepage-info-links > a:hover {
+      color: #f0f017;
+    }
+    :root #homepage-container .homepage-lower .homepage-lower-grey-box {
+      background-color: #f0f001;
+    }
+    :root #homepage-container .homepage-info {
+      color: #f0f004;
+    }
+    :root #homepage-container .homepage-info .create-account-button {
+      background-color: #f0f01b;
+      color: #f0f003;
+    }
+    :root #homepage-container .homepage-info .create-account-button:hover {
+      background-color: #e3e30f;
+    }
+    :root #brainz-player {
+      background-color: #f0f002;
+      border-color: #f0f003;
+    }
+    :root #brainz-player .progress {
+      background-color: #f0f00b;
+    }
+    :root #brainz-player .progress > .progress-bar {
+      background-color: #f0f01b;
+    }
+    :root #brainz-player .no-album-art {
+      background-color: transparent;
+    }
+    :root #brainz-player .controls > .btn-link,
+    :root #brainz-player .actions > a {
+      color: #f0f01b;
+    }
+    :root #brainz-player .actions .love {
+      stroke: #f0f004;
+    }
+    :root #brainz-player .actions .love.loved {
+      color: #f0f011;
+      stroke: transparent;
+    }
+    :root #brainz-player .actions .love:hover {
+      color: transparent;
+      stroke: #f0f011;
+    }
+    :root #brainz-player .actions .hate {
+      stroke: #f0f004;
+    }
+    :root #brainz-player .actions .hate.hated {
+      color: #f0f010;
+      stroke: transparent;
+    }
+    :root #brainz-player .actions .hate:hover {
+      color: transparent;
+      stroke: #f0f010;
+    }
+    :root #brainz-player .actions .fa-ellipsis-vertical {
+      stroke: #f0f01b;
+    }
+    :root #brainz-player .dropup-content {
+      background-color: #f0f009;
+    }
+    :root #brainz-player .dropup-content button,
+    :root #brainz-player .dropup-content a {
+      color: #f0f004 !important;
+    }
+    :root #brainz-player .dropup-content button:visited,
+    :root #brainz-player .dropup-content a:visited {
+      color: #f0f004 !important;
+    }
+    :root #brainz-player .dropup-content button:hover,
+    :root #brainz-player .dropup-content a:hover {
+      background-color: rgba(240, 240, 27, 0.3) !important;
+    }
+    :root .footer {
+      background-color: #f0f002;
+      color: #f0f004;
+      border-color: #f0f003;
+    }
+    :root .footer .color-gray {
+      color: #f0f006;
+    }
+    :root .footer .section-line {
+      border-color: #f0f003;
+    }
+  }
+  @media (prefers-color-scheme: light) and (max-width: 991px) {
+    :root .secondary-nav::after {
+      background: linear-gradient(270deg, #f0f003, transparent);
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --toastify-color-light: #f0f009;
+      --toastify-text-color-light: #f0f004;
+      --toastify-color-info: #f0f019;
+      --toastify-color-success: #f0f015;
+      --toastify-color-warning: #f0f014;
+      --toastify-color-error: #f0f011;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root body {
+      color: #f0f004;
+      background-color: #f0f001;
+    }
+    :root body nav[role="navigation"] .navbar-header .navbar-toggle {
+      border-color: #f0f01b;
+    }
+    :root body nav[role="navigation"] .navbar-header .navbar-toggle .icon-bar {
+      background-color: #f0f01b;
+    }
+    :root body nav[role="navigation"] .navbar-logo > img {
+      content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2027%2030%22%3E%3Cpath%20fill%3D%22%23f0f010%22%20d%3D%22M13%201%201%208v14l12%207z%22/%3E%3Cpath%20fill%3D%22%23f0f013%22%20d%3D%22m14%201%2012%207v14l-12%207z%22/%3E%3C/svg%3E");
+    }
+    :root body nav[role="navigation"] #side-nav {
+      background-color: #f0f002;
+    }
+    :root body nav[role="navigation"] #side-nav a,
+    :root body nav[role="navigation"] #side-nav a:visited {
+      color: #f0f019;
+    }
+    :root body nav[role="navigation"] #side-nav a:hover,
+    :root body nav[role="navigation"] #side-nav a:visited:hover {
+      color: #f0f017;
+    }
+    :root body nav[role="navigation"] #side-nav .search-bar input {
+      background-color: #f0f00c;
+      color: #f0f004;
+    }
+    :root body nav[role="navigation"] #side-nav .search-bar input:focus {
+      box-shadow: inset 1px 2px 4px #f0f00b;
+    }
+    :root body nav[role="navigation"] #side-nav .search-bar input:focus ~ button {
+      box-shadow: inset -3px 2px 4px #f0f00a;
+    }
+    :root body nav[role="navigation"] #side-nav .search-bar input ~ button {
+      background-color: #f0f00b;
+      color: #f0f004;
+    }
+    :root body nav[role="navigation"] #side-nav .mobile-nav-fix {
+      background-color: transparent;
+    }
+    :root body nav[role="navigation"] #side-nav-overlay {
+      background-color: #f0f003;
+    }
+    :root a {
+      color: #f0f019;
+    }
+    :root a:hover {
+      color: #f0f017;
+    }
+    :root a:visited:not(.btn) {
+      color: #f0f01a;
+    }
+    :root a:visited:not(.btn):hover {
+      color: #f0f017;
+    }
+    :root h2,
+    :root h3,
+    :root h4 {
+      color: #f0f004;
+    }
+    :root .text-muted,
+    :root .help-block {
+      color: #f0f006;
+    }
+    :root .text-success {
+      color: #f0f015;
+    }
+    :root .text-danger {
+      color: #f0f011;
+    }
+    :root a > svg.fa-link {
+      color: #f0f004;
+    }
+    :root .form-control {
+      border-color: #f0f001;
+      background-color: #f0f00c;
+      color: #f0f004;
+    }
+    :root .panel {
+      background-color: #f0f00c;
+      color: #f0f004;
+      border-color: #f0f00b;
+    }
+    :root .panel .panel-heading {
+      background-color: #f0f00b;
+      outline-color: #f0f00a;
+    }
+    :root .well {
+      background-color: #f0f00c;
+      border-color: #f0f002;
+    }
+    :root .toggle-switch {
+      background-color: #f0f00c;
+    }
+    :root .toggle-switch::before {
+      background-color: #f0f009;
+    }
+    :root .toggle-checkbox:checked + .toggle-switch {
+      background-color: #f0f00b;
+    }
+    :root .toggle-checkbox:checked + .toggle-switch::before {
+      background-color: #f0f01b;
+    }
+    :root .table tr > td,
+    :root .table tr > th {
+      border-color: #f0f00b;
+    }
+    :root .table.table-striped > tbody > tr:nth-of-type(2n+1) {
+      background-color: #f0f00c;
+    }
+    :root .music-service-selection .music-service-option label {
+      background-color: #f0f00b;
+      border-color: rgba(240, 240, 21, 0.5);
+    }
+    :root .music-service-selection .music-service-option input[type="radio"]:checked + label {
+      background-color: rgba(240, 240, 21, 0.5);
+    }
+    :root .music-service-selection .music-service-option input[type="radio"]:checked + label::after {
+      color: #f0f015;
+      border-color: #f0f015;
+      background-color: #f0f00b;
+    }
+    :root .pill.secondary {
+      color: #f0f004;
+      border-color: #f0f006;
+    }
+    :root .btn-primary,
+    :root .btn-info,
+    :root .btn-outline,
+    :root .musicbrainz-profile-button,
+    :root .lb-follow-button.block,
+    :root .pill.secondary.active {
+      color: #f0f003;
+      background-color: #f0f01b;
+      border-color: transparent;
+    }
+    :root .btn-primary:hover,
+    :root .btn-info:hover,
+    :root .btn-outline:hover,
+    :root .musicbrainz-profile-button:hover,
+    :root .lb-follow-button.block:hover,
+    :root .pill.secondary.active:hover {
+      color: #f0f003;
+      background-color: #e3e30f;
+    }
+    :root .open > .dropdown-toggle.btn-info {
+      color: #f0f003;
+      background-color: #cbcb0d;
+    }
+    :root .secondary-nav > ol.breadcrumb {
+      background-color: #f0f002;
+      border-color: #f0f003;
+    }
+    :root .secondary-nav > ol.breadcrumb > li.active {
+      color: #f0f004;
+      border-color: transparent;
+    }
+    :root .secondary-nav .nav.nav-tabs {
+      background-color: #f0f002;
+      border-color: #f0f003;
+    }
+    :root .secondary-nav .nav.nav-tabs > li {
+      background-color: #f0f002;
+      border-color: #f0f003;
+    }
+    :root .secondary-nav .nav.nav-tabs > li > a {
+      background-color: transparent;
+      border-color: #f0f003;
+      color: #f0f005;
+    }
+    :root .secondary-nav .nav.nav-tabs > li > a.active {
+      border-bottom-color: transparent;
+    }
+    :root .secondary-nav .nav.nav-tabs > li:hover {
+      background-color: #f0f00c;
+    }
+    :root .secondary-nav .nav.nav-tabs > li.active {
+      background-color: #f0f001;
+      border-bottom-color: transparent;
+    }
+    :root .listen-header h3 {
+      color: #f0f006;
+    }
+    :root .listen-header h3::after {
+      border-top-color: #f0f00b;
+    }
+    :root .webSocket-box {
+      border-bottom-color: #f0f002;
+    }
+    :root .webSocket-box .read-more {
+      background-image: linear-gradient(to bottom, transparent, #f0f001);
+    }
+    :root .card {
+      background-color: #f0f00c;
+      border-color: transparent;
+      box-shadow: rgba(240, 240, 12, 0.1) 0 1px 1px, rgba(240, 240, 12, 0.15) 0 2px 2px, rgba(240, 240, 12, 0.2) 0 4px 4px;
+    }
+    :root .card#listen-count-card {
+      margin-bottom: 5px;
+      border-color: #f0f00b;
+    }
+    :root .card.listen-card .listen-thumbnail > div {
+      color: #f0f01b;
+      background-color: #f0f00b;
+      border-top-left-radius: 7px;
+      border-bottom-left-radius: 7px;
+    }
+    :root .card.listen-card .listen-time {
+      color: #f0f006;
+    }
+    :root .card.listen-card .listen-controls .btn.dropdown-toggle,
+    :root .card.listen-card .listen-controls .btn.play-button,
+    :root .card.listen-card .listen-controls .btn-transparent[title="Reset"] {
+      color: #f0f004;
+    }
+    :root .card.listen-card .listen-controls .btn.dropdown-toggle:hover,
+    :root .card.listen-card .listen-controls .btn.play-button:hover,
+    :root .card.listen-card .listen-controls .btn-transparent[title="Reset"]:hover,
+    :root .card.listen-card .listen-controls .btn.dropdown-toggle.playing,
+    :root .card.listen-card .listen-controls .btn.play-button.playing,
+    :root .card.listen-card .listen-controls .btn-transparent[title="Reset"].playing {
+      color: #f0f01b;
+    }
+    :root .card.listen-card .listen-controls .love {
+      stroke: #f0f004;
+    }
+    :root .card.listen-card .listen-controls .love.loved {
+      color: #f0f011;
+      stroke: transparent;
+    }
+    :root .card.listen-card .listen-controls .love:hover {
+      color: transparent;
+      stroke: #f0f011;
+    }
+    :root .card.listen-card .listen-controls .hate {
+      stroke: #f0f004;
+    }
+    :root .card.listen-card .listen-controls .hate.hated {
+      color: #f0f010;
+      stroke: transparent;
+    }
+    :root .card.listen-card .listen-controls .hate:hover {
+      color: transparent;
+      stroke: #f0f010;
+    }
+    :root .card.listen-card.playing-now,
+    :root .card.listen-card.current-listen {
+      background-color: #f0f00b !important;
+    }
+    :root .card.listen-card.playing-now .listen-thumbnail > div,
+    :root .card.listen-card.current-listen .listen-thumbnail > div {
+      background-color: #f0f00a;
+      height: 100%;
+    }
+    :root hr,
+    :root #listen-count-card hr,
+    :root .card-user-sn hr {
+      border-top-color: #f0f00b;
+    }
+    :root .follower-following-list,
+    :root .similar-users-list {
+      box-shadow: inset 0 11px 8px -10px #f0f001;
+    }
+    :root .follower-following-list > :not(:first-child),
+    :root .similar-users-list > :not(:first-child) {
+      border-color: #f0f00b;
+    }
+    :root .progress {
+      background-color: #f0f00b;
+    }
+    :root .progress .progress-bar.purple {
+      background-color: #f0f010;
+    }
+    :root .progress .progress-bar.orange {
+      background-color: #f0f013;
+    }
+    :root .progress .progress-bar.red {
+      background-color: #f0f011;
+    }
+    :root .dropdown-menu {
+      background-color: #f0f009;
+    }
+    :root .dropdown-menu button,
+    :root .dropdown-menu a {
+      color: #f0f004 !important;
+    }
+    :root .dropdown-menu button:visited,
+    :root .dropdown-menu a:visited {
+      color: #f0f004 !important;
+    }
+    :root .dropdown-menu button:hover,
+    :root .dropdown-menu a:hover {
+      background-color: rgba(240, 240, 27, 0.3) !important;
+    }
+    :root .pager li > a,
+    :root .pager li > a:focus,
+    :root .pager li > a:visited,
+    :root .pager li a:active,
+    :root .pager li > span {
+      background-color: #f0f00c;
+      border-color: #f0f00b;
+    }
+    :root .pager li > a:hover,
+    :root .pager li > a:focus:hover,
+    :root .pager li > a:visited:hover,
+    :root .pager li a:active:hover,
+    :root .pager li > span:hover {
+      background-color: #f0f00b;
+    }
+    :root .pager li > a,
+    :root .pager li > a:focus,
+    :root .pager li > a:visited,
+    :root .pager li > a:active {
+      color: #f0f019;
+    }
+    :root .pager li > a:hover,
+    :root .pager li > a:focus:hover,
+    :root .pager li > a:visited:hover,
+    :root .pager li > a:active:hover {
+      color: #f0f017;
+    }
+    :root .pager li.disabled > a,
+    :root .pager li.disabled > a:focus,
+    :root .pager li.disabled > a:visited,
+    :root .pager li.disabled > a:active,
+    :root .pager li.disabled > span {
+      color: #f0f004;
+      background-color: #f0f00c;
+    }
+    :root .pager li.disabled > a:hover,
+    :root .pager li.disabled > a:focus:hover,
+    :root .pager li.disabled > a:visited:hover,
+    :root .pager li.disabled > a:active:hover,
+    :root .pager li.disabled > span:hover {
+      background-color: inherit;
+    }
+    :root .react-datetime-picker .react-datetime-picker__wrapper {
+      border-color: #f0f002;
+    }
+    :root .react-datetime-picker .react-calendar {
+      background-color: #f0f00c;
+      border-color: #f0f00b;
+    }
+    :root .react-datetime-picker .react-calendar .react-calendar__navigation button:disabled,
+    :root .react-datetime-picker .react-calendar .react-calendar__viewContainer button:disabled {
+      background-color: #f0f00a;
+    }
+    :root .react-datetime-picker .react-calendar .react-calendar__navigation button:enabled:hover,
+    :root .react-datetime-picker .react-calendar .react-calendar__viewContainer button:enabled:hover {
+      background-color: #f0f00b;
+    }
+    :root .react-datetime-picker .react-calendar .react-calendar__navigation button:enabled:focus,
+    :root .react-datetime-picker .react-calendar .react-calendar__viewContainer button:enabled:focus {
+      background-color: transparent;
+    }
+    :root .react-datetime-picker .react-calendar .react-calendar__navigation .react-calendar__tile--now,
+    :root .react-datetime-picker .react-calendar .react-calendar__viewContainer .react-calendar__tile--now {
+      background-color: #f0f013;
+      color: #f0f003;
+    }
+    :root .react-datetime-picker .react-calendar .react-calendar__navigation .react-calendar__tile--now:enabled:hover,
+    :root .react-datetime-picker .react-calendar .react-calendar__viewContainer .react-calendar__tile--now:enabled:hover {
+      background-color: #f0f014;
+    }
+    :root .react-datetime-picker .react-calendar .react-calendar__navigation .react-calendar__tile--hasActive,
+    :root .react-datetime-picker .react-calendar .react-calendar__viewContainer .react-calendar__tile--hasActive,
+    :root .react-datetime-picker .react-calendar .react-calendar__navigation .react-calendar__tile--active,
+    :root .react-datetime-picker .react-calendar .react-calendar__viewContainer .react-calendar__tile--active {
+      color: #f0f004;
+      background-color: rgba(240, 240, 27, 0.4);
+    }
+    :root .react-datetime-picker .react-calendar .react-calendar__navigation .react-calendar__tile--hasActive:enabled:hover,
+    :root .react-datetime-picker .react-calendar .react-calendar__viewContainer .react-calendar__tile--hasActive:enabled:hover,
+    :root .react-datetime-picker .react-calendar .react-calendar__navigation .react-calendar__tile--active:enabled:hover,
+    :root .react-datetime-picker .react-calendar .react-calendar__viewContainer .react-calendar__tile--active:enabled:hover {
+      background-color: rgba(240, 240, 27, 0.5);
+    }
+    :root .react-datetime-picker .react-calendar .react-calendar__month-view__days__day--neighboringMonth {
+      color: #f0f006;
+    }
+    :root .react-datetime-picker .react-calendar .react-calendar__month-view__days__day--weekend {
+      color: #f0f011;
+    }
+    :root .stats-full-width-graph line {
+      stroke: #f0f006 !important;
+    }
+    :root .stats-full-width-graph text {
+      fill: #f0f004 !important;
+    }
+    :root .stats-full-width-graph.user-artist-map > div + div > div,
+    :root .stats-full-width-graph svg + div > div {
+      background-color: #f0f009 !important;
+      color: #f0f004 !important;
+    }
+    :root rect[fill="#353070"] {
+      fill: #f0f010;
+    }
+    :root rect[fill="#eb743b"] {
+      fill: #f0f013;
+    }
+    :root .badge-info {
+      background-color: #f0f00b;
+      color: #f0f004;
+    }
+    :root .modal-content {
+      background-color: #f0f002;
+    }
+    :root .modal-content button.close {
+      color: #f0f004;
+      opacity: 1;
+      text-shadow: none;
+    }
+    :root .modal-content .track-search #recording-mbid,
+    :root .modal-content .track-search .track-search-dropdown {
+      background-color: #f0f00c;
+      color: #f0f004;
+      border-color: #f0f003;
+    }
+    :root .modal-content .modal-header,
+    :root .modal-content .modal-footer {
+      border-color: #f0f003;
+    }
+    :root .explore-card {
+      background-color: #f0f00c;
+      filter: drop-shadow(0 4px 4px rgba(240, 240, 9, 0.25));
+    }
+    :root .explore-card .explore-card-img {
+      border-color: #f0f00c;
+    }
+    :root .explore-card .explore-card-text {
+      background-color: #f0f00c;
+    }
+    :root .sidebar {
+      background-color: #f0f002;
+    }
+    :root .sidebar .sidebar-header {
+      background-color: #f0f003;
+      color: #f0f004;
+    }
+    :root .sidebar .sidenav-content-grid {
+      background: transparent;
+    }
+    :root .rc-slider-rail {
+      background-color: #f0f00b;
+    }
+    :root .rc-slider-handle {
+      background-color: #f0f01b;
+    }
+    :root .rc-slider-handle.rc-slider-handle-dragging {
+      background-color: #f0f01b;
+      border-color: #f0f01b;
+    }
+    :root .rc-slider-mark-text {
+      color: #f0f006;
+    }
+    :root .release-card-grid-title {
+      background-color: transparent;
+    }
+    :root .release-card-grid-title::before,
+    :root .release-card-grid-title::after {
+      border-color: #f0f00c;
+    }
+    :root #homepage-container .homepage-upper {
+      background: linear-gradient(288deg, #f0f013 16.96%, #f0f010 98.91%);
+    }
+    :root #homepage-container .homepage-upper h1 {
+      color: #f0f003;
+    }
+    :root #homepage-container .homepage-upper .homepage-info h1 {
+      color: #f0f004;
+    }
+    :root #homepage-container .homepage-upper .homepage-info .homepage-info-links > a {
+      color: #f0f019;
+    }
+    :root #homepage-container .homepage-upper .homepage-info .homepage-info-links > a:hover {
+      color: #f0f017;
+    }
+    :root #homepage-container .homepage-upper .homepage-upper-grey-box {
+      background-color: #f0f001;
+    }
+    :root #homepage-container .homepage-lower {
+      background: linear-gradient(288deg, #f0f013 16.96%, #f0f010 98.91%);
+    }
+    :root #homepage-container .homepage-lower h1 {
+      color: #f0f004;
+    }
+    :root #homepage-container .homepage-lower .homepage-info {
+      color: #f0f003;
+    }
+    :root #homepage-container .homepage-lower .homepage-info h1 {
+      color: #f0f003;
+    }
+    :root #homepage-container .homepage-lower .homepage-info .homepage-info-links > a {
+      color: #f0f019;
+    }
+    :root #homepage-container .homepage-lower .homepage-info .homepage-info-links > a:hover {
+      color: #f0f017;
+    }
+    :root #homepage-container .homepage-lower .homepage-lower-grey-box {
+      background-color: #f0f001;
+    }
+    :root #homepage-container .homepage-info {
+      color: #f0f004;
+    }
+    :root #homepage-container .homepage-info .create-account-button {
+      background-color: #f0f01b;
+      color: #f0f003;
+    }
+    :root #homepage-container .homepage-info .create-account-button:hover {
+      background-color: #e3e30f;
+    }
+    :root #brainz-player {
+      background-color: #f0f002;
+      border-color: #f0f003;
+    }
+    :root #brainz-player .progress {
+      background-color: #f0f00b;
+    }
+    :root #brainz-player .progress > .progress-bar {
+      background-color: #f0f01b;
+    }
+    :root #brainz-player .no-album-art {
+      background-color: transparent;
+    }
+    :root #brainz-player .controls > .btn-link,
+    :root #brainz-player .actions > a {
+      color: #f0f01b;
+    }
+    :root #brainz-player .actions .love {
+      stroke: #f0f004;
+    }
+    :root #brainz-player .actions .love.loved {
+      color: #f0f011;
+      stroke: transparent;
+    }
+    :root #brainz-player .actions .love:hover {
+      color: transparent;
+      stroke: #f0f011;
+    }
+    :root #brainz-player .actions .hate {
+      stroke: #f0f004;
+    }
+    :root #brainz-player .actions .hate.hated {
+      color: #f0f010;
+      stroke: transparent;
+    }
+    :root #brainz-player .actions .hate:hover {
+      color: transparent;
+      stroke: #f0f010;
+    }
+    :root #brainz-player .actions .fa-ellipsis-vertical {
+      stroke: #f0f01b;
+    }
+    :root #brainz-player .dropup-content {
+      background-color: #f0f009;
+    }
+    :root #brainz-player .dropup-content button,
+    :root #brainz-player .dropup-content a {
+      color: #f0f004 !important;
+    }
+    :root #brainz-player .dropup-content button:visited,
+    :root #brainz-player .dropup-content a:visited {
+      color: #f0f004 !important;
+    }
+    :root #brainz-player .dropup-content button:hover,
+    :root #brainz-player .dropup-content a:hover {
+      background-color: rgba(240, 240, 27, 0.3) !important;
+    }
+    :root .footer {
+      background-color: #f0f002;
+      color: #f0f004;
+      border-color: #f0f003;
+    }
+    :root .footer .color-gray {
+      color: #f0f006;
+    }
+    :root .footer .section-line {
+      border-color: #f0f003;
+    }
+  }
+  @media (prefers-color-scheme: dark) and (max-width: 991px) {
+    :root .secondary-nav::after {
+      background: linear-gradient(270deg, #f0f003, transparent);
+    }
+  }
+}

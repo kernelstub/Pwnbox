@@ -1,0 +1,1189 @@
+/* ==UserStyle==
+@name           pwnbox-hackage
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Hackage (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("hackage.haskell.org"), domain("hackage-content.haskell.org") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+      /*
+     * Headers
+     */
+      /*
+     * Style selectors (for old packages)
+     */
+      /*
+     * Versions
+     */
+      /*
+     * Readme style
+     */
+      /*
+     * Contents & synopsis
+     */
+      /*
+     * Quick jump
+     */
+      /*
+     * Dropdown
+     */
+      /*
+     * Tables
+     */
+      /*
+     * Source links
+     */
+      /*
+     * Paginator
+     */
+      /*
+     * Search query
+     */
+      /*
+     * Upload
+     */
+      /*
+     * Others
+     */
+      /*
+     * MathJax
+     */
+      /*
+     * Sources
+     */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root,
+    :root body {
+      background-color: #f0f001;
+      color: #f0f004;
+    }
+    :root a:hover {
+      background-color: inherit;
+    }
+    :root a[href]:link {
+      color: #f0f01b;
+    }
+    :root a[href]:visited {
+      color: #f0f011;
+    }
+    :root a[href].def:link,
+    :root a[href].def:visited {
+      color: #f0f006;
+    }
+    :root a[href].def:hover {
+      color: #f0f007;
+    }
+    :root button {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root button:hover {
+      background-color: #f0f003;
+    }
+    :root .caption,
+    :root h1,
+    :root h2,
+    :root h3,
+    :root h4,
+    :root h5,
+    :root h6,
+    :root summary,
+    :root .section1,
+    :root .section2,
+    :root .section3,
+    :root .section4,
+    :root .section5,
+    :root .section6 {
+      color: #f0f004;
+      filter: none;
+    }
+    :root .collapser::before,
+    :root .expander::before,
+    :root .noexpander::before {
+      color: #f0f01b;
+    }
+    :root pre {
+      background-color: #f0f002;
+      border-color: #f0f00b;
+    }
+    :root blockquote {
+      background-color: #f0f00c;
+      border-color: #f0f01b;
+    }
+    :root .src,
+    :root .decl,
+    :root .declname,
+    :root .declbut,
+    :root .topdecl,
+    :root .arg,
+    :root .inline-code {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root .declbut {
+      border-color: #f0f009 !important;
+    }
+    :root .declbut a {
+      color: #f0f007 !important;
+    }
+    :root #page-header,
+    :root #package-header {
+      background-color: #f0f01b;
+      color: #f0f00b;
+      border-color: #b4b414;
+    }
+    :root #page-header .caption,
+    :root #package-header .caption,
+    :root #page-header a:link,
+    :root #page-header a:visited {
+      color: #f0f001 !important;
+    }
+    :root #module-header .caption,
+    :root .modulebar {
+      color: #f0f01b;
+      border-color: #f0f00b;
+    }
+    :root #module-header {
+      background-color: inherit;
+    }
+    :root #package-header a:link,
+    :root #package-header #page-menu a:link,
+    :root #package-header a:visited,
+    :root #package-header #page-menu a:visited {
+      color: #f0f001;
+    }
+    :root #package-header a:hover {
+      background-color: transparent;
+    }
+    :root #package-header ul.links li {
+      border-color: #f0f009;
+    }
+    :root #package-header ul.links li:hover {
+      background-color: transparent;
+    }
+    :root ul.links li form input,
+    :root ul.links li form button {
+      color: #f0f001;
+    }
+    :root ul.links li form button {
+      background-color: transparent;
+    }
+    :root .topbar {
+      background-color: #f0f01b;
+    }
+    :root .topbar .topbut {
+      border-color: #f0f009;
+    }
+    :root .topbar .topbut a {
+      background-color: transparent;
+      color: #f0f001;
+    }
+    :root .topbar .title {
+      color: #f0f001;
+    }
+    :root .botbar {
+      background-color: #f0f003;
+      color: #f0f004;
+    }
+    :root #style-menu {
+      background-color: #f0f002;
+    }
+    :root #style-menu li,
+    :root #style-menu li a {
+      color: #f0f004 !important;
+    }
+    :root #style-menu li + li {
+      border-color: #f0f007;
+    }
+    :root a.unpreferred[href]:link,
+    :root a.unpreferred[href]:visited {
+      color: #f0f014;
+    }
+    :root a.deprecated[href]:link,
+    :root a.deprecated[href]:visited {
+      color: #f0f011;
+    }
+    :root .versions a.normal[href]:link,
+    :root .versions a.normal[href]:visited {
+      color: #f0f015;
+    }
+    :root .embedded-author-content {
+      border-color: #f0f01b;
+    }
+    :root #contents-list {
+      background-color: #f0f002;
+    }
+    :root h2#table-of-contents {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root div#table-of-contents {
+      background-color: #f0f001;
+      border-color: #f0f00b;
+    }
+    :root #synopsis summary,
+    :root #synopsis #control\.syn {
+      background-image: url("data:image/svg+xml,%3Csvg%20width%3D%22128%22%20height%3D%22104%22%20viewBox%3D%220%200%20128%20104%22%20xml%3Aspace%3D%22preserve%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cdefs%3E%3Cfilter%20id%3D%22a%22%20x%3D%22-.06%22%20y%3D%22-.03%22%20width%3D%221.14%22%20height%3D%221.07%22%20color-interpolation-filters%3D%22sRGB%22%3E%3CfeFlood%20flood-color%3D%22%23000%22%20flood-opacity%3D%22.498%22%20result%3D%22flood%22/%3E%3CfeGaussianBlur%20in%3D%22SourceGraphic%22%20result%3D%22blur%22%20stdDeviation%3D%221%22/%3E%3CfeOffset%20dx%3D%221%22%20dy%3D%221%22%20in%3D%22blur%22%20result%3D%22offset%22/%3E%3CfeComposite%20in%3D%22flood%22%20in2%3D%22offset%22%20operator%3D%22in%22%20result%3D%22comp1%22/%3E%3CfeComposite%20in%3D%22SourceGraphic%22%20in2%3D%22comp1%22%20result%3D%22comp2%22/%3E%3C/filter%3E%3Cfilter%20id%3D%22b%22%20x%3D%22-.06%22%20y%3D%22-.03%22%20width%3D%221.14%22%20height%3D%221.07%22%20color-interpolation-filters%3D%22sRGB%22%3E%3CfeFlood%20flood-color%3D%22%23000%22%20flood-opacity%3D%22.498%22%20result%3D%22flood%22/%3E%3CfeGaussianBlur%20in%3D%22SourceGraphic%22%20result%3D%22blur%22%20stdDeviation%3D%221%22/%3E%3CfeOffset%20dx%3D%221%22%20dy%3D%221%22%20in%3D%22blur%22%20result%3D%22offset%22/%3E%3CfeComposite%20in%3D%22flood%22%20in2%3D%22offset%22%20operator%3D%22in%22%20result%3D%22comp1%22/%3E%3CfeComposite%20in%3D%22SourceGraphic%22%20in2%3D%22comp1%22%20result%3D%22comp2%22/%3E%3C/filter%3E%3C/defs%3E%3Cg%20transform%3D%22translate%2864%29%22%20filter%3D%22url%28%23a%29%22%3E%3Crect%20x%3D%228.5%22%20y%3D%228.5%22%20width%3D%2240%22%20height%3D%2280%22%20rx%3D%224%22%20ry%3D%224%22%20fill%3D%22%23f0f00c%22/%3E%3Ctext%20transform%3D%22matrix%280%20-.995%201%200%200%200%29%22%20x%3D%22-86.188%22%20y%3D%2223.735%22%20fill%3D%22%23f0f005%22%20xml%3Aspace%3D%22preserve%22%3E%3Ctspan%20x%3D%22-86.188%22%20y%3D%2223.735%22%20font-family%3D%22&quot%3BPT%20Sans&quot%3B,-apple-system,BlinkMacSystemFont,&quot%3BSegoe%20UI&quot%3B,Roboto,Oxygen-Sans,Cantarell,&quot%3BHelvetica%20Neue&quot%3B,sans-serif%22%20font-size%3D%2214px%22%20font-weight%3D%22400%22%3ESynopsis%3C/tspan%3E%3C/text%3E%3Cg%20fill%3D%22%23f0f009%22%3E%3Crect%20transform%3D%22rotate%2845%29scale%28-1%201%29%22%20x%3D%22-28.7%22%20y%3D%22-6.53%22%20width%3D%227.88%22%20height%3D%222.46%22%20rx%3D%22.985%22%20ry%3D%22.985%22/%3E%3Crect%20transform%3D%22rotate%28-45%29%22%20x%3D%22-1.47%22%20y%3D%2226.3%22%20width%3D%227.88%22%20height%3D%222.46%22%20rx%3D%22.985%22%20ry%3D%22.985%22/%3E%3Crect%20transform%3D%22rotate%2845%29scale%28-1%201%29%22%20x%3D%22-23.7%22%20y%3D%22-1.58%22%20width%3D%227.88%22%20height%3D%222.46%22%20rx%3D%22.985%22%20ry%3D%22.985%22/%3E%3Crect%20transform%3D%22rotate%28-45%29%22%20x%3D%22-6.42%22%20y%3D%2221.4%22%20width%3D%227.88%22%20height%3D%222.46%22%20rx%3D%22.985%22%20ry%3D%22.985%22/%3E%3C/g%3E%3C/g%3E%3Cg%20filter%3D%22url%28%23b%29%22%3E%3Crect%20x%3D%228.5%22%20y%3D%228.5%22%20width%3D%2240%22%20height%3D%2280%22%20rx%3D%224%22%20ry%3D%224%22%20fill%3D%22%23f0f00c%22/%3E%3Ctext%20transform%3D%22matrix%280%20-.995%201%200%200%200%29%22%20x%3D%22-86.188%22%20y%3D%2223.735%22%20fill%3D%22%23f0f005%22%20xml%3Aspace%3D%22preserve%22%3E%3Ctspan%20x%3D%22-86.188%22%20y%3D%2223.735%22%20font-family%3D%22&quot%3BPT%20Sans&quot%3B,-apple-system,BlinkMacSystemFont,&quot%3BSegoe%20UI&quot%3B,Roboto,Oxygen-Sans,Cantarell,&quot%3BHelvetica%20Neue&quot%3B,sans-serif%22%20font-size%3D%2214px%22%20font-weight%3D%22400%22%3ESynopsis%3C/tspan%3E%3C/text%3E%3Cg%20fill%3D%22%23f0f009%22%3E%3Crect%20transform%3D%22rotate%28-45%29%22%20x%3D%22-3.59%22%20y%3D%2218.6%22%20width%3D%227.88%22%20height%3D%222.46%22%20rx%3D%22.985%22%20ry%3D%22.985%22/%3E%3Crect%20transform%3D%22rotate%2845%29scale%28-1%201%29%22%20x%3D%22-26.6%22%20y%3D%221.24%22%20width%3D%227.88%22%20height%3D%222.46%22%20rx%3D%22.985%22%20ry%3D%22.985%22/%3E%3Crect%20transform%3D%22rotate%28-45%29%22%20x%3D%221.36%22%20y%3D%2223.5%22%20width%3D%227.88%22%20height%3D%222.46%22%20rx%3D%22.985%22%20ry%3D%22.985%22/%3E%3Crect%20transform%3D%22rotate%2845%29scale%28-1%201%29%22%20x%3D%22-31.5%22%20y%3D%22-3.71%22%20width%3D%227.88%22%20height%3D%222.46%22%20rx%3D%22.985%22%20ry%3D%22.985%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") !important;
+    }
+    :root #synopsis ul,
+    :root #synopsis ul li.src {
+      background-color: #f0f00c;
+    }
+    :root #search p.error {
+      color: #f0f011;
+    }
+    :root #search-form,
+    :root #search-results {
+      box-shadow: 2px 2px 6px rgba(240, 240, 2, 0.2);
+    }
+    :root #search-form input {
+      border-color: #f0f01b;
+    }
+    :root #search-results {
+      border-color: #f0f01b;
+    }
+    :root #search-results > ul > li {
+      border-bottom-color: #f0f009;
+    }
+    :root .search-module > ul > li > a[href].active-link {
+      background-color: #f0f00a;
+    }
+    :root .search-result ul.subs::after {
+      color: #f0f005;
+    }
+    :root .more-results,
+    :root .more-results::before {
+      color: #f0f006;
+    }
+    :root .keyboard-shortcuts th {
+      color: #f0f01b;
+    }
+    :root .key {
+      background-color: #f0f002;
+      color: #f0f004;
+      border-color: #f0f002;
+    }
+    :root .dropdown-menu {
+      background-color: #f0f00c;
+      border-color: #f0f00c;
+    }
+    :root .dropdown-menu button {
+      background-color: #f0f01b;
+      color: #f0f002;
+      border-color: #f0f00a;
+    }
+    :root .dropdown-menu button:hover,
+    :root .dropdown-menu button:active {
+      background-color: #f0f01b;
+      color: #f0f002;
+    }
+    :root table.info {
+      background-color: #f0f001;
+      color: #f0f005;
+      border-color: #f0f00b;
+    }
+    :root table.fancy,
+    :root table.fancy tr {
+      border-color: #f0f00b;
+    }
+    :root table.fancy tr.even td {
+      background-color: #f0f002;
+    }
+    :root table.fancy th,
+    :root table.properties th,
+    :root table.dataTable.compact.fancy tbody th,
+    :root table.fancy td,
+    :root table.properties td,
+    :root table.dataTable.compact.fancy tbody td {
+      background-color: #f0f001;
+    }
+    :root .doc th,
+    :root .doc td {
+      border-color: #f0f00b;
+    }
+    :root .doc th {
+      background-color: #f0f002;
+    }
+    :root .infohead,
+    :root .infoval {
+      color: #f0f005;
+    }
+    :root div#table_length.dataTables_length,
+    :root div#table_filter.dataTables_filter {
+      color: #f0f004;
+    }
+    :root div #description table,
+    :root div #description table tr td {
+      border-color: #f0f00b;
+    }
+    :root div #description table th {
+      background-color: #f0f002;
+    }
+    :root #interface .src .link,
+    :root #interface .src .selflink {
+      color: #f0f007 !important;
+      background-color: transparent !important;
+    }
+    :root #interface p.src .link {
+      background-color: transparent;
+      color: #f0f007;
+      border-color: #f0f008;
+    }
+    :root #interface span.fixity,
+    :root #interface span.rightedge {
+      color: #f0f008;
+      border-left-color: #f0f008;
+    }
+    :root #interface span.fixity {
+      color: #f0f008;
+    }
+    :root .paginator span {
+      color: #f0f004;
+    }
+    :root .paginator a {
+      color: #f0f008;
+    }
+    :root .paginator a[href]:link,
+    :root .paginator a:link:hover {
+      color: #f0f01b;
+    }
+    :root .paginator a:visited,
+    :root .paginator a:visited:hover {
+      color: #f0f011;
+    }
+    :root .paginator a:link:hover,
+    :root .paginator a:visited:hover {
+      background-image: none;
+      background-color: #f0f002;
+      border-color: transparent;
+    }
+    :root .paginator .current {
+      background-image: none;
+      background-color: #f0f002;
+      color: #f0f01b;
+      border-color: transparent;
+    }
+    :root .paginator .current:hover {
+      background-color: #f0f003 !important;
+    }
+    :root .paginate_button {
+      background-color: #f0f009;
+    }
+    :root #browseTable th {
+      border-color: #f0f00b;
+    }
+    :root #fatalError {
+      color: #f0f011;
+    }
+    :root input:invalid {
+      border-color: #f0f014;
+      box-shadow: 0 0 10px #f0f014;
+    }
+    :root input {
+      background-color: #f0f002;
+      color: #f0f004;
+      border-style: solid;
+      border-color: #f0f00c;
+      border-radius: 4px;
+    }
+    :root input[type="range"] {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+      background-color: #f0f002;
+      height: 0.2em !important;
+    }
+    :root input[type="range"]::-moz-range-thumb,
+    :root input[type="range"]::-webkit-slider-thumb {
+      background-color: #f0f004;
+      border-color: #f0f00c;
+      height: 1em !important;
+    }
+    :root input[type="range"]:hover,
+    :root input[type="submit"]:hover {
+      background-color: #f0f003;
+    }
+    :root input[type="file"] {
+      background-color: transparent;
+    }
+    :root input[type="file"]::file-selector-button {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root .candidate-warn {
+      background-color: #f0f002;
+      border-color: #f0f011;
+    }
+    :root .candidate-info {
+      background-color: #f0f002;
+      border-color: #f0f019;
+    }
+    :root .box {
+      background-color: #f0f001;
+      border-color: #f0f001;
+    }
+    :root div#modal #content,
+    :root #search-results {
+      background-color: #f0f00c;
+    }
+    :root .subs,
+    :root .top > .doc,
+    :root .subs > .doc {
+      border-left-color: #f0f00b;
+    }
+    :root .subs .subs p.src {
+      background-color: #f0f002;
+    }
+    :root .top p.src {
+      border-color: #f0f00c;
+    }
+    :root .warning,
+    :root strong.warning {
+      color: #f0f011;
+    }
+    :root small.info,
+    :root .flags-table .flag-disabled {
+      color: #f0f006;
+    }
+    :root .text-button {
+      color: #f0f01b;
+    }
+    :root p.registration-email {
+      border-color: #f0f01b;
+    }
+    :root :target {
+      background-image: linear-gradient(to bottom, transparent 0%, transparent 65%, #f0f010 60%, #f0f010 100%);
+    }
+    :root :target:hover {
+      background-image: linear-gradient(to bottom, #fdfd02 0%, #fdfd02 100%);
+    }
+    :root #footer {
+      background-color: #f0f003;
+      color: #f0f005;
+      border-color: #f0f009;
+    }
+    :root #MathJax_Message {
+      background-color: #f0f002;
+      border-color: #f0f00b;
+      color: #f0f004;
+    }
+    :root #MathJax_About,
+    :root #MathJax_Help,
+    :root .MathJax_Menu {
+      background-color: #f0f00c;
+      color: #f0f004;
+      border-color: #f0f01b;
+      box-shadow: 0 10px 20px #f0f002;
+      -webkit-box-shadow: 0 10px 20px #f0f002;
+      -moz-box-shadow: 0 10px 20px #f0f002;
+    }
+    :root #MathJax_About > span,
+    :root #MathJax_HelpContent {
+      background-color: #f0f00b !important;
+      color: #f0f005 !important;
+      border-color: #f0f009 !important;
+    }
+    :root .MathJax_MenuArrow {
+      color: #f0f005;
+    }
+    :root .MathJax_MenuRule {
+      border-top-color: #f0f009;
+    }
+    :root .MathJax_MenuActive {
+      background-color: #f0f00b;
+      color: #f0f004;
+    }
+    :root .MathJax_MenuDisabled {
+      color: #f0f007;
+    }
+    :root .MathJax_MenuDisabled:focus,
+    :root .MathJax_MenuLabel:focus {
+      background-color: #f0f00b;
+    }
+    :root #MathJax_AboutClose,
+    :root #MathJax_HelpClose {
+      border-color: #f0f00a;
+      color: #f0f006;
+    }
+    :root #MathJax_AboutClose span,
+    :root #MathJax_HelpClose span {
+      background-color: #f0f00a;
+    }
+    :root #MathJax_AboutClose:hover,
+    :root #MathJax_HelpClose:hover {
+      color: #f0f004 !important;
+      border-color: #f0f009 !important;
+    }
+    :root #MathJax_AboutClose:hover span,
+    :root #MathJax_HelpClose:hover span {
+      background-color: #f0f009 !important;
+    }
+    :root span.mathjax img {
+      filter: brightness(0) saturate(100%) invert(43%) sepia(43%) saturate(515%) hue-rotate(196deg) brightness(49%) contrast(68%);
+    }
+    :root span.definition,
+    :root .hs-identifier {
+      color: #f0f019;
+    }
+    :root .hs-identifier.hs-type {
+      color: #f0f014;
+    }
+    :root span.keyword,
+    :root .hs-keyword {
+      color: #f0f010;
+    }
+    :root span.str,
+    :root span.char,
+    :root .hs-string,
+    :root .hs-char,
+    :root .hs-str,
+    :root .hs-chr {
+      color: #f0f015;
+    }
+    :root .hs-number {
+      color: #f0f013;
+    }
+    :root .hs-operator {
+      color: #f0f017;
+    }
+    :root span.keyglyph,
+    :root span.layout,
+    :root span.conop,
+    :root .hs-keyglyph,
+    :root .hs-layout,
+    :root .hs-glyph,
+    :root .hs-special {
+      color: #f0f007;
+    }
+    :root span.comment,
+    :root .hs-comment,
+    :root .hs-comment a {
+      color: #f0f009;
+    }
+    :root span.cpp,
+    :root .hs-pragma,
+    :root .hs-cpp {
+      color: #f0f00f;
+    }
+    :root pre a:link,
+    :root pre a:visited {
+      border-bottom-color: #f0f00c;
+    }
+    :root pre a:hover,
+    :root pre a.hover-highlight {
+      background-color: #f0f00c;
+    }
+    :root span.annot {
+      color: #f0f004;
+    }
+    :root span.annot:hover {
+      background-color: #f0f00b;
+    }
+    :root span.annot span.annottext {
+      background-color: #f0f00c;
+      border-color: #f0f01b;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      /*
+     * Headers
+     */
+      /*
+     * Style selectors (for old packages)
+     */
+      /*
+     * Versions
+     */
+      /*
+     * Readme style
+     */
+      /*
+     * Contents & synopsis
+     */
+      /*
+     * Quick jump
+     */
+      /*
+     * Dropdown
+     */
+      /*
+     * Tables
+     */
+      /*
+     * Source links
+     */
+      /*
+     * Paginator
+     */
+      /*
+     * Search query
+     */
+      /*
+     * Upload
+     */
+      /*
+     * Others
+     */
+      /*
+     * MathJax
+     */
+      /*
+     * Sources
+     */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root,
+    :root body {
+      background-color: #f0f001;
+      color: #f0f004;
+    }
+    :root a:hover {
+      background-color: inherit;
+    }
+    :root a[href]:link {
+      color: #f0f01b;
+    }
+    :root a[href]:visited {
+      color: #f0f011;
+    }
+    :root a[href].def:link,
+    :root a[href].def:visited {
+      color: #f0f006;
+    }
+    :root a[href].def:hover {
+      color: #f0f007;
+    }
+    :root button {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root button:hover {
+      background-color: #f0f003;
+    }
+    :root .caption,
+    :root h1,
+    :root h2,
+    :root h3,
+    :root h4,
+    :root h5,
+    :root h6,
+    :root summary,
+    :root .section1,
+    :root .section2,
+    :root .section3,
+    :root .section4,
+    :root .section5,
+    :root .section6 {
+      color: #f0f004;
+      filter: none;
+    }
+    :root .collapser::before,
+    :root .expander::before,
+    :root .noexpander::before {
+      color: #f0f01b;
+    }
+    :root pre {
+      background-color: #f0f002;
+      border-color: #f0f00b;
+    }
+    :root blockquote {
+      background-color: #f0f00c;
+      border-color: #f0f01b;
+    }
+    :root .src,
+    :root .decl,
+    :root .declname,
+    :root .declbut,
+    :root .topdecl,
+    :root .arg,
+    :root .inline-code {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root .declbut {
+      border-color: #f0f009 !important;
+    }
+    :root .declbut a {
+      color: #f0f007 !important;
+    }
+    :root #page-header,
+    :root #package-header {
+      background-color: #f0f01b;
+      color: #f0f00b;
+      border-color: #b4b414;
+    }
+    :root #page-header .caption,
+    :root #package-header .caption,
+    :root #page-header a:link,
+    :root #page-header a:visited {
+      color: #f0f001 !important;
+    }
+    :root #module-header .caption,
+    :root .modulebar {
+      color: #f0f01b;
+      border-color: #f0f00b;
+    }
+    :root #module-header {
+      background-color: inherit;
+    }
+    :root #package-header a:link,
+    :root #package-header #page-menu a:link,
+    :root #package-header a:visited,
+    :root #package-header #page-menu a:visited {
+      color: #f0f001;
+    }
+    :root #package-header a:hover {
+      background-color: transparent;
+    }
+    :root #package-header ul.links li {
+      border-color: #f0f009;
+    }
+    :root #package-header ul.links li:hover {
+      background-color: transparent;
+    }
+    :root ul.links li form input,
+    :root ul.links li form button {
+      color: #f0f001;
+    }
+    :root ul.links li form button {
+      background-color: transparent;
+    }
+    :root .topbar {
+      background-color: #f0f01b;
+    }
+    :root .topbar .topbut {
+      border-color: #f0f009;
+    }
+    :root .topbar .topbut a {
+      background-color: transparent;
+      color: #f0f001;
+    }
+    :root .topbar .title {
+      color: #f0f001;
+    }
+    :root .botbar {
+      background-color: #f0f003;
+      color: #f0f004;
+    }
+    :root #style-menu {
+      background-color: #f0f002;
+    }
+    :root #style-menu li,
+    :root #style-menu li a {
+      color: #f0f004 !important;
+    }
+    :root #style-menu li + li {
+      border-color: #f0f007;
+    }
+    :root a.unpreferred[href]:link,
+    :root a.unpreferred[href]:visited {
+      color: #f0f014;
+    }
+    :root a.deprecated[href]:link,
+    :root a.deprecated[href]:visited {
+      color: #f0f011;
+    }
+    :root .versions a.normal[href]:link,
+    :root .versions a.normal[href]:visited {
+      color: #f0f015;
+    }
+    :root .embedded-author-content {
+      border-color: #f0f01b;
+    }
+    :root #contents-list {
+      background-color: #f0f002;
+    }
+    :root h2#table-of-contents {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root div#table-of-contents {
+      background-color: #f0f001;
+      border-color: #f0f00b;
+    }
+    :root #synopsis summary,
+    :root #synopsis #control\.syn {
+      background-image: url("data:image/svg+xml,%3Csvg%20width%3D%22128%22%20height%3D%22104%22%20viewBox%3D%220%200%20128%20104%22%20xml%3Aspace%3D%22preserve%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cdefs%3E%3Cfilter%20id%3D%22a%22%20x%3D%22-.06%22%20y%3D%22-.03%22%20width%3D%221.14%22%20height%3D%221.07%22%20color-interpolation-filters%3D%22sRGB%22%3E%3CfeFlood%20flood-color%3D%22%23000%22%20flood-opacity%3D%22.498%22%20result%3D%22flood%22/%3E%3CfeGaussianBlur%20in%3D%22SourceGraphic%22%20result%3D%22blur%22%20stdDeviation%3D%221%22/%3E%3CfeOffset%20dx%3D%221%22%20dy%3D%221%22%20in%3D%22blur%22%20result%3D%22offset%22/%3E%3CfeComposite%20in%3D%22flood%22%20in2%3D%22offset%22%20operator%3D%22in%22%20result%3D%22comp1%22/%3E%3CfeComposite%20in%3D%22SourceGraphic%22%20in2%3D%22comp1%22%20result%3D%22comp2%22/%3E%3C/filter%3E%3Cfilter%20id%3D%22b%22%20x%3D%22-.06%22%20y%3D%22-.03%22%20width%3D%221.14%22%20height%3D%221.07%22%20color-interpolation-filters%3D%22sRGB%22%3E%3CfeFlood%20flood-color%3D%22%23000%22%20flood-opacity%3D%22.498%22%20result%3D%22flood%22/%3E%3CfeGaussianBlur%20in%3D%22SourceGraphic%22%20result%3D%22blur%22%20stdDeviation%3D%221%22/%3E%3CfeOffset%20dx%3D%221%22%20dy%3D%221%22%20in%3D%22blur%22%20result%3D%22offset%22/%3E%3CfeComposite%20in%3D%22flood%22%20in2%3D%22offset%22%20operator%3D%22in%22%20result%3D%22comp1%22/%3E%3CfeComposite%20in%3D%22SourceGraphic%22%20in2%3D%22comp1%22%20result%3D%22comp2%22/%3E%3C/filter%3E%3C/defs%3E%3Cg%20transform%3D%22translate%2864%29%22%20filter%3D%22url%28%23a%29%22%3E%3Crect%20x%3D%228.5%22%20y%3D%228.5%22%20width%3D%2240%22%20height%3D%2280%22%20rx%3D%224%22%20ry%3D%224%22%20fill%3D%22%23f0f00c%22/%3E%3Ctext%20transform%3D%22matrix%280%20-.995%201%200%200%200%29%22%20x%3D%22-86.188%22%20y%3D%2223.735%22%20fill%3D%22%23f0f005%22%20xml%3Aspace%3D%22preserve%22%3E%3Ctspan%20x%3D%22-86.188%22%20y%3D%2223.735%22%20font-family%3D%22&quot%3BPT%20Sans&quot%3B,-apple-system,BlinkMacSystemFont,&quot%3BSegoe%20UI&quot%3B,Roboto,Oxygen-Sans,Cantarell,&quot%3BHelvetica%20Neue&quot%3B,sans-serif%22%20font-size%3D%2214px%22%20font-weight%3D%22400%22%3ESynopsis%3C/tspan%3E%3C/text%3E%3Cg%20fill%3D%22%23f0f009%22%3E%3Crect%20transform%3D%22rotate%2845%29scale%28-1%201%29%22%20x%3D%22-28.7%22%20y%3D%22-6.53%22%20width%3D%227.88%22%20height%3D%222.46%22%20rx%3D%22.985%22%20ry%3D%22.985%22/%3E%3Crect%20transform%3D%22rotate%28-45%29%22%20x%3D%22-1.47%22%20y%3D%2226.3%22%20width%3D%227.88%22%20height%3D%222.46%22%20rx%3D%22.985%22%20ry%3D%22.985%22/%3E%3Crect%20transform%3D%22rotate%2845%29scale%28-1%201%29%22%20x%3D%22-23.7%22%20y%3D%22-1.58%22%20width%3D%227.88%22%20height%3D%222.46%22%20rx%3D%22.985%22%20ry%3D%22.985%22/%3E%3Crect%20transform%3D%22rotate%28-45%29%22%20x%3D%22-6.42%22%20y%3D%2221.4%22%20width%3D%227.88%22%20height%3D%222.46%22%20rx%3D%22.985%22%20ry%3D%22.985%22/%3E%3C/g%3E%3C/g%3E%3Cg%20filter%3D%22url%28%23b%29%22%3E%3Crect%20x%3D%228.5%22%20y%3D%228.5%22%20width%3D%2240%22%20height%3D%2280%22%20rx%3D%224%22%20ry%3D%224%22%20fill%3D%22%23f0f00c%22/%3E%3Ctext%20transform%3D%22matrix%280%20-.995%201%200%200%200%29%22%20x%3D%22-86.188%22%20y%3D%2223.735%22%20fill%3D%22%23f0f005%22%20xml%3Aspace%3D%22preserve%22%3E%3Ctspan%20x%3D%22-86.188%22%20y%3D%2223.735%22%20font-family%3D%22&quot%3BPT%20Sans&quot%3B,-apple-system,BlinkMacSystemFont,&quot%3BSegoe%20UI&quot%3B,Roboto,Oxygen-Sans,Cantarell,&quot%3BHelvetica%20Neue&quot%3B,sans-serif%22%20font-size%3D%2214px%22%20font-weight%3D%22400%22%3ESynopsis%3C/tspan%3E%3C/text%3E%3Cg%20fill%3D%22%23f0f009%22%3E%3Crect%20transform%3D%22rotate%28-45%29%22%20x%3D%22-3.59%22%20y%3D%2218.6%22%20width%3D%227.88%22%20height%3D%222.46%22%20rx%3D%22.985%22%20ry%3D%22.985%22/%3E%3Crect%20transform%3D%22rotate%2845%29scale%28-1%201%29%22%20x%3D%22-26.6%22%20y%3D%221.24%22%20width%3D%227.88%22%20height%3D%222.46%22%20rx%3D%22.985%22%20ry%3D%22.985%22/%3E%3Crect%20transform%3D%22rotate%28-45%29%22%20x%3D%221.36%22%20y%3D%2223.5%22%20width%3D%227.88%22%20height%3D%222.46%22%20rx%3D%22.985%22%20ry%3D%22.985%22/%3E%3Crect%20transform%3D%22rotate%2845%29scale%28-1%201%29%22%20x%3D%22-31.5%22%20y%3D%22-3.71%22%20width%3D%227.88%22%20height%3D%222.46%22%20rx%3D%22.985%22%20ry%3D%22.985%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") !important;
+    }
+    :root #synopsis ul,
+    :root #synopsis ul li.src {
+      background-color: #f0f00c;
+    }
+    :root #search p.error {
+      color: #f0f011;
+    }
+    :root #search-form,
+    :root #search-results {
+      box-shadow: 2px 2px 6px rgba(240, 240, 2, 0.2);
+    }
+    :root #search-form input {
+      border-color: #f0f01b;
+    }
+    :root #search-results {
+      border-color: #f0f01b;
+    }
+    :root #search-results > ul > li {
+      border-bottom-color: #f0f009;
+    }
+    :root .search-module > ul > li > a[href].active-link {
+      background-color: #f0f00a;
+    }
+    :root .search-result ul.subs::after {
+      color: #f0f005;
+    }
+    :root .more-results,
+    :root .more-results::before {
+      color: #f0f006;
+    }
+    :root .keyboard-shortcuts th {
+      color: #f0f01b;
+    }
+    :root .key {
+      background-color: #f0f002;
+      color: #f0f004;
+      border-color: #f0f002;
+    }
+    :root .dropdown-menu {
+      background-color: #f0f00c;
+      border-color: #f0f00c;
+    }
+    :root .dropdown-menu button {
+      background-color: #f0f01b;
+      color: #f0f002;
+      border-color: #f0f00a;
+    }
+    :root .dropdown-menu button:hover,
+    :root .dropdown-menu button:active {
+      background-color: #f0f01b;
+      color: #f0f002;
+    }
+    :root table.info {
+      background-color: #f0f001;
+      color: #f0f005;
+      border-color: #f0f00b;
+    }
+    :root table.fancy,
+    :root table.fancy tr {
+      border-color: #f0f00b;
+    }
+    :root table.fancy tr.even td {
+      background-color: #f0f002;
+    }
+    :root table.fancy th,
+    :root table.properties th,
+    :root table.dataTable.compact.fancy tbody th,
+    :root table.fancy td,
+    :root table.properties td,
+    :root table.dataTable.compact.fancy tbody td {
+      background-color: #f0f001;
+    }
+    :root .doc th,
+    :root .doc td {
+      border-color: #f0f00b;
+    }
+    :root .doc th {
+      background-color: #f0f002;
+    }
+    :root .infohead,
+    :root .infoval {
+      color: #f0f005;
+    }
+    :root div#table_length.dataTables_length,
+    :root div#table_filter.dataTables_filter {
+      color: #f0f004;
+    }
+    :root div #description table,
+    :root div #description table tr td {
+      border-color: #f0f00b;
+    }
+    :root div #description table th {
+      background-color: #f0f002;
+    }
+    :root #interface .src .link,
+    :root #interface .src .selflink {
+      color: #f0f007 !important;
+      background-color: transparent !important;
+    }
+    :root #interface p.src .link {
+      background-color: transparent;
+      color: #f0f007;
+      border-color: #f0f008;
+    }
+    :root #interface span.fixity,
+    :root #interface span.rightedge {
+      color: #f0f008;
+      border-left-color: #f0f008;
+    }
+    :root #interface span.fixity {
+      color: #f0f008;
+    }
+    :root .paginator span {
+      color: #f0f004;
+    }
+    :root .paginator a {
+      color: #f0f008;
+    }
+    :root .paginator a[href]:link,
+    :root .paginator a:link:hover {
+      color: #f0f01b;
+    }
+    :root .paginator a:visited,
+    :root .paginator a:visited:hover {
+      color: #f0f011;
+    }
+    :root .paginator a:link:hover,
+    :root .paginator a:visited:hover {
+      background-image: none;
+      background-color: #f0f002;
+      border-color: transparent;
+    }
+    :root .paginator .current {
+      background-image: none;
+      background-color: #f0f002;
+      color: #f0f01b;
+      border-color: transparent;
+    }
+    :root .paginator .current:hover {
+      background-color: #f0f003 !important;
+    }
+    :root .paginate_button {
+      background-color: #f0f009;
+    }
+    :root #browseTable th {
+      border-color: #f0f00b;
+    }
+    :root #fatalError {
+      color: #f0f011;
+    }
+    :root input:invalid {
+      border-color: #f0f014;
+      box-shadow: 0 0 10px #f0f014;
+    }
+    :root input {
+      background-color: #f0f002;
+      color: #f0f004;
+      border-style: solid;
+      border-color: #f0f00c;
+      border-radius: 4px;
+    }
+    :root input[type="range"] {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+      background-color: #f0f002;
+      height: 0.2em !important;
+    }
+    :root input[type="range"]::-moz-range-thumb,
+    :root input[type="range"]::-webkit-slider-thumb {
+      background-color: #f0f004;
+      border-color: #f0f00c;
+      height: 1em !important;
+    }
+    :root input[type="range"]:hover,
+    :root input[type="submit"]:hover {
+      background-color: #f0f003;
+    }
+    :root input[type="file"] {
+      background-color: transparent;
+    }
+    :root input[type="file"]::file-selector-button {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root .candidate-warn {
+      background-color: #f0f002;
+      border-color: #f0f011;
+    }
+    :root .candidate-info {
+      background-color: #f0f002;
+      border-color: #f0f019;
+    }
+    :root .box {
+      background-color: #f0f001;
+      border-color: #f0f001;
+    }
+    :root div#modal #content,
+    :root #search-results {
+      background-color: #f0f00c;
+    }
+    :root .subs,
+    :root .top > .doc,
+    :root .subs > .doc {
+      border-left-color: #f0f00b;
+    }
+    :root .subs .subs p.src {
+      background-color: #f0f002;
+    }
+    :root .top p.src {
+      border-color: #f0f00c;
+    }
+    :root .warning,
+    :root strong.warning {
+      color: #f0f011;
+    }
+    :root small.info,
+    :root .flags-table .flag-disabled {
+      color: #f0f006;
+    }
+    :root .text-button {
+      color: #f0f01b;
+    }
+    :root p.registration-email {
+      border-color: #f0f01b;
+    }
+    :root :target {
+      background-image: linear-gradient(to bottom, transparent 0%, transparent 65%, #f0f010 60%, #f0f010 100%);
+    }
+    :root :target:hover {
+      background-image: linear-gradient(to bottom, #fdfd02 0%, #fdfd02 100%);
+    }
+    :root #footer {
+      background-color: #f0f003;
+      color: #f0f005;
+      border-color: #f0f009;
+    }
+    :root #MathJax_Message {
+      background-color: #f0f002;
+      border-color: #f0f00b;
+      color: #f0f004;
+    }
+    :root #MathJax_About,
+    :root #MathJax_Help,
+    :root .MathJax_Menu {
+      background-color: #f0f00c;
+      color: #f0f004;
+      border-color: #f0f01b;
+      box-shadow: 0 10px 20px #f0f002;
+      -webkit-box-shadow: 0 10px 20px #f0f002;
+      -moz-box-shadow: 0 10px 20px #f0f002;
+    }
+    :root #MathJax_About > span,
+    :root #MathJax_HelpContent {
+      background-color: #f0f00b !important;
+      color: #f0f005 !important;
+      border-color: #f0f009 !important;
+    }
+    :root .MathJax_MenuArrow {
+      color: #f0f005;
+    }
+    :root .MathJax_MenuRule {
+      border-top-color: #f0f009;
+    }
+    :root .MathJax_MenuActive {
+      background-color: #f0f00b;
+      color: #f0f004;
+    }
+    :root .MathJax_MenuDisabled {
+      color: #f0f007;
+    }
+    :root .MathJax_MenuDisabled:focus,
+    :root .MathJax_MenuLabel:focus {
+      background-color: #f0f00b;
+    }
+    :root #MathJax_AboutClose,
+    :root #MathJax_HelpClose {
+      border-color: #f0f00a;
+      color: #f0f006;
+    }
+    :root #MathJax_AboutClose span,
+    :root #MathJax_HelpClose span {
+      background-color: #f0f00a;
+    }
+    :root #MathJax_AboutClose:hover,
+    :root #MathJax_HelpClose:hover {
+      color: #f0f004 !important;
+      border-color: #f0f009 !important;
+    }
+    :root #MathJax_AboutClose:hover span,
+    :root #MathJax_HelpClose:hover span {
+      background-color: #f0f009 !important;
+    }
+    :root span.mathjax img {
+      filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+    }
+    :root span.definition,
+    :root .hs-identifier {
+      color: #f0f019;
+    }
+    :root .hs-identifier.hs-type {
+      color: #f0f014;
+    }
+    :root span.keyword,
+    :root .hs-keyword {
+      color: #f0f010;
+    }
+    :root span.str,
+    :root span.char,
+    :root .hs-string,
+    :root .hs-char,
+    :root .hs-str,
+    :root .hs-chr {
+      color: #f0f015;
+    }
+    :root .hs-number {
+      color: #f0f013;
+    }
+    :root .hs-operator {
+      color: #f0f017;
+    }
+    :root span.keyglyph,
+    :root span.layout,
+    :root span.conop,
+    :root .hs-keyglyph,
+    :root .hs-layout,
+    :root .hs-glyph,
+    :root .hs-special {
+      color: #f0f007;
+    }
+    :root span.comment,
+    :root .hs-comment,
+    :root .hs-comment a {
+      color: #f0f009;
+    }
+    :root span.cpp,
+    :root .hs-pragma,
+    :root .hs-cpp {
+      color: #f0f00f;
+    }
+    :root pre a:link,
+    :root pre a:visited {
+      border-bottom-color: #f0f00c;
+    }
+    :root pre a:hover,
+    :root pre a.hover-highlight {
+      background-color: #f0f00c;
+    }
+    :root span.annot {
+      color: #f0f004;
+    }
+    :root span.annot:hover {
+      background-color: #f0f00b;
+    }
+    :root span.annot span.annottext {
+      background-color: #f0f00c;
+      border-color: #f0f01b;
+    }
+  }
+}

@@ -1,0 +1,2333 @@
+/* ==UserStyle==
+@name           pwnbox-arch-wiki
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Arch Wiki (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("wiki.archlinux.org") {
+  @media (prefers-color-scheme: light) {
+    :root.skin-theme-clientpref-os,
+    .vector-feature-night-mode-enabled,
+    .skin-invert,
+    .notheme {
+      color-scheme: light;
+    }
+    :root.skin-theme-clientpref-os ::selection,
+    .vector-feature-night-mode-enabled ::selection,
+    .skin-invert ::selection,
+    .notheme ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root.skin-theme-clientpref-os input::placeholder,
+    .vector-feature-night-mode-enabled input::placeholder,
+    .skin-invert input::placeholder,
+    .notheme input::placeholder,
+    :root.skin-theme-clientpref-os textarea::placeholder,
+    .vector-feature-night-mode-enabled textarea::placeholder,
+    .skin-invert textarea::placeholder,
+    .notheme textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root.skin-theme-clientpref-os #content table,
+    .vector-feature-night-mode-enabled #content table,
+    .skin-invert #content table,
+    .notheme #content table,
+    :root.skin-theme-clientpref-os #content h1,
+    .vector-feature-night-mode-enabled #content h1,
+    .skin-invert #content h1,
+    .notheme #content h1,
+    :root.skin-theme-clientpref-os #content h2,
+    .vector-feature-night-mode-enabled #content h2,
+    .skin-invert #content h2,
+    .notheme #content h2,
+    :root.skin-theme-clientpref-os #content h3,
+    .vector-feature-night-mode-enabled #content h3,
+    .skin-invert #content h3,
+    .notheme #content h3,
+    :root.skin-theme-clientpref-os #content h4,
+    .vector-feature-night-mode-enabled #content h4,
+    .skin-invert #content h4,
+    .notheme #content h4,
+    :root.skin-theme-clientpref-os #content h5,
+    .vector-feature-night-mode-enabled #content h5,
+    .skin-invert #content h5,
+    .notheme #content h5,
+    :root.skin-theme-clientpref-os #content pre,
+    .vector-feature-night-mode-enabled #content pre,
+    .skin-invert #content pre,
+    .notheme #content pre,
+    :root.skin-theme-clientpref-os #content code,
+    .vector-feature-night-mode-enabled #content code,
+    .skin-invert #content code,
+    .notheme #content code,
+    :root.skin-theme-clientpref-os #content tt,
+    .vector-feature-night-mode-enabled #content tt,
+    .skin-invert #content tt,
+    .notheme #content tt {
+      color: #f0f004 !important;
+    }
+    :root.skin-theme-clientpref-os body.skin-vector-2022 .vector-sticky-header,
+    .vector-feature-night-mode-enabled body.skin-vector-2022 .vector-sticky-header,
+    .skin-invert body.skin-vector-2022 .vector-sticky-header,
+    .notheme body.skin-vector-2022 .vector-sticky-header {
+      color: #f0f004 !important;
+      background-color: #f0f002 !important;
+      border-bottom-color: #f0f019 !important;
+    }
+    :root.skin-theme-clientpref-os #vector-main-menu-pinned-container,
+    .vector-feature-night-mode-enabled #vector-main-menu-pinned-container,
+    .skin-invert #vector-main-menu-pinned-container,
+    .notheme #vector-main-menu-pinned-container,
+    :root.skin-theme-clientpref-os #vector-page-tools-pinned-container,
+    .vector-feature-night-mode-enabled #vector-page-tools-pinned-container,
+    .skin-invert #vector-page-tools-pinned-container,
+    .notheme #vector-page-tools-pinned-container {
+      background-color: #f0f001 !important;
+    }
+    :root.skin-theme-clientpref-os #ooui-php-191,
+    .vector-feature-night-mode-enabled #ooui-php-191,
+    .skin-invert #ooui-php-191,
+    .notheme #ooui-php-191,
+    :root.skin-theme-clientpref-os #preferences .mw-htmlform-submit-buttons,
+    .vector-feature-night-mode-enabled #preferences .mw-htmlform-submit-buttons,
+    .skin-invert #preferences .mw-htmlform-submit-buttons,
+    .notheme #preferences .mw-htmlform-submit-buttons {
+      background-color: #f0f002 !important;
+    }
+    :root.skin-theme-clientpref-os .mw-echo-ui-notificationItemWidget-content-message-header,
+    .vector-feature-night-mode-enabled .mw-echo-ui-notificationItemWidget-content-message-header,
+    .skin-invert .mw-echo-ui-notificationItemWidget-content-message-header,
+    .notheme .mw-echo-ui-notificationItemWidget-content-message-header,
+    :root.skin-theme-clientpref-os .oo-ui-labelElement-label,
+    .vector-feature-night-mode-enabled .oo-ui-labelElement-label,
+    .skin-invert .oo-ui-labelElement-label,
+    .notheme .oo-ui-labelElement-label {
+      color: #f0f004 !important;
+    }
+    :root.skin-theme-clientpref-os .oo-ui-optionWidget-selected,
+    .vector-feature-night-mode-enabled .oo-ui-optionWidget-selected,
+    .skin-invert .oo-ui-optionWidget-selected,
+    .notheme .oo-ui-optionWidget-selected {
+      background-color: #f0f00a !important;
+    }
+    :root.skin-theme-clientpref-os .oo-ui-buttonElement-framed.oo-ui-widget-disabled > .oo-ui-buttonElement-button,
+    .vector-feature-night-mode-enabled .oo-ui-buttonElement-framed.oo-ui-widget-disabled > .oo-ui-buttonElement-button,
+    .skin-invert .oo-ui-buttonElement-framed.oo-ui-widget-disabled > .oo-ui-buttonElement-button,
+    .notheme .oo-ui-buttonElement-framed.oo-ui-widget-disabled > .oo-ui-buttonElement-button {
+      background-color: #f0f00c !important;
+      color: #f0f004 !important;
+      border-color: #f0f00a !important;
+      filter: brightness(0.4);
+      cursor: not-allowed;
+    }
+    :root.skin-theme-clientpref-os .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:nth-child(even) td,
+    .vector-feature-night-mode-enabled .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:nth-child(even) td,
+    .skin-invert .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:nth-child(even) td,
+    .notheme .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:nth-child(even) td {
+      background-color: #f0f00b !important;
+    }
+    :root.skin-theme-clientpref-os .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:hover td,
+    .vector-feature-night-mode-enabled .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:hover td,
+    .skin-invert .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:hover td,
+    .notheme .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:hover td {
+      background-color: #f0f00a !important;
+    }
+    :root.skin-theme-clientpref-os .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:nth-child(odd) td,
+    .vector-feature-night-mode-enabled .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:nth-child(odd) td,
+    .skin-invert .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:nth-child(odd) td,
+    .notheme .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:nth-child(odd) td,
+    :root.skin-theme-clientpref-os .mw-rcfilters-ui-filterTagMultiselectWidget.oo-ui-widget-enabled .oo-ui-tagMultiselectWidget-handle,
+    .vector-feature-night-mode-enabled .mw-rcfilters-ui-filterTagMultiselectWidget.oo-ui-widget-enabled .oo-ui-tagMultiselectWidget-handle,
+    .skin-invert .mw-rcfilters-ui-filterTagMultiselectWidget.oo-ui-widget-enabled .oo-ui-tagMultiselectWidget-handle,
+    .notheme .mw-rcfilters-ui-filterTagMultiselectWidget.oo-ui-widget-enabled .oo-ui-tagMultiselectWidget-handle,
+    :root.skin-theme-clientpref-os .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined .oo-ui-tagItemWidget.oo-ui-widget-enabled,
+    .vector-feature-night-mode-enabled .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined .oo-ui-tagItemWidget.oo-ui-widget-enabled,
+    .skin-invert .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined .oo-ui-tagItemWidget.oo-ui-widget-enabled,
+    .notheme .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined .oo-ui-tagItemWidget.oo-ui-widget-enabled,
+    :root.skin-theme-clientpref-os .mw-rcfilters-ui-cell.mw-rcfilters-ui-filterTagMultiselectWidget-views-select,
+    .vector-feature-night-mode-enabled .mw-rcfilters-ui-cell.mw-rcfilters-ui-filterTagMultiselectWidget-views-select,
+    .skin-invert .mw-rcfilters-ui-cell.mw-rcfilters-ui-filterTagMultiselectWidget-views-select,
+    .notheme .mw-rcfilters-ui-cell.mw-rcfilters-ui-filterTagMultiselectWidget-views-select,
+    :root.skin-theme-clientpref-os .mw-rcfilters-ui-changesListWrapperWidget .mw-changeslist-legend,
+    .vector-feature-night-mode-enabled .mw-rcfilters-ui-changesListWrapperWidget .mw-changeslist-legend,
+    .skin-invert .mw-rcfilters-ui-changesListWrapperWidget .mw-changeslist-legend,
+    .notheme .mw-rcfilters-ui-changesListWrapperWidget .mw-changeslist-legend,
+    :root.skin-theme-clientpref-os .oo-ui-popupWidget-popup,
+    .vector-feature-night-mode-enabled .oo-ui-popupWidget-popup,
+    .skin-invert .oo-ui-popupWidget-popup,
+    .notheme .oo-ui-popupWidget-popup,
+    :root.skin-theme-clientpref-os .mw-echo-ui-notificationItemWidget,
+    .vector-feature-night-mode-enabled .mw-echo-ui-notificationItemWidget,
+    .skin-invert .mw-echo-ui-notificationItemWidget,
+    .notheme .mw-echo-ui-notificationItemWidget,
+    :root.skin-theme-clientpref-os .mw-echo-ui-placeholderItemWidget,
+    .vector-feature-night-mode-enabled .mw-echo-ui-placeholderItemWidget,
+    .skin-invert .mw-echo-ui-placeholderItemWidget,
+    .notheme .mw-echo-ui-placeholderItemWidget {
+      background-color: #f0f00c !important;
+    }
+    :root.skin-theme-clientpref-os .mw-echo-ui-notificationsInboxWidget-toolbarWrapper,
+    .vector-feature-night-mode-enabled .mw-echo-ui-notificationsInboxWidget-toolbarWrapper,
+    .skin-invert .mw-echo-ui-notificationsInboxWidget-toolbarWrapper,
+    .notheme .mw-echo-ui-notificationsInboxWidget-toolbarWrapper {
+      background-color: #f0f001 !important;
+    }
+    :root.skin-theme-clientpref-os #archnavbar,
+    .vector-feature-night-mode-enabled #archnavbar,
+    .skin-invert #archnavbar,
+    .notheme #archnavbar {
+      background-color: #f0f002 !important;
+      border-bottom-color: #f0f019 !important;
+    }
+    :root.skin-theme-clientpref-os .mw-parser-output,
+    .vector-feature-night-mode-enabled .mw-parser-output,
+    .skin-invert .mw-parser-output,
+    .notheme .mw-parser-output {
+      background-color: #f0f001 !important;
+    }
+    :root.skin-theme-clientpref-os .mw-page-container,
+    .vector-feature-night-mode-enabled .mw-page-container,
+    .skin-invert .mw-page-container,
+    .notheme .mw-page-container {
+      background-color: #f0f001 !important;
+    }
+    :root.skin-theme-clientpref-os .vector-header-container,
+    .vector-feature-night-mode-enabled .vector-header-container,
+    .skin-invert .vector-header-container,
+    .notheme .vector-header-container {
+      background-color: #f0f001 !important;
+    }
+    :root.skin-theme-clientpref-os #content a:not([role="button"], .new),
+    .vector-feature-night-mode-enabled #content a:not([role="button"], .new),
+    .skin-invert #content a:not([role="button"], .new),
+    .notheme #content a:not([role="button"], .new),
+    :root.skin-theme-clientpref-os header.mw-header li:not(.new) a:not([role="button"], .new),
+    .vector-feature-night-mode-enabled header.mw-header li:not(.new) a:not([role="button"], .new),
+    .skin-invert header.mw-header li:not(.new) a:not([role="button"], .new),
+    .notheme header.mw-header li:not(.new) a:not([role="button"], .new),
+    :root.skin-theme-clientpref-os #mw-panel-toc a:not([role="button"], .new),
+    .vector-feature-night-mode-enabled #mw-panel-toc a:not([role="button"], .new),
+    .skin-invert #mw-panel-toc a:not([role="button"], .new),
+    .notheme #mw-panel-toc a:not([role="button"], .new),
+    :root.skin-theme-clientpref-os #mw-navigation li:not(.new) a:not([role="button"], .new),
+    .vector-feature-night-mode-enabled #mw-navigation li:not(.new) a:not([role="button"], .new),
+    .skin-invert #mw-navigation li:not(.new) a:not([role="button"], .new),
+    .notheme #mw-navigation li:not(.new) a:not([role="button"], .new),
+    :root.skin-theme-clientpref-os #mw-panel li:not(.new) a:not([role="button"], .new),
+    .vector-feature-night-mode-enabled #mw-panel li:not(.new) a:not([role="button"], .new),
+    .skin-invert #mw-panel li:not(.new) a:not([role="button"], .new),
+    .notheme #mw-panel li:not(.new) a:not([role="button"], .new),
+    :root.skin-theme-clientpref-os #column-one li:not(.new) a:not([role="button"], .new),
+    .vector-feature-night-mode-enabled #column-one li:not(.new) a:not([role="button"], .new),
+    .skin-invert #column-one li:not(.new) a:not([role="button"], .new),
+    .notheme #column-one li:not(.new) a:not([role="button"], .new),
+    :root.skin-theme-clientpref-os #footer a:not([role="button"], .new),
+    .vector-feature-night-mode-enabled #footer a:not([role="button"], .new),
+    .skin-invert #footer a:not([role="button"], .new),
+    .notheme #footer a:not([role="button"], .new) {
+      color: #f0f019 !important;
+    }
+    :root.skin-theme-clientpref-os .vector-feature-zebra-design-disabled,
+    .vector-feature-night-mode-enabled .vector-feature-zebra-design-disabled,
+    .skin-invert .vector-feature-zebra-design-disabled,
+    .notheme .vector-feature-zebra-design-disabled,
+    :root.skin-theme-clientpref-os body,
+    .vector-feature-night-mode-enabled body,
+    .skin-invert body,
+    .notheme body {
+      background-color: #f0f001;
+    }
+    :root.skin-theme-clientpref-os #archnavbarlogo,
+    .vector-feature-night-mode-enabled #archnavbarlogo,
+    .skin-invert #archnavbarlogo,
+    .notheme #archnavbarlogo {
+      background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20version%3D%221%22%20width%3D%22600%22%20height%3D%22126%22%3E%3Cpath%20d%3D%22M159.568%2034.427c-8.89-.014-16.267%201.809-19.12%202.803l-2.937%2015.857c-.007.058%2014.617-3.9%2021.059-3.667%2010.665.383%2011.646%204.076%2011.46%209.06.182.292-2.752-4.503-11.979-4.664-11.64-.2-28.069%204.122-28.046%2021.692-.314%2019.765%2014.764%2025.579%2025.032%2025.686%209.232-.168%2013.563-3.496%2015.934-5.28%203.115-3.257%206.679-6.532%2010.078-10.462-3.216%205.844-6.005%209.884-8.907%2012.977v2.611l14.033-2.361.096-38.144c-.143-5.399%203.096-26.057-26.703-26.108m-2.016%2033.21c5.817.08%2012.488%202.948%2012.497%209.849.03%206.277-7.863%209.651-12.996%209.598-5.135-.053-11.949-4.036-11.979-10.155.099-5.47%206.426-9.432%2012.478-9.291zm37.972-29.685-.095%2063.166%2016.348-3.15.027-35.814c.004-5.333%207.62-11.564%2017.178-11.464%202.028-3.67%205.84-13.05%206.77-15.183-21.351-.051-21.623%206.137-25.336%209.18-.04-5.806-.013-9.292-.013-9.292zm92.002%208.292c-.158-.074-8.526-9.788-25.35-9.864-15.758-.262-33.433%205.847-33.716%2032.27.138%2023.232%2016.979%2032.311%2033.805%2032.488%2018.007.187%2025.172-11.26%2025.602-11.543-2.149-1.863-10.196-9.837-10.196-9.837s-5.027%207.157-14.779%207.248c-9.755.093-18.234-7.54-18.354-18.189-.125-10.65%207.795-16.419%2018.427-16.885%209.205-.002%2014.516%205.943%2014.516%205.943zm20.606-30.399-15.434%203.628.115%2082.277%2015.204-2.745.172-38.72c.033-4.06%205.874-10.295%2015.626-10.097%209.325.097%2011.41%206.215%2011.384%206.988l.269%2044.824%2014.993-2.65.057-47.53c.099-4.574-10.018-14.233-26.28-14.302-7.729.012-12.009%201.762-14.187%203.052-3.726%202.879-7.985%205.637-12.17%209.157%203.869-4.97%207.117-8.407%2010.29-10.961z%22%20fill%3D%22%23f0f004%22%20fill-rule%3D%22evenodd%22/%3E%3Cpath%20d%3D%22m360.136%2017.218%206.962-1.742.33%2082.95-7.074%201.204zm18.928%2024.757%206.101-2.716.052%2059.478-5.892%201.217zm-1.45-21.448%204.92-4.015%204.086%204.547-4.921%204.121zm19.024%2020.365%206.962-1.421.033%2012.434c.001.534%203.823-13.89%2022.258-13.57%2017.9.1%2020.827%2013.957%2020.73%2017.064l.221%2043.725-6.102%201.324-.035-43.189c.07-1.261-2.79-11.927-15.439-11.966-12.646-.037-21.409%209.186-21.393%2015.078l.1%2038.047-7.07%201.847zm110.954%2058.546-6.962%201.42-.033-12.433c-.001-.534-3.825%2013.89-22.258%2013.57-17.9-.1-20.827-13.957-20.73-17.064l-.221-43.725%207.397-1.494.114%2043.19c.003%201.18%201.416%2012.096%2014.065%2012.135%2012.646.037%2021.506-7.616%2021.569-19.139l-.09-34.076%206.885-1.757zm13.645-59.037-4.882%203.82%2018.717%2024.494-19.963%2028.3%205.179%203.843%2018.766-26.28%2019.368%2026.902%204.791-3.82-20.757-28.765%2016.56-23.262-5.092-4.305-15.085%2021.525zM61.88%201.778c-5.385%2013.203-8.633%2021.839-14.629%2034.649%203.676%203.896%208.188%208.434%2015.516%2013.559-7.878-3.242-13.252-6.497-17.267-9.874-7.673%2016.011-19.695%2038.818-44.09%2082.65%2019.174-11.068%2034.037-17.893%2047.889-20.497a35%2035%200%200%201-.91-8.213l.023-.614c.304-12.284%206.694-21.73%2014.264-21.09%207.57.642%2013.454%2011.126%2013.15%2023.41-.058%202.312-.319%204.536-.774%206.598%2013.701%202.68%2028.405%209.487%2047.32%2020.407-3.73-6.866-7.059-13.056-10.238-18.95-5.007-3.882-10.23-8.933-20.884-14.402%207.323%201.903%2012.566%204.099%2016.653%206.552C75.58%2035.786%2072.963%2027.79%2061.88%201.778%22%20fill%3D%22%23f0f019%22%20fill-rule%3D%22evenodd%22/%3E%3Cpath%20d%3D%22M576.771%2093.265V80.603h-4.73v-1.695h11.38v1.695h-4.75v12.662zm8.629%200V78.908h2.859l3.398%2010.166q.47%201.42.686%202.125.245-.784.764-2.301l3.437-9.99h2.556v14.357h-1.831V81.25l-4.172%2012.016h-1.714l-4.152-12.222v12.222h-1.832%22%20font-weight%3D%22400%22%20font-size%3D%228.441%22%20font-family%3D%22DejaVu%20Sans%20Mono%22%20fill%3D%22%23f0f005%22/%3E%3C/svg%3E") !important;
+      background-size: 190px 40px !important;
+    }
+    :root.skin-theme-clientpref-os .cdx-text-input__input:enabled:focus,
+    .vector-feature-night-mode-enabled .cdx-text-input__input:enabled:focus,
+    .skin-invert .cdx-text-input__input:enabled:focus,
+    .notheme .cdx-text-input__input:enabled:focus {
+      border-color: #f0f019;
+      box-shadow: #f0f019 !important;
+    }
+    :root.skin-theme-clientpref-os .archwiki-template-box-tip,
+    .vector-feature-night-mode-enabled .archwiki-template-box-tip,
+    .skin-invert .archwiki-template-box-tip,
+    .notheme .archwiki-template-box-tip {
+      background-color: hsla(90, 90%, 65%, 0.2) !important;
+      border-color: hsla(90, 90%, 75%, 0.2);
+      color: #f0f005;
+    }
+    :root.skin-theme-clientpref-os .archwiki-template-box-note,
+    .vector-feature-night-mode-enabled .archwiki-template-box-note,
+    .skin-invert .archwiki-template-box-note,
+    .notheme .archwiki-template-box-note {
+      background-color: hsla(208, 100%, 61%, 0.25) !important;
+      border-color: hsla(208, 100%, 81%, 0.25) !important;
+      color: #f0f005;
+    }
+    :root.skin-theme-clientpref-os .archwiki-template-box-warning,
+    .vector-feature-night-mode-enabled .archwiki-template-box-warning,
+    .skin-invert .archwiki-template-box-warning,
+    .notheme .archwiki-template-box-warning {
+      background-color: hsla(7, 99%, 60%, 0.25) !important;
+      border-color: hsla(7, 99%, 80%, 0.25) !important;
+      color: #f0f005;
+    }
+    :root.skin-theme-clientpref-os .firstHeading,
+    .vector-feature-night-mode-enabled .firstHeading,
+    .skin-invert .firstHeading,
+    .notheme .firstHeading {
+      color: #f0f01b !important;
+    }
+    :root.skin-theme-clientpref-os #content,
+    .vector-feature-night-mode-enabled #content,
+    .skin-invert #content,
+    .notheme #content {
+      border-color: #f0f009;
+    }
+    :root.skin-theme-clientpref-os #content pre:not([class*="CodeMirror"]),
+    .vector-feature-night-mode-enabled #content pre:not([class*="CodeMirror"]),
+    .skin-invert #content pre:not([class*="CodeMirror"]),
+    .notheme #content pre:not([class*="CodeMirror"]),
+    :root.skin-theme-clientpref-os #content code,
+    .vector-feature-night-mode-enabled #content code,
+    .skin-invert #content code,
+    .notheme #content code,
+    :root.skin-theme-clientpref-os #content tt,
+    .vector-feature-night-mode-enabled #content tt,
+    .skin-invert #content tt,
+    .notheme #content tt {
+      background-color: #f0f00c;
+      color: #f0f004;
+      border-color: #f0f009;
+    }
+    :root.skin-theme-clientpref-os .vector-pinned-container,
+    .vector-feature-night-mode-enabled .vector-pinned-container,
+    .skin-invert .vector-pinned-container,
+    .notheme .vector-pinned-container {
+      border-color: #f0f009 !important;
+    }
+    :root.skin-theme-clientpref-os .vector-pinnable-header-label,
+    .vector-feature-night-mode-enabled .vector-pinnable-header-label,
+    .skin-invert .vector-pinnable-header-label,
+    .notheme .vector-pinnable-header-label {
+      color: #f0f004;
+    }
+    :root.skin-theme-clientpref-os .vector-pinnable-header-toggle-button,
+    .vector-feature-night-mode-enabled .vector-pinnable-header-toggle-button,
+    .skin-invert .vector-pinnable-header-toggle-button,
+    .notheme .vector-pinnable-header-toggle-button,
+    :root.skin-theme-clientpref-os .vector-pinnable-header-unpin-button,
+    .vector-feature-night-mode-enabled .vector-pinnable-header-unpin-button,
+    .skin-invert .vector-pinnable-header-unpin-button,
+    .notheme .vector-pinnable-header-unpin-button {
+      color: #f0f002;
+      background-color: #f0f01b;
+      border-color: #f0f001;
+    }
+    :root.skin-theme-clientpref-os .wikitable,
+    .vector-feature-night-mode-enabled .wikitable,
+    .skin-invert .wikitable,
+    .notheme .wikitable {
+      background-color: #f0f001;
+    }
+    :root.skin-theme-clientpref-os .wikitable > tr > th,
+    .vector-feature-night-mode-enabled .wikitable > tr > th,
+    .skin-invert .wikitable > tr > th,
+    .notheme .wikitable > tr > th,
+    :root.skin-theme-clientpref-os .wikitable > tr > td,
+    .vector-feature-night-mode-enabled .wikitable > tr > td,
+    .skin-invert .wikitable > tr > td,
+    .notheme .wikitable > tr > td,
+    :root.skin-theme-clientpref-os .wikitable > * > tr > th,
+    .vector-feature-night-mode-enabled .wikitable > * > tr > th,
+    .skin-invert .wikitable > * > tr > th,
+    .notheme .wikitable > * > tr > th,
+    :root.skin-theme-clientpref-os .wikitable > * > tr > td,
+    .vector-feature-night-mode-enabled .wikitable > * > tr > td,
+    .skin-invert .wikitable > * > tr > td,
+    .notheme .wikitable > * > tr > td {
+      color: #f0f004;
+      border-color: #f0f003;
+    }
+    :root.skin-theme-clientpref-os .wikitable > tr > th,
+    .vector-feature-night-mode-enabled .wikitable > tr > th,
+    .skin-invert .wikitable > tr > th,
+    .notheme .wikitable > tr > th,
+    :root.skin-theme-clientpref-os .wikitable > * > tr > th,
+    .vector-feature-night-mode-enabled .wikitable > * > tr > th,
+    .skin-invert .wikitable > * > tr > th,
+    .notheme .wikitable > * > tr > th {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root.skin-theme-clientpref-os .pre,
+    .vector-feature-night-mode-enabled .pre,
+    .skin-invert .pre,
+    .notheme .pre {
+      color: #f0f002;
+    }
+    :root.skin-theme-clientpref-os .mw-headline,
+    .vector-feature-night-mode-enabled .mw-headline,
+    .skin-invert .mw-headline,
+    .notheme .mw-headline {
+      color: #f0f004;
+    }
+    :root.skin-theme-clientpref-os .plainlinks,
+    .vector-feature-night-mode-enabled .plainlinks,
+    .skin-invert .plainlinks,
+    .notheme .plainlinks,
+    :root.skin-theme-clientpref-os .archwiki-template-man,
+    .vector-feature-night-mode-enabled .archwiki-template-man,
+    .skin-invert .archwiki-template-man,
+    .notheme .archwiki-template-man,
+    :root.skin-theme-clientpref-os .external text,
+    .vector-feature-night-mode-enabled .external text,
+    .skin-invert .external text,
+    .notheme .external text {
+      color: #505008;
+    }
+    :root.skin-theme-clientpref-os .cdx-button:enabled.cdx-button--weight-quiet,
+    .vector-feature-night-mode-enabled .cdx-button:enabled.cdx-button--weight-quiet,
+    .skin-invert .cdx-button:enabled.cdx-button--weight-quiet,
+    .notheme .cdx-button:enabled.cdx-button--weight-quiet,
+    :root.skin-theme-clientpref-os .cdx-button.cdx-button--fake-button--enabled,
+    .vector-feature-night-mode-enabled .cdx-button.cdx-button--fake-button--enabled,
+    .skin-invert .cdx-button.cdx-button--fake-button--enabled,
+    .notheme .cdx-button.cdx-button--fake-button--enabled,
+    :root.skin-theme-clientpref-os .cdx-button.cdx-button--fake-button--enabled.cdx-button--weight-quiet,
+    .vector-feature-night-mode-enabled .cdx-button.cdx-button--fake-button--enabled.cdx-button--weight-quiet,
+    .skin-invert .cdx-button.cdx-button--fake-button--enabled.cdx-button--weight-quiet,
+    .notheme .cdx-button.cdx-button--fake-button--enabled.cdx-button--weight-quiet,
+    :root.skin-theme-clientpref-os .diff-context,
+    .vector-feature-night-mode-enabled .diff-context,
+    .skin-invert .diff-context,
+    .notheme .diff-context,
+    :root.skin-theme-clientpref-os .oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle,
+    .vector-feature-night-mode-enabled .oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle,
+    .skin-invert .oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle,
+    .notheme .oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle,
+    :root.skin-theme-clientpref-os .oo-ui-checkboxInputWidget [type="checkbox"] + span,
+    .vector-feature-night-mode-enabled .oo-ui-checkboxInputWidget [type="checkbox"] + span,
+    .skin-invert .oo-ui-checkboxInputWidget [type="checkbox"] + span,
+    .notheme .oo-ui-checkboxInputWidget [type="checkbox"] + span {
+      background-color: #f0f00c;
+      color: #f0f004;
+      border-color: #f0f00a;
+    }
+    :root.skin-theme-clientpref-os .vector-feature-zebra-design-disabled,
+    .vector-feature-night-mode-enabled .vector-feature-zebra-design-disabled,
+    .skin-invert .vector-feature-zebra-design-disabled,
+    .notheme .vector-feature-zebra-design-disabled,
+    :root.skin-theme-clientpref-os #contentSub:not(:empty),
+    .vector-feature-night-mode-enabled #contentSub:not(:empty),
+    .skin-invert #contentSub:not(:empty),
+    .notheme #contentSub:not(:empty) {
+      color: #f0f00c !important;
+    }
+    :root.skin-theme-clientpref-os .mw-editfont-monospace,
+    .vector-feature-night-mode-enabled .mw-editfont-monospace,
+    .skin-invert .mw-editfont-monospace,
+    .notheme .mw-editfont-monospace {
+      background-color: #f0f00c;
+      color: #f0f004;
+      border-color: #f0f00b;
+    }
+    :root.skin-theme-clientpref-os .diff-deletedline,
+    .vector-feature-night-mode-enabled .diff-deletedline,
+    .skin-invert .diff-deletedline,
+    .notheme .diff-deletedline,
+    :root.skin-theme-clientpref-os .mw-message-box-warning,
+    .vector-feature-night-mode-enabled .mw-message-box-warning,
+    .skin-invert .mw-message-box-warning,
+    .notheme .mw-message-box-warning {
+      background-color: #f0f014;
+      color: #f0f002;
+    }
+    :root.skin-theme-clientpref-os .diff-addedline,
+    .vector-feature-night-mode-enabled .diff-addedline,
+    .skin-invert .diff-addedline,
+    .notheme .diff-addedline {
+      background-color: #f0f017;
+      color: #f0f002;
+    }
+    :root.skin-theme-clientpref-os .mw-message-box-error,
+    .vector-feature-night-mode-enabled .mw-message-box-error,
+    .skin-invert .mw-message-box-error,
+    .notheme .mw-message-box-error {
+      background-color: #f0f00e;
+      border-color: #f0f011;
+      color: #f0f001;
+    }
+    :root.skin-theme-clientpref-os .mw-number-text,
+    .vector-feature-night-mode-enabled .mw-number-text,
+    .skin-invert .mw-number-text,
+    .notheme .mw-number-text {
+      color: #f0f004;
+    }
+    :root.skin-theme-clientpref-os .cdx-checkbox__icon,
+    .vector-feature-night-mode-enabled .cdx-checkbox__icon,
+    .skin-invert .cdx-checkbox__icon,
+    .notheme .cdx-checkbox__icon {
+      background-color: #f0f00c;
+    }
+    :root.skin-theme-clientpref-os .oo-ui-checkboxInputWidget.oo-ui-widget-enabled [type="checkbox"]:checked + span,
+    .vector-feature-night-mode-enabled .oo-ui-checkboxInputWidget.oo-ui-widget-enabled [type="checkbox"]:checked + span,
+    .skin-invert .oo-ui-checkboxInputWidget.oo-ui-widget-enabled [type="checkbox"]:checked + span,
+    .notheme .oo-ui-checkboxInputWidget.oo-ui-widget-enabled [type="checkbox"]:checked + span,
+    :root.skin-theme-clientpref-os .cdx-checkbox__input:enabled:checked + .cdx-checkbox__icon,
+    .vector-feature-night-mode-enabled .cdx-checkbox__input:enabled:checked + .cdx-checkbox__icon,
+    .skin-invert .cdx-checkbox__input:enabled:checked + .cdx-checkbox__icon,
+    .notheme .cdx-checkbox__input:enabled:checked + .cdx-checkbox__icon,
+    :root.skin-theme-clientpref-os .cdx-button:enabled.cdx-button--weight-primary.cdx-button--action-progressive,
+    .vector-feature-night-mode-enabled .cdx-button:enabled.cdx-button--weight-primary.cdx-button--action-progressive,
+    .skin-invert .cdx-button:enabled.cdx-button--weight-primary.cdx-button--action-progressive,
+    .notheme .cdx-button:enabled.cdx-button--weight-primary.cdx-button--action-progressive {
+      background-color: #f0f019;
+      border-color: #f0f018;
+      color: #f0f002 !important;
+    }
+    :root.skin-theme-clientpref-os .vector-feature-zebra-design-disabled,
+    .vector-feature-night-mode-enabled .vector-feature-zebra-design-disabled,
+    .skin-invert .vector-feature-zebra-design-disabled,
+    .notheme .vector-feature-zebra-design-disabled,
+    :root.skin-theme-clientpref-os #vector-toc-pinned-container,
+    .vector-feature-night-mode-enabled #vector-toc-pinned-container,
+    .skin-invert #vector-toc-pinned-container,
+    .notheme #vector-toc-pinned-container,
+    :root.skin-theme-clientpref-os .vector-toc::after,
+    .vector-feature-night-mode-enabled .vector-toc::after,
+    .skin-invert .vector-toc::after,
+    .notheme .vector-toc::after {
+      background: linear-gradient(rgba(255, 255, 255, 0), #f0f001) !important;
+    }
+    :root.skin-theme-clientpref-os #archnavbar ul li.anb-selected a,
+    .vector-feature-night-mode-enabled #archnavbar ul li.anb-selected a,
+    .skin-invert #archnavbar ul li.anb-selected a,
+    .notheme #archnavbar ul li.anb-selected a {
+      color: #f0f01b !important;
+    }
+    :root.skin-theme-clientpref-os .archwiki-template-message,
+    .vector-feature-night-mode-enabled .archwiki-template-message,
+    .skin-invert .archwiki-template-message,
+    .notheme .archwiki-template-message {
+      background-color: #f0f001;
+    }
+    :root.skin-theme-clientpref-os .catlinks,
+    .vector-feature-night-mode-enabled .catlinks,
+    .skin-invert .catlinks,
+    .notheme .catlinks {
+      background-color: #f0f002;
+    }
+    :root.skin-theme-clientpref-os .mw-parser-output p,
+    .vector-feature-night-mode-enabled .mw-parser-output p,
+    .skin-invert .mw-parser-output p,
+    .notheme .mw-parser-output p {
+      color: #f0f004 !important;
+    }
+    :root.skin-theme-clientpref-os .archwiki-template-meta-related-articles,
+    .vector-feature-night-mode-enabled .archwiki-template-meta-related-articles,
+    .skin-invert .archwiki-template-meta-related-articles,
+    .notheme .archwiki-template-meta-related-articles {
+      background-color: #f0f00c;
+    }
+    :root.skin-theme-clientpref-os .archwiki-template-meta-related-articles p,
+    .vector-feature-night-mode-enabled .archwiki-template-meta-related-articles p,
+    .skin-invert .archwiki-template-meta-related-articles p,
+    .notheme .archwiki-template-meta-related-articles p {
+      color: #f0f004;
+      border-bottom-color: #f0f019;
+    }
+    :root.skin-theme-clientpref-os .archwiki-template-meta-related-articles ul li a,
+    .vector-feature-night-mode-enabled .archwiki-template-meta-related-articles ul li a,
+    .skin-invert .archwiki-template-meta-related-articles ul li a,
+    .notheme .archwiki-template-meta-related-articles ul li a {
+      color: #f0f019 important;
+    }
+    :root.skin-theme-clientpref-os .mw-plusminus-neg,
+    .vector-feature-night-mode-enabled .mw-plusminus-neg,
+    .skin-invert .mw-plusminus-neg,
+    .notheme .mw-plusminus-neg,
+    :root.skin-theme-clientpref-os a.new,
+    .vector-feature-night-mode-enabled a.new,
+    .skin-invert a.new,
+    .notheme a.new {
+      color: #f0f011 !important;
+    }
+    :root.skin-theme-clientpref-os .mw-plusminus-pos,
+    .vector-feature-night-mode-enabled .mw-plusminus-pos,
+    .skin-invert .mw-plusminus-pos,
+    .notheme .mw-plusminus-pos {
+      color: #f0f015;
+    }
+    :root.skin-theme-clientpref-os .mw-plusminus-null,
+    .vector-feature-night-mode-enabled .mw-plusminus-null,
+    .skin-invert .mw-plusminus-null,
+    .notheme .mw-plusminus-null {
+      color: #f0f006;
+    }
+    :root.skin-theme-clientpref-os .oo-ui-textInputWidget .oo-ui-inputWidget-input,
+    .vector-feature-night-mode-enabled .oo-ui-textInputWidget .oo-ui-inputWidget-input,
+    .skin-invert .oo-ui-textInputWidget .oo-ui-inputWidget-input,
+    .notheme .oo-ui-textInputWidget .oo-ui-inputWidget-input,
+    :root.skin-theme-clientpref-os .mw-widget-dateInputWidget-handle,
+    .vector-feature-night-mode-enabled .mw-widget-dateInputWidget-handle,
+    .skin-invert .mw-widget-dateInputWidget-handle,
+    .notheme .mw-widget-dateInputWidget-handle,
+    :root.skin-theme-clientpref-os .oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button,
+    .vector-feature-night-mode-enabled .oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button,
+    .skin-invert .oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button,
+    .notheme .oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button,
+    :root.skin-theme-clientpref-os #pagehistory li.selected,
+    .vector-feature-night-mode-enabled #pagehistory li.selected,
+    .skin-invert #pagehistory li.selected,
+    .notheme #pagehistory li.selected {
+      background-color: #f0f00c !important;
+      color: #f0f004 !important;
+      border-color: #f0f00a !important;
+    }
+    :root.skin-theme-clientpref-os .oo-ui-menuSelectWidget,
+    .vector-feature-night-mode-enabled .oo-ui-menuSelectWidget,
+    .skin-invert .oo-ui-menuSelectWidget,
+    .notheme .oo-ui-menuSelectWidget {
+      background-color: #f0f00c;
+      border-color: #f0f00a;
+    }
+    :root.skin-theme-clientpref-os .oo-ui-OptionWidget-highlighted,
+    .vector-feature-night-mode-enabled .oo-ui-OptionWidget-highlighted,
+    .skin-invert .oo-ui-OptionWidget-highlighted,
+    .notheme .oo-ui-OptionWidget-highlighted {
+      background-color: #f0f009 !important;
+    }
+    :root.skin-theme-clientpref-os .oo-ui-menuOptionWidget.oo-ui-widget-enabled.oo-ui-optionWidget,
+    .vector-feature-night-mode-enabled .oo-ui-menuOptionWidget.oo-ui-widget-enabled.oo-ui-optionWidget,
+    .skin-invert .oo-ui-menuOptionWidget.oo-ui-widget-enabled.oo-ui-optionWidget,
+    .notheme .oo-ui-menuOptionWidget.oo-ui-widget-enabled.oo-ui-optionWidget,
+    :root.skin-theme-clientpref-os .minoredit,
+    .vector-feature-night-mode-enabled .minoredit,
+    .skin-invert .minoredit,
+    .notheme .minoredit,
+    :root.skin-theme-clientpref-os .comment,
+    .vector-feature-night-mode-enabled .comment,
+    .skin-invert .comment,
+    .notheme .comment {
+      color: #f0f004;
+    }
+    :root.skin-theme-clientpref-os .mw-footer-container,
+    .vector-feature-night-mode-enabled .mw-footer-container,
+    .skin-invert .mw-footer-container,
+    .notheme .mw-footer-container {
+      color: #f0f004 !important;
+    }
+    :root.skin-theme-clientpref-os #archnavbarlist li a,
+    .vector-feature-night-mode-enabled #archnavbarlist li a,
+    .skin-invert #archnavbarlist li a,
+    .notheme #archnavbarlist li a {
+      color: #f0f019 !important;
+    }
+    :root.skin-theme-clientpref-os .anb-selected,
+    .vector-feature-night-mode-enabled .anb-selected,
+    .skin-invert .anb-selected,
+    .notheme .anb-selected {
+      color: #f0f005 !important;
+    }
+    :root.skin-theme-clientpref-os .mw-footer li,
+    .vector-feature-night-mode-enabled .mw-footer li,
+    .skin-invert .mw-footer li,
+    .notheme .mw-footer li {
+      color: #f0f004;
+    }
+    :root.skin-theme-clientpref-os .vector-main-menu,
+    .vector-feature-night-mode-enabled .vector-main-menu,
+    .skin-invert .vector-main-menu,
+    .notheme .vector-main-menu,
+    :root.skin-theme-clientpref-os .vector-pinnable-element,
+    .vector-feature-night-mode-enabled .vector-pinnable-element,
+    .skin-invert .vector-pinnable-element,
+    .notheme .vector-pinnable-element {
+      background-color: #f0f001 !important;
+    }
+    :root.skin-theme-clientpref-os #p-navigation ul li a,
+    .vector-feature-night-mode-enabled #p-navigation ul li a,
+    .skin-invert #p-navigation ul li a,
+    .notheme #p-navigation ul li a {
+      color: #f0f019 !important;
+    }
+    :root.skin-theme-clientpref-os .archwiki-template-box-note a,
+    .vector-feature-night-mode-enabled .archwiki-template-box-note a,
+    .skin-invert .archwiki-template-box-note a,
+    .notheme .archwiki-template-box-note a {
+      color: #f0f019 !important;
+    }
+    :root.skin-theme-clientpref-os .archwiki-template-box-note a:visited,
+    .vector-feature-night-mode-enabled .archwiki-template-box-note a:visited,
+    .skin-invert .archwiki-template-box-note a:visited,
+    .notheme .archwiki-template-box-note a:visited {
+      color: #f0f010 !important;
+    }
+    :root.skin-theme-clientpref-os .mw-page-title-main,
+    .vector-feature-night-mode-enabled .mw-page-title-main,
+    .skin-invert .mw-page-title-main,
+    .notheme .mw-page-title-main {
+      color: #f0f004;
+    }
+    :root.skin-theme-clientpref-os .vector-tab-noicon mw-list-item a,
+    .vector-feature-night-mode-enabled .vector-tab-noicon mw-list-item a,
+    .skin-invert .vector-tab-noicon mw-list-item a,
+    .notheme .vector-tab-noicon mw-list-item a {
+      color: #f0f019;
+    }
+    :root.skin-theme-clientpref-os .mw-header,
+    .vector-feature-night-mode-enabled .mw-header,
+    .skin-invert .mw-header,
+    .notheme .mw-header {
+      background-color: #f0f001 !important;
+      color: #f0f004;
+    }
+    :root.skin-theme-clientpref-os .mw-footer li a,
+    .vector-feature-night-mode-enabled .mw-footer li a,
+    .skin-invert .mw-footer li a,
+    .notheme .mw-footer li a {
+      color: #f0f019;
+    }
+    :root.skin-theme-clientpref-os .cdx-text-input__input:enabled,
+    .vector-feature-night-mode-enabled .cdx-text-input__input:enabled,
+    .skin-invert .cdx-text-input__input:enabled,
+    .notheme .cdx-text-input__input:enabled {
+      background-color: #f0f00c !important;
+      color: #f0f004 !important;
+      border-color: #f0f00b;
+    }
+    :root.skin-theme-clientpref-os .cdx-button:enabled,
+    .vector-feature-night-mode-enabled .cdx-button:enabled,
+    .skin-invert .cdx-button:enabled,
+    .notheme .cdx-button:enabled,
+    :root.skin-theme-clientpref-os .cdx-button.cdxbutton--fake-button--enabled,
+    .vector-feature-night-mode-enabled .cdx-button.cdxbutton--fake-button--enabled,
+    .skin-invert .cdx-button.cdxbutton--fake-button--enabled,
+    .notheme .cdx-button.cdxbutton--fake-button--enabled {
+      color: #f0f002;
+      background-color: #f0f01b;
+      border-color: #f0f001;
+    }
+    :root.skin-theme-clientpref-os .cdx-menu,
+    .vector-feature-night-mode-enabled .cdx-menu,
+    .skin-invert .cdx-menu,
+    .notheme .cdx-menu {
+      background-color: #f0f00c;
+    }
+    :root.skin-theme-clientpref-os .cdx-menu:hover,
+    .vector-feature-night-mode-enabled .cdx-menu:hover,
+    .skin-invert .cdx-menu:hover,
+    .notheme .cdx-menu:hover {
+      background-color: #f0f001 !important;
+    }
+    :root.skin-theme-clientpref-os .anb-home,
+    .vector-feature-night-mode-enabled .anb-home,
+    .skin-invert .anb-home,
+    .notheme .anb-home {
+      color: #f0f004 !important;
+    }
+    :root.skin-theme-clientpref-os .vector-dropdown-content,
+    .vector-feature-night-mode-enabled .vector-dropdown-content,
+    .skin-invert .vector-dropdown-content,
+    .notheme .vector-dropdown-content {
+      background-color: #f0f001 !important;
+    }
+    :root.skin-theme-clientpref-os .mw-headline::before,
+    .vector-feature-night-mode-enabled .mw-headline::before,
+    .skin-invert .mw-headline::before,
+    .notheme .mw-headline::before {
+      color: #f0f01b !important;
+    }
+    :root.skin-theme-clientpref-os .cdx-button,
+    .vector-feature-night-mode-enabled .cdx-button,
+    .skin-invert .cdx-button,
+    .notheme .cdx-button {
+      background-color: #f0f001 !important;
+      color: #f0f004 !important;
+      border-color: #f0f001 !important;
+    }
+    :root.skin-theme-clientpref-os .mw-body,
+    .vector-feature-night-mode-enabled .mw-body,
+    .skin-invert .mw-body,
+    .notheme .mw-body {
+      background-color: #f0f001 !important;
+      color: #f0f004 !important;
+      border-color: #f0f001 !important;
+    }
+    :root.skin-theme-clientpref-os .mw-search-profile-tabs,
+    .vector-feature-night-mode-enabled .mw-search-profile-tabs,
+    .skin-invert .mw-search-profile-tabs,
+    .notheme .mw-search-profile-tabs {
+      background-color: #f0f001 !important;
+      color: #f0f004 !important;
+      border-color: #f0f001 !important;
+    }
+    :root.skin-theme-clientpref-os .mw-content-ltr,
+    .vector-feature-night-mode-enabled .mw-content-ltr,
+    .skin-invert .mw-content-ltr,
+    .notheme .mw-content-ltr {
+      background-color: #f0f001 !important;
+    }
+    :root.skin-theme-clientpref-os .vector-sticky-pinned-container::after,
+    .vector-feature-night-mode-enabled .vector-sticky-pinned-container::after,
+    .skin-invert .vector-sticky-pinned-container::after,
+    .notheme .vector-sticky-pinned-container::after {
+      background: #f0f001 !important;
+    }
+    :root.skin-theme-clientpref-os .cdx-search-input,
+    .vector-feature-night-mode-enabled .cdx-search-input,
+    .skin-invert .cdx-search-input,
+    .notheme .cdx-search-input {
+      border-color: #f0f002 !important;
+    }
+    :root.skin-theme-clientpref-os .oo-ui-widget:hover,
+    .vector-feature-night-mode-enabled .oo-ui-widget:hover,
+    .skin-invert .oo-ui-widget:hover,
+    .notheme .oo-ui-widget:hover {
+      background-color: #f0f00c !important;
+    }
+  }
+  @media (prefers-color-scheme: light) and screen {
+    :root.skin-theme-clientpref-os html.client-darkmode,
+    .vector-feature-night-mode-enabled html.client-darkmode,
+    .skin-invert html.client-darkmode,
+    .notheme html.client-darkmode {
+      background-color: #f0f001;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root.skin-theme-clientpref-os,
+    .vector-feature-night-mode-enabled,
+    .skin-invert,
+    .notheme {
+      color-scheme: dark;
+    }
+    :root.skin-theme-clientpref-os ::selection,
+    .vector-feature-night-mode-enabled ::selection,
+    .skin-invert ::selection,
+    .notheme ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root.skin-theme-clientpref-os input::placeholder,
+    .vector-feature-night-mode-enabled input::placeholder,
+    .skin-invert input::placeholder,
+    .notheme input::placeholder,
+    :root.skin-theme-clientpref-os textarea::placeholder,
+    .vector-feature-night-mode-enabled textarea::placeholder,
+    .skin-invert textarea::placeholder,
+    .notheme textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root.skin-theme-clientpref-os #content table,
+    .vector-feature-night-mode-enabled #content table,
+    .skin-invert #content table,
+    .notheme #content table,
+    :root.skin-theme-clientpref-os #content h1,
+    .vector-feature-night-mode-enabled #content h1,
+    .skin-invert #content h1,
+    .notheme #content h1,
+    :root.skin-theme-clientpref-os #content h2,
+    .vector-feature-night-mode-enabled #content h2,
+    .skin-invert #content h2,
+    .notheme #content h2,
+    :root.skin-theme-clientpref-os #content h3,
+    .vector-feature-night-mode-enabled #content h3,
+    .skin-invert #content h3,
+    .notheme #content h3,
+    :root.skin-theme-clientpref-os #content h4,
+    .vector-feature-night-mode-enabled #content h4,
+    .skin-invert #content h4,
+    .notheme #content h4,
+    :root.skin-theme-clientpref-os #content h5,
+    .vector-feature-night-mode-enabled #content h5,
+    .skin-invert #content h5,
+    .notheme #content h5,
+    :root.skin-theme-clientpref-os #content pre,
+    .vector-feature-night-mode-enabled #content pre,
+    .skin-invert #content pre,
+    .notheme #content pre,
+    :root.skin-theme-clientpref-os #content code,
+    .vector-feature-night-mode-enabled #content code,
+    .skin-invert #content code,
+    .notheme #content code,
+    :root.skin-theme-clientpref-os #content tt,
+    .vector-feature-night-mode-enabled #content tt,
+    .skin-invert #content tt,
+    .notheme #content tt {
+      color: #f0f004 !important;
+    }
+    :root.skin-theme-clientpref-os body.skin-vector-2022 .vector-sticky-header,
+    .vector-feature-night-mode-enabled body.skin-vector-2022 .vector-sticky-header,
+    .skin-invert body.skin-vector-2022 .vector-sticky-header,
+    .notheme body.skin-vector-2022 .vector-sticky-header {
+      color: #f0f004 !important;
+      background-color: #f0f002 !important;
+      border-bottom-color: #f0f019 !important;
+    }
+    :root.skin-theme-clientpref-os #vector-main-menu-pinned-container,
+    .vector-feature-night-mode-enabled #vector-main-menu-pinned-container,
+    .skin-invert #vector-main-menu-pinned-container,
+    .notheme #vector-main-menu-pinned-container,
+    :root.skin-theme-clientpref-os #vector-page-tools-pinned-container,
+    .vector-feature-night-mode-enabled #vector-page-tools-pinned-container,
+    .skin-invert #vector-page-tools-pinned-container,
+    .notheme #vector-page-tools-pinned-container {
+      background-color: #f0f001 !important;
+    }
+    :root.skin-theme-clientpref-os #ooui-php-191,
+    .vector-feature-night-mode-enabled #ooui-php-191,
+    .skin-invert #ooui-php-191,
+    .notheme #ooui-php-191,
+    :root.skin-theme-clientpref-os #preferences .mw-htmlform-submit-buttons,
+    .vector-feature-night-mode-enabled #preferences .mw-htmlform-submit-buttons,
+    .skin-invert #preferences .mw-htmlform-submit-buttons,
+    .notheme #preferences .mw-htmlform-submit-buttons {
+      background-color: #f0f002 !important;
+    }
+    :root.skin-theme-clientpref-os .mw-echo-ui-notificationItemWidget-content-message-header,
+    .vector-feature-night-mode-enabled .mw-echo-ui-notificationItemWidget-content-message-header,
+    .skin-invert .mw-echo-ui-notificationItemWidget-content-message-header,
+    .notheme .mw-echo-ui-notificationItemWidget-content-message-header,
+    :root.skin-theme-clientpref-os .oo-ui-labelElement-label,
+    .vector-feature-night-mode-enabled .oo-ui-labelElement-label,
+    .skin-invert .oo-ui-labelElement-label,
+    .notheme .oo-ui-labelElement-label {
+      color: #f0f004 !important;
+    }
+    :root.skin-theme-clientpref-os .oo-ui-optionWidget-selected,
+    .vector-feature-night-mode-enabled .oo-ui-optionWidget-selected,
+    .skin-invert .oo-ui-optionWidget-selected,
+    .notheme .oo-ui-optionWidget-selected {
+      background-color: #f0f00a !important;
+    }
+    :root.skin-theme-clientpref-os .oo-ui-buttonElement-framed.oo-ui-widget-disabled > .oo-ui-buttonElement-button,
+    .vector-feature-night-mode-enabled .oo-ui-buttonElement-framed.oo-ui-widget-disabled > .oo-ui-buttonElement-button,
+    .skin-invert .oo-ui-buttonElement-framed.oo-ui-widget-disabled > .oo-ui-buttonElement-button,
+    .notheme .oo-ui-buttonElement-framed.oo-ui-widget-disabled > .oo-ui-buttonElement-button {
+      background-color: #f0f00c !important;
+      color: #f0f004 !important;
+      border-color: #f0f00a !important;
+      filter: brightness(0.4);
+      cursor: not-allowed;
+    }
+    :root.skin-theme-clientpref-os .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:nth-child(even) td,
+    .vector-feature-night-mode-enabled .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:nth-child(even) td,
+    .skin-invert .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:nth-child(even) td,
+    .notheme .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:nth-child(even) td {
+      background-color: #f0f00b !important;
+    }
+    :root.skin-theme-clientpref-os .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:hover td,
+    .vector-feature-night-mode-enabled .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:hover td,
+    .skin-invert .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:hover td,
+    .notheme .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:hover td {
+      background-color: #f0f00a !important;
+    }
+    :root.skin-theme-clientpref-os .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:nth-child(odd) td,
+    .vector-feature-night-mode-enabled .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:nth-child(odd) td,
+    .skin-invert .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:nth-child(odd) td,
+    .notheme .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:nth-child(odd) td,
+    :root.skin-theme-clientpref-os .mw-rcfilters-ui-filterTagMultiselectWidget.oo-ui-widget-enabled .oo-ui-tagMultiselectWidget-handle,
+    .vector-feature-night-mode-enabled .mw-rcfilters-ui-filterTagMultiselectWidget.oo-ui-widget-enabled .oo-ui-tagMultiselectWidget-handle,
+    .skin-invert .mw-rcfilters-ui-filterTagMultiselectWidget.oo-ui-widget-enabled .oo-ui-tagMultiselectWidget-handle,
+    .notheme .mw-rcfilters-ui-filterTagMultiselectWidget.oo-ui-widget-enabled .oo-ui-tagMultiselectWidget-handle,
+    :root.skin-theme-clientpref-os .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined .oo-ui-tagItemWidget.oo-ui-widget-enabled,
+    .vector-feature-night-mode-enabled .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined .oo-ui-tagItemWidget.oo-ui-widget-enabled,
+    .skin-invert .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined .oo-ui-tagItemWidget.oo-ui-widget-enabled,
+    .notheme .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined .oo-ui-tagItemWidget.oo-ui-widget-enabled,
+    :root.skin-theme-clientpref-os .mw-rcfilters-ui-cell.mw-rcfilters-ui-filterTagMultiselectWidget-views-select,
+    .vector-feature-night-mode-enabled .mw-rcfilters-ui-cell.mw-rcfilters-ui-filterTagMultiselectWidget-views-select,
+    .skin-invert .mw-rcfilters-ui-cell.mw-rcfilters-ui-filterTagMultiselectWidget-views-select,
+    .notheme .mw-rcfilters-ui-cell.mw-rcfilters-ui-filterTagMultiselectWidget-views-select,
+    :root.skin-theme-clientpref-os .mw-rcfilters-ui-changesListWrapperWidget .mw-changeslist-legend,
+    .vector-feature-night-mode-enabled .mw-rcfilters-ui-changesListWrapperWidget .mw-changeslist-legend,
+    .skin-invert .mw-rcfilters-ui-changesListWrapperWidget .mw-changeslist-legend,
+    .notheme .mw-rcfilters-ui-changesListWrapperWidget .mw-changeslist-legend,
+    :root.skin-theme-clientpref-os .oo-ui-popupWidget-popup,
+    .vector-feature-night-mode-enabled .oo-ui-popupWidget-popup,
+    .skin-invert .oo-ui-popupWidget-popup,
+    .notheme .oo-ui-popupWidget-popup,
+    :root.skin-theme-clientpref-os .mw-echo-ui-notificationItemWidget,
+    .vector-feature-night-mode-enabled .mw-echo-ui-notificationItemWidget,
+    .skin-invert .mw-echo-ui-notificationItemWidget,
+    .notheme .mw-echo-ui-notificationItemWidget,
+    :root.skin-theme-clientpref-os .mw-echo-ui-placeholderItemWidget,
+    .vector-feature-night-mode-enabled .mw-echo-ui-placeholderItemWidget,
+    .skin-invert .mw-echo-ui-placeholderItemWidget,
+    .notheme .mw-echo-ui-placeholderItemWidget {
+      background-color: #f0f00c !important;
+    }
+    :root.skin-theme-clientpref-os .mw-echo-ui-notificationsInboxWidget-toolbarWrapper,
+    .vector-feature-night-mode-enabled .mw-echo-ui-notificationsInboxWidget-toolbarWrapper,
+    .skin-invert .mw-echo-ui-notificationsInboxWidget-toolbarWrapper,
+    .notheme .mw-echo-ui-notificationsInboxWidget-toolbarWrapper {
+      background-color: #f0f001 !important;
+    }
+    :root.skin-theme-clientpref-os #archnavbar,
+    .vector-feature-night-mode-enabled #archnavbar,
+    .skin-invert #archnavbar,
+    .notheme #archnavbar {
+      background-color: #f0f002 !important;
+      border-bottom-color: #f0f019 !important;
+    }
+    :root.skin-theme-clientpref-os .mw-parser-output,
+    .vector-feature-night-mode-enabled .mw-parser-output,
+    .skin-invert .mw-parser-output,
+    .notheme .mw-parser-output {
+      background-color: #f0f001 !important;
+    }
+    :root.skin-theme-clientpref-os .mw-page-container,
+    .vector-feature-night-mode-enabled .mw-page-container,
+    .skin-invert .mw-page-container,
+    .notheme .mw-page-container {
+      background-color: #f0f001 !important;
+    }
+    :root.skin-theme-clientpref-os .vector-header-container,
+    .vector-feature-night-mode-enabled .vector-header-container,
+    .skin-invert .vector-header-container,
+    .notheme .vector-header-container {
+      background-color: #f0f001 !important;
+    }
+    :root.skin-theme-clientpref-os #content a:not([role="button"], .new),
+    .vector-feature-night-mode-enabled #content a:not([role="button"], .new),
+    .skin-invert #content a:not([role="button"], .new),
+    .notheme #content a:not([role="button"], .new),
+    :root.skin-theme-clientpref-os header.mw-header li:not(.new) a:not([role="button"], .new),
+    .vector-feature-night-mode-enabled header.mw-header li:not(.new) a:not([role="button"], .new),
+    .skin-invert header.mw-header li:not(.new) a:not([role="button"], .new),
+    .notheme header.mw-header li:not(.new) a:not([role="button"], .new),
+    :root.skin-theme-clientpref-os #mw-panel-toc a:not([role="button"], .new),
+    .vector-feature-night-mode-enabled #mw-panel-toc a:not([role="button"], .new),
+    .skin-invert #mw-panel-toc a:not([role="button"], .new),
+    .notheme #mw-panel-toc a:not([role="button"], .new),
+    :root.skin-theme-clientpref-os #mw-navigation li:not(.new) a:not([role="button"], .new),
+    .vector-feature-night-mode-enabled #mw-navigation li:not(.new) a:not([role="button"], .new),
+    .skin-invert #mw-navigation li:not(.new) a:not([role="button"], .new),
+    .notheme #mw-navigation li:not(.new) a:not([role="button"], .new),
+    :root.skin-theme-clientpref-os #mw-panel li:not(.new) a:not([role="button"], .new),
+    .vector-feature-night-mode-enabled #mw-panel li:not(.new) a:not([role="button"], .new),
+    .skin-invert #mw-panel li:not(.new) a:not([role="button"], .new),
+    .notheme #mw-panel li:not(.new) a:not([role="button"], .new),
+    :root.skin-theme-clientpref-os #column-one li:not(.new) a:not([role="button"], .new),
+    .vector-feature-night-mode-enabled #column-one li:not(.new) a:not([role="button"], .new),
+    .skin-invert #column-one li:not(.new) a:not([role="button"], .new),
+    .notheme #column-one li:not(.new) a:not([role="button"], .new),
+    :root.skin-theme-clientpref-os #footer a:not([role="button"], .new),
+    .vector-feature-night-mode-enabled #footer a:not([role="button"], .new),
+    .skin-invert #footer a:not([role="button"], .new),
+    .notheme #footer a:not([role="button"], .new) {
+      color: #f0f019 !important;
+    }
+    :root.skin-theme-clientpref-os .vector-feature-zebra-design-disabled,
+    .vector-feature-night-mode-enabled .vector-feature-zebra-design-disabled,
+    .skin-invert .vector-feature-zebra-design-disabled,
+    .notheme .vector-feature-zebra-design-disabled,
+    :root.skin-theme-clientpref-os body,
+    .vector-feature-night-mode-enabled body,
+    .skin-invert body,
+    .notheme body {
+      background-color: #f0f001;
+    }
+    :root.skin-theme-clientpref-os #archnavbarlogo,
+    .vector-feature-night-mode-enabled #archnavbarlogo,
+    .skin-invert #archnavbarlogo,
+    .notheme #archnavbarlogo {
+      background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20version%3D%221%22%20width%3D%22600%22%20height%3D%22126%22%3E%3Cpath%20d%3D%22M159.568%2034.427c-8.89-.014-16.267%201.809-19.12%202.803l-2.937%2015.857c-.007.058%2014.617-3.9%2021.059-3.667%2010.665.383%2011.646%204.076%2011.46%209.06.182.292-2.752-4.503-11.979-4.664-11.64-.2-28.069%204.122-28.046%2021.692-.314%2019.765%2014.764%2025.579%2025.032%2025.686%209.232-.168%2013.563-3.496%2015.934-5.28%203.115-3.257%206.679-6.532%2010.078-10.462-3.216%205.844-6.005%209.884-8.907%2012.977v2.611l14.033-2.361.096-38.144c-.143-5.399%203.096-26.057-26.703-26.108m-2.016%2033.21c5.817.08%2012.488%202.948%2012.497%209.849.03%206.277-7.863%209.651-12.996%209.598-5.135-.053-11.949-4.036-11.979-10.155.099-5.47%206.426-9.432%2012.478-9.291zm37.972-29.685-.095%2063.166%2016.348-3.15.027-35.814c.004-5.333%207.62-11.564%2017.178-11.464%202.028-3.67%205.84-13.05%206.77-15.183-21.351-.051-21.623%206.137-25.336%209.18-.04-5.806-.013-9.292-.013-9.292zm92.002%208.292c-.158-.074-8.526-9.788-25.35-9.864-15.758-.262-33.433%205.847-33.716%2032.27.138%2023.232%2016.979%2032.311%2033.805%2032.488%2018.007.187%2025.172-11.26%2025.602-11.543-2.149-1.863-10.196-9.837-10.196-9.837s-5.027%207.157-14.779%207.248c-9.755.093-18.234-7.54-18.354-18.189-.125-10.65%207.795-16.419%2018.427-16.885%209.205-.002%2014.516%205.943%2014.516%205.943zm20.606-30.399-15.434%203.628.115%2082.277%2015.204-2.745.172-38.72c.033-4.06%205.874-10.295%2015.626-10.097%209.325.097%2011.41%206.215%2011.384%206.988l.269%2044.824%2014.993-2.65.057-47.53c.099-4.574-10.018-14.233-26.28-14.302-7.729.012-12.009%201.762-14.187%203.052-3.726%202.879-7.985%205.637-12.17%209.157%203.869-4.97%207.117-8.407%2010.29-10.961z%22%20fill%3D%22%23f0f004%22%20fill-rule%3D%22evenodd%22/%3E%3Cpath%20d%3D%22m360.136%2017.218%206.962-1.742.33%2082.95-7.074%201.204zm18.928%2024.757%206.101-2.716.052%2059.478-5.892%201.217zm-1.45-21.448%204.92-4.015%204.086%204.547-4.921%204.121zm19.024%2020.365%206.962-1.421.033%2012.434c.001.534%203.823-13.89%2022.258-13.57%2017.9.1%2020.827%2013.957%2020.73%2017.064l.221%2043.725-6.102%201.324-.035-43.189c.07-1.261-2.79-11.927-15.439-11.966-12.646-.037-21.409%209.186-21.393%2015.078l.1%2038.047-7.07%201.847zm110.954%2058.546-6.962%201.42-.033-12.433c-.001-.534-3.825%2013.89-22.258%2013.57-17.9-.1-20.827-13.957-20.73-17.064l-.221-43.725%207.397-1.494.114%2043.19c.003%201.18%201.416%2012.096%2014.065%2012.135%2012.646.037%2021.506-7.616%2021.569-19.139l-.09-34.076%206.885-1.757zm13.645-59.037-4.882%203.82%2018.717%2024.494-19.963%2028.3%205.179%203.843%2018.766-26.28%2019.368%2026.902%204.791-3.82-20.757-28.765%2016.56-23.262-5.092-4.305-15.085%2021.525zM61.88%201.778c-5.385%2013.203-8.633%2021.839-14.629%2034.649%203.676%203.896%208.188%208.434%2015.516%2013.559-7.878-3.242-13.252-6.497-17.267-9.874-7.673%2016.011-19.695%2038.818-44.09%2082.65%2019.174-11.068%2034.037-17.893%2047.889-20.497a35%2035%200%200%201-.91-8.213l.023-.614c.304-12.284%206.694-21.73%2014.264-21.09%207.57.642%2013.454%2011.126%2013.15%2023.41-.058%202.312-.319%204.536-.774%206.598%2013.701%202.68%2028.405%209.487%2047.32%2020.407-3.73-6.866-7.059-13.056-10.238-18.95-5.007-3.882-10.23-8.933-20.884-14.402%207.323%201.903%2012.566%204.099%2016.653%206.552C75.58%2035.786%2072.963%2027.79%2061.88%201.778%22%20fill%3D%22%23f0f019%22%20fill-rule%3D%22evenodd%22/%3E%3Cpath%20d%3D%22M576.771%2093.265V80.603h-4.73v-1.695h11.38v1.695h-4.75v12.662zm8.629%200V78.908h2.859l3.398%2010.166q.47%201.42.686%202.125.245-.784.764-2.301l3.437-9.99h2.556v14.357h-1.831V81.25l-4.172%2012.016h-1.714l-4.152-12.222v12.222h-1.832%22%20font-weight%3D%22400%22%20font-size%3D%228.441%22%20font-family%3D%22DejaVu%20Sans%20Mono%22%20fill%3D%22%23f0f005%22/%3E%3C/svg%3E") !important;
+      background-size: 190px 40px !important;
+    }
+    :root.skin-theme-clientpref-os .cdx-text-input__input:enabled:focus,
+    .vector-feature-night-mode-enabled .cdx-text-input__input:enabled:focus,
+    .skin-invert .cdx-text-input__input:enabled:focus,
+    .notheme .cdx-text-input__input:enabled:focus {
+      border-color: #f0f019;
+      box-shadow: #f0f019 !important;
+    }
+    :root.skin-theme-clientpref-os .archwiki-template-box-tip,
+    .vector-feature-night-mode-enabled .archwiki-template-box-tip,
+    .skin-invert .archwiki-template-box-tip,
+    .notheme .archwiki-template-box-tip {
+      background-color: hsla(90, 90%, 65%, 0.2) !important;
+      border-color: hsla(90, 90%, 75%, 0.2);
+      color: #f0f005;
+    }
+    :root.skin-theme-clientpref-os .archwiki-template-box-note,
+    .vector-feature-night-mode-enabled .archwiki-template-box-note,
+    .skin-invert .archwiki-template-box-note,
+    .notheme .archwiki-template-box-note {
+      background-color: hsla(208, 100%, 61%, 0.25) !important;
+      border-color: hsla(208, 100%, 81%, 0.25) !important;
+      color: #f0f005;
+    }
+    :root.skin-theme-clientpref-os .archwiki-template-box-warning,
+    .vector-feature-night-mode-enabled .archwiki-template-box-warning,
+    .skin-invert .archwiki-template-box-warning,
+    .notheme .archwiki-template-box-warning {
+      background-color: hsla(7, 99%, 60%, 0.25) !important;
+      border-color: hsla(7, 99%, 80%, 0.25) !important;
+      color: #f0f005;
+    }
+    :root.skin-theme-clientpref-os .firstHeading,
+    .vector-feature-night-mode-enabled .firstHeading,
+    .skin-invert .firstHeading,
+    .notheme .firstHeading {
+      color: #f0f01b !important;
+    }
+    :root.skin-theme-clientpref-os #content,
+    .vector-feature-night-mode-enabled #content,
+    .skin-invert #content,
+    .notheme #content {
+      border-color: #f0f009;
+    }
+    :root.skin-theme-clientpref-os #content pre:not([class*="CodeMirror"]),
+    .vector-feature-night-mode-enabled #content pre:not([class*="CodeMirror"]),
+    .skin-invert #content pre:not([class*="CodeMirror"]),
+    .notheme #content pre:not([class*="CodeMirror"]),
+    :root.skin-theme-clientpref-os #content code,
+    .vector-feature-night-mode-enabled #content code,
+    .skin-invert #content code,
+    .notheme #content code,
+    :root.skin-theme-clientpref-os #content tt,
+    .vector-feature-night-mode-enabled #content tt,
+    .skin-invert #content tt,
+    .notheme #content tt {
+      background-color: #f0f00c;
+      color: #f0f004;
+      border-color: #f0f009;
+    }
+    :root.skin-theme-clientpref-os .vector-pinned-container,
+    .vector-feature-night-mode-enabled .vector-pinned-container,
+    .skin-invert .vector-pinned-container,
+    .notheme .vector-pinned-container {
+      border-color: #f0f009 !important;
+    }
+    :root.skin-theme-clientpref-os .vector-pinnable-header-label,
+    .vector-feature-night-mode-enabled .vector-pinnable-header-label,
+    .skin-invert .vector-pinnable-header-label,
+    .notheme .vector-pinnable-header-label {
+      color: #f0f004;
+    }
+    :root.skin-theme-clientpref-os .vector-pinnable-header-toggle-button,
+    .vector-feature-night-mode-enabled .vector-pinnable-header-toggle-button,
+    .skin-invert .vector-pinnable-header-toggle-button,
+    .notheme .vector-pinnable-header-toggle-button,
+    :root.skin-theme-clientpref-os .vector-pinnable-header-unpin-button,
+    .vector-feature-night-mode-enabled .vector-pinnable-header-unpin-button,
+    .skin-invert .vector-pinnable-header-unpin-button,
+    .notheme .vector-pinnable-header-unpin-button {
+      color: #f0f002;
+      background-color: #f0f01b;
+      border-color: #f0f001;
+    }
+    :root.skin-theme-clientpref-os .wikitable,
+    .vector-feature-night-mode-enabled .wikitable,
+    .skin-invert .wikitable,
+    .notheme .wikitable {
+      background-color: #f0f001;
+    }
+    :root.skin-theme-clientpref-os .wikitable > tr > th,
+    .vector-feature-night-mode-enabled .wikitable > tr > th,
+    .skin-invert .wikitable > tr > th,
+    .notheme .wikitable > tr > th,
+    :root.skin-theme-clientpref-os .wikitable > tr > td,
+    .vector-feature-night-mode-enabled .wikitable > tr > td,
+    .skin-invert .wikitable > tr > td,
+    .notheme .wikitable > tr > td,
+    :root.skin-theme-clientpref-os .wikitable > * > tr > th,
+    .vector-feature-night-mode-enabled .wikitable > * > tr > th,
+    .skin-invert .wikitable > * > tr > th,
+    .notheme .wikitable > * > tr > th,
+    :root.skin-theme-clientpref-os .wikitable > * > tr > td,
+    .vector-feature-night-mode-enabled .wikitable > * > tr > td,
+    .skin-invert .wikitable > * > tr > td,
+    .notheme .wikitable > * > tr > td {
+      color: #f0f004;
+      border-color: #f0f003;
+    }
+    :root.skin-theme-clientpref-os .wikitable > tr > th,
+    .vector-feature-night-mode-enabled .wikitable > tr > th,
+    .skin-invert .wikitable > tr > th,
+    .notheme .wikitable > tr > th,
+    :root.skin-theme-clientpref-os .wikitable > * > tr > th,
+    .vector-feature-night-mode-enabled .wikitable > * > tr > th,
+    .skin-invert .wikitable > * > tr > th,
+    .notheme .wikitable > * > tr > th {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root.skin-theme-clientpref-os .pre,
+    .vector-feature-night-mode-enabled .pre,
+    .skin-invert .pre,
+    .notheme .pre {
+      color: #f0f002;
+    }
+    :root.skin-theme-clientpref-os .mw-headline,
+    .vector-feature-night-mode-enabled .mw-headline,
+    .skin-invert .mw-headline,
+    .notheme .mw-headline {
+      color: #f0f004;
+    }
+    :root.skin-theme-clientpref-os .plainlinks,
+    .vector-feature-night-mode-enabled .plainlinks,
+    .skin-invert .plainlinks,
+    .notheme .plainlinks,
+    :root.skin-theme-clientpref-os .archwiki-template-man,
+    .vector-feature-night-mode-enabled .archwiki-template-man,
+    .skin-invert .archwiki-template-man,
+    .notheme .archwiki-template-man,
+    :root.skin-theme-clientpref-os .external text,
+    .vector-feature-night-mode-enabled .external text,
+    .skin-invert .external text,
+    .notheme .external text {
+      color: #505008;
+    }
+    :root.skin-theme-clientpref-os .cdx-button:enabled.cdx-button--weight-quiet,
+    .vector-feature-night-mode-enabled .cdx-button:enabled.cdx-button--weight-quiet,
+    .skin-invert .cdx-button:enabled.cdx-button--weight-quiet,
+    .notheme .cdx-button:enabled.cdx-button--weight-quiet,
+    :root.skin-theme-clientpref-os .cdx-button.cdx-button--fake-button--enabled,
+    .vector-feature-night-mode-enabled .cdx-button.cdx-button--fake-button--enabled,
+    .skin-invert .cdx-button.cdx-button--fake-button--enabled,
+    .notheme .cdx-button.cdx-button--fake-button--enabled,
+    :root.skin-theme-clientpref-os .cdx-button.cdx-button--fake-button--enabled.cdx-button--weight-quiet,
+    .vector-feature-night-mode-enabled .cdx-button.cdx-button--fake-button--enabled.cdx-button--weight-quiet,
+    .skin-invert .cdx-button.cdx-button--fake-button--enabled.cdx-button--weight-quiet,
+    .notheme .cdx-button.cdx-button--fake-button--enabled.cdx-button--weight-quiet,
+    :root.skin-theme-clientpref-os .diff-context,
+    .vector-feature-night-mode-enabled .diff-context,
+    .skin-invert .diff-context,
+    .notheme .diff-context,
+    :root.skin-theme-clientpref-os .oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle,
+    .vector-feature-night-mode-enabled .oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle,
+    .skin-invert .oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle,
+    .notheme .oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle,
+    :root.skin-theme-clientpref-os .oo-ui-checkboxInputWidget [type="checkbox"] + span,
+    .vector-feature-night-mode-enabled .oo-ui-checkboxInputWidget [type="checkbox"] + span,
+    .skin-invert .oo-ui-checkboxInputWidget [type="checkbox"] + span,
+    .notheme .oo-ui-checkboxInputWidget [type="checkbox"] + span {
+      background-color: #f0f00c;
+      color: #f0f004;
+      border-color: #f0f00a;
+    }
+    :root.skin-theme-clientpref-os .vector-feature-zebra-design-disabled,
+    .vector-feature-night-mode-enabled .vector-feature-zebra-design-disabled,
+    .skin-invert .vector-feature-zebra-design-disabled,
+    .notheme .vector-feature-zebra-design-disabled,
+    :root.skin-theme-clientpref-os #contentSub:not(:empty),
+    .vector-feature-night-mode-enabled #contentSub:not(:empty),
+    .skin-invert #contentSub:not(:empty),
+    .notheme #contentSub:not(:empty) {
+      color: #f0f00c !important;
+    }
+    :root.skin-theme-clientpref-os .mw-editfont-monospace,
+    .vector-feature-night-mode-enabled .mw-editfont-monospace,
+    .skin-invert .mw-editfont-monospace,
+    .notheme .mw-editfont-monospace {
+      background-color: #f0f00c;
+      color: #f0f004;
+      border-color: #f0f00b;
+    }
+    :root.skin-theme-clientpref-os .diff-deletedline,
+    .vector-feature-night-mode-enabled .diff-deletedline,
+    .skin-invert .diff-deletedline,
+    .notheme .diff-deletedline,
+    :root.skin-theme-clientpref-os .mw-message-box-warning,
+    .vector-feature-night-mode-enabled .mw-message-box-warning,
+    .skin-invert .mw-message-box-warning,
+    .notheme .mw-message-box-warning {
+      background-color: #f0f014;
+      color: #f0f002;
+    }
+    :root.skin-theme-clientpref-os .diff-addedline,
+    .vector-feature-night-mode-enabled .diff-addedline,
+    .skin-invert .diff-addedline,
+    .notheme .diff-addedline {
+      background-color: #f0f017;
+      color: #f0f002;
+    }
+    :root.skin-theme-clientpref-os .mw-message-box-error,
+    .vector-feature-night-mode-enabled .mw-message-box-error,
+    .skin-invert .mw-message-box-error,
+    .notheme .mw-message-box-error {
+      background-color: #f0f00e;
+      border-color: #f0f011;
+      color: #f0f001;
+    }
+    :root.skin-theme-clientpref-os .mw-number-text,
+    .vector-feature-night-mode-enabled .mw-number-text,
+    .skin-invert .mw-number-text,
+    .notheme .mw-number-text {
+      color: #f0f004;
+    }
+    :root.skin-theme-clientpref-os .cdx-checkbox__icon,
+    .vector-feature-night-mode-enabled .cdx-checkbox__icon,
+    .skin-invert .cdx-checkbox__icon,
+    .notheme .cdx-checkbox__icon {
+      background-color: #f0f00c;
+    }
+    :root.skin-theme-clientpref-os .oo-ui-checkboxInputWidget.oo-ui-widget-enabled [type="checkbox"]:checked + span,
+    .vector-feature-night-mode-enabled .oo-ui-checkboxInputWidget.oo-ui-widget-enabled [type="checkbox"]:checked + span,
+    .skin-invert .oo-ui-checkboxInputWidget.oo-ui-widget-enabled [type="checkbox"]:checked + span,
+    .notheme .oo-ui-checkboxInputWidget.oo-ui-widget-enabled [type="checkbox"]:checked + span,
+    :root.skin-theme-clientpref-os .cdx-checkbox__input:enabled:checked + .cdx-checkbox__icon,
+    .vector-feature-night-mode-enabled .cdx-checkbox__input:enabled:checked + .cdx-checkbox__icon,
+    .skin-invert .cdx-checkbox__input:enabled:checked + .cdx-checkbox__icon,
+    .notheme .cdx-checkbox__input:enabled:checked + .cdx-checkbox__icon,
+    :root.skin-theme-clientpref-os .cdx-button:enabled.cdx-button--weight-primary.cdx-button--action-progressive,
+    .vector-feature-night-mode-enabled .cdx-button:enabled.cdx-button--weight-primary.cdx-button--action-progressive,
+    .skin-invert .cdx-button:enabled.cdx-button--weight-primary.cdx-button--action-progressive,
+    .notheme .cdx-button:enabled.cdx-button--weight-primary.cdx-button--action-progressive {
+      background-color: #f0f019;
+      border-color: #f0f018;
+      color: #f0f002 !important;
+    }
+    :root.skin-theme-clientpref-os .vector-feature-zebra-design-disabled,
+    .vector-feature-night-mode-enabled .vector-feature-zebra-design-disabled,
+    .skin-invert .vector-feature-zebra-design-disabled,
+    .notheme .vector-feature-zebra-design-disabled,
+    :root.skin-theme-clientpref-os #vector-toc-pinned-container,
+    .vector-feature-night-mode-enabled #vector-toc-pinned-container,
+    .skin-invert #vector-toc-pinned-container,
+    .notheme #vector-toc-pinned-container,
+    :root.skin-theme-clientpref-os .vector-toc::after,
+    .vector-feature-night-mode-enabled .vector-toc::after,
+    .skin-invert .vector-toc::after,
+    .notheme .vector-toc::after {
+      background: linear-gradient(rgba(255, 255, 255, 0), #f0f001) !important;
+    }
+    :root.skin-theme-clientpref-os #archnavbar ul li.anb-selected a,
+    .vector-feature-night-mode-enabled #archnavbar ul li.anb-selected a,
+    .skin-invert #archnavbar ul li.anb-selected a,
+    .notheme #archnavbar ul li.anb-selected a {
+      color: #f0f01b !important;
+    }
+    :root.skin-theme-clientpref-os .archwiki-template-message,
+    .vector-feature-night-mode-enabled .archwiki-template-message,
+    .skin-invert .archwiki-template-message,
+    .notheme .archwiki-template-message {
+      background-color: #f0f001;
+    }
+    :root.skin-theme-clientpref-os .catlinks,
+    .vector-feature-night-mode-enabled .catlinks,
+    .skin-invert .catlinks,
+    .notheme .catlinks {
+      background-color: #f0f002;
+    }
+    :root.skin-theme-clientpref-os .mw-parser-output p,
+    .vector-feature-night-mode-enabled .mw-parser-output p,
+    .skin-invert .mw-parser-output p,
+    .notheme .mw-parser-output p {
+      color: #f0f004 !important;
+    }
+    :root.skin-theme-clientpref-os .archwiki-template-meta-related-articles,
+    .vector-feature-night-mode-enabled .archwiki-template-meta-related-articles,
+    .skin-invert .archwiki-template-meta-related-articles,
+    .notheme .archwiki-template-meta-related-articles {
+      background-color: #f0f00c;
+    }
+    :root.skin-theme-clientpref-os .archwiki-template-meta-related-articles p,
+    .vector-feature-night-mode-enabled .archwiki-template-meta-related-articles p,
+    .skin-invert .archwiki-template-meta-related-articles p,
+    .notheme .archwiki-template-meta-related-articles p {
+      color: #f0f004;
+      border-bottom-color: #f0f019;
+    }
+    :root.skin-theme-clientpref-os .archwiki-template-meta-related-articles ul li a,
+    .vector-feature-night-mode-enabled .archwiki-template-meta-related-articles ul li a,
+    .skin-invert .archwiki-template-meta-related-articles ul li a,
+    .notheme .archwiki-template-meta-related-articles ul li a {
+      color: #f0f019 important;
+    }
+    :root.skin-theme-clientpref-os .mw-plusminus-neg,
+    .vector-feature-night-mode-enabled .mw-plusminus-neg,
+    .skin-invert .mw-plusminus-neg,
+    .notheme .mw-plusminus-neg,
+    :root.skin-theme-clientpref-os a.new,
+    .vector-feature-night-mode-enabled a.new,
+    .skin-invert a.new,
+    .notheme a.new {
+      color: #f0f011 !important;
+    }
+    :root.skin-theme-clientpref-os .mw-plusminus-pos,
+    .vector-feature-night-mode-enabled .mw-plusminus-pos,
+    .skin-invert .mw-plusminus-pos,
+    .notheme .mw-plusminus-pos {
+      color: #f0f015;
+    }
+    :root.skin-theme-clientpref-os .mw-plusminus-null,
+    .vector-feature-night-mode-enabled .mw-plusminus-null,
+    .skin-invert .mw-plusminus-null,
+    .notheme .mw-plusminus-null {
+      color: #f0f006;
+    }
+    :root.skin-theme-clientpref-os .oo-ui-textInputWidget .oo-ui-inputWidget-input,
+    .vector-feature-night-mode-enabled .oo-ui-textInputWidget .oo-ui-inputWidget-input,
+    .skin-invert .oo-ui-textInputWidget .oo-ui-inputWidget-input,
+    .notheme .oo-ui-textInputWidget .oo-ui-inputWidget-input,
+    :root.skin-theme-clientpref-os .mw-widget-dateInputWidget-handle,
+    .vector-feature-night-mode-enabled .mw-widget-dateInputWidget-handle,
+    .skin-invert .mw-widget-dateInputWidget-handle,
+    .notheme .mw-widget-dateInputWidget-handle,
+    :root.skin-theme-clientpref-os .oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button,
+    .vector-feature-night-mode-enabled .oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button,
+    .skin-invert .oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button,
+    .notheme .oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button,
+    :root.skin-theme-clientpref-os #pagehistory li.selected,
+    .vector-feature-night-mode-enabled #pagehistory li.selected,
+    .skin-invert #pagehistory li.selected,
+    .notheme #pagehistory li.selected {
+      background-color: #f0f00c !important;
+      color: #f0f004 !important;
+      border-color: #f0f00a !important;
+    }
+    :root.skin-theme-clientpref-os .oo-ui-menuSelectWidget,
+    .vector-feature-night-mode-enabled .oo-ui-menuSelectWidget,
+    .skin-invert .oo-ui-menuSelectWidget,
+    .notheme .oo-ui-menuSelectWidget {
+      background-color: #f0f00c;
+      border-color: #f0f00a;
+    }
+    :root.skin-theme-clientpref-os .oo-ui-OptionWidget-highlighted,
+    .vector-feature-night-mode-enabled .oo-ui-OptionWidget-highlighted,
+    .skin-invert .oo-ui-OptionWidget-highlighted,
+    .notheme .oo-ui-OptionWidget-highlighted {
+      background-color: #f0f009 !important;
+    }
+    :root.skin-theme-clientpref-os .oo-ui-menuOptionWidget.oo-ui-widget-enabled.oo-ui-optionWidget,
+    .vector-feature-night-mode-enabled .oo-ui-menuOptionWidget.oo-ui-widget-enabled.oo-ui-optionWidget,
+    .skin-invert .oo-ui-menuOptionWidget.oo-ui-widget-enabled.oo-ui-optionWidget,
+    .notheme .oo-ui-menuOptionWidget.oo-ui-widget-enabled.oo-ui-optionWidget,
+    :root.skin-theme-clientpref-os .minoredit,
+    .vector-feature-night-mode-enabled .minoredit,
+    .skin-invert .minoredit,
+    .notheme .minoredit,
+    :root.skin-theme-clientpref-os .comment,
+    .vector-feature-night-mode-enabled .comment,
+    .skin-invert .comment,
+    .notheme .comment {
+      color: #f0f004;
+    }
+    :root.skin-theme-clientpref-os .mw-footer-container,
+    .vector-feature-night-mode-enabled .mw-footer-container,
+    .skin-invert .mw-footer-container,
+    .notheme .mw-footer-container {
+      color: #f0f004 !important;
+    }
+    :root.skin-theme-clientpref-os #archnavbarlist li a,
+    .vector-feature-night-mode-enabled #archnavbarlist li a,
+    .skin-invert #archnavbarlist li a,
+    .notheme #archnavbarlist li a {
+      color: #f0f019 !important;
+    }
+    :root.skin-theme-clientpref-os .anb-selected,
+    .vector-feature-night-mode-enabled .anb-selected,
+    .skin-invert .anb-selected,
+    .notheme .anb-selected {
+      color: #f0f005 !important;
+    }
+    :root.skin-theme-clientpref-os .mw-footer li,
+    .vector-feature-night-mode-enabled .mw-footer li,
+    .skin-invert .mw-footer li,
+    .notheme .mw-footer li {
+      color: #f0f004;
+    }
+    :root.skin-theme-clientpref-os .vector-main-menu,
+    .vector-feature-night-mode-enabled .vector-main-menu,
+    .skin-invert .vector-main-menu,
+    .notheme .vector-main-menu,
+    :root.skin-theme-clientpref-os .vector-pinnable-element,
+    .vector-feature-night-mode-enabled .vector-pinnable-element,
+    .skin-invert .vector-pinnable-element,
+    .notheme .vector-pinnable-element {
+      background-color: #f0f001 !important;
+    }
+    :root.skin-theme-clientpref-os #p-navigation ul li a,
+    .vector-feature-night-mode-enabled #p-navigation ul li a,
+    .skin-invert #p-navigation ul li a,
+    .notheme #p-navigation ul li a {
+      color: #f0f019 !important;
+    }
+    :root.skin-theme-clientpref-os .archwiki-template-box-note a,
+    .vector-feature-night-mode-enabled .archwiki-template-box-note a,
+    .skin-invert .archwiki-template-box-note a,
+    .notheme .archwiki-template-box-note a {
+      color: #f0f019 !important;
+    }
+    :root.skin-theme-clientpref-os .archwiki-template-box-note a:visited,
+    .vector-feature-night-mode-enabled .archwiki-template-box-note a:visited,
+    .skin-invert .archwiki-template-box-note a:visited,
+    .notheme .archwiki-template-box-note a:visited {
+      color: #f0f010 !important;
+    }
+    :root.skin-theme-clientpref-os .mw-page-title-main,
+    .vector-feature-night-mode-enabled .mw-page-title-main,
+    .skin-invert .mw-page-title-main,
+    .notheme .mw-page-title-main {
+      color: #f0f004;
+    }
+    :root.skin-theme-clientpref-os .vector-tab-noicon mw-list-item a,
+    .vector-feature-night-mode-enabled .vector-tab-noicon mw-list-item a,
+    .skin-invert .vector-tab-noicon mw-list-item a,
+    .notheme .vector-tab-noicon mw-list-item a {
+      color: #f0f019;
+    }
+    :root.skin-theme-clientpref-os .mw-header,
+    .vector-feature-night-mode-enabled .mw-header,
+    .skin-invert .mw-header,
+    .notheme .mw-header {
+      background-color: #f0f001 !important;
+      color: #f0f004;
+    }
+    :root.skin-theme-clientpref-os .mw-footer li a,
+    .vector-feature-night-mode-enabled .mw-footer li a,
+    .skin-invert .mw-footer li a,
+    .notheme .mw-footer li a {
+      color: #f0f019;
+    }
+    :root.skin-theme-clientpref-os .cdx-text-input__input:enabled,
+    .vector-feature-night-mode-enabled .cdx-text-input__input:enabled,
+    .skin-invert .cdx-text-input__input:enabled,
+    .notheme .cdx-text-input__input:enabled {
+      background-color: #f0f00c !important;
+      color: #f0f004 !important;
+      border-color: #f0f00b;
+    }
+    :root.skin-theme-clientpref-os .cdx-button:enabled,
+    .vector-feature-night-mode-enabled .cdx-button:enabled,
+    .skin-invert .cdx-button:enabled,
+    .notheme .cdx-button:enabled,
+    :root.skin-theme-clientpref-os .cdx-button.cdxbutton--fake-button--enabled,
+    .vector-feature-night-mode-enabled .cdx-button.cdxbutton--fake-button--enabled,
+    .skin-invert .cdx-button.cdxbutton--fake-button--enabled,
+    .notheme .cdx-button.cdxbutton--fake-button--enabled {
+      color: #f0f002;
+      background-color: #f0f01b;
+      border-color: #f0f001;
+    }
+    :root.skin-theme-clientpref-os .cdx-menu,
+    .vector-feature-night-mode-enabled .cdx-menu,
+    .skin-invert .cdx-menu,
+    .notheme .cdx-menu {
+      background-color: #f0f00c;
+    }
+    :root.skin-theme-clientpref-os .cdx-menu:hover,
+    .vector-feature-night-mode-enabled .cdx-menu:hover,
+    .skin-invert .cdx-menu:hover,
+    .notheme .cdx-menu:hover {
+      background-color: #f0f001 !important;
+    }
+    :root.skin-theme-clientpref-os .anb-home,
+    .vector-feature-night-mode-enabled .anb-home,
+    .skin-invert .anb-home,
+    .notheme .anb-home {
+      color: #f0f004 !important;
+    }
+    :root.skin-theme-clientpref-os .vector-dropdown-content,
+    .vector-feature-night-mode-enabled .vector-dropdown-content,
+    .skin-invert .vector-dropdown-content,
+    .notheme .vector-dropdown-content {
+      background-color: #f0f001 !important;
+    }
+    :root.skin-theme-clientpref-os .mw-headline::before,
+    .vector-feature-night-mode-enabled .mw-headline::before,
+    .skin-invert .mw-headline::before,
+    .notheme .mw-headline::before {
+      color: #f0f01b !important;
+    }
+    :root.skin-theme-clientpref-os .cdx-button,
+    .vector-feature-night-mode-enabled .cdx-button,
+    .skin-invert .cdx-button,
+    .notheme .cdx-button {
+      background-color: #f0f001 !important;
+      color: #f0f004 !important;
+      border-color: #f0f001 !important;
+    }
+    :root.skin-theme-clientpref-os .mw-body,
+    .vector-feature-night-mode-enabled .mw-body,
+    .skin-invert .mw-body,
+    .notheme .mw-body {
+      background-color: #f0f001 !important;
+      color: #f0f004 !important;
+      border-color: #f0f001 !important;
+    }
+    :root.skin-theme-clientpref-os .mw-search-profile-tabs,
+    .vector-feature-night-mode-enabled .mw-search-profile-tabs,
+    .skin-invert .mw-search-profile-tabs,
+    .notheme .mw-search-profile-tabs {
+      background-color: #f0f001 !important;
+      color: #f0f004 !important;
+      border-color: #f0f001 !important;
+    }
+    :root.skin-theme-clientpref-os .mw-content-ltr,
+    .vector-feature-night-mode-enabled .mw-content-ltr,
+    .skin-invert .mw-content-ltr,
+    .notheme .mw-content-ltr {
+      background-color: #f0f001 !important;
+    }
+    :root.skin-theme-clientpref-os .vector-sticky-pinned-container::after,
+    .vector-feature-night-mode-enabled .vector-sticky-pinned-container::after,
+    .skin-invert .vector-sticky-pinned-container::after,
+    .notheme .vector-sticky-pinned-container::after {
+      background: #f0f001 !important;
+    }
+    :root.skin-theme-clientpref-os .cdx-search-input,
+    .vector-feature-night-mode-enabled .cdx-search-input,
+    .skin-invert .cdx-search-input,
+    .notheme .cdx-search-input {
+      border-color: #f0f002 !important;
+    }
+    :root.skin-theme-clientpref-os .oo-ui-widget:hover,
+    .vector-feature-night-mode-enabled .oo-ui-widget:hover,
+    .skin-invert .oo-ui-widget:hover,
+    .notheme .oo-ui-widget:hover {
+      background-color: #f0f00c !important;
+    }
+  }
+  @media (prefers-color-scheme: dark) and screen {
+    :root.skin-theme-clientpref-os html.client-darkmode,
+    .vector-feature-night-mode-enabled html.client-darkmode,
+    .skin-invert html.client-darkmode,
+    .notheme html.client-darkmode {
+      background-color: #f0f001;
+    }
+  }
+  :root.skin-theme-clientpref-night {
+    color-scheme: dark;
+  }
+  :root.skin-theme-clientpref-night ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root.skin-theme-clientpref-night input::placeholder,
+  :root.skin-theme-clientpref-night textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root.skin-theme-clientpref-night #content table,
+  :root.skin-theme-clientpref-night #content h1,
+  :root.skin-theme-clientpref-night #content h2,
+  :root.skin-theme-clientpref-night #content h3,
+  :root.skin-theme-clientpref-night #content h4,
+  :root.skin-theme-clientpref-night #content h5,
+  :root.skin-theme-clientpref-night #content pre,
+  :root.skin-theme-clientpref-night #content code,
+  :root.skin-theme-clientpref-night #content tt {
+    color: #f0f004 !important;
+  }
+  :root.skin-theme-clientpref-night body.skin-vector-2022 .vector-sticky-header {
+    color: #f0f004 !important;
+    background-color: #f0f002 !important;
+    border-bottom-color: #f0f019 !important;
+  }
+  :root.skin-theme-clientpref-night #vector-main-menu-pinned-container,
+  :root.skin-theme-clientpref-night #vector-page-tools-pinned-container {
+    background-color: #f0f001 !important;
+  }
+  :root.skin-theme-clientpref-night #ooui-php-191,
+  :root.skin-theme-clientpref-night #preferences .mw-htmlform-submit-buttons {
+    background-color: #f0f002 !important;
+  }
+  :root.skin-theme-clientpref-night .mw-echo-ui-notificationItemWidget-content-message-header,
+  :root.skin-theme-clientpref-night .oo-ui-labelElement-label {
+    color: #f0f004 !important;
+  }
+  :root.skin-theme-clientpref-night .oo-ui-optionWidget-selected {
+    background-color: #f0f00a !important;
+  }
+  :root.skin-theme-clientpref-night .oo-ui-buttonElement-framed.oo-ui-widget-disabled > .oo-ui-buttonElement-button {
+    background-color: #f0f00c !important;
+    color: #f0f004 !important;
+    border-color: #f0f00a !important;
+    filter: brightness(0.4);
+    cursor: not-allowed;
+  }
+  :root.skin-theme-clientpref-night .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:nth-child(even) td {
+    background-color: #f0f00b !important;
+  }
+  :root.skin-theme-clientpref-night .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:hover td {
+    background-color: #f0f00a !important;
+  }
+  :root.skin-theme-clientpref-night .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:nth-child(odd) td,
+  :root.skin-theme-clientpref-night .mw-rcfilters-ui-filterTagMultiselectWidget.oo-ui-widget-enabled .oo-ui-tagMultiselectWidget-handle,
+  :root.skin-theme-clientpref-night .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined .oo-ui-tagItemWidget.oo-ui-widget-enabled,
+  :root.skin-theme-clientpref-night .mw-rcfilters-ui-cell.mw-rcfilters-ui-filterTagMultiselectWidget-views-select,
+  :root.skin-theme-clientpref-night .mw-rcfilters-ui-changesListWrapperWidget .mw-changeslist-legend,
+  :root.skin-theme-clientpref-night .oo-ui-popupWidget-popup,
+  :root.skin-theme-clientpref-night .mw-echo-ui-notificationItemWidget,
+  :root.skin-theme-clientpref-night .mw-echo-ui-placeholderItemWidget {
+    background-color: #f0f00c !important;
+  }
+  :root.skin-theme-clientpref-night .mw-echo-ui-notificationsInboxWidget-toolbarWrapper {
+    background-color: #f0f001 !important;
+  }
+  :root.skin-theme-clientpref-night #archnavbar {
+    background-color: #f0f002 !important;
+    border-bottom-color: #f0f019 !important;
+  }
+  :root.skin-theme-clientpref-night .mw-parser-output {
+    background-color: #f0f001 !important;
+  }
+  :root.skin-theme-clientpref-night .mw-page-container {
+    background-color: #f0f001 !important;
+  }
+  :root.skin-theme-clientpref-night .vector-header-container {
+    background-color: #f0f001 !important;
+  }
+  :root.skin-theme-clientpref-night #content a:not([role="button"], .new),
+  :root.skin-theme-clientpref-night header.mw-header li:not(.new) a:not([role="button"], .new),
+  :root.skin-theme-clientpref-night #mw-panel-toc a:not([role="button"], .new),
+  :root.skin-theme-clientpref-night #mw-navigation li:not(.new) a:not([role="button"], .new),
+  :root.skin-theme-clientpref-night #mw-panel li:not(.new) a:not([role="button"], .new),
+  :root.skin-theme-clientpref-night #column-one li:not(.new) a:not([role="button"], .new),
+  :root.skin-theme-clientpref-night #footer a:not([role="button"], .new) {
+    color: #f0f019 !important;
+  }
+  @media screen {
+    :root.skin-theme-clientpref-night html.client-darkmode {
+      background-color: #f0f001;
+    }
+  }
+  :root.skin-theme-clientpref-night .vector-feature-zebra-design-disabled,
+  :root.skin-theme-clientpref-night body {
+    background-color: #f0f001;
+  }
+  :root.skin-theme-clientpref-night #archnavbarlogo {
+    background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20version%3D%221%22%20width%3D%22600%22%20height%3D%22126%22%3E%3Cpath%20d%3D%22M159.568%2034.427c-8.89-.014-16.267%201.809-19.12%202.803l-2.937%2015.857c-.007.058%2014.617-3.9%2021.059-3.667%2010.665.383%2011.646%204.076%2011.46%209.06.182.292-2.752-4.503-11.979-4.664-11.64-.2-28.069%204.122-28.046%2021.692-.314%2019.765%2014.764%2025.579%2025.032%2025.686%209.232-.168%2013.563-3.496%2015.934-5.28%203.115-3.257%206.679-6.532%2010.078-10.462-3.216%205.844-6.005%209.884-8.907%2012.977v2.611l14.033-2.361.096-38.144c-.143-5.399%203.096-26.057-26.703-26.108m-2.016%2033.21c5.817.08%2012.488%202.948%2012.497%209.849.03%206.277-7.863%209.651-12.996%209.598-5.135-.053-11.949-4.036-11.979-10.155.099-5.47%206.426-9.432%2012.478-9.291zm37.972-29.685-.095%2063.166%2016.348-3.15.027-35.814c.004-5.333%207.62-11.564%2017.178-11.464%202.028-3.67%205.84-13.05%206.77-15.183-21.351-.051-21.623%206.137-25.336%209.18-.04-5.806-.013-9.292-.013-9.292zm92.002%208.292c-.158-.074-8.526-9.788-25.35-9.864-15.758-.262-33.433%205.847-33.716%2032.27.138%2023.232%2016.979%2032.311%2033.805%2032.488%2018.007.187%2025.172-11.26%2025.602-11.543-2.149-1.863-10.196-9.837-10.196-9.837s-5.027%207.157-14.779%207.248c-9.755.093-18.234-7.54-18.354-18.189-.125-10.65%207.795-16.419%2018.427-16.885%209.205-.002%2014.516%205.943%2014.516%205.943zm20.606-30.399-15.434%203.628.115%2082.277%2015.204-2.745.172-38.72c.033-4.06%205.874-10.295%2015.626-10.097%209.325.097%2011.41%206.215%2011.384%206.988l.269%2044.824%2014.993-2.65.057-47.53c.099-4.574-10.018-14.233-26.28-14.302-7.729.012-12.009%201.762-14.187%203.052-3.726%202.879-7.985%205.637-12.17%209.157%203.869-4.97%207.117-8.407%2010.29-10.961z%22%20fill%3D%22%23f0f004%22%20fill-rule%3D%22evenodd%22/%3E%3Cpath%20d%3D%22m360.136%2017.218%206.962-1.742.33%2082.95-7.074%201.204zm18.928%2024.757%206.101-2.716.052%2059.478-5.892%201.217zm-1.45-21.448%204.92-4.015%204.086%204.547-4.921%204.121zm19.024%2020.365%206.962-1.421.033%2012.434c.001.534%203.823-13.89%2022.258-13.57%2017.9.1%2020.827%2013.957%2020.73%2017.064l.221%2043.725-6.102%201.324-.035-43.189c.07-1.261-2.79-11.927-15.439-11.966-12.646-.037-21.409%209.186-21.393%2015.078l.1%2038.047-7.07%201.847zm110.954%2058.546-6.962%201.42-.033-12.433c-.001-.534-3.825%2013.89-22.258%2013.57-17.9-.1-20.827-13.957-20.73-17.064l-.221-43.725%207.397-1.494.114%2043.19c.003%201.18%201.416%2012.096%2014.065%2012.135%2012.646.037%2021.506-7.616%2021.569-19.139l-.09-34.076%206.885-1.757zm13.645-59.037-4.882%203.82%2018.717%2024.494-19.963%2028.3%205.179%203.843%2018.766-26.28%2019.368%2026.902%204.791-3.82-20.757-28.765%2016.56-23.262-5.092-4.305-15.085%2021.525zM61.88%201.778c-5.385%2013.203-8.633%2021.839-14.629%2034.649%203.676%203.896%208.188%208.434%2015.516%2013.559-7.878-3.242-13.252-6.497-17.267-9.874-7.673%2016.011-19.695%2038.818-44.09%2082.65%2019.174-11.068%2034.037-17.893%2047.889-20.497a35%2035%200%200%201-.91-8.213l.023-.614c.304-12.284%206.694-21.73%2014.264-21.09%207.57.642%2013.454%2011.126%2013.15%2023.41-.058%202.312-.319%204.536-.774%206.598%2013.701%202.68%2028.405%209.487%2047.32%2020.407-3.73-6.866-7.059-13.056-10.238-18.95-5.007-3.882-10.23-8.933-20.884-14.402%207.323%201.903%2012.566%204.099%2016.653%206.552C75.58%2035.786%2072.963%2027.79%2061.88%201.778%22%20fill%3D%22%23f0f019%22%20fill-rule%3D%22evenodd%22/%3E%3Cpath%20d%3D%22M576.771%2093.265V80.603h-4.73v-1.695h11.38v1.695h-4.75v12.662zm8.629%200V78.908h2.859l3.398%2010.166q.47%201.42.686%202.125.245-.784.764-2.301l3.437-9.99h2.556v14.357h-1.831V81.25l-4.172%2012.016h-1.714l-4.152-12.222v12.222h-1.832%22%20font-weight%3D%22400%22%20font-size%3D%228.441%22%20font-family%3D%22DejaVu%20Sans%20Mono%22%20fill%3D%22%23f0f005%22/%3E%3C/svg%3E") !important;
+    background-size: 190px 40px !important;
+  }
+  :root.skin-theme-clientpref-night .cdx-text-input__input:enabled:focus {
+    border-color: #f0f019;
+    box-shadow: #f0f019 !important;
+  }
+  :root.skin-theme-clientpref-night .archwiki-template-box-tip {
+    background-color: hsla(90, 90%, 65%, 0.2) !important;
+    border-color: hsla(90, 90%, 75%, 0.2);
+    color: #f0f005;
+  }
+  :root.skin-theme-clientpref-night .archwiki-template-box-note {
+    background-color: hsla(208, 100%, 61%, 0.25) !important;
+    border-color: hsla(208, 100%, 81%, 0.25) !important;
+    color: #f0f005;
+  }
+  :root.skin-theme-clientpref-night .archwiki-template-box-warning {
+    background-color: hsla(7, 99%, 60%, 0.25) !important;
+    border-color: hsla(7, 99%, 80%, 0.25) !important;
+    color: #f0f005;
+  }
+  :root.skin-theme-clientpref-night .firstHeading {
+    color: #f0f01b !important;
+  }
+  :root.skin-theme-clientpref-night #content {
+    border-color: #f0f009;
+  }
+  :root.skin-theme-clientpref-night #content pre:not([class*="CodeMirror"]),
+  :root.skin-theme-clientpref-night #content code,
+  :root.skin-theme-clientpref-night #content tt {
+    background-color: #f0f00c;
+    color: #f0f004;
+    border-color: #f0f009;
+  }
+  :root.skin-theme-clientpref-night .vector-pinned-container {
+    border-color: #f0f009 !important;
+  }
+  :root.skin-theme-clientpref-night .vector-pinnable-header-label {
+    color: #f0f004;
+  }
+  :root.skin-theme-clientpref-night .vector-pinnable-header-toggle-button,
+  :root.skin-theme-clientpref-night .vector-pinnable-header-unpin-button {
+    color: #f0f002;
+    background-color: #f0f01b;
+    border-color: #f0f001;
+  }
+  :root.skin-theme-clientpref-night .wikitable {
+    background-color: #f0f001;
+  }
+  :root.skin-theme-clientpref-night .wikitable > tr > th,
+  :root.skin-theme-clientpref-night .wikitable > tr > td,
+  :root.skin-theme-clientpref-night .wikitable > * > tr > th,
+  :root.skin-theme-clientpref-night .wikitable > * > tr > td {
+    color: #f0f004;
+    border-color: #f0f003;
+  }
+  :root.skin-theme-clientpref-night .wikitable > tr > th,
+  :root.skin-theme-clientpref-night .wikitable > * > tr > th {
+    background-color: #f0f002;
+    color: #f0f004;
+  }
+  :root.skin-theme-clientpref-night .pre {
+    color: #f0f002;
+  }
+  :root.skin-theme-clientpref-night .mw-headline {
+    color: #f0f004;
+  }
+  :root.skin-theme-clientpref-night .plainlinks,
+  :root.skin-theme-clientpref-night .archwiki-template-man,
+  :root.skin-theme-clientpref-night .external text {
+    color: #505008;
+  }
+  :root.skin-theme-clientpref-night .cdx-button:enabled.cdx-button--weight-quiet,
+  :root.skin-theme-clientpref-night .cdx-button.cdx-button--fake-button--enabled,
+  :root.skin-theme-clientpref-night .cdx-button.cdx-button--fake-button--enabled.cdx-button--weight-quiet,
+  :root.skin-theme-clientpref-night .diff-context,
+  :root.skin-theme-clientpref-night .oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle,
+  :root.skin-theme-clientpref-night .oo-ui-checkboxInputWidget [type="checkbox"] + span {
+    background-color: #f0f00c;
+    color: #f0f004;
+    border-color: #f0f00a;
+  }
+  :root.skin-theme-clientpref-night .vector-feature-zebra-design-disabled,
+  :root.skin-theme-clientpref-night #contentSub:not(:empty) {
+    color: #f0f00c !important;
+  }
+  :root.skin-theme-clientpref-night .mw-editfont-monospace {
+    background-color: #f0f00c;
+    color: #f0f004;
+    border-color: #f0f00b;
+  }
+  :root.skin-theme-clientpref-night .diff-deletedline,
+  :root.skin-theme-clientpref-night .mw-message-box-warning {
+    background-color: #f0f014;
+    color: #f0f002;
+  }
+  :root.skin-theme-clientpref-night .diff-addedline {
+    background-color: #f0f017;
+    color: #f0f002;
+  }
+  :root.skin-theme-clientpref-night .mw-message-box-error {
+    background-color: #f0f00e;
+    border-color: #f0f011;
+    color: #f0f001;
+  }
+  :root.skin-theme-clientpref-night .mw-number-text {
+    color: #f0f004;
+  }
+  :root.skin-theme-clientpref-night .cdx-checkbox__icon {
+    background-color: #f0f00c;
+  }
+  :root.skin-theme-clientpref-night .oo-ui-checkboxInputWidget.oo-ui-widget-enabled [type="checkbox"]:checked + span,
+  :root.skin-theme-clientpref-night .cdx-checkbox__input:enabled:checked + .cdx-checkbox__icon,
+  :root.skin-theme-clientpref-night .cdx-button:enabled.cdx-button--weight-primary.cdx-button--action-progressive {
+    background-color: #f0f019;
+    border-color: #f0f018;
+    color: #f0f002 !important;
+  }
+  :root.skin-theme-clientpref-night .vector-feature-zebra-design-disabled,
+  :root.skin-theme-clientpref-night #vector-toc-pinned-container,
+  :root.skin-theme-clientpref-night .vector-toc::after {
+    background: linear-gradient(rgba(255, 255, 255, 0), #f0f001) !important;
+  }
+  :root.skin-theme-clientpref-night #archnavbar ul li.anb-selected a {
+    color: #f0f01b !important;
+  }
+  :root.skin-theme-clientpref-night .archwiki-template-message {
+    background-color: #f0f001;
+  }
+  :root.skin-theme-clientpref-night .catlinks {
+    background-color: #f0f002;
+  }
+  :root.skin-theme-clientpref-night .mw-parser-output p {
+    color: #f0f004 !important;
+  }
+  :root.skin-theme-clientpref-night .archwiki-template-meta-related-articles {
+    background-color: #f0f00c;
+  }
+  :root.skin-theme-clientpref-night .archwiki-template-meta-related-articles p {
+    color: #f0f004;
+    border-bottom-color: #f0f019;
+  }
+  :root.skin-theme-clientpref-night .archwiki-template-meta-related-articles ul li a {
+    color: #f0f019 important;
+  }
+  :root.skin-theme-clientpref-night .mw-plusminus-neg,
+  :root.skin-theme-clientpref-night a.new {
+    color: #f0f011 !important;
+  }
+  :root.skin-theme-clientpref-night .mw-plusminus-pos {
+    color: #f0f015;
+  }
+  :root.skin-theme-clientpref-night .mw-plusminus-null {
+    color: #f0f006;
+  }
+  :root.skin-theme-clientpref-night .oo-ui-textInputWidget .oo-ui-inputWidget-input,
+  :root.skin-theme-clientpref-night .mw-widget-dateInputWidget-handle,
+  :root.skin-theme-clientpref-night .oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button,
+  :root.skin-theme-clientpref-night #pagehistory li.selected {
+    background-color: #f0f00c !important;
+    color: #f0f004 !important;
+    border-color: #f0f00a !important;
+  }
+  :root.skin-theme-clientpref-night .oo-ui-menuSelectWidget {
+    background-color: #f0f00c;
+    border-color: #f0f00a;
+  }
+  :root.skin-theme-clientpref-night .oo-ui-OptionWidget-highlighted {
+    background-color: #f0f009 !important;
+  }
+  :root.skin-theme-clientpref-night .oo-ui-menuOptionWidget.oo-ui-widget-enabled.oo-ui-optionWidget,
+  :root.skin-theme-clientpref-night .minoredit,
+  :root.skin-theme-clientpref-night .comment {
+    color: #f0f004;
+  }
+  :root.skin-theme-clientpref-night .mw-footer-container {
+    color: #f0f004 !important;
+  }
+  :root.skin-theme-clientpref-night #archnavbarlist li a {
+    color: #f0f019 !important;
+  }
+  :root.skin-theme-clientpref-night .anb-selected {
+    color: #f0f005 !important;
+  }
+  :root.skin-theme-clientpref-night .mw-footer li {
+    color: #f0f004;
+  }
+  :root.skin-theme-clientpref-night .vector-main-menu,
+  :root.skin-theme-clientpref-night .vector-pinnable-element {
+    background-color: #f0f001 !important;
+  }
+  :root.skin-theme-clientpref-night #p-navigation ul li a {
+    color: #f0f019 !important;
+  }
+  :root.skin-theme-clientpref-night .archwiki-template-box-note a {
+    color: #f0f019 !important;
+  }
+  :root.skin-theme-clientpref-night .archwiki-template-box-note a:visited {
+    color: #f0f010 !important;
+  }
+  :root.skin-theme-clientpref-night .mw-page-title-main {
+    color: #f0f004;
+  }
+  :root.skin-theme-clientpref-night .vector-tab-noicon mw-list-item a {
+    color: #f0f019;
+  }
+  :root.skin-theme-clientpref-night .mw-header {
+    background-color: #f0f001 !important;
+    color: #f0f004;
+  }
+  :root.skin-theme-clientpref-night .mw-footer li a {
+    color: #f0f019;
+  }
+  :root.skin-theme-clientpref-night .cdx-text-input__input:enabled {
+    background-color: #f0f00c !important;
+    color: #f0f004 !important;
+    border-color: #f0f00b;
+  }
+  :root.skin-theme-clientpref-night .cdx-button:enabled,
+  :root.skin-theme-clientpref-night .cdx-button.cdxbutton--fake-button--enabled {
+    color: #f0f002;
+    background-color: #f0f01b;
+    border-color: #f0f001;
+  }
+  :root.skin-theme-clientpref-night .cdx-menu {
+    background-color: #f0f00c;
+  }
+  :root.skin-theme-clientpref-night .cdx-menu:hover {
+    background-color: #f0f001 !important;
+  }
+  :root.skin-theme-clientpref-night .anb-home {
+    color: #f0f004 !important;
+  }
+  :root.skin-theme-clientpref-night .vector-dropdown-content {
+    background-color: #f0f001 !important;
+  }
+  :root.skin-theme-clientpref-night .mw-headline::before {
+    color: #f0f01b !important;
+  }
+  :root.skin-theme-clientpref-night .cdx-button {
+    background-color: #f0f001 !important;
+    color: #f0f004 !important;
+    border-color: #f0f001 !important;
+  }
+  :root.skin-theme-clientpref-night .mw-body {
+    background-color: #f0f001 !important;
+    color: #f0f004 !important;
+    border-color: #f0f001 !important;
+  }
+  :root.skin-theme-clientpref-night .mw-search-profile-tabs {
+    background-color: #f0f001 !important;
+    color: #f0f004 !important;
+    border-color: #f0f001 !important;
+  }
+  :root.skin-theme-clientpref-night .mw-content-ltr {
+    background-color: #f0f001 !important;
+  }
+  :root.skin-theme-clientpref-night .vector-sticky-pinned-container::after {
+    background: #f0f001 !important;
+  }
+  :root.skin-theme-clientpref-night .cdx-search-input {
+    border-color: #f0f002 !important;
+  }
+  :root.skin-theme-clientpref-night .oo-ui-widget:hover {
+    background-color: #f0f00c !important;
+  }
+  :root.skin-theme-clientpref-day {
+    color-scheme: light;
+  }
+  :root.skin-theme-clientpref-day ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root.skin-theme-clientpref-day input::placeholder,
+  :root.skin-theme-clientpref-day textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root.skin-theme-clientpref-day #content table,
+  :root.skin-theme-clientpref-day #content h1,
+  :root.skin-theme-clientpref-day #content h2,
+  :root.skin-theme-clientpref-day #content h3,
+  :root.skin-theme-clientpref-day #content h4,
+  :root.skin-theme-clientpref-day #content h5,
+  :root.skin-theme-clientpref-day #content pre,
+  :root.skin-theme-clientpref-day #content code,
+  :root.skin-theme-clientpref-day #content tt {
+    color: #f0f004 !important;
+  }
+  :root.skin-theme-clientpref-day body.skin-vector-2022 .vector-sticky-header {
+    color: #f0f004 !important;
+    background-color: #f0f002 !important;
+    border-bottom-color: #f0f019 !important;
+  }
+  :root.skin-theme-clientpref-day #vector-main-menu-pinned-container,
+  :root.skin-theme-clientpref-day #vector-page-tools-pinned-container {
+    background-color: #f0f001 !important;
+  }
+  :root.skin-theme-clientpref-day #ooui-php-191,
+  :root.skin-theme-clientpref-day #preferences .mw-htmlform-submit-buttons {
+    background-color: #f0f002 !important;
+  }
+  :root.skin-theme-clientpref-day .mw-echo-ui-notificationItemWidget-content-message-header,
+  :root.skin-theme-clientpref-day .oo-ui-labelElement-label {
+    color: #f0f004 !important;
+  }
+  :root.skin-theme-clientpref-day .oo-ui-optionWidget-selected {
+    background-color: #f0f00a !important;
+  }
+  :root.skin-theme-clientpref-day .oo-ui-buttonElement-framed.oo-ui-widget-disabled > .oo-ui-buttonElement-button {
+    background-color: #f0f00c !important;
+    color: #f0f004 !important;
+    border-color: #f0f00a !important;
+    filter: brightness(0.4);
+    cursor: not-allowed;
+  }
+  :root.skin-theme-clientpref-day .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:nth-child(even) td {
+    background-color: #f0f00b !important;
+  }
+  :root.skin-theme-clientpref-day .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:hover td {
+    background-color: #f0f00a !important;
+  }
+  :root.skin-theme-clientpref-day .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:nth-child(odd) td,
+  :root.skin-theme-clientpref-day .mw-rcfilters-ui-filterTagMultiselectWidget.oo-ui-widget-enabled .oo-ui-tagMultiselectWidget-handle,
+  :root.skin-theme-clientpref-day .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined .oo-ui-tagItemWidget.oo-ui-widget-enabled,
+  :root.skin-theme-clientpref-day .mw-rcfilters-ui-cell.mw-rcfilters-ui-filterTagMultiselectWidget-views-select,
+  :root.skin-theme-clientpref-day .mw-rcfilters-ui-changesListWrapperWidget .mw-changeslist-legend,
+  :root.skin-theme-clientpref-day .oo-ui-popupWidget-popup,
+  :root.skin-theme-clientpref-day .mw-echo-ui-notificationItemWidget,
+  :root.skin-theme-clientpref-day .mw-echo-ui-placeholderItemWidget {
+    background-color: #f0f00c !important;
+  }
+  :root.skin-theme-clientpref-day .mw-echo-ui-notificationsInboxWidget-toolbarWrapper {
+    background-color: #f0f001 !important;
+  }
+  :root.skin-theme-clientpref-day #archnavbar {
+    background-color: #f0f002 !important;
+    border-bottom-color: #f0f019 !important;
+  }
+  :root.skin-theme-clientpref-day .mw-parser-output {
+    background-color: #f0f001 !important;
+  }
+  :root.skin-theme-clientpref-day .mw-page-container {
+    background-color: #f0f001 !important;
+  }
+  :root.skin-theme-clientpref-day .vector-header-container {
+    background-color: #f0f001 !important;
+  }
+  :root.skin-theme-clientpref-day #content a:not([role="button"], .new),
+  :root.skin-theme-clientpref-day header.mw-header li:not(.new) a:not([role="button"], .new),
+  :root.skin-theme-clientpref-day #mw-panel-toc a:not([role="button"], .new),
+  :root.skin-theme-clientpref-day #mw-navigation li:not(.new) a:not([role="button"], .new),
+  :root.skin-theme-clientpref-day #mw-panel li:not(.new) a:not([role="button"], .new),
+  :root.skin-theme-clientpref-day #column-one li:not(.new) a:not([role="button"], .new),
+  :root.skin-theme-clientpref-day #footer a:not([role="button"], .new) {
+    color: #f0f019 !important;
+  }
+  @media screen {
+    :root.skin-theme-clientpref-day html.client-darkmode {
+      background-color: #f0f001;
+    }
+  }
+  :root.skin-theme-clientpref-day .vector-feature-zebra-design-disabled,
+  :root.skin-theme-clientpref-day body {
+    background-color: #f0f001;
+  }
+  :root.skin-theme-clientpref-day #archnavbarlogo {
+    background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20version%3D%221%22%20width%3D%22600%22%20height%3D%22126%22%3E%3Cpath%20d%3D%22M159.568%2034.427c-8.89-.014-16.267%201.809-19.12%202.803l-2.937%2015.857c-.007.058%2014.617-3.9%2021.059-3.667%2010.665.383%2011.646%204.076%2011.46%209.06.182.292-2.752-4.503-11.979-4.664-11.64-.2-28.069%204.122-28.046%2021.692-.314%2019.765%2014.764%2025.579%2025.032%2025.686%209.232-.168%2013.563-3.496%2015.934-5.28%203.115-3.257%206.679-6.532%2010.078-10.462-3.216%205.844-6.005%209.884-8.907%2012.977v2.611l14.033-2.361.096-38.144c-.143-5.399%203.096-26.057-26.703-26.108m-2.016%2033.21c5.817.08%2012.488%202.948%2012.497%209.849.03%206.277-7.863%209.651-12.996%209.598-5.135-.053-11.949-4.036-11.979-10.155.099-5.47%206.426-9.432%2012.478-9.291zm37.972-29.685-.095%2063.166%2016.348-3.15.027-35.814c.004-5.333%207.62-11.564%2017.178-11.464%202.028-3.67%205.84-13.05%206.77-15.183-21.351-.051-21.623%206.137-25.336%209.18-.04-5.806-.013-9.292-.013-9.292zm92.002%208.292c-.158-.074-8.526-9.788-25.35-9.864-15.758-.262-33.433%205.847-33.716%2032.27.138%2023.232%2016.979%2032.311%2033.805%2032.488%2018.007.187%2025.172-11.26%2025.602-11.543-2.149-1.863-10.196-9.837-10.196-9.837s-5.027%207.157-14.779%207.248c-9.755.093-18.234-7.54-18.354-18.189-.125-10.65%207.795-16.419%2018.427-16.885%209.205-.002%2014.516%205.943%2014.516%205.943zm20.606-30.399-15.434%203.628.115%2082.277%2015.204-2.745.172-38.72c.033-4.06%205.874-10.295%2015.626-10.097%209.325.097%2011.41%206.215%2011.384%206.988l.269%2044.824%2014.993-2.65.057-47.53c.099-4.574-10.018-14.233-26.28-14.302-7.729.012-12.009%201.762-14.187%203.052-3.726%202.879-7.985%205.637-12.17%209.157%203.869-4.97%207.117-8.407%2010.29-10.961z%22%20fill%3D%22%23f0f004%22%20fill-rule%3D%22evenodd%22/%3E%3Cpath%20d%3D%22m360.136%2017.218%206.962-1.742.33%2082.95-7.074%201.204zm18.928%2024.757%206.101-2.716.052%2059.478-5.892%201.217zm-1.45-21.448%204.92-4.015%204.086%204.547-4.921%204.121zm19.024%2020.365%206.962-1.421.033%2012.434c.001.534%203.823-13.89%2022.258-13.57%2017.9.1%2020.827%2013.957%2020.73%2017.064l.221%2043.725-6.102%201.324-.035-43.189c.07-1.261-2.79-11.927-15.439-11.966-12.646-.037-21.409%209.186-21.393%2015.078l.1%2038.047-7.07%201.847zm110.954%2058.546-6.962%201.42-.033-12.433c-.001-.534-3.825%2013.89-22.258%2013.57-17.9-.1-20.827-13.957-20.73-17.064l-.221-43.725%207.397-1.494.114%2043.19c.003%201.18%201.416%2012.096%2014.065%2012.135%2012.646.037%2021.506-7.616%2021.569-19.139l-.09-34.076%206.885-1.757zm13.645-59.037-4.882%203.82%2018.717%2024.494-19.963%2028.3%205.179%203.843%2018.766-26.28%2019.368%2026.902%204.791-3.82-20.757-28.765%2016.56-23.262-5.092-4.305-15.085%2021.525zM61.88%201.778c-5.385%2013.203-8.633%2021.839-14.629%2034.649%203.676%203.896%208.188%208.434%2015.516%2013.559-7.878-3.242-13.252-6.497-17.267-9.874-7.673%2016.011-19.695%2038.818-44.09%2082.65%2019.174-11.068%2034.037-17.893%2047.889-20.497a35%2035%200%200%201-.91-8.213l.023-.614c.304-12.284%206.694-21.73%2014.264-21.09%207.57.642%2013.454%2011.126%2013.15%2023.41-.058%202.312-.319%204.536-.774%206.598%2013.701%202.68%2028.405%209.487%2047.32%2020.407-3.73-6.866-7.059-13.056-10.238-18.95-5.007-3.882-10.23-8.933-20.884-14.402%207.323%201.903%2012.566%204.099%2016.653%206.552C75.58%2035.786%2072.963%2027.79%2061.88%201.778%22%20fill%3D%22%23f0f019%22%20fill-rule%3D%22evenodd%22/%3E%3Cpath%20d%3D%22M576.771%2093.265V80.603h-4.73v-1.695h11.38v1.695h-4.75v12.662zm8.629%200V78.908h2.859l3.398%2010.166q.47%201.42.686%202.125.245-.784.764-2.301l3.437-9.99h2.556v14.357h-1.831V81.25l-4.172%2012.016h-1.714l-4.152-12.222v12.222h-1.832%22%20font-weight%3D%22400%22%20font-size%3D%228.441%22%20font-family%3D%22DejaVu%20Sans%20Mono%22%20fill%3D%22%23f0f005%22/%3E%3C/svg%3E") !important;
+    background-size: 190px 40px !important;
+  }
+  :root.skin-theme-clientpref-day .cdx-text-input__input:enabled:focus {
+    border-color: #f0f019;
+    box-shadow: #f0f019 !important;
+  }
+  :root.skin-theme-clientpref-day .archwiki-template-box-tip {
+    background-color: hsla(90, 90%, 65%, 0.2) !important;
+    border-color: hsla(90, 90%, 75%, 0.2);
+    color: #f0f005;
+  }
+  :root.skin-theme-clientpref-day .archwiki-template-box-note {
+    background-color: hsla(208, 100%, 61%, 0.25) !important;
+    border-color: hsla(208, 100%, 81%, 0.25) !important;
+    color: #f0f005;
+  }
+  :root.skin-theme-clientpref-day .archwiki-template-box-warning {
+    background-color: hsla(7, 99%, 60%, 0.25) !important;
+    border-color: hsla(7, 99%, 80%, 0.25) !important;
+    color: #f0f005;
+  }
+  :root.skin-theme-clientpref-day .firstHeading {
+    color: #f0f01b !important;
+  }
+  :root.skin-theme-clientpref-day #content {
+    border-color: #f0f009;
+  }
+  :root.skin-theme-clientpref-day #content pre:not([class*="CodeMirror"]),
+  :root.skin-theme-clientpref-day #content code,
+  :root.skin-theme-clientpref-day #content tt {
+    background-color: #f0f00c;
+    color: #f0f004;
+    border-color: #f0f009;
+  }
+  :root.skin-theme-clientpref-day .vector-pinned-container {
+    border-color: #f0f009 !important;
+  }
+  :root.skin-theme-clientpref-day .vector-pinnable-header-label {
+    color: #f0f004;
+  }
+  :root.skin-theme-clientpref-day .vector-pinnable-header-toggle-button,
+  :root.skin-theme-clientpref-day .vector-pinnable-header-unpin-button {
+    color: #f0f002;
+    background-color: #f0f01b;
+    border-color: #f0f001;
+  }
+  :root.skin-theme-clientpref-day .wikitable {
+    background-color: #f0f001;
+  }
+  :root.skin-theme-clientpref-day .wikitable > tr > th,
+  :root.skin-theme-clientpref-day .wikitable > tr > td,
+  :root.skin-theme-clientpref-day .wikitable > * > tr > th,
+  :root.skin-theme-clientpref-day .wikitable > * > tr > td {
+    color: #f0f004;
+    border-color: #f0f003;
+  }
+  :root.skin-theme-clientpref-day .wikitable > tr > th,
+  :root.skin-theme-clientpref-day .wikitable > * > tr > th {
+    background-color: #f0f002;
+    color: #f0f004;
+  }
+  :root.skin-theme-clientpref-day .pre {
+    color: #f0f002;
+  }
+  :root.skin-theme-clientpref-day .mw-headline {
+    color: #f0f004;
+  }
+  :root.skin-theme-clientpref-day .plainlinks,
+  :root.skin-theme-clientpref-day .archwiki-template-man,
+  :root.skin-theme-clientpref-day .external text {
+    color: #505008;
+  }
+  :root.skin-theme-clientpref-day .cdx-button:enabled.cdx-button--weight-quiet,
+  :root.skin-theme-clientpref-day .cdx-button.cdx-button--fake-button--enabled,
+  :root.skin-theme-clientpref-day .cdx-button.cdx-button--fake-button--enabled.cdx-button--weight-quiet,
+  :root.skin-theme-clientpref-day .diff-context,
+  :root.skin-theme-clientpref-day .oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle,
+  :root.skin-theme-clientpref-day .oo-ui-checkboxInputWidget [type="checkbox"] + span {
+    background-color: #f0f00c;
+    color: #f0f004;
+    border-color: #f0f00a;
+  }
+  :root.skin-theme-clientpref-day .vector-feature-zebra-design-disabled,
+  :root.skin-theme-clientpref-day #contentSub:not(:empty) {
+    color: #f0f00c !important;
+  }
+  :root.skin-theme-clientpref-day .mw-editfont-monospace {
+    background-color: #f0f00c;
+    color: #f0f004;
+    border-color: #f0f00b;
+  }
+  :root.skin-theme-clientpref-day .diff-deletedline,
+  :root.skin-theme-clientpref-day .mw-message-box-warning {
+    background-color: #f0f014;
+    color: #f0f002;
+  }
+  :root.skin-theme-clientpref-day .diff-addedline {
+    background-color: #f0f017;
+    color: #f0f002;
+  }
+  :root.skin-theme-clientpref-day .mw-message-box-error {
+    background-color: #f0f00e;
+    border-color: #f0f011;
+    color: #f0f001;
+  }
+  :root.skin-theme-clientpref-day .mw-number-text {
+    color: #f0f004;
+  }
+  :root.skin-theme-clientpref-day .cdx-checkbox__icon {
+    background-color: #f0f00c;
+  }
+  :root.skin-theme-clientpref-day .oo-ui-checkboxInputWidget.oo-ui-widget-enabled [type="checkbox"]:checked + span,
+  :root.skin-theme-clientpref-day .cdx-checkbox__input:enabled:checked + .cdx-checkbox__icon,
+  :root.skin-theme-clientpref-day .cdx-button:enabled.cdx-button--weight-primary.cdx-button--action-progressive {
+    background-color: #f0f019;
+    border-color: #f0f018;
+    color: #f0f002 !important;
+  }
+  :root.skin-theme-clientpref-day .vector-feature-zebra-design-disabled,
+  :root.skin-theme-clientpref-day #vector-toc-pinned-container,
+  :root.skin-theme-clientpref-day .vector-toc::after {
+    background: linear-gradient(rgba(255, 255, 255, 0), #f0f001) !important;
+  }
+  :root.skin-theme-clientpref-day #archnavbar ul li.anb-selected a {
+    color: #f0f01b !important;
+  }
+  :root.skin-theme-clientpref-day .archwiki-template-message {
+    background-color: #f0f001;
+  }
+  :root.skin-theme-clientpref-day .catlinks {
+    background-color: #f0f002;
+  }
+  :root.skin-theme-clientpref-day .mw-parser-output p {
+    color: #f0f004 !important;
+  }
+  :root.skin-theme-clientpref-day .archwiki-template-meta-related-articles {
+    background-color: #f0f00c;
+  }
+  :root.skin-theme-clientpref-day .archwiki-template-meta-related-articles p {
+    color: #f0f004;
+    border-bottom-color: #f0f019;
+  }
+  :root.skin-theme-clientpref-day .archwiki-template-meta-related-articles ul li a {
+    color: #f0f019 important;
+  }
+  :root.skin-theme-clientpref-day .mw-plusminus-neg,
+  :root.skin-theme-clientpref-day a.new {
+    color: #f0f011 !important;
+  }
+  :root.skin-theme-clientpref-day .mw-plusminus-pos {
+    color: #f0f015;
+  }
+  :root.skin-theme-clientpref-day .mw-plusminus-null {
+    color: #f0f006;
+  }
+  :root.skin-theme-clientpref-day .oo-ui-textInputWidget .oo-ui-inputWidget-input,
+  :root.skin-theme-clientpref-day .mw-widget-dateInputWidget-handle,
+  :root.skin-theme-clientpref-day .oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button,
+  :root.skin-theme-clientpref-day #pagehistory li.selected {
+    background-color: #f0f00c !important;
+    color: #f0f004 !important;
+    border-color: #f0f00a !important;
+  }
+  :root.skin-theme-clientpref-day .oo-ui-menuSelectWidget {
+    background-color: #f0f00c;
+    border-color: #f0f00a;
+  }
+  :root.skin-theme-clientpref-day .oo-ui-OptionWidget-highlighted {
+    background-color: #f0f009 !important;
+  }
+  :root.skin-theme-clientpref-day .oo-ui-menuOptionWidget.oo-ui-widget-enabled.oo-ui-optionWidget,
+  :root.skin-theme-clientpref-day .minoredit,
+  :root.skin-theme-clientpref-day .comment {
+    color: #f0f004;
+  }
+  :root.skin-theme-clientpref-day .mw-footer-container {
+    color: #f0f004 !important;
+  }
+  :root.skin-theme-clientpref-day #archnavbarlist li a {
+    color: #f0f019 !important;
+  }
+  :root.skin-theme-clientpref-day .anb-selected {
+    color: #f0f005 !important;
+  }
+  :root.skin-theme-clientpref-day .mw-footer li {
+    color: #f0f004;
+  }
+  :root.skin-theme-clientpref-day .vector-main-menu,
+  :root.skin-theme-clientpref-day .vector-pinnable-element {
+    background-color: #f0f001 !important;
+  }
+  :root.skin-theme-clientpref-day #p-navigation ul li a {
+    color: #f0f019 !important;
+  }
+  :root.skin-theme-clientpref-day .archwiki-template-box-note a {
+    color: #f0f019 !important;
+  }
+  :root.skin-theme-clientpref-day .archwiki-template-box-note a:visited {
+    color: #f0f010 !important;
+  }
+  :root.skin-theme-clientpref-day .mw-page-title-main {
+    color: #f0f004;
+  }
+  :root.skin-theme-clientpref-day .vector-tab-noicon mw-list-item a {
+    color: #f0f019;
+  }
+  :root.skin-theme-clientpref-day .mw-header {
+    background-color: #f0f001 !important;
+    color: #f0f004;
+  }
+  :root.skin-theme-clientpref-day .mw-footer li a {
+    color: #f0f019;
+  }
+  :root.skin-theme-clientpref-day .cdx-text-input__input:enabled {
+    background-color: #f0f00c !important;
+    color: #f0f004 !important;
+    border-color: #f0f00b;
+  }
+  :root.skin-theme-clientpref-day .cdx-button:enabled,
+  :root.skin-theme-clientpref-day .cdx-button.cdxbutton--fake-button--enabled {
+    color: #f0f002;
+    background-color: #f0f01b;
+    border-color: #f0f001;
+  }
+  :root.skin-theme-clientpref-day .cdx-menu {
+    background-color: #f0f00c;
+  }
+  :root.skin-theme-clientpref-day .cdx-menu:hover {
+    background-color: #f0f001 !important;
+  }
+  :root.skin-theme-clientpref-day .anb-home {
+    color: #f0f004 !important;
+  }
+  :root.skin-theme-clientpref-day .vector-dropdown-content {
+    background-color: #f0f001 !important;
+  }
+  :root.skin-theme-clientpref-day .mw-headline::before {
+    color: #f0f01b !important;
+  }
+  :root.skin-theme-clientpref-day .cdx-button {
+    background-color: #f0f001 !important;
+    color: #f0f004 !important;
+    border-color: #f0f001 !important;
+  }
+  :root.skin-theme-clientpref-day .mw-body {
+    background-color: #f0f001 !important;
+    color: #f0f004 !important;
+    border-color: #f0f001 !important;
+  }
+  :root.skin-theme-clientpref-day .mw-search-profile-tabs {
+    background-color: #f0f001 !important;
+    color: #f0f004 !important;
+    border-color: #f0f001 !important;
+  }
+  :root.skin-theme-clientpref-day .mw-content-ltr {
+    background-color: #f0f001 !important;
+  }
+  :root.skin-theme-clientpref-day .vector-sticky-pinned-container::after {
+    background: #f0f001 !important;
+  }
+  :root.skin-theme-clientpref-day .cdx-search-input {
+    border-color: #f0f002 !important;
+  }
+  :root.skin-theme-clientpref-day .oo-ui-widget:hover {
+    background-color: #f0f00c !important;
+  }
+}

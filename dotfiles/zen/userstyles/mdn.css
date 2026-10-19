@@ -1,0 +1,977 @@
+/* ==UserStyle==
+@name           pwnbox-mdn
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for MDN (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("developer.mozilla.org") {
+  .light {
+    color-scheme: light;
+    --ctp-rosewater: #f0f00d;
+    --ctp-flamingo: #f0f00e;
+    --ctp-pink: #f0f00f;
+    --ctp-mauve: #f0f010;
+    --ctp-red: #f0f011;
+    --ctp-maroon: #f0f012;
+    --ctp-peach: #f0f013;
+    --ctp-yellow: #f0f014;
+    --ctp-green: #f0f015;
+    --ctp-teal: #f0f016;
+    --ctp-sky: #f0f017;
+    --ctp-sapphire: #f0f018;
+    --ctp-blue: #f0f019;
+    --ctp-lavender: #f0f01a;
+    --ctp-text: #f0f004;
+    --ctp-subtext1: #f0f005;
+    --ctp-subtext0: #f0f006;
+    --ctp-overlay2: #f0f007;
+    --ctp-overlay1: #f0f008;
+    --ctp-overlay0: #f0f009;
+    --ctp-surface2: #f0f00a;
+    --ctp-surface1: #f0f00b;
+    --ctp-surface0: #f0f00c;
+    --ctp-base: #f0f001;
+    --ctp-mantle: #f0f002;
+    --ctp-crust: #f0f003;
+    --color-text-primary: #f0f004;
+    --color-text-secondary: #f0f006;
+    --color-background-page: #f0f001;
+    --color-background-primary: #f0f002;
+    --color-background-secondary: #f0f00c;
+    --color-link-normal: #f0f019;
+    --color-link-visited: #f0f010;
+    --color-border-primary: #f0f00b;
+    --color-border-secondary: #f0f007;
+    --color-border-active: #f0f01b;
+    --color-area-background: rgba(240, 240, 27, 0.25);
+    --color-area-highlight-border: #f0f01b;
+    --color-area-link: #f0f01b;
+    --color-background-red: rgba(240, 240, 17, 0.25);
+    --color-background-orange: rgba(240, 240, 19, 0.25);
+    --color-background-yellow: rgba(240, 240, 20, 0.25);
+    --color-background-green: rgba(240, 240, 21, 0.25);
+    --color-background-blue: rgba(240, 240, 25, 0.25);
+    --color-background-purple: rgba(240, 240, 16, 0.25);
+    --color-white: #f0f004;
+    --color-white-alpha-25: rgba(240, 240, 4, 0.25);
+    --color-white-alpha-75: rgba(240, 240, 4, 0.75);
+    --color-black: #f0f003;
+    --color-black-alpha-25: rgba(240, 240, 3, 0.25);
+    --color-black-alpha-75: rgba(240, 240, 3, 0.75);
+    --color-gray-90: hsl(60, 99.17012448%, 90%);
+    --color-gray-80: hsl(60, 99.17012448%, 80%);
+    --color-gray-60: hsl(60, 99.17012448%, 60%);
+    --color-gray-40: hsl(60, 99.17012448%, 40%);
+    --color-gray-20: hsl(60, 99.17012448%, 20%);
+    --color-gray-10: hsl(60, 99.17012448%, 10%);
+    --color-gray-05: hsl(60, 99.17012448%, 5%);
+    --color-red-90: hsl(60, 88.14229249%, 90%);
+    --color-red-80: hsl(60, 88.14229249%, 80%);
+    --color-red-50: hsl(60, 88.14229249%, 50%);
+    --color-red-20: hsl(60, 88.14229249%, 20%);
+    --color-red-10: hsl(60, 88.14229249%, 10%);
+    --color-orange-90: hsl(60, 88.04780876%, 90%);
+    --color-orange-80: hsl(60, 88.04780876%, 80%);
+    --color-orange-50: hsl(60, 88.04780876%, 50%);
+    --color-orange-20: hsl(60, 88.04780876%, 20%);
+    --color-orange-10: hsl(60, 88.04780876%, 10%);
+    --color-yellow-90: hsl(60, 88%, 90%);
+    --color-yellow-80: hsl(60, 88%, 80%);
+    --color-yellow-50: hsl(60, 88%, 50%);
+    --color-yellow-20: hsl(60, 88%, 20%);
+    --color-yellow-10: hsl(60, 88%, 10%);
+    --color-green-90: hsl(60, 87.95180723%, 90%);
+    --color-green-80: hsl(60, 87.95180723%, 80%);
+    --color-green-50: hsl(60, 87.95180723%, 50%);
+    --color-green-20: hsl(60, 87.95180723%, 20%);
+    --color-green-10: hsl(60, 87.95180723%, 10%);
+    --color-blue-90: hsl(60, 87.75510204%, 90%);
+    --color-blue-80: hsl(60, 87.75510204%, 80%);
+    --color-blue-50: hsl(60, 87.75510204%, 50%);
+    --color-blue-20: hsl(60, 87.75510204%, 20%);
+    --color-blue-10: hsl(60, 87.75510204%, 10%);
+    --color-purple-90: hsl(60, 88.18897638%, 90%);
+    --color-purple-80: hsl(60, 88.18897638%, 80%);
+    --color-purple-50: hsl(60, 88.18897638%, 50%);
+    --color-purple-20: hsl(60, 88.18897638%, 20%);
+    --color-purple-10: hsl(60, 88.18897638%, 10%);
+  }
+  .light ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  .light input::placeholder,
+  .light textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  .light .baseline-indicator {
+    --baseline-bg: #f0f00c;
+    --baseline-engine-bg: #f0f001;
+    --baseline-check: #f0f015;
+    --baseline-cross: #f0f013;
+    --baseline-img: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%20111%2062%22%3E%3Cpath%20fill%3D%22%23f0f013%22%20d%3D%22m30.833%200%2018.5%2018.6-6.166%206.2-18.5-18.6z%22/%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2019,%200.2%29%22%20d%3D%22M86.333%206.2%20111%2031%2086.333%2055.8l-6.166-6.2%2018.5-18.6-18.5-18.6z%22/%3E%3Cpath%20fill%3D%22%23f0f013%22%20d%3D%22m67.833%2037.2-6.166%206.2%2018.5%2018.6%206.166-6.2z%22/%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2019,%200.2%29%22%20d%3D%22m24.667%206.2%206.166%206.2-18.5%2018.6%2018.5%2018.6-6.166%206.2L0%2031z%22/%3E%3Cpath%20fill%3D%22%23f0f013%22%20d%3D%22m80.167%200%206.166%206.2-55.5%2055.8-6.166-6.2z%22/%3E%3C/svg%3E");
+  }
+  .light .baseline-indicator.high {
+    --baseline-bg: rgba(240, 240, 21, 0.2);
+    --baseline-engine-bg: rgba(240, 240, 21, 0.2);
+    --baseline-check: #f0f015;
+    --baseline-img: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%20111%2062%22%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2021,%200.2%29%22%20d%3D%22m86.333%206.2-6.166%206.2%2018.5%2018.6-18.5%2018.6-12.334-12.4-6.166%206.2%2018.5%2018.6L111%2031zM30.833%200%206.167%2024.8l6.166%206.2%2018.5-18.6%2012.334%2012.4%206.166-6.2z%22/%3E%3Cpath%20fill%3D%22%23f0f015%22%20d%3D%22m80.167%200%206.166%206.2-55.5%2055.8L0%2031l6.167-6.2%2024.666%2024.8z%22/%3E%3C/svg%3E");
+  }
+  .light .baseline-indicator.low {
+    --baseline-bg: rgba(240, 240, 25, 0.2);
+    --baseline-engine-bg: rgba(240, 240, 25, 0.2);
+    --baseline-check: #f0f019;
+    --baseline-pill-bg: #f0f019;
+    --baseline-pill-color: #f0f001;
+    --baseline-img: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%20111%2061%22%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2025,%200.2%29%22%20d%3D%22M30.833%200%2037%206.1l-6.167%206.1-6.166-6.1zm12.334%2012.2%206.166%206.1-6.166%206.1L37%2018.3zm49.333%200%206.167%206.1-6.167%206.1-6.167-6.1zm12.333%2012.2L111%2030.5l-6.167%206.1-6.166-6.1zM92.5%2036.6l6.167%206.1-6.167%206.1-6.167-6.1zM80.167%2048.8l6.166%206.1-6.166%206.1L74%2054.9zM67.833%2036.6%2074%2042.7l-6.167%206.1-6.166-6.1zM18.5%2012.2l6.167%206.1-6.167%206.1-6.167-6.1z%22/%3E%3Cpath%20fill%3D%22%23f0f019%22%20d%3D%22m80.167%200%206.166%206.1-55.5%2054.9L0%2030.5l6.167-6.1%2024.666%2024.4z%22/%3E%3C/svg%3E");
+  }
+  .dark {
+    color-scheme: dark;
+    --ctp-rosewater: #f0f00d;
+    --ctp-flamingo: #f0f00e;
+    --ctp-pink: #f0f00f;
+    --ctp-mauve: #f0f010;
+    --ctp-red: #f0f011;
+    --ctp-maroon: #f0f012;
+    --ctp-peach: #f0f013;
+    --ctp-yellow: #f0f014;
+    --ctp-green: #f0f015;
+    --ctp-teal: #f0f016;
+    --ctp-sky: #f0f017;
+    --ctp-sapphire: #f0f018;
+    --ctp-blue: #f0f019;
+    --ctp-lavender: #f0f01a;
+    --ctp-text: #f0f004;
+    --ctp-subtext1: #f0f005;
+    --ctp-subtext0: #f0f006;
+    --ctp-overlay2: #f0f007;
+    --ctp-overlay1: #f0f008;
+    --ctp-overlay0: #f0f009;
+    --ctp-surface2: #f0f00a;
+    --ctp-surface1: #f0f00b;
+    --ctp-surface0: #f0f00c;
+    --ctp-base: #f0f001;
+    --ctp-mantle: #f0f002;
+    --ctp-crust: #f0f003;
+    --color-text-primary: #f0f004;
+    --color-text-secondary: #f0f006;
+    --color-background-page: #f0f001;
+    --color-background-primary: #f0f002;
+    --color-background-secondary: #f0f00c;
+    --color-link-normal: #f0f019;
+    --color-link-visited: #f0f010;
+    --color-border-primary: #f0f00b;
+    --color-border-secondary: #f0f007;
+    --color-border-active: #f0f01b;
+    --color-area-background: rgba(240, 240, 27, 0.25);
+    --color-area-highlight-border: #f0f01b;
+    --color-area-link: #f0f01b;
+    --color-background-red: rgba(240, 240, 17, 0.25);
+    --color-background-orange: rgba(240, 240, 19, 0.25);
+    --color-background-yellow: rgba(240, 240, 20, 0.25);
+    --color-background-green: rgba(240, 240, 21, 0.25);
+    --color-background-blue: rgba(240, 240, 25, 0.25);
+    --color-background-purple: rgba(240, 240, 16, 0.25);
+    --color-white: #f0f004;
+    --color-white-alpha-25: rgba(240, 240, 4, 0.25);
+    --color-white-alpha-75: rgba(240, 240, 4, 0.75);
+    --color-black: #f0f003;
+    --color-black-alpha-25: rgba(240, 240, 3, 0.25);
+    --color-black-alpha-75: rgba(240, 240, 3, 0.75);
+    --color-gray-90: hsl(60, 99.17012448%, 90%);
+    --color-gray-80: hsl(60, 99.17012448%, 80%);
+    --color-gray-60: hsl(60, 99.17012448%, 60%);
+    --color-gray-40: hsl(60, 99.17012448%, 40%);
+    --color-gray-20: hsl(60, 99.17012448%, 20%);
+    --color-gray-10: hsl(60, 99.17012448%, 10%);
+    --color-gray-05: hsl(60, 99.17012448%, 5%);
+    --color-red-90: hsl(60, 88.14229249%, 90%);
+    --color-red-80: hsl(60, 88.14229249%, 80%);
+    --color-red-50: hsl(60, 88.14229249%, 50%);
+    --color-red-20: hsl(60, 88.14229249%, 20%);
+    --color-red-10: hsl(60, 88.14229249%, 10%);
+    --color-orange-90: hsl(60, 88.04780876%, 90%);
+    --color-orange-80: hsl(60, 88.04780876%, 80%);
+    --color-orange-50: hsl(60, 88.04780876%, 50%);
+    --color-orange-20: hsl(60, 88.04780876%, 20%);
+    --color-orange-10: hsl(60, 88.04780876%, 10%);
+    --color-yellow-90: hsl(60, 88%, 90%);
+    --color-yellow-80: hsl(60, 88%, 80%);
+    --color-yellow-50: hsl(60, 88%, 50%);
+    --color-yellow-20: hsl(60, 88%, 20%);
+    --color-yellow-10: hsl(60, 88%, 10%);
+    --color-green-90: hsl(60, 87.95180723%, 90%);
+    --color-green-80: hsl(60, 87.95180723%, 80%);
+    --color-green-50: hsl(60, 87.95180723%, 50%);
+    --color-green-20: hsl(60, 87.95180723%, 20%);
+    --color-green-10: hsl(60, 87.95180723%, 10%);
+    --color-blue-90: hsl(60, 87.75510204%, 90%);
+    --color-blue-80: hsl(60, 87.75510204%, 80%);
+    --color-blue-50: hsl(60, 87.75510204%, 50%);
+    --color-blue-20: hsl(60, 87.75510204%, 20%);
+    --color-blue-10: hsl(60, 87.75510204%, 10%);
+    --color-purple-90: hsl(60, 88.18897638%, 90%);
+    --color-purple-80: hsl(60, 88.18897638%, 80%);
+    --color-purple-50: hsl(60, 88.18897638%, 50%);
+    --color-purple-20: hsl(60, 88.18897638%, 20%);
+    --color-purple-10: hsl(60, 88.18897638%, 10%);
+  }
+  .dark ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  .dark input::placeholder,
+  .dark textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  .dark .baseline-indicator {
+    --baseline-bg: #f0f00c;
+    --baseline-engine-bg: #f0f001;
+    --baseline-check: #f0f015;
+    --baseline-cross: #f0f013;
+    --baseline-img: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%20111%2062%22%3E%3Cpath%20fill%3D%22%23f0f013%22%20d%3D%22m30.833%200%2018.5%2018.6-6.166%206.2-18.5-18.6z%22/%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2019,%200.2%29%22%20d%3D%22M86.333%206.2%20111%2031%2086.333%2055.8l-6.166-6.2%2018.5-18.6-18.5-18.6z%22/%3E%3Cpath%20fill%3D%22%23f0f013%22%20d%3D%22m67.833%2037.2-6.166%206.2%2018.5%2018.6%206.166-6.2z%22/%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2019,%200.2%29%22%20d%3D%22m24.667%206.2%206.166%206.2-18.5%2018.6%2018.5%2018.6-6.166%206.2L0%2031z%22/%3E%3Cpath%20fill%3D%22%23f0f013%22%20d%3D%22m80.167%200%206.166%206.2-55.5%2055.8-6.166-6.2z%22/%3E%3C/svg%3E");
+  }
+  .dark .baseline-indicator.high {
+    --baseline-bg: rgba(240, 240, 21, 0.2);
+    --baseline-engine-bg: rgba(240, 240, 21, 0.2);
+    --baseline-check: #f0f015;
+    --baseline-img: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%20111%2062%22%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2021,%200.2%29%22%20d%3D%22m86.333%206.2-6.166%206.2%2018.5%2018.6-18.5%2018.6-12.334-12.4-6.166%206.2%2018.5%2018.6L111%2031zM30.833%200%206.167%2024.8l6.166%206.2%2018.5-18.6%2012.334%2012.4%206.166-6.2z%22/%3E%3Cpath%20fill%3D%22%23f0f015%22%20d%3D%22m80.167%200%206.166%206.2-55.5%2055.8L0%2031l6.167-6.2%2024.666%2024.8z%22/%3E%3C/svg%3E");
+  }
+  .dark .baseline-indicator.low {
+    --baseline-bg: rgba(240, 240, 25, 0.2);
+    --baseline-engine-bg: rgba(240, 240, 25, 0.2);
+    --baseline-check: #f0f019;
+    --baseline-pill-bg: #f0f019;
+    --baseline-pill-color: #f0f001;
+    --baseline-img: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%20111%2061%22%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2025,%200.2%29%22%20d%3D%22M30.833%200%2037%206.1l-6.167%206.1-6.166-6.1zm12.334%2012.2%206.166%206.1-6.166%206.1L37%2018.3zm49.333%200%206.167%206.1-6.167%206.1-6.167-6.1zm12.333%2012.2L111%2030.5l-6.167%206.1-6.166-6.1zM92.5%2036.6l6.167%206.1-6.167%206.1-6.167-6.1zM80.167%2048.8l6.166%206.1-6.166%206.1L74%2054.9zM67.833%2036.6%2074%2042.7l-6.167%206.1-6.166-6.1zM18.5%2012.2l6.167%206.1-6.167%206.1-6.167-6.1z%22/%3E%3Cpath%20fill%3D%22%23f0f019%22%20d%3D%22m80.167%200%206.166%206.1-55.5%2054.9L0%2030.5l6.167-6.1%2024.666%2024.4z%22/%3E%3C/svg%3E");
+  }
+  /* stylelint-disable selector-not-notation */
+  @media (prefers-color-scheme: light) {
+    :root:not(.light):not(.dark) {
+      color-scheme: light;
+      --ctp-rosewater: #f0f00d;
+      --ctp-flamingo: #f0f00e;
+      --ctp-pink: #f0f00f;
+      --ctp-mauve: #f0f010;
+      --ctp-red: #f0f011;
+      --ctp-maroon: #f0f012;
+      --ctp-peach: #f0f013;
+      --ctp-yellow: #f0f014;
+      --ctp-green: #f0f015;
+      --ctp-teal: #f0f016;
+      --ctp-sky: #f0f017;
+      --ctp-sapphire: #f0f018;
+      --ctp-blue: #f0f019;
+      --ctp-lavender: #f0f01a;
+      --ctp-text: #f0f004;
+      --ctp-subtext1: #f0f005;
+      --ctp-subtext0: #f0f006;
+      --ctp-overlay2: #f0f007;
+      --ctp-overlay1: #f0f008;
+      --ctp-overlay0: #f0f009;
+      --ctp-surface2: #f0f00a;
+      --ctp-surface1: #f0f00b;
+      --ctp-surface0: #f0f00c;
+      --ctp-base: #f0f001;
+      --ctp-mantle: #f0f002;
+      --ctp-crust: #f0f003;
+      --color-text-primary: #f0f004;
+      --color-text-secondary: #f0f006;
+      --color-background-page: #f0f001;
+      --color-background-primary: #f0f002;
+      --color-background-secondary: #f0f00c;
+      --color-link-normal: #f0f019;
+      --color-link-visited: #f0f010;
+      --color-border-primary: #f0f00b;
+      --color-border-secondary: #f0f007;
+      --color-border-active: #f0f01b;
+      --color-area-background: rgba(240, 240, 27, 0.25);
+      --color-area-highlight-border: #f0f01b;
+      --color-area-link: #f0f01b;
+      --color-background-red: rgba(240, 240, 17, 0.25);
+      --color-background-orange: rgba(240, 240, 19, 0.25);
+      --color-background-yellow: rgba(240, 240, 20, 0.25);
+      --color-background-green: rgba(240, 240, 21, 0.25);
+      --color-background-blue: rgba(240, 240, 25, 0.25);
+      --color-background-purple: rgba(240, 240, 16, 0.25);
+      --color-white: #f0f004;
+      --color-white-alpha-25: rgba(240, 240, 4, 0.25);
+      --color-white-alpha-75: rgba(240, 240, 4, 0.75);
+      --color-black: #f0f003;
+      --color-black-alpha-25: rgba(240, 240, 3, 0.25);
+      --color-black-alpha-75: rgba(240, 240, 3, 0.75);
+      --color-gray-90: hsl(60, 99.17012448%, 90%);
+      --color-gray-80: hsl(60, 99.17012448%, 80%);
+      --color-gray-60: hsl(60, 99.17012448%, 60%);
+      --color-gray-40: hsl(60, 99.17012448%, 40%);
+      --color-gray-20: hsl(60, 99.17012448%, 20%);
+      --color-gray-10: hsl(60, 99.17012448%, 10%);
+      --color-gray-05: hsl(60, 99.17012448%, 5%);
+      --color-red-90: hsl(60, 88.14229249%, 90%);
+      --color-red-80: hsl(60, 88.14229249%, 80%);
+      --color-red-50: hsl(60, 88.14229249%, 50%);
+      --color-red-20: hsl(60, 88.14229249%, 20%);
+      --color-red-10: hsl(60, 88.14229249%, 10%);
+      --color-orange-90: hsl(60, 88.04780876%, 90%);
+      --color-orange-80: hsl(60, 88.04780876%, 80%);
+      --color-orange-50: hsl(60, 88.04780876%, 50%);
+      --color-orange-20: hsl(60, 88.04780876%, 20%);
+      --color-orange-10: hsl(60, 88.04780876%, 10%);
+      --color-yellow-90: hsl(60, 88%, 90%);
+      --color-yellow-80: hsl(60, 88%, 80%);
+      --color-yellow-50: hsl(60, 88%, 50%);
+      --color-yellow-20: hsl(60, 88%, 20%);
+      --color-yellow-10: hsl(60, 88%, 10%);
+      --color-green-90: hsl(60, 87.95180723%, 90%);
+      --color-green-80: hsl(60, 87.95180723%, 80%);
+      --color-green-50: hsl(60, 87.95180723%, 50%);
+      --color-green-20: hsl(60, 87.95180723%, 20%);
+      --color-green-10: hsl(60, 87.95180723%, 10%);
+      --color-blue-90: hsl(60, 87.75510204%, 90%);
+      --color-blue-80: hsl(60, 87.75510204%, 80%);
+      --color-blue-50: hsl(60, 87.75510204%, 50%);
+      --color-blue-20: hsl(60, 87.75510204%, 20%);
+      --color-blue-10: hsl(60, 87.75510204%, 10%);
+      --color-purple-90: hsl(60, 88.18897638%, 90%);
+      --color-purple-80: hsl(60, 88.18897638%, 80%);
+      --color-purple-50: hsl(60, 88.18897638%, 50%);
+      --color-purple-20: hsl(60, 88.18897638%, 20%);
+      --color-purple-10: hsl(60, 88.18897638%, 10%);
+    }
+    :root:not(.light):not(.dark) ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root:not(.light):not(.dark) input::placeholder,
+    :root:not(.light):not(.dark) textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root:not(.light):not(.dark) .baseline-indicator {
+      --baseline-bg: #f0f00c;
+      --baseline-engine-bg: #f0f001;
+      --baseline-check: #f0f015;
+      --baseline-cross: #f0f013;
+      --baseline-img: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%20111%2062%22%3E%3Cpath%20fill%3D%22%23f0f013%22%20d%3D%22m30.833%200%2018.5%2018.6-6.166%206.2-18.5-18.6z%22/%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2019,%200.2%29%22%20d%3D%22M86.333%206.2%20111%2031%2086.333%2055.8l-6.166-6.2%2018.5-18.6-18.5-18.6z%22/%3E%3Cpath%20fill%3D%22%23f0f013%22%20d%3D%22m67.833%2037.2-6.166%206.2%2018.5%2018.6%206.166-6.2z%22/%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2019,%200.2%29%22%20d%3D%22m24.667%206.2%206.166%206.2-18.5%2018.6%2018.5%2018.6-6.166%206.2L0%2031z%22/%3E%3Cpath%20fill%3D%22%23f0f013%22%20d%3D%22m80.167%200%206.166%206.2-55.5%2055.8-6.166-6.2z%22/%3E%3C/svg%3E");
+    }
+    :root:not(.light):not(.dark) .baseline-indicator.high {
+      --baseline-bg: rgba(240, 240, 21, 0.2);
+      --baseline-engine-bg: rgba(240, 240, 21, 0.2);
+      --baseline-check: #f0f015;
+      --baseline-img: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%20111%2062%22%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2021,%200.2%29%22%20d%3D%22m86.333%206.2-6.166%206.2%2018.5%2018.6-18.5%2018.6-12.334-12.4-6.166%206.2%2018.5%2018.6L111%2031zM30.833%200%206.167%2024.8l6.166%206.2%2018.5-18.6%2012.334%2012.4%206.166-6.2z%22/%3E%3Cpath%20fill%3D%22%23f0f015%22%20d%3D%22m80.167%200%206.166%206.2-55.5%2055.8L0%2031l6.167-6.2%2024.666%2024.8z%22/%3E%3C/svg%3E");
+    }
+    :root:not(.light):not(.dark) .baseline-indicator.low {
+      --baseline-bg: rgba(240, 240, 25, 0.2);
+      --baseline-engine-bg: rgba(240, 240, 25, 0.2);
+      --baseline-check: #f0f019;
+      --baseline-pill-bg: #f0f019;
+      --baseline-pill-color: #f0f001;
+      --baseline-img: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%20111%2061%22%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2025,%200.2%29%22%20d%3D%22M30.833%200%2037%206.1l-6.167%206.1-6.166-6.1zm12.334%2012.2%206.166%206.1-6.166%206.1L37%2018.3zm49.333%200%206.167%206.1-6.167%206.1-6.167-6.1zm12.333%2012.2L111%2030.5l-6.167%206.1-6.166-6.1zM92.5%2036.6l6.167%206.1-6.167%206.1-6.167-6.1zM80.167%2048.8l6.166%206.1-6.166%206.1L74%2054.9zM67.833%2036.6%2074%2042.7l-6.167%206.1-6.166-6.1zM18.5%2012.2l6.167%206.1-6.167%206.1-6.167-6.1z%22/%3E%3Cpath%20fill%3D%22%23f0f019%22%20d%3D%22m80.167%200%206.166%206.1-55.5%2054.9L0%2030.5l6.167-6.1%2024.666%2024.4z%22/%3E%3C/svg%3E");
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not(.light):not(.dark) {
+      color-scheme: dark;
+      --ctp-rosewater: #f0f00d;
+      --ctp-flamingo: #f0f00e;
+      --ctp-pink: #f0f00f;
+      --ctp-mauve: #f0f010;
+      --ctp-red: #f0f011;
+      --ctp-maroon: #f0f012;
+      --ctp-peach: #f0f013;
+      --ctp-yellow: #f0f014;
+      --ctp-green: #f0f015;
+      --ctp-teal: #f0f016;
+      --ctp-sky: #f0f017;
+      --ctp-sapphire: #f0f018;
+      --ctp-blue: #f0f019;
+      --ctp-lavender: #f0f01a;
+      --ctp-text: #f0f004;
+      --ctp-subtext1: #f0f005;
+      --ctp-subtext0: #f0f006;
+      --ctp-overlay2: #f0f007;
+      --ctp-overlay1: #f0f008;
+      --ctp-overlay0: #f0f009;
+      --ctp-surface2: #f0f00a;
+      --ctp-surface1: #f0f00b;
+      --ctp-surface0: #f0f00c;
+      --ctp-base: #f0f001;
+      --ctp-mantle: #f0f002;
+      --ctp-crust: #f0f003;
+      --color-text-primary: #f0f004;
+      --color-text-secondary: #f0f006;
+      --color-background-page: #f0f001;
+      --color-background-primary: #f0f002;
+      --color-background-secondary: #f0f00c;
+      --color-link-normal: #f0f019;
+      --color-link-visited: #f0f010;
+      --color-border-primary: #f0f00b;
+      --color-border-secondary: #f0f007;
+      --color-border-active: #f0f01b;
+      --color-area-background: rgba(240, 240, 27, 0.25);
+      --color-area-highlight-border: #f0f01b;
+      --color-area-link: #f0f01b;
+      --color-background-red: rgba(240, 240, 17, 0.25);
+      --color-background-orange: rgba(240, 240, 19, 0.25);
+      --color-background-yellow: rgba(240, 240, 20, 0.25);
+      --color-background-green: rgba(240, 240, 21, 0.25);
+      --color-background-blue: rgba(240, 240, 25, 0.25);
+      --color-background-purple: rgba(240, 240, 16, 0.25);
+      --color-white: #f0f004;
+      --color-white-alpha-25: rgba(240, 240, 4, 0.25);
+      --color-white-alpha-75: rgba(240, 240, 4, 0.75);
+      --color-black: #f0f003;
+      --color-black-alpha-25: rgba(240, 240, 3, 0.25);
+      --color-black-alpha-75: rgba(240, 240, 3, 0.75);
+      --color-gray-90: hsl(60, 99.17012448%, 90%);
+      --color-gray-80: hsl(60, 99.17012448%, 80%);
+      --color-gray-60: hsl(60, 99.17012448%, 60%);
+      --color-gray-40: hsl(60, 99.17012448%, 40%);
+      --color-gray-20: hsl(60, 99.17012448%, 20%);
+      --color-gray-10: hsl(60, 99.17012448%, 10%);
+      --color-gray-05: hsl(60, 99.17012448%, 5%);
+      --color-red-90: hsl(60, 88.14229249%, 90%);
+      --color-red-80: hsl(60, 88.14229249%, 80%);
+      --color-red-50: hsl(60, 88.14229249%, 50%);
+      --color-red-20: hsl(60, 88.14229249%, 20%);
+      --color-red-10: hsl(60, 88.14229249%, 10%);
+      --color-orange-90: hsl(60, 88.04780876%, 90%);
+      --color-orange-80: hsl(60, 88.04780876%, 80%);
+      --color-orange-50: hsl(60, 88.04780876%, 50%);
+      --color-orange-20: hsl(60, 88.04780876%, 20%);
+      --color-orange-10: hsl(60, 88.04780876%, 10%);
+      --color-yellow-90: hsl(60, 88%, 90%);
+      --color-yellow-80: hsl(60, 88%, 80%);
+      --color-yellow-50: hsl(60, 88%, 50%);
+      --color-yellow-20: hsl(60, 88%, 20%);
+      --color-yellow-10: hsl(60, 88%, 10%);
+      --color-green-90: hsl(60, 87.95180723%, 90%);
+      --color-green-80: hsl(60, 87.95180723%, 80%);
+      --color-green-50: hsl(60, 87.95180723%, 50%);
+      --color-green-20: hsl(60, 87.95180723%, 20%);
+      --color-green-10: hsl(60, 87.95180723%, 10%);
+      --color-blue-90: hsl(60, 87.75510204%, 90%);
+      --color-blue-80: hsl(60, 87.75510204%, 80%);
+      --color-blue-50: hsl(60, 87.75510204%, 50%);
+      --color-blue-20: hsl(60, 87.75510204%, 20%);
+      --color-blue-10: hsl(60, 87.75510204%, 10%);
+      --color-purple-90: hsl(60, 88.18897638%, 90%);
+      --color-purple-80: hsl(60, 88.18897638%, 80%);
+      --color-purple-50: hsl(60, 88.18897638%, 50%);
+      --color-purple-20: hsl(60, 88.18897638%, 20%);
+      --color-purple-10: hsl(60, 88.18897638%, 10%);
+    }
+    :root:not(.light):not(.dark) ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root:not(.light):not(.dark) input::placeholder,
+    :root:not(.light):not(.dark) textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root:not(.light):not(.dark) .baseline-indicator {
+      --baseline-bg: #f0f00c;
+      --baseline-engine-bg: #f0f001;
+      --baseline-check: #f0f015;
+      --baseline-cross: #f0f013;
+      --baseline-img: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%20111%2062%22%3E%3Cpath%20fill%3D%22%23f0f013%22%20d%3D%22m30.833%200%2018.5%2018.6-6.166%206.2-18.5-18.6z%22/%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2019,%200.2%29%22%20d%3D%22M86.333%206.2%20111%2031%2086.333%2055.8l-6.166-6.2%2018.5-18.6-18.5-18.6z%22/%3E%3Cpath%20fill%3D%22%23f0f013%22%20d%3D%22m67.833%2037.2-6.166%206.2%2018.5%2018.6%206.166-6.2z%22/%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2019,%200.2%29%22%20d%3D%22m24.667%206.2%206.166%206.2-18.5%2018.6%2018.5%2018.6-6.166%206.2L0%2031z%22/%3E%3Cpath%20fill%3D%22%23f0f013%22%20d%3D%22m80.167%200%206.166%206.2-55.5%2055.8-6.166-6.2z%22/%3E%3C/svg%3E");
+    }
+    :root:not(.light):not(.dark) .baseline-indicator.high {
+      --baseline-bg: rgba(240, 240, 21, 0.2);
+      --baseline-engine-bg: rgba(240, 240, 21, 0.2);
+      --baseline-check: #f0f015;
+      --baseline-img: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%20111%2062%22%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2021,%200.2%29%22%20d%3D%22m86.333%206.2-6.166%206.2%2018.5%2018.6-18.5%2018.6-12.334-12.4-6.166%206.2%2018.5%2018.6L111%2031zM30.833%200%206.167%2024.8l6.166%206.2%2018.5-18.6%2012.334%2012.4%206.166-6.2z%22/%3E%3Cpath%20fill%3D%22%23f0f015%22%20d%3D%22m80.167%200%206.166%206.2-55.5%2055.8L0%2031l6.167-6.2%2024.666%2024.8z%22/%3E%3C/svg%3E");
+    }
+    :root:not(.light):not(.dark) .baseline-indicator.low {
+      --baseline-bg: rgba(240, 240, 25, 0.2);
+      --baseline-engine-bg: rgba(240, 240, 25, 0.2);
+      --baseline-check: #f0f019;
+      --baseline-pill-bg: #f0f019;
+      --baseline-pill-color: #f0f001;
+      --baseline-img: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%20111%2061%22%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2025,%200.2%29%22%20d%3D%22M30.833%200%2037%206.1l-6.167%206.1-6.166-6.1zm12.334%2012.2%206.166%206.1-6.166%206.1L37%2018.3zm49.333%200%206.167%206.1-6.167%206.1-6.167-6.1zm12.333%2012.2L111%2030.5l-6.167%206.1-6.166-6.1zM92.5%2036.6l6.167%206.1-6.167%206.1-6.167-6.1zM80.167%2048.8l6.166%206.1-6.166%206.1L74%2054.9zM67.833%2036.6%2074%2042.7l-6.167%206.1-6.166-6.1zM18.5%2012.2l6.167%206.1-6.167%206.1-6.167-6.1z%22/%3E%3Cpath%20fill%3D%22%23f0f019%22%20d%3D%22m80.167%200%206.166%206.1-55.5%2054.9L0%2030.5l6.167-6.1%2024.666%2024.4z%22/%3E%3C/svg%3E");
+    }
+  }
+  /* stylelint-enable selector-not-notation */
+}
+@-moz-document domain("interactive-examples.mdn.mozilla.net") {
+  .theme-light {
+    color-scheme: light;
+    --ctp-rosewater: #f0f00d;
+    --ctp-flamingo: #f0f00e;
+    --ctp-pink: #f0f00f;
+    --ctp-mauve: #f0f010;
+    --ctp-red: #f0f011;
+    --ctp-maroon: #f0f012;
+    --ctp-peach: #f0f013;
+    --ctp-yellow: #f0f014;
+    --ctp-green: #f0f015;
+    --ctp-teal: #f0f016;
+    --ctp-sky: #f0f017;
+    --ctp-sapphire: #f0f018;
+    --ctp-blue: #f0f019;
+    --ctp-lavender: #f0f01a;
+    --ctp-text: #f0f004;
+    --ctp-subtext1: #f0f005;
+    --ctp-subtext0: #f0f006;
+    --ctp-overlay2: #f0f007;
+    --ctp-overlay1: #f0f008;
+    --ctp-overlay0: #f0f009;
+    --ctp-surface2: #f0f00a;
+    --ctp-surface1: #f0f00b;
+    --ctp-surface0: #f0f00c;
+    --ctp-base: #f0f001;
+    --ctp-mantle: #f0f002;
+    --ctp-crust: #f0f003;
+    --color-text-primary: #f0f004;
+    --color-text-secondary: #f0f006;
+    --color-background-page: #f0f001;
+    --color-background-primary: #f0f002;
+    --color-background-secondary: #f0f00c;
+    --color-link-normal: #f0f019;
+    --color-link-visited: #f0f010;
+    --color-border-primary: #f0f00b;
+    --color-border-secondary: #f0f007;
+    --color-border-active: #f0f01b;
+    --color-area-background: rgba(240, 240, 27, 0.25);
+    --color-area-highlight-border: #f0f01b;
+    --color-area-link: #f0f01b;
+    --color-background-red: rgba(240, 240, 17, 0.25);
+    --color-background-orange: rgba(240, 240, 19, 0.25);
+    --color-background-yellow: rgba(240, 240, 20, 0.25);
+    --color-background-green: rgba(240, 240, 21, 0.25);
+    --color-background-blue: rgba(240, 240, 25, 0.25);
+    --color-background-purple: rgba(240, 240, 16, 0.25);
+    --color-white: #f0f004;
+    --color-white-alpha-25: rgba(240, 240, 4, 0.25);
+    --color-white-alpha-75: rgba(240, 240, 4, 0.75);
+    --color-black: #f0f003;
+    --color-black-alpha-25: rgba(240, 240, 3, 0.25);
+    --color-black-alpha-75: rgba(240, 240, 3, 0.75);
+    --color-gray-90: hsl(60, 99.17012448%, 90%);
+    --color-gray-80: hsl(60, 99.17012448%, 80%);
+    --color-gray-60: hsl(60, 99.17012448%, 60%);
+    --color-gray-40: hsl(60, 99.17012448%, 40%);
+    --color-gray-20: hsl(60, 99.17012448%, 20%);
+    --color-gray-10: hsl(60, 99.17012448%, 10%);
+    --color-gray-05: hsl(60, 99.17012448%, 5%);
+    --color-red-90: hsl(60, 88.14229249%, 90%);
+    --color-red-80: hsl(60, 88.14229249%, 80%);
+    --color-red-50: hsl(60, 88.14229249%, 50%);
+    --color-red-20: hsl(60, 88.14229249%, 20%);
+    --color-red-10: hsl(60, 88.14229249%, 10%);
+    --color-orange-90: hsl(60, 88.04780876%, 90%);
+    --color-orange-80: hsl(60, 88.04780876%, 80%);
+    --color-orange-50: hsl(60, 88.04780876%, 50%);
+    --color-orange-20: hsl(60, 88.04780876%, 20%);
+    --color-orange-10: hsl(60, 88.04780876%, 10%);
+    --color-yellow-90: hsl(60, 88%, 90%);
+    --color-yellow-80: hsl(60, 88%, 80%);
+    --color-yellow-50: hsl(60, 88%, 50%);
+    --color-yellow-20: hsl(60, 88%, 20%);
+    --color-yellow-10: hsl(60, 88%, 10%);
+    --color-green-90: hsl(60, 87.95180723%, 90%);
+    --color-green-80: hsl(60, 87.95180723%, 80%);
+    --color-green-50: hsl(60, 87.95180723%, 50%);
+    --color-green-20: hsl(60, 87.95180723%, 20%);
+    --color-green-10: hsl(60, 87.95180723%, 10%);
+    --color-blue-90: hsl(60, 87.75510204%, 90%);
+    --color-blue-80: hsl(60, 87.75510204%, 80%);
+    --color-blue-50: hsl(60, 87.75510204%, 50%);
+    --color-blue-20: hsl(60, 87.75510204%, 20%);
+    --color-blue-10: hsl(60, 87.75510204%, 10%);
+    --color-purple-90: hsl(60, 88.18897638%, 90%);
+    --color-purple-80: hsl(60, 88.18897638%, 80%);
+    --color-purple-50: hsl(60, 88.18897638%, 50%);
+    --color-purple-20: hsl(60, 88.18897638%, 20%);
+    --color-purple-10: hsl(60, 88.18897638%, 10%);
+  }
+  .theme-light ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  .theme-light input::placeholder,
+  .theme-light textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  .theme-light .baseline-indicator {
+    --baseline-bg: #f0f00c;
+    --baseline-engine-bg: #f0f001;
+    --baseline-check: #f0f015;
+    --baseline-cross: #f0f013;
+    --baseline-img: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%20111%2062%22%3E%3Cpath%20fill%3D%22%23f0f013%22%20d%3D%22m30.833%200%2018.5%2018.6-6.166%206.2-18.5-18.6z%22/%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2019,%200.2%29%22%20d%3D%22M86.333%206.2%20111%2031%2086.333%2055.8l-6.166-6.2%2018.5-18.6-18.5-18.6z%22/%3E%3Cpath%20fill%3D%22%23f0f013%22%20d%3D%22m67.833%2037.2-6.166%206.2%2018.5%2018.6%206.166-6.2z%22/%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2019,%200.2%29%22%20d%3D%22m24.667%206.2%206.166%206.2-18.5%2018.6%2018.5%2018.6-6.166%206.2L0%2031z%22/%3E%3Cpath%20fill%3D%22%23f0f013%22%20d%3D%22m80.167%200%206.166%206.2-55.5%2055.8-6.166-6.2z%22/%3E%3C/svg%3E");
+  }
+  .theme-light .baseline-indicator.high {
+    --baseline-bg: rgba(240, 240, 21, 0.2);
+    --baseline-engine-bg: rgba(240, 240, 21, 0.2);
+    --baseline-check: #f0f015;
+    --baseline-img: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%20111%2062%22%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2021,%200.2%29%22%20d%3D%22m86.333%206.2-6.166%206.2%2018.5%2018.6-18.5%2018.6-12.334-12.4-6.166%206.2%2018.5%2018.6L111%2031zM30.833%200%206.167%2024.8l6.166%206.2%2018.5-18.6%2012.334%2012.4%206.166-6.2z%22/%3E%3Cpath%20fill%3D%22%23f0f015%22%20d%3D%22m80.167%200%206.166%206.2-55.5%2055.8L0%2031l6.167-6.2%2024.666%2024.8z%22/%3E%3C/svg%3E");
+  }
+  .theme-light .baseline-indicator.low {
+    --baseline-bg: rgba(240, 240, 25, 0.2);
+    --baseline-engine-bg: rgba(240, 240, 25, 0.2);
+    --baseline-check: #f0f019;
+    --baseline-pill-bg: #f0f019;
+    --baseline-pill-color: #f0f001;
+    --baseline-img: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%20111%2061%22%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2025,%200.2%29%22%20d%3D%22M30.833%200%2037%206.1l-6.167%206.1-6.166-6.1zm12.334%2012.2%206.166%206.1-6.166%206.1L37%2018.3zm49.333%200%206.167%206.1-6.167%206.1-6.167-6.1zm12.333%2012.2L111%2030.5l-6.167%206.1-6.166-6.1zM92.5%2036.6l6.167%206.1-6.167%206.1-6.167-6.1zM80.167%2048.8l6.166%206.1-6.166%206.1L74%2054.9zM67.833%2036.6%2074%2042.7l-6.167%206.1-6.166-6.1zM18.5%2012.2l6.167%206.1-6.167%206.1-6.167-6.1z%22/%3E%3Cpath%20fill%3D%22%23f0f019%22%20d%3D%22m80.167%200%206.166%206.1-55.5%2054.9L0%2030.5l6.167-6.1%2024.666%2024.4z%22/%3E%3C/svg%3E");
+  }
+  .theme-dark {
+    color-scheme: dark;
+    --ctp-rosewater: #f0f00d;
+    --ctp-flamingo: #f0f00e;
+    --ctp-pink: #f0f00f;
+    --ctp-mauve: #f0f010;
+    --ctp-red: #f0f011;
+    --ctp-maroon: #f0f012;
+    --ctp-peach: #f0f013;
+    --ctp-yellow: #f0f014;
+    --ctp-green: #f0f015;
+    --ctp-teal: #f0f016;
+    --ctp-sky: #f0f017;
+    --ctp-sapphire: #f0f018;
+    --ctp-blue: #f0f019;
+    --ctp-lavender: #f0f01a;
+    --ctp-text: #f0f004;
+    --ctp-subtext1: #f0f005;
+    --ctp-subtext0: #f0f006;
+    --ctp-overlay2: #f0f007;
+    --ctp-overlay1: #f0f008;
+    --ctp-overlay0: #f0f009;
+    --ctp-surface2: #f0f00a;
+    --ctp-surface1: #f0f00b;
+    --ctp-surface0: #f0f00c;
+    --ctp-base: #f0f001;
+    --ctp-mantle: #f0f002;
+    --ctp-crust: #f0f003;
+    --color-text-primary: #f0f004;
+    --color-text-secondary: #f0f006;
+    --color-background-page: #f0f001;
+    --color-background-primary: #f0f002;
+    --color-background-secondary: #f0f00c;
+    --color-link-normal: #f0f019;
+    --color-link-visited: #f0f010;
+    --color-border-primary: #f0f00b;
+    --color-border-secondary: #f0f007;
+    --color-border-active: #f0f01b;
+    --color-area-background: rgba(240, 240, 27, 0.25);
+    --color-area-highlight-border: #f0f01b;
+    --color-area-link: #f0f01b;
+    --color-background-red: rgba(240, 240, 17, 0.25);
+    --color-background-orange: rgba(240, 240, 19, 0.25);
+    --color-background-yellow: rgba(240, 240, 20, 0.25);
+    --color-background-green: rgba(240, 240, 21, 0.25);
+    --color-background-blue: rgba(240, 240, 25, 0.25);
+    --color-background-purple: rgba(240, 240, 16, 0.25);
+    --color-white: #f0f004;
+    --color-white-alpha-25: rgba(240, 240, 4, 0.25);
+    --color-white-alpha-75: rgba(240, 240, 4, 0.75);
+    --color-black: #f0f003;
+    --color-black-alpha-25: rgba(240, 240, 3, 0.25);
+    --color-black-alpha-75: rgba(240, 240, 3, 0.75);
+    --color-gray-90: hsl(60, 99.17012448%, 90%);
+    --color-gray-80: hsl(60, 99.17012448%, 80%);
+    --color-gray-60: hsl(60, 99.17012448%, 60%);
+    --color-gray-40: hsl(60, 99.17012448%, 40%);
+    --color-gray-20: hsl(60, 99.17012448%, 20%);
+    --color-gray-10: hsl(60, 99.17012448%, 10%);
+    --color-gray-05: hsl(60, 99.17012448%, 5%);
+    --color-red-90: hsl(60, 88.14229249%, 90%);
+    --color-red-80: hsl(60, 88.14229249%, 80%);
+    --color-red-50: hsl(60, 88.14229249%, 50%);
+    --color-red-20: hsl(60, 88.14229249%, 20%);
+    --color-red-10: hsl(60, 88.14229249%, 10%);
+    --color-orange-90: hsl(60, 88.04780876%, 90%);
+    --color-orange-80: hsl(60, 88.04780876%, 80%);
+    --color-orange-50: hsl(60, 88.04780876%, 50%);
+    --color-orange-20: hsl(60, 88.04780876%, 20%);
+    --color-orange-10: hsl(60, 88.04780876%, 10%);
+    --color-yellow-90: hsl(60, 88%, 90%);
+    --color-yellow-80: hsl(60, 88%, 80%);
+    --color-yellow-50: hsl(60, 88%, 50%);
+    --color-yellow-20: hsl(60, 88%, 20%);
+    --color-yellow-10: hsl(60, 88%, 10%);
+    --color-green-90: hsl(60, 87.95180723%, 90%);
+    --color-green-80: hsl(60, 87.95180723%, 80%);
+    --color-green-50: hsl(60, 87.95180723%, 50%);
+    --color-green-20: hsl(60, 87.95180723%, 20%);
+    --color-green-10: hsl(60, 87.95180723%, 10%);
+    --color-blue-90: hsl(60, 87.75510204%, 90%);
+    --color-blue-80: hsl(60, 87.75510204%, 80%);
+    --color-blue-50: hsl(60, 87.75510204%, 50%);
+    --color-blue-20: hsl(60, 87.75510204%, 20%);
+    --color-blue-10: hsl(60, 87.75510204%, 10%);
+    --color-purple-90: hsl(60, 88.18897638%, 90%);
+    --color-purple-80: hsl(60, 88.18897638%, 80%);
+    --color-purple-50: hsl(60, 88.18897638%, 50%);
+    --color-purple-20: hsl(60, 88.18897638%, 20%);
+    --color-purple-10: hsl(60, 88.18897638%, 10%);
+  }
+  .theme-dark ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  .theme-dark input::placeholder,
+  .theme-dark textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  .theme-dark .baseline-indicator {
+    --baseline-bg: #f0f00c;
+    --baseline-engine-bg: #f0f001;
+    --baseline-check: #f0f015;
+    --baseline-cross: #f0f013;
+    --baseline-img: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%20111%2062%22%3E%3Cpath%20fill%3D%22%23f0f013%22%20d%3D%22m30.833%200%2018.5%2018.6-6.166%206.2-18.5-18.6z%22/%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2019,%200.2%29%22%20d%3D%22M86.333%206.2%20111%2031%2086.333%2055.8l-6.166-6.2%2018.5-18.6-18.5-18.6z%22/%3E%3Cpath%20fill%3D%22%23f0f013%22%20d%3D%22m67.833%2037.2-6.166%206.2%2018.5%2018.6%206.166-6.2z%22/%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2019,%200.2%29%22%20d%3D%22m24.667%206.2%206.166%206.2-18.5%2018.6%2018.5%2018.6-6.166%206.2L0%2031z%22/%3E%3Cpath%20fill%3D%22%23f0f013%22%20d%3D%22m80.167%200%206.166%206.2-55.5%2055.8-6.166-6.2z%22/%3E%3C/svg%3E");
+  }
+  .theme-dark .baseline-indicator.high {
+    --baseline-bg: rgba(240, 240, 21, 0.2);
+    --baseline-engine-bg: rgba(240, 240, 21, 0.2);
+    --baseline-check: #f0f015;
+    --baseline-img: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%20111%2062%22%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2021,%200.2%29%22%20d%3D%22m86.333%206.2-6.166%206.2%2018.5%2018.6-18.5%2018.6-12.334-12.4-6.166%206.2%2018.5%2018.6L111%2031zM30.833%200%206.167%2024.8l6.166%206.2%2018.5-18.6%2012.334%2012.4%206.166-6.2z%22/%3E%3Cpath%20fill%3D%22%23f0f015%22%20d%3D%22m80.167%200%206.166%206.2-55.5%2055.8L0%2031l6.167-6.2%2024.666%2024.8z%22/%3E%3C/svg%3E");
+  }
+  .theme-dark .baseline-indicator.low {
+    --baseline-bg: rgba(240, 240, 25, 0.2);
+    --baseline-engine-bg: rgba(240, 240, 25, 0.2);
+    --baseline-check: #f0f019;
+    --baseline-pill-bg: #f0f019;
+    --baseline-pill-color: #f0f001;
+    --baseline-img: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%20111%2061%22%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2025,%200.2%29%22%20d%3D%22M30.833%200%2037%206.1l-6.167%206.1-6.166-6.1zm12.334%2012.2%206.166%206.1-6.166%206.1L37%2018.3zm49.333%200%206.167%206.1-6.167%206.1-6.167-6.1zm12.333%2012.2L111%2030.5l-6.167%206.1-6.166-6.1zM92.5%2036.6l6.167%206.1-6.167%206.1-6.167-6.1zM80.167%2048.8l6.166%206.1-6.166%206.1L74%2054.9zM67.833%2036.6%2074%2042.7l-6.167%206.1-6.166-6.1zM18.5%2012.2l6.167%206.1-6.167%206.1-6.167-6.1z%22/%3E%3Cpath%20fill%3D%22%23f0f019%22%20d%3D%22m80.167%200%206.166%206.1-55.5%2054.9L0%2030.5l6.167-6.1%2024.666%2024.4z%22/%3E%3C/svg%3E");
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+      --ctp-rosewater: #f0f00d;
+      --ctp-flamingo: #f0f00e;
+      --ctp-pink: #f0f00f;
+      --ctp-mauve: #f0f010;
+      --ctp-red: #f0f011;
+      --ctp-maroon: #f0f012;
+      --ctp-peach: #f0f013;
+      --ctp-yellow: #f0f014;
+      --ctp-green: #f0f015;
+      --ctp-teal: #f0f016;
+      --ctp-sky: #f0f017;
+      --ctp-sapphire: #f0f018;
+      --ctp-blue: #f0f019;
+      --ctp-lavender: #f0f01a;
+      --ctp-text: #f0f004;
+      --ctp-subtext1: #f0f005;
+      --ctp-subtext0: #f0f006;
+      --ctp-overlay2: #f0f007;
+      --ctp-overlay1: #f0f008;
+      --ctp-overlay0: #f0f009;
+      --ctp-surface2: #f0f00a;
+      --ctp-surface1: #f0f00b;
+      --ctp-surface0: #f0f00c;
+      --ctp-base: #f0f001;
+      --ctp-mantle: #f0f002;
+      --ctp-crust: #f0f003;
+      --color-text-primary: #f0f004;
+      --color-text-secondary: #f0f006;
+      --color-background-page: #f0f001;
+      --color-background-primary: #f0f002;
+      --color-background-secondary: #f0f00c;
+      --color-link-normal: #f0f019;
+      --color-link-visited: #f0f010;
+      --color-border-primary: #f0f00b;
+      --color-border-secondary: #f0f007;
+      --color-border-active: #f0f01b;
+      --color-area-background: rgba(240, 240, 27, 0.25);
+      --color-area-highlight-border: #f0f01b;
+      --color-area-link: #f0f01b;
+      --color-background-red: rgba(240, 240, 17, 0.25);
+      --color-background-orange: rgba(240, 240, 19, 0.25);
+      --color-background-yellow: rgba(240, 240, 20, 0.25);
+      --color-background-green: rgba(240, 240, 21, 0.25);
+      --color-background-blue: rgba(240, 240, 25, 0.25);
+      --color-background-purple: rgba(240, 240, 16, 0.25);
+      --color-white: #f0f004;
+      --color-white-alpha-25: rgba(240, 240, 4, 0.25);
+      --color-white-alpha-75: rgba(240, 240, 4, 0.75);
+      --color-black: #f0f003;
+      --color-black-alpha-25: rgba(240, 240, 3, 0.25);
+      --color-black-alpha-75: rgba(240, 240, 3, 0.75);
+      --color-gray-90: hsl(60, 99.17012448%, 90%);
+      --color-gray-80: hsl(60, 99.17012448%, 80%);
+      --color-gray-60: hsl(60, 99.17012448%, 60%);
+      --color-gray-40: hsl(60, 99.17012448%, 40%);
+      --color-gray-20: hsl(60, 99.17012448%, 20%);
+      --color-gray-10: hsl(60, 99.17012448%, 10%);
+      --color-gray-05: hsl(60, 99.17012448%, 5%);
+      --color-red-90: hsl(60, 88.14229249%, 90%);
+      --color-red-80: hsl(60, 88.14229249%, 80%);
+      --color-red-50: hsl(60, 88.14229249%, 50%);
+      --color-red-20: hsl(60, 88.14229249%, 20%);
+      --color-red-10: hsl(60, 88.14229249%, 10%);
+      --color-orange-90: hsl(60, 88.04780876%, 90%);
+      --color-orange-80: hsl(60, 88.04780876%, 80%);
+      --color-orange-50: hsl(60, 88.04780876%, 50%);
+      --color-orange-20: hsl(60, 88.04780876%, 20%);
+      --color-orange-10: hsl(60, 88.04780876%, 10%);
+      --color-yellow-90: hsl(60, 88%, 90%);
+      --color-yellow-80: hsl(60, 88%, 80%);
+      --color-yellow-50: hsl(60, 88%, 50%);
+      --color-yellow-20: hsl(60, 88%, 20%);
+      --color-yellow-10: hsl(60, 88%, 10%);
+      --color-green-90: hsl(60, 87.95180723%, 90%);
+      --color-green-80: hsl(60, 87.95180723%, 80%);
+      --color-green-50: hsl(60, 87.95180723%, 50%);
+      --color-green-20: hsl(60, 87.95180723%, 20%);
+      --color-green-10: hsl(60, 87.95180723%, 10%);
+      --color-blue-90: hsl(60, 87.75510204%, 90%);
+      --color-blue-80: hsl(60, 87.75510204%, 80%);
+      --color-blue-50: hsl(60, 87.75510204%, 50%);
+      --color-blue-20: hsl(60, 87.75510204%, 20%);
+      --color-blue-10: hsl(60, 87.75510204%, 10%);
+      --color-purple-90: hsl(60, 88.18897638%, 90%);
+      --color-purple-80: hsl(60, 88.18897638%, 80%);
+      --color-purple-50: hsl(60, 88.18897638%, 50%);
+      --color-purple-20: hsl(60, 88.18897638%, 20%);
+      --color-purple-10: hsl(60, 88.18897638%, 10%);
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root .baseline-indicator {
+      --baseline-bg: #f0f00c;
+      --baseline-engine-bg: #f0f001;
+      --baseline-check: #f0f015;
+      --baseline-cross: #f0f013;
+      --baseline-img: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%20111%2062%22%3E%3Cpath%20fill%3D%22%23f0f013%22%20d%3D%22m30.833%200%2018.5%2018.6-6.166%206.2-18.5-18.6z%22/%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2019,%200.2%29%22%20d%3D%22M86.333%206.2%20111%2031%2086.333%2055.8l-6.166-6.2%2018.5-18.6-18.5-18.6z%22/%3E%3Cpath%20fill%3D%22%23f0f013%22%20d%3D%22m67.833%2037.2-6.166%206.2%2018.5%2018.6%206.166-6.2z%22/%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2019,%200.2%29%22%20d%3D%22m24.667%206.2%206.166%206.2-18.5%2018.6%2018.5%2018.6-6.166%206.2L0%2031z%22/%3E%3Cpath%20fill%3D%22%23f0f013%22%20d%3D%22m80.167%200%206.166%206.2-55.5%2055.8-6.166-6.2z%22/%3E%3C/svg%3E");
+    }
+    :root .baseline-indicator.high {
+      --baseline-bg: rgba(240, 240, 21, 0.2);
+      --baseline-engine-bg: rgba(240, 240, 21, 0.2);
+      --baseline-check: #f0f015;
+      --baseline-img: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%20111%2062%22%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2021,%200.2%29%22%20d%3D%22m86.333%206.2-6.166%206.2%2018.5%2018.6-18.5%2018.6-12.334-12.4-6.166%206.2%2018.5%2018.6L111%2031zM30.833%200%206.167%2024.8l6.166%206.2%2018.5-18.6%2012.334%2012.4%206.166-6.2z%22/%3E%3Cpath%20fill%3D%22%23f0f015%22%20d%3D%22m80.167%200%206.166%206.2-55.5%2055.8L0%2031l6.167-6.2%2024.666%2024.8z%22/%3E%3C/svg%3E");
+    }
+    :root .baseline-indicator.low {
+      --baseline-bg: rgba(240, 240, 25, 0.2);
+      --baseline-engine-bg: rgba(240, 240, 25, 0.2);
+      --baseline-check: #f0f019;
+      --baseline-pill-bg: #f0f019;
+      --baseline-pill-color: #f0f001;
+      --baseline-img: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%20111%2061%22%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2025,%200.2%29%22%20d%3D%22M30.833%200%2037%206.1l-6.167%206.1-6.166-6.1zm12.334%2012.2%206.166%206.1-6.166%206.1L37%2018.3zm49.333%200%206.167%206.1-6.167%206.1-6.167-6.1zm12.333%2012.2L111%2030.5l-6.167%206.1-6.166-6.1zM92.5%2036.6l6.167%206.1-6.167%206.1-6.167-6.1zM80.167%2048.8l6.166%206.1-6.166%206.1L74%2054.9zM67.833%2036.6%2074%2042.7l-6.167%206.1-6.166-6.1zM18.5%2012.2l6.167%206.1-6.167%206.1-6.167-6.1z%22/%3E%3Cpath%20fill%3D%22%23f0f019%22%20d%3D%22m80.167%200%206.166%206.1-55.5%2054.9L0%2030.5l6.167-6.1%2024.666%2024.4z%22/%3E%3C/svg%3E");
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --ctp-rosewater: #f0f00d;
+      --ctp-flamingo: #f0f00e;
+      --ctp-pink: #f0f00f;
+      --ctp-mauve: #f0f010;
+      --ctp-red: #f0f011;
+      --ctp-maroon: #f0f012;
+      --ctp-peach: #f0f013;
+      --ctp-yellow: #f0f014;
+      --ctp-green: #f0f015;
+      --ctp-teal: #f0f016;
+      --ctp-sky: #f0f017;
+      --ctp-sapphire: #f0f018;
+      --ctp-blue: #f0f019;
+      --ctp-lavender: #f0f01a;
+      --ctp-text: #f0f004;
+      --ctp-subtext1: #f0f005;
+      --ctp-subtext0: #f0f006;
+      --ctp-overlay2: #f0f007;
+      --ctp-overlay1: #f0f008;
+      --ctp-overlay0: #f0f009;
+      --ctp-surface2: #f0f00a;
+      --ctp-surface1: #f0f00b;
+      --ctp-surface0: #f0f00c;
+      --ctp-base: #f0f001;
+      --ctp-mantle: #f0f002;
+      --ctp-crust: #f0f003;
+      --color-text-primary: #f0f004;
+      --color-text-secondary: #f0f006;
+      --color-background-page: #f0f001;
+      --color-background-primary: #f0f002;
+      --color-background-secondary: #f0f00c;
+      --color-link-normal: #f0f019;
+      --color-link-visited: #f0f010;
+      --color-border-primary: #f0f00b;
+      --color-border-secondary: #f0f007;
+      --color-border-active: #f0f01b;
+      --color-area-background: rgba(240, 240, 27, 0.25);
+      --color-area-highlight-border: #f0f01b;
+      --color-area-link: #f0f01b;
+      --color-background-red: rgba(240, 240, 17, 0.25);
+      --color-background-orange: rgba(240, 240, 19, 0.25);
+      --color-background-yellow: rgba(240, 240, 20, 0.25);
+      --color-background-green: rgba(240, 240, 21, 0.25);
+      --color-background-blue: rgba(240, 240, 25, 0.25);
+      --color-background-purple: rgba(240, 240, 16, 0.25);
+      --color-white: #f0f004;
+      --color-white-alpha-25: rgba(240, 240, 4, 0.25);
+      --color-white-alpha-75: rgba(240, 240, 4, 0.75);
+      --color-black: #f0f003;
+      --color-black-alpha-25: rgba(240, 240, 3, 0.25);
+      --color-black-alpha-75: rgba(240, 240, 3, 0.75);
+      --color-gray-90: hsl(60, 99.17012448%, 90%);
+      --color-gray-80: hsl(60, 99.17012448%, 80%);
+      --color-gray-60: hsl(60, 99.17012448%, 60%);
+      --color-gray-40: hsl(60, 99.17012448%, 40%);
+      --color-gray-20: hsl(60, 99.17012448%, 20%);
+      --color-gray-10: hsl(60, 99.17012448%, 10%);
+      --color-gray-05: hsl(60, 99.17012448%, 5%);
+      --color-red-90: hsl(60, 88.14229249%, 90%);
+      --color-red-80: hsl(60, 88.14229249%, 80%);
+      --color-red-50: hsl(60, 88.14229249%, 50%);
+      --color-red-20: hsl(60, 88.14229249%, 20%);
+      --color-red-10: hsl(60, 88.14229249%, 10%);
+      --color-orange-90: hsl(60, 88.04780876%, 90%);
+      --color-orange-80: hsl(60, 88.04780876%, 80%);
+      --color-orange-50: hsl(60, 88.04780876%, 50%);
+      --color-orange-20: hsl(60, 88.04780876%, 20%);
+      --color-orange-10: hsl(60, 88.04780876%, 10%);
+      --color-yellow-90: hsl(60, 88%, 90%);
+      --color-yellow-80: hsl(60, 88%, 80%);
+      --color-yellow-50: hsl(60, 88%, 50%);
+      --color-yellow-20: hsl(60, 88%, 20%);
+      --color-yellow-10: hsl(60, 88%, 10%);
+      --color-green-90: hsl(60, 87.95180723%, 90%);
+      --color-green-80: hsl(60, 87.95180723%, 80%);
+      --color-green-50: hsl(60, 87.95180723%, 50%);
+      --color-green-20: hsl(60, 87.95180723%, 20%);
+      --color-green-10: hsl(60, 87.95180723%, 10%);
+      --color-blue-90: hsl(60, 87.75510204%, 90%);
+      --color-blue-80: hsl(60, 87.75510204%, 80%);
+      --color-blue-50: hsl(60, 87.75510204%, 50%);
+      --color-blue-20: hsl(60, 87.75510204%, 20%);
+      --color-blue-10: hsl(60, 87.75510204%, 10%);
+      --color-purple-90: hsl(60, 88.18897638%, 90%);
+      --color-purple-80: hsl(60, 88.18897638%, 80%);
+      --color-purple-50: hsl(60, 88.18897638%, 50%);
+      --color-purple-20: hsl(60, 88.18897638%, 20%);
+      --color-purple-10: hsl(60, 88.18897638%, 10%);
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root .baseline-indicator {
+      --baseline-bg: #f0f00c;
+      --baseline-engine-bg: #f0f001;
+      --baseline-check: #f0f015;
+      --baseline-cross: #f0f013;
+      --baseline-img: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%20111%2062%22%3E%3Cpath%20fill%3D%22%23f0f013%22%20d%3D%22m30.833%200%2018.5%2018.6-6.166%206.2-18.5-18.6z%22/%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2019,%200.2%29%22%20d%3D%22M86.333%206.2%20111%2031%2086.333%2055.8l-6.166-6.2%2018.5-18.6-18.5-18.6z%22/%3E%3Cpath%20fill%3D%22%23f0f013%22%20d%3D%22m67.833%2037.2-6.166%206.2%2018.5%2018.6%206.166-6.2z%22/%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2019,%200.2%29%22%20d%3D%22m24.667%206.2%206.166%206.2-18.5%2018.6%2018.5%2018.6-6.166%206.2L0%2031z%22/%3E%3Cpath%20fill%3D%22%23f0f013%22%20d%3D%22m80.167%200%206.166%206.2-55.5%2055.8-6.166-6.2z%22/%3E%3C/svg%3E");
+    }
+    :root .baseline-indicator.high {
+      --baseline-bg: rgba(240, 240, 21, 0.2);
+      --baseline-engine-bg: rgba(240, 240, 21, 0.2);
+      --baseline-check: #f0f015;
+      --baseline-img: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%20111%2062%22%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2021,%200.2%29%22%20d%3D%22m86.333%206.2-6.166%206.2%2018.5%2018.6-18.5%2018.6-12.334-12.4-6.166%206.2%2018.5%2018.6L111%2031zM30.833%200%206.167%2024.8l6.166%206.2%2018.5-18.6%2012.334%2012.4%206.166-6.2z%22/%3E%3Cpath%20fill%3D%22%23f0f015%22%20d%3D%22m80.167%200%206.166%206.2-55.5%2055.8L0%2031l6.167-6.2%2024.666%2024.8z%22/%3E%3C/svg%3E");
+    }
+    :root .baseline-indicator.low {
+      --baseline-bg: rgba(240, 240, 25, 0.2);
+      --baseline-engine-bg: rgba(240, 240, 25, 0.2);
+      --baseline-check: #f0f019;
+      --baseline-pill-bg: #f0f019;
+      --baseline-pill-color: #f0f001;
+      --baseline-img: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%20111%2061%22%3E%3Cpath%20fill%3D%22rgba%28240,%20240,%2025,%200.2%29%22%20d%3D%22M30.833%200%2037%206.1l-6.167%206.1-6.166-6.1zm12.334%2012.2%206.166%206.1-6.166%206.1L37%2018.3zm49.333%200%206.167%206.1-6.167%206.1-6.167-6.1zm12.333%2012.2L111%2030.5l-6.167%206.1-6.166-6.1zM92.5%2036.6l6.167%206.1-6.167%206.1-6.167-6.1zM80.167%2048.8l6.166%206.1-6.166%206.1L74%2054.9zM67.833%2036.6%2074%2042.7l-6.167%206.1-6.166-6.1zM18.5%2012.2l6.167%206.1-6.167%206.1-6.167-6.1z%22/%3E%3Cpath%20fill%3D%22%23f0f019%22%20d%3D%22m80.167%200%206.166%206.1-55.5%2054.9L0%2030.5l6.167-6.1%2024.666%2024.4z%22/%3E%3C/svg%3E");
+    }
+  }
+}

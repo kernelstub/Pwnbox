@@ -1,0 +1,1385 @@
+/* ==UserStyle==
+@name           pwnbox-jisho
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Jisho (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("jisho.org") {
+  @media (prefers-color-scheme: light) {
+    :root[data-color-theme="auto"] {
+      color-scheme: light;
+    }
+    :root[data-color-theme="auto"] ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root[data-color-theme="auto"] input::placeholder,
+    :root[data-color-theme="auto"] textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root[data-color-theme="auto"] body {
+      background-color: #f0f001 !important;
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] body a {
+      color: #f0f01b;
+    }
+    :root[data-color-theme="auto"] body a:hover {
+      color: #e8e84b;
+    }
+    :root[data-color-theme="auto"] h1 {
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] h2 {
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] h3 {
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] h4 {
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] h5 {
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] h6 {
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] button,
+    :root[data-color-theme="auto"] .button,
+    :root[data-color-theme="auto"] .tabs .tab-title > a {
+      background-color: #f0f009;
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] button:hover,
+    :root[data-color-theme="auto"] .button:hover,
+    :root[data-color-theme="auto"] .tabs .tab-title > a:hover,
+    :root[data-color-theme="auto"] button:focus,
+    :root[data-color-theme="auto"] .button:focus,
+    :root[data-color-theme="auto"] .tabs .tab-title > a:focus {
+      background-color: #f0f008;
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] .button-group {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    :root[data-color-theme="auto"] .button-group.radius > *,
+    :root[data-color-theme="auto"] .button-group > li {
+      margin: unset;
+    }
+    :root[data-color-theme="auto"] .f-dropdown {
+      background-color: #f0f002;
+      border-color: #f0f009;
+    }
+    :root[data-color-theme="auto"] .f-dropdown::before {
+      border-bottom-color: #f0f00c;
+    }
+    :root[data-color-theme="auto"] .f-dropdown li:hover {
+      background-color: #f0f003;
+    }
+    :root[data-color-theme="auto"] header.row {
+      background-color: #f0f001;
+    }
+    :root[data-color-theme="auto"] h1.logo a {
+      background-image: url("//assets.jisho.org/assets/jisho-logo-v4@2x-7330091c079b9dd59601401b052b52e103978221c8fb6f5e22406d871fcc746a.png");
+    }
+    :root[data-color-theme="auto"] nav .links .color_theme_picker--wrapper:hover {
+      background-color: #f0f002;
+    }
+    :root[data-color-theme="auto"] nav .links .color_theme_picker--choices {
+      background-color: #f0f002;
+    }
+    :root[data-color-theme="auto"] nav .links .color_theme_picker--choices li a:hover {
+      background-color: #f0f003;
+    }
+    :root[data-color-theme="auto"] form.search .input_methods,
+    :root[data-color-theme="auto"] form.search .input_method_button h4 {
+      color: #f0f006;
+    }
+    :root[data-color-theme="auto"] form.search .input_method_button:hover {
+      background-color: #f0f00c;
+    }
+    :root[data-color-theme="auto"] form.search .main {
+      background-color: #f0f00c;
+      box-shadow: none;
+    }
+    :root[data-color-theme="auto"] form.search .inner {
+      background-color: #f0f00b;
+    }
+    :root[data-color-theme="auto"] form.search .inner input {
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] form.search .search_type {
+      border-right-color: #f0f009;
+      color: #f0f006;
+    }
+    :root[data-color-theme="auto"] form.search .submit {
+      background-color: #f0f008;
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] form.search .search-form_clear-button {
+      background-color: transparent;
+    }
+    :root[data-color-theme="auto"] form.search .search-form_clear-button .clear-icon {
+      fill: #f0f006;
+    }
+    :root[data-color-theme="auto"] form.search .results .result_label,
+    :root[data-color-theme="auto"] form.search #radical_area .results .result_label {
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] form.search .results .result,
+    :root[data-color-theme="auto"] form.search #radical_area .results .result {
+      background-color: #f0f00b;
+    }
+    :root[data-color-theme="auto"] form.search .results .result:hover,
+    :root[data-color-theme="auto"] form.search #radical_area .results .result:hover {
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] form.search .results .g1,
+    :root[data-color-theme="auto"] form.search #radical_area .results .g1 {
+      color: #f0f019;
+    }
+    :root[data-color-theme="auto"] form.search .results .g2,
+    :root[data-color-theme="auto"] form.search #radical_area .results .g2 {
+      color: #f0f019;
+    }
+    :root[data-color-theme="auto"] form.search .results .g3,
+    :root[data-color-theme="auto"] form.search #radical_area .results .g3 {
+      color: #f0f019;
+    }
+    :root[data-color-theme="auto"] form.search .results .g4,
+    :root[data-color-theme="auto"] form.search #radical_area .results .g4 {
+      color: #f0f019;
+    }
+    :root[data-color-theme="auto"] form.search .results .g5,
+    :root[data-color-theme="auto"] form.search #radical_area .results .g5 {
+      color: #f0f019;
+    }
+    :root[data-color-theme="auto"] form.search .results .g6,
+    :root[data-color-theme="auto"] form.search #radical_area .results .g6 {
+      color: #f0f019;
+    }
+    :root[data-color-theme="auto"] form.search .results .g7,
+    :root[data-color-theme="auto"] form.search #radical_area .results .g7 {
+      color: #f0f019;
+    }
+    :root[data-color-theme="auto"] form.search .results .g8,
+    :root[data-color-theme="auto"] form.search #radical_area .results .g8 {
+      color: #f0f019;
+    }
+    :root[data-color-theme="auto"] form.search #radical_area .radical_table {
+      background-image: repeating-linear-gradient(180deg, #f0f00b, #f0f00b 32px, #f0f00a 32px, #f0f00a 64px);
+    }
+    :root[data-color-theme="auto"] form.search #radical_area .radical_table .number {
+      background-color: #f0f004;
+      color: #f0f001;
+    }
+    :root[data-color-theme="auto"] form.search #radical_area .radical_table .radical {
+      background-image: none;
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] form.search #radical_area .radical_table .radical.available:hover {
+      background-color: #f0f009;
+    }
+    :root[data-color-theme="auto"] form.search #radical_area .radical_table .radical.selected {
+      border-color: #f0f004;
+      background-color: rgba(240, 240, 20, 0.3);
+    }
+    :root[data-color-theme="auto"] form.search #radical_area.combined_mode .reset_radicals {
+      color: #f0f006;
+    }
+    :root[data-color-theme="auto"] form.search #radical_area.combined_mode .reset_radicals:hover {
+      color: #f0f004;
+      background-color: #f0f009;
+    }
+    :root[data-color-theme="auto"] form.search .handwriting .panel {
+      background-color: #f0f00b;
+    }
+    :root[data-color-theme="auto"] form.search .handwriting .pencil-icon {
+      color: #f0f00a !important;
+    }
+    :root[data-color-theme="auto"] .speech_area_active #speech_button,
+    :root[data-color-theme="auto"] .radical_area_active #radical_button,
+    :root[data-color-theme="auto"] .handwriting_area_active #handwriting_button {
+      border-bottom-color: #f0f01b;
+    }
+    :root[data-color-theme="auto"] #what_is_this {
+      color: unset;
+    }
+    :root[data-color-theme="auto"] .japanese_word__furigana-invisible {
+      opacity: 0;
+    }
+    :root[data-color-theme="auto"] #zen_bar li[data-pos="Noun"] a,
+    :root[data-color-theme="auto"] #zen_bar li[data-pos="Proper noun"] a,
+    :root[data-color-theme="auto"] #zen_bar li[data-pos="Pronoun"] a,
+    :root[data-color-theme="auto"] #zen_bar li[data-pos="Suffix"] a,
+    :root[data-color-theme="auto"] #zen_bar li[data-pos="Prefix"] a,
+    :root[data-color-theme="auto"] #zen_bar li[data-pos="Symbol"] a,
+    :root[data-color-theme="auto"] #zen_bar li[data-pos="Interjection"] a,
+    :root[data-color-theme="auto"] #zen_bar li[data-pos="Propernoun"] a {
+      color: #f0f013;
+      border-bottom-color: #f0f013;
+    }
+    :root[data-color-theme="auto"] #zen_bar li[data-pos="Particle"] a {
+      color: #f0f011;
+      border-bottom-color: #f0f011;
+    }
+    :root[data-color-theme="auto"] #zen_bar li[data-pos="Verb"] a {
+      color: #f0f006;
+      border-bottom-color: #f0f006;
+    }
+    :root[data-color-theme="auto"] #main_results h4 .result_count {
+      color: #f0f006;
+    }
+    :root[data-color-theme="auto"] .fact {
+      outline-color: #f0f002;
+      border-color: #f0f001;
+      background-color: #f0f002;
+    }
+    :root[data-color-theme="auto"] .concept_light {
+      border-bottom-color: #f0f009;
+    }
+    :root[data-color-theme="auto"] .concept_light-status .concept_light-tag {
+      color: #f0f001;
+      background-color: #f0f006;
+    }
+    :root[data-color-theme="auto"] .concept_light-status .concept_light-tag.concept_light-common {
+      background-color: #f0f015;
+    }
+    :root[data-color-theme="auto"] .concept_light-status .concept_light-tag a {
+      color: #f0f001;
+    }
+    :root[data-color-theme="auto"] .concept_light-meanings .meaning-tags,
+    :root[data-color-theme="auto"] .concept_light-meanings .meaning-definition-section_divider {
+      color: #f0f006;
+    }
+    :root[data-color-theme="auto"] .concept_light .sentence,
+    :root[data-color-theme="auto"] .meaning-abstract,
+    :root[data-color-theme="auto"] .supplemental_info {
+      color: #f0f006;
+    }
+    :root[data-color-theme="auto"] .kanji_light {
+      border-bottom-color: #f0f009;
+    }
+    :root[data-color-theme="auto"] .kanji_light .info {
+      color: #f0f006;
+    }
+    :root[data-color-theme="auto"] .sentences_block .sentence {
+      border-bottom-color: #f0f009;
+    }
+    :root[data-color-theme="auto"] #secondary aside .minor-text {
+      color: #f0f006;
+    }
+    :root[data-color-theme="auto"] .kanji-details__main-readings-list a {
+      border-bottom-color: #f0f006;
+    }
+    :root[data-color-theme="auto"] .kanji_strokes .kanji_play_button,
+    :root[data-color-theme="auto"] .kanji_strokes .replay_button,
+    :root[data-color-theme="auto"] .kanji_strokes .toggle_kanji_actions {
+      color: #f0f004;
+      background-color: transparent;
+    }
+    :root[data-color-theme="auto"] .kanji_strokes .actions {
+      background-color: #f0f001;
+    }
+    :root[data-color-theme="auto"] .kanji_strokes .actions h3 {
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] .kanji_strokes .noUi-target .noUi-background {
+      background-color: #f0f01b;
+    }
+    :root[data-color-theme="auto"] .kanji_strokes .noUi-target .noUi-base {
+      border-color: #f0f00b;
+    }
+    :root[data-color-theme="auto"] .kanji_strokes .noUi-target .noUi-origin {
+      background-color: #f0f009;
+    }
+    :root[data-color-theme="auto"] .kanji_strokes .noUi-target .noUi-handle {
+      background-color: #f0f004;
+      border-color: #f0f00a;
+    }
+    :root[data-color-theme="auto"] .kanji_strokes .noUi-target .noUi-active {
+      background-color: #f0f006;
+    }
+    :root[data-color-theme="auto"] .stroke_order_diagram--bounding_box,
+    :root[data-color-theme="auto"] .stroke_order_diagram--guide_line {
+      stroke: #f0f00c;
+    }
+    :root[data-color-theme="auto"] .stroke_order_diagram--path_start {
+      fill: rgba(240, 240, 17, 0.8);
+    }
+    :root[data-color-theme="auto"] .stroke_order_diagram--current_path {
+      stroke: #f0f004;
+    }
+    :root[data-color-theme="auto"] .stroke_order_diagram--existing_path {
+      stroke: rgba(240, 240, 6, 0.5);
+    }
+    :root[data-color-theme="auto"] .kanji table {
+      background-color: #f0f002;
+      border-color: #f0f009;
+    }
+    :root[data-color-theme="auto"] .kanji tr {
+      background-color: #f0f00c;
+    }
+    :root[data-color-theme="auto"] .kanji tr td {
+      color: #f0f006;
+    }
+    :root[data-color-theme="auto"] .discussion_thread .comment_body {
+      background-color: #f0f00c;
+      border-color: #f0f009;
+    }
+    :root[data-color-theme="auto"] .discussion_thread .comment_body .discussion_status {
+      background-color: #f0f00b;
+      border-bottom-color: #f0f009;
+      color: #f0f006;
+    }
+    :root[data-color-theme="auto"] .discussion_thread .comment_body .discussion_about {
+      background-color: #f0f00e;
+      color: #f0f016;
+    }
+    :root[data-color-theme="auto"] .discussion_thread .comment_body .comment_status {
+      background-color: #f0f00a;
+      color: #f0f006;
+    }
+    :root[data-color-theme="auto"] .discussion_thread .discussion_title a {
+      color: #f0f004 !important;
+    }
+    :root[data-color-theme="auto"] footer .ornament {
+      background-color: #f0f011;
+      box-shadow: 0 0 10px 5px #f0f001;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root[data-color-theme="auto"] {
+      color-scheme: dark;
+    }
+    :root[data-color-theme="auto"] ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root[data-color-theme="auto"] input::placeholder,
+    :root[data-color-theme="auto"] textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root[data-color-theme="auto"] body {
+      background-color: #f0f001 !important;
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] body a {
+      color: #f0f01b;
+    }
+    :root[data-color-theme="auto"] body a:hover {
+      color: #c9c919;
+    }
+    :root[data-color-theme="auto"] h1 {
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] h2 {
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] h3 {
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] h4 {
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] h5 {
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] h6 {
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] button,
+    :root[data-color-theme="auto"] .button,
+    :root[data-color-theme="auto"] .tabs .tab-title > a {
+      background-color: #f0f009;
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] button:hover,
+    :root[data-color-theme="auto"] .button:hover,
+    :root[data-color-theme="auto"] .tabs .tab-title > a:hover,
+    :root[data-color-theme="auto"] button:focus,
+    :root[data-color-theme="auto"] .button:focus,
+    :root[data-color-theme="auto"] .tabs .tab-title > a:focus {
+      background-color: #f0f008;
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] .button-group {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    :root[data-color-theme="auto"] .button-group.radius > *,
+    :root[data-color-theme="auto"] .button-group > li {
+      margin: unset;
+    }
+    :root[data-color-theme="auto"] .f-dropdown {
+      background-color: #f0f002;
+      border-color: #f0f009;
+    }
+    :root[data-color-theme="auto"] .f-dropdown::before {
+      border-bottom-color: #f0f00c;
+    }
+    :root[data-color-theme="auto"] .f-dropdown li:hover {
+      background-color: #f0f003;
+    }
+    :root[data-color-theme="auto"] header.row {
+      background-color: #f0f001;
+    }
+    :root[data-color-theme="auto"] h1.logo a {
+      background-image: url("//assets.jisho.org/assets/jisho-logo-v4-dark@2x-e676613b426d34187b61928823730a225b52165aaef99f948bd3dc5fc16fa787.png");
+    }
+    :root[data-color-theme="auto"] nav .links .color_theme_picker--wrapper:hover {
+      background-color: #f0f002;
+    }
+    :root[data-color-theme="auto"] nav .links .color_theme_picker--choices {
+      background-color: #f0f002;
+    }
+    :root[data-color-theme="auto"] nav .links .color_theme_picker--choices li a:hover {
+      background-color: #f0f003;
+    }
+    :root[data-color-theme="auto"] form.search .input_methods,
+    :root[data-color-theme="auto"] form.search .input_method_button h4 {
+      color: #f0f006;
+    }
+    :root[data-color-theme="auto"] form.search .input_method_button:hover {
+      background-color: #f0f00c;
+    }
+    :root[data-color-theme="auto"] form.search .main {
+      background-color: #f0f00c;
+      box-shadow: none;
+    }
+    :root[data-color-theme="auto"] form.search .inner {
+      background-color: #f0f00b;
+    }
+    :root[data-color-theme="auto"] form.search .inner input {
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] form.search .search_type {
+      border-right-color: #f0f009;
+      color: #f0f006;
+    }
+    :root[data-color-theme="auto"] form.search .submit {
+      background-color: #f0f008;
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] form.search .search-form_clear-button {
+      background-color: transparent;
+    }
+    :root[data-color-theme="auto"] form.search .search-form_clear-button .clear-icon {
+      fill: #f0f006;
+    }
+    :root[data-color-theme="auto"] form.search .results .result_label,
+    :root[data-color-theme="auto"] form.search #radical_area .results .result_label {
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] form.search .results .result,
+    :root[data-color-theme="auto"] form.search #radical_area .results .result {
+      background-color: #f0f00b;
+    }
+    :root[data-color-theme="auto"] form.search .results .result:hover,
+    :root[data-color-theme="auto"] form.search #radical_area .results .result:hover {
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] form.search .results .g1,
+    :root[data-color-theme="auto"] form.search #radical_area .results .g1 {
+      color: #f0f019;
+    }
+    :root[data-color-theme="auto"] form.search .results .g2,
+    :root[data-color-theme="auto"] form.search #radical_area .results .g2 {
+      color: #f0f019;
+    }
+    :root[data-color-theme="auto"] form.search .results .g3,
+    :root[data-color-theme="auto"] form.search #radical_area .results .g3 {
+      color: #f0f019;
+    }
+    :root[data-color-theme="auto"] form.search .results .g4,
+    :root[data-color-theme="auto"] form.search #radical_area .results .g4 {
+      color: #f0f019;
+    }
+    :root[data-color-theme="auto"] form.search .results .g5,
+    :root[data-color-theme="auto"] form.search #radical_area .results .g5 {
+      color: #f0f019;
+    }
+    :root[data-color-theme="auto"] form.search .results .g6,
+    :root[data-color-theme="auto"] form.search #radical_area .results .g6 {
+      color: #f0f019;
+    }
+    :root[data-color-theme="auto"] form.search .results .g7,
+    :root[data-color-theme="auto"] form.search #radical_area .results .g7 {
+      color: #f0f019;
+    }
+    :root[data-color-theme="auto"] form.search .results .g8,
+    :root[data-color-theme="auto"] form.search #radical_area .results .g8 {
+      color: #f0f019;
+    }
+    :root[data-color-theme="auto"] form.search #radical_area .radical_table {
+      background-image: repeating-linear-gradient(180deg, #f0f00b, #f0f00b 32px, #f0f00a 32px, #f0f00a 64px);
+    }
+    :root[data-color-theme="auto"] form.search #radical_area .radical_table .number {
+      background-color: #f0f004;
+      color: #f0f001;
+    }
+    :root[data-color-theme="auto"] form.search #radical_area .radical_table .radical {
+      background-image: none;
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] form.search #radical_area .radical_table .radical.available:hover {
+      background-color: #f0f009;
+    }
+    :root[data-color-theme="auto"] form.search #radical_area .radical_table .radical.selected {
+      border-color: #f0f004;
+      background-color: rgba(240, 240, 20, 0.3);
+    }
+    :root[data-color-theme="auto"] form.search #radical_area.combined_mode .reset_radicals {
+      color: #f0f006;
+    }
+    :root[data-color-theme="auto"] form.search #radical_area.combined_mode .reset_radicals:hover {
+      color: #f0f004;
+      background-color: #f0f009;
+    }
+    :root[data-color-theme="auto"] form.search .handwriting .panel {
+      background-color: #f0f00b;
+    }
+    :root[data-color-theme="auto"] form.search .handwriting .pencil-icon {
+      color: #f0f00a !important;
+    }
+    :root[data-color-theme="auto"] .speech_area_active #speech_button,
+    :root[data-color-theme="auto"] .radical_area_active #radical_button,
+    :root[data-color-theme="auto"] .handwriting_area_active #handwriting_button {
+      border-bottom-color: #f0f01b;
+    }
+    :root[data-color-theme="auto"] #what_is_this {
+      color: unset;
+    }
+    :root[data-color-theme="auto"] .japanese_word__furigana-invisible {
+      opacity: 0;
+    }
+    :root[data-color-theme="auto"] #zen_bar li[data-pos="Noun"] a,
+    :root[data-color-theme="auto"] #zen_bar li[data-pos="Proper noun"] a,
+    :root[data-color-theme="auto"] #zen_bar li[data-pos="Pronoun"] a,
+    :root[data-color-theme="auto"] #zen_bar li[data-pos="Suffix"] a,
+    :root[data-color-theme="auto"] #zen_bar li[data-pos="Prefix"] a,
+    :root[data-color-theme="auto"] #zen_bar li[data-pos="Symbol"] a,
+    :root[data-color-theme="auto"] #zen_bar li[data-pos="Interjection"] a,
+    :root[data-color-theme="auto"] #zen_bar li[data-pos="Propernoun"] a {
+      color: #f0f013;
+      border-bottom-color: #f0f013;
+    }
+    :root[data-color-theme="auto"] #zen_bar li[data-pos="Particle"] a {
+      color: #f0f011;
+      border-bottom-color: #f0f011;
+    }
+    :root[data-color-theme="auto"] #zen_bar li[data-pos="Verb"] a {
+      color: #f0f006;
+      border-bottom-color: #f0f006;
+    }
+    :root[data-color-theme="auto"] #main_results h4 .result_count {
+      color: #f0f006;
+    }
+    :root[data-color-theme="auto"] .fact {
+      outline-color: #f0f002;
+      border-color: #f0f001;
+      background-color: #f0f002;
+    }
+    :root[data-color-theme="auto"] .concept_light {
+      border-bottom-color: #f0f009;
+    }
+    :root[data-color-theme="auto"] .concept_light-status .concept_light-tag {
+      color: #f0f001;
+      background-color: #f0f006;
+    }
+    :root[data-color-theme="auto"] .concept_light-status .concept_light-tag.concept_light-common {
+      background-color: #f0f015;
+    }
+    :root[data-color-theme="auto"] .concept_light-status .concept_light-tag a {
+      color: #f0f001;
+    }
+    :root[data-color-theme="auto"] .concept_light-meanings .meaning-tags,
+    :root[data-color-theme="auto"] .concept_light-meanings .meaning-definition-section_divider {
+      color: #f0f006;
+    }
+    :root[data-color-theme="auto"] .concept_light .sentence,
+    :root[data-color-theme="auto"] .meaning-abstract,
+    :root[data-color-theme="auto"] .supplemental_info {
+      color: #f0f006;
+    }
+    :root[data-color-theme="auto"] .kanji_light {
+      border-bottom-color: #f0f009;
+    }
+    :root[data-color-theme="auto"] .kanji_light .info {
+      color: #f0f006;
+    }
+    :root[data-color-theme="auto"] .sentences_block .sentence {
+      border-bottom-color: #f0f009;
+    }
+    :root[data-color-theme="auto"] #secondary aside .minor-text {
+      color: #f0f006;
+    }
+    :root[data-color-theme="auto"] .kanji-details__main-readings-list a {
+      border-bottom-color: #f0f006;
+    }
+    :root[data-color-theme="auto"] .kanji_strokes .kanji_play_button,
+    :root[data-color-theme="auto"] .kanji_strokes .replay_button,
+    :root[data-color-theme="auto"] .kanji_strokes .toggle_kanji_actions {
+      color: #f0f004;
+      background-color: transparent;
+    }
+    :root[data-color-theme="auto"] .kanji_strokes .actions {
+      background-color: #f0f001;
+    }
+    :root[data-color-theme="auto"] .kanji_strokes .actions h3 {
+      color: #f0f004;
+    }
+    :root[data-color-theme="auto"] .kanji_strokes .noUi-target .noUi-background {
+      background-color: #f0f01b;
+    }
+    :root[data-color-theme="auto"] .kanji_strokes .noUi-target .noUi-base {
+      border-color: #f0f00b;
+    }
+    :root[data-color-theme="auto"] .kanji_strokes .noUi-target .noUi-origin {
+      background-color: #f0f009;
+    }
+    :root[data-color-theme="auto"] .kanji_strokes .noUi-target .noUi-handle {
+      background-color: #f0f004;
+      border-color: #f0f00a;
+    }
+    :root[data-color-theme="auto"] .kanji_strokes .noUi-target .noUi-active {
+      background-color: #f0f006;
+    }
+    :root[data-color-theme="auto"] .stroke_order_diagram--bounding_box,
+    :root[data-color-theme="auto"] .stroke_order_diagram--guide_line {
+      stroke: #f0f00c;
+    }
+    :root[data-color-theme="auto"] .stroke_order_diagram--path_start {
+      fill: rgba(240, 240, 17, 0.8);
+    }
+    :root[data-color-theme="auto"] .stroke_order_diagram--current_path {
+      stroke: #f0f004;
+    }
+    :root[data-color-theme="auto"] .stroke_order_diagram--existing_path {
+      stroke: rgba(240, 240, 6, 0.5);
+    }
+    :root[data-color-theme="auto"] .kanji table {
+      background-color: #f0f002;
+      border-color: #f0f009;
+    }
+    :root[data-color-theme="auto"] .kanji tr {
+      background-color: #f0f00c;
+    }
+    :root[data-color-theme="auto"] .kanji tr td {
+      color: #f0f006;
+    }
+    :root[data-color-theme="auto"] .discussion_thread .comment_body {
+      background-color: #f0f00c;
+      border-color: #f0f009;
+    }
+    :root[data-color-theme="auto"] .discussion_thread .comment_body .discussion_status {
+      background-color: #f0f00b;
+      border-bottom-color: #f0f009;
+      color: #f0f006;
+    }
+    :root[data-color-theme="auto"] .discussion_thread .comment_body .discussion_about {
+      background-color: #f0f00e;
+      color: #f0f016;
+    }
+    :root[data-color-theme="auto"] .discussion_thread .comment_body .comment_status {
+      background-color: #f0f00a;
+      color: #f0f006;
+    }
+    :root[data-color-theme="auto"] .discussion_thread .discussion_title a {
+      color: #f0f004 !important;
+    }
+    :root[data-color-theme="auto"] footer .ornament {
+      background-color: #f0f011;
+      box-shadow: 0 0 10px 5px #f0f009;
+    }
+  }
+  :root[data-color-theme="dark"] {
+    color-scheme: dark;
+  }
+  :root[data-color-theme="dark"] ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root[data-color-theme="dark"] input::placeholder,
+  :root[data-color-theme="dark"] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root[data-color-theme="dark"] body {
+    background-color: #f0f001 !important;
+    color: #f0f004;
+  }
+  :root[data-color-theme="dark"] body a {
+    color: #f0f01b;
+  }
+  :root[data-color-theme="dark"] body a:hover {
+    color: #c9c919;
+  }
+  :root[data-color-theme="dark"] h1 {
+    color: #f0f004;
+  }
+  :root[data-color-theme="dark"] h2 {
+    color: #f0f004;
+  }
+  :root[data-color-theme="dark"] h3 {
+    color: #f0f004;
+  }
+  :root[data-color-theme="dark"] h4 {
+    color: #f0f004;
+  }
+  :root[data-color-theme="dark"] h5 {
+    color: #f0f004;
+  }
+  :root[data-color-theme="dark"] h6 {
+    color: #f0f004;
+  }
+  :root[data-color-theme="dark"] button,
+  :root[data-color-theme="dark"] .button,
+  :root[data-color-theme="dark"] .tabs .tab-title > a {
+    background-color: #f0f009;
+    color: #f0f004;
+  }
+  :root[data-color-theme="dark"] button:hover,
+  :root[data-color-theme="dark"] .button:hover,
+  :root[data-color-theme="dark"] .tabs .tab-title > a:hover,
+  :root[data-color-theme="dark"] button:focus,
+  :root[data-color-theme="dark"] .button:focus,
+  :root[data-color-theme="dark"] .tabs .tab-title > a:focus {
+    background-color: #f0f008;
+    color: #f0f004;
+  }
+  :root[data-color-theme="dark"] .button-group {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  :root[data-color-theme="dark"] .button-group.radius > *,
+  :root[data-color-theme="dark"] .button-group > li {
+    margin: unset;
+  }
+  :root[data-color-theme="dark"] .f-dropdown {
+    background-color: #f0f002;
+    border-color: #f0f009;
+  }
+  :root[data-color-theme="dark"] .f-dropdown::before {
+    border-bottom-color: #f0f00c;
+  }
+  :root[data-color-theme="dark"] .f-dropdown li:hover {
+    background-color: #f0f003;
+  }
+  :root[data-color-theme="dark"] header.row {
+    background-color: #f0f001;
+  }
+  :root[data-color-theme="dark"] h1.logo a {
+    background-image: url("//assets.jisho.org/assets/jisho-logo-v4-dark@2x-e676613b426d34187b61928823730a225b52165aaef99f948bd3dc5fc16fa787.png");
+  }
+  :root[data-color-theme="dark"] nav .links .color_theme_picker--wrapper:hover {
+    background-color: #f0f002;
+  }
+  :root[data-color-theme="dark"] nav .links .color_theme_picker--choices {
+    background-color: #f0f002;
+  }
+  :root[data-color-theme="dark"] nav .links .color_theme_picker--choices li a:hover {
+    background-color: #f0f003;
+  }
+  :root[data-color-theme="dark"] form.search .input_methods,
+  :root[data-color-theme="dark"] form.search .input_method_button h4 {
+    color: #f0f006;
+  }
+  :root[data-color-theme="dark"] form.search .input_method_button:hover {
+    background-color: #f0f00c;
+  }
+  :root[data-color-theme="dark"] form.search .main {
+    background-color: #f0f00c;
+    box-shadow: none;
+  }
+  :root[data-color-theme="dark"] form.search .inner {
+    background-color: #f0f00b;
+  }
+  :root[data-color-theme="dark"] form.search .inner input {
+    color: #f0f004;
+  }
+  :root[data-color-theme="dark"] form.search .search_type {
+    border-right-color: #f0f009;
+    color: #f0f006;
+  }
+  :root[data-color-theme="dark"] form.search .submit {
+    background-color: #f0f008;
+    color: #f0f004;
+  }
+  :root[data-color-theme="dark"] form.search .search-form_clear-button {
+    background-color: transparent;
+  }
+  :root[data-color-theme="dark"] form.search .search-form_clear-button .clear-icon {
+    fill: #f0f006;
+  }
+  :root[data-color-theme="dark"] form.search .results .result_label,
+  :root[data-color-theme="dark"] form.search #radical_area .results .result_label {
+    color: #f0f004;
+  }
+  :root[data-color-theme="dark"] form.search .results .result,
+  :root[data-color-theme="dark"] form.search #radical_area .results .result {
+    background-color: #f0f00b;
+  }
+  :root[data-color-theme="dark"] form.search .results .result:hover,
+  :root[data-color-theme="dark"] form.search #radical_area .results .result:hover {
+    color: #f0f004;
+  }
+  :root[data-color-theme="dark"] form.search .results .g1,
+  :root[data-color-theme="dark"] form.search #radical_area .results .g1 {
+    color: #f0f019;
+  }
+  :root[data-color-theme="dark"] form.search .results .g2,
+  :root[data-color-theme="dark"] form.search #radical_area .results .g2 {
+    color: #f0f019;
+  }
+  :root[data-color-theme="dark"] form.search .results .g3,
+  :root[data-color-theme="dark"] form.search #radical_area .results .g3 {
+    color: #f0f019;
+  }
+  :root[data-color-theme="dark"] form.search .results .g4,
+  :root[data-color-theme="dark"] form.search #radical_area .results .g4 {
+    color: #f0f019;
+  }
+  :root[data-color-theme="dark"] form.search .results .g5,
+  :root[data-color-theme="dark"] form.search #radical_area .results .g5 {
+    color: #f0f019;
+  }
+  :root[data-color-theme="dark"] form.search .results .g6,
+  :root[data-color-theme="dark"] form.search #radical_area .results .g6 {
+    color: #f0f019;
+  }
+  :root[data-color-theme="dark"] form.search .results .g7,
+  :root[data-color-theme="dark"] form.search #radical_area .results .g7 {
+    color: #f0f019;
+  }
+  :root[data-color-theme="dark"] form.search .results .g8,
+  :root[data-color-theme="dark"] form.search #radical_area .results .g8 {
+    color: #f0f019;
+  }
+  :root[data-color-theme="dark"] form.search #radical_area .radical_table {
+    background-image: repeating-linear-gradient(180deg, #f0f00b, #f0f00b 32px, #f0f00a 32px, #f0f00a 64px);
+  }
+  :root[data-color-theme="dark"] form.search #radical_area .radical_table .number {
+    background-color: #f0f004;
+    color: #f0f001;
+  }
+  :root[data-color-theme="dark"] form.search #radical_area .radical_table .radical {
+    background-image: none;
+    color: #f0f004;
+  }
+  :root[data-color-theme="dark"] form.search #radical_area .radical_table .radical.available:hover {
+    background-color: #f0f009;
+  }
+  :root[data-color-theme="dark"] form.search #radical_area .radical_table .radical.selected {
+    border-color: #f0f004;
+    background-color: rgba(240, 240, 20, 0.3);
+  }
+  :root[data-color-theme="dark"] form.search #radical_area.combined_mode .reset_radicals {
+    color: #f0f006;
+  }
+  :root[data-color-theme="dark"] form.search #radical_area.combined_mode .reset_radicals:hover {
+    color: #f0f004;
+    background-color: #f0f009;
+  }
+  :root[data-color-theme="dark"] form.search .handwriting .panel {
+    background-color: #f0f00b;
+  }
+  :root[data-color-theme="dark"] form.search .handwriting .pencil-icon {
+    color: #f0f00a !important;
+  }
+  :root[data-color-theme="dark"] .speech_area_active #speech_button,
+  :root[data-color-theme="dark"] .radical_area_active #radical_button,
+  :root[data-color-theme="dark"] .handwriting_area_active #handwriting_button {
+    border-bottom-color: #f0f01b;
+  }
+  :root[data-color-theme="dark"] #what_is_this {
+    color: unset;
+  }
+  :root[data-color-theme="dark"] .japanese_word__furigana-invisible {
+    opacity: 0;
+  }
+  :root[data-color-theme="dark"] #zen_bar li[data-pos="Noun"] a,
+  :root[data-color-theme="dark"] #zen_bar li[data-pos="Proper noun"] a,
+  :root[data-color-theme="dark"] #zen_bar li[data-pos="Pronoun"] a,
+  :root[data-color-theme="dark"] #zen_bar li[data-pos="Suffix"] a,
+  :root[data-color-theme="dark"] #zen_bar li[data-pos="Prefix"] a,
+  :root[data-color-theme="dark"] #zen_bar li[data-pos="Symbol"] a,
+  :root[data-color-theme="dark"] #zen_bar li[data-pos="Interjection"] a,
+  :root[data-color-theme="dark"] #zen_bar li[data-pos="Propernoun"] a {
+    color: #f0f013;
+    border-bottom-color: #f0f013;
+  }
+  :root[data-color-theme="dark"] #zen_bar li[data-pos="Particle"] a {
+    color: #f0f011;
+    border-bottom-color: #f0f011;
+  }
+  :root[data-color-theme="dark"] #zen_bar li[data-pos="Verb"] a {
+    color: #f0f006;
+    border-bottom-color: #f0f006;
+  }
+  :root[data-color-theme="dark"] #main_results h4 .result_count {
+    color: #f0f006;
+  }
+  :root[data-color-theme="dark"] .fact {
+    outline-color: #f0f002;
+    border-color: #f0f001;
+    background-color: #f0f002;
+  }
+  :root[data-color-theme="dark"] .concept_light {
+    border-bottom-color: #f0f009;
+  }
+  :root[data-color-theme="dark"] .concept_light-status .concept_light-tag {
+    color: #f0f001;
+    background-color: #f0f006;
+  }
+  :root[data-color-theme="dark"] .concept_light-status .concept_light-tag.concept_light-common {
+    background-color: #f0f015;
+  }
+  :root[data-color-theme="dark"] .concept_light-status .concept_light-tag a {
+    color: #f0f001;
+  }
+  :root[data-color-theme="dark"] .concept_light-meanings .meaning-tags,
+  :root[data-color-theme="dark"] .concept_light-meanings .meaning-definition-section_divider {
+    color: #f0f006;
+  }
+  :root[data-color-theme="dark"] .concept_light .sentence,
+  :root[data-color-theme="dark"] .meaning-abstract,
+  :root[data-color-theme="dark"] .supplemental_info {
+    color: #f0f006;
+  }
+  :root[data-color-theme="dark"] .kanji_light {
+    border-bottom-color: #f0f009;
+  }
+  :root[data-color-theme="dark"] .kanji_light .info {
+    color: #f0f006;
+  }
+  :root[data-color-theme="dark"] .sentences_block .sentence {
+    border-bottom-color: #f0f009;
+  }
+  :root[data-color-theme="dark"] #secondary aside .minor-text {
+    color: #f0f006;
+  }
+  :root[data-color-theme="dark"] .kanji-details__main-readings-list a {
+    border-bottom-color: #f0f006;
+  }
+  :root[data-color-theme="dark"] .kanji_strokes .kanji_play_button,
+  :root[data-color-theme="dark"] .kanji_strokes .replay_button,
+  :root[data-color-theme="dark"] .kanji_strokes .toggle_kanji_actions {
+    color: #f0f004;
+    background-color: transparent;
+  }
+  :root[data-color-theme="dark"] .kanji_strokes .actions {
+    background-color: #f0f001;
+  }
+  :root[data-color-theme="dark"] .kanji_strokes .actions h3 {
+    color: #f0f004;
+  }
+  :root[data-color-theme="dark"] .kanji_strokes .noUi-target .noUi-background {
+    background-color: #f0f01b;
+  }
+  :root[data-color-theme="dark"] .kanji_strokes .noUi-target .noUi-base {
+    border-color: #f0f00b;
+  }
+  :root[data-color-theme="dark"] .kanji_strokes .noUi-target .noUi-origin {
+    background-color: #f0f009;
+  }
+  :root[data-color-theme="dark"] .kanji_strokes .noUi-target .noUi-handle {
+    background-color: #f0f004;
+    border-color: #f0f00a;
+  }
+  :root[data-color-theme="dark"] .kanji_strokes .noUi-target .noUi-active {
+    background-color: #f0f006;
+  }
+  :root[data-color-theme="dark"] .stroke_order_diagram--bounding_box,
+  :root[data-color-theme="dark"] .stroke_order_diagram--guide_line {
+    stroke: #f0f00c;
+  }
+  :root[data-color-theme="dark"] .stroke_order_diagram--path_start {
+    fill: rgba(240, 240, 17, 0.8);
+  }
+  :root[data-color-theme="dark"] .stroke_order_diagram--current_path {
+    stroke: #f0f004;
+  }
+  :root[data-color-theme="dark"] .stroke_order_diagram--existing_path {
+    stroke: rgba(240, 240, 6, 0.5);
+  }
+  :root[data-color-theme="dark"] .kanji table {
+    background-color: #f0f002;
+    border-color: #f0f009;
+  }
+  :root[data-color-theme="dark"] .kanji tr {
+    background-color: #f0f00c;
+  }
+  :root[data-color-theme="dark"] .kanji tr td {
+    color: #f0f006;
+  }
+  :root[data-color-theme="dark"] .discussion_thread .comment_body {
+    background-color: #f0f00c;
+    border-color: #f0f009;
+  }
+  :root[data-color-theme="dark"] .discussion_thread .comment_body .discussion_status {
+    background-color: #f0f00b;
+    border-bottom-color: #f0f009;
+    color: #f0f006;
+  }
+  :root[data-color-theme="dark"] .discussion_thread .comment_body .discussion_about {
+    background-color: #f0f00e;
+    color: #f0f016;
+  }
+  :root[data-color-theme="dark"] .discussion_thread .comment_body .comment_status {
+    background-color: #f0f00a;
+    color: #f0f006;
+  }
+  :root[data-color-theme="dark"] .discussion_thread .discussion_title a {
+    color: #f0f004 !important;
+  }
+  :root[data-color-theme="dark"] footer .ornament {
+    background-color: #f0f011;
+    box-shadow: 0 0 10px 5px #f0f009;
+  }
+  :root[data-color-theme="light"] {
+    color-scheme: light;
+  }
+  :root[data-color-theme="light"] ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root[data-color-theme="light"] input::placeholder,
+  :root[data-color-theme="light"] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root[data-color-theme="light"] body {
+    background-color: #f0f001 !important;
+    color: #f0f004;
+  }
+  :root[data-color-theme="light"] body a {
+    color: #f0f01b;
+  }
+  :root[data-color-theme="light"] body a:hover {
+    color: #e8e84b;
+  }
+  :root[data-color-theme="light"] h1 {
+    color: #f0f004;
+  }
+  :root[data-color-theme="light"] h2 {
+    color: #f0f004;
+  }
+  :root[data-color-theme="light"] h3 {
+    color: #f0f004;
+  }
+  :root[data-color-theme="light"] h4 {
+    color: #f0f004;
+  }
+  :root[data-color-theme="light"] h5 {
+    color: #f0f004;
+  }
+  :root[data-color-theme="light"] h6 {
+    color: #f0f004;
+  }
+  :root[data-color-theme="light"] button,
+  :root[data-color-theme="light"] .button,
+  :root[data-color-theme="light"] .tabs .tab-title > a {
+    background-color: #f0f009;
+    color: #f0f004;
+  }
+  :root[data-color-theme="light"] button:hover,
+  :root[data-color-theme="light"] .button:hover,
+  :root[data-color-theme="light"] .tabs .tab-title > a:hover,
+  :root[data-color-theme="light"] button:focus,
+  :root[data-color-theme="light"] .button:focus,
+  :root[data-color-theme="light"] .tabs .tab-title > a:focus {
+    background-color: #f0f008;
+    color: #f0f004;
+  }
+  :root[data-color-theme="light"] .button-group {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  :root[data-color-theme="light"] .button-group.radius > *,
+  :root[data-color-theme="light"] .button-group > li {
+    margin: unset;
+  }
+  :root[data-color-theme="light"] .f-dropdown {
+    background-color: #f0f002;
+    border-color: #f0f009;
+  }
+  :root[data-color-theme="light"] .f-dropdown::before {
+    border-bottom-color: #f0f00c;
+  }
+  :root[data-color-theme="light"] .f-dropdown li:hover {
+    background-color: #f0f003;
+  }
+  :root[data-color-theme="light"] header.row {
+    background-color: #f0f001;
+  }
+  :root[data-color-theme="light"] h1.logo a {
+    background-image: url("//assets.jisho.org/assets/jisho-logo-v4@2x-7330091c079b9dd59601401b052b52e103978221c8fb6f5e22406d871fcc746a.png");
+  }
+  :root[data-color-theme="light"] nav .links .color_theme_picker--wrapper:hover {
+    background-color: #f0f002;
+  }
+  :root[data-color-theme="light"] nav .links .color_theme_picker--choices {
+    background-color: #f0f002;
+  }
+  :root[data-color-theme="light"] nav .links .color_theme_picker--choices li a:hover {
+    background-color: #f0f003;
+  }
+  :root[data-color-theme="light"] form.search .input_methods,
+  :root[data-color-theme="light"] form.search .input_method_button h4 {
+    color: #f0f006;
+  }
+  :root[data-color-theme="light"] form.search .input_method_button:hover {
+    background-color: #f0f00c;
+  }
+  :root[data-color-theme="light"] form.search .main {
+    background-color: #f0f00c;
+    box-shadow: none;
+  }
+  :root[data-color-theme="light"] form.search .inner {
+    background-color: #f0f00b;
+  }
+  :root[data-color-theme="light"] form.search .inner input {
+    color: #f0f004;
+  }
+  :root[data-color-theme="light"] form.search .search_type {
+    border-right-color: #f0f009;
+    color: #f0f006;
+  }
+  :root[data-color-theme="light"] form.search .submit {
+    background-color: #f0f008;
+    color: #f0f004;
+  }
+  :root[data-color-theme="light"] form.search .search-form_clear-button {
+    background-color: transparent;
+  }
+  :root[data-color-theme="light"] form.search .search-form_clear-button .clear-icon {
+    fill: #f0f006;
+  }
+  :root[data-color-theme="light"] form.search .results .result_label,
+  :root[data-color-theme="light"] form.search #radical_area .results .result_label {
+    color: #f0f004;
+  }
+  :root[data-color-theme="light"] form.search .results .result,
+  :root[data-color-theme="light"] form.search #radical_area .results .result {
+    background-color: #f0f00b;
+  }
+  :root[data-color-theme="light"] form.search .results .result:hover,
+  :root[data-color-theme="light"] form.search #radical_area .results .result:hover {
+    color: #f0f004;
+  }
+  :root[data-color-theme="light"] form.search .results .g1,
+  :root[data-color-theme="light"] form.search #radical_area .results .g1 {
+    color: #f0f019;
+  }
+  :root[data-color-theme="light"] form.search .results .g2,
+  :root[data-color-theme="light"] form.search #radical_area .results .g2 {
+    color: #f0f019;
+  }
+  :root[data-color-theme="light"] form.search .results .g3,
+  :root[data-color-theme="light"] form.search #radical_area .results .g3 {
+    color: #f0f019;
+  }
+  :root[data-color-theme="light"] form.search .results .g4,
+  :root[data-color-theme="light"] form.search #radical_area .results .g4 {
+    color: #f0f019;
+  }
+  :root[data-color-theme="light"] form.search .results .g5,
+  :root[data-color-theme="light"] form.search #radical_area .results .g5 {
+    color: #f0f019;
+  }
+  :root[data-color-theme="light"] form.search .results .g6,
+  :root[data-color-theme="light"] form.search #radical_area .results .g6 {
+    color: #f0f019;
+  }
+  :root[data-color-theme="light"] form.search .results .g7,
+  :root[data-color-theme="light"] form.search #radical_area .results .g7 {
+    color: #f0f019;
+  }
+  :root[data-color-theme="light"] form.search .results .g8,
+  :root[data-color-theme="light"] form.search #radical_area .results .g8 {
+    color: #f0f019;
+  }
+  :root[data-color-theme="light"] form.search #radical_area .radical_table {
+    background-image: repeating-linear-gradient(180deg, #f0f00b, #f0f00b 32px, #f0f00a 32px, #f0f00a 64px);
+  }
+  :root[data-color-theme="light"] form.search #radical_area .radical_table .number {
+    background-color: #f0f004;
+    color: #f0f001;
+  }
+  :root[data-color-theme="light"] form.search #radical_area .radical_table .radical {
+    background-image: none;
+    color: #f0f004;
+  }
+  :root[data-color-theme="light"] form.search #radical_area .radical_table .radical.available:hover {
+    background-color: #f0f009;
+  }
+  :root[data-color-theme="light"] form.search #radical_area .radical_table .radical.selected {
+    border-color: #f0f004;
+    background-color: rgba(240, 240, 20, 0.3);
+  }
+  :root[data-color-theme="light"] form.search #radical_area.combined_mode .reset_radicals {
+    color: #f0f006;
+  }
+  :root[data-color-theme="light"] form.search #radical_area.combined_mode .reset_radicals:hover {
+    color: #f0f004;
+    background-color: #f0f009;
+  }
+  :root[data-color-theme="light"] form.search .handwriting .panel {
+    background-color: #f0f00b;
+  }
+  :root[data-color-theme="light"] form.search .handwriting .pencil-icon {
+    color: #f0f00a !important;
+  }
+  :root[data-color-theme="light"] .speech_area_active #speech_button,
+  :root[data-color-theme="light"] .radical_area_active #radical_button,
+  :root[data-color-theme="light"] .handwriting_area_active #handwriting_button {
+    border-bottom-color: #f0f01b;
+  }
+  :root[data-color-theme="light"] #what_is_this {
+    color: unset;
+  }
+  :root[data-color-theme="light"] .japanese_word__furigana-invisible {
+    opacity: 0;
+  }
+  :root[data-color-theme="light"] #zen_bar li[data-pos="Noun"] a,
+  :root[data-color-theme="light"] #zen_bar li[data-pos="Proper noun"] a,
+  :root[data-color-theme="light"] #zen_bar li[data-pos="Pronoun"] a,
+  :root[data-color-theme="light"] #zen_bar li[data-pos="Suffix"] a,
+  :root[data-color-theme="light"] #zen_bar li[data-pos="Prefix"] a,
+  :root[data-color-theme="light"] #zen_bar li[data-pos="Symbol"] a,
+  :root[data-color-theme="light"] #zen_bar li[data-pos="Interjection"] a,
+  :root[data-color-theme="light"] #zen_bar li[data-pos="Propernoun"] a {
+    color: #f0f013;
+    border-bottom-color: #f0f013;
+  }
+  :root[data-color-theme="light"] #zen_bar li[data-pos="Particle"] a {
+    color: #f0f011;
+    border-bottom-color: #f0f011;
+  }
+  :root[data-color-theme="light"] #zen_bar li[data-pos="Verb"] a {
+    color: #f0f006;
+    border-bottom-color: #f0f006;
+  }
+  :root[data-color-theme="light"] #main_results h4 .result_count {
+    color: #f0f006;
+  }
+  :root[data-color-theme="light"] .fact {
+    outline-color: #f0f002;
+    border-color: #f0f001;
+    background-color: #f0f002;
+  }
+  :root[data-color-theme="light"] .concept_light {
+    border-bottom-color: #f0f009;
+  }
+  :root[data-color-theme="light"] .concept_light-status .concept_light-tag {
+    color: #f0f001;
+    background-color: #f0f006;
+  }
+  :root[data-color-theme="light"] .concept_light-status .concept_light-tag.concept_light-common {
+    background-color: #f0f015;
+  }
+  :root[data-color-theme="light"] .concept_light-status .concept_light-tag a {
+    color: #f0f001;
+  }
+  :root[data-color-theme="light"] .concept_light-meanings .meaning-tags,
+  :root[data-color-theme="light"] .concept_light-meanings .meaning-definition-section_divider {
+    color: #f0f006;
+  }
+  :root[data-color-theme="light"] .concept_light .sentence,
+  :root[data-color-theme="light"] .meaning-abstract,
+  :root[data-color-theme="light"] .supplemental_info {
+    color: #f0f006;
+  }
+  :root[data-color-theme="light"] .kanji_light {
+    border-bottom-color: #f0f009;
+  }
+  :root[data-color-theme="light"] .kanji_light .info {
+    color: #f0f006;
+  }
+  :root[data-color-theme="light"] .sentences_block .sentence {
+    border-bottom-color: #f0f009;
+  }
+  :root[data-color-theme="light"] #secondary aside .minor-text {
+    color: #f0f006;
+  }
+  :root[data-color-theme="light"] .kanji-details__main-readings-list a {
+    border-bottom-color: #f0f006;
+  }
+  :root[data-color-theme="light"] .kanji_strokes .kanji_play_button,
+  :root[data-color-theme="light"] .kanji_strokes .replay_button,
+  :root[data-color-theme="light"] .kanji_strokes .toggle_kanji_actions {
+    color: #f0f004;
+    background-color: transparent;
+  }
+  :root[data-color-theme="light"] .kanji_strokes .actions {
+    background-color: #f0f001;
+  }
+  :root[data-color-theme="light"] .kanji_strokes .actions h3 {
+    color: #f0f004;
+  }
+  :root[data-color-theme="light"] .kanji_strokes .noUi-target .noUi-background {
+    background-color: #f0f01b;
+  }
+  :root[data-color-theme="light"] .kanji_strokes .noUi-target .noUi-base {
+    border-color: #f0f00b;
+  }
+  :root[data-color-theme="light"] .kanji_strokes .noUi-target .noUi-origin {
+    background-color: #f0f009;
+  }
+  :root[data-color-theme="light"] .kanji_strokes .noUi-target .noUi-handle {
+    background-color: #f0f004;
+    border-color: #f0f00a;
+  }
+  :root[data-color-theme="light"] .kanji_strokes .noUi-target .noUi-active {
+    background-color: #f0f006;
+  }
+  :root[data-color-theme="light"] .stroke_order_diagram--bounding_box,
+  :root[data-color-theme="light"] .stroke_order_diagram--guide_line {
+    stroke: #f0f00c;
+  }
+  :root[data-color-theme="light"] .stroke_order_diagram--path_start {
+    fill: rgba(240, 240, 17, 0.8);
+  }
+  :root[data-color-theme="light"] .stroke_order_diagram--current_path {
+    stroke: #f0f004;
+  }
+  :root[data-color-theme="light"] .stroke_order_diagram--existing_path {
+    stroke: rgba(240, 240, 6, 0.5);
+  }
+  :root[data-color-theme="light"] .kanji table {
+    background-color: #f0f002;
+    border-color: #f0f009;
+  }
+  :root[data-color-theme="light"] .kanji tr {
+    background-color: #f0f00c;
+  }
+  :root[data-color-theme="light"] .kanji tr td {
+    color: #f0f006;
+  }
+  :root[data-color-theme="light"] .discussion_thread .comment_body {
+    background-color: #f0f00c;
+    border-color: #f0f009;
+  }
+  :root[data-color-theme="light"] .discussion_thread .comment_body .discussion_status {
+    background-color: #f0f00b;
+    border-bottom-color: #f0f009;
+    color: #f0f006;
+  }
+  :root[data-color-theme="light"] .discussion_thread .comment_body .discussion_about {
+    background-color: #f0f00e;
+    color: #f0f016;
+  }
+  :root[data-color-theme="light"] .discussion_thread .comment_body .comment_status {
+    background-color: #f0f00a;
+    color: #f0f006;
+  }
+  :root[data-color-theme="light"] .discussion_thread .discussion_title a {
+    color: #f0f004 !important;
+  }
+  :root[data-color-theme="light"] footer .ornament {
+    background-color: #f0f011;
+    box-shadow: 0 0 10px 5px #f0f001;
+  }
+}

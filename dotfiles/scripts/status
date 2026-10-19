@@ -1,0 +1,123 @@
+#!/usr/bin/env sh
+set -u
+
+runtime="${XDG_RUNTIME_DIR:-/tmp}"
+net_state="$runtime/pwnbox-status.net"
+
+human_kib() {
+    awk -v k="${1:-0}" 'BEGIN {
+        b = k * 1024
+        split("B KiB MiB GiB TiB", u, " ")
+        i = 1
+        while (b >= 1024 && i < 5) { b /= 1024; i++ }
+        printf (i >= 3 ? "%.1f%s" : "%.0f%s"), b, u[i]
+    }'
+}
+
+human_rate() {
+    awk -v b="${1:-0}" 'BEGIN {
+        split("B/s KiB/s MiB/s GiB/s", u, " ")
+        i = 1
+        while (b >= 1024 && i < 4) { b /= 1024; i++ }
+        printf (i >= 3 ? "%.1f%s" : "%.0f%s"), b, u[i]
+    }'
+}
+
+cpu_sample() {
+    set -- $(head -n1 /proc/stat)
+    _idle=$5
+    _iowait=$6
+    _total=0
+    for _v in "$@"; do
+        case "$_v" in
+            cpu*) continue ;;
+        esac
+        _total=$((_total + _v))
+    done
+    echo "$((_total - _idle - _iowait)) $_total"
+}
+
+set -- $(cpu_sample); b1=$1; t1=$2
+sleep 0.15
+set -- $(cpu_sample); b2=$1; t2=$2
+db=$((b2 - b1)); dt=$((t2 - t1))
+[ "$dt" -gt 0 ] || dt=1
+cpu=$(( (db * 100 + dt / 2) / dt ))
+[ "$cpu" -gt 100 ] && cpu=100
+
+mem_total_k=$(awk '/^MemTotal:/{print $2}' /proc/meminfo)
+mem_avail_k=$(awk '/^MemAvailable:/{print $2}' /proc/meminfo)
+[ -n "$mem_total_k" ] || mem_total_k=1
+[ -n "$mem_avail_k" ] || mem_avail_k=0
+mem_used_k=$((mem_total_k - mem_avail_k))
+mem=$((mem_used_k * 100 / (mem_total_k > 0 ? mem_total_k : 1)))
+
+swap_total_k=$(awk '/^SwapTotal:/{print $2}' /proc/meminfo)
+swap_free_k=$(awk '/^SwapFree:/{print $2}' /proc/meminfo)
+[ -n "$swap_total_k" ] || swap_total_k=0
+[ -n "$swap_free_k" ] || swap_free_k=0
+swap_used_k=$((swap_total_k - swap_free_k))
+if [ "$swap_total_k" -gt 0 ]; then
+    swap=$((swap_used_k * 100 / swap_total_k))
+else
+    swap=0
+fi
+
+set -- $(df -Pk / | awk 'NR==2 {print $3, $2}')
+disk_used_k=${1:-0}
+disk_total_k=${2:-1}
+[ "$disk_total_k" -gt 0 ] || disk_total_k=1
+disk=$((disk_used_k * 100 / disk_total_k))
+
+rx=0; tx=0
+while IFS= read -r line; do
+    case "$line" in
+        *:*) ;;
+        *) continue ;;
+    esac
+    iface=${line%%:*}
+    data=${line#*:}
+    iface=$(printf '%s' "$iface" | tr -d ' ')
+    [ "$iface" = "lo" ] && continue
+    set -- $data
+    rx=$((rx + ${1:-0}))
+    tx=$((tx + ${9:-0}))
+done < /proc/net/dev
+
+now=$(date +%s%N 2>/dev/null || echo "$(date +%s)000000000")
+if [ -f "$net_state" ]; then
+    set -- $(cat "$net_state")
+    prx=${1:-$rx}; ptx=${2:-$tx}; pnow=${3:-$now}
+else
+    prx=$rx; ptx=$tx; pnow=$now
+fi
+dns=$((now - pnow))
+[ "$dns" -gt 0 ] || dns=1
+up_bps=$(( (tx - ptx) * 1000000000 / dns ))
+down_bps=$(( (rx - prx) * 1000000000 / dns ))
+[ "$up_bps" -lt 0 ] && up_bps=0
+[ "$down_bps" -lt 0 ] && down_bps=0
+printf '%s %s %s\n' "$rx" "$tx" "$now" >"$net_state" 2>/dev/null || true
+
+load=$(cut -d' ' -f1 /proc/loadavg)
+up_secs=$(cut -d' ' -f1 /proc/uptime | cut -d. -f1)
+days=$((up_secs / 86400))
+hours=$(((up_secs % 86400) / 3600))
+mins=$(((up_secs % 3600) / 60))
+if [ "$days" -gt 0 ]; then
+    uptime="${days}d:${hours}h"
+elif [ "$hours" -gt 0 ]; then
+    uptime="${hours}h:${mins}m"
+else
+    uptime="${mins}m"
+fi
+kernel=$(uname -r)
+hostname=$(hostname 2>/dev/null || cat /etc/hostname 2>/dev/null)
+distro=$(grep '^PRETTY_NAME=' /etc/os-release 2>/dev/null | cut -d= -f2- | tr -d '"')
+
+printf 'cpu=%s mem=%s swap=%s disk=%s up=%s down=%s load=%s uptime=%s kernel=%s hostname=%s distro=%s mem_used=%s mem_total=%s swap_used=%s swap_total=%s disk_used=%s disk_total=%s\n' \
+    "$cpu" "$mem" "$swap" "$disk" "$(human_rate "$up_bps")" "$(human_rate "$down_bps")" \
+    "$load" "$uptime" "$kernel" "$hostname" "$distro" \
+    "$(human_kib "$mem_used_k")" "$(human_kib "$mem_total_k")" \
+    "$(human_kib "$swap_used_k")" "$(human_kib "$swap_total_k")" \
+    "$(human_kib "$disk_used_k")" "$(human_kib "$disk_total_k")"

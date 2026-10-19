@@ -1,0 +1,1201 @@
+/* ==UserStyle==
+@name           pwnbox-twitter
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Twitter (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("twitter.com"), domain("x.com") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f015 !important;
+    }
+    :root body.LightsOut {
+      --border-color: #f0f00c;
+      --color: #f0f004;
+      --color-emphasis: #f0f004;
+      --hover-bg-color: #f0f00c;
+      --cpft-text-primary: #f0f004;
+    }
+    :root body.LightsOut .r-qo02w8,
+    :root body.LightsOut .r-15ce4ve {
+      box-shadow: rgba(240, 240, 4, 0.2) 0 0 15px, rgba(240, 240, 4, 0.15) 0 0 3px 1px;
+    }
+    :root body.LightsOut .r-1tbvlxk {
+      filter: drop-shadow(rgba(240, 240, 4, 0.25) 1px -1px 1px);
+    }
+    :root body.LightsOut .r-1uusn97 {
+      box-shadow: rgba(240, 240, 4, 0.2) 0 0 5px, rgba(240, 240, 4, 0.15) 0 1px 4px 1px;
+    }
+    :root body,
+    :root .PageContainer,
+    :root #placeholder {
+      background-color: #f0f001 !important;
+      color: #f0f004;
+    }
+    :root #ScriptLoadFailure span {
+      color: #f0f004;
+    }
+    :root [style*="scrollbar-color: rgb(62, 65, 68) rgb(22, 24, 28)"] {
+      scrollbar-color: #f0f01b transparent !important;
+      scrollbar-width: thin;
+    }
+    :root [data-testid="primaryColumn"],
+    :root .r-kemksi {
+      background-color: #f0f001;
+    }
+    :root .r-cqee49 {
+      color: #f0f001;
+    }
+    :root .r-5zmot {
+      background-color: rgba(240, 240, 1, 0.75);
+    }
+    :root .r-1hdo0pc,
+    :root .r-pjtv4k {
+      background-color: rgba(240, 240, 4, 0.1);
+    }
+    :root .r-11gmi9o {
+      background-color: rgba(240, 240, 4, 0.2);
+    }
+    :root .r-1cuuowz {
+      background-color: rgba(240, 240, 4, 0.03);
+    }
+    :root .r-1nao33i {
+      color: #f0f004;
+    }
+    :root .r-jwli3a {
+      color: #fff;
+    }
+    :root .r-jwli3a:has(
+        path[d="M3.693 21.707l-1.414-1.414 2.429-2.429c-2.479-2.421-3.606-5.376-3.658-5.513l-.131-.352.131-.352c.133-.353 3.331-8.648 10.937-8.648 2.062 0 3.989.621 5.737 1.85l2.556-2.557 1.414 1.414L3.693 21.707zm-.622-9.706c.356.797 1.354 2.794 3.051 4.449l2.417-2.418c-.361-.609-.553-1.306-.553-2.032 0-2.206 1.794-4 4-4 .727 0 1.424.192 2.033.554l2.263-2.264C14.953 5.434 13.512 5 11.986 5c-5.416 0-8.258 5.535-8.915 7.001zM11.986 10c-1.103 0-2 .897-2 2 0 .178.023.352.067.519l2.451-2.451c-.167-.044-.341-.067-.519-.067zm10.951 1.647l.131.352-.131.352c-.133.353-3.331 8.648-10.937 8.648-.709 0-1.367-.092-2-.223v-2.047c.624.169 1.288.27 2 .27 5.415 0 8.257-5.533 8.915-7-.252-.562-.829-1.724-1.746-2.941l1.438-1.438c1.53 1.971 2.268 3.862 2.33 4.027z"]
+      ) {
+      color: #f0f004;
+    }
+    :root .r-1kqtdi0,
+    :root .r-1roi411 {
+      border-color: #f0f00c;
+    }
+    :root .r-1igl3o0 {
+      border-bottom-color: #f0f00c;
+    }
+    :root .r-2sztyj {
+      border-top-color: #f0f00c;
+    }
+    :root .r-1aihyag {
+      border-right-color: #f0f00c;
+    }
+    :root .r-1wyyjkm {
+      border-left-color: #f0f006;
+    }
+    :root .r-1ccsd61,
+    :root .r-xzxzvz {
+      border-color: #f0f00a;
+    }
+    :root .r-gu4em3,
+    :root .r-1bnu78o,
+    :root .r-z32n2g,
+    :root .r-1m3jxhj {
+      background-color: #f0f00c;
+    }
+    :root .r-1xc7w19 {
+      border-color: #f0f001;
+    }
+    :root .r-1pbtemp {
+      border-right-color: #f0f01b;
+    }
+    :root .r-vhj8yc {
+      border-color: #f0f01b;
+    }
+    :root .r-1bwzh9t {
+      color: #f0f016;
+    }
+    :root .r-g2wdr4 {
+      background-color: #f0f002;
+    }
+    :root .r-14wv3jr {
+      border-color: #f0f002;
+    }
+    :root .r-l5o3uw {
+      background-color: #f0f01b;
+    }
+    :root .r-l5o3uw .r-jwli3a {
+      color: #fff;
+    }
+    :root .r-1vtznih {
+      background-color: #cbcb0d;
+    }
+    :root .r-1vtznih .r-jwli3a {
+      color: #fff;
+    }
+    :root .r-1peqgm7 {
+      background-color: rgba(240, 240, 27, 0.1);
+    }
+    :root .r-yuvema {
+      background-color: #b3b30c;
+    }
+    :root .r-yuvema .r-jwli3a {
+      color: #fff;
+    }
+    :root .r-r18ze4 {
+      background-color: rgba(240, 240, 27, 0.2);
+    }
+    :root .r-jc7xae {
+      background-color: #dcdc04;
+    }
+    :root .r-6wtuen {
+      background-color: #c8c803;
+    }
+    :root .r-1pr99xn {
+      background-color: #f0f00b;
+    }
+    :root .r-1eltapf {
+      background-color: rgba(240, 240, 24, 0.1);
+    }
+    :root .r-eok2q2 {
+      background-color: rgba(240, 240, 27, 0.6);
+    }
+    :root .r-9cip40 {
+      box-shadow: #f0f01b 0 0 0 1px;
+    }
+    :root .r-1blqq69 {
+      border-color: #f0f010;
+    }
+    :root .r-qazpri {
+      color: #f0f015;
+    }
+    @keyframes r-1wvy3k1 {
+      0% {
+        box-shadow: rgba(240, 240, 16, 0.4) 0;
+      }
+      100% {
+        box-shadow: rgba(240, 240, 16, 0) 0;
+      }
+    }
+    :root [style="background-image: linear-gradient(61.63deg, rgb(45, 66, 255) -15.05%, rgb(156, 99, 250) 104.96%);"] {
+      background-image: linear-gradient(61.63deg, #f0f019 -15.05%, #f0f010 104.96%) !important;
+    }
+    :root .draftjs-styles_0 .public-DraftEditorPlaceholder-root {
+      color: #f0f015;
+    }
+    :root .r-rgqbpe {
+      background-color: rgba(240, 240, 25, 0.1);
+    }
+    :root .r-s224ru {
+      background-color: #f0f015;
+    }
+    :root .r-h7o7i8 {
+      background-color: rgba(240, 240, 21, 0.1);
+    }
+    :root .r-4nw3r4,
+    :root .r-1dgebii {
+      background-color: #f0f011;
+    }
+    :root .r-b5kvu3 {
+      border-color: #f0f011;
+    }
+    :root .r-qqmkd0 {
+      background-color: rgba(240, 240, 17, 0.1);
+    }
+    :root .r-12d83nn {
+      background-color: #c2c20c;
+    }
+    :root .r-oybae9 {
+      background-color: #aaaa0b;
+    }
+    :root .r-11mg6pl {
+      border-color: #fff;
+    }
+    :root .r-11z020y {
+      background-color: rgba(149, 149, 67, 0.12);
+    }
+    :root [fill="rgb(249,22,127)"],
+    :root [fill="rgb(222,45,108)"],
+    :root g[clip-path="url(#__lottie_element_562)"] path,
+    :root [style="color: rgb(249, 24, 128);"] [viewBox="0 0 24 24"] path {
+      fill: #f0f011 !important;
+    }
+    :root .r-1krxqcr {
+      background-color: rgba(240, 240, 17, 0.1);
+    }
+    :root .r-uuique {
+      background-color: rgba(240, 240, 17, 0.2);
+    }
+    :root .r-vkub15,
+    :root .r-9l7dzd {
+      color: #f0f016;
+    }
+    :root .r-1cvl2hr {
+      color: #f0f01b;
+    }
+    :root .r-o6sn0f {
+      color: #f0f015;
+    }
+    :root .r-15azkrj {
+      background-color: rgba(240, 240, 21, 0.1);
+    }
+    :root .r-1x669os {
+      background-color: rgba(240, 240, 21, 0.2);
+    }
+    :root [data-testid="card.wrapper"] [d="M21.04 1.54L17.5 5.09c-.04-.02-.08-.03-.13-.04L14.3 3H9.7l-3 2H5C3.62 5 2.5 6.12 2.5 7.5v11c0 .46.12.88.34 1.25l-1.3 1.29 1.42 1.42 19.5-19.5-1.42-1.42zM13.7 5l2.33 1.56-2 1.99C13.44 8.2 12.74 8 12 8c-2.21 0-4 1.79-4 4 0 .74.2 1.44.55 2.03L4.5 18.09V7.5c0-.28.22-.5.5-.5h2.3l3-2h3.4zM12 10c.18 0 .35.02.52.07l-2.45 2.45c-.05-.17-.07-.34-.07-.52 0-1.1.9-2 2-2zm7 11H7.24l2-2H19c.28 0 .5-.22.5-.5V9h2v9.5c0 1.38-1.12 2.5-2.5 2.5z"] {
+      color: #f0f015;
+    }
+    :root .r-n94g0g {
+      background-color: rgba(240, 240, 4, 0.3);
+    }
+    :root .r-z9i421 {
+      background-color: rgba(240, 240, 4, 0.27);
+    }
+    :root .r-19130f6 {
+      background-color: #f0f003;
+    }
+    :root .r-l8tqsx {
+      background-color: rgba(240, 240, 4, 0.1);
+    }
+    :root .r-3gvs5h {
+      background-color: #f0f008;
+    }
+    :root .r-1fkb3t2 {
+      background-color: #f0f00b;
+    }
+    :root .r-jwli3a {
+      color: #f0f004;
+    }
+    :root .r-1kwlb9n {
+      background-color: rgba(240, 240, 17, 0.12);
+    }
+    :root [style*="https://abs.twimg.com/responsive-web/client-web/background-premiumplus-web"] {
+      background-image: none !important;
+      background-color: #f0f00c;
+    }
+    :root [stroke="#2F3336" i] {
+      stroke: #f0f00a !important;
+    }
+    :root [stroke="#1D9BF0" i],
+    :root [style*="stroke: rgb(29, 155, 240)"] {
+      stroke: #f0f01b !important;
+    }
+    :root [stroke="#FFD400" i] {
+      stroke: #f0f014 !important;
+    }
+    :root [fill="#829AAB" i] {
+      fill: #f0f007 !important;
+    }
+    :root [fill="#1DA1F2" i] {
+      fill: #afaf0b !important;
+    }
+    :root [fill="#78C6EE" i] {
+      fill: #f0f017 !important;
+    }
+    :root [stop-color="#f4e72a" i],
+    :root [stop-color="#cd8105" i],
+    :root [stop-color="#cb7b00" i],
+    :root [stop-color="#f4ec26" i],
+    :root [stop-color="#f9e87f" i],
+    :root [stop-color="#e2b719" i] {
+      stop-color: #f0f014 !important;
+    }
+    :root [fill="#d18800" i] {
+      fill: #f0f014 !important;
+    }
+    :root [style*="border-color: rgb(83, 100, 113)"] {
+      border-color: #f0f00b !important;
+    }
+    :root [style*="border-color: rgb(51, 54, 57)"] {
+      border-color: #f0f00c !important;
+    }
+    :root [style*="border-color: rgb(103, 7, 15)"] {
+      border-color: rgba(240, 240, 17, 0.5) !important;
+    }
+    :root [style*="border-color: rgb(29, 155, 240)"] {
+      border-color: #f0f01b !important;
+    }
+    :root [style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root [style*="color: rgb(239, 243, 244)"]:not( [style*="background-color: rgb(239, 243, 244)"]),
+    :root [style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]) {
+      color: #f0f004 !important;
+    }
+    :root [style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]) input::placeholder {
+      color: #f0f005 !important;
+    }
+    :root [style*="color: rgb(113, 118, 123)"]:not( [style*="background-color: rgb(113, 118, 123)"]),
+    :root [style*="color: rgb(182, 185, 188)"]:not( [style*="background-color: rgb(182, 185, 188)"]) {
+      color: #f0f015 !important;
+    }
+    :root [style*="color: rgb(0, 186, 124)"]:not( [style*="background-color: rgb(0, 186, 124)"]) {
+      color: #f0f015 !important;
+    }
+    :root [style*="color: rgb(249, 24, 128)"]:not( [style*="background-color: rgb(249, 24, 128)"]),
+    :root [style*="color: rgb(244, 33, 46)"]:not( [style*="background-color: rgb(244, 33, 46)"]) {
+      color: #f0f016 !important;
+    }
+    :root [style*="color: rgb(250, 68, 152)"]:not( [style*="background-color: rgb(250, 68, 152)"]) {
+      color: #f0f00f !important;
+    }
+    :root [style*="color: rgb(255, 212, 0)"]:not( [style*="background-color: rgb(255, 212, 0)"]) {
+      color: #f0f014 !important;
+    }
+    :root [style*="color: rgb(120, 86, 255)"]:not( [style*="background-color: rgb(120, 86, 255)"]) {
+      color: #f0f010 !important;
+    }
+    :root [style*="color: rgb(255, 122, 0)"]:not( [style*="background-color: rgb(255, 122, 0)"]) {
+      color: #f0f013 !important;
+    }
+    :root [style*="color: rgb(29, 155, 240)"]:not( [style*="background-color: rgb(29, 155, 240)"]) {
+      color: #f0f01b !important;
+    }
+    :root [style*="background-color: rgb(142, 205, 248)"] {
+      background-color: #f3f34b !important;
+    }
+    :root [style*="background-color: rgb(2, 17, 61)"] {
+      background-color: rgba(240, 240, 27, 0.15) !important;
+    }
+    :root [style*="background-color: rgba(255, 255, 255, 0.25)"] {
+      background-color: rgba(240, 240, 4, 0.25) !important;
+    }
+    :root [style*="background-color: rgb(147, 147, 147)"] {
+      background-color: #f0f009 !important;
+    }
+    :root [style*="background-color: rgb(29, 155, 240)"] {
+      background-color: #f0f01b !important;
+    }
+    :root [style*="background-color: rgb(29, 155, 240)"] [style*="color: rgb(255, 255, 255)"] {
+      color: #fff !important;
+    }
+    :root [style*="background-color: rgb(239, 243, 244)"] {
+      background-color: #f0f004 !important;
+    }
+    :root [style*="background-color: rgb(239, 243, 244)"] [style*="color: rgb(15, 20, 25)"] {
+      color: #fff !important;
+    }
+    :root [style*="background-color: rgb(244, 33, 46)"] {
+      background-color: #f0f011 !important;
+    }
+    :root [style*="background-color: rgb(244, 33, 46)"] [style*="color: rgb(255, 255, 255)"] {
+      color: #fff !important;
+    }
+    :root [style*="background-color: rgb(0, 0, 0)"],
+    :root [style*="background-color: #000"] {
+      background-color: #f0f001 !important;
+    }
+    :root [style*="background-color: rgba(15, 20, 25, 0.75)"] {
+      background-color: rgba(240, 240, 3, 0.75) !important;
+    }
+    :root [style*="background-color: rgba(15, 20, 25, 0.75)"] [style*="color: rgb(255, 255, 255)"] svg {
+      color: #f0f004 !important;
+    }
+    :root .r-l5o3uw [style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-1vtznih [style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-4nw3r4 [style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-12d83nn [style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-oybae9 [style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-yuvema [style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-3gvs5h [style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root [style="background-image: linear-gradient(61.63deg, rgb(45, 66, 255) -15.05%, rgb(156, 99, 250) 104.96%);"] [style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-l5o3uw[style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-1vtznih[style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-4nw3r4[style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-12d83nn[style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-oybae9[style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-yuvema[style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-3gvs5h[style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root [style="background-image: linear-gradient(61.63deg, rgb(45, 66, 255) -15.05%, rgb(156, 99, 250) 104.96%);"][style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-l5o3uw [style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root .r-1vtznih [style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root .r-4nw3r4 [style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root .r-12d83nn [style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root .r-oybae9 [style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root .r-yuvema [style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root .r-3gvs5h [style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root [style="background-image: linear-gradient(61.63deg, rgb(45, 66, 255) -15.05%, rgb(156, 99, 250) 104.96%);"] [style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root .r-l5o3uw[style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root .r-1vtznih[style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root .r-4nw3r4[style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root .r-12d83nn[style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root .r-oybae9[style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root .r-yuvema[style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root .r-3gvs5h[style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root [style="background-image: linear-gradient(61.63deg, rgb(45, 66, 255) -15.05%, rgb(156, 99, 250) 104.96%);"][style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root .r-l5o3uw [color="white"],
+    :root .r-1vtznih [color="white"],
+    :root .r-4nw3r4 [color="white"],
+    :root .r-12d83nn [color="white"],
+    :root .r-oybae9 [color="white"],
+    :root .r-yuvema [color="white"],
+    :root .r-3gvs5h [color="white"],
+    :root [style="background-image: linear-gradient(61.63deg, rgb(45, 66, 255) -15.05%, rgb(156, 99, 250) 104.96%);"] [color="white"] {
+      color: #fff !important;
+    }
+    :root [data-testid="videoComponent"]:not(.r-4nw3r4) [style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-loe9s5 [style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-drfeu3:has( [style="background-color: rgba(255, 255, 255, 0.25); border-color: rgba(0, 0, 0, 0); backdrop-filter: blur(4px);"]) [style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root [data-testid="videoComponent"]:not(.r-4nw3r4)[style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-loe9s5[style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-drfeu3:has( [style="background-color: rgba(255, 255, 255, 0.25); border-color: rgba(0, 0, 0, 0); backdrop-filter: blur(4px);"])[style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root [data-testid="videoComponent"]:not(.r-4nw3r4) .r-jwli3a,
+    :root .r-loe9s5 .r-jwli3a,
+    :root .r-drfeu3:has( [style="background-color: rgba(255, 255, 255, 0.25); border-color: rgba(0, 0, 0, 0); backdrop-filter: blur(4px);"]) .r-jwli3a {
+      color: #fff !important;
+    }
+    :root .r-eff69c {
+      background-color: #e3e30f;
+    }
+    :root .r-eff69c [style*="color: rgb(255, 255, 255)"] {
+      color: #f0f003 !important;
+    }
+    :root [data-testid$="-follow"] [style*="color: rgb(15, 20, 25)"] {
+      color: #fff !important;
+    }
+    :root a[aria-label^="Translated from"][aria-label$="by Google"] svg path {
+      fill: #f0f004 !important;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f015 !important;
+    }
+    :root body.LightsOut {
+      --border-color: #f0f00c;
+      --color: #f0f004;
+      --color-emphasis: #f0f004;
+      --hover-bg-color: #f0f00c;
+      --cpft-text-primary: #f0f004;
+    }
+    :root body.LightsOut .r-qo02w8,
+    :root body.LightsOut .r-15ce4ve {
+      box-shadow: rgba(240, 240, 4, 0.2) 0 0 15px, rgba(240, 240, 4, 0.15) 0 0 3px 1px;
+      box-shadow: rgba(0, 0, 0, 0.4) 0 0 15px, rgba(0, 0, 0, 0.35) 0 0 3px 1px;
+    }
+    :root body.LightsOut .r-1tbvlxk {
+      filter: drop-shadow(rgba(240, 240, 4, 0.25) 1px -1px 1px);
+      filter: drop-shadow(rgba(0, 0, 0, 0.5) 1px -1px 1px);
+    }
+    :root body.LightsOut .r-1uusn97 {
+      box-shadow: rgba(240, 240, 4, 0.2) 0 0 5px, rgba(240, 240, 4, 0.15) 0 1px 4px 1px;
+      box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px, rgba(0, 0, 0, 0.35) 0 1px 4px 1px;
+    }
+    :root body,
+    :root .PageContainer,
+    :root #placeholder {
+      background-color: #f0f001 !important;
+      color: #f0f004;
+    }
+    :root #ScriptLoadFailure span {
+      color: #f0f004;
+    }
+    :root [style*="scrollbar-color: rgb(62, 65, 68) rgb(22, 24, 28)"] {
+      scrollbar-color: #f0f01b transparent !important;
+      scrollbar-width: thin;
+    }
+    :root [data-testid="primaryColumn"],
+    :root .r-kemksi {
+      background-color: #f0f001;
+    }
+    :root .r-cqee49 {
+      color: #f0f001;
+    }
+    :root .r-5zmot {
+      background-color: rgba(240, 240, 1, 0.75);
+    }
+    :root .r-1hdo0pc,
+    :root .r-pjtv4k {
+      background-color: rgba(240, 240, 4, 0.1);
+    }
+    :root .r-11gmi9o {
+      background-color: rgba(240, 240, 4, 0.2);
+    }
+    :root .r-1cuuowz {
+      background-color: rgba(240, 240, 4, 0.03);
+    }
+    :root .r-1nao33i {
+      color: #f0f004;
+    }
+    :root .r-jwli3a {
+      color: #f0f003;
+    }
+    :root .r-jwli3a:has(
+        path[d="M3.693 21.707l-1.414-1.414 2.429-2.429c-2.479-2.421-3.606-5.376-3.658-5.513l-.131-.352.131-.352c.133-.353 3.331-8.648 10.937-8.648 2.062 0 3.989.621 5.737 1.85l2.556-2.557 1.414 1.414L3.693 21.707zm-.622-9.706c.356.797 1.354 2.794 3.051 4.449l2.417-2.418c-.361-.609-.553-1.306-.553-2.032 0-2.206 1.794-4 4-4 .727 0 1.424.192 2.033.554l2.263-2.264C14.953 5.434 13.512 5 11.986 5c-5.416 0-8.258 5.535-8.915 7.001zM11.986 10c-1.103 0-2 .897-2 2 0 .178.023.352.067.519l2.451-2.451c-.167-.044-.341-.067-.519-.067zm10.951 1.647l.131.352-.131.352c-.133.353-3.331 8.648-10.937 8.648-.709 0-1.367-.092-2-.223v-2.047c.624.169 1.288.27 2 .27 5.415 0 8.257-5.533 8.915-7-.252-.562-.829-1.724-1.746-2.941l1.438-1.438c1.53 1.971 2.268 3.862 2.33 4.027z"]
+      ) {
+      color: #f0f004;
+    }
+    :root .r-1kqtdi0,
+    :root .r-1roi411 {
+      border-color: #f0f00c;
+    }
+    :root .r-1igl3o0 {
+      border-bottom-color: #f0f00c;
+    }
+    :root .r-2sztyj {
+      border-top-color: #f0f00c;
+    }
+    :root .r-1aihyag {
+      border-right-color: #f0f00c;
+    }
+    :root .r-1wyyjkm {
+      border-left-color: #f0f006;
+    }
+    :root .r-1ccsd61,
+    :root .r-xzxzvz {
+      border-color: #f0f00a;
+    }
+    :root .r-gu4em3,
+    :root .r-1bnu78o,
+    :root .r-z32n2g,
+    :root .r-1m3jxhj {
+      background-color: #f0f00c;
+    }
+    :root .r-1xc7w19 {
+      border-color: #f0f001;
+    }
+    :root .r-1pbtemp {
+      border-right-color: #f0f01b;
+    }
+    :root .r-vhj8yc {
+      border-color: #f0f01b;
+    }
+    :root .r-1bwzh9t {
+      color: #f0f016;
+    }
+    :root .r-g2wdr4 {
+      background-color: #f0f002;
+    }
+    :root .r-14wv3jr {
+      border-color: #f0f002;
+    }
+    :root .r-l5o3uw {
+      background-color: #f0f01b;
+    }
+    :root .r-l5o3uw .r-jwli3a {
+      color: #f0f003;
+    }
+    :root .r-1vtznih {
+      background-color: #cbcb0d;
+    }
+    :root .r-1vtznih .r-jwli3a {
+      color: #f0f003;
+    }
+    :root .r-1peqgm7 {
+      background-color: rgba(240, 240, 27, 0.1);
+    }
+    :root .r-yuvema {
+      background-color: #b3b30c;
+    }
+    :root .r-yuvema .r-jwli3a {
+      color: #f0f003;
+    }
+    :root .r-r18ze4 {
+      background-color: rgba(240, 240, 27, 0.2);
+    }
+    :root .r-jc7xae {
+      background-color: #dcdc04;
+    }
+    :root .r-6wtuen {
+      background-color: #c8c803;
+    }
+    :root .r-1pr99xn {
+      background-color: #f0f00b;
+    }
+    :root .r-1eltapf {
+      background-color: rgba(240, 240, 24, 0.1);
+    }
+    :root .r-eok2q2 {
+      background-color: rgba(240, 240, 27, 0.6);
+    }
+    :root .r-9cip40 {
+      box-shadow: #f0f01b 0 0 0 1px;
+    }
+    :root .r-1blqq69 {
+      border-color: #f0f010;
+    }
+    :root .r-qazpri {
+      color: #f0f015;
+    }
+    @keyframes r-1wvy3k1 {
+      0% {
+        box-shadow: rgba(240, 240, 16, 0.4) 0;
+      }
+      100% {
+        box-shadow: rgba(240, 240, 16, 0) 0;
+      }
+    }
+    :root [style="background-image: linear-gradient(61.63deg, rgb(45, 66, 255) -15.05%, rgb(156, 99, 250) 104.96%);"] {
+      background-image: linear-gradient(61.63deg, #f0f019 -15.05%, #f0f010 104.96%) !important;
+    }
+    :root .draftjs-styles_0 .public-DraftEditorPlaceholder-root {
+      color: #f0f015;
+    }
+    :root .r-rgqbpe {
+      background-color: rgba(240, 240, 25, 0.1);
+    }
+    :root .r-s224ru {
+      background-color: #f0f015;
+    }
+    :root .r-h7o7i8 {
+      background-color: rgba(240, 240, 21, 0.1);
+    }
+    :root .r-4nw3r4,
+    :root .r-1dgebii {
+      background-color: #f0f011;
+    }
+    :root .r-b5kvu3 {
+      border-color: #f0f011;
+    }
+    :root .r-qqmkd0 {
+      background-color: rgba(240, 240, 17, 0.1);
+    }
+    :root .r-12d83nn {
+      background-color: #c2c20c;
+    }
+    :root .r-oybae9 {
+      background-color: #aaaa0b;
+    }
+    :root .r-11mg6pl {
+      border-color: #f0f003;
+    }
+    :root .r-11z020y {
+      background-color: rgba(149, 149, 67, 0.12);
+    }
+    :root [fill="rgb(249,22,127)"],
+    :root [fill="rgb(222,45,108)"],
+    :root g[clip-path="url(#__lottie_element_562)"] path,
+    :root [style="color: rgb(249, 24, 128);"] [viewBox="0 0 24 24"] path {
+      fill: #f0f011 !important;
+    }
+    :root .r-1krxqcr {
+      background-color: rgba(240, 240, 17, 0.1);
+    }
+    :root .r-uuique {
+      background-color: rgba(240, 240, 17, 0.2);
+    }
+    :root .r-vkub15,
+    :root .r-9l7dzd {
+      color: #f0f016;
+    }
+    :root .r-1cvl2hr {
+      color: #f0f01b;
+    }
+    :root .r-o6sn0f {
+      color: #f0f015;
+    }
+    :root .r-15azkrj {
+      background-color: rgba(240, 240, 21, 0.1);
+    }
+    :root .r-1x669os {
+      background-color: rgba(240, 240, 21, 0.2);
+    }
+    :root [data-testid="card.wrapper"] [d="M21.04 1.54L17.5 5.09c-.04-.02-.08-.03-.13-.04L14.3 3H9.7l-3 2H5C3.62 5 2.5 6.12 2.5 7.5v11c0 .46.12.88.34 1.25l-1.3 1.29 1.42 1.42 19.5-19.5-1.42-1.42zM13.7 5l2.33 1.56-2 1.99C13.44 8.2 12.74 8 12 8c-2.21 0-4 1.79-4 4 0 .74.2 1.44.55 2.03L4.5 18.09V7.5c0-.28.22-.5.5-.5h2.3l3-2h3.4zM12 10c.18 0 .35.02.52.07l-2.45 2.45c-.05-.17-.07-.34-.07-.52 0-1.1.9-2 2-2zm7 11H7.24l2-2H19c.28 0 .5-.22.5-.5V9h2v9.5c0 1.38-1.12 2.5-2.5 2.5z"] {
+      color: #f0f015;
+    }
+    :root .r-n94g0g {
+      background-color: rgba(240, 240, 4, 0.3);
+    }
+    :root .r-z9i421 {
+      background-color: rgba(240, 240, 4, 0.27);
+    }
+    :root .r-19130f6 {
+      background-color: #f0f003;
+    }
+    :root .r-l8tqsx {
+      background-color: rgba(240, 240, 4, 0.1);
+    }
+    :root .r-3gvs5h {
+      background-color: #f0f008;
+    }
+    :root .r-1fkb3t2 {
+      background-color: #f0f00b;
+    }
+    :root .r-jwli3a {
+      color: #f0f004;
+    }
+    :root .r-1kwlb9n {
+      background-color: rgba(240, 240, 17, 0.12);
+    }
+    :root [style*="https://abs.twimg.com/responsive-web/client-web/background-premiumplus-web"] {
+      background-image: none !important;
+      background-color: #f0f00c;
+    }
+    :root [stroke="#2F3336" i] {
+      stroke: #f0f00a !important;
+    }
+    :root [stroke="#1D9BF0" i],
+    :root [style*="stroke: rgb(29, 155, 240)"] {
+      stroke: #f0f01b !important;
+    }
+    :root [stroke="#FFD400" i] {
+      stroke: #f0f014 !important;
+    }
+    :root [fill="#829AAB" i] {
+      fill: #f0f007 !important;
+    }
+    :root [fill="#1DA1F2" i] {
+      fill: #676707 !important;
+    }
+    :root [fill="#78C6EE" i] {
+      fill: #f0f017 !important;
+    }
+    :root [stop-color="#f4e72a" i],
+    :root [stop-color="#cd8105" i],
+    :root [stop-color="#cb7b00" i],
+    :root [stop-color="#f4ec26" i],
+    :root [stop-color="#f9e87f" i],
+    :root [stop-color="#e2b719" i] {
+      stop-color: #f0f014 !important;
+    }
+    :root [fill="#d18800" i] {
+      fill: #f0f014 !important;
+    }
+    :root [style*="border-color: rgb(83, 100, 113)"] {
+      border-color: #f0f00b !important;
+    }
+    :root [style*="border-color: rgb(51, 54, 57)"] {
+      border-color: #f0f00c !important;
+    }
+    :root [style*="border-color: rgb(103, 7, 15)"] {
+      border-color: rgba(240, 240, 17, 0.5) !important;
+    }
+    :root [style*="border-color: rgb(29, 155, 240)"] {
+      border-color: #f0f01b !important;
+    }
+    :root [style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root [style*="color: rgb(239, 243, 244)"]:not( [style*="background-color: rgb(239, 243, 244)"]),
+    :root [style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]) {
+      color: #f0f004 !important;
+    }
+    :root [style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]) input::placeholder {
+      color: #f0f005 !important;
+    }
+    :root [style*="color: rgb(113, 118, 123)"]:not( [style*="background-color: rgb(113, 118, 123)"]),
+    :root [style*="color: rgb(182, 185, 188)"]:not( [style*="background-color: rgb(182, 185, 188)"]) {
+      color: #f0f015 !important;
+    }
+    :root [style*="color: rgb(0, 186, 124)"]:not( [style*="background-color: rgb(0, 186, 124)"]) {
+      color: #f0f015 !important;
+    }
+    :root [style*="color: rgb(249, 24, 128)"]:not( [style*="background-color: rgb(249, 24, 128)"]),
+    :root [style*="color: rgb(244, 33, 46)"]:not( [style*="background-color: rgb(244, 33, 46)"]) {
+      color: #f0f016 !important;
+    }
+    :root [style*="color: rgb(250, 68, 152)"]:not( [style*="background-color: rgb(250, 68, 152)"]) {
+      color: #f0f00f !important;
+    }
+    :root [style*="color: rgb(255, 212, 0)"]:not( [style*="background-color: rgb(255, 212, 0)"]) {
+      color: #f0f014 !important;
+    }
+    :root [style*="color: rgb(120, 86, 255)"]:not( [style*="background-color: rgb(120, 86, 255)"]) {
+      color: #f0f010 !important;
+    }
+    :root [style*="color: rgb(255, 122, 0)"]:not( [style*="background-color: rgb(255, 122, 0)"]) {
+      color: #f0f013 !important;
+    }
+    :root [style*="color: rgb(29, 155, 240)"]:not( [style*="background-color: rgb(29, 155, 240)"]) {
+      color: #f0f01b !important;
+    }
+    :root [style*="background-color: rgb(142, 205, 248)"] {
+      background-color: #f3f34b !important;
+    }
+    :root [style*="background-color: rgb(2, 17, 61)"] {
+      background-color: rgba(240, 240, 27, 0.15) !important;
+    }
+    :root [style*="background-color: rgba(255, 255, 255, 0.25)"] {
+      background-color: rgba(240, 240, 4, 0.25) !important;
+    }
+    :root [style*="background-color: rgb(147, 147, 147)"] {
+      background-color: #f0f009 !important;
+    }
+    :root [style*="background-color: rgb(147, 147, 147)"] + [style*="background-color: rgb(250, 250, 250)"] {
+      background-color: #f0f004 !important;
+    }
+    :root [style*="background-color: rgb(29, 155, 240)"] {
+      background-color: #f0f01b !important;
+    }
+    :root [style*="background-color: rgb(29, 155, 240)"] [style*="color: rgb(255, 255, 255)"] {
+      color: #f0f003 !important;
+    }
+    :root [style*="background-color: rgb(239, 243, 244)"] {
+      background-color: #f0f004 !important;
+    }
+    :root [style*="background-color: rgb(239, 243, 244)"] [style*="color: rgb(15, 20, 25)"] {
+      color: #f0f003 !important;
+    }
+    :root [style*="background-color: rgb(244, 33, 46)"] {
+      background-color: #f0f011 !important;
+    }
+    :root [style*="background-color: rgb(244, 33, 46)"] [style*="color: rgb(255, 255, 255)"] {
+      color: #f0f003 !important;
+    }
+    :root [style*="background-color: rgb(0, 0, 0)"],
+    :root [style*="background-color: #000"] {
+      background-color: #f0f001 !important;
+    }
+    :root [style*="background-color: rgba(15, 20, 25, 0.75)"] {
+      background-color: rgba(240, 240, 3, 0.75) !important;
+    }
+    :root [style*="background-color: rgba(15, 20, 25, 0.75)"] [style*="color: rgb(255, 255, 255)"] svg {
+      color: #f0f004 !important;
+    }
+    :root .r-l5o3uw [style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-1vtznih [style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-4nw3r4 [style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-12d83nn [style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-oybae9 [style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-yuvema [style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-3gvs5h [style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root [style="background-image: linear-gradient(61.63deg, rgb(45, 66, 255) -15.05%, rgb(156, 99, 250) 104.96%);"] [style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-l5o3uw[style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-1vtznih[style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-4nw3r4[style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-12d83nn[style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-oybae9[style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-yuvema[style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-3gvs5h[style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root [style="background-image: linear-gradient(61.63deg, rgb(45, 66, 255) -15.05%, rgb(156, 99, 250) 104.96%);"][style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-l5o3uw [style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root .r-1vtznih [style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root .r-4nw3r4 [style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root .r-12d83nn [style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root .r-oybae9 [style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root .r-yuvema [style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root .r-3gvs5h [style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root [style="background-image: linear-gradient(61.63deg, rgb(45, 66, 255) -15.05%, rgb(156, 99, 250) 104.96%);"] [style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root .r-l5o3uw[style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root .r-1vtznih[style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root .r-4nw3r4[style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root .r-12d83nn[style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root .r-oybae9[style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root .r-yuvema[style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root .r-3gvs5h[style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root [style="background-image: linear-gradient(61.63deg, rgb(45, 66, 255) -15.05%, rgb(156, 99, 250) 104.96%);"][style*="color: rgb(231, 233, 234)"]:not( [style*="background-color: rgb(231, 233, 234)"]),
+    :root .r-l5o3uw [color="white"],
+    :root .r-1vtznih [color="white"],
+    :root .r-4nw3r4 [color="white"],
+    :root .r-12d83nn [color="white"],
+    :root .r-oybae9 [color="white"],
+    :root .r-yuvema [color="white"],
+    :root .r-3gvs5h [color="white"],
+    :root [style="background-image: linear-gradient(61.63deg, rgb(45, 66, 255) -15.05%, rgb(156, 99, 250) 104.96%);"] [color="white"] {
+      color: #f0f003 !important;
+    }
+    :root [data-testid="videoComponent"]:not(.r-4nw3r4) [style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-loe9s5 [style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-drfeu3:has( [style="background-color: rgba(255, 255, 255, 0.25); border-color: rgba(0, 0, 0, 0); backdrop-filter: blur(4px);"]) [style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root [data-testid="videoComponent"]:not(.r-4nw3r4)[style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-loe9s5[style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root .r-drfeu3:has( [style="background-color: rgba(255, 255, 255, 0.25); border-color: rgba(0, 0, 0, 0); backdrop-filter: blur(4px);"])[style*="color: rgb(255, 255, 255)"]:not( [style*="background-color: rgb(255, 255, 255)"]),
+    :root [data-testid="videoComponent"]:not(.r-4nw3r4) .r-jwli3a,
+    :root .r-loe9s5 .r-jwli3a,
+    :root .r-drfeu3:has( [style="background-color: rgba(255, 255, 255, 0.25); border-color: rgba(0, 0, 0, 0); backdrop-filter: blur(4px);"]) .r-jwli3a {
+      color: #fff !important;
+    }
+    :root .r-eff69c {
+      background-color: #e3e30f;
+    }
+    :root .r-eff69c [style*="color: rgb(255, 255, 255)"] {
+      color: #f0f003 !important;
+    }
+    :root [data-testid$="-follow"] [style*="color: rgb(15, 20, 25)"] {
+      color: #f0f003 !important;
+    }
+    :root a[aria-label^="Translated from"][aria-label$="by Google"] svg path {
+      fill: #f0f004 !important;
+    }
+  }
+}
+@-moz-document domain("api.twitter.com"), domain("api.x.com") {
+  @media (prefers-color-scheme: light) {
+    :root html {
+      background: #f0f002;
+    }
+    :root #header {
+      color: #f0f015;
+      background: #f0f001;
+      border-bottom-color: #f0f00b;
+    }
+    :root #header .logo a {
+      border-bottom-color: transparent;
+    }
+    :root #header #session a {
+      background: transparent;
+      color: #f0f015;
+    }
+    :root #header #session h2 img {
+      border-color: #f0f00b;
+    }
+    :root .footer {
+      background: #f0f002;
+      border-top-color: #f0f00b;
+    }
+    :root .auth h2 {
+      color: #f0f005;
+    }
+    :root .oauth #bd {
+      border-color: #f0f00b;
+    }
+    :root .app-info h3 img {
+      border-color: #f0f001;
+    }
+    :root .permissions.allow strong {
+      color: #f0f015;
+    }
+    :root .button {
+      background: #f0f009;
+      color: #f0f004;
+      border-color: #f0f00b;
+    }
+    :root .button:hover {
+      color: #f0f004;
+      border-color: #f0f00b;
+      background: #bfbf08;
+    }
+    :root .button.selected,
+    :root .follow-button .unfollow .button {
+      background-color: #f0f01b;
+      color: #fff;
+      border-color: #cbcb0d;
+    }
+    :root .button.selected:hover,
+    :root .follow-button .unfollow .button:hover {
+      background-color: #cbcb0d;
+    }
+    :root .button.selected .app-info,
+    :root .follow-button .unfollow .button .app-info,
+    :root .button.selected #bd h3,
+    :root .follow-button .unfollow .button #bd h3 {
+      color: #f0f015;
+    }
+    :root .button.selected #ft,
+    :root .follow-button .unfollow .button #ft {
+      color: #f0f015;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root html {
+      background: #f0f002;
+    }
+    :root #header {
+      color: #f0f015;
+      background: #f0f001;
+      border-bottom-color: #f0f00b;
+    }
+    :root #header .logo a {
+      border-bottom-color: transparent;
+    }
+    :root #header #session a {
+      background: transparent;
+      color: #f0f015;
+    }
+    :root #header #session h2 img {
+      border-color: #f0f00b;
+    }
+    :root .footer {
+      background: #f0f002;
+      border-top-color: #f0f00b;
+    }
+    :root .auth h2 {
+      color: #f0f005;
+    }
+    :root .oauth #bd {
+      border-color: #f0f00b;
+    }
+    :root .app-info h3 img {
+      border-color: #f0f001;
+    }
+    :root .permissions.allow strong {
+      color: #f0f015;
+    }
+    :root .button {
+      background: #f0f009;
+      color: #f0f004;
+      border-color: #f0f00b;
+    }
+    :root .button:hover {
+      color: #f0f004;
+      border-color: #f0f00b;
+      background: #bfbf08;
+    }
+    :root .button.selected,
+    :root .follow-button .unfollow .button {
+      background-color: #f0f01b;
+      color: #f0f003;
+      border-color: #cbcb0d;
+    }
+    :root .button.selected:hover,
+    :root .follow-button .unfollow .button:hover {
+      background-color: #cbcb0d;
+    }
+    :root .button.selected .app-info,
+    :root .follow-button .unfollow .button .app-info,
+    :root .button.selected #bd h3,
+    :root .follow-button .unfollow .button #bd h3 {
+      color: #f0f015;
+    }
+    :root .button.selected #ft,
+    :root .follow-button .unfollow .button #ft {
+      color: #f0f015;
+    }
+  }
+}
+@-moz-document domain("twitter.com"), domain("x.com") {
+  @media (prefers-color-scheme: light) {
+    :root #session a,
+    :root #session input,
+    :root #session button {
+      background: #f0f00c;
+      color: #f0f015;
+    }
+    :root #session .user-menu a:focus,
+    :root #session .user-menu a:hover,
+    :root #session .user-menu button:focus,
+    :root #session .user-menu button:hover,
+    :root #session .user-menu input:focus,
+    :root #session .user-menu input:hover {
+      color: #fff;
+      background-color: #f0f01b;
+    }
+    :root .notice,
+    :root .notice p,
+    :root h2 {
+      color: #f0f005;
+    }
+    :root .notice.error {
+      background: rgba(240, 240, 17, 0.2);
+      border-color: rgba(240, 240, 17, 0.25);
+    }
+    :root .ResponsiveLayout--Night .PageContainer {
+      background-color: #f0f001;
+    }
+    :root .list-explanation {
+      color: #f0f015;
+    }
+    :root .ResponsiveLayout--Night .list-btn:first-of-type {
+      border-top-color: #f0f002;
+    }
+    :root .ResponsiveLayout--Night .list-btn:hover {
+      background-color: #f0f002;
+    }
+    :root .submit-btn {
+      background-color: #f0f01b;
+      color: #fff;
+      border-color: #cbcb0d;
+    }
+    :root .submit-btn:hover,
+    :root .redirect-btn:hover {
+      background-color: #cbcb0d;
+    }
+    :root .block-btn {
+      color: #f0f015;
+      border-color: #f0f012;
+    }
+    :root .mute-btn,
+    :root .unfollow-btn,
+    :root .email-report-btn {
+      color: #f0f01b;
+      border-color: #f0f01b;
+    }
+    :root .list-btn {
+      border-color: #f0f00b;
+    }
+    :root .list-btn:first-of-type {
+      border-top-color: #f0f00b;
+    }
+    :root .list-btn:hover {
+      background-color: #f0f00c;
+    }
+    :root .js #session .user-menu {
+      background-color: #f0f00c;
+    }
+    :root .dropdown-caret .caret-outer,
+    :root .dropdown-caret .caret-inner {
+      border-bottom-color: #f0f00c;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root #session a,
+    :root #session input,
+    :root #session button {
+      background: #f0f00c;
+      color: #f0f015;
+    }
+    :root #session .user-menu a:focus,
+    :root #session .user-menu a:hover,
+    :root #session .user-menu button:focus,
+    :root #session .user-menu button:hover,
+    :root #session .user-menu input:focus,
+    :root #session .user-menu input:hover {
+      color: #f0f003;
+      background-color: #f0f01b;
+    }
+    :root .notice,
+    :root .notice p,
+    :root h2 {
+      color: #f0f005;
+    }
+    :root .notice.error {
+      background: rgba(240, 240, 17, 0.2);
+      border-color: rgba(240, 240, 17, 0.25);
+    }
+    :root .ResponsiveLayout--Night .PageContainer {
+      background-color: #f0f001;
+    }
+    :root .list-explanation {
+      color: #f0f015;
+    }
+    :root .ResponsiveLayout--Night .list-btn:first-of-type {
+      border-top-color: #f0f002;
+    }
+    :root .ResponsiveLayout--Night .list-btn:hover {
+      background-color: #f0f002;
+    }
+    :root .submit-btn {
+      background-color: #f0f01b;
+      color: #f0f003;
+      border-color: #cbcb0d;
+    }
+    :root .submit-btn:hover,
+    :root .redirect-btn:hover {
+      background-color: #cbcb0d;
+    }
+    :root .block-btn {
+      color: #f0f015;
+      border-color: #f0f012;
+    }
+    :root .mute-btn,
+    :root .unfollow-btn,
+    :root .email-report-btn {
+      color: #f0f01b;
+      border-color: #f0f01b;
+    }
+    :root .list-btn {
+      border-color: #f0f00b;
+    }
+    :root .list-btn:first-of-type {
+      border-top-color: #f0f00b;
+    }
+    :root .list-btn:hover {
+      background-color: #f0f00c;
+    }
+    :root .js #session .user-menu {
+      background-color: #f0f00c;
+    }
+    :root .dropdown-caret .caret-outer,
+    :root .dropdown-caret .caret-inner {
+      border-bottom-color: #f0f00c;
+    }
+  }
+}

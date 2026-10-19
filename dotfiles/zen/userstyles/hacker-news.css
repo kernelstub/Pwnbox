@@ -1,0 +1,239 @@
+/* ==UserStyle==
+@name           pwnbox-hacker-news
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Hacker News (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("news.ycombinator.com") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+      /* Header */
+      /* Story points */
+      /* Story ranking number */
+      /* Comment text */
+      /* Comment box */
+      /* Poll questions */
+      /* Text post content */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root [bgcolor="#fafaf0"],
+    :root [bgcolor="#f6f6ef"] {
+      background-color: #f0f001;
+    }
+    :root body {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root td {
+      color: #f0f004;
+    }
+    :root td[bgcolor="#ff6600"] {
+      background-color: #f0f01b;
+    }
+    :root td[bgcolor="#ff6600"] .pagetop,
+    :root td[bgcolor="#ff6600"] .pagetop a {
+      color: #f0f003 !important;
+    }
+    :root td[bgcolor="#ff6600"] img[src="y18.svg"] {
+      content: url("data:image/svg+xml,%3Csvg%20height%3D%2218%22%20viewBox%3D%224%204%20188%20188%22%20width%3D%2218%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M4%204h188v188H4z%22%20fill%3D%22%23f0f01b%22/%3E%3Cpath%20d%3D%22M73.252%2045.01%2096%2092.401l22.748-47.391h19.566l-34.324%2064.487v41.493H88.01v-41.493L53.686%2045.01z%22%20fill%3D%22%23f0f003%22/%3E%3C/svg%3E");
+      border-color: #f0f003 !important;
+    }
+    :root td[bgcolor="#ff6600"] [color="#ffffff"] {
+      color: #f0f003;
+    }
+    :root td[bgcolor="#ffffaa"] {
+      background-color: #f0f014;
+    }
+    :root td[bgcolor="#ffffaa"] td {
+      color: #f0f003;
+    }
+    :root .subtext,
+    :root .comhead,
+    :root .subtext a:link,
+    :root .comhead a:link,
+    :root .subtext a:visited,
+    :root .comhead a:visited,
+    :root .subtext a:hover,
+    :root .comhead a:hover {
+      color: #f0f007 !important;
+    }
+    :root a:link {
+      color: #f0f019;
+    }
+    :root a:link:hover {
+      color: #f0f017;
+    }
+    :root .hnmore a:link,
+    :root a:visited {
+      color: #f0f01a;
+    }
+    :root [color="#3c963c"] {
+      color: #f0f015;
+    }
+    :root .score {
+      color: #f0f006;
+    }
+    :root .title {
+      color: #f0f01a;
+    }
+    :root .commtext {
+      color: #f0f004;
+    }
+    :root input,
+    :root textarea,
+    :root select {
+      background-color: #f0f002;
+      color: #f0f004;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #f0f00c;
+      border-radius: 2px;
+    }
+    :root input {
+      padding: 2px;
+    }
+    :root td.comment > div > font {
+      color: #f0f004;
+    }
+    :root .toptext {
+      color: #f0f004;
+    }
+    :root .votearrow {
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2016%22%20width%3D%2232%22%3E%3Cpath%20d%3D%22M2%2027%2016-2l14%2029z%22%20fill%3D%22%23f0f006%22/%3E%3C/svg%3E");
+    }
+    :root .yclinks {
+      color: #f0f00a;
+    }
+    :root b {
+      color: #f0f004;
+    }
+    :root table[bgcolor="#ff6600"] {
+      background-color: #f0f01b;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      /* Header */
+      /* Story points */
+      /* Story ranking number */
+      /* Comment text */
+      /* Comment box */
+      /* Poll questions */
+      /* Text post content */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root [bgcolor="#fafaf0"],
+    :root [bgcolor="#f6f6ef"] {
+      background-color: #f0f001;
+    }
+    :root body {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root td {
+      color: #f0f004;
+    }
+    :root td[bgcolor="#ff6600"] {
+      background-color: #f0f01b;
+    }
+    :root td[bgcolor="#ff6600"] .pagetop,
+    :root td[bgcolor="#ff6600"] .pagetop a {
+      color: #f0f003 !important;
+    }
+    :root td[bgcolor="#ff6600"] img[src="y18.svg"] {
+      content: url("data:image/svg+xml,%3Csvg%20height%3D%2218%22%20viewBox%3D%224%204%20188%20188%22%20width%3D%2218%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M4%204h188v188H4z%22%20fill%3D%22%23f0f01b%22/%3E%3Cpath%20d%3D%22M73.252%2045.01%2096%2092.401l22.748-47.391h19.566l-34.324%2064.487v41.493H88.01v-41.493L53.686%2045.01z%22%20fill%3D%22%23f0f003%22/%3E%3C/svg%3E");
+      border-color: #f0f003 !important;
+    }
+    :root td[bgcolor="#ff6600"] [color="#ffffff"] {
+      color: #f0f003;
+    }
+    :root td[bgcolor="#ffffaa"] {
+      background-color: #f0f014;
+    }
+    :root td[bgcolor="#ffffaa"] td {
+      color: #f0f003;
+    }
+    :root .subtext,
+    :root .comhead,
+    :root .subtext a:link,
+    :root .comhead a:link,
+    :root .subtext a:visited,
+    :root .comhead a:visited,
+    :root .subtext a:hover,
+    :root .comhead a:hover {
+      color: #f0f007 !important;
+    }
+    :root a:link {
+      color: #f0f019;
+    }
+    :root a:link:hover {
+      color: #f0f017;
+    }
+    :root .hnmore a:link,
+    :root a:visited {
+      color: #f0f01a;
+    }
+    :root [color="#3c963c"] {
+      color: #f0f015;
+    }
+    :root .score {
+      color: #f0f006;
+    }
+    :root .title {
+      color: #f0f01a;
+    }
+    :root .commtext {
+      color: #f0f004;
+    }
+    :root input,
+    :root textarea,
+    :root select {
+      background-color: #f0f002;
+      color: #f0f004;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #f0f00c;
+      border-radius: 2px;
+    }
+    :root input {
+      padding: 2px;
+    }
+    :root td.comment > div > font {
+      color: #f0f004;
+    }
+    :root .toptext {
+      color: #f0f004;
+    }
+    :root .votearrow {
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2016%22%20width%3D%2232%22%3E%3Cpath%20d%3D%22M2%2027%2016-2l14%2029z%22%20fill%3D%22%23f0f006%22/%3E%3C/svg%3E");
+    }
+    :root .yclinks {
+      color: #f0f00a;
+    }
+    :root b {
+      color: #f0f004;
+    }
+    :root table[bgcolor="#ff6600"] {
+      background-color: #f0f01b;
+    }
+  }
+}

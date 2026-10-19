@@ -1,0 +1,880 @@
+/* ==UserStyle==
+@name           pwnbox-crates.io
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for crates.io (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("crates.io") {
+  code.hljs {
+    background: none !important;
+  }
+  @media (prefers-color-scheme: light) {
+    :root[data-color-scheme="system"] {
+      color-scheme: light;
+      --ctp-rosewater: #f0f00d;
+      --ctp-flamingo: #f0f00e;
+      --ctp-pink: #f0f00f;
+      --ctp-mauve: #f0f010;
+      --ctp-red: #f0f011;
+      --ctp-maroon: #f0f012;
+      --ctp-peach: #f0f013;
+      --ctp-yellow: #f0f014;
+      --ctp-green: #f0f015;
+      --ctp-teal: #f0f016;
+      --ctp-sky: #f0f017;
+      --ctp-sapphire: #f0f018;
+      --ctp-blue: #f0f019;
+      --ctp-lavender: #f0f01a;
+      --ctp-text: #f0f004;
+      --ctp-subtext1: #f0f005;
+      --ctp-subtext0: #f0f006;
+      --ctp-overlay2: #f0f007;
+      --ctp-overlay1: #f0f008;
+      --ctp-overlay0: #f0f009;
+      --ctp-surface2: #f0f00a;
+      --ctp-surface1: #f0f00b;
+      --ctp-surface0: #f0f00c;
+      --ctp-base: #f0f001;
+      --ctp-mantle: #f0f002;
+      --ctp-crust: #f0f003;
+      /* Toasts */
+      /* Tooltips */
+      /* Icons and icon badges */
+      /* Footer links */
+      /* Misc header text */
+      /* Search bar magnifying glass icon */
+      /* Sort by search results */
+      /* Primary buttons */
+      /* User email settings */
+      /* Logged out home page hero */
+      /* User avatar backgrounds */
+      /* Tables in READMEs */
+    }
+    :root[data-color-scheme="system"] ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root[data-color-scheme="system"] input::placeholder,
+    :root[data-color-scheme="system"] textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root[data-color-scheme="system"],
+    :root[data-color-scheme="system"] * {
+      --shadow: none !important;
+      --csstools-color-scheme--dark: none;
+      --header-bg-color: #f0f002;
+      --main-color: #f0f004;
+      --main-color-light: #f0f005;
+      --main-shadow-color: #f0f00c;
+      --main-bg: #f0f002;
+      --main-bg-dark: #f0f001;
+      --gray-border: #f0f00c;
+      --link-color: #f0f01b;
+      --link-hover-color: #e3e30f;
+      --footer-header-color: #f0f004;
+      /* Main article/readme background */
+      --csstools-light-dark-toggle--63: #f0f001;
+      /* Inline code background */
+      --csstools-light-dark-toggle--92: #f0f002;
+      /* Code block background */
+      --csstools-light-dark-toggle--91: #f0f002;
+      /* Copyable text hover */
+      --csstools-light-dark-toggle--78: #f0f001;
+      /* Versions cards */
+      --csstools-light-dark-toggle--111: #f0f004;
+      --csstools-light-dark-toggle--113: #f0f001;
+      --csstools-light-dark-toggle--114: rgba(240, 240, 21, 0.15);
+      --csstools-light-dark-toggle--117: rgba(240, 240, 20, 0.15);
+      --csstools-light-dark-toggle--109: #f0f00c;
+      --csstools-light-dark-toggle--110: #f0f00c;
+      --csstools-light-dark-toggle--115: #f0f00c;
+      --csstools-light-dark-toggle--118: #f0f00c;
+      --csstools-light-dark-toggle--126: #f0f004;
+      /* Dependencies cards */
+      --csstools-light-dark-toggle--83: #f0f001;
+      --csstools-light-dark-toggle--79: #f0f00c;
+      --csstools-light-dark-toggle--80: #f0f004;
+      --csstools-light-dark-toggle--81: #f0f004;
+      --csstools-light-dark-toggle--84: #f0f006;
+      --grey600: #f0f006;
+      --grey700: #f0f004;
+      /* Dependents cards */
+      --csstools-light-dark-toggle--89: #f0f001;
+      --csstools-light-dark-toggle--86: #f0f00c;
+      /* Search results cards */
+      --csstools-light-dark-toggle--2: #f0f001;
+      /* Homepage cards */
+      --csstools-light-dark-toggle--74: #f0f001;
+      --csstools-light-dark-toggle--77: #f0f00c;
+      --csstools-light-dark-toggle--75: #f0f005;
+      --csstools-light-dark-toggle--76: #f0f004;
+      --csstools-light-dark-toggle--19: #f0f006;
+      --csstools-light-dark-toggle--20: #f0f006;
+      /* Header search bar */
+      --csstools-light-dark-toggle--34: #f0f003;
+      --yellow500: #f0f01b;
+      --yellow700: #e3e30f;
+      /* Dropdown */
+      --csstools-light-dark-toggle--23: #f0f002;
+      --csstools-light-dark-toggle--35: #f0f002;
+      /* Dropdown items */
+    }
+    :root[data-color-scheme="system"] [class*="_new"],
+    :root[data-color-scheme="system"] * [class*="_new"] {
+      color: #f0f015;
+    }
+    :root[data-color-scheme="system"] [class*="_item_"] button:hover,
+    :root[data-color-scheme="system"] * [class*="_item_"] button:hover,
+    :root[data-color-scheme="system"] [class*="_item_"] > a:hover,
+    :root[data-color-scheme="system"] * [class*="_item_"] > a:hover,
+    :root[data-color-scheme="system"] [class*="_item_"] [class*="_selected_"],
+    :root[data-color-scheme="system"] * [class*="_item_"] [class*="_selected_"] {
+      background: #f0f00c;
+      color: #f0f004 !important;
+    }
+    :root[data-color-scheme="system"] .c-notification {
+      --ecn-green: #f0f015;
+      --ecn-blue: #f0f019;
+      --ecn-orange: #f0f013;
+      --ecn-red: #f0f011;
+    }
+    :root[data-color-scheme="system"] .c-notification,
+    :root[data-color-scheme="system"] .c-notification .c-notification__icon {
+      color: #f0f003;
+    }
+    :root[data-color-scheme="system"] .ember-tooltip {
+      color: #f0f004;
+      background-color: #f0f003;
+      text-shadow: none;
+    }
+    :root[data-color-scheme="system"] .ember-tooltip[x-placement^="top"] .ember-tooltip-arrow {
+      border-top-color: #f0f003;
+    }
+    :root[data-color-scheme="system"] [class*="downloads_"] [fill="#FFF"] {
+      fill: #f0f00c !important;
+    }
+    :root[data-color-scheme="system"] [fill="#B13B89"],
+    :root[data-color-scheme="system"] [fill="#B84D94"],
+    :root[data-color-scheme="system"] svg[class*="_download-icon"] {
+      fill: #f0f01b !important;
+    }
+    :root[data-color-scheme="system"] [stroke="#B84D94"] {
+      stroke: #f0f01b !important;
+    }
+    :root[data-color-scheme="system"] ._content_hautyr h1 {
+      text-shadow: none;
+    }
+    :root[data-color-scheme="system"] ._content_hautyr a {
+      color: #f0f01b;
+    }
+    :root[data-color-scheme="system"] ._content_hautyr a:hover {
+      color: #e3e30f;
+      text-shadow: none;
+    }
+    :root[data-color-scheme="system"] [class*="_header-inner_"],
+    :root[data-color-scheme="system"] [class*="_header-inner_"] a {
+      color: #f0f004;
+    }
+    :root[data-color-scheme="system"] form[action="/search"] button {
+      color: #f0f003;
+    }
+    :root[data-color-scheme="system"] ._icon_xsqxju {
+      color: #f0f01b;
+    }
+    :root[data-color-scheme="system"] [class*="_tan-button_"],
+    :root[data-color-scheme="system"] [class*="_yellow-button_"] {
+      color: #f0f003 !important;
+      background: #f0f01b;
+    }
+    :root[data-color-scheme="system"] [class*="_tan-button_"]:hover,
+    :root[data-color-scheme="system"] [class*="_yellow-button_"]:hover {
+      background-color: #e3e30f;
+    }
+    :root[data-color-scheme="system"] [class*="_red-button_"] {
+      --bg-color-top: #f0f012;
+      --bg-color-bottom: #f0f012;
+      --bg-color-top-dark: #f0f011;
+      --bg-color-bottom-dark: #f0f011;
+    }
+    :root[data-color-scheme="system"] [class*="_me-email_"] [class*="_row_"] {
+      border-color: #f0f00c;
+    }
+    :root[data-color-scheme="system"] [class*="_me-email_"] [class*="_verified_"] {
+      color: #f0f015;
+    }
+    :root[data-color-scheme="system"] [class*="_hero-title_"] {
+      color: #f0f004;
+      text-shadow: none;
+    }
+    :root[data-color-scheme="system"] [class*="_hero-button_"] [class*="_icon_"] {
+      color: #f0f003;
+    }
+    :root[data-color-scheme="system"] [class*="_blurb_"] [class*="_stats-value_"] [class*="_label_"],
+    :root[data-color-scheme="system"] [class*="_blurb_"] [class*="_stats-value_"] svg {
+      color: #f0f006;
+    }
+    :root[data-color-scheme="system"] [class*="_avatar_"] {
+      background-color: #f0f00c;
+      box-shadow: none;
+    }
+    :root[data-color-scheme="system"] [class*="_yanked-badge_"] {
+      background-color: #f0f011;
+      color: #f0f003;
+    }
+    :root[data-color-scheme="system"] table th,
+    :root[data-color-scheme="system"] table td {
+      border-color: #f0f00b;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root[data-color-scheme="system"] {
+      color-scheme: dark;
+      --ctp-rosewater: #f0f00d;
+      --ctp-flamingo: #f0f00e;
+      --ctp-pink: #f0f00f;
+      --ctp-mauve: #f0f010;
+      --ctp-red: #f0f011;
+      --ctp-maroon: #f0f012;
+      --ctp-peach: #f0f013;
+      --ctp-yellow: #f0f014;
+      --ctp-green: #f0f015;
+      --ctp-teal: #f0f016;
+      --ctp-sky: #f0f017;
+      --ctp-sapphire: #f0f018;
+      --ctp-blue: #f0f019;
+      --ctp-lavender: #f0f01a;
+      --ctp-text: #f0f004;
+      --ctp-subtext1: #f0f005;
+      --ctp-subtext0: #f0f006;
+      --ctp-overlay2: #f0f007;
+      --ctp-overlay1: #f0f008;
+      --ctp-overlay0: #f0f009;
+      --ctp-surface2: #f0f00a;
+      --ctp-surface1: #f0f00b;
+      --ctp-surface0: #f0f00c;
+      --ctp-base: #f0f001;
+      --ctp-mantle: #f0f002;
+      --ctp-crust: #f0f003;
+      /* Toasts */
+      /* Tooltips */
+      /* Icons and icon badges */
+      /* Footer links */
+      /* Misc header text */
+      /* Search bar magnifying glass icon */
+      /* Sort by search results */
+      /* Primary buttons */
+      /* User email settings */
+      /* Logged out home page hero */
+      /* User avatar backgrounds */
+      /* Tables in READMEs */
+    }
+    :root[data-color-scheme="system"] ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root[data-color-scheme="system"] input::placeholder,
+    :root[data-color-scheme="system"] textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root[data-color-scheme="system"],
+    :root[data-color-scheme="system"] * {
+      --shadow: none !important;
+      --csstools-color-scheme--dark: none;
+      --header-bg-color: #f0f002;
+      --main-color: #f0f004;
+      --main-color-light: #f0f005;
+      --main-shadow-color: #f0f00c;
+      --main-bg: #f0f002;
+      --main-bg-dark: #f0f001;
+      --gray-border: #f0f00c;
+      --link-color: #f0f01b;
+      --link-hover-color: #e3e30f;
+      --footer-header-color: #f0f004;
+      /* Main article/readme background */
+      --csstools-light-dark-toggle--63: #f0f001;
+      /* Inline code background */
+      --csstools-light-dark-toggle--92: #f0f002;
+      /* Code block background */
+      --csstools-light-dark-toggle--91: #f0f002;
+      /* Copyable text hover */
+      --csstools-light-dark-toggle--78: #f0f001;
+      /* Versions cards */
+      --csstools-light-dark-toggle--111: #f0f004;
+      --csstools-light-dark-toggle--113: #f0f001;
+      --csstools-light-dark-toggle--114: rgba(240, 240, 21, 0.15);
+      --csstools-light-dark-toggle--117: rgba(240, 240, 20, 0.15);
+      --csstools-light-dark-toggle--109: #f0f00c;
+      --csstools-light-dark-toggle--110: #f0f00c;
+      --csstools-light-dark-toggle--115: #f0f00c;
+      --csstools-light-dark-toggle--118: #f0f00c;
+      --csstools-light-dark-toggle--126: #f0f004;
+      /* Dependencies cards */
+      --csstools-light-dark-toggle--83: #f0f001;
+      --csstools-light-dark-toggle--79: #f0f00c;
+      --csstools-light-dark-toggle--80: #f0f004;
+      --csstools-light-dark-toggle--81: #f0f004;
+      --csstools-light-dark-toggle--84: #f0f006;
+      --grey600: #f0f006;
+      --grey700: #f0f004;
+      /* Dependents cards */
+      --csstools-light-dark-toggle--89: #f0f001;
+      --csstools-light-dark-toggle--86: #f0f00c;
+      /* Search results cards */
+      --csstools-light-dark-toggle--2: #f0f001;
+      /* Homepage cards */
+      --csstools-light-dark-toggle--74: #f0f001;
+      --csstools-light-dark-toggle--77: #f0f00c;
+      --csstools-light-dark-toggle--75: #f0f005;
+      --csstools-light-dark-toggle--76: #f0f004;
+      --csstools-light-dark-toggle--19: #f0f006;
+      --csstools-light-dark-toggle--20: #f0f006;
+      /* Header search bar */
+      --csstools-light-dark-toggle--34: #f0f003;
+      --yellow500: #f0f01b;
+      --yellow700: #e3e30f;
+      /* Dropdown */
+      --csstools-light-dark-toggle--23: #f0f002;
+      --csstools-light-dark-toggle--35: #f0f002;
+      /* Dropdown items */
+    }
+    :root[data-color-scheme="system"] [class*="_new"],
+    :root[data-color-scheme="system"] * [class*="_new"] {
+      color: #f0f015;
+    }
+    :root[data-color-scheme="system"] [class*="_item_"] button:hover,
+    :root[data-color-scheme="system"] * [class*="_item_"] button:hover,
+    :root[data-color-scheme="system"] [class*="_item_"] > a:hover,
+    :root[data-color-scheme="system"] * [class*="_item_"] > a:hover,
+    :root[data-color-scheme="system"] [class*="_item_"] [class*="_selected_"],
+    :root[data-color-scheme="system"] * [class*="_item_"] [class*="_selected_"] {
+      background: #f0f00c;
+      color: #f0f004 !important;
+    }
+    :root[data-color-scheme="system"] .c-notification {
+      --ecn-green: #f0f015;
+      --ecn-blue: #f0f019;
+      --ecn-orange: #f0f013;
+      --ecn-red: #f0f011;
+    }
+    :root[data-color-scheme="system"] .c-notification,
+    :root[data-color-scheme="system"] .c-notification .c-notification__icon {
+      color: #f0f003;
+    }
+    :root[data-color-scheme="system"] .ember-tooltip {
+      color: #f0f004;
+      background-color: #f0f003;
+      text-shadow: none;
+    }
+    :root[data-color-scheme="system"] .ember-tooltip[x-placement^="top"] .ember-tooltip-arrow {
+      border-top-color: #f0f003;
+    }
+    :root[data-color-scheme="system"] [class*="downloads_"] [fill="#FFF"] {
+      fill: #f0f00c !important;
+    }
+    :root[data-color-scheme="system"] [fill="#B13B89"],
+    :root[data-color-scheme="system"] [fill="#B84D94"],
+    :root[data-color-scheme="system"] svg[class*="_download-icon"] {
+      fill: #f0f01b !important;
+    }
+    :root[data-color-scheme="system"] [stroke="#B84D94"] {
+      stroke: #f0f01b !important;
+    }
+    :root[data-color-scheme="system"] ._content_hautyr h1 {
+      text-shadow: none;
+    }
+    :root[data-color-scheme="system"] ._content_hautyr a {
+      color: #f0f01b;
+    }
+    :root[data-color-scheme="system"] ._content_hautyr a:hover {
+      color: #e3e30f;
+      text-shadow: none;
+    }
+    :root[data-color-scheme="system"] [class*="_header-inner_"],
+    :root[data-color-scheme="system"] [class*="_header-inner_"] a {
+      color: #f0f004;
+    }
+    :root[data-color-scheme="system"] form[action="/search"] button {
+      color: #f0f003;
+    }
+    :root[data-color-scheme="system"] ._icon_xsqxju {
+      color: #f0f01b;
+    }
+    :root[data-color-scheme="system"] [class*="_tan-button_"],
+    :root[data-color-scheme="system"] [class*="_yellow-button_"] {
+      color: #f0f003 !important;
+      background: #f0f01b;
+    }
+    :root[data-color-scheme="system"] [class*="_tan-button_"]:hover,
+    :root[data-color-scheme="system"] [class*="_yellow-button_"]:hover {
+      background-color: #e3e30f;
+    }
+    :root[data-color-scheme="system"] [class*="_red-button_"] {
+      --bg-color-top: #f0f012;
+      --bg-color-bottom: #f0f012;
+      --bg-color-top-dark: #f0f011;
+      --bg-color-bottom-dark: #f0f011;
+    }
+    :root[data-color-scheme="system"] [class*="_me-email_"] [class*="_row_"] {
+      border-color: #f0f00c;
+    }
+    :root[data-color-scheme="system"] [class*="_me-email_"] [class*="_verified_"] {
+      color: #f0f015;
+    }
+    :root[data-color-scheme="system"] [class*="_hero-title_"] {
+      color: #f0f004;
+      text-shadow: none;
+    }
+    :root[data-color-scheme="system"] [class*="_hero-button_"] [class*="_icon_"] {
+      color: #f0f003;
+    }
+    :root[data-color-scheme="system"] [class*="_blurb_"] [class*="_stats-value_"] [class*="_label_"],
+    :root[data-color-scheme="system"] [class*="_blurb_"] [class*="_stats-value_"] svg {
+      color: #f0f006;
+    }
+    :root[data-color-scheme="system"] [class*="_avatar_"] {
+      background-color: #f0f00c;
+      box-shadow: none;
+    }
+    :root[data-color-scheme="system"] [class*="_yanked-badge_"] {
+      background-color: #f0f011;
+      color: #f0f003;
+    }
+    :root[data-color-scheme="system"] table th,
+    :root[data-color-scheme="system"] table td {
+      border-color: #f0f00b;
+    }
+  }
+  :root[data-color-scheme="dark"] {
+    color-scheme: dark;
+    --ctp-rosewater: #f0f00d;
+    --ctp-flamingo: #f0f00e;
+    --ctp-pink: #f0f00f;
+    --ctp-mauve: #f0f010;
+    --ctp-red: #f0f011;
+    --ctp-maroon: #f0f012;
+    --ctp-peach: #f0f013;
+    --ctp-yellow: #f0f014;
+    --ctp-green: #f0f015;
+    --ctp-teal: #f0f016;
+    --ctp-sky: #f0f017;
+    --ctp-sapphire: #f0f018;
+    --ctp-blue: #f0f019;
+    --ctp-lavender: #f0f01a;
+    --ctp-text: #f0f004;
+    --ctp-subtext1: #f0f005;
+    --ctp-subtext0: #f0f006;
+    --ctp-overlay2: #f0f007;
+    --ctp-overlay1: #f0f008;
+    --ctp-overlay0: #f0f009;
+    --ctp-surface2: #f0f00a;
+    --ctp-surface1: #f0f00b;
+    --ctp-surface0: #f0f00c;
+    --ctp-base: #f0f001;
+    --ctp-mantle: #f0f002;
+    --ctp-crust: #f0f003;
+    /* Toasts */
+    /* Tooltips */
+    /* Icons and icon badges */
+    /* Footer links */
+    /* Misc header text */
+    /* Search bar magnifying glass icon */
+    /* Sort by search results */
+    /* Primary buttons */
+    /* User email settings */
+    /* Logged out home page hero */
+    /* User avatar backgrounds */
+    /* Tables in READMEs */
+  }
+  :root[data-color-scheme="dark"] ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root[data-color-scheme="dark"] input::placeholder,
+  :root[data-color-scheme="dark"] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root[data-color-scheme="dark"],
+  :root[data-color-scheme="dark"] * {
+    --shadow: none !important;
+    --csstools-color-scheme--dark: none;
+    --header-bg-color: #f0f002;
+    --main-color: #f0f004;
+    --main-color-light: #f0f005;
+    --main-shadow-color: #f0f00c;
+    --main-bg: #f0f002;
+    --main-bg-dark: #f0f001;
+    --gray-border: #f0f00c;
+    --link-color: #f0f01b;
+    --link-hover-color: #e3e30f;
+    --footer-header-color: #f0f004;
+    /* Main article/readme background */
+    --csstools-light-dark-toggle--63: #f0f001;
+    /* Inline code background */
+    --csstools-light-dark-toggle--92: #f0f002;
+    /* Code block background */
+    --csstools-light-dark-toggle--91: #f0f002;
+    /* Copyable text hover */
+    --csstools-light-dark-toggle--78: #f0f001;
+    /* Versions cards */
+    --csstools-light-dark-toggle--111: #f0f004;
+    --csstools-light-dark-toggle--113: #f0f001;
+    --csstools-light-dark-toggle--114: rgba(240, 240, 21, 0.15);
+    --csstools-light-dark-toggle--117: rgba(240, 240, 20, 0.15);
+    --csstools-light-dark-toggle--109: #f0f00c;
+    --csstools-light-dark-toggle--110: #f0f00c;
+    --csstools-light-dark-toggle--115: #f0f00c;
+    --csstools-light-dark-toggle--118: #f0f00c;
+    --csstools-light-dark-toggle--126: #f0f004;
+    /* Dependencies cards */
+    --csstools-light-dark-toggle--83: #f0f001;
+    --csstools-light-dark-toggle--79: #f0f00c;
+    --csstools-light-dark-toggle--80: #f0f004;
+    --csstools-light-dark-toggle--81: #f0f004;
+    --csstools-light-dark-toggle--84: #f0f006;
+    --grey600: #f0f006;
+    --grey700: #f0f004;
+    /* Dependents cards */
+    --csstools-light-dark-toggle--89: #f0f001;
+    --csstools-light-dark-toggle--86: #f0f00c;
+    /* Search results cards */
+    --csstools-light-dark-toggle--2: #f0f001;
+    /* Homepage cards */
+    --csstools-light-dark-toggle--74: #f0f001;
+    --csstools-light-dark-toggle--77: #f0f00c;
+    --csstools-light-dark-toggle--75: #f0f005;
+    --csstools-light-dark-toggle--76: #f0f004;
+    --csstools-light-dark-toggle--19: #f0f006;
+    --csstools-light-dark-toggle--20: #f0f006;
+    /* Header search bar */
+    --csstools-light-dark-toggle--34: #f0f003;
+    --yellow500: #f0f01b;
+    --yellow700: #e3e30f;
+    /* Dropdown */
+    --csstools-light-dark-toggle--23: #f0f002;
+    --csstools-light-dark-toggle--35: #f0f002;
+    /* Dropdown items */
+  }
+  :root[data-color-scheme="dark"] [class*="_new"],
+  :root[data-color-scheme="dark"] * [class*="_new"] {
+    color: #f0f015;
+  }
+  :root[data-color-scheme="dark"] [class*="_item_"] button:hover,
+  :root[data-color-scheme="dark"] * [class*="_item_"] button:hover,
+  :root[data-color-scheme="dark"] [class*="_item_"] > a:hover,
+  :root[data-color-scheme="dark"] * [class*="_item_"] > a:hover,
+  :root[data-color-scheme="dark"] [class*="_item_"] [class*="_selected_"],
+  :root[data-color-scheme="dark"] * [class*="_item_"] [class*="_selected_"] {
+    background: #f0f00c;
+    color: #f0f004 !important;
+  }
+  :root[data-color-scheme="dark"] .c-notification {
+    --ecn-green: #f0f015;
+    --ecn-blue: #f0f019;
+    --ecn-orange: #f0f013;
+    --ecn-red: #f0f011;
+  }
+  :root[data-color-scheme="dark"] .c-notification,
+  :root[data-color-scheme="dark"] .c-notification .c-notification__icon {
+    color: #f0f003;
+  }
+  :root[data-color-scheme="dark"] .ember-tooltip {
+    color: #f0f004;
+    background-color: #f0f003;
+    text-shadow: none;
+  }
+  :root[data-color-scheme="dark"] .ember-tooltip[x-placement^="top"] .ember-tooltip-arrow {
+    border-top-color: #f0f003;
+  }
+  :root[data-color-scheme="dark"] [class*="downloads_"] [fill="#FFF"] {
+    fill: #f0f00c !important;
+  }
+  :root[data-color-scheme="dark"] [fill="#B13B89"],
+  :root[data-color-scheme="dark"] [fill="#B84D94"],
+  :root[data-color-scheme="dark"] svg[class*="_download-icon"] {
+    fill: #f0f01b !important;
+  }
+  :root[data-color-scheme="dark"] [stroke="#B84D94"] {
+    stroke: #f0f01b !important;
+  }
+  :root[data-color-scheme="dark"] ._content_hautyr h1 {
+    text-shadow: none;
+  }
+  :root[data-color-scheme="dark"] ._content_hautyr a {
+    color: #f0f01b;
+  }
+  :root[data-color-scheme="dark"] ._content_hautyr a:hover {
+    color: #e3e30f;
+    text-shadow: none;
+  }
+  :root[data-color-scheme="dark"] [class*="_header-inner_"],
+  :root[data-color-scheme="dark"] [class*="_header-inner_"] a {
+    color: #f0f004;
+  }
+  :root[data-color-scheme="dark"] form[action="/search"] button {
+    color: #f0f003;
+  }
+  :root[data-color-scheme="dark"] ._icon_xsqxju {
+    color: #f0f01b;
+  }
+  :root[data-color-scheme="dark"] [class*="_tan-button_"],
+  :root[data-color-scheme="dark"] [class*="_yellow-button_"] {
+    color: #f0f003 !important;
+    background: #f0f01b;
+  }
+  :root[data-color-scheme="dark"] [class*="_tan-button_"]:hover,
+  :root[data-color-scheme="dark"] [class*="_yellow-button_"]:hover {
+    background-color: #e3e30f;
+  }
+  :root[data-color-scheme="dark"] [class*="_red-button_"] {
+    --bg-color-top: #f0f012;
+    --bg-color-bottom: #f0f012;
+    --bg-color-top-dark: #f0f011;
+    --bg-color-bottom-dark: #f0f011;
+  }
+  :root[data-color-scheme="dark"] [class*="_me-email_"] [class*="_row_"] {
+    border-color: #f0f00c;
+  }
+  :root[data-color-scheme="dark"] [class*="_me-email_"] [class*="_verified_"] {
+    color: #f0f015;
+  }
+  :root[data-color-scheme="dark"] [class*="_hero-title_"] {
+    color: #f0f004;
+    text-shadow: none;
+  }
+  :root[data-color-scheme="dark"] [class*="_hero-button_"] [class*="_icon_"] {
+    color: #f0f003;
+  }
+  :root[data-color-scheme="dark"] [class*="_blurb_"] [class*="_stats-value_"] [class*="_label_"],
+  :root[data-color-scheme="dark"] [class*="_blurb_"] [class*="_stats-value_"] svg {
+    color: #f0f006;
+  }
+  :root[data-color-scheme="dark"] [class*="_avatar_"] {
+    background-color: #f0f00c;
+    box-shadow: none;
+  }
+  :root[data-color-scheme="dark"] [class*="_yanked-badge_"] {
+    background-color: #f0f011;
+    color: #f0f003;
+  }
+  :root[data-color-scheme="dark"] table th,
+  :root[data-color-scheme="dark"] table td {
+    border-color: #f0f00b;
+  }
+  :root[data-color-scheme="light"] {
+    color-scheme: light;
+    --ctp-rosewater: #f0f00d;
+    --ctp-flamingo: #f0f00e;
+    --ctp-pink: #f0f00f;
+    --ctp-mauve: #f0f010;
+    --ctp-red: #f0f011;
+    --ctp-maroon: #f0f012;
+    --ctp-peach: #f0f013;
+    --ctp-yellow: #f0f014;
+    --ctp-green: #f0f015;
+    --ctp-teal: #f0f016;
+    --ctp-sky: #f0f017;
+    --ctp-sapphire: #f0f018;
+    --ctp-blue: #f0f019;
+    --ctp-lavender: #f0f01a;
+    --ctp-text: #f0f004;
+    --ctp-subtext1: #f0f005;
+    --ctp-subtext0: #f0f006;
+    --ctp-overlay2: #f0f007;
+    --ctp-overlay1: #f0f008;
+    --ctp-overlay0: #f0f009;
+    --ctp-surface2: #f0f00a;
+    --ctp-surface1: #f0f00b;
+    --ctp-surface0: #f0f00c;
+    --ctp-base: #f0f001;
+    --ctp-mantle: #f0f002;
+    --ctp-crust: #f0f003;
+    /* Toasts */
+    /* Tooltips */
+    /* Icons and icon badges */
+    /* Footer links */
+    /* Misc header text */
+    /* Search bar magnifying glass icon */
+    /* Sort by search results */
+    /* Primary buttons */
+    /* User email settings */
+    /* Logged out home page hero */
+    /* User avatar backgrounds */
+    /* Tables in READMEs */
+  }
+  :root[data-color-scheme="light"] ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root[data-color-scheme="light"] input::placeholder,
+  :root[data-color-scheme="light"] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root[data-color-scheme="light"],
+  :root[data-color-scheme="light"] * {
+    --shadow: none !important;
+    --csstools-color-scheme--dark: none;
+    --header-bg-color: #f0f002;
+    --main-color: #f0f004;
+    --main-color-light: #f0f005;
+    --main-shadow-color: #f0f00c;
+    --main-bg: #f0f002;
+    --main-bg-dark: #f0f001;
+    --gray-border: #f0f00c;
+    --link-color: #f0f01b;
+    --link-hover-color: #e3e30f;
+    --footer-header-color: #f0f004;
+    /* Main article/readme background */
+    --csstools-light-dark-toggle--63: #f0f001;
+    /* Inline code background */
+    --csstools-light-dark-toggle--92: #f0f002;
+    /* Code block background */
+    --csstools-light-dark-toggle--91: #f0f002;
+    /* Copyable text hover */
+    --csstools-light-dark-toggle--78: #f0f001;
+    /* Versions cards */
+    --csstools-light-dark-toggle--111: #f0f004;
+    --csstools-light-dark-toggle--113: #f0f001;
+    --csstools-light-dark-toggle--114: rgba(240, 240, 21, 0.15);
+    --csstools-light-dark-toggle--117: rgba(240, 240, 20, 0.15);
+    --csstools-light-dark-toggle--109: #f0f00c;
+    --csstools-light-dark-toggle--110: #f0f00c;
+    --csstools-light-dark-toggle--115: #f0f00c;
+    --csstools-light-dark-toggle--118: #f0f00c;
+    --csstools-light-dark-toggle--126: #f0f004;
+    /* Dependencies cards */
+    --csstools-light-dark-toggle--83: #f0f001;
+    --csstools-light-dark-toggle--79: #f0f00c;
+    --csstools-light-dark-toggle--80: #f0f004;
+    --csstools-light-dark-toggle--81: #f0f004;
+    --csstools-light-dark-toggle--84: #f0f006;
+    --grey600: #f0f006;
+    --grey700: #f0f004;
+    /* Dependents cards */
+    --csstools-light-dark-toggle--89: #f0f001;
+    --csstools-light-dark-toggle--86: #f0f00c;
+    /* Search results cards */
+    --csstools-light-dark-toggle--2: #f0f001;
+    /* Homepage cards */
+    --csstools-light-dark-toggle--74: #f0f001;
+    --csstools-light-dark-toggle--77: #f0f00c;
+    --csstools-light-dark-toggle--75: #f0f005;
+    --csstools-light-dark-toggle--76: #f0f004;
+    --csstools-light-dark-toggle--19: #f0f006;
+    --csstools-light-dark-toggle--20: #f0f006;
+    /* Header search bar */
+    --csstools-light-dark-toggle--34: #f0f003;
+    --yellow500: #f0f01b;
+    --yellow700: #e3e30f;
+    /* Dropdown */
+    --csstools-light-dark-toggle--23: #f0f002;
+    --csstools-light-dark-toggle--35: #f0f002;
+    /* Dropdown items */
+  }
+  :root[data-color-scheme="light"] [class*="_new"],
+  :root[data-color-scheme="light"] * [class*="_new"] {
+    color: #f0f015;
+  }
+  :root[data-color-scheme="light"] [class*="_item_"] button:hover,
+  :root[data-color-scheme="light"] * [class*="_item_"] button:hover,
+  :root[data-color-scheme="light"] [class*="_item_"] > a:hover,
+  :root[data-color-scheme="light"] * [class*="_item_"] > a:hover,
+  :root[data-color-scheme="light"] [class*="_item_"] [class*="_selected_"],
+  :root[data-color-scheme="light"] * [class*="_item_"] [class*="_selected_"] {
+    background: #f0f00c;
+    color: #f0f004 !important;
+  }
+  :root[data-color-scheme="light"] .c-notification {
+    --ecn-green: #f0f015;
+    --ecn-blue: #f0f019;
+    --ecn-orange: #f0f013;
+    --ecn-red: #f0f011;
+  }
+  :root[data-color-scheme="light"] .c-notification,
+  :root[data-color-scheme="light"] .c-notification .c-notification__icon {
+    color: #f0f003;
+  }
+  :root[data-color-scheme="light"] .ember-tooltip {
+    color: #f0f004;
+    background-color: #f0f003;
+    text-shadow: none;
+  }
+  :root[data-color-scheme="light"] .ember-tooltip[x-placement^="top"] .ember-tooltip-arrow {
+    border-top-color: #f0f003;
+  }
+  :root[data-color-scheme="light"] [class*="downloads_"] [fill="#FFF"] {
+    fill: #f0f00c !important;
+  }
+  :root[data-color-scheme="light"] [fill="#B13B89"],
+  :root[data-color-scheme="light"] [fill="#B84D94"],
+  :root[data-color-scheme="light"] svg[class*="_download-icon"] {
+    fill: #f0f01b !important;
+  }
+  :root[data-color-scheme="light"] [stroke="#B84D94"] {
+    stroke: #f0f01b !important;
+  }
+  :root[data-color-scheme="light"] ._content_hautyr h1 {
+    text-shadow: none;
+  }
+  :root[data-color-scheme="light"] ._content_hautyr a {
+    color: #f0f01b;
+  }
+  :root[data-color-scheme="light"] ._content_hautyr a:hover {
+    color: #e3e30f;
+    text-shadow: none;
+  }
+  :root[data-color-scheme="light"] [class*="_header-inner_"],
+  :root[data-color-scheme="light"] [class*="_header-inner_"] a {
+    color: #f0f004;
+  }
+  :root[data-color-scheme="light"] form[action="/search"] button {
+    color: #f0f003;
+  }
+  :root[data-color-scheme="light"] ._icon_xsqxju {
+    color: #f0f01b;
+  }
+  :root[data-color-scheme="light"] [class*="_tan-button_"],
+  :root[data-color-scheme="light"] [class*="_yellow-button_"] {
+    color: #f0f003 !important;
+    background: #f0f01b;
+  }
+  :root[data-color-scheme="light"] [class*="_tan-button_"]:hover,
+  :root[data-color-scheme="light"] [class*="_yellow-button_"]:hover {
+    background-color: #e3e30f;
+  }
+  :root[data-color-scheme="light"] [class*="_red-button_"] {
+    --bg-color-top: #f0f012;
+    --bg-color-bottom: #f0f012;
+    --bg-color-top-dark: #f0f011;
+    --bg-color-bottom-dark: #f0f011;
+  }
+  :root[data-color-scheme="light"] [class*="_me-email_"] [class*="_row_"] {
+    border-color: #f0f00c;
+  }
+  :root[data-color-scheme="light"] [class*="_me-email_"] [class*="_verified_"] {
+    color: #f0f015;
+  }
+  :root[data-color-scheme="light"] [class*="_hero-title_"] {
+    color: #f0f004;
+    text-shadow: none;
+  }
+  :root[data-color-scheme="light"] [class*="_hero-button_"] [class*="_icon_"] {
+    color: #f0f003;
+  }
+  :root[data-color-scheme="light"] [class*="_blurb_"] [class*="_stats-value_"] [class*="_label_"],
+  :root[data-color-scheme="light"] [class*="_blurb_"] [class*="_stats-value_"] svg {
+    color: #f0f006;
+  }
+  :root[data-color-scheme="light"] [class*="_avatar_"] {
+    background-color: #f0f00c;
+    box-shadow: none;
+  }
+  :root[data-color-scheme="light"] [class*="_yanked-badge_"] {
+    background-color: #f0f011;
+    color: #f0f003;
+  }
+  :root[data-color-scheme="light"] table th,
+  :root[data-color-scheme="light"] table td {
+    border-color: #f0f00b;
+  }
+}

@@ -1,0 +1,27 @@
+/* ==UserStyle==
+@name           pwnbox scrollbars
+@namespace      pwnbox
+@version        2026.10.17
+@description    hides every scrollbar on every page
+@author         pwnbox
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+@-moz-document regexp(".*") {
+  * {
+    scrollbar-width: none !important;
+  }
+
+  ::-webkit-scrollbar,
+  *::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+  }
+
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-thumb {
+    display: none !important;
+  }
+}

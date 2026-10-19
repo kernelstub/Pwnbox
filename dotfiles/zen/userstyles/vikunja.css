@@ -1,0 +1,521 @@
+/* ==UserStyle==
+@name           pwnbox-vikunja
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Vikunja (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("try.vikunja.io") {
+  :root.dark {
+    color-scheme: dark;
+    --primary-h: 60 !important;
+    --primary-s: 87.65432099% !important;
+    --primary-l: 52.35294118% !important;
+    --primary-light-l: 52.35294118% !important;
+    --primary-dark-l: 52.35294118% !important;
+    --primary-invert-l: 52.35294118% !important;
+    --grey-100-hsl: 60 98.34710744% 47.45098039%;
+    --site-background: #f0f002;
+    --content-heading-color: #f0f004;
+    --card-header-color: #f0f004;
+    --card-color: #f0f004;
+    --body-color: #f0f004;
+    --label-color: #f0f004;
+    --strong-color: #f0f004;
+    --primary: #f0f01b;
+    --primary-invert: #f0f001;
+    --switch-view-color: #f0f001;
+    --input-background-color: #f0f001;
+    --input-icon-color: #f0f004;
+    --table-row-hover-background-color: #f0f002;
+    --table-head-cell-color: #f0f004;
+    --input-border-color: #f0f009;
+    --link-hover: #f0f01b;
+    --white: #f0f001;
+    --grey: #f0f009;
+    --card-content-background-color: #f0f001;
+    --success: #f0f015;
+    --danger: #f0f011;
+    --warning: #f0f014;
+    --text: #f0f004;
+    --text-strong: #f0f004;
+    --button-text-hover-background-color: #f0f001;
+    --table-striped-row-even-background-color: #f0f002;
+    --code-background: #f0f002;
+    --code: #f0f004;
+    /* Gantt */
+    /* Kaban */
+    /* Command Palette */
+    /* Keyboard Shortcuts modal */
+    /* Popups */
+    /* Vue Notifications */
+  }
+  :root.dark ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root.dark input::placeholder,
+  :root.dark textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root.dark body,
+  :root.dark div#app,
+  :root.dark header,
+  :root.dark aside.menu-container,
+  :root.dark footer.card-footer {
+    background: #f0f002 !important;
+  }
+  :root.dark svg.llama-cool > circle,
+  :root.dark svg.logo > path[fill="#196aff"] {
+    fill: #f0f01b;
+  }
+  :root.dark svg.logo,
+  :root.dark h1,
+  :root.dark .action-heading,
+  :root.dark .subtitle a,
+  :root.dark .project-menu-title {
+    color: #f0f004 !important;
+  }
+  :root.dark p.nothing,
+  :root.dark .has-text-grey-light {
+    color: #f0f006 !important;
+  }
+  :root.dark h1.title.task-id,
+  :root.dark div.detail-title,
+  :root.dark div.detail-title span {
+    color: #f0f009;
+  }
+  :root.dark button {
+    box-shadow: none !important;
+  }
+  :root.dark button.is-danger {
+    color: #f0f011 !important;
+    background: none;
+  }
+  :root.dark button.is-danger:hover {
+    background: #f0f011 !important;
+    color: #f0f00c !important;
+  }
+  :root.dark button.is-danger:active {
+    background: #c2c20c !important;
+    color: #f0f00c !important;
+  }
+  :root.dark .has-text-danger {
+    --has-text-hover-color: #f0f011;
+  }
+  :root.dark button.is-success {
+    color: #f0f015;
+  }
+  :root.dark button.is-success:hover {
+    background: #f0f015 !important;
+    color: #f0f00c !important;
+  }
+  :root.dark button.is-success:active {
+    background: #c5c50d !important;
+  }
+  :root.dark .base-button.is-primary {
+    color: #f0f001;
+  }
+  :root.dark .base-button.is-primary:hover {
+    background: #f0f01b;
+  }
+  :root.dark .base-button.is-primary:active {
+    background: #cbcb0d;
+  }
+  :root.dark .base-button.is-primary span.icon {
+    color: #f0f001 !important;
+  }
+  :root.dark button.base-button:not(.is-primary) {
+    color: #f0f004;
+  }
+  :root.dark div.action-buttons > button:hover,
+  :root.dark button.search-result-button:hover,
+  :root.dark .button.is-text:active,
+  :root.dark .single-task:hover {
+    background: #f0f002;
+  }
+  :root.dark p.is-editor-empty::before {
+    color: #f0f009;
+  }
+  :root.dark header > button.base-button.menu-button::before,
+  :root.dark header > button.base-button.menu-button::after {
+    background: #f0f004;
+  }
+  :root.dark .menu .menu-list li > a,
+  :root.dark .menu .menu-list li > a > span {
+    color: #f0f004;
+  }
+  :root.dark .menu .menu-list li > a.router-link-active {
+    color: #f0f01b;
+  }
+  :root.dark .menu .menu-list li:hover {
+    background: #f0f002;
+  }
+  :root.dark a.base-button.menu-bottom-link {
+    color: #f0f009;
+  }
+  :root.dark a.base-button.menu-bottom-link:hover {
+    color: #f0f007;
+  }
+  :root.dark div.is-done {
+    background: #f0f015;
+    color: #f0f00c;
+  }
+  :root.dark div.tiptap__editor a {
+    color: #f0f01b;
+  }
+  :root.dark div.tiptap__editor pre,
+  :root.dark div.tiptap__editor code {
+    background: #f0f00c;
+    color: #f0f004;
+  }
+  :root.dark blockquote,
+  :root.dark hr {
+    background: #f0f00c;
+  }
+  :root.dark emoji-picker {
+    --background: #f0f00c;
+    --border-color: #f0f009;
+    --button-hover-background: #f0f009;
+    --input-border-color: #f0f009;
+    scrollbar-color: #f0f009 #f0f00c !important;
+  }
+  :root.dark .reaction-button.current-user-has-reacted {
+    border-color: #f0f01b;
+    background: rgba(240, 240, 27, 0.3);
+  }
+  :root.dark p.created {
+    color: #f0f009;
+  }
+  :root.dark .progress-bar {
+    --progress-bar-background-color: #f0f003;
+    --progress-value-background-color: #f0f01b;
+  }
+  :root.dark .loader-container.is-loading::after {
+    --loader-border-color: #f0f01b;
+  }
+  :root.dark div.gantt-container {
+    --grey-300: #f0f00c;
+  }
+  :root.dark div.g-gantt-chart .g-upper-timeunit,
+  :root.dark div.g-gantt-chart .g-timeunit {
+    color: #f0f004 !important;
+  }
+  :root.dark div.g-gantt-chart .g-timeunit .today {
+    color: #f0f00c;
+  }
+  :root.dark div.g-gantt-chart .g-gantt-row {
+    background: #f0f001;
+  }
+  :root.dark div.g-gantt-chart div.g-gantt-bar div.g-gantt-bar-label > div {
+    color: #f0f00c;
+  }
+  :root.dark div.g-gantt-chart div.g-gantt-bar .g-gantt-bar-handle-left,
+  :root.dark div.g-gantt-chart div.g-gantt-bar .g-gantt-bar-handle-right {
+    background: #cbcb0d;
+  }
+  :root.dark div.bucket-header,
+  :root.dark div.task-item,
+  :root.dark div.bucket-footer,
+  :root.dark div.bucket > button.base-button {
+    background: #f0f001;
+  }
+  :root.dark div.task-item > .task {
+    background: #f0f002;
+  }
+  :root.dark div.task-item > .task span.priority-label {
+    background: #f0f00c;
+  }
+  :root.dark span.result-title,
+  :root.dark div.active-cmd.tag {
+    background: #f0f001;
+  }
+  :root.dark kbd {
+    color: #f0f004;
+    border-color: #f0f009;
+    background: #f0f001;
+  }
+  :root.dark div.message-wrapper > div.message.info {
+    background: #f0f001;
+  }
+  :root.dark div.v-popper__inner {
+    background: #f0f002;
+    color: #f0f004;
+  }
+  :root.dark div.v-popper__arrow-outer {
+    border-color: #f0f002;
+  }
+  :root.dark .modal-mask span,
+  :root.dark .modal-mask p,
+  :root.dark .modal-mask strong {
+    color: #f0f004 !important;
+  }
+  :root.dark .vue-notification {
+    color: #f0f00c !important;
+  }
+  :root.dark .vue-notification button {
+    background: none;
+    color: #f0f009 !important;
+  }
+  :root.dark .vue-notification.success {
+    background: #f0f015;
+    border-left-color: #dddd0e;
+  }
+  :root.light {
+    color-scheme: light;
+    --primary-h: 60 !important;
+    --primary-s: 87.65432099% !important;
+    --primary-l: 52.35294118% !important;
+    --primary-light-l: 52.35294118% !important;
+    --primary-dark-l: 52.35294118% !important;
+    --primary-invert-l: 52.35294118% !important;
+    --grey-100-hsl: 60 98.34710744% 47.45098039%;
+    --site-background: #f0f002;
+    --content-heading-color: #f0f004;
+    --card-header-color: #f0f004;
+    --card-color: #f0f004;
+    --body-color: #f0f004;
+    --label-color: #f0f004;
+    --strong-color: #f0f004;
+    --primary: #f0f01b;
+    --primary-invert: #f0f001;
+    --switch-view-color: #f0f001;
+    --input-background-color: #f0f001;
+    --input-icon-color: #f0f004;
+    --table-row-hover-background-color: #f0f002;
+    --table-head-cell-color: #f0f004;
+    --input-border-color: #f0f009;
+    --link-hover: #f0f01b;
+    --white: #f0f001;
+    --grey: #f0f009;
+    --card-content-background-color: #f0f001;
+    --success: #f0f015;
+    --danger: #f0f011;
+    --warning: #f0f014;
+    --text: #f0f004;
+    --text-strong: #f0f004;
+    --button-text-hover-background-color: #f0f001;
+    --table-striped-row-even-background-color: #f0f002;
+    --code-background: #f0f002;
+    --code: #f0f004;
+    /* Gantt */
+    /* Kaban */
+    /* Command Palette */
+    /* Keyboard Shortcuts modal */
+    /* Popups */
+    /* Vue Notifications */
+  }
+  :root.light ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root.light input::placeholder,
+  :root.light textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root.light body,
+  :root.light div#app,
+  :root.light header,
+  :root.light aside.menu-container,
+  :root.light footer.card-footer {
+    background: #f0f002 !important;
+  }
+  :root.light svg.llama-cool > circle,
+  :root.light svg.logo > path[fill="#196aff"] {
+    fill: #f0f01b;
+  }
+  :root.light svg.logo,
+  :root.light h1,
+  :root.light .action-heading,
+  :root.light .subtitle a,
+  :root.light .project-menu-title {
+    color: #f0f004 !important;
+  }
+  :root.light p.nothing,
+  :root.light .has-text-grey-light {
+    color: #f0f006 !important;
+  }
+  :root.light h1.title.task-id,
+  :root.light div.detail-title,
+  :root.light div.detail-title span {
+    color: #f0f009;
+  }
+  :root.light button {
+    box-shadow: none !important;
+  }
+  :root.light button.is-danger {
+    color: #f0f011 !important;
+    background: none;
+  }
+  :root.light button.is-danger:hover {
+    background: #f0f011 !important;
+    color: #f0f00c !important;
+  }
+  :root.light button.is-danger:active {
+    background: #c2c20c !important;
+    color: #f0f00c !important;
+  }
+  :root.light .has-text-danger {
+    --has-text-hover-color: #f0f011;
+  }
+  :root.light button.is-success {
+    color: #f0f015;
+  }
+  :root.light button.is-success:hover {
+    background: #f0f015 !important;
+    color: #f0f00c !important;
+  }
+  :root.light button.is-success:active {
+    background: #c5c50d !important;
+  }
+  :root.light .base-button.is-primary {
+    color: #f0f001;
+  }
+  :root.light .base-button.is-primary:hover {
+    background: #f0f01b;
+  }
+  :root.light .base-button.is-primary:active {
+    background: #cbcb0d;
+  }
+  :root.light .base-button.is-primary span.icon {
+    color: #f0f001 !important;
+  }
+  :root.light button.base-button:not(.is-primary) {
+    color: #f0f004;
+  }
+  :root.light div.action-buttons > button:hover,
+  :root.light button.search-result-button:hover,
+  :root.light .button.is-text:active,
+  :root.light .single-task:hover {
+    background: #f0f002;
+  }
+  :root.light p.is-editor-empty::before {
+    color: #f0f009;
+  }
+  :root.light header > button.base-button.menu-button::before,
+  :root.light header > button.base-button.menu-button::after {
+    background: #f0f004;
+  }
+  :root.light .menu .menu-list li > a,
+  :root.light .menu .menu-list li > a > span {
+    color: #f0f004;
+  }
+  :root.light .menu .menu-list li > a.router-link-active {
+    color: #f0f01b;
+  }
+  :root.light .menu .menu-list li:hover {
+    background: #f0f002;
+  }
+  :root.light a.base-button.menu-bottom-link {
+    color: #f0f009;
+  }
+  :root.light a.base-button.menu-bottom-link:hover {
+    color: #f0f007;
+  }
+  :root.light div.is-done {
+    background: #f0f015;
+    color: #f0f00c;
+  }
+  :root.light div.tiptap__editor a {
+    color: #f0f01b;
+  }
+  :root.light div.tiptap__editor pre,
+  :root.light div.tiptap__editor code {
+    background: #f0f00c;
+    color: #f0f004;
+  }
+  :root.light blockquote,
+  :root.light hr {
+    background: #f0f00c;
+  }
+  :root.light emoji-picker {
+    --background: #f0f00c;
+    --border-color: #f0f009;
+    --button-hover-background: #f0f009;
+    --input-border-color: #f0f009;
+    scrollbar-color: #f0f009 #f0f00c !important;
+  }
+  :root.light .reaction-button.current-user-has-reacted {
+    border-color: #f0f01b;
+    background: rgba(240, 240, 27, 0.3);
+  }
+  :root.light p.created {
+    color: #f0f009;
+  }
+  :root.light .progress-bar {
+    --progress-bar-background-color: #f0f003;
+    --progress-value-background-color: #f0f01b;
+  }
+  :root.light .loader-container.is-loading::after {
+    --loader-border-color: #f0f01b;
+  }
+  :root.light div.gantt-container {
+    --grey-300: #f0f00c;
+  }
+  :root.light div.g-gantt-chart .g-upper-timeunit,
+  :root.light div.g-gantt-chart .g-timeunit {
+    color: #f0f004 !important;
+  }
+  :root.light div.g-gantt-chart .g-timeunit .today {
+    color: #f0f00c;
+  }
+  :root.light div.g-gantt-chart .g-gantt-row {
+    background: #f0f001;
+  }
+  :root.light div.g-gantt-chart div.g-gantt-bar div.g-gantt-bar-label > div {
+    color: #f0f00c;
+  }
+  :root.light div.g-gantt-chart div.g-gantt-bar .g-gantt-bar-handle-left,
+  :root.light div.g-gantt-chart div.g-gantt-bar .g-gantt-bar-handle-right {
+    background: #cbcb0d;
+  }
+  :root.light div.bucket-header,
+  :root.light div.task-item,
+  :root.light div.bucket-footer,
+  :root.light div.bucket > button.base-button {
+    background: #f0f001;
+  }
+  :root.light div.task-item > .task {
+    background: #f0f002;
+  }
+  :root.light div.task-item > .task span.priority-label {
+    background: #f0f00c;
+  }
+  :root.light span.result-title,
+  :root.light div.active-cmd.tag {
+    background: #f0f001;
+  }
+  :root.light kbd {
+    color: #f0f004;
+    border-color: #f0f009;
+    background: #f0f001;
+  }
+  :root.light div.message-wrapper > div.message.info {
+    background: #f0f001;
+  }
+  :root.light div.v-popper__inner {
+    background: #f0f002;
+    color: #f0f004;
+  }
+  :root.light div.v-popper__arrow-outer {
+    border-color: #f0f002;
+  }
+  :root.light .modal-mask span,
+  :root.light .modal-mask p,
+  :root.light .modal-mask strong {
+    color: #f0f004 !important;
+  }
+  :root.light .vue-notification {
+    color: #f0f00c !important;
+  }
+  :root.light .vue-notification button {
+    background: none;
+    color: #f0f009 !important;
+  }
+  :root.light .vue-notification.success {
+    background: #f0f015;
+    border-left-color: #dddd0e;
+  }
+}

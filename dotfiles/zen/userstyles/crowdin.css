@@ -1,0 +1,185 @@
+/* ==UserStyle==
+@name           pwnbox-crowdin
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Crowdin (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document regexp("https://crowdin.com(?!/translate).*") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root :root:root:root:root:root {
+      --app-bg: #f0f002;
+      --body-bg: #f0f001;
+      --light-bg: #f0f00c;
+      --search-bg: #f0f00c;
+      --super-light-bg: #f0f00b;
+      --body-color: #f0f004;
+      --link-hover: #f0f015;
+      --primary: #f0f015;
+      --secondary: #f0f00d;
+      --tertiary: #f0f00f;
+      --primary-btn: #f0f015;
+      --primary-btn-hover: #f0f016;
+      --warning-content: #f0f014;
+      --info: #f0f019;
+      --crowdin-primary-blue-gray-05: #f0f00b;
+      --crowdin-primary-blue-gray: #f0f009;
+    }
+    :root .btn-primary,
+    :root .btn-primary:hover {
+      color: #f0f001;
+    }
+    :root .btn-outline-primary,
+    :root .btn-outline-primary:hover {
+      color: #f0f015;
+      border-color: #f0f015;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root :root:root:root:root:root {
+      --app-bg: #f0f002;
+      --body-bg: #f0f001;
+      --light-bg: #f0f00c;
+      --search-bg: #f0f00c;
+      --super-light-bg: #f0f00b;
+      --body-color: #f0f004;
+      --link-hover: #f0f015;
+      --primary: #f0f015;
+      --secondary: #f0f00d;
+      --tertiary: #f0f00f;
+      --primary-btn: #f0f015;
+      --primary-btn-hover: #f0f016;
+      --warning-content: #f0f014;
+      --info: #f0f019;
+      --crowdin-primary-blue-gray-05: #f0f00b;
+      --crowdin-primary-blue-gray: #f0f009;
+    }
+    :root .btn-primary,
+    :root .btn-primary:hover {
+      color: #f0f001;
+    }
+    :root .btn-outline-primary,
+    :root .btn-outline-primary:hover {
+      color: #f0f015;
+      border-color: #f0f015;
+    }
+  }
+}
+@-moz-document regexp("https://crowdin.com/translate/.*") {
+  @media (prefers-color-scheme: light) {
+    color-scheme: light;
+    ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    input::placeholder,
+    textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    body {
+      background-color: #f0f002 !important;
+      color: #f0f004 !important;
+    }
+    #left_panel,
+    .nav-tabs,
+    .navbar-inner.editor-navbar,
+    #discussions_control,
+    #main_menu {
+      background-color: #f0f00c !important;
+    }
+    #editor-center-layout,
+    .editor-pane-inner,
+    #translation_wrapper,
+    #translation_text_container,
+    .texts-to-translate-header,
+    #right_panel,
+    .texts-to-translate-paging,
+    #asset_preview_wrapper.no-preview,
+    .editor-pane-title-and-buttons-helper {
+      background-color: #f0f001 !important;
+      color: #f0f004 !important;
+    }
+    .body.dark-theme #main_menu .nav-pills > li.active > a {
+      background-color: #f0f019;
+    }
+    .progress .bar-validate {
+      background-color: #f0f01a;
+    }
+    .progress .bar-translate {
+      background-color: #f0f018;
+    }
+    a,
+    .btn-link {
+      color: #f0f00d !important;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+    ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    input::placeholder,
+    textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    body {
+      background-color: #f0f002 !important;
+      color: #f0f004 !important;
+    }
+    #left_panel,
+    .nav-tabs,
+    .navbar-inner.editor-navbar,
+    #discussions_control,
+    #main_menu {
+      background-color: #f0f00c !important;
+    }
+    #editor-center-layout,
+    .editor-pane-inner,
+    #translation_wrapper,
+    #translation_text_container,
+    .texts-to-translate-header,
+    #right_panel,
+    .texts-to-translate-paging,
+    #asset_preview_wrapper.no-preview,
+    .editor-pane-title-and-buttons-helper {
+      background-color: #f0f001 !important;
+      color: #f0f004 !important;
+    }
+    .body.dark-theme #main_menu .nav-pills > li.active > a {
+      background-color: #f0f019;
+    }
+    .progress .bar-validate {
+      background-color: #f0f01a;
+    }
+    .progress .bar-translate {
+      background-color: #f0f018;
+    }
+    a,
+    .btn-link {
+      color: #f0f00d !important;
+    }
+  }
+}

@@ -1,0 +1,443 @@
+/* ==UserStyle==
+@name           pwnbox-chatgpt
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for ChatGPT (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("chatgpt.com") {
+  .light {
+    color-scheme: light;
+  }
+  .light ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  .light input::placeholder,
+  .light textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  .light * {
+    --text-primary: #f0f004;
+    --text-secondary: #f0f005;
+    --text-tertiary: #f0f006;
+    --text-quaternary: #f0f007;
+    --bg-primary: #f0f001;
+    --bg-secondary: #f0f00c;
+    --bg-tertiary: #f0f00b;
+    --bg-secondary-surface: #f0f002;
+    --bg-elevated-primary: #f0f001;
+    --bg-elevated-secondary: #f0f002;
+    --bg-tooltip: #f0f003;
+    --main-surface-primary: #f0f001;
+    --main-surface-secondary: #f0f00c;
+    --main-surface-tertiary: #f0f00b;
+    --interactive-bg-secondary-hover: #f0f00b;
+    --interactive-bg-secondary-press: #f0f00c;
+    --interactive-label-accent-default: #f0f01b;
+    --border-light: #f0f00c;
+    --border-default: #f0f00b;
+    --border-medium: #f0f00a;
+    --interactive-border-focus: #f0f009;
+    --theme-user-msg-bg: #f0f00c;
+    --theme-user-msg-text: #f0f004;
+    --theme-submit-btn-bg: #f0f01b;
+    --theme-submit-btn-text: #f0f001;
+    --theme-secondary-btn-bg: #f0f00b;
+    --theme-secondary-btn-text: #f0f004;
+    --sidebar-surface: #f0f002;
+    --sidebar-surface-primary: #f0f002;
+    --surface-hover: #f0f00c;
+    --icon-tertiary: #f0f007;
+    --text-status-error: #f0f011;
+    --shadow-color-1: rgba(240, 240, 2, 0.5);
+    --shadow-color-2: rgba(240, 240, 4, 0.8);
+    /* Markdown */
+    /* Inline code */
+    /* Components */
+    /* Dark Overrides */
+    /* Tailwind Utilities */
+  }
+  .light * .__menu-item[data-sidebar-item] {
+    --menu-item-highlighted: #f0f00c;
+  }
+  .light * .__menu-item[data-color="danger"] {
+    --menu-item-highlighted: rgba(240, 240, 17, 0.2);
+    --menu-item-active: rgba(240, 240, 17, 0.3);
+    --menu-item-open: rgba(240, 240, 17, 0.3);
+  }
+  .light * code:not(pre > code) {
+    background-color: #f0f00c;
+  }
+  .light * code[class*="language-"],
+  .light * pre[class*="language-"],
+  .light * code.hljs {
+    color: #f0f004 !important;
+  }
+  .light * .btn-primary {
+    background-color: #f0f004;
+    color: #f0f001;
+  }
+  .light * .btn-purple {
+    color: #f0f001;
+    background-color: #f0f01b;
+  }
+  .light * .btn-purple:hover {
+    background-color: #f2f233;
+  }
+  .light * .btn-purple:focus,
+  .light * .btn-purple:active {
+    background-color: #e3e30f;
+  }
+  .light * .btn-danger-outline {
+    color: #f0f011;
+    border-color: #f0f011;
+  }
+  .light * .btn-ghost:not(:disabled):hover {
+    background-color: #f0f00c;
+  }
+  .light * .bg-token-bg-primary {
+    background-color: var(--bg-primary);
+  }
+  .light * .bg-token-main-surface-primary {
+    background-color: var(--main-surface-primary);
+  }
+  .light * .bg-token-sidebar-surface {
+    background-color: var(--sidebar-surface);
+  }
+  .light * .text-green-600,
+  .light * .dark\:text-green-600 {
+    color: #f0f015;
+  }
+  .light * .bg-green-600,
+  .light * .dark\:bg-green-600 {
+    background-color: #f0f015;
+  }
+  .light * .border-green-600 {
+    border-color: #f0f015;
+  }
+  .light * .radix-state-checked\:bg-green-600[data-state="checked"] {
+    background-color: #f0f015;
+  }
+  .light * .text-red-500,
+  .light * .dark\:text-red-500 {
+    color: #f0f011;
+  }
+  .light * .bg-red-500,
+  .light * .dark\:bg-red-500 {
+    background-color: #f0f011;
+  }
+  .light * .border-red-500 {
+    border-color: #f0f011;
+  }
+  .light * .radix-state-checked\:bg-red-500[data-state="checked"] {
+    background-color: #f0f011;
+  }
+  .light * .text-blue-400,
+  .light * .dark\:text-blue-400 {
+    color: #f0f01b;
+  }
+  .light * .bg-blue-400,
+  .light * .dark\:bg-blue-400 {
+    background-color: #f0f01b;
+  }
+  .light * .border-blue-400 {
+    border-color: #f0f01b;
+  }
+  .light * .radix-state-checked\:bg-blue-400[data-state="checked"] {
+    background-color: #f0f01b;
+  }
+  .light * .text-gray-600,
+  .light * .dark\:text-gray-600 {
+    color: #f0f009;
+  }
+  .light * .bg-gray-600,
+  .light * .dark\:bg-gray-600 {
+    background-color: #f0f009;
+  }
+  .light * .border-gray-600 {
+    border-color: #f0f009;
+  }
+  .light * .radix-state-checked\:bg-gray-600[data-state="checked"] {
+    background-color: #f0f009;
+  }
+  .light * .text-gray-500,
+  .light * .dark\:text-gray-500 {
+    color: #f0f007;
+  }
+  .light * .bg-gray-500,
+  .light * .dark\:bg-gray-500 {
+    background-color: #f0f007;
+  }
+  .light * .border-gray-500 {
+    border-color: #f0f007;
+  }
+  .light * .radix-state-checked\:bg-gray-500[data-state="checked"] {
+    background-color: #f0f007;
+  }
+  .light * .text-white {
+    color: #f0f001;
+  }
+  .light * .bg-black {
+    background-color: #f0f002;
+  }
+  .dark {
+    color-scheme: dark;
+  }
+  .dark ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  .dark input::placeholder,
+  .dark textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  .dark * {
+    --text-primary: #f0f004;
+    --text-secondary: #f0f005;
+    --text-tertiary: #f0f006;
+    --text-quaternary: #f0f007;
+    --bg-primary: #f0f001;
+    --bg-secondary: #f0f00c;
+    --bg-tertiary: #f0f00b;
+    --bg-secondary-surface: #f0f002;
+    --bg-elevated-primary: #f0f001;
+    --bg-elevated-secondary: #f0f002;
+    --bg-tooltip: #f0f003;
+    --main-surface-primary: #f0f001;
+    --main-surface-secondary: #f0f00c;
+    --main-surface-tertiary: #f0f00b;
+    --interactive-bg-secondary-hover: #f0f00b;
+    --interactive-bg-secondary-press: #f0f00c;
+    --interactive-label-accent-default: #f0f01b;
+    --border-light: #f0f00c;
+    --border-default: #f0f00b;
+    --border-medium: #f0f00a;
+    --interactive-border-focus: #f0f009;
+    --theme-user-msg-bg: #f0f00c;
+    --theme-user-msg-text: #f0f004;
+    --theme-submit-btn-bg: #f0f01b;
+    --theme-submit-btn-text: #f0f001;
+    --theme-secondary-btn-bg: #f0f00b;
+    --theme-secondary-btn-text: #f0f004;
+    --sidebar-surface: #f0f002;
+    --sidebar-surface-primary: #f0f002;
+    --surface-hover: #f0f00c;
+    --icon-tertiary: #f0f007;
+    --text-status-error: #f0f011;
+    --shadow-color-1: rgba(240, 240, 2, 0.5);
+    --shadow-color-2: rgba(240, 240, 4, 0.8);
+    /* Markdown */
+    /* Inline code */
+    /* Components */
+    /* Dark Overrides */
+    /* Tailwind Utilities */
+  }
+  .dark * .__menu-item[data-sidebar-item] {
+    --menu-item-highlighted: #f0f00c;
+  }
+  .dark * .__menu-item[data-color="danger"] {
+    --menu-item-highlighted: rgba(240, 240, 17, 0.2);
+    --menu-item-active: rgba(240, 240, 17, 0.3);
+    --menu-item-open: rgba(240, 240, 17, 0.3);
+  }
+  .dark * code:not(pre > code) {
+    background-color: #f0f00c;
+  }
+  .dark * code[class*="language-"],
+  .dark * pre[class*="language-"],
+  .dark * code.hljs {
+    color: #f0f004 !important;
+  }
+  .dark * .btn-primary {
+    background-color: #f0f004;
+    color: #f0f001;
+  }
+  .dark * .btn-purple {
+    color: #f0f001;
+    background-color: #f0f01b;
+  }
+  .dark * .btn-purple:hover {
+    background-color: #f2f233;
+  }
+  .dark * .btn-purple:focus,
+  .dark * .btn-purple:active {
+    background-color: #e3e30f;
+  }
+  .dark * .btn-danger-outline {
+    color: #f0f011;
+    border-color: #f0f011;
+  }
+  .dark * .btn-ghost:not(:disabled):hover {
+    background-color: #f0f00c;
+  }
+  .dark * .bg-token-bg-primary {
+    background-color: var(--bg-primary);
+  }
+  .dark * .bg-token-main-surface-primary {
+    background-color: var(--main-surface-primary);
+  }
+  .dark * .bg-token-sidebar-surface {
+    background-color: var(--sidebar-surface);
+  }
+  .dark * .text-green-600,
+  .dark * .dark\:text-green-600 {
+    color: #f0f015;
+  }
+  .dark * .bg-green-600,
+  .dark * .dark\:bg-green-600 {
+    background-color: #f0f015;
+  }
+  .dark * .border-green-600 {
+    border-color: #f0f015;
+  }
+  .dark * .radix-state-checked\:bg-green-600[data-state="checked"] {
+    background-color: #f0f015;
+  }
+  .dark * .text-red-500,
+  .dark * .dark\:text-red-500 {
+    color: #f0f011;
+  }
+  .dark * .bg-red-500,
+  .dark * .dark\:bg-red-500 {
+    background-color: #f0f011;
+  }
+  .dark * .border-red-500 {
+    border-color: #f0f011;
+  }
+  .dark * .radix-state-checked\:bg-red-500[data-state="checked"] {
+    background-color: #f0f011;
+  }
+  .dark * .text-blue-400,
+  .dark * .dark\:text-blue-400 {
+    color: #f0f01b;
+  }
+  .dark * .bg-blue-400,
+  .dark * .dark\:bg-blue-400 {
+    background-color: #f0f01b;
+  }
+  .dark * .border-blue-400 {
+    border-color: #f0f01b;
+  }
+  .dark * .radix-state-checked\:bg-blue-400[data-state="checked"] {
+    background-color: #f0f01b;
+  }
+  .dark * .text-gray-600,
+  .dark * .dark\:text-gray-600 {
+    color: #f0f009;
+  }
+  .dark * .bg-gray-600,
+  .dark * .dark\:bg-gray-600 {
+    background-color: #f0f009;
+  }
+  .dark * .border-gray-600 {
+    border-color: #f0f009;
+  }
+  .dark * .radix-state-checked\:bg-gray-600[data-state="checked"] {
+    background-color: #f0f009;
+  }
+  .dark * .text-gray-500,
+  .dark * .dark\:text-gray-500 {
+    color: #f0f007;
+  }
+  .dark * .bg-gray-500,
+  .dark * .dark\:bg-gray-500 {
+    background-color: #f0f007;
+  }
+  .dark * .border-gray-500 {
+    border-color: #f0f007;
+  }
+  .dark * .radix-state-checked\:bg-gray-500[data-state="checked"] {
+    background-color: #f0f007;
+  }
+  .dark * .text-white {
+    color: #f0f001;
+  }
+  .dark * .bg-black {
+    background-color: #f0f002;
+  }
+}
+@-moz-document domain("auth.openai.com") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+      color: #f0f004;
+      background-color: #f0f001;
+      --main-page-background: #f0f001;
+      --text-primary: #f0f004;
+      --text-secondary: #f0f005;
+      --text-tertiary: #f0f006;
+      --text-placeholder: #f0f006;
+      --accent-blue: #f0f01b;
+      --link: #f0f01b;
+      --border-medium: #f0f00a;
+      --button-primary-background: #f0f004;
+      --button-primary-hover: #f0f005;
+      --button-text-on-primary: #f0f001;
+      --button-outline-hover: #f0f00c;
+      --gray-100: #f0f00a;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root a[href="https://chatgpt.com"] > svg {
+      filter: brightness(0) saturate(100%) invert(43%) sepia(43%) saturate(515%) hue-rotate(196deg) brightness(49%) contrast(68%);
+    }
+    :root input {
+      color: #f0f004;
+    }
+    :root [class*="_toggleVisibilityButton"]:where(:hover, :focus-visible)::before {
+      background-color: #f0f00c;
+    }
+    :root [data-overlay-container] [class*="_tooltip"] {
+      --tooltip-background-color: #f0f002 !important;
+      --tooltip-color: #f0f004 !important;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      color: #f0f004;
+      background-color: #f0f001;
+      --main-page-background: #f0f001;
+      --text-primary: #f0f004;
+      --text-secondary: #f0f005;
+      --text-tertiary: #f0f006;
+      --text-placeholder: #f0f006;
+      --accent-blue: #f0f01b;
+      --link: #f0f01b;
+      --border-medium: #f0f00a;
+      --button-primary-background: #f0f004;
+      --button-primary-hover: #f0f005;
+      --button-text-on-primary: #f0f001;
+      --button-outline-hover: #f0f00c;
+      --gray-100: #f0f00a;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root a[href="https://chatgpt.com"] > svg {
+      filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+    }
+    :root input {
+      color: #f0f004;
+    }
+    :root [class*="_toggleVisibilityButton"]:where(:hover, :focus-visible)::before {
+      background-color: #f0f00c;
+    }
+    :root [data-overlay-container] [class*="_tooltip"] {
+      --tooltip-background-color: #f0f002 !important;
+      --tooltip-color: #f0f004 !important;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+runtime="${XDG_RUNTIME_DIR:-/tmp}"
+pidfile="$runtime/pwnbox-record.pid"
+
+notify() {
+    command -v notify-send >/dev/null 2>&1 && notify-send -a pwnbox-record "$@" || true
+}
+
+stop() {
+    if [ -f "$pidfile" ]; then
+        pid="$(cat "$pidfile" 2>/dev/null || true)"
+        [ -n "$pid" ] && kill "$pid" 2>/dev/null || true
+        rm -f "$pidfile"
+        notify -i camera-video "Recording" "Stopped and saved"
+    fi
+}
+
+mode="${1:-full}"
+case "$mode" in
+    stop)
+        stop
+        ;;
+    full|area)
+        stop
+        if ! command -v wf-recorder >/dev/null 2>&1; then
+            notify "Recording" "wf-recorder not installed yet (needs nixos-rebuild)"
+            exit 0
+        fi
+        dir="$HOME/Videos"
+        mkdir -p "$dir"
+        out="$dir/$(date +'%Y-%m-%d-%H%M%S_pwnbox.mp4')"
+        geometry=""
+        if [ "$mode" = "area" ]; then
+            theme="$HOME/.config/quickshell/Theme.js"
+            fg="$(sed -nE 's/^var fg[[:space:]]*=[[:space:]]*"#?([0-9a-fA-F]{6})".*/\1/p' \
+                "$theme" 2>/dev/null | head -1)"
+            [ -n "$fg" ] || fg="cccccc"
+            geometry="$(slurp -d -w 2 -b "#00000080" -c "#${fg}ff" -s "#00000000" || true)"
+            [ -n "$geometry" ] || exit 0
+        fi
+        args=(-f "$out" -c libx264 -p preset=veryfast -a)
+        [ -n "$geometry" ] && args=(-g "$geometry" "${args[@]}")
+        if [ "$mode" = "full" ] && [ -n "${2:-}" ]; then
+            args=(-o "$2" "${args[@]}")
+        fi
+        wf-recorder "${args[@]}" &
+        echo $! >"$pidfile"
+        notify -i camera-video "Recording" "Started: $(basename "$out")"
+        ;;
+    *)
+        echo "usage: pwnbox-record [full [output]|area|stop]" >&2
+        exit 2
+        ;;
+esac

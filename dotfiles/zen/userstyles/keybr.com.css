@@ -1,0 +1,325 @@
+/* ==UserStyle==
+@name           pwnbox-keybr.com
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for keybr.com (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("keybr.com") {
+  html[data-color="dark"] {
+    color-scheme: dark;
+    --primary-d2: #f0f009;
+    --primary-d1: #f0f009;
+    --primary: #f0f001;
+    --primary-l1: #f0f003;
+    --primary-l2: #f0f002;
+    --secondary-d1: #f0f006;
+    --secondary: #f0f004;
+    --secondary-l1: #f0f006;
+    --secondary-l2: #f0f01b;
+    --secondary-f1: #f0f006;
+    --secondary-f2: #f0f006;
+    --accent-d2: #f0f01b;
+    --accent-d1: #f0f01b;
+    --accent: #f0f01b;
+    --accent-l1: #f0f01b;
+    --accent-l2: #f0f01b;
+    --error-d1: #f0f011;
+    --error: #f0f011;
+    --error-l1: #f0f011;
+    --shadow-color: rgba(240, 240, 3, 0.88);
+    --slow-key-color: #f0f011;
+    --fast-key-color: #f0f015;
+    --Chart-speed__color: #f0f015;
+    --Chart-accuracy__color: #f0f013;
+    --Chart-complexity__color: #f0f00f;
+    --Chart-threshold__color: #f0f012;
+    --Chart-hist-h__color: #f0f01a;
+    --Chart-hist-m__color: #f0f012;
+    --Chart-hist-r__color: #f0f010;
+    --KeyboardKey-pointer__color: #f0f01b;
+    --KeyboardKey-symbol__color: #f0f003;
+    --pinky-zone-color: #f0f015;
+    --ring-zone-color: #f0f016;
+    --middle-zone-color: #f0f014;
+    --left-index-zone-color: #f0f019;
+    --right-index-zone-color: #f0f012;
+    --thumb-zone-color: #f0f010;
+    --effort-0-color: #f0f003;
+    --effort-1-color: #f0f003;
+    --effort-2-color: #f0f01b;
+    --effort-3-color: #f0f01b;
+    --Value--more__color: #f0f015;
+    --Value--less__color: #f0f011;
+    --KeyboardKey-button--depressed__color: #f0f01b;
+    --LessonKey--included__color: #f0f003;
+    --LessonKey--uncalibrated__background-color: #f0f00c;
+    --LessonKey--excluded__background-color: #f0f00c;
+    --LessonKey--excluded__color: #f0f009;
+    --DailyGoal-bar__color: #f0f01b;
+    --KeyboardKey-button__color: #f0f01b;
+    --textinput__color: #f0f004;
+    --textinput--special__color: #f0f005;
+    --textinput--hit__color: #f0f006;
+    --textinput--miss__color: #f0f011;
+    --syntax-keyword: #f0f010;
+    --syntax-string: #f0f015;
+    --syntax-number: #f0f013;
+    --syntax-comment: #f0f007;
+    --MenuItem__background-color: #f0f002;
+    --MenuItem__color: #f0f004;
+    --MenuItem--hover__background-color: #f0f00c;
+    --MenuItem--hover__color: #f0f004;
+    --KeyboardKey-symbol--dead__color: #f0f011;
+    --KeyboardKey-symbol--ligature__color: #f0f019;
+    --Name-color: #f0f006;
+    --Value-color: #f0f01b;
+    --effort-color: #f0f01b;
+  }
+  html[data-color="dark"] ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  html[data-color="dark"] input::placeholder,
+  html[data-color="dark"] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  html[data-color="light"] {
+    color-scheme: light;
+    --primary-d2: #f0f009;
+    --primary-d1: #f0f009;
+    --primary: #f0f001;
+    --primary-l1: #f0f003;
+    --primary-l2: #f0f002;
+    --secondary-d1: #f0f006;
+    --secondary: #f0f004;
+    --secondary-l1: #f0f006;
+    --secondary-l2: #f0f01b;
+    --secondary-f1: #f0f006;
+    --secondary-f2: #f0f006;
+    --accent-d2: #f0f01b;
+    --accent-d1: #f0f01b;
+    --accent: #f0f01b;
+    --accent-l1: #f0f01b;
+    --accent-l2: #f0f01b;
+    --error-d1: #f0f011;
+    --error: #f0f011;
+    --error-l1: #f0f011;
+    --shadow-color: rgba(240, 240, 3, 0.88);
+    --slow-key-color: #f0f011;
+    --fast-key-color: #f0f015;
+    --Chart-speed__color: #f0f015;
+    --Chart-accuracy__color: #f0f013;
+    --Chart-complexity__color: #f0f00f;
+    --Chart-threshold__color: #f0f012;
+    --Chart-hist-h__color: #f0f01a;
+    --Chart-hist-m__color: #f0f012;
+    --Chart-hist-r__color: #f0f010;
+    --KeyboardKey-pointer__color: #f0f01b;
+    --KeyboardKey-symbol__color: #f0f003;
+    --pinky-zone-color: #f0f015;
+    --ring-zone-color: #f0f016;
+    --middle-zone-color: #f0f014;
+    --left-index-zone-color: #f0f019;
+    --right-index-zone-color: #f0f012;
+    --thumb-zone-color: #f0f010;
+    --effort-0-color: #f0f003;
+    --effort-1-color: #f0f003;
+    --effort-2-color: #f0f01b;
+    --effort-3-color: #f0f01b;
+    --Value--more__color: #f0f015;
+    --Value--less__color: #f0f011;
+    --KeyboardKey-button--depressed__color: #f0f01b;
+    --LessonKey--included__color: #f0f003;
+    --LessonKey--uncalibrated__background-color: #f0f00c;
+    --LessonKey--excluded__background-color: #f0f00c;
+    --LessonKey--excluded__color: #f0f009;
+    --DailyGoal-bar__color: #f0f01b;
+    --KeyboardKey-button__color: #f0f01b;
+    --textinput__color: #f0f004;
+    --textinput--special__color: #f0f005;
+    --textinput--hit__color: #f0f006;
+    --textinput--miss__color: #f0f011;
+    --syntax-keyword: #f0f010;
+    --syntax-string: #f0f015;
+    --syntax-number: #f0f013;
+    --syntax-comment: #f0f007;
+    --MenuItem__background-color: #f0f002;
+    --MenuItem__color: #f0f004;
+    --MenuItem--hover__background-color: #f0f00c;
+    --MenuItem--hover__color: #f0f004;
+    --KeyboardKey-symbol--dead__color: #f0f011;
+    --KeyboardKey-symbol--ligature__color: #f0f019;
+    --Name-color: #f0f006;
+    --Value-color: #f0f01b;
+    --effort-color: #f0f01b;
+  }
+  html[data-color="light"] ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  html[data-color="light"] input::placeholder,
+  html[data-color="light"] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  @media (prefers-color-scheme: light) {
+    html[data-color="system"] {
+      color-scheme: light;
+      --primary-d2: #f0f009;
+      --primary-d1: #f0f009;
+      --primary: #f0f001;
+      --primary-l1: #f0f003;
+      --primary-l2: #f0f002;
+      --secondary-d1: #f0f006;
+      --secondary: #f0f004;
+      --secondary-l1: #f0f006;
+      --secondary-l2: #f0f01b;
+      --secondary-f1: #f0f006;
+      --secondary-f2: #f0f006;
+      --accent-d2: #f0f01b;
+      --accent-d1: #f0f01b;
+      --accent: #f0f01b;
+      --accent-l1: #f0f01b;
+      --accent-l2: #f0f01b;
+      --error-d1: #f0f011;
+      --error: #f0f011;
+      --error-l1: #f0f011;
+      --shadow-color: rgba(240, 240, 3, 0.88);
+      --slow-key-color: #f0f011;
+      --fast-key-color: #f0f015;
+      --Chart-speed__color: #f0f015;
+      --Chart-accuracy__color: #f0f013;
+      --Chart-complexity__color: #f0f00f;
+      --Chart-threshold__color: #f0f012;
+      --Chart-hist-h__color: #f0f01a;
+      --Chart-hist-m__color: #f0f012;
+      --Chart-hist-r__color: #f0f010;
+      --KeyboardKey-pointer__color: #f0f01b;
+      --KeyboardKey-symbol__color: #f0f003;
+      --pinky-zone-color: #f0f015;
+      --ring-zone-color: #f0f016;
+      --middle-zone-color: #f0f014;
+      --left-index-zone-color: #f0f019;
+      --right-index-zone-color: #f0f012;
+      --thumb-zone-color: #f0f010;
+      --effort-0-color: #f0f003;
+      --effort-1-color: #f0f003;
+      --effort-2-color: #f0f01b;
+      --effort-3-color: #f0f01b;
+      --Value--more__color: #f0f015;
+      --Value--less__color: #f0f011;
+      --KeyboardKey-button--depressed__color: #f0f01b;
+      --LessonKey--included__color: #f0f003;
+      --LessonKey--uncalibrated__background-color: #f0f00c;
+      --LessonKey--excluded__background-color: #f0f00c;
+      --LessonKey--excluded__color: #f0f009;
+      --DailyGoal-bar__color: #f0f01b;
+      --KeyboardKey-button__color: #f0f01b;
+      --textinput__color: #f0f004;
+      --textinput--special__color: #f0f005;
+      --textinput--hit__color: #f0f006;
+      --textinput--miss__color: #f0f011;
+      --syntax-keyword: #f0f010;
+      --syntax-string: #f0f015;
+      --syntax-number: #f0f013;
+      --syntax-comment: #f0f007;
+      --MenuItem__background-color: #f0f002;
+      --MenuItem__color: #f0f004;
+      --MenuItem--hover__background-color: #f0f00c;
+      --MenuItem--hover__color: #f0f004;
+      --KeyboardKey-symbol--dead__color: #f0f011;
+      --KeyboardKey-symbol--ligature__color: #f0f019;
+      --Name-color: #f0f006;
+      --Value-color: #f0f01b;
+      --effort-color: #f0f01b;
+    }
+    html[data-color="system"] ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    html[data-color="system"] input::placeholder,
+    html[data-color="system"] textarea::placeholder {
+      color: #f0f006 !important;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    html[data-color="system"] {
+      color-scheme: dark;
+      --primary-d2: #f0f009;
+      --primary-d1: #f0f009;
+      --primary: #f0f001;
+      --primary-l1: #f0f003;
+      --primary-l2: #f0f002;
+      --secondary-d1: #f0f006;
+      --secondary: #f0f004;
+      --secondary-l1: #f0f006;
+      --secondary-l2: #f0f01b;
+      --secondary-f1: #f0f006;
+      --secondary-f2: #f0f006;
+      --accent-d2: #f0f01b;
+      --accent-d1: #f0f01b;
+      --accent: #f0f01b;
+      --accent-l1: #f0f01b;
+      --accent-l2: #f0f01b;
+      --error-d1: #f0f011;
+      --error: #f0f011;
+      --error-l1: #f0f011;
+      --shadow-color: rgba(240, 240, 3, 0.88);
+      --slow-key-color: #f0f011;
+      --fast-key-color: #f0f015;
+      --Chart-speed__color: #f0f015;
+      --Chart-accuracy__color: #f0f013;
+      --Chart-complexity__color: #f0f00f;
+      --Chart-threshold__color: #f0f012;
+      --Chart-hist-h__color: #f0f01a;
+      --Chart-hist-m__color: #f0f012;
+      --Chart-hist-r__color: #f0f010;
+      --KeyboardKey-pointer__color: #f0f01b;
+      --KeyboardKey-symbol__color: #f0f003;
+      --pinky-zone-color: #f0f015;
+      --ring-zone-color: #f0f016;
+      --middle-zone-color: #f0f014;
+      --left-index-zone-color: #f0f019;
+      --right-index-zone-color: #f0f012;
+      --thumb-zone-color: #f0f010;
+      --effort-0-color: #f0f003;
+      --effort-1-color: #f0f003;
+      --effort-2-color: #f0f01b;
+      --effort-3-color: #f0f01b;
+      --Value--more__color: #f0f015;
+      --Value--less__color: #f0f011;
+      --KeyboardKey-button--depressed__color: #f0f01b;
+      --LessonKey--included__color: #f0f003;
+      --LessonKey--uncalibrated__background-color: #f0f00c;
+      --LessonKey--excluded__background-color: #f0f00c;
+      --LessonKey--excluded__color: #f0f009;
+      --DailyGoal-bar__color: #f0f01b;
+      --KeyboardKey-button__color: #f0f01b;
+      --textinput__color: #f0f004;
+      --textinput--special__color: #f0f005;
+      --textinput--hit__color: #f0f006;
+      --textinput--miss__color: #f0f011;
+      --syntax-keyword: #f0f010;
+      --syntax-string: #f0f015;
+      --syntax-number: #f0f013;
+      --syntax-comment: #f0f007;
+      --MenuItem__background-color: #f0f002;
+      --MenuItem__color: #f0f004;
+      --MenuItem--hover__background-color: #f0f00c;
+      --MenuItem--hover__color: #f0f004;
+      --KeyboardKey-symbol--dead__color: #f0f011;
+      --KeyboardKey-symbol--ligature__color: #f0f019;
+      --Name-color: #f0f006;
+      --Value-color: #f0f01b;
+      --effort-color: #f0f01b;
+    }
+    html[data-color="system"] ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    html[data-color="system"] input::placeholder,
+    html[data-color="system"] textarea::placeholder {
+      color: #f0f006 !important;
+    }
+  }
+}

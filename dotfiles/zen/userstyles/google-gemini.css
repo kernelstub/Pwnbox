@@ -1,0 +1,678 @@
+/* ==UserStyle==
+@name           pwnbox-google-gemini
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Google Gemini (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("gemini.google.com") {
+  :root .dark-theme {
+    color-scheme: dark;
+    --ctp-rosewater: #f0f00d;
+    --ctp-flamingo: #f0f00e;
+    --ctp-pink: #f0f00f;
+    --ctp-mauve: #f0f010;
+    --ctp-red: #f0f011;
+    --ctp-maroon: #f0f012;
+    --ctp-peach: #f0f013;
+    --ctp-yellow: #f0f014;
+    --ctp-green: #f0f015;
+    --ctp-teal: #f0f016;
+    --ctp-sky: #f0f017;
+    --ctp-sapphire: #f0f018;
+    --ctp-blue: #f0f019;
+    --ctp-lavender: #f0f01a;
+    --ctp-text: #f0f004;
+    --ctp-subtext1: #f0f005;
+    --ctp-subtext0: #f0f006;
+    --ctp-overlay2: #f0f007;
+    --ctp-overlay1: #f0f008;
+    --ctp-overlay0: #f0f009;
+    --ctp-surface2: #f0f00a;
+    --ctp-surface1: #f0f00b;
+    --ctp-surface0: #f0f00c;
+    --ctp-base: #f0f001;
+    --ctp-mantle: #f0f002;
+    --ctp-crust: #f0f003;
+    --bard-color-neutral-90: #f0f002;
+    --bard-color-on-selected-conversation-metadata-v2: #f0f004;
+    --bard-color-surface-container: #f0f002;
+    --bard-color-on-surface-opacity-38: #f0f00a !important;
+    --bard-color-surface-container-highest: #fefe0d;
+    --bard-color-response-container-flipped-background: #f0f00c;
+    --bard-color-inverse-on-surface: #ebeb02;
+    --bard-color-sidenav-mobile-controls: #f0f004;
+    --bard-color-main-container-background: #f0f001;
+    --bard-color-main-container-background-rgb: 240, 240, 1;
+    --bard-color-window-container-background: #f0f001;
+    --bard-color-response-container-background: #f0f001;
+    --bard-color-response-container-background-rgb: 240, 240, 1;
+    --bard-color-onhover-conversation-metadata-button-v2: #f0f00b;
+    --bard-color-selected-conversation-metadata-button-v2: rgba(240, 240, 27, 0.4);
+    --bard-color-new-conversation-button: #f0f00c;
+    --bard-color-on-new-conversation-button: #f0f004;
+    --bard-color-onhover-conversation-metadata-v2: #f0f00c;
+    --bard-color-sidenav-upgrade-button: #f0f00c;
+    --bard-color-form-field-placeholder: #f0f006;
+    --bard-color-discovery-carousel-background: #f0f002;
+    --bard-color-discovery-carousel-icon: #f0f01b;
+    --bard-color-example-prompt-background: #f0f003;
+    --bard-color-bard-mode-logo-prefix: #f0f005;
+    --bard-color-neutral-96: #f0f003;
+    --bard-color-adv-marketing-basic-background: #f0f00c;
+    --bard-color-adv-marketing-product-background: #f0f00c;
+    --bard-color-adv-marketing-disclaimer: #f0f006;
+    --bard-color-input-area-buttons-selected-background: rgba(240, 240, 27, 0.7);
+    --bard-color-zero-state-card-selected: rgba(240, 240, 27, 0.3);
+    --bard-color-zero-state-prompt-chip-background: rgba(240, 240, 27, 0.5);
+    --bard-color-zero-state-prompt-chip-text: #f2f233;
+    --bard-color-regular-banner: #f0f01b;
+    --bard-color-regular-banner-text: #f0f003;
+    --bard-color-skeleton-loader-background-1-rgb: 240, 240, 2;
+    --bard-color-skeleton-loader-background-2-rgb: 240, 240, 27;
+    --bard-color-skeleton-loader-background-3-rgb: 240, 240, 27;
+    --bard-color-brand-text-gradient-stop-1: #f0f019;
+    --bard-color-brand-text-gradient-stop-2: #f0f018;
+    --bard-color-brand-text-gradient-stop-3: #f0f013;
+    --bard-color-on-surface-opacity-12: rgba(240, 240, 22, 0.1);
+    --bard-color-footer-background: #f0f002;
+    --bard-color-draft-chip-background: #f0f00c;
+    --bard-color-processing-animation-color-1: #f0f00b;
+    --bard-color-processing-animation-color-2: #f0f003;
+    --bard-color-tunable-selection-button: #f0f002;
+    --bard-color-tunable-selection-button-icon: #f0f004;
+    --bard-color-feedback-form-container-background: #f0f002;
+    --bard-color-fact-check-tooltip-entailed-highlight: rgba(240, 240, 21, 0.25);
+    --bard-color-fact-check-tooltip-entailed-selected: rgba(240, 240, 21, 0.35);
+    --bard-color-fact-check-tooltip-contradictory-highlight: rgba(240, 240, 17, 0.25);
+    --bard-color-fact-check-tooltip-contradictory-selected: rgba(240, 240, 17, 0.4);
+    --bard-color-factuality-form-background: #f0f002;
+    --bard-color-fact-check-button-complete: #f0f00c;
+    --bard-color-fact-check-button-loading: #f0f00b;
+    --bard-color-tunable-selection-menu-text: #f0f004;
+    --bard-color-tunable-selection-menu-background: #f0f002;
+    --bard-color-tunable-selection-textarea-background: #f0f001;
+    --bard-color-tunable-selection-shimmer-non-advanced: #f0f01b;
+    --bard-color-onegooglebar-product-controls: #f0f004;
+    --bard-color-adv-marketing-check: #f0f004;
+    --mdc-switch-selected-hover-handle-color: #f3f34b;
+    --mdc-switch-selected-focus-handle-color: #f3f34b;
+    --mdc-switch-selected-pressed-handle-color: #f5f563;
+    --mdc-switch-selected-track-color: rgba(240, 240, 27, 0.5);
+    --mdc-switch-selected-hover-track-color: rgba(240, 240, 27, 0.5);
+    --mdc-switch-selected-focus-track-color: rgba(240, 240, 27, 0.5);
+    --mdc-switch-selected-pressed-track-color: rgba(240, 240, 27, 0.5);
+    --mdc-switch-selected-handle-color: #f0f01b;
+    --mdc-switch-unselected-handle-color: #f0f006;
+    --mdc-switch-unselected-hover-handle-color: #f0f005;
+    --mdc-switch-unselected-focus-handle-color: #f0f004;
+    --mdc-switch-unselected-pressed-handle-color: #f0f004;
+    --mdc-switch-unselected-track-color: #f0f00a;
+    --mdc-switch-unselected-hover-track-color: #f0f00a;
+    --mdc-switch-unselected-pressed-track-color: #f0f00a;
+    --mdc-switch-unselected-focus-track-color: #f0f00a;
+    --mdc-checkbox-selected-icon-color: #f0f01b;
+    --mdc-checkbox-selected-checkmark-color: var(--gem-sys-color--on-primary);
+    --mdc-checkbox-selected-hover-icon-color: #f0f01b;
+    --mdc-checkbox-selected-pressed-icon-color: #f0f01b;
+    --mdc-checkbox-selected-focus-icon-color: #f0f01b;
+    --mdc-checkbox-selected-focus-state-layer-color: #f0f01b;
+    --mdc-checkbox-selected-hover-state-layer-color: #f0f01b;
+    --mdc-checkbox-selected-pressed-state-layer-color: #f0f004;
+    --mdc-checkbox-unselected-pressed-state-layer-color: #f0f01b;
+    --mdc-checkbox-unselected-focus-state-layer-color: #f0f004;
+    --mdc-checkbox-unselected-hover-state-layer-color: #f0f004;
+    --mdc-checkbox-unselected-focus-icon-color: #f0f004;
+    --mdc-checkbox-unselected-icon-color: #f0f005;
+    --mdc-checkbox-unselected-hover-icon-color: #f0f004;
+    --mdc-text-button-label-text-color: #f0f005;
+    --mdc-text-button-hover-label-text-color: #f0f007;
+    --mdc-list-list-item-hover-label-text-color: #f0f004;
+    --mdc-filled-button-label-text-color: #f0f003;
+    --mdc-circular-progress-active-indicator-color: #f0f01b;
+    --mdc-outlined-button-focus-outline-color: #f0f004;
+    --mdc-outlined-button-hover-label-text-color: #f0f005;
+    --mdc-list-list-item-focus-label-text-color: #f0f004;
+    --mdc-icon-button-disabled-icon-color: #f0f00a;
+    --mdc-outlined-text-field-input-text-color: #f0f004;
+    --mdc-outlined-text-field-focus-outline-color: #f0f01b;
+    --mdc-outlined-text-field-outline-color: #f0f008;
+    --mat-app-text-color: #f0f004;
+    --mat-text-button-state-layer-color: #f0f007;
+    --mat-sidenav-container-text-color: #f0f004;
+    --mat-expansion-header-text-color: #f0f004;
+    --mat-expansion-header-indicator-color: #f0f004;
+    --mat-expansion-container-text-color: #f0f004;
+    --mat-checkbox-label-text-color: #f0f004;
+    --mat-bottom-sheet-container-text-color: #f0f004;
+    --mat-bottom-sheet-container-background-color: #f0f001;
+    --mat-menu-item-hover-state-layer-color: #f0f00c;
+    --mat-menu-item-focus-state-layer-color: #f0f00c;
+    --mat-menu-item-label-text-color: #f0f004;
+    --mat-menu-container-color: #f0f001;
+    --mat-menu-item-icon-color: #f0f004;
+    --mat-filled-button-state-layer-color: #f0f007;
+    --mat-focus-indicator-border-color: #f0f01b;
+    --mat-fab-small-hover-state-layer-opacity: 1;
+    --mat-divider-color: #f0f007;
+    --gm-outlinedtextfield-outline-color: #f0f006;
+    --gm-outlinedtextfield-outline-color--stateful: #f0f01b;
+    --gm-outlinedtextfield-ink-color: #f0f004;
+    --gm3-sys-color-on-secondary-container: #f0f003;
+    --gm3-sys-color-secondary-container: #f0f004;
+    --gem-sys-color--surface: #f0f001;
+    --gem-sys-color--surface-container: #f0f002;
+    --gem-sys-color--surface--rgb: 240, 240, 1;
+    --gem-sys-color--on-surface: #f0f004;
+    --gem-sys-color--on-surface-variant: #f0f005;
+    --gem-sys-color--outline-variant: #f0f00b;
+    --gem-sys-color--surface-container-high: #f0f00c;
+    --gem-sys-color--surface-container-low: #fafa02;
+    --gem-sys-color--outline: #f0f006;
+    --gem-sys-color--on-primary-container: #f0f004;
+    --gem-sys-color--on-primary-fixed: #3b3b04;
+    --gem-sys-color--on-primary: #000000;
+    --gem-sys-color--primary: #f0f01b;
+    --gem-sys-color--primary-container: rgba(240, 240, 27, 0.6);
+    --gem-sys-color--on-surface--rgb: 240, 240, 6;
+    --gem-sys-color--surface-dim--rgb: 240, 240, 3;
+    --gem-sys-color--surface-container-highest: #f0f00c;
+    --gem-sys-color--primary-fixed: #f0f004;
+    --gem-sys-color--on-secondary: rgba(240, 240, 27, 0.3);
+    --gem-sys-color--surface-variant: #f0f00c;
+    --gem-sys-color--surface-bright: #f0f00c;
+    --og-theme-color: #f0f004;
+    /* Gemini Advanced shadows */
+  }
+  :root .dark-theme ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root .dark-theme input::placeholder,
+  :root .dark-theme textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root .dark-theme .action-icon {
+    --gem-sys-color--on-primary: #f0f01b;
+    --gem-sys-color--on-surface-variant: #f0f002;
+  }
+  :root .dark-theme .draft-preview-label-chip.selected {
+    color: #f0f003;
+  }
+  :root .dark-theme .buttons-container-link-button {
+    color: #f0f003;
+  }
+  :root .dark-theme .mdc-text-field--outlined:hover:not(
+      .mdc-text-field--disabled,
+      .mdc-text-field--focused
+    ) .mdc-notched-outline__leading,
+  :root .dark-theme .mdc-text-field--outlined:hover:not(
+      .mdc-text-field--disabled,
+      .mdc-text-field--focused
+    ) .mdc-notched-outline__trailing {
+    border-color: #f0f004 !important;
+  }
+  :root .dark-theme .gmat-mdc-dialog .mat-mdc-dialog-container .mdc-dialog__content {
+    color: #f0f006;
+  }
+  :root .dark-theme .gmat-mdc-dialog .mat-mdc-dialog-container .mdc-dialog__title {
+    color: #f0f004;
+  }
+  :root .dark-theme .gmat-mdc-button.mat-mdc-outlined-button.mat-unthemed {
+    --mdc-outlined-button-outline-color: #f0f009;
+    --mdc-outlined-button-label-text-color: #f0f006;
+  }
+  :root .dark-theme .gmat-mdc-button.mat-mdc-outlined-button {
+    --mat-outlined-button-state-layer-color: #f0f007;
+  }
+  :root .dark-theme .gmat-mdc-button.mat-mdc-outlined-button:not(
+      .mat-mdc-button-disabled,
+      [disabled],
+      :disabled
+    ).mdc-ripple-upgraded--background-focused,
+  :root .dark-theme .gmat-mdc-button.mat-mdc-outlined-button:not(
+      .mat-mdc-button-disabled,
+      [disabled],
+      :disabled,
+      .mdc-ripple-upgraded
+    ):focus {
+    color: #f0f004;
+  }
+  :root .dark-theme .gmat-mdc-chip {
+    --mdc-chip-label-text-color: #f0f006;
+  }
+  :root .dark-theme .gmat-mdc-chip.gmat-hairline-chip {
+    --mdc-chip-outline-color: #f0f006;
+  }
+  :root .dark-theme .gmat-mdc-chip.cdk-focused {
+    --mdc-chip-label-text-color: #f0f004;
+  }
+  :root .dark-theme .mat-mdc-standard-chip {
+    --mdc-chip-hover-state-layer-color: #f0f008;
+    --mdc-chip-focus-state-layer-color: #f0f007;
+  }
+  :root .dark-theme .mdc-tooltip__surface {
+    --mdc-plain-tooltip-container-color: #f0f009;
+    --mdc-plain-tooltip-supporting-text-color: #f0f004;
+  }
+  :root .dark-theme .mdc-form-field {
+    --mdc-form-field-label-text-color: #f0f004;
+  }
+  :root .dark-theme .mdc-icon-button {
+    --mdc-icon-button-icon-color: #f0f004 !important;
+  }
+  :root .dark-theme .mdc-dialog__surface {
+    background-color: #f0f001 !important;
+  }
+  :root .dark-theme .expandable-button:disabled {
+    color: rgba(var(--gem-sys-color--on-surface--rgb), 0.38);
+  }
+  :root .dark-theme .mat-mdc-progress-bar {
+    --mdc-linear-progress-active-indicator-color: #f0f01b;
+    --mdc-linear-progress-track-color: rgba(240, 240, 27, 0.5);
+  }
+  :root .dark-theme .mdc-list-item,
+  :root .dark-theme .gmat-mdc-list {
+    --mdc-list-list-item-hover-state-layer-color: #f0f008;
+    --mdc-list-list-item-label-text-color: #f0f004;
+    --mdc-list-list-item-leading-icon-color: #f0f004;
+    --mdc-list-list-item-focus-state-layer-color: #f0f007;
+  }
+  :root .dark-theme .gmat-mdc-button.mat-mdc-button.mat-primary {
+    --mdc-text-button-label-text-color: #f0f01b;
+    --mdc-text-button-hover-label-text-color: #f2f233;
+    --mdc-text-button-focus-label-text-color: #f3f341;
+  }
+  :root .dark-theme .gmat-mdc-button.mat-mdc-button.mat-unthemed {
+    --mat-text-button-state-layer-color: #f0f007;
+  }
+  :root .dark-theme .gmat-mdc-button.mat-mdc-icon-button {
+    --mat-icon-button-state-layer-color: #f0f007;
+  }
+  :root .dark-theme .gmat-mdc-button.mat-mdc-fab:not(
+      .mat-mdc-button-disabled
+    ).mat-primary.gmat-mdc-fab-fill {
+    --mdc-fab-container-color: #f0f01b;
+    --mat-fab-foreground-color: #f0f003;
+  }
+  :root .dark-theme .gmat-mdc-button.mat-mdc-mini-fab:not(
+      .mat-mdc-button-disabled
+    ).mat-primary.gmat-mdc-fab-outline {
+    --mat-fab-small-state-layer-color: #f0f00c;
+  }
+  :root .dark-theme .mat-mdc-fab:not(.mdc-riple-upgraded):focus::before,
+  :root .dark-theme .mat-mdc-mini-fab:not(.mdc-riple-upgraded):focus::before {
+    background: #f0f00a;
+  }
+  :root .dark-theme .mat-mdc-menu-panel {
+    background-color: #f0f001 !important;
+  }
+  :root .dark-theme .mat-mdc-fab.mat-accent {
+    --mat-fab-foreground-color: #f0f004;
+  }
+  :root .dark-theme .xap-count-badge-dot {
+    background-color: #f0f011;
+  }
+  :root .dark-theme [data-mat-icon-name="search"] svg > path:nth-child(1) {
+    fill: #f0f019;
+  }
+  :root .dark-theme [data-mat-icon-name="search"] svg > path:nth-child(2) {
+    fill: #f0f015;
+  }
+  :root .dark-theme [data-mat-icon-name="search"] svg > path:nth-child(3) {
+    fill: #f0f014;
+  }
+  :root .dark-theme [data-mat-icon-name="search"] svg > path:nth-child(4) {
+    fill: #f0f011;
+  }
+  :root .dark-theme .google-logo img {
+    content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22148%22%20height%3D%2248%22%20viewBox%3D%220%200%20148%2048%22%3E%3Cpath%20d%3D%22M113%202.43h4.93v33.53H113zM49.5%2014.04c-6.31%200-11.45%204.82-11.45%2011.46%200%206.6%205.14%2011.46%2011.45%2011.46S60.95%2032.1%2060.95%2025.5c0-6.64-5.14-11.46-11.45-11.46m0%2018.4c-3.46%200-6.44-2.86-6.44-6.94%200-4.12%202.98-6.94%206.44-6.94s6.44%202.82%206.44%206.94c0%204.08-2.98%206.94-6.44%206.94m25-18.35c-6.31%200-11.45%204.82-11.45%2011.46%200%206.6%205.14%2011.46%2011.45%2011.46s11.45-4.86%2011.45-11.46c0-6.65-5.14-11.46-11.45-11.46m0%2018.4c-3.46%200-6.44-2.86-6.44-6.94%200-4.12%202.98-6.94%206.44-6.94s6.44%202.82%206.44%206.94c0%204.07-2.98%206.94-6.44%206.94m30.73-15.84h-.17c-1.13-1.34-3.3-2.56-6.03-2.56-5.73%200-10.98%205.03-10.98%2011.5C88.05%2032.01%2093.3%2037%2099.03%2037c2.73%200%204.9-1.22%206.03-2.6h.17v1.65c0%204.38-2.34%206.73-6.12%206.73-3.08%200-4.99-2.21-5.77-4.08l-4.38%201.82c1.26%203.04%204.6%206.77%2010.15%206.77%205.9%200%2010.89-3.47%2010.89-11.93V15h-4.77zm-5.78%2015.84c-3.47%200-6.38-2.91-6.38-6.9%200-4.04%202.91-6.99%206.38-6.99%203.43%200%206.12%202.95%206.12%206.99%200%203.99-2.69%206.9-6.12%206.9m-71.22-4.08c1.39-1.39%202.32-3.42%202.67-6.41H19.22v-4.76H35.6c.17.87.3%202.06.3%203.2%200%203.66-1%208.19-4.22%2011.41-3.14%203.27-7.14%205.01-12.46%205.01C9.38%2036.86%201.1%2028.84%201.1%2019S9.38%201.14%2019.22%201.14c5.44%200%209.32%202.13%2012.24%204.92L28.02%209.5c-2.09-1.96-4.92-3.48-8.8-3.48-7.19%200-12.81%205.79-12.81%2012.98s5.62%2012.98%2012.81%2012.98c4.66%200%207.32-1.87%209.01-3.57m103.54%204.08c-2.56%200-4.38-1.17-5.55-3.47l15.32-6.34-.52-1.3c-.95-2.56-3.86-7.29-9.81-7.29-5.9%200-10.81%204.64-10.81%2011.46%200%206.42%204.86%2011.46%2011.37%2011.46%205.25%200%208.29-3.21%209.55-5.08l-3.91-2.6c-1.3%201.9-3.08%203.16-5.64%203.16m-.39-13.98c2%200%203.69%201%204.25%202.43l-10.24%204.25c-.13-4.42%203.43-6.68%205.99-6.68%22%20fill%3D%22%23f0f005%22/%3E%3C/svg%3E");
+  }
+  :root .dark-theme [src="https://www.gstatic.com/lamda/images/replit_dark_24px_7d0347bf84c2570074db9.svg"],
+  :root .dark-theme [src="https://www.gstatic.com/lamda/images/replit_light_24px_3a2ee6003110f3c8460c9.svg"] {
+    content: url("data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M12.334%208.669H5.252A1.25%201.25%200%200%201%204%207.417V3.252C4%202.559%204.56%202%205.252%202h5.83c.693%200%201.252.56%201.252%201.252z%22%20fill%3D%22%23f0f004%22/%3E%3Cpath%20d%3D%22M19.416%2015.333h-7.082V8.668h7.082c.689%200%201.248.56%201.248%201.248v4.165a1.25%201.25%200%200%201-1.248%201.252M11.082%2022h-5.83a1.25%201.25%200%200%201-1.248-1.247v-4.165c0-.689.56-1.248%201.248-1.248h7.082v5.417c0%20.68-.56%201.243-1.252%201.243%22%20fill%3D%22%23f0f004%22/%3E%3C/svg%3E");
+  }
+  :root .dark-theme chat-window > div > input-container {
+    background: unset;
+  }
+  :root .dark-theme input-container::before {
+    background: unset;
+  }
+  :root .light-theme {
+    color-scheme: light;
+    --ctp-rosewater: #f0f00d;
+    --ctp-flamingo: #f0f00e;
+    --ctp-pink: #f0f00f;
+    --ctp-mauve: #f0f010;
+    --ctp-red: #f0f011;
+    --ctp-maroon: #f0f012;
+    --ctp-peach: #f0f013;
+    --ctp-yellow: #f0f014;
+    --ctp-green: #f0f015;
+    --ctp-teal: #f0f016;
+    --ctp-sky: #f0f017;
+    --ctp-sapphire: #f0f018;
+    --ctp-blue: #f0f019;
+    --ctp-lavender: #f0f01a;
+    --ctp-text: #f0f004;
+    --ctp-subtext1: #f0f005;
+    --ctp-subtext0: #f0f006;
+    --ctp-overlay2: #f0f007;
+    --ctp-overlay1: #f0f008;
+    --ctp-overlay0: #f0f009;
+    --ctp-surface2: #f0f00a;
+    --ctp-surface1: #f0f00b;
+    --ctp-surface0: #f0f00c;
+    --ctp-base: #f0f001;
+    --ctp-mantle: #f0f002;
+    --ctp-crust: #f0f003;
+    --bard-color-neutral-90: #f0f002;
+    --bard-color-on-selected-conversation-metadata-v2: #f0f004;
+    --bard-color-surface-container: #f0f002;
+    --bard-color-on-surface-opacity-38: #f0f00a !important;
+    --bard-color-surface-container-highest: #fefe0d;
+    --bard-color-response-container-flipped-background: #f0f00c;
+    --bard-color-inverse-on-surface: #ebeb02;
+    --bard-color-sidenav-mobile-controls: #f0f004;
+    --bard-color-main-container-background: #f0f001;
+    --bard-color-main-container-background-rgb: 240, 240, 1;
+    --bard-color-window-container-background: #f0f001;
+    --bard-color-response-container-background: #f0f001;
+    --bard-color-response-container-background-rgb: 240, 240, 1;
+    --bard-color-onhover-conversation-metadata-button-v2: #f0f00b;
+    --bard-color-selected-conversation-metadata-button-v2: rgba(240, 240, 27, 0.4);
+    --bard-color-new-conversation-button: #f0f00c;
+    --bard-color-on-new-conversation-button: #f0f004;
+    --bard-color-onhover-conversation-metadata-v2: #f0f00c;
+    --bard-color-sidenav-upgrade-button: #f0f00c;
+    --bard-color-form-field-placeholder: #f0f006;
+    --bard-color-discovery-carousel-background: #f0f002;
+    --bard-color-discovery-carousel-icon: #f0f01b;
+    --bard-color-example-prompt-background: #f0f003;
+    --bard-color-bard-mode-logo-prefix: #f0f005;
+    --bard-color-neutral-96: #f0f003;
+    --bard-color-adv-marketing-basic-background: #f0f00c;
+    --bard-color-adv-marketing-product-background: #f0f00c;
+    --bard-color-adv-marketing-disclaimer: #f0f006;
+    --bard-color-input-area-buttons-selected-background: rgba(240, 240, 27, 0.7);
+    --bard-color-zero-state-card-selected: rgba(240, 240, 27, 0.3);
+    --bard-color-zero-state-prompt-chip-background: rgba(240, 240, 27, 0.5);
+    --bard-color-zero-state-prompt-chip-text: #f2f233;
+    --bard-color-regular-banner: #f0f01b;
+    --bard-color-regular-banner-text: #f0f003;
+    --bard-color-skeleton-loader-background-1-rgb: 240, 240, 2;
+    --bard-color-skeleton-loader-background-2-rgb: 240, 240, 27;
+    --bard-color-skeleton-loader-background-3-rgb: 240, 240, 27;
+    --bard-color-brand-text-gradient-stop-1: #f0f019;
+    --bard-color-brand-text-gradient-stop-2: #f0f018;
+    --bard-color-brand-text-gradient-stop-3: #f0f013;
+    --bard-color-on-surface-opacity-12: rgba(240, 240, 22, 0.1);
+    --bard-color-footer-background: #f0f002;
+    --bard-color-draft-chip-background: #f0f00c;
+    --bard-color-processing-animation-color-1: #f0f00b;
+    --bard-color-processing-animation-color-2: #f0f003;
+    --bard-color-tunable-selection-button: #f0f002;
+    --bard-color-tunable-selection-button-icon: #f0f004;
+    --bard-color-feedback-form-container-background: #f0f002;
+    --bard-color-fact-check-tooltip-entailed-highlight: rgba(240, 240, 21, 0.25);
+    --bard-color-fact-check-tooltip-entailed-selected: rgba(240, 240, 21, 0.35);
+    --bard-color-fact-check-tooltip-contradictory-highlight: rgba(240, 240, 17, 0.25);
+    --bard-color-fact-check-tooltip-contradictory-selected: rgba(240, 240, 17, 0.4);
+    --bard-color-factuality-form-background: #f0f002;
+    --bard-color-fact-check-button-complete: #f0f00c;
+    --bard-color-fact-check-button-loading: #f0f00b;
+    --bard-color-tunable-selection-menu-text: #f0f004;
+    --bard-color-tunable-selection-menu-background: #f0f002;
+    --bard-color-tunable-selection-textarea-background: #f0f001;
+    --bard-color-tunable-selection-shimmer-non-advanced: #f0f01b;
+    --bard-color-onegooglebar-product-controls: #f0f004;
+    --bard-color-adv-marketing-check: #f0f004;
+    --mdc-switch-selected-hover-handle-color: #f3f34b;
+    --mdc-switch-selected-focus-handle-color: #f3f34b;
+    --mdc-switch-selected-pressed-handle-color: #f5f563;
+    --mdc-switch-selected-track-color: rgba(240, 240, 27, 0.5);
+    --mdc-switch-selected-hover-track-color: rgba(240, 240, 27, 0.5);
+    --mdc-switch-selected-focus-track-color: rgba(240, 240, 27, 0.5);
+    --mdc-switch-selected-pressed-track-color: rgba(240, 240, 27, 0.5);
+    --mdc-switch-selected-handle-color: #f0f01b;
+    --mdc-switch-unselected-handle-color: #f0f006;
+    --mdc-switch-unselected-hover-handle-color: #f0f005;
+    --mdc-switch-unselected-focus-handle-color: #f0f004;
+    --mdc-switch-unselected-pressed-handle-color: #f0f004;
+    --mdc-switch-unselected-track-color: #f0f00a;
+    --mdc-switch-unselected-hover-track-color: #f0f00a;
+    --mdc-switch-unselected-pressed-track-color: #f0f00a;
+    --mdc-switch-unselected-focus-track-color: #f0f00a;
+    --mdc-checkbox-selected-icon-color: #f0f01b;
+    --mdc-checkbox-selected-checkmark-color: var(--gem-sys-color--on-primary);
+    --mdc-checkbox-selected-hover-icon-color: #f0f01b;
+    --mdc-checkbox-selected-pressed-icon-color: #f0f01b;
+    --mdc-checkbox-selected-focus-icon-color: #f0f01b;
+    --mdc-checkbox-selected-focus-state-layer-color: #f0f01b;
+    --mdc-checkbox-selected-hover-state-layer-color: #f0f01b;
+    --mdc-checkbox-selected-pressed-state-layer-color: #f0f004;
+    --mdc-checkbox-unselected-pressed-state-layer-color: #f0f01b;
+    --mdc-checkbox-unselected-focus-state-layer-color: #f0f004;
+    --mdc-checkbox-unselected-hover-state-layer-color: #f0f004;
+    --mdc-checkbox-unselected-focus-icon-color: #f0f004;
+    --mdc-checkbox-unselected-icon-color: #f0f005;
+    --mdc-checkbox-unselected-hover-icon-color: #f0f004;
+    --mdc-text-button-label-text-color: #f0f005;
+    --mdc-text-button-hover-label-text-color: #f0f007;
+    --mdc-list-list-item-hover-label-text-color: #f0f004;
+    --mdc-filled-button-label-text-color: #f0f003;
+    --mdc-circular-progress-active-indicator-color: #f0f01b;
+    --mdc-outlined-button-focus-outline-color: #f0f004;
+    --mdc-outlined-button-hover-label-text-color: #f0f005;
+    --mdc-list-list-item-focus-label-text-color: #f0f004;
+    --mdc-icon-button-disabled-icon-color: #f0f00a;
+    --mdc-outlined-text-field-input-text-color: #f0f004;
+    --mdc-outlined-text-field-focus-outline-color: #f0f01b;
+    --mdc-outlined-text-field-outline-color: #f0f008;
+    --mat-app-text-color: #f0f004;
+    --mat-text-button-state-layer-color: #f0f007;
+    --mat-sidenav-container-text-color: #f0f004;
+    --mat-expansion-header-text-color: #f0f004;
+    --mat-expansion-header-indicator-color: #f0f004;
+    --mat-expansion-container-text-color: #f0f004;
+    --mat-checkbox-label-text-color: #f0f004;
+    --mat-bottom-sheet-container-text-color: #f0f004;
+    --mat-bottom-sheet-container-background-color: #f0f001;
+    --mat-menu-item-hover-state-layer-color: #f0f00c;
+    --mat-menu-item-focus-state-layer-color: #f0f00c;
+    --mat-menu-item-label-text-color: #f0f004;
+    --mat-menu-container-color: #f0f001;
+    --mat-menu-item-icon-color: #f0f004;
+    --mat-filled-button-state-layer-color: #f0f007;
+    --mat-focus-indicator-border-color: #f0f01b;
+    --mat-fab-small-hover-state-layer-opacity: 1;
+    --mat-divider-color: #f0f007;
+    --gm-outlinedtextfield-outline-color: #f0f006;
+    --gm-outlinedtextfield-outline-color--stateful: #f0f01b;
+    --gm-outlinedtextfield-ink-color: #f0f004;
+    --gm3-sys-color-on-secondary-container: #f0f003;
+    --gm3-sys-color-secondary-container: #f0f004;
+    --gem-sys-color--surface: #f0f001;
+    --gem-sys-color--surface-container: #f0f002;
+    --gem-sys-color--surface--rgb: 240, 240, 1;
+    --gem-sys-color--on-surface: #f0f004;
+    --gem-sys-color--on-surface-variant: #f0f005;
+    --gem-sys-color--outline-variant: #f0f00b;
+    --gem-sys-color--surface-container-high: #f0f00c;
+    --gem-sys-color--surface-container-low: #fafa02;
+    --gem-sys-color--outline: #f0f006;
+    --gem-sys-color--on-primary-container: #f0f004;
+    --gem-sys-color--on-primary-fixed: #3b3b04;
+    --gem-sys-color--on-primary: #000000;
+    --gem-sys-color--primary: #f0f01b;
+    --gem-sys-color--primary-container: rgba(240, 240, 27, 0.6);
+    --gem-sys-color--on-surface--rgb: 240, 240, 6;
+    --gem-sys-color--surface-dim--rgb: 240, 240, 3;
+    --gem-sys-color--surface-container-highest: #f0f00c;
+    --gem-sys-color--primary-fixed: #f0f004;
+    --gem-sys-color--on-secondary: rgba(240, 240, 27, 0.3);
+    --gem-sys-color--surface-variant: #f0f00c;
+    --gem-sys-color--surface-bright: #f0f00c;
+    --og-theme-color: #f0f004;
+    --gem-sys-color--on-primary-fixed: #f0f01b;
+    --gem-sys-color--on-primary: #f0f002;
+    --gem-sys-color--primary-fixed: #f0f003;
+    /* Gemini Advanced shadows */
+  }
+  :root .light-theme ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root .light-theme input::placeholder,
+  :root .light-theme textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root .light-theme .action-icon {
+    --gem-sys-color--on-primary: #f0f01b;
+    --gem-sys-color--on-surface-variant: #f0f002;
+  }
+  :root .light-theme .draft-preview-label-chip.selected {
+    color: #f0f003;
+  }
+  :root .light-theme .buttons-container-link-button {
+    color: #f0f003;
+  }
+  :root .light-theme .mdc-text-field--outlined:hover:not(
+      .mdc-text-field--disabled,
+      .mdc-text-field--focused
+    ) .mdc-notched-outline__leading,
+  :root .light-theme .mdc-text-field--outlined:hover:not(
+      .mdc-text-field--disabled,
+      .mdc-text-field--focused
+    ) .mdc-notched-outline__trailing {
+    border-color: #f0f004 !important;
+  }
+  :root .light-theme .gmat-mdc-dialog .mat-mdc-dialog-container .mdc-dialog__content {
+    color: #f0f006;
+  }
+  :root .light-theme .gmat-mdc-dialog .mat-mdc-dialog-container .mdc-dialog__title {
+    color: #f0f004;
+  }
+  :root .light-theme .gmat-mdc-button.mat-mdc-outlined-button.mat-unthemed {
+    --mdc-outlined-button-outline-color: #f0f009;
+    --mdc-outlined-button-label-text-color: #f0f006;
+  }
+  :root .light-theme .gmat-mdc-button.mat-mdc-outlined-button {
+    --mat-outlined-button-state-layer-color: #f0f007;
+  }
+  :root .light-theme .gmat-mdc-button.mat-mdc-outlined-button:not(
+      .mat-mdc-button-disabled,
+      [disabled],
+      :disabled
+    ).mdc-ripple-upgraded--background-focused,
+  :root .light-theme .gmat-mdc-button.mat-mdc-outlined-button:not(
+      .mat-mdc-button-disabled,
+      [disabled],
+      :disabled,
+      .mdc-ripple-upgraded
+    ):focus {
+    color: #f0f004;
+  }
+  :root .light-theme .gmat-mdc-chip {
+    --mdc-chip-label-text-color: #f0f006;
+  }
+  :root .light-theme .gmat-mdc-chip.gmat-hairline-chip {
+    --mdc-chip-outline-color: #f0f006;
+  }
+  :root .light-theme .gmat-mdc-chip.cdk-focused {
+    --mdc-chip-label-text-color: #f0f004;
+  }
+  :root .light-theme .mat-mdc-standard-chip {
+    --mdc-chip-hover-state-layer-color: #f0f008;
+    --mdc-chip-focus-state-layer-color: #f0f007;
+  }
+  :root .light-theme .mdc-tooltip__surface {
+    --mdc-plain-tooltip-container-color: #f0f009;
+    --mdc-plain-tooltip-supporting-text-color: #f0f004;
+  }
+  :root .light-theme .mdc-form-field {
+    --mdc-form-field-label-text-color: #f0f004;
+  }
+  :root .light-theme .mdc-icon-button {
+    --mdc-icon-button-icon-color: #f0f004 !important;
+  }
+  :root .light-theme .mdc-dialog__surface {
+    background-color: #f0f001 !important;
+  }
+  :root .light-theme .expandable-button:disabled {
+    color: rgba(var(--gem-sys-color--on-surface--rgb), 0.38);
+  }
+  :root .light-theme .mat-mdc-progress-bar {
+    --mdc-linear-progress-active-indicator-color: #f0f01b;
+    --mdc-linear-progress-track-color: rgba(240, 240, 27, 0.5);
+  }
+  :root .light-theme .mdc-list-item,
+  :root .light-theme .gmat-mdc-list {
+    --mdc-list-list-item-hover-state-layer-color: #f0f008;
+    --mdc-list-list-item-label-text-color: #f0f004;
+    --mdc-list-list-item-leading-icon-color: #f0f004;
+    --mdc-list-list-item-focus-state-layer-color: #f0f007;
+  }
+  :root .light-theme .gmat-mdc-button.mat-mdc-button.mat-primary {
+    --mdc-text-button-label-text-color: #f0f01b;
+    --mdc-text-button-hover-label-text-color: #f2f233;
+    --mdc-text-button-focus-label-text-color: #f3f341;
+  }
+  :root .light-theme .gmat-mdc-button.mat-mdc-button.mat-unthemed {
+    --mat-text-button-state-layer-color: #f0f007;
+  }
+  :root .light-theme .gmat-mdc-button.mat-mdc-icon-button {
+    --mat-icon-button-state-layer-color: #f0f007;
+  }
+  :root .light-theme .gmat-mdc-button.mat-mdc-fab:not(
+      .mat-mdc-button-disabled
+    ).mat-primary.gmat-mdc-fab-fill {
+    --mdc-fab-container-color: #f0f01b;
+    --mat-fab-foreground-color: #f0f003;
+  }
+  :root .light-theme .gmat-mdc-button.mat-mdc-mini-fab:not(
+      .mat-mdc-button-disabled
+    ).mat-primary.gmat-mdc-fab-outline {
+    --mat-fab-small-state-layer-color: #f0f00c;
+  }
+  :root .light-theme .mat-mdc-fab:not(.mdc-riple-upgraded):focus::before,
+  :root .light-theme .mat-mdc-mini-fab:not(.mdc-riple-upgraded):focus::before {
+    background: #f0f00a;
+  }
+  :root .light-theme .mat-mdc-menu-panel {
+    background-color: #f0f001 !important;
+  }
+  :root .light-theme .mat-mdc-fab.mat-accent {
+    --mat-fab-foreground-color: #f0f004;
+  }
+  :root .light-theme .xap-count-badge-dot {
+    background-color: #f0f011;
+  }
+  :root .light-theme [data-mat-icon-name="search"] svg > path:nth-child(1) {
+    fill: #f0f019;
+  }
+  :root .light-theme [data-mat-icon-name="search"] svg > path:nth-child(2) {
+    fill: #f0f015;
+  }
+  :root .light-theme [data-mat-icon-name="search"] svg > path:nth-child(3) {
+    fill: #f0f014;
+  }
+  :root .light-theme [data-mat-icon-name="search"] svg > path:nth-child(4) {
+    fill: #f0f011;
+  }
+  :root .light-theme .google-logo img {
+    content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22148%22%20height%3D%2248%22%20viewBox%3D%220%200%20148%2048%22%3E%3Cpath%20d%3D%22M113%202.43h4.93v33.53H113zM49.5%2014.04c-6.31%200-11.45%204.82-11.45%2011.46%200%206.6%205.14%2011.46%2011.45%2011.46S60.95%2032.1%2060.95%2025.5c0-6.64-5.14-11.46-11.45-11.46m0%2018.4c-3.46%200-6.44-2.86-6.44-6.94%200-4.12%202.98-6.94%206.44-6.94s6.44%202.82%206.44%206.94c0%204.08-2.98%206.94-6.44%206.94m25-18.35c-6.31%200-11.45%204.82-11.45%2011.46%200%206.6%205.14%2011.46%2011.45%2011.46s11.45-4.86%2011.45-11.46c0-6.65-5.14-11.46-11.45-11.46m0%2018.4c-3.46%200-6.44-2.86-6.44-6.94%200-4.12%202.98-6.94%206.44-6.94s6.44%202.82%206.44%206.94c0%204.07-2.98%206.94-6.44%206.94m30.73-15.84h-.17c-1.13-1.34-3.3-2.56-6.03-2.56-5.73%200-10.98%205.03-10.98%2011.5C88.05%2032.01%2093.3%2037%2099.03%2037c2.73%200%204.9-1.22%206.03-2.6h.17v1.65c0%204.38-2.34%206.73-6.12%206.73-3.08%200-4.99-2.21-5.77-4.08l-4.38%201.82c1.26%203.04%204.6%206.77%2010.15%206.77%205.9%200%2010.89-3.47%2010.89-11.93V15h-4.77zm-5.78%2015.84c-3.47%200-6.38-2.91-6.38-6.9%200-4.04%202.91-6.99%206.38-6.99%203.43%200%206.12%202.95%206.12%206.99%200%203.99-2.69%206.9-6.12%206.9m-71.22-4.08c1.39-1.39%202.32-3.42%202.67-6.41H19.22v-4.76H35.6c.17.87.3%202.06.3%203.2%200%203.66-1%208.19-4.22%2011.41-3.14%203.27-7.14%205.01-12.46%205.01C9.38%2036.86%201.1%2028.84%201.1%2019S9.38%201.14%2019.22%201.14c5.44%200%209.32%202.13%2012.24%204.92L28.02%209.5c-2.09-1.96-4.92-3.48-8.8-3.48-7.19%200-12.81%205.79-12.81%2012.98s5.62%2012.98%2012.81%2012.98c4.66%200%207.32-1.87%209.01-3.57m103.54%204.08c-2.56%200-4.38-1.17-5.55-3.47l15.32-6.34-.52-1.3c-.95-2.56-3.86-7.29-9.81-7.29-5.9%200-10.81%204.64-10.81%2011.46%200%206.42%204.86%2011.46%2011.37%2011.46%205.25%200%208.29-3.21%209.55-5.08l-3.91-2.6c-1.3%201.9-3.08%203.16-5.64%203.16m-.39-13.98c2%200%203.69%201%204.25%202.43l-10.24%204.25c-.13-4.42%203.43-6.68%205.99-6.68%22%20fill%3D%22%23f0f005%22/%3E%3C/svg%3E");
+  }
+  :root .light-theme [src="https://www.gstatic.com/lamda/images/replit_dark_24px_7d0347bf84c2570074db9.svg"],
+  :root .light-theme [src="https://www.gstatic.com/lamda/images/replit_light_24px_3a2ee6003110f3c8460c9.svg"] {
+    content: url("data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M12.334%208.669H5.252A1.25%201.25%200%200%201%204%207.417V3.252C4%202.559%204.56%202%205.252%202h5.83c.693%200%201.252.56%201.252%201.252z%22%20fill%3D%22%23f0f004%22/%3E%3Cpath%20d%3D%22M19.416%2015.333h-7.082V8.668h7.082c.689%200%201.248.56%201.248%201.248v4.165a1.25%201.25%200%200%201-1.248%201.252M11.082%2022h-5.83a1.25%201.25%200%200%201-1.248-1.247v-4.165c0-.689.56-1.248%201.248-1.248h7.082v5.417c0%20.68-.56%201.243-1.252%201.243%22%20fill%3D%22%23f0f004%22/%3E%3C/svg%3E");
+  }
+  :root .light-theme chat-window > div > input-container {
+    background: unset;
+  }
+  :root .light-theme input-container::before {
+    background: unset;
+  }
+}

@@ -1,0 +1,165 @@
+/* ==UserStyle==
+@name           pwnbox-freedesktop
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for freedesktop.org (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("www.freedesktop.org"), domain("specifications.freedesktop.org") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root body {
+      background-color: #f0f001;
+      color: #f0f004;
+    }
+    :root #content h1,
+    :root #content h2,
+    :root #content h3,
+    :root #content h4,
+    :root #content h5,
+    :root #content h6 {
+      color: #f0f01b;
+    }
+    :root .pageheader {
+      background-color: #f0f002;
+      border-color: #f0f003;
+      color: #f0f005;
+    }
+    :root .pageheader .actions ul li a,
+    :root input[type="submit"] {
+      background-color: transparent;
+      color: #f0f01b;
+      border-color: #f0f01b;
+    }
+    :root input#searchbox {
+      color: #f0f005;
+      background-color: #f0f009;
+      border-color: #f0f008;
+      box-shadow: none;
+    }
+    :root input#searchbox:focus {
+      border-color: #f0f01b;
+      outline-color: none;
+      outline-style: none;
+    }
+    :root .headerpath .title {
+      color: #f0f005;
+    }
+    :root a:link {
+      color: #f0f019;
+    }
+    :root a:visited {
+      color: #f0f01a;
+    }
+    :root code {
+      background-color: #f0f003;
+      color: #f0f004;
+    }
+    :root pre {
+      background-color: #f0f002;
+      border-color: #f0f00c;
+    }
+    :root pre code {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root hr {
+      border-style: solid;
+      border-color: #f0f00b;
+    }
+    :root .topnav,
+    :root tr:nth-child(2n+1) {
+      border-color: #f0f00c;
+      background-color: #f0f002;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root body {
+      background-color: #f0f001;
+      color: #f0f004;
+    }
+    :root #content h1,
+    :root #content h2,
+    :root #content h3,
+    :root #content h4,
+    :root #content h5,
+    :root #content h6 {
+      color: #f0f01b;
+    }
+    :root .pageheader {
+      background-color: #f0f002;
+      border-color: #f0f003;
+      color: #f0f005;
+    }
+    :root .pageheader .actions ul li a,
+    :root input[type="submit"] {
+      background-color: transparent;
+      color: #f0f01b;
+      border-color: #f0f01b;
+    }
+    :root input#searchbox {
+      color: #f0f005;
+      background-color: #f0f009;
+      border-color: #f0f008;
+      box-shadow: none;
+    }
+    :root input#searchbox:focus {
+      border-color: #f0f01b;
+      outline-color: none;
+      outline-style: none;
+    }
+    :root .headerpath .title {
+      color: #f0f005;
+    }
+    :root a:link {
+      color: #f0f019;
+    }
+    :root a:visited {
+      color: #f0f01a;
+    }
+    :root code {
+      background-color: #f0f003;
+      color: #f0f004;
+    }
+    :root pre {
+      background-color: #f0f002;
+      border-color: #f0f00c;
+    }
+    :root pre code {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root hr {
+      border-style: solid;
+      border-color: #f0f00b;
+    }
+    :root .topnav,
+    :root tr:nth-child(2n+1) {
+      border-color: #f0f00c;
+      background-color: #f0f002;
+    }
+  }
+}

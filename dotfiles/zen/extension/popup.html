@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <style>
+            body {
+                font-family: monospace;
+                background: #111;
+                color: #ccc;
+                padding: 0.8em;
+                width: 240px;
+            }
+            h3 {
+                color: #fff;
+                margin: 0 0 0.5em;
+            }
+            label {
+                display: block;
+                margin: 0.4em 0;
+                cursor: pointer;
+            }
+            button {
+                width: 100%;
+                background: #222;
+                color: #ccc;
+                border: 1px solid #444;
+                padding: 0.4em;
+                cursor: pointer;
+                font-family: inherit;
+                margin-top: 0.6em;
+            }
+            button:hover {
+                background: #333;
+            }
+            #status {
+                color: #888;
+                font-size: 0.85em;
+                margin-top: 0.5em;
+                min-height: 1em;
+            }
+            input[type="checkbox"] {
+                accent-color: #888;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>pwnbox styles</h3>
+        <label><input type="checkbox" id="enabled" /> enable all themes</label>
+        <label><input type="checkbox" id="flat" /> flat borders</label>
+        <button id="options">full options</button>
+        <div id="status"></div>
+        <script src="popup.js"></script>
+    </body>
+</html>

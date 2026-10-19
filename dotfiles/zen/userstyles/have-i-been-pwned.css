@@ -1,0 +1,597 @@
+/* ==UserStyle==
+@name           pwnbox-have-i-been-pwned
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Have I Been Pwned (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("haveibeenpwned.com") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root body {
+      background-color: #f0f001;
+      color: #f0f004;
+    }
+    :root hr {
+      border-color: #f0f00c;
+    }
+    :root a,
+    :root a:hover,
+    :root a:focus {
+      color: #f0f004;
+      border-bottom-color: #f0f00a;
+    }
+    :root a:hover {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root img.pwnLogo.large.modalLogo {
+      filter: brightness(0) saturate(100%) invert(43%) sepia(43%) saturate(515%) hue-rotate(196deg) brightness(49%) contrast(68%);
+    }
+    :root .bodyGradient {
+      color: #f0f004;
+    }
+    :root .modal-header {
+      background: #f0f003;
+    }
+    :root .modal-header .close {
+      color: #f0f004;
+    }
+    :root .fa-loader,
+    :root .loaderText {
+      color: #f0f004;
+    }
+    :root #postNotificationCallsToAction .btn {
+      background-color: #f0f003;
+      color: #f0f004;
+    }
+    :root #postNotificationCallsToAction a.socialLink,
+    :root #postNotificationCallsToAction a.socialLink:link,
+    :root #postNotificationCallsToAction a.socialLink:visited {
+      color: #f0f004;
+    }
+    :root .modal-content {
+      background-color: #f0f001;
+      border-color: #f0f00c;
+    }
+    :root .main {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root .main-logo .logo {
+      border-color: #f0f01b;
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root .pwnedCompanyList a,
+    :root .pwnedCompanyList a:hover {
+      color: #f0f004;
+      border-bottom-color: #f0f00a;
+    }
+    :root .pwnedCompanyList td {
+      color: #f0f006;
+    }
+    :root footer a,
+    :root footer p {
+      color: #f0f006;
+    }
+    :root .unverified,
+    :root .unverified a {
+      color: #020200 !important;
+      border-bottom-color: #020200 !important;
+    }
+    :root .navbar-inverse {
+      border-color: #f0f00c;
+      background-color: #f0f003;
+    }
+    :root .navbar-inverse .navbar-toggle {
+      border-color: #f0f00c;
+    }
+    :root .navbar-inverse .navbar-toggle:hover,
+    :root .navbar-inverse .navbar-toggle:focus {
+      background-color: #f0f00c;
+    }
+    :root .navbar-inverse .navbar-toggle .icon-bar {
+      background-color: #f0f004;
+    }
+    :root .navbar-inverse .navbar-brand {
+      color: #f0f004;
+      border-color: #f0f004 !important;
+    }
+    :root .navbar-inverse li.active > a,
+    :root .navbar-inverse li.active > a:hover,
+    :root .navbar-inverse li.active > a:focus {
+      color: #f0f004;
+      background-color: #f0f003;
+    }
+    :root .navbar-inverse li > a {
+      color: #f0f006;
+    }
+    :root .navbar-inverse li > a:hover,
+    :root .navbar-inverse li > a:focus {
+      color: #f0f004;
+    }
+    :root img.pwnLogo[src$="/List.png"],
+    :root img.pwnLogo[src$="/Email.png"] {
+      filter: brightness(0) saturate(100%) invert(43%) sepia(43%) saturate(515%) hue-rotate(196deg) brightness(49%) contrast(68%);
+    }
+    :root .form-control {
+      background-color: #f0f003;
+      color: #f0f004;
+      border-color: #f0f00c !important;
+    }
+    :root .form-control:focus {
+      box-shadow: 0 0 8px rgba(240, 240, 27, 0.3);
+    }
+    :root .btn-primary {
+      color: #f0f004;
+      background-color: #f0f003;
+      border-color: #f0f00c !important;
+    }
+    :root .btn-primary:hover {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root .btn-success {
+      background-color: #f0f015;
+      color: #f0f001;
+      border-color: #f0f00c;
+    }
+    :root .progress-bar {
+      background-color: #f0f01b;
+    }
+    :root .form-group .termsOfUse {
+      background-color: #f0f001;
+    }
+    :root .termsOfUse {
+      background-color: #f0f002;
+    }
+    :root .termsOfUse,
+    :root .termsOfUse a {
+      color: #f0f006;
+      border-bottom-color: #f0f00a;
+    }
+    :root .secondaryHeader {
+      background-color: #f0f002;
+    }
+    :root .sensitive {
+      color: #f0f014;
+    }
+    :root .sensitive-fade {
+      color: #f0f006;
+    }
+    :root .panel-primary {
+      border-color: #f0f00c;
+    }
+    :root .panel-primary > .panel-heading,
+    :root .panel-primary > .panel-footer {
+      color: #f0f004;
+      border-color: #f0f00c;
+      background-color: #f0f002;
+    }
+    :root #noPwnage {
+      background: #f0f015;
+    }
+    :root #noPwnage a.socialLink {
+      color: #f0f001 !important;
+    }
+    :root #invalidAccount {
+      background: #f0f014;
+    }
+    :root #pwnedWebsitesContainer hr {
+      border-color: #f0f00c;
+    }
+    :root #pwnedWebsitesContainer > .pwnedRow {
+      background: #f0f011;
+    }
+    :root #pwnedWebsitesContainer > .pwnedRow .pwnedWebsite {
+      color: #f0f001;
+    }
+    :root #pwnedWebsitesContainer > .pwnedRow .pwnedWebsite a {
+      color: #f0f001;
+      border-bottom-color: #f0f001;
+    }
+    :root #pwnedWebsitesContainer > .pwnedRow .pwnedWebsite a:hover {
+      background-color: transparent !important;
+    }
+    :root #pwnedWebsitesContainer a.socialLink {
+      color: #f0f001 !important;
+    }
+    :root .pwnResultBanner {
+      color: #f0f001;
+    }
+    :root .pwnResultBanner a {
+      color: #f0f001;
+      border-bottom-color: #f0f001 !important;
+    }
+    :root .pwnResultBanner a:hover {
+      background-color: transparent !important;
+    }
+    :root #Cloudflare img {
+      content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%201239.3%20310.1%22%3E%3Cpath%20d%3D%22M1158.5%20187.7c-3.4%200-6.1-2.7-6.1-6.1%200-3.3%202.7-6.1%206.1-6.1%203.3%200%206.1%202.7%206.1%206.1s-2.8%206.1-6.1%206.1m0-11c-2.7%200-4.9%202.2-4.9%204.9s2.2%204.9%204.9%204.9%204.9-2.2%204.9-4.9-2.2-4.9-4.9-4.9m3.1%208.1h-1.4l-1.2-2.3h-1.6v2.3h-1.3v-6.7h3.2c1.4%200%202.3.9%202.3%202.2%200%201-.6%201.7-1.4%202zm-2.4-3.5c.5%200%201-.3%201-1%200-.8-.4-1-1-1h-2v2zM523%20174.9h15.6v42.5h27.1V231H523zm58.8%2028.2v-.1c0-16.1%2013-29.2%2030.3-29.2s30.1%2012.9%2030.1%2029v.2c0%2016.1-13%2029.2-30.3%2029.2-17.2-.1-30.1-13-30.1-29.1m44.6%200v-.1c0-8.1-5.8-15.1-14.4-15.1-8.5%200-14.2%206.9-14.2%2015v.2c0%208.1%205.8%2015.1%2014.3%2015.1%208.6-.1%2014.3-7%2014.3-15.1m34.9%203.3v-31.5h15.8v31.2c0%208.1%204.1%2011.9%2010.3%2011.9s10.3-3.7%2010.3-11.5v-31.6h15.8V206c0%2018.1-10.3%2026-26.3%2026-15.9.1-25.9-8-25.9-25.6m76-31.5H759c20%200%2031.7%2011.5%2031.7%2027.7v.2c0%2016.2-11.8%2028.2-32%2028.2h-21.3zm21.9%2042.3c9.3%200%2015.5-5.1%2015.5-14.2v-.2c0-9-6.2-14.2-15.5-14.2h-6.3v28.5zm54-42.3h44.9v13.7h-29.4v9.5h26.6V211h-26.6v20h-15.5zm66.5%200h15.5v42.5h27.2V231h-42.7zm83.3-.4h15l23.9%2056.5h-16.7l-4.1-10h-21.6l-4%2010h-16.3zm13.7%2034.4-6.2-15.9-6.3%2015.9zm45.2-34h26.5c8.6%200%2014.5%202.2%2018.3%206.1%203.3%203.2%205%207.5%205%2013.1v.2c0%208.6-4.6%2014.3-11.5%2017.2l13.4%2019.6h-18l-11.3-17h-6.8v17H1022zm25.8%2027c5.3%200%208.3-2.6%208.3-6.6v-.3c0-4.4-3.2-6.6-8.4-6.6h-10.2v13.5zm46.4-27h45.1v13.3h-29.7v8.4h26.9v12.3h-26.9v8.9h30.1V231h-45.5zM489%20209.7c-2.2%204.9-6.8%208.4-12.8%208.4-8.5%200-14.3-7.1-14.3-15.1v-.2c0-8.1%205.7-15%2014.2-15%206.4%200%2011.3%203.9%2013.3%209.3h16.4c-2.6-13.4-14.4-23.3-29.6-23.3-17.3%200-30.3%2013.1-30.3%2029.2v.2c0%2016.1%2012.8%2029%2030.1%2029%2014.8%200%2026.4-9.6%2029.4-22.4zm-97.9-40.1L348.2%20145l-7.4-3.2-175.5%201.3v89l225.8.1z%22%20fill%3D%22%23f0f004%22/%3E%3Cpath%20d%3D%22M313%20224c2.1-7.2%201.3-13.8-2.2-18.7-3.2-4.5-8.6-7.1-15.1-7.4l-123.1-1.6c-.8%200-1.5-.4-1.9-1s-.5-1.4-.3-2.2c.4-1.2%201.6-2.1%202.9-2.2l124.2-1.6c14.7-.7%2030.7-12.6%2036.3-27.2l7.1-18.5c.3-.8.4-1.6.2-2.4-8-36.2-40.3-63.2-78.9-63.2-35.6%200-65.8%2023-76.6%2054.9-7-5.2-15.9-8-25.5-7.1-17.1%201.7-30.8%2015.4-32.5%2032.5-.4%204.4-.1%208.7.9%2012.7-27.9.8-50.2%2023.6-50.2%2051.7%200%202.5.2%205%20.5%207.5.2%201.2%201.2%202.1%202.4%202.1h227.2c1.3%200%202.5-.9%202.9-2.2zm39.2-79.1c-1.1%200-2.3%200-3.4.1-.8%200-1.5.6-1.8%201.4l-4.8%2016.7c-2.1%207.2-1.3%2013.8%202.2%2018.7%203.2%204.5%208.6%207.1%2015.1%207.4l26.2%201.6c.8%200%201.5.4%201.9%201s.5%201.5.3%202.2c-.4%201.2-1.6%202.1-2.9%202.2l-27.3%201.6c-14.8.7-30.7%2012.6-36.3%2027.2l-2%205.1c-.4%201%20.3%202%201.4%202h93.8c1.1%200%202.1-.7%202.4-1.8%201.6-5.8%202.5-11.9%202.5-18.2%200-37.1-30.1-67.2-67.3-67.2%22%20fill%3D%22%23f0f013%22/%3E%3C/svg%3E");
+    }
+    :root pre,
+    :root code {
+      background-color: #f0f002;
+      color: #f0f004;
+      border-color: #f0f00c;
+    }
+    :root thead tr {
+      border-color: #f0f00c;
+    }
+    :root .bitcoinAddress {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root .bg-info {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root .subscriptions .rpm10 {
+      border-color: #f0f016;
+    }
+    :root .subscriptions .rpm10 h4,
+    :root .subscriptions .rpm10 h5,
+    :root .subscriptions .rpm10 .price {
+      background-color: #f0f016;
+      color: #f0f001;
+    }
+    :root .subscriptions .rpm50 {
+      border-color: #f0f015;
+    }
+    :root .subscriptions .rpm50 h4,
+    :root .subscriptions .rpm50 h5,
+    :root .subscriptions .rpm50 .price {
+      background-color: #f0f015;
+      color: #f0f001;
+    }
+    :root .subscriptions .rpm100 {
+      border-color: #f0f014;
+    }
+    :root .subscriptions .rpm100 h4,
+    :root .subscriptions .rpm100 h5,
+    :root .subscriptions .rpm100 .price {
+      background-color: #f0f014;
+      color: #f0f001;
+    }
+    :root .subscriptions .rpm500 {
+      border-color: #f0f013;
+    }
+    :root .subscriptions .rpm500 h4,
+    :root .subscriptions .rpm500 h5,
+    :root .subscriptions .rpm500 .price {
+      background-color: #f0f013;
+      color: #f0f001;
+    }
+    :root .subscriptions .description {
+      color: #f0f004;
+    }
+    :root .finePrint {
+      color: #f0f004;
+    }
+    :root .table-bordered,
+    :root .table-bordered th,
+    :root .table-bordered td {
+      border-color: #f0f00c;
+    }
+    :root .dropdown-menu {
+      background-color: #f0f001;
+    }
+    :root .dropdown-menu > li > a:hover,
+    :root .dropdown-menu > li > a:focus {
+      background-color: #f0f002;
+    }
+  }
+  @media (prefers-color-scheme: light) and (min-width: 768px) {
+    :root ul.nav li.dropdown:hover {
+      background-color: #f0f001;
+    }
+  }
+  @media (prefers-color-scheme: light) and (max-width: 480px) {
+    :root #searchContainer {
+      background-color: #f0f002;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root body {
+      background-color: #f0f001;
+      color: #f0f004;
+    }
+    :root hr {
+      border-color: #f0f00c;
+    }
+    :root a,
+    :root a:hover,
+    :root a:focus {
+      color: #f0f004;
+      border-bottom-color: #f0f00a;
+    }
+    :root a:hover {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root img.pwnLogo.large.modalLogo {
+      filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+    }
+    :root .bodyGradient {
+      color: #f0f004;
+    }
+    :root .modal-header {
+      background: #f0f003;
+    }
+    :root .modal-header .close {
+      color: #f0f004;
+    }
+    :root .fa-loader,
+    :root .loaderText {
+      color: #f0f004;
+    }
+    :root #postNotificationCallsToAction .btn {
+      background-color: #f0f003;
+      color: #f0f004;
+    }
+    :root #postNotificationCallsToAction a.socialLink,
+    :root #postNotificationCallsToAction a.socialLink:link,
+    :root #postNotificationCallsToAction a.socialLink:visited {
+      color: #f0f004;
+    }
+    :root .modal-content {
+      background-color: #f0f001;
+      border-color: #f0f00c;
+    }
+    :root .main {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root .main-logo .logo {
+      border-color: #f0f01b;
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root .pwnedCompanyList a,
+    :root .pwnedCompanyList a:hover {
+      color: #f0f004;
+      border-bottom-color: #f0f00a;
+    }
+    :root .pwnedCompanyList td {
+      color: #f0f006;
+    }
+    :root footer a,
+    :root footer p {
+      color: #f0f006;
+    }
+    :root .unverified,
+    :root .unverified a {
+      color: #020200 !important;
+      border-bottom-color: #020200 !important;
+    }
+    :root .navbar-inverse {
+      border-color: #f0f00c;
+      background-color: #f0f003;
+    }
+    :root .navbar-inverse .navbar-toggle {
+      border-color: #f0f00c;
+    }
+    :root .navbar-inverse .navbar-toggle:hover,
+    :root .navbar-inverse .navbar-toggle:focus {
+      background-color: #f0f00c;
+    }
+    :root .navbar-inverse .navbar-toggle .icon-bar {
+      background-color: #f0f004;
+    }
+    :root .navbar-inverse .navbar-brand {
+      color: #f0f004;
+      border-color: #f0f004 !important;
+    }
+    :root .navbar-inverse li.active > a,
+    :root .navbar-inverse li.active > a:hover,
+    :root .navbar-inverse li.active > a:focus {
+      color: #f0f004;
+      background-color: #f0f003;
+    }
+    :root .navbar-inverse li > a {
+      color: #f0f006;
+    }
+    :root .navbar-inverse li > a:hover,
+    :root .navbar-inverse li > a:focus {
+      color: #f0f004;
+    }
+    :root img.pwnLogo[src$="/List.png"],
+    :root img.pwnLogo[src$="/Email.png"] {
+      filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+    }
+    :root .form-control {
+      background-color: #f0f003;
+      color: #f0f004;
+      border-color: #f0f00c !important;
+    }
+    :root .form-control:focus {
+      box-shadow: 0 0 8px rgba(240, 240, 27, 0.3);
+    }
+    :root .btn-primary {
+      color: #f0f004;
+      background-color: #f0f003;
+      border-color: #f0f00c !important;
+    }
+    :root .btn-primary:hover {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root .btn-success {
+      background-color: #f0f015;
+      color: #f0f001;
+      border-color: #f0f00c;
+    }
+    :root .progress-bar {
+      background-color: #f0f01b;
+    }
+    :root .form-group .termsOfUse {
+      background-color: #f0f001;
+    }
+    :root .termsOfUse {
+      background-color: #f0f002;
+    }
+    :root .termsOfUse,
+    :root .termsOfUse a {
+      color: #f0f006;
+      border-bottom-color: #f0f00a;
+    }
+    :root .secondaryHeader {
+      background-color: #f0f002;
+    }
+    :root .sensitive {
+      color: #f0f014;
+    }
+    :root .sensitive-fade {
+      color: #f0f006;
+    }
+    :root .panel-primary {
+      border-color: #f0f00c;
+    }
+    :root .panel-primary > .panel-heading,
+    :root .panel-primary > .panel-footer {
+      color: #f0f004;
+      border-color: #f0f00c;
+      background-color: #f0f002;
+    }
+    :root #noPwnage {
+      background: #f0f015;
+    }
+    :root #noPwnage a.socialLink {
+      color: #f0f001 !important;
+    }
+    :root #invalidAccount {
+      background: #f0f014;
+    }
+    :root #pwnedWebsitesContainer hr {
+      border-color: #f0f00c;
+    }
+    :root #pwnedWebsitesContainer > .pwnedRow {
+      background: #f0f011;
+    }
+    :root #pwnedWebsitesContainer > .pwnedRow .pwnedWebsite {
+      color: #f0f001;
+    }
+    :root #pwnedWebsitesContainer > .pwnedRow .pwnedWebsite a {
+      color: #f0f001;
+      border-bottom-color: #f0f001;
+    }
+    :root #pwnedWebsitesContainer > .pwnedRow .pwnedWebsite a:hover {
+      background-color: transparent !important;
+    }
+    :root #pwnedWebsitesContainer a.socialLink {
+      color: #f0f001 !important;
+    }
+    :root .pwnResultBanner {
+      color: #f0f001;
+    }
+    :root .pwnResultBanner a {
+      color: #f0f001;
+      border-bottom-color: #f0f001 !important;
+    }
+    :root .pwnResultBanner a:hover {
+      background-color: transparent !important;
+    }
+    :root #Cloudflare img {
+      content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%201239.3%20310.1%22%3E%3Cpath%20d%3D%22M1158.5%20187.7c-3.4%200-6.1-2.7-6.1-6.1%200-3.3%202.7-6.1%206.1-6.1%203.3%200%206.1%202.7%206.1%206.1s-2.8%206.1-6.1%206.1m0-11c-2.7%200-4.9%202.2-4.9%204.9s2.2%204.9%204.9%204.9%204.9-2.2%204.9-4.9-2.2-4.9-4.9-4.9m3.1%208.1h-1.4l-1.2-2.3h-1.6v2.3h-1.3v-6.7h3.2c1.4%200%202.3.9%202.3%202.2%200%201-.6%201.7-1.4%202zm-2.4-3.5c.5%200%201-.3%201-1%200-.8-.4-1-1-1h-2v2zM523%20174.9h15.6v42.5h27.1V231H523zm58.8%2028.2v-.1c0-16.1%2013-29.2%2030.3-29.2s30.1%2012.9%2030.1%2029v.2c0%2016.1-13%2029.2-30.3%2029.2-17.2-.1-30.1-13-30.1-29.1m44.6%200v-.1c0-8.1-5.8-15.1-14.4-15.1-8.5%200-14.2%206.9-14.2%2015v.2c0%208.1%205.8%2015.1%2014.3%2015.1%208.6-.1%2014.3-7%2014.3-15.1m34.9%203.3v-31.5h15.8v31.2c0%208.1%204.1%2011.9%2010.3%2011.9s10.3-3.7%2010.3-11.5v-31.6h15.8V206c0%2018.1-10.3%2026-26.3%2026-15.9.1-25.9-8-25.9-25.6m76-31.5H759c20%200%2031.7%2011.5%2031.7%2027.7v.2c0%2016.2-11.8%2028.2-32%2028.2h-21.3zm21.9%2042.3c9.3%200%2015.5-5.1%2015.5-14.2v-.2c0-9-6.2-14.2-15.5-14.2h-6.3v28.5zm54-42.3h44.9v13.7h-29.4v9.5h26.6V211h-26.6v20h-15.5zm66.5%200h15.5v42.5h27.2V231h-42.7zm83.3-.4h15l23.9%2056.5h-16.7l-4.1-10h-21.6l-4%2010h-16.3zm13.7%2034.4-6.2-15.9-6.3%2015.9zm45.2-34h26.5c8.6%200%2014.5%202.2%2018.3%206.1%203.3%203.2%205%207.5%205%2013.1v.2c0%208.6-4.6%2014.3-11.5%2017.2l13.4%2019.6h-18l-11.3-17h-6.8v17H1022zm25.8%2027c5.3%200%208.3-2.6%208.3-6.6v-.3c0-4.4-3.2-6.6-8.4-6.6h-10.2v13.5zm46.4-27h45.1v13.3h-29.7v8.4h26.9v12.3h-26.9v8.9h30.1V231h-45.5zM489%20209.7c-2.2%204.9-6.8%208.4-12.8%208.4-8.5%200-14.3-7.1-14.3-15.1v-.2c0-8.1%205.7-15%2014.2-15%206.4%200%2011.3%203.9%2013.3%209.3h16.4c-2.6-13.4-14.4-23.3-29.6-23.3-17.3%200-30.3%2013.1-30.3%2029.2v.2c0%2016.1%2012.8%2029%2030.1%2029%2014.8%200%2026.4-9.6%2029.4-22.4zm-97.9-40.1L348.2%20145l-7.4-3.2-175.5%201.3v89l225.8.1z%22%20fill%3D%22%23f0f004%22/%3E%3Cpath%20d%3D%22M313%20224c2.1-7.2%201.3-13.8-2.2-18.7-3.2-4.5-8.6-7.1-15.1-7.4l-123.1-1.6c-.8%200-1.5-.4-1.9-1s-.5-1.4-.3-2.2c.4-1.2%201.6-2.1%202.9-2.2l124.2-1.6c14.7-.7%2030.7-12.6%2036.3-27.2l7.1-18.5c.3-.8.4-1.6.2-2.4-8-36.2-40.3-63.2-78.9-63.2-35.6%200-65.8%2023-76.6%2054.9-7-5.2-15.9-8-25.5-7.1-17.1%201.7-30.8%2015.4-32.5%2032.5-.4%204.4-.1%208.7.9%2012.7-27.9.8-50.2%2023.6-50.2%2051.7%200%202.5.2%205%20.5%207.5.2%201.2%201.2%202.1%202.4%202.1h227.2c1.3%200%202.5-.9%202.9-2.2zm39.2-79.1c-1.1%200-2.3%200-3.4.1-.8%200-1.5.6-1.8%201.4l-4.8%2016.7c-2.1%207.2-1.3%2013.8%202.2%2018.7%203.2%204.5%208.6%207.1%2015.1%207.4l26.2%201.6c.8%200%201.5.4%201.9%201s.5%201.5.3%202.2c-.4%201.2-1.6%202.1-2.9%202.2l-27.3%201.6c-14.8.7-30.7%2012.6-36.3%2027.2l-2%205.1c-.4%201%20.3%202%201.4%202h93.8c1.1%200%202.1-.7%202.4-1.8%201.6-5.8%202.5-11.9%202.5-18.2%200-37.1-30.1-67.2-67.3-67.2%22%20fill%3D%22%23f0f013%22/%3E%3C/svg%3E");
+    }
+    :root pre,
+    :root code {
+      background-color: #f0f002;
+      color: #f0f004;
+      border-color: #f0f00c;
+    }
+    :root thead tr {
+      border-color: #f0f00c;
+    }
+    :root .bitcoinAddress {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root .bg-info {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root .subscriptions .rpm10 {
+      border-color: #f0f016;
+    }
+    :root .subscriptions .rpm10 h4,
+    :root .subscriptions .rpm10 h5,
+    :root .subscriptions .rpm10 .price {
+      background-color: #f0f016;
+      color: #f0f001;
+    }
+    :root .subscriptions .rpm50 {
+      border-color: #f0f015;
+    }
+    :root .subscriptions .rpm50 h4,
+    :root .subscriptions .rpm50 h5,
+    :root .subscriptions .rpm50 .price {
+      background-color: #f0f015;
+      color: #f0f001;
+    }
+    :root .subscriptions .rpm100 {
+      border-color: #f0f014;
+    }
+    :root .subscriptions .rpm100 h4,
+    :root .subscriptions .rpm100 h5,
+    :root .subscriptions .rpm100 .price {
+      background-color: #f0f014;
+      color: #f0f001;
+    }
+    :root .subscriptions .rpm500 {
+      border-color: #f0f013;
+    }
+    :root .subscriptions .rpm500 h4,
+    :root .subscriptions .rpm500 h5,
+    :root .subscriptions .rpm500 .price {
+      background-color: #f0f013;
+      color: #f0f001;
+    }
+    :root .subscriptions .description {
+      color: #f0f004;
+    }
+    :root .finePrint {
+      color: #f0f004;
+    }
+    :root .table-bordered,
+    :root .table-bordered th,
+    :root .table-bordered td {
+      border-color: #f0f00c;
+    }
+    :root .dropdown-menu {
+      background-color: #f0f001;
+    }
+    :root .dropdown-menu > li > a:hover,
+    :root .dropdown-menu > li > a:focus {
+      background-color: #f0f002;
+    }
+  }
+  @media (prefers-color-scheme: dark) and (min-width: 768px) {
+    :root ul.nav li.dropdown:hover {
+      background-color: #f0f001;
+    }
+  }
+  @media (prefers-color-scheme: dark) and (max-width: 480px) {
+    :root #searchContainer {
+      background-color: #f0f002;
+    }
+  }
+}

@@ -1,0 +1,209 @@
+/* ==UserStyle==
+@name           pwnbox-startpage
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Startpage (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("startpage.com") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+      /* fonts */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root,
+    :root body {
+      --sx-accent: #f0f01b;
+      --sx-background: #f0f001;
+      --sx-border: #f0f00c;
+      --sx-tabLinkHover: #f0f016;
+      --sx-foreground: #f0f004;
+      --sx-foregroundAlt: #f0f005;
+      --sx-foregroundEmphasis: #fbfb2c;
+      --sx-popupBackground: #f0f00c;
+      --sx-popupForeground: #f0f004;
+      --sx-popupForegroundEm: #f0f004;
+      --sx-popupUrl: #f0f019;
+      --sx-buttonHighlight: #f0f01b;
+      --sx-loadingBars: #f0f002;
+      --sx-darkIcons: #f0f003;
+      --sx-arrowButtonBackground: #f0f004;
+      --sx-arrowButtonForeground: #f0f004;
+    }
+    :root .css-nguon6 button {
+      color: #f0f01b;
+      border-color: #f0f01b;
+    }
+    :root .css-fg9wif,
+    :root .header,
+    :root .wp-qi-sb__result,
+    :root .linkHover,
+    :root .footer__container {
+      background: #f0f002 !important;
+    }
+    :root body {
+      color: #f0f004;
+    }
+    :root body,
+    :root .layout-web,
+    :root .layout-web__body,
+    :root .ex-qi-kp:not(.ex-qi-kp--light, .ex-qi-kp--night, .ex-qi-kp--air) .sx-kp-infobox-wrap .sx-infobox tr:not(.sx-heading-row) > *,
+    :root .w-gl {
+      background: #f0f001 !important;
+    }
+    :root .wp-qi-sb__result {
+      border-color: #f0f002 !important;
+    }
+    :root .wp-qi-sb__top-square-img {
+      border-bottom-color: #f0f002 !important;
+    }
+    :root .w-gl__result-title,
+    :root .inline-nav-menu__link,
+    :root .wp-qi-sb__title {
+      color: #f0f004 !important;
+    }
+    :root .w-gl__result,
+    :root .search-filter-time__dropdown,
+    :root .search-filter-region__dropdown,
+    :root .search-filter-family__field-label,
+    :root .wp-qi-sb__extract {
+      color: #f0f005 !important;
+    }
+    :root .w-gl__result-url {
+      color: #f0f01b !important;
+    }
+    :root .wp-qi-sb__expand-text,
+    :root .inline-nav-menu__link__active,
+    :root .inline-nav-menu__link:hover {
+      color: #f0f015 !important;
+    }
+    :root .inline-nav-menu__link__active,
+    :root .inline-nav-menu__link__post-link:hover {
+      border-bottom-color: #f0f015 !important;
+    }
+    :root .pagination .num--active {
+      background: #f0f00e !important;
+      border-color: #f0f00e !important;
+    }
+    :root .pagination__num:hover,
+    :root .pagination__next-prev-button:hover {
+      background: #f0f019 !important;
+      border-color: #f0f019 !important;
+    }
+    :root header {
+      background-color: #f0f002 !important;
+    }
+    :root .w-gl__result-title:visited {
+      color: #f0f01a !important;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      /* fonts */
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root,
+    :root body {
+      --sx-accent: #f0f01b;
+      --sx-background: #f0f001;
+      --sx-border: #f0f00c;
+      --sx-tabLinkHover: #f0f016;
+      --sx-foreground: #f0f004;
+      --sx-foregroundAlt: #f0f005;
+      --sx-foregroundEmphasis: #fbfb2c;
+      --sx-popupBackground: #f0f00c;
+      --sx-popupForeground: #f0f004;
+      --sx-popupForegroundEm: #f0f004;
+      --sx-popupUrl: #f0f019;
+      --sx-buttonHighlight: #f0f01b;
+      --sx-loadingBars: #f0f002;
+      --sx-darkIcons: #f0f003;
+      --sx-arrowButtonBackground: #f0f004;
+      --sx-arrowButtonForeground: #f0f004;
+    }
+    :root .css-nguon6 button {
+      color: #f0f01b;
+      border-color: #f0f01b;
+    }
+    :root .css-fg9wif,
+    :root .header,
+    :root .wp-qi-sb__result,
+    :root .linkHover,
+    :root .footer__container {
+      background: #f0f002 !important;
+    }
+    :root body {
+      color: #f0f004;
+    }
+    :root body,
+    :root .layout-web,
+    :root .layout-web__body,
+    :root .ex-qi-kp:not(.ex-qi-kp--light, .ex-qi-kp--night, .ex-qi-kp--air) .sx-kp-infobox-wrap .sx-infobox tr:not(.sx-heading-row) > *,
+    :root .w-gl {
+      background: #f0f001 !important;
+    }
+    :root .wp-qi-sb__result {
+      border-color: #f0f002 !important;
+    }
+    :root .wp-qi-sb__top-square-img {
+      border-bottom-color: #f0f002 !important;
+    }
+    :root .w-gl__result-title,
+    :root .inline-nav-menu__link,
+    :root .wp-qi-sb__title {
+      color: #f0f004 !important;
+    }
+    :root .w-gl__result,
+    :root .search-filter-time__dropdown,
+    :root .search-filter-region__dropdown,
+    :root .search-filter-family__field-label,
+    :root .wp-qi-sb__extract {
+      color: #f0f005 !important;
+    }
+    :root .w-gl__result-url {
+      color: #f0f01b !important;
+    }
+    :root .wp-qi-sb__expand-text,
+    :root .inline-nav-menu__link__active,
+    :root .inline-nav-menu__link:hover {
+      color: #f0f015 !important;
+    }
+    :root .inline-nav-menu__link__active,
+    :root .inline-nav-menu__link__post-link:hover {
+      border-bottom-color: #f0f015 !important;
+    }
+    :root .pagination .num--active {
+      background: #f0f00e !important;
+      border-color: #f0f00e !important;
+    }
+    :root .pagination__num:hover,
+    :root .pagination__next-prev-button:hover {
+      background: #f0f019 !important;
+      border-color: #f0f019 !important;
+    }
+    :root header {
+      background-color: #f0f002 !important;
+    }
+    :root .w-gl__result-title:visited {
+      color: #f0f01a !important;
+    }
+  }
+}

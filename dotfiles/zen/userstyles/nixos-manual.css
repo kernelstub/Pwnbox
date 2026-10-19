@@ -1,0 +1,149 @@
+/* ==UserStyle==
+@name           pwnbox-nixos-manual
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for NixOS Manual and Nixpkgs Manual (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document url-prefix("https://nixos.org/manual/"), url-prefix("https://nix-darwin.github.io/nix-darwin/manual/") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+      --ctp-rosewater: #f0f00d;
+      --ctp-flamingo: #f0f00e;
+      --ctp-pink: #f0f00f;
+      --ctp-mauve: #f0f010;
+      --ctp-red: #f0f011;
+      --ctp-maroon: #f0f012;
+      --ctp-peach: #f0f013;
+      --ctp-yellow: #f0f014;
+      --ctp-green: #f0f015;
+      --ctp-teal: #f0f016;
+      --ctp-sky: #f0f017;
+      --ctp-sapphire: #f0f018;
+      --ctp-blue: #f0f019;
+      --ctp-lavender: #f0f01a;
+      --ctp-text: #f0f004;
+      --ctp-subtext1: #f0f005;
+      --ctp-subtext0: #f0f006;
+      --ctp-overlay2: #f0f007;
+      --ctp-overlay1: #f0f008;
+      --ctp-overlay0: #f0f009;
+      --ctp-surface2: #f0f00a;
+      --ctp-surface1: #f0f00b;
+      --ctp-surface0: #f0f00c;
+      --ctp-base: #f0f001;
+      --ctp-mantle: #f0f002;
+      --ctp-crust: #f0f003;
+      --background: #f0f001;
+      --main-text-color: #f0f004;
+      --link-color: #f0f01b;
+      --heading-color: #f0f01b;
+      --small-heading-color: rgba(240, 240, 27, 0.85);
+      --note-text-color: #f0f019;
+      --note-background: #f0f001;
+      --warning-text-color: #f0f011;
+      --warning-background: #f0f001;
+      --codeblock-background: #f0f00c;
+      --codeblock-text-color: #f0f004;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root div.book .programlisting,
+    :root div.appendix .programlisting {
+      background-color: #f0f00c !important;
+    }
+    :root hr,
+    :root div.toc {
+      border-top-color: transparent;
+      border-bottom-color: #f0f008 !important;
+    }
+    :root div[style^="background: #333333;color: #FFFFFF;"] {
+      background-color: #f0f003 !important;
+    }
+    :root div[style^="background: #333333;color: #FFFFFF;"],
+    :root div[style^="background: #333333;color: #FFFFFF;"] dt {
+      color: #f0f004 !important;
+    }
+    :root div[style^="background: #333333;color: #FFFFFF;"] a {
+      color: #f0f01b !important;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --ctp-rosewater: #f0f00d;
+      --ctp-flamingo: #f0f00e;
+      --ctp-pink: #f0f00f;
+      --ctp-mauve: #f0f010;
+      --ctp-red: #f0f011;
+      --ctp-maroon: #f0f012;
+      --ctp-peach: #f0f013;
+      --ctp-yellow: #f0f014;
+      --ctp-green: #f0f015;
+      --ctp-teal: #f0f016;
+      --ctp-sky: #f0f017;
+      --ctp-sapphire: #f0f018;
+      --ctp-blue: #f0f019;
+      --ctp-lavender: #f0f01a;
+      --ctp-text: #f0f004;
+      --ctp-subtext1: #f0f005;
+      --ctp-subtext0: #f0f006;
+      --ctp-overlay2: #f0f007;
+      --ctp-overlay1: #f0f008;
+      --ctp-overlay0: #f0f009;
+      --ctp-surface2: #f0f00a;
+      --ctp-surface1: #f0f00b;
+      --ctp-surface0: #f0f00c;
+      --ctp-base: #f0f001;
+      --ctp-mantle: #f0f002;
+      --ctp-crust: #f0f003;
+      --background: #f0f001;
+      --main-text-color: #f0f004;
+      --link-color: #f0f01b;
+      --heading-color: #f0f01b;
+      --small-heading-color: rgba(240, 240, 27, 0.85);
+      --note-text-color: #f0f019;
+      --note-background: #f0f001;
+      --warning-text-color: #f0f011;
+      --warning-background: #f0f001;
+      --codeblock-background: #f0f00c;
+      --codeblock-text-color: #f0f004;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root div.book .programlisting,
+    :root div.appendix .programlisting {
+      background-color: #f0f00c !important;
+    }
+    :root hr,
+    :root div.toc {
+      border-top-color: transparent;
+      border-bottom-color: #f0f008 !important;
+    }
+    :root div[style^="background: #333333;color: #FFFFFF;"] {
+      background-color: #f0f003 !important;
+    }
+    :root div[style^="background: #333333;color: #FFFFFF;"],
+    :root div[style^="background: #333333;color: #FFFFFF;"] dt {
+      color: #f0f004 !important;
+    }
+    :root div[style^="background: #333333;color: #FFFFFF;"] a {
+      color: #f0f01b !important;
+    }
+  }
+}

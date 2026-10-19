@@ -1,0 +1,14 @@
+{
+  "bg": "#080808",
+  "bgAlt": "#171717",
+  "fg": "#cccccc",
+  "fgDim": "#cccccc",
+  "fgFaint": "#353535",
+  "accent": "#353535",
+  "accentSoft": "#cccccc",
+  "red": "#6b6b6b",
+  "green": "#c4c4c4",
+  "yellow": "#999999",
+  "mauve": "#717171",
+  "cyan": "#8a8a8a"
+}

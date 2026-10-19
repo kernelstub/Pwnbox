@@ -1,0 +1,279 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cfg_dir="${XDG_CONFIG_HOME:-$HOME/.config}/spicetify"
+theme_dir="$cfg_dir/Themes/pwnbox"
+base_css="$theme_dir/user-base.css"
+user_css="$theme_dir/user.css"
+data_home="${XDG_DATA_HOME:-$HOME/.local/share}"
+dest_root="$data_home/pwnbox/spotify"
+dest_dir="$dest_root/share/spotify"
+prefs="$HOME/.config/spotify/prefs"
+theme_js="$HOME/.config/quickshell/Theme.js"
+cache="${XDG_CACHE_HOME:-$HOME/.cache}/pwnbox/theme"
+live_js="$HOME/.scripts/pwnbox-spotify-live.mjs"
+
+debug_port=9222
+debug_flags=("--remote-debugging-port=$debug_port" "--remote-allow-origins=*")
+
+have() { command -v "$1" >/dev/null 2>&1; }
+
+cache_value() {
+    local file="$1" fallback="$2" v
+    v="$(cat "$cache/$file" 2>/dev/null || true)"
+    [ -n "$v" ] && printf '%s' "$v" || printf '%s' "$fallback"
+}
+
+src_spotify_dir() {
+    local bin dir
+    while IFS= read -r bin; do
+        [ -n "$bin" ] || continue
+        case "$bin" in
+        "$HOME"/.local/*) continue ;;
+        esac
+        bin="$(readlink -f "$bin")"
+        case "$bin" in
+        "$HOME"/.local/*) continue ;;
+        esac
+        [ -f "$bin" ] || continue
+        dir="$(dirname "$bin")"
+        [ -x "$dir/spotify" ] || continue
+        [ -e "$dir/.spotify-wrapped" ] || continue
+        printf '%s' "$dir"
+        return 0
+    done < <(type -aP spotify 2>/dev/null || true)
+    return 1
+}
+
+theme_var() {
+    local key="$1" fallback="$2" v
+    v="$(sed -nE "s/^var ${key}[[:space:]]*=[[:space:]]*\"#?([0-9a-fA-F]{6})\".*/\1/p" \
+        "$theme_js" 2>/dev/null | head -1)"
+    [ -n "$v" ] && printf '%s' "$v" || printf '%s' "$fallback"
+}
+
+ensure_copy() {
+    local src_dir src_pkg stamp current
+    src_dir="$(src_spotify_dir)" || {
+        echo "pwnbox-spotify: could not find the spotify binary" >&2
+        return 1
+    }
+    case "$src_dir" in
+    /nix/store/*) ;;
+    *)
+        echo "pwnbox-spotify: refusing suspicious spotify path: $src_dir" >&2
+        return 1
+        ;;
+    esac
+    src_pkg="$(dirname "$(dirname "$src_dir")")"
+    case "$src_pkg" in
+    /nix/store/*-spotify*) ;;
+    *)
+        echo "pwnbox-spotify: refusing suspicious spotify package: $src_pkg" >&2
+        return 1
+        ;;
+    esac
+    [ -x "$src_dir/spotify" ] && [ -e "$src_dir/.spotify-wrapped" ] || {
+        echo "pwnbox-spotify: $src_dir does not look like a Spotify install" >&2
+        return 1
+    }
+    stamp="$dest_root/.source"
+
+    current="$(cat "$stamp" 2>/dev/null || true)"
+    if [ "$current" = "$src_pkg" ] && [ -x "$dest_dir/spotify" ]; then
+        return 0
+    fi
+
+    rm -rf "$dest_root"
+    mkdir -p "$dest_dir"
+    cp -a "$src_dir/." "$dest_dir/"
+    chmod -R u+w "$dest_dir"
+
+    sed -i "s|$src_dir/.spotify-wrapped|$dest_dir/.spotify-wrapped|g" "$dest_dir/spotify"
+    printf '%s\n' "$src_pkg" >"$stamp"
+    rm -rf "${XDG_STATE_HOME:-$HOME/.local/state}/spicetify/Backup" \
+        "${XDG_STATE_HOME:-$HOME/.local/state}/spicetify/Extracted"
+}
+
+write_colors() {
+    mkdir -p "$theme_dir"
+    local bg bgalt fg fgdim accent red sel
+    bg="$(theme_var bg 101010)"
+    bgalt="$(theme_var bgAlt 181818)"
+    fg="$(theme_var fg eeeeee)"
+    fgdim="$(theme_var fgDim 888888)"
+    accent="$(theme_var accent 7aa2f7)"
+    red="$(theme_var red f7768e)"
+    sel="$(theme_var fgFaint "$fgdim")"
+
+    cat >"$theme_dir/color.ini" <<EOF
+[base]
+main               = ${bg}
+sidebar            = ${bg}
+player             = ${bgalt}
+card               = ${bgalt}
+shadow             = ${bg}
+selected-row       = ${sel}
+button             = ${accent}
+button-active      = ${accent}
+button-disabled    = ${fgdim}
+tab-active         = ${accent}
+notification       = ${accent}
+notification-error = ${red}
+misc               = ${accent}
+text               = ${fg}
+subtext            = ${fgdim}
+EOF
+}
+
+fonts_block() {
+    local ui app uisize spotsize
+    ui="$(cache_value font-ui Manrope)"
+    app="$(cache_value font-app "Iosevka Nerd Font Mono")"
+    uisize="$(cache_value font-size-ui 9)"
+    case "$uisize" in '' | *[!0-9]*) uisize=9 ;; esac
+    spotsize=$((uisize + 5))
+    cat <<EOF
+/* pwnbox-fonts-start */
+:root {
+  --encore-body-font-stack: "${ui}", sans-serif !important;
+  --encore-title-font-stack: "${ui}", sans-serif !important;
+  --encore-code-font-stack: "${app}", monospace !important;
+  --pwnbox-font-ui: "${ui}";
+  --pwnbox-font-app: "${app}";
+}
+body, button, input, select, textarea, [role="textbox"] {
+  font-family: "${ui}", sans-serif !important;
+}
+code, kbd, pre, samp {
+  font-family: "${app}", monospace !important;
+}
+html {
+  font-size: ${spotsize}px !important;
+}
+/* pwnbox-fonts-end */
+EOF
+}
+
+write_user_css() {
+    [ -f "$base_css" ] || return 0
+    mkdir -p "$theme_dir"
+    local tmp="$theme_dir/.user.css.pwnbox-tmp"
+    {
+        cat "$base_css"
+        printf '\n'
+        fonts_block
+    } >"$tmp" 2>/dev/null || {
+        rm -f "$tmp"
+        return 1
+    }
+    if [ -L "$user_css" ]; then
+        rm -f "$user_css" 2>/dev/null || true
+    fi
+    if ! cmp -s "$tmp" "$user_css" 2>/dev/null; then
+        cat "$tmp" >"$user_css"
+    fi
+    rm -f "$tmp"
+}
+
+configure() {
+    mkdir -p "$cfg_dir" "$(dirname "$prefs")"
+    [ -f "$prefs" ] || : >"$prefs"
+    spicetify config spotify_path "$dest_dir" >/dev/null 2>&1 || true
+    spicetify config prefs_path "$prefs" >/dev/null 2>&1 || true
+    spicetify config current_theme pwnbox >/dev/null 2>&1 || true
+    spicetify config color_scheme base >/dev/null 2>&1 || true
+    spicetify config replace_colors 1 >/dev/null 2>&1 || true
+    spicetify config inject_css 1 >/dev/null 2>&1 || true
+    spicetify config inject_theme_js 0 >/dev/null 2>&1 || true
+    spicetify config overwrite_assets 0 >/dev/null 2>&1 || true
+    spicetify config spotify_launch_flags \
+        "--remote-debugging-port=$debug_port --remote-allow-origins=*" >/dev/null 2>&1 || true
+    local apps
+    apps="$(spicetify config custom_apps 2>/dev/null || true)"
+    case "|$apps|" in
+        *"|marketplace|"*) ;;
+        *) spicetify config custom_apps marketplace >/dev/null 2>&1 || true ;;
+    esac
+}
+
+spotify_running() { pgrep -f "$dest_dir" >/dev/null 2>&1; }
+
+debugger_up() {
+    (exec 3<>"/dev/tcp/127.0.0.1/$debug_port") 2>/dev/null || return 1
+    return 0
+}
+
+live_inject() {
+    command -v node >/dev/null 2>&1 || return 1
+    [ -f "$live_js" ] || return 1
+    [ -f "$user_css" ] || return 1
+    [ -f "$theme_dir/color.ini" ] || return 1
+    debugger_up || return 1
+    node "$live_js" "$user_css" "$theme_dir/color.ini" >/dev/null 2>&1
+}
+
+apply_theme() {
+    have spicetify || {
+        echo "pwnbox-spotify: spicetify not found" >&2
+        return 1
+    }
+    ensure_copy
+    configure
+    write_colors
+    write_user_css
+
+    if live_inject; then
+        return 0
+    fi
+
+    if spicetify --no-restart apply >/dev/null 2>&1; then
+        touch "$dest_root/.applied"
+        return 0
+    fi
+    if spicetify --no-restart backup apply >/dev/null 2>&1; then
+        touch "$dest_root/.applied"
+        return 0
+    fi
+
+    rm -rf "$dest_root" \
+        "${XDG_STATE_HOME:-$HOME/.local/state}/spicetify/Backup" \
+        "${XDG_STATE_HOME:-$HOME/.local/state}/spicetify/Extracted"
+    ensure_copy
+    if spicetify --no-restart backup apply >/dev/null 2>&1; then
+        touch "$dest_root/.applied"
+    fi
+}
+
+launch() {
+    ensure_copy
+    if have spicetify; then
+        if [ -f "$dest_root/.applied" ]; then
+            write_colors
+            write_user_css
+        else
+            apply_theme >/dev/null 2>&1 || true
+        fi
+        (
+            sleep 4
+            live_inject
+        ) >/dev/null 2>&1 &
+    fi
+    exec "$dest_dir/spotify" "${debug_flags[@]}" "$@"
+}
+
+case "${1:-apply}" in
+apply) apply_theme ;;
+ensure) ensure_copy ;;
+colors) write_colors ;;
+fonts) write_user_css ;;
+inject) live_inject ;;
+launch)
+    shift || true
+    launch "$@"
+    ;;
+*)
+    echo "usage: pwnbox-spotify {apply|ensure|colors|fonts|inject|launch [args...]}" >&2
+    exit 2
+    ;;
+esac

@@ -1,0 +1,347 @@
+/* ==UserStyle==
+@name           pwnbox-reddit
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Reddit (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("reddit.com") {
+  :root:not(.theme-dark) .theme-rpl,
+  :root:not(.theme-dark).theme-rpl,
+  :root:not(.theme-dark) .theme-beta,
+  :root:not(.theme-dark).theme-beta,
+  .theme-light {
+    color-scheme: light;
+    --color-pizzaRed: #f0f011 !important;
+    --color-global-brand-orangered: #f0f01b !important;
+    --color-global-focus: #f0f00b !important;
+    --color-interactive-content-disabled: #f0f006 !important;
+    --color-interactive-background-disabled: rgba(240, 240, 10, 0.7) !important;
+    --color-interactive-pressed: #f0f00a !important;
+    --color-neutral-content: #f0f004 !important;
+    --color-neutral-content-disabled: #f0f006 !important;
+    --color-neutral-content-weak: #f0f006 !important;
+    --color-neutral-content-strong: #f0f004 !important;
+    --color-global-white: #f0f003 !important;
+    --color-neutral-background: #f0f001 !important;
+    --color-neutral-background-selected: #f0f00c !important;
+    --color-neutral-background-weak: #f0f002 !important;
+    --color-neutral-background-medium: #f0f001 !important;
+    --color-neutral-background-strong: #f0f003 !important;
+    --color-neutral-background-hover: #f0f00c !important;
+    --color-neutral-border: #f0f00c !important;
+    --color-neutral-border-medium: #f0f00c !important;
+    --color-neutral-border-weak: #f0f00c !important;
+    --color-neutral-border-strong: #f0f00a !important;
+    --color-primary: #f0f01b !important;
+    --color-primary-hover: #f3f34b !important;
+    --color-primary-visited: #f0f01a !important;
+    --color-primary-background: #f0f01b !important;
+    --color-primary-background-hover: #e3e30f !important;
+    --color-primary-background-selected: #e3e30f !important;
+    --color-primary-onBackground: #f0f001 !important;
+    --color-primary-onBackground-selected: #f0f003 !important;
+    --color-secondary: #f0f006 !important;
+    --color-secondary-hover: #f0f005 !important;
+    --color-secondary-weak: #f0f006 !important;
+    --color-secondary-onBackground: #f0f004 !important;
+    --color-secondary-background: #f0f002 !important;
+    --color-secondary-background-hover: #f0f00b !important;
+    --color-secondary-background-selected: #f0f00b !important;
+    --color-secondary-plain: #f0f006 !important;
+    --color-secondary-plain-hover: #f0f005 !important;
+    --color-secondary-plain-weak: #f0f006 !important;
+    --color-danger-background: #f0f011 !important;
+    --color-danger-background-disabled: rgba(240, 240, 17, 0.2) !important;
+    --color-danger-background-hover: rgba(240, 240, 17, 0.98) !important;
+    --color-danger-onBackground: #f0f004 !important;
+    --color-danger-content: #f0f011 !important;
+    --color-danger-content-default: #f0f003;
+    --color-danger-content-hover: #e8e80f !important;
+    --color-success-content: #f0f015 !important;
+    --color-success-hover: #ecec0f !important;
+    --color-success-onBackground: #f0f003;
+    --color-success-background: #f0f015 !important;
+    --color-success-background-hover: #ecec0f !important;
+    --color-warning-content: #f0f014 !important;
+    --color-warning-content-hover: #ebeb0f !important;
+    --color-warning-onBackground: #f0f001 !important;
+    --color-warning-background: #f0f014 !important;
+    --color-warning-background-hover: #ebeb0f !important;
+    --color-upvote-content: #f0f01b !important;
+    --color-upvote-disabled: #f0f006 !important;
+    --color-upvote-onBackground: #f0f004 !important;
+    --color-upvote-background: #f0f001 !important;
+    --color-upvote-background-hover: #e3e30f !important;
+    --color-upvote-background-disabled: #f0f001 !important;
+    --color-downvote-content: #f0f004 !important;
+    --color-downvote-content-weak: #f0f004 !important;
+    --color-downvote-disabled: #f0f006 !important;
+    --color-downvote-onBackground: #f0f004 !important;
+    --color-downvote-background: #f0f001 !important;
+    --color-downvote-background-hover: #e1e10f !important;
+    --color-downvote-background-disabled: #f0f002 !important;
+    --color-tone-1: #f0f004 !important;
+    --color-tone-2: #f0f006 !important;
+    --color-tone-3: #f0f007 !important;
+    --color-tone-4: #f0f00c !important;
+    --color-tone-5: #f0f00b !important;
+    --color-tone-6: #f0f00a !important;
+    --color-tone-7: #f0f001 !important;
+    --color-avatar-gradient: #f0f01b !important;
+    --color-transparent-background-hover: rgba(240, 240, 12, 0.3) !important;
+    --color-opacity-50: rgba(240, 240, 1, 0.5) !important;
+    --color-online: #f0f01b !important;
+    --color-favorite: #f0f01b !important;
+    --color-brand-background: #f0f01b !important;
+    --color-brand-background-hover: #e3e30f !important;
+    --color-brand-onBackground: #f0f003 !important;
+    --color-global-orangered: #f0f01b !important;
+    --color-action-upvote: #f0f01b !important;
+    --color-action-downvote: #f0f019;
+    --color-banner-error-text: #f0f001 !important;
+    --shreddit-color-wordmark: #f0f01b;
+    /* Trending news carousel on https://www.reddit.com/r/popular/. */
+    /* Community themes - post header/metadata background and text. */
+  }
+  :root:not(.theme-dark) .theme-rpl ::selection,
+  :root:not(.theme-dark).theme-rpl ::selection,
+  :root:not(.theme-dark) .theme-beta ::selection,
+  :root:not(.theme-dark).theme-beta ::selection,
+  .theme-light ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root:not(.theme-dark) .theme-rpl input::placeholder,
+  :root:not(.theme-dark).theme-rpl input::placeholder,
+  :root:not(.theme-dark) .theme-beta input::placeholder,
+  :root:not(.theme-dark).theme-beta input::placeholder,
+  .theme-light input::placeholder,
+  :root:not(.theme-dark) .theme-rpl textarea::placeholder,
+  :root:not(.theme-dark).theme-rpl textarea::placeholder,
+  :root:not(.theme-dark) .theme-beta textarea::placeholder,
+  :root:not(.theme-dark).theme-beta textarea::placeholder,
+  .theme-light textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root:not(.theme-dark) .theme-rpl #reddit-logo circle[fill="#FF4500"],
+  :root:not(.theme-dark).theme-rpl #reddit-logo circle[fill="#FF4500"],
+  :root:not(.theme-dark) .theme-beta #reddit-logo circle[fill="#FF4500"],
+  :root:not(.theme-dark).theme-beta #reddit-logo circle[fill="#FF4500"],
+  .theme-light #reddit-logo circle[fill="#FF4500"] {
+    fill: #f0f01b !important;
+  }
+  :root:not(.theme-dark) .theme-rpl #reddit-logo path[fill="#FFF"],
+  :root:not(.theme-dark).theme-rpl #reddit-logo path[fill="#FFF"],
+  :root:not(.theme-dark) .theme-beta #reddit-logo path[fill="#FFF"],
+  :root:not(.theme-dark).theme-beta #reddit-logo path[fill="#FFF"],
+  .theme-light #reddit-logo path[fill="#FFF"] {
+    fill: #f0f003 !important;
+  }
+  :root:not(.theme-dark) .theme-rpl shreddit-gallery-carousel .text-primary-onBackground,
+  :root:not(.theme-dark).theme-rpl shreddit-gallery-carousel .text-primary-onBackground,
+  :root:not(.theme-dark) .theme-beta shreddit-gallery-carousel .text-primary-onBackground,
+  :root:not(.theme-dark).theme-beta shreddit-gallery-carousel .text-primary-onBackground,
+  .theme-light shreddit-gallery-carousel .text-primary-onBackground {
+    color: #f0f004;
+  }
+  :root:not(.theme-dark) .theme-rpl shreddit-gallery-carousel .text-coolgray-350,
+  :root:not(.theme-dark).theme-rpl shreddit-gallery-carousel .text-coolgray-350,
+  :root:not(.theme-dark) .theme-beta shreddit-gallery-carousel .text-coolgray-350,
+  :root:not(.theme-dark).theme-beta shreddit-gallery-carousel .text-coolgray-350,
+  .theme-light shreddit-gallery-carousel .text-coolgray-350 {
+    color: #f0f005;
+  }
+  :root:not(.theme-dark) .theme-rpl #pdp-credit-bar,
+  :root:not(.theme-dark).theme-rpl #pdp-credit-bar,
+  :root:not(.theme-dark) .theme-beta #pdp-credit-bar,
+  :root:not(.theme-dark).theme-beta #pdp-credit-bar,
+  .theme-light #pdp-credit-bar {
+    --color-neutral-background: #f0f001;
+    --color-neutral-content: #f0f004;
+    --color-neutral-content-weak: #f0f006;
+    --color-primary-hover: #f3f34b;
+  }
+  :root:not(.theme-dark) .theme-rpl reddit-header-large reddit-search-large::before,
+  :root:not(.theme-dark).theme-rpl reddit-header-large reddit-search-large::before,
+  :root:not(.theme-dark) .theme-beta reddit-header-large reddit-search-large::before,
+  :root:not(.theme-dark).theme-beta reddit-header-large reddit-search-large::before,
+  .theme-light reddit-header-large reddit-search-large::before,
+  :root:not(.theme-dark) .theme-rpl reddit-header-large reddit-search-large::after,
+  :root:not(.theme-dark).theme-rpl reddit-header-large reddit-search-large::after,
+  :root:not(.theme-dark) .theme-beta reddit-header-large reddit-search-large::after,
+  :root:not(.theme-dark).theme-beta reddit-header-large reddit-search-large::after,
+  .theme-light reddit-header-large reddit-search-large::after {
+    background: linear-gradient(#f0f001, #f0f001) padding-box, linear-gradient(90deg, #f0f01b, #f0f01b) border-box;
+  }
+  :root:not(.theme-light) .theme-rpl,
+  :root:not(.theme-light).theme-rpl,
+  :root:not(.theme-light) .theme-beta,
+  :root:not(.theme-light).theme-beta,
+  .theme-dark {
+    color-scheme: dark;
+    --color-pizzaRed: #f0f011 !important;
+    --color-global-brand-orangered: #f0f01b !important;
+    --color-global-focus: #f0f00b !important;
+    --color-interactive-content-disabled: #f0f006 !important;
+    --color-interactive-background-disabled: rgba(240, 240, 10, 0.7) !important;
+    --color-interactive-pressed: #f0f00a !important;
+    --color-neutral-content: #f0f004 !important;
+    --color-neutral-content-disabled: #f0f006 !important;
+    --color-neutral-content-weak: #f0f006 !important;
+    --color-neutral-content-strong: #f0f004 !important;
+    --color-global-white: #f0f003 !important;
+    --color-neutral-background: #f0f001 !important;
+    --color-neutral-background-selected: #f0f00c !important;
+    --color-neutral-background-weak: #f0f002 !important;
+    --color-neutral-background-medium: #f0f001 !important;
+    --color-neutral-background-strong: #f0f003 !important;
+    --color-neutral-background-hover: #f0f00c !important;
+    --color-neutral-border: #f0f00c !important;
+    --color-neutral-border-medium: #f0f00c !important;
+    --color-neutral-border-weak: #f0f00c !important;
+    --color-neutral-border-strong: #f0f00a !important;
+    --color-primary: #f0f01b !important;
+    --color-primary-hover: #f3f34b !important;
+    --color-primary-visited: #f0f01a !important;
+    --color-primary-background: #f0f01b !important;
+    --color-primary-background-hover: #e3e30f !important;
+    --color-primary-background-selected: #e3e30f !important;
+    --color-primary-onBackground: #f0f001 !important;
+    --color-primary-onBackground-selected: #f0f003 !important;
+    --color-secondary: #f0f006 !important;
+    --color-secondary-hover: #f0f005 !important;
+    --color-secondary-weak: #f0f006 !important;
+    --color-secondary-onBackground: #f0f004 !important;
+    --color-secondary-background: #f0f002 !important;
+    --color-secondary-background-hover: #f0f00b !important;
+    --color-secondary-background-selected: #f0f00b !important;
+    --color-secondary-plain: #f0f006 !important;
+    --color-secondary-plain-hover: #f0f005 !important;
+    --color-secondary-plain-weak: #f0f006 !important;
+    --color-danger-background: #f0f011 !important;
+    --color-danger-background-disabled: rgba(240, 240, 17, 0.2) !important;
+    --color-danger-background-hover: rgba(240, 240, 17, 0.98) !important;
+    --color-danger-onBackground: #f0f004 !important;
+    --color-danger-content: #f0f011 !important;
+    --color-danger-content-default: #f0f003;
+    --color-danger-content-hover: #e8e80f !important;
+    --color-success-content: #f0f015 !important;
+    --color-success-hover: #ecec0f !important;
+    --color-success-onBackground: #f0f003;
+    --color-success-background: #f0f015 !important;
+    --color-success-background-hover: #ecec0f !important;
+    --color-warning-content: #f0f014 !important;
+    --color-warning-content-hover: #ebeb0f !important;
+    --color-warning-onBackground: #f0f001 !important;
+    --color-warning-background: #f0f014 !important;
+    --color-warning-background-hover: #ebeb0f !important;
+    --color-upvote-content: #f0f01b !important;
+    --color-upvote-disabled: #f0f006 !important;
+    --color-upvote-onBackground: #f0f004 !important;
+    --color-upvote-background: #f0f001 !important;
+    --color-upvote-background-hover: #e3e30f !important;
+    --color-upvote-background-disabled: #f0f001 !important;
+    --color-downvote-content: #f0f004 !important;
+    --color-downvote-content-weak: #f0f004 !important;
+    --color-downvote-disabled: #f0f006 !important;
+    --color-downvote-onBackground: #f0f004 !important;
+    --color-downvote-background: #f0f001 !important;
+    --color-downvote-background-hover: #e1e10f !important;
+    --color-downvote-background-disabled: #f0f002 !important;
+    --color-tone-1: #f0f004 !important;
+    --color-tone-2: #f0f006 !important;
+    --color-tone-3: #f0f007 !important;
+    --color-tone-4: #f0f00c !important;
+    --color-tone-5: #f0f00b !important;
+    --color-tone-6: #f0f00a !important;
+    --color-tone-7: #f0f001 !important;
+    --color-avatar-gradient: #f0f01b !important;
+    --color-transparent-background-hover: rgba(240, 240, 12, 0.3) !important;
+    --color-opacity-50: rgba(240, 240, 1, 0.5) !important;
+    --color-online: #f0f01b !important;
+    --color-favorite: #f0f01b !important;
+    --color-brand-background: #f0f01b !important;
+    --color-brand-background-hover: #e3e30f !important;
+    --color-brand-onBackground: #f0f003 !important;
+    --color-global-orangered: #f0f01b !important;
+    --color-action-upvote: #f0f01b !important;
+    --color-action-downvote: #f0f019;
+    --color-banner-error-text: #f0f001 !important;
+    --shreddit-color-wordmark: #f0f01b;
+    /* Trending news carousel on https://www.reddit.com/r/popular/. */
+    /* Community themes - post header/metadata background and text. */
+  }
+  :root:not(.theme-light) .theme-rpl ::selection,
+  :root:not(.theme-light).theme-rpl ::selection,
+  :root:not(.theme-light) .theme-beta ::selection,
+  :root:not(.theme-light).theme-beta ::selection,
+  .theme-dark ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root:not(.theme-light) .theme-rpl input::placeholder,
+  :root:not(.theme-light).theme-rpl input::placeholder,
+  :root:not(.theme-light) .theme-beta input::placeholder,
+  :root:not(.theme-light).theme-beta input::placeholder,
+  .theme-dark input::placeholder,
+  :root:not(.theme-light) .theme-rpl textarea::placeholder,
+  :root:not(.theme-light).theme-rpl textarea::placeholder,
+  :root:not(.theme-light) .theme-beta textarea::placeholder,
+  :root:not(.theme-light).theme-beta textarea::placeholder,
+  .theme-dark textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root:not(.theme-light) .theme-rpl #reddit-logo circle[fill="#FF4500"],
+  :root:not(.theme-light).theme-rpl #reddit-logo circle[fill="#FF4500"],
+  :root:not(.theme-light) .theme-beta #reddit-logo circle[fill="#FF4500"],
+  :root:not(.theme-light).theme-beta #reddit-logo circle[fill="#FF4500"],
+  .theme-dark #reddit-logo circle[fill="#FF4500"] {
+    fill: #f0f01b !important;
+  }
+  :root:not(.theme-light) .theme-rpl #reddit-logo path[fill="#FFF"],
+  :root:not(.theme-light).theme-rpl #reddit-logo path[fill="#FFF"],
+  :root:not(.theme-light) .theme-beta #reddit-logo path[fill="#FFF"],
+  :root:not(.theme-light).theme-beta #reddit-logo path[fill="#FFF"],
+  .theme-dark #reddit-logo path[fill="#FFF"] {
+    fill: #f0f003 !important;
+  }
+  :root:not(.theme-light) .theme-rpl shreddit-gallery-carousel .text-primary-onBackground,
+  :root:not(.theme-light).theme-rpl shreddit-gallery-carousel .text-primary-onBackground,
+  :root:not(.theme-light) .theme-beta shreddit-gallery-carousel .text-primary-onBackground,
+  :root:not(.theme-light).theme-beta shreddit-gallery-carousel .text-primary-onBackground,
+  .theme-dark shreddit-gallery-carousel .text-primary-onBackground {
+    color: #f0f004;
+  }
+  :root:not(.theme-light) .theme-rpl shreddit-gallery-carousel .text-coolgray-350,
+  :root:not(.theme-light).theme-rpl shreddit-gallery-carousel .text-coolgray-350,
+  :root:not(.theme-light) .theme-beta shreddit-gallery-carousel .text-coolgray-350,
+  :root:not(.theme-light).theme-beta shreddit-gallery-carousel .text-coolgray-350,
+  .theme-dark shreddit-gallery-carousel .text-coolgray-350 {
+    color: #f0f005;
+  }
+  :root:not(.theme-light) .theme-rpl #pdp-credit-bar,
+  :root:not(.theme-light).theme-rpl #pdp-credit-bar,
+  :root:not(.theme-light) .theme-beta #pdp-credit-bar,
+  :root:not(.theme-light).theme-beta #pdp-credit-bar,
+  .theme-dark #pdp-credit-bar {
+    --color-neutral-background: #f0f001;
+    --color-neutral-content: #f0f004;
+    --color-neutral-content-weak: #f0f006;
+    --color-primary-hover: #f3f34b;
+  }
+  :root:not(.theme-light) .theme-rpl reddit-header-large reddit-search-large::before,
+  :root:not(.theme-light).theme-rpl reddit-header-large reddit-search-large::before,
+  :root:not(.theme-light) .theme-beta reddit-header-large reddit-search-large::before,
+  :root:not(.theme-light).theme-beta reddit-header-large reddit-search-large::before,
+  .theme-dark reddit-header-large reddit-search-large::before,
+  :root:not(.theme-light) .theme-rpl reddit-header-large reddit-search-large::after,
+  :root:not(.theme-light).theme-rpl reddit-header-large reddit-search-large::after,
+  :root:not(.theme-light) .theme-beta reddit-header-large reddit-search-large::after,
+  :root:not(.theme-light).theme-beta reddit-header-large reddit-search-large::after,
+  .theme-dark reddit-header-large reddit-search-large::after {
+    background: linear-gradient(#f0f001, #f0f001) padding-box, linear-gradient(90deg, #f0f01b, #f0f01b) border-box;
+  }
+}

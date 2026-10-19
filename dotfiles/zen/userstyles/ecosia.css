@@ -1,0 +1,169 @@
+/* ==UserStyle==
+@name           pwnbox-ecosia
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Ecosia (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("ecosia.org") {
+  :root.light {
+    color-scheme: light;
+    --color-brand-primary: #f0f01b !important;
+    --color-brand-secondary: #f0f003 !important;
+    --color-error: #f0f011 !important;
+    --color-success: #f0f015 !important;
+    --color-disabled: #f0f008 !important;
+    --color-button-background-primary: #f0f01b !important;
+    --color-button-background-primary-active: #f0f01b !important;
+    --color-button-background-primary-hover: #f0f01b;
+    --color-button-background-secondary: #f0f00c !important;
+    --color-button-background-secondary-active: #f0f00a !important;
+    --color-button-background-secondary-hover: #f0f00b !important;
+    --color-button-content-primary: #f0f001 !important;
+    --color-button-content-secondary: #f0f004 !important;
+    --color-button-content-tertiary: #f0f01b !important;
+    --color-button-border: #f0f00c !important;
+    --color-button-background-transparent-hover: #f0f00b;
+    --color-button-background-transparent-active: #f0f00a;
+    --color-background-primary: #f0f001 !important;
+    --color-background-secondary: #f0f003 !important;
+    --color-background-tertiary: #f0f002 !important;
+    --color-background-quaternary: #f0f00c;
+    --color-background-elevation-1: #f0f002 !important;
+    --color-highlighter: #f0f00c !important;
+    --color-highlight-primary: #f0f00c !important;
+    --color-overlay-primary: #f0f009 !important;
+    --color-overlay-secondary: #f0f008 !important;
+    --color-text-primary: #f0f004 !important;
+    --color-text-secondary: #f0f006 !important;
+    --color-text-tertiary: #f0f004 !important;
+    --color-link-primary: #f0f018 !important;
+    --color-link-secondary: #f0f017 !important;
+    --color-url: #f0f018 !important;
+    --color-link-results-default: #f0f018 !important;
+    --color-link-results-visited: #f0f016 !important;
+    --color-decorative-icon: #f0f01b !important;
+    --color-elevation-layer-1: #f0f00b;
+    --color-elevation-layer-2: #f0f00a;
+    --color-decorative-border-1: #f0f00b !important;
+    --color-focused: #f0f01b !important;
+    --color-form-border-default: #f0f00c !important;
+    --color-form-border-hover: #f0f00b !important;
+    --color-form-border-primary-active: #f0f01b !important;
+    --color-tripadvisor-rating: #f0f006 !important;
+    --color-tree-counter-tree-tall: #f0f014 !important;
+    --color-green-leaf-icon-color-top: #f0f015 !important;
+    --color-green-leaf-icon-color-bottom: #f0f015 !important;
+    --color-fossil-fuel-icon-color-top: #f0f00e !important;
+    --color-fossil-fuel-icon-color-bottom: #f0f012 !important;
+    /* search page */
+    --color-above-fold-background: #f0f00c !important;
+    --color-above-fold-background-addon: #f0f008 !important;
+    --color-above-fold-text: #f0f004 !important;
+    --color-section-wrapper-background-gray: #f0f00b !important;
+    --color-section-wrapper-background-dark-green: #f0f00c !important;
+    --color-section-wrapper-background-light-green: #f0f00c !important;
+    --color-section-header-title: #f0f004 !important;
+    --color-projects-title: #f0f004 !important;
+    --color-projects-description: #f0f00b;
+    --color-financial-report-total-background: #f0f00c !important;
+    --color-financial-report-total-text: #f0f004 !important;
+    --color-forest-background-addon: #f0f00b !important;
+    --color-forest-background-secondary: #f0f00c !important;
+    --color-before-after-text: #f0f004 !important;
+    /* override color digit on homepage */
+  }
+  :root.light ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root.light input::placeholder,
+  :root.light textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root.light .count__digit,
+  :root.light .counter__description {
+    color: #f0f004 !important;
+  }
+  :root.dark {
+    color-scheme: dark;
+    --color-brand-primary: #f0f01b !important;
+    --color-brand-secondary: #f0f003 !important;
+    --color-error: #f0f011 !important;
+    --color-success: #f0f015 !important;
+    --color-disabled: #f0f008 !important;
+    --color-button-background-primary: #f0f01b !important;
+    --color-button-background-primary-active: #f0f01b !important;
+    --color-button-background-primary-hover: #f0f01b;
+    --color-button-background-secondary: #f0f00c !important;
+    --color-button-background-secondary-active: #f0f00a !important;
+    --color-button-background-secondary-hover: #f0f00b !important;
+    --color-button-content-primary: #f0f001 !important;
+    --color-button-content-secondary: #f0f004 !important;
+    --color-button-content-tertiary: #f0f01b !important;
+    --color-button-border: #f0f00c !important;
+    --color-button-background-transparent-hover: #f0f00b;
+    --color-button-background-transparent-active: #f0f00a;
+    --color-background-primary: #f0f001 !important;
+    --color-background-secondary: #f0f003 !important;
+    --color-background-tertiary: #f0f002 !important;
+    --color-background-quaternary: #f0f00c;
+    --color-background-elevation-1: #f0f002 !important;
+    --color-highlighter: #f0f00c !important;
+    --color-highlight-primary: #f0f00c !important;
+    --color-overlay-primary: #f0f009 !important;
+    --color-overlay-secondary: #f0f008 !important;
+    --color-text-primary: #f0f004 !important;
+    --color-text-secondary: #f0f006 !important;
+    --color-text-tertiary: #f0f004 !important;
+    --color-link-primary: #f0f018 !important;
+    --color-link-secondary: #f0f017 !important;
+    --color-url: #f0f018 !important;
+    --color-link-results-default: #f0f018 !important;
+    --color-link-results-visited: #f0f016 !important;
+    --color-decorative-icon: #f0f01b !important;
+    --color-elevation-layer-1: #f0f00b;
+    --color-elevation-layer-2: #f0f00a;
+    --color-decorative-border-1: #f0f00b !important;
+    --color-focused: #f0f01b !important;
+    --color-form-border-default: #f0f00c !important;
+    --color-form-border-hover: #f0f00b !important;
+    --color-form-border-primary-active: #f0f01b !important;
+    --color-tripadvisor-rating: #f0f006 !important;
+    --color-tree-counter-tree-tall: #f0f014 !important;
+    --color-green-leaf-icon-color-top: #f0f015 !important;
+    --color-green-leaf-icon-color-bottom: #f0f015 !important;
+    --color-fossil-fuel-icon-color-top: #f0f00e !important;
+    --color-fossil-fuel-icon-color-bottom: #f0f012 !important;
+    /* search page */
+    --color-above-fold-background: #f0f00c !important;
+    --color-above-fold-background-addon: #f0f008 !important;
+    --color-above-fold-text: #f0f004 !important;
+    --color-section-wrapper-background-gray: #f0f00b !important;
+    --color-section-wrapper-background-dark-green: #f0f00c !important;
+    --color-section-wrapper-background-light-green: #f0f00c !important;
+    --color-section-header-title: #f0f004 !important;
+    --color-projects-title: #f0f004 !important;
+    --color-projects-description: #f0f00b;
+    --color-financial-report-total-background: #f0f00c !important;
+    --color-financial-report-total-text: #f0f004 !important;
+    --color-forest-background-addon: #f0f00b !important;
+    --color-forest-background-secondary: #f0f00c !important;
+    --color-before-after-text: #f0f004 !important;
+    /* override color digit on homepage */
+  }
+  :root.dark ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root.dark input::placeholder,
+  :root.dark textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root.dark .count__digit,
+  :root.dark .counter__description {
+    color: #f0f004 !important;
+  }
+}

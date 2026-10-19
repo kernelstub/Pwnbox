@@ -1,0 +1,1389 @@
+/* ==UserStyle==
+@name           pwnbox-google-drive
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Google Drive (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("drive.google.com") {
+  .vhoiae.KkxPLb {
+    --dt-on-background: #f0f004;
+    --dt-on-background-secondary: #f0f006;
+    --dt-background: #f0f001;
+    --dt-on-surface: #f0f004;
+    --dt-inverse-surface: #f0f004;
+    --dt-on-surface-secondary: #f0f006;
+    --dt-on-surface-variant: #f0f004;
+    --dt-surface-variant: #f0f00c;
+    --dt-inverse-on-surface: #f0f00c;
+    --dt-surface: #f0f001;
+    --dt-surface-tint: #f0f01b;
+    --dt-shadow-elevation-1: 0px 3px 1px -2px rgba(240, 240, 1, 0.2), 0px 2px 2px 0px rgba(240, 240, 1, 0.14), 0px 1px 5px 0px rgba(240, 240, 1, 0.12);
+    --dt-shadow-elevation-2: 0px 2px 4px -1px rgba(240, 240, 1, 0.2), 0px 4px 5px 0px rgba(240, 240, 1, 0.14), 0px 1px 10px 0px rgba(240, 240, 1, 0.12);
+    --dt-shadow-elevation-3: 0px 5px 5px -3px rgba(240, 240, 1, 0.2), 0px 8px 10px 1px rgba(240, 240, 1, 0.14), 0px 3px 14px 2px rgba(240, 240, 1, 0.12);
+    --dt-shadow-elevation-4: 0px 5px 5px -3px rgba(240, 240, 1, 0.2), 0px 8px 10px 1px rgba(240, 240, 1, 0.14), 0px 3px 14px 2px rgba(240, 240, 1, 0.12);
+    --dt-shadow-elevation-5: 0px 8px 10px -6px rgba(240, 240, 1, 0.2), 0px 16px 24px 2px rgba(240, 240, 1, 0.14), 0px 6px 30px 5px rgba(240, 240, 1, 0.12);
+    --dt-surface-container-lowest: #f0f003;
+    --dt-surface-container-low: #f0f002;
+    --dt-surface-container: #f0f00c;
+    --dt-surface-container-high: #f0f00b;
+    --dt-surface-container-highest: #f0f00a;
+    --dt-surface-dim: #f0f003;
+    --dt-surface-bright: #f0f001;
+    --dt-on-primary-container: #f0f004;
+    --dt-primary-container-icon: #f0f004;
+    --dt-primary-container-link: #f0f004;
+    --dt-primary: #f0f01b;
+    --dt-primary-action: #f0f01b;
+    --dt-primary-action-stateful: #f0f01b;
+    --dt-primary-outline: #f0f01b;
+    --dt-primary-action-state-layer: #f0f01b;
+    --dt-primary-container: #f0f00c;
+    --dt-on-primary: #f0f001;
+    --dt-primary-icon: #f0f001;
+    --dt-primary-link: #f0f001;
+    --dt-on-secondary-container: #f0f004;
+    --dt-secondary-container-icon: #f0f004;
+    --dt-secondary-container-link: #f0f004;
+    --dt-secondary: #f0f01b;
+    --dt-secondary-action: #f0f01b;
+    --dt-secondary-action-stateful: #f0f01b;
+    --dt-secondary-outline: #f0f01b;
+    --dt-secondary-action-state-layer: #f0f01b;
+    --dt-secondary-container: #f0f00c;
+    --dt-on-secondary: #f0f001;
+    --dt-secondary-icon: #f0f001;
+    --dt-secondary-link: #f0f001;
+    --dt-on-tertiary-container: #f0f004;
+    --dt-tertiary-container-icon: #f0f004;
+    --dt-tertiary-container-link: #f0f004;
+    --dt-tertiary: #f0f01b;
+    --dt-tertiary-action: #f0f01b;
+    --dt-tertiary-action-stateful: #f0f01b;
+    --dt-tertiary-outline: #f0f01b;
+    --dt-tertiary-action-state-layer: #f0f01b;
+    --dt-tertiary-container: #f0f00c;
+    --dt-on-tertiary: #f0f001;
+    --dt-tertiary-icon: #f0f001;
+    --dt-tertiary-link: #f0f001;
+    --dt-on-neutral-container: #f0f004;
+    --dt-neutral-container-icon: #f0f004;
+    --dt-neutral-container-link: #f0f004;
+    --dt-neutral: #f0f00c;
+    --dt-neutral-action: #f0f004;
+    --dt-neutral-action-stateful: #f0f004;
+    --dt-neutral-outline: #f0f00c;
+    --dt-neutral-action-state-layer: #f0f00c;
+    --dt-neutral-container: #f0f00c;
+    --dt-on-neutral: #f0f004;
+    --dt-neutral-icon: #f0f00c;
+    --dt-neutral-link: #f0f00c;
+    --dt-on-warning-container: #f0f014;
+    --dt-warning-container-icon: #f0f014;
+    --dt-warning-container-link: #f0f014;
+    --dt-warning: #f0f014;
+    --dt-warning-action: #f0f014;
+    --dt-warning-action-stateful: #f0f014;
+    --dt-warning-outline: #f0f014;
+    --dt-warning-action-state-layer: #f0f014;
+    --dt-warning-container: #f0f00c;
+    --dt-on-warning: #f0f001;
+    --dt-warning-icon: #f0f014;
+    --dt-warning-link: #f0f014;
+    --dt-on-error-container: #f0f011;
+    --dt-error-container-icon: #f0f011;
+    --dt-error-container-link: #f0f011;
+    --dt-error: #f0f011;
+    --dt-error-action: #f0f011;
+    --dt-error-action-stateful: #f0f011;
+    --dt-error-outline: #f0f011;
+    --dt-error-action-state-layer: #f0f00b;
+    --dt-error-container: #f0f00b;
+    --dt-on-error: #f0f001;
+    --dt-error-icon: #f0f001;
+    --dt-error-link: #f0f001;
+    --dt-mime-type-blue: #f0f019;
+    --dt-mime-type-dark-blue: #f0f019;
+    --dt-mime-type-green: #f0f015;
+    --dt-mime-type-grey: #f0f009;
+    --dt-mime-type-purple: #f0f010;
+    --dt-mime-type-deep-purple: #f0f010;
+    --dt-mime-type-red: #f0f011;
+    --dt-mime-type-yellow: #f0f014;
+    --dt-disabled: #f0f009;
+    --dt-on-disabled: #f0f004;
+    --dt-outline: #f0f009;
+    --dt-outline-variant: #f0f00a;
+    --dt-light-info-banner-button: #f0f004;
+    --dt-light-neutral-banner-button: #f0f004;
+    --dt-light-success-banner-button: #f0f015;
+    --dt-light-warning-banner-button: #f0f014;
+    --dt-light-error-banner-button: #f0f011;
+    --gm3-sys-color-background: #f0f001;
+    --gm3-sys-color-background-rgb: 240, 240, 1;
+    --gm3-sys-color-error: #f0f011;
+    --gm3-sys-color-error-rgb: 240, 240, 17;
+    --gm3-sys-color-error-container: #f0f00a;
+    --gm3-sys-color-error-container-rgb: 240, 240, 10;
+    --gm3-sys-color-inverse-on-surface: #f0f00c;
+    --gm3-sys-color-inverse-on-surface-rgb: 240, 240, 12;
+    --gm3-sys-color-inverse-primary: red;
+    --gm3-sys-color-inverse-primary-rgb: 255, 0, 0;
+    --gm3-sys-color-inverse-surface: #f0f004;
+    --gm3-sys-color-inverse-surface-rgb: 240, 240, 4;
+    --gm3-sys-color-on-background: #f0f004;
+    --gm3-sys-color-on-background-rgb: 240, 240, 4;
+    --gm3-sys-color-on-error: #f0f001;
+    --gm3-sys-color-on-error-rgb: 240, 240, 1;
+    --gm3-sys-color-on-error-container: #f0f011;
+    --gm3-sys-color-on-error-container-rgb: 240, 240, 17;
+    --gm3-sys-color-on-primary: #f0f001;
+    --gm3-sys-color-on-primary-rgb: 240, 240, 1;
+    --gm3-sys-color-on-primary-container: #f0f004;
+    --gm3-sys-color-on-primary-container-rgb: 240, 240, 4;
+    --gm3-sys-color-on-primary-fixed: #f0f001;
+    --gm3-sys-color-on-primary-fixed-rgb: [object Object];
+    --gm3-sys-color-on-primary-fixed-variant: #f0f001;
+    --gm3-sys-color-on-primary-fixed-variant-rgb: [object Object];
+    --gm3-sys-color-on-secondary: #f0f001;
+    --gm3-sys-color-on-secondary-rgb: 240, 240, 1;
+    --gm3-sys-color-on-secondary-container: #f0f004;
+    --gm3-sys-color-on-secondary-container-rgb: 240, 240, 4;
+    --gm3-sys-color-on-secondary-fixed: #f0f001;
+    --gm3-sys-color-on-secondary-fixed-rgb: 240, 240, 1;
+    --gm3-sys-color-on-secondary-fixed-variant: #f0f001;
+    --gm3-sys-color-on-secondary-fixed-variant-rgb: 240, 240, 1;
+    --gm3-sys-color-on-surface: #f0f004;
+    --gm3-sys-color-on-surface-rgb: 240, 240, 4;
+    --gm3-sys-color-on-surface-variant: #f0f004;
+    --gm3-sys-color-on-surface-variant-rgb: 240, 240, 4;
+    --gm3-sys-color-on-tertiary: #f0f001;
+    --gm3-sys-color-on-tertiary-rgb: 240, 240, 1;
+    --gm3-sys-color-on-tertiary-container: #f0f004;
+    --gm3-sys-color-on-tertiary-container-rgb: 240, 240, 4;
+    --gm3-sys-color-on-tertiary-fixed: #f0f001;
+    --gm3-sys-color-on-tertiary-fixed-rgb: 240, 240, 1;
+    --gm3-sys-color-on-tertiary-fixed-variant: #f0f001;
+    --gm3-sys-color-on-tertiary-fixed-variant-rgb: 240, 240, 1;
+    --gm3-sys-color-outline: #f0f009;
+    --gm3-sys-color-outline-rgb: 240, 240, 9;
+    --gm3-sys-color-outline-variant: #f0f00a;
+    --gm3-sys-color-outline-variant-rgb: 240, 240, 10;
+    --gm3-sys-color-primary: #f0f01b;
+    --gm3-sys-color-primary-rgb: 240, 240, 27;
+    --gm3-sys-color-primary-container: #f0f00c;
+    --gm3-sys-color-primary-container-rgb: 240, 240, 12;
+    --gm3-sys-color-primary-fixed: #f0f01b;
+    --gm3-sys-color-primary-fixed-rgb: 240, 240, 27;
+    --gm3-sys-color-primary-fixed-dim: #f0f01b;
+    --gm3-sys-color-primary-fixed-dim-rgb: 240, 240, 27;
+    --gm3-sys-color-secondary: #f0f01b;
+    --gm3-sys-color-secondary-rgb: [object Object];
+    --gm3-sys-color-secondary-container: #f0f00c;
+    --gm3-sys-color-secondary-container-rgb: 240, 240, 12;
+    --gm3-sys-color-secondary-fixed: #c2e7ff;
+    --gm3-sys-color-secondary-fixed-rgb: 194, 231, 255;
+    --gm3-sys-color-secondary-fixed-dim: #7fcfff;
+    --gm3-sys-color-secondary-fixed-dim-rgb: 127, 207, 255;
+    --gm3-sys-color-surface: #f0f001;
+    --gm3-sys-color-surface-rgb: 240, 240, 1;
+    --gm3-sys-color-surface-bright: #f0f001;
+    --gm3-sys-color-surface-bright-rgb: 240, 240, 1;
+    --gm3-sys-color-surface-container: #f0f00c;
+    --gm3-sys-color-surface-container-rgb: 240, 240, 12;
+    --gm3-sys-color-surface-container-high: #f0f00b;
+    --gm3-sys-color-surface-container-high-rgb: 240, 240, 11;
+    --gm3-sys-color-surface-container-highest: #f0f00a;
+    --gm3-sys-color-surface-container-highest-rgb: 240, 240, 10;
+    --gm3-sys-color-surface-container-low: #f0f002;
+    --gm3-sys-color-surface-container-low-rgb: 240, 240, 2;
+    --gm3-sys-color-surface-container-lowest: #f0f003;
+    --gm3-sys-color-surface-container-lowest-rgb: 240, 240, 3;
+    --gm3-sys-color-surface-dim: #f0f003;
+    --gm3-sys-color-surface-dim-rgb: 240, 240, 3;
+    --gm3-sys-color-surface-tint: #f0f01b;
+    --gm3-sys-color-surface-tint-rgb: 240, 240, 27;
+    --gm3-sys-color-surface-variant: #f0f00c;
+    --gm3-sys-color-surface-variant-rgb: 240, 240, 12;
+    --gm3-sys-color-tertiary: #f0f01b;
+    --gm3-sys-color-tertiary-rgb: 240, 240, 27;
+    --gm3-sys-color-tertiary-container: #f0f00c;
+    --gm3-sys-color-tertiary-container-rgb: [object Object];
+    --gm3-sys-color-tertiary-fixed: #f0f01b;
+    --gm3-sys-color-tertiary-fixed-rgb: 240, 240, 27;
+    --gm3-sys-color-tertiary-fixed-dim: #f0f01b;
+    --gm3-sys-color-tertiary-fixed-dim-rgb: 240, 240, 27;
+    --dt-scrim: rgba(240, 240, 4, 0.5);
+    --dt-scrim-2x: rgba(240, 240, 4, 0.5);
+    --gm3-sys-color-scrim: #f0f004;
+    --gm3-sys-color-scrim-rgb: 240, 240, 4;
+    --gm3-sys-color-shadow: #f0f004;
+    --gm3-sys-color-shadow-rgb: 240, 240, 4;
+    /* Settings menu title & back button */
+    /* Settings menu Storage total used icon */
+    /* Drive sync checkbox disabled */
+    /* Quota hover box-shadow */
+    /* Quota Google Drive */
+    /* Quota Google Photos */
+    /* Quota Gmail */
+    /* Google Account outline */
+    /* File preview (separate tab) background */
+    /* File preview (separate tab) top bar */
+    /* File preview (separate tab) bottom bar */
+    /* File preview (separate tab) share button */
+    /* File preview (separate tab) share Quick options */
+    /* File preview (separate tab) Print, Download, 3 dots */
+    /* File preview (separate tab) File title */
+    /* File preview (separate tab) 3 dots menu item hover */
+    /* File preview (separate tab) No preview available */
+    /* File preview (in Drive) text document */
+    /* File preview (in Drive) comment on image */
+    /* Drive sharing window material icon */
+    /* Drive sharing window access hover */
+    /* Drive sharing iframe (in Drive) */
+    /* Drive sharing iframe (file preview separate tab) */
+    /* Drive applications sidebar close button */
+    /* Drive applications sidebar get addons */
+    /* Drive applications sidebar close button white background */
+    /* Drive icon */
+    /* Drive upload checkmark */
+  }
+  .vhoiae.KkxPLb ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  .vhoiae.KkxPLb input::placeholder,
+  .vhoiae.KkxPLb textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  .vhoiae.KkxPLb .gb_Pc svg,
+  .vhoiae.KkxPLb .gb_Uc.gb_Zc svg,
+  .vhoiae.KkxPLb .gb_Pc .gb_gd .gb_od,
+  .vhoiae.KkxPLb .gb_Pc .gb_gd .gb_Oc,
+  .vhoiae.KkxPLb .gb_Pc .gb_gd .gb_id,
+  .vhoiae.KkxPLb .gb_Uc.gb_Zc .gb_od {
+    color: #f0f004 !important;
+  }
+  .vhoiae.KkxPLb .VBJTHe svg path {
+    fill: #f0f004;
+  }
+  .vhoiae.KkxPLb .MlG5Jc gm-checkbox[disabled] ~ .VfPpkd-ga,
+  .vhoiae.KkxPLb .MlG5Jc gm-radio[disabled] ~ .VfPpkd-ga,
+  .vhoiae.KkxPLb .MlG5Jc .VfPpkd-Qa-Qu-db ~ .VfPpkd-ga,
+  .vhoiae.KkxPLb .MlG5Jc .VfPpkd-Eg-Qu-db ~ .VfPpkd-ga {
+    color: #f0f006 !important;
+  }
+  .vhoiae.KkxPLb .KnDsIf:hover,
+  .vhoiae.KkxPLb .KnDsIf:focus,
+  .vhoiae.KkxPLb .al9hA {
+    box-shadow: 0 2px 6px #f0f009;
+  }
+  .vhoiae.KkxPLb .kJzqSb {
+    color: #f0f019;
+  }
+  .vhoiae.KkxPLb .L1pqQb {
+    color: #f0f014;
+  }
+  .vhoiae.KkxPLb .au0LDe {
+    color: #f0f011;
+  }
+  .vhoiae.KkxPLb .gb_Ea.gb_i {
+    border-color: #f0f009;
+    background-color: #f0f00c;
+  }
+  .vhoiae.KkxPLb .gb_Ea.gb_i:focus,
+  .vhoiae.KkxPLb .gb_Ea.gb_i:hover {
+    border-color: #f0f006;
+  }
+  .vhoiae.KkxPLb.ndfHFb-c4YZDc-uoC0bf.ndfHFb-c4YZDc-i5oIFb .ndfHFb-c4YZDc-bnBfGc {
+    background-color: #f0f001;
+  }
+  .vhoiae.KkxPLb .a-b-uoC0bf.a-b-L .a-b-jl {
+    background-color: rgba(240, 240, 1, 0.85);
+  }
+  .vhoiae.KkxPLb.ndfHFb-c4YZDc-uoC0bf.ndfHFb-c4YZDc-i5oIFb .ndfHFb-c4YZDc-Wrql6b.ndfHFb-c4YZDc-Wrql6b-Hyc8Sd,
+  .vhoiae.KkxPLb .a-b-uoC0bf.a-b-L .a-b-K.a-b-K-Hyc8Sd {
+    background-color: rgba(240, 240, 1, 0.85);
+  }
+  .vhoiae.KkxPLb .ndfHFb-c4YZDc-q77wGc .ndfHFb-c4YZDc-DARUcf-NnAfwf-i5oIFb,
+  .vhoiae.KkxPLb .ndfHFb-c4YZDc-q77wGc .ndfHFb-c4YZDc-nJjxad-nK2kYb-i5oIFb,
+  .vhoiae.KkxPLb .a-b-vo .a-b-La-yc-L,
+  .vhoiae.KkxPLb .a-b-vo .a-b-Kb-ac-L {
+    background-color: rgba(240, 240, 1, 0.85);
+    color: #f0f004 !important;
+    /* File preview (separate tab) page input */
+  }
+  .vhoiae.KkxPLb .ndfHFb-c4YZDc-q77wGc .ndfHFb-c4YZDc-DARUcf-NnAfwf-i5oIFb .ndfHFb-c4YZDc-DARUcf-NGme3c-YPqjbf,
+  .vhoiae.KkxPLb .ndfHFb-c4YZDc-q77wGc .ndfHFb-c4YZDc-nJjxad-nK2kYb-i5oIFb .ndfHFb-c4YZDc-DARUcf-NGme3c-YPqjbf,
+  .vhoiae.KkxPLb .a-b-vo .a-b-La-yc-L .ndfHFb-c4YZDc-DARUcf-NGme3c-YPqjbf,
+  .vhoiae.KkxPLb .a-b-vo .a-b-Kb-ac-L .ndfHFb-c4YZDc-DARUcf-NGme3c-YPqjbf,
+  .vhoiae.KkxPLb .ndfHFb-c4YZDc-q77wGc .ndfHFb-c4YZDc-DARUcf-NnAfwf-i5oIFb .a-b-La-su-vb,
+  .vhoiae.KkxPLb .ndfHFb-c4YZDc-q77wGc .ndfHFb-c4YZDc-nJjxad-nK2kYb-i5oIFb .a-b-La-su-vb,
+  .vhoiae.KkxPLb .a-b-vo .a-b-La-yc-L .a-b-La-su-vb,
+  .vhoiae.KkxPLb .a-b-vo .a-b-Kb-ac-L .a-b-La-su-vb {
+    background-color: rgba(240, 240, 1, 0.5);
+    color: #f0f004;
+  }
+  .vhoiae.KkxPLb.ndfHFb-c4YZDc-uoC0bf .zAYgkb-uoC0bf .tk3N6e-LgbsSe,
+  .vhoiae.KkxPLb.ndfHFb-c4YZDc-uoC0bf .zAYgkb-mAKE4e-LQLjdd-xl07Ob-LgbsSe.VIpgJd-Kb3HCc-xl07Ob-LgbsSe,
+  .vhoiae.KkxPLb .a-b-uoC0bf .ae-uoC0bf .g-d,
+  .vhoiae.KkxPLb .a-b-uoC0bf .ae-mAKE4e-Hc-w-d.h-R-w-d {
+    background-color: #f0f01b;
+    color: #f0f001;
+    /* File preview (separate tab) share icon */
+    /* File preview (separate tab) share triangle */
+  }
+  .vhoiae.KkxPLb.ndfHFb-c4YZDc-uoC0bf .zAYgkb-uoC0bf .tk3N6e-LgbsSe .IyROMc-euCgFf-LJSvSb,
+  .vhoiae.KkxPLb.ndfHFb-c4YZDc-uoC0bf .zAYgkb-mAKE4e-LQLjdd-xl07Ob-LgbsSe.VIpgJd-Kb3HCc-xl07Ob-LgbsSe .IyROMc-euCgFf-LJSvSb,
+  .vhoiae.KkxPLb .a-b-uoC0bf .ae-uoC0bf .g-d .IyROMc-euCgFf-LJSvSb,
+  .vhoiae.KkxPLb .a-b-uoC0bf .ae-mAKE4e-Hc-w-d.h-R-w-d .IyROMc-euCgFf-LJSvSb,
+  .vhoiae.KkxPLb.ndfHFb-c4YZDc-uoC0bf .zAYgkb-uoC0bf .tk3N6e-LgbsSe .ae-c,
+  .vhoiae.KkxPLb.ndfHFb-c4YZDc-uoC0bf .zAYgkb-mAKE4e-LQLjdd-xl07Ob-LgbsSe.VIpgJd-Kb3HCc-xl07Ob-LgbsSe .ae-c,
+  .vhoiae.KkxPLb .a-b-uoC0bf .ae-uoC0bf .g-d .ae-c,
+  .vhoiae.KkxPLb .a-b-uoC0bf .ae-mAKE4e-Hc-w-d.h-R-w-d .ae-c {
+    filter: brightness(0) invert(97%) sepia(4%) saturate(152%) hue-rotate(183deg) brightness(94%) contrast(106%);
+  }
+  .vhoiae.KkxPLb.ndfHFb-c4YZDc-uoC0bf .zAYgkb-uoC0bf .tk3N6e-LgbsSe .VIpgJd-Kb3HCc-xl07Ob-LgbsSe-j4gsHd,
+  .vhoiae.KkxPLb.ndfHFb-c4YZDc-uoC0bf .zAYgkb-mAKE4e-LQLjdd-xl07Ob-LgbsSe.VIpgJd-Kb3HCc-xl07Ob-LgbsSe .VIpgJd-Kb3HCc-xl07Ob-LgbsSe-j4gsHd,
+  .vhoiae.KkxPLb .a-b-uoC0bf .ae-uoC0bf .g-d .VIpgJd-Kb3HCc-xl07Ob-LgbsSe-j4gsHd,
+  .vhoiae.KkxPLb .a-b-uoC0bf .ae-mAKE4e-Hc-w-d.h-R-w-d .VIpgJd-Kb3HCc-xl07Ob-LgbsSe-j4gsHd,
+  .vhoiae.KkxPLb.ndfHFb-c4YZDc-uoC0bf .zAYgkb-uoC0bf .tk3N6e-LgbsSe .h-R-w-d-Re,
+  .vhoiae.KkxPLb.ndfHFb-c4YZDc-uoC0bf .zAYgkb-mAKE4e-LQLjdd-xl07Ob-LgbsSe.VIpgJd-Kb3HCc-xl07Ob-LgbsSe .h-R-w-d-Re,
+  .vhoiae.KkxPLb .a-b-uoC0bf .ae-uoC0bf .g-d .h-R-w-d-Re,
+  .vhoiae.KkxPLb .a-b-uoC0bf .ae-mAKE4e-Hc-w-d.h-R-w-d .h-R-w-d-Re {
+    border-color: #f0f001 transparent !important;
+  }
+  .vhoiae.KkxPLb .zAYgkb-NhlrFc-xl07Ob-BvBYQ,
+  .vhoiae.KkxPLb .h-w.ae-NhlrFc-w {
+    background-color: #f0f001;
+    /* File preview (in Drive) share Quick options current share level container */
+    /* File preview (separate tab) share Quick options divider */
+    /* File preview (separate tab) share Quick options row hover */
+    /* File preview (separate tab) share Quick options row icon */
+  }
+  .vhoiae.KkxPLb .zAYgkb-NhlrFc-xl07Ob-BvBYQ *,
+  .vhoiae.KkxPLb .h-w.ae-NhlrFc-w * {
+    color: #f0f004 !important;
+  }
+  .vhoiae.KkxPLb .zAYgkb-NhlrFc-xl07Ob-BvBYQ .h-v-x,
+  .vhoiae.KkxPLb .h-w.ae-NhlrFc-w .h-v-x {
+    opacity: 100%;
+  }
+  .vhoiae.KkxPLb .zAYgkb-NhlrFc-xl07Ob-BvBYQ .zAYgkb-NhlrFc-gqMrKb,
+  .vhoiae.KkxPLb .h-w.ae-NhlrFc-w .zAYgkb-NhlrFc-gqMrKb,
+  .vhoiae.KkxPLb .zAYgkb-NhlrFc-xl07Ob-BvBYQ .ae-NhlrFc-Yo,
+  .vhoiae.KkxPLb .h-w.ae-NhlrFc-w .ae-NhlrFc-Yo {
+    border-color: #f0f009;
+  }
+  .vhoiae.KkxPLb .zAYgkb-NhlrFc-xl07Ob-BvBYQ .VIpgJd-j7LFlb-sn54Q,
+  .vhoiae.KkxPLb .h-w.ae-NhlrFc-w .VIpgJd-j7LFlb-sn54Q,
+  .vhoiae.KkxPLb .zAYgkb-NhlrFc-xl07Ob-BvBYQ .h-v-pc,
+  .vhoiae.KkxPLb .h-w.ae-NhlrFc-w .h-v-pc {
+    background-color: #f0f00c;
+  }
+  .vhoiae.KkxPLb .zAYgkb-NhlrFc-xl07Ob-BvBYQ .IyROMc-euCgFf-LJSvSb,
+  .vhoiae.KkxPLb .h-w.ae-NhlrFc-w .IyROMc-euCgFf-LJSvSb,
+  .vhoiae.KkxPLb .zAYgkb-NhlrFc-xl07Ob-BvBYQ .ba-ea-i,
+  .vhoiae.KkxPLb .h-w.ae-NhlrFc-w .ba-ea-i {
+    filter: brightness(0) invert(31%) sepia(10%) saturate(1268%) hue-rotate(196deg) brightness(90%) contrast(86%);
+  }
+  .vhoiae.KkxPLb .ndfHFb-c4YZDc-Bz112c:not([style]),
+  .vhoiae.KkxPLb .ndfHFb-c4YZDc-Bz112c[style*="googlematerialicons"],
+  .vhoiae.KkxPLb .ndfHFb-c4YZDc-Bz112c[style="user-select: none;"],
+  .vhoiae.KkxPLb .ndfHFb-c4YZDc-Wrql6b-htvI8d-wcotoc-wHEfpf-ndfHFb-Bz112c,
+  .vhoiae.KkxPLb .ndfHFb-c4YZDc-Wrql6b-w37qKe-Bz112c,
+  .vhoiae.KkxPLb .a-b-c:not([style]),
+  .vhoiae.KkxPLb .a-b-c[style*="googlematerialicons"],
+  .vhoiae.KkxPLb .a-b-c[style="user-select: none;"],
+  .vhoiae.KkxPLb .a-b-K-zc-Eb-bg-a-c,
+  .vhoiae.KkxPLb .a-b-K-X-c {
+    filter: brightness(0) invert(31%) sepia(10%) saturate(1268%) hue-rotate(196deg) brightness(90%) contrast(86%);
+  }
+  .vhoiae.KkxPLb .ndfHFb-c4YZDc-Wrql6b-V1ur5d,
+  .vhoiae.KkxPLb .a-b-cg-Zf {
+    color: #f0f004;
+  }
+  .vhoiae.KkxPLb .ndfHFb-c4YZDc-j7LFlb:hover,
+  .vhoiae.KkxPLb .a-b-v:hover {
+    background-color: #f0f00c;
+  }
+  .vhoiae.KkxPLb .ndfHFb-c4YZDc-EglORb-haAclf,
+  .vhoiae.KkxPLb .a-b-Tb-j {
+    background-color: #f0f00c;
+    color: #f0f004;
+    /* File preview (separate tab) No preview available Download */
+    /* File preview (separate tab) No preview available Download icon */
+  }
+  .vhoiae.KkxPLb .ndfHFb-c4YZDc-EglORb-haAclf .ndfHFb-c4YZDc-bN97Pc-nupQLb-LgbsSe,
+  .vhoiae.KkxPLb .a-b-Tb-j .ndfHFb-c4YZDc-bN97Pc-nupQLb-LgbsSe,
+  .vhoiae.KkxPLb .ndfHFb-c4YZDc-EglORb-haAclf .a-b-x-rb-d,
+  .vhoiae.KkxPLb .a-b-Tb-j .a-b-x-rb-d {
+    background-color: #f0f00b;
+    color: #f0f004;
+    text-shadow: none;
+    border-color: transparent;
+  }
+  .vhoiae.KkxPLb .ndfHFb-c4YZDc-EglORb-haAclf .ndfHFb-c4YZDc-bN97Pc-nupQLb-LgbsSe:hover,
+  .vhoiae.KkxPLb .a-b-Tb-j .ndfHFb-c4YZDc-bN97Pc-nupQLb-LgbsSe:hover,
+  .vhoiae.KkxPLb .ndfHFb-c4YZDc-EglORb-haAclf .a-b-x-rb-d:hover,
+  .vhoiae.KkxPLb .a-b-Tb-j .a-b-x-rb-d:hover {
+    background-color: #f0f00a;
+    background-image: none;
+  }
+  .vhoiae.KkxPLb .ndfHFb-c4YZDc-EglORb-haAclf .ndfHFb-c4YZDc-bN97Pc-nupQLb-LgbsSe-Bz112c,
+  .vhoiae.KkxPLb .a-b-Tb-j .ndfHFb-c4YZDc-bN97Pc-nupQLb-LgbsSe-Bz112c,
+  .vhoiae.KkxPLb .ndfHFb-c4YZDc-EglORb-haAclf .a-b-x-rb-d-c,
+  .vhoiae.KkxPLb .a-b-Tb-j .a-b-x-rb-d-c {
+    filter: brightness(0) invert(31%) sepia(10%) saturate(1268%) hue-rotate(196deg) brightness(90%) contrast(86%);
+  }
+  .vhoiae.KkxPLb .a-b-r-x,
+  .vhoiae.KkxPLb .ndfHFb-c4YZDc-fmcmS-bN97Pc,
+  .vhoiae.KkxPLb .a-b-r-x pre,
+  .vhoiae.KkxPLb .ndfHFb-c4YZDc-fmcmS-bN97Pc pre {
+    background-color: #f0f00c !important;
+    color: #f0f004 !important;
+  }
+  .vhoiae.KkxPLb .Yk-efwuC {
+    background-color: #f0f00c !important;
+    /* File preview (in Drive) comment on image person */
+    /* File preview (in Drive) comments */
+  }
+  .vhoiae.KkxPLb .Yk-efwuC .Yk-Vq7Udc {
+    background-color: #f0f00c !important;
+    /* Comment text */
+    /* Comment date */
+  }
+  .vhoiae.KkxPLb .Yk-efwuC .Yk-Vq7Udc [data-name] {
+    color: #f0f004 !important;
+  }
+  .vhoiae.KkxPLb .Yk-efwuC .Yk-Vq7Udc .Yk-eKrold-Sg.Yk-eKrold-Sg {
+    color: #f0f004 !important;
+  }
+  .vhoiae.KkxPLb .Yk-efwuC .Yk-Vq7Udc .Yk-eKrold-bi {
+    color: #f0f006 !important;
+  }
+  .vhoiae.KkxPLb .Yk-efwuC .Yk-efwuC-vb-Gd {
+    background-color: #f0f00c;
+  }
+  .vhoiae.KkxPLb .Yk-efwuC .Yk-efwuC-vb-Gd,
+  .vhoiae.KkxPLb .Yk-efwuC .Yk-efwuC-vb-Gd * {
+    color: #f0f004 !important;
+  }
+  .vhoiae.KkxPLb .Yk-efwuC .Yk-efwuC-vb-Gd [role="textbox"] {
+    background-color: #f0f00b;
+    border-color: #f0f009;
+  }
+  .vhoiae.KkxPLb .Yk-efwuC .Yk-efwuC-vb-Gd [role="textbox"]::before {
+    color: #f0f006 !important;
+  }
+  .vhoiae.KkxPLb .Yk-efwuC .Yk-efwuC-vb-Gd [role="button"] {
+    background-color: #f0f00b !important;
+    /* needed to override border-color */
+  }
+  .vhoiae.KkxPLb .Yk-efwuC .Yk-efwuC-vb-Gd [role="button"][role="button"] {
+    border-color: #f0f009 !important;
+  }
+  .vhoiae.KkxPLb .Yk-efwuC .Yk-efwuC-vb-Gd [role="button"][aria-disabled="true"] {
+    background-color: #f0f00b !important;
+    color: #f0f006 !important;
+  }
+  .vhoiae.KkxPLb .SbpzSe .VfPpkd-StrnGf-rymPhb-f7MjDc {
+    color: #f0f01b;
+  }
+  .vhoiae.KkxPLb .lfDNBb:hover,
+  .vhoiae.KkxPLb .lfDNBb:focus-within,
+  .vhoiae.KkxPLb .ZelW3e:hover .FYhd9e,
+  .vhoiae.KkxPLb .ZelW3e:focus-within .FYhd9e {
+    background-color: #f0f00c;
+  }
+  .vhoiae.KkxPLb .lb-k-x {
+    color-scheme: unset;
+  }
+  .vhoiae.KkxPLb .XKSfm-Sx9Kwc-bN97Pc {
+    color-scheme: auto;
+    /* unset doesn't work? */
+  }
+  .vhoiae.KkxPLb [role="tooltip"],
+  .vhoiae.KkxPLb .Kk7lMc-Ca,
+  .vhoiae.KkxPLb .gb_2e {
+    background-color: #f0f00a;
+    border-color: transparent;
+    /* File preview (separate tab) tooltip arrow */
+  }
+  .vhoiae.KkxPLb [role="tooltip"] *,
+  .vhoiae.KkxPLb .Kk7lMc-Ca *,
+  .vhoiae.KkxPLb .gb_2e *,
+  .vhoiae.KkxPLb [role="tooltip"],
+  .vhoiae.KkxPLb .Kk7lMc-Ca,
+  .vhoiae.KkxPLb .gb_2e {
+    color: #f0f004 !important;
+  }
+  .vhoiae.KkxPLb [role="tooltip"] .tk3N6e-suEOdc-jQ8oHc,
+  .vhoiae.KkxPLb .Kk7lMc-Ca .tk3N6e-suEOdc-jQ8oHc,
+  .vhoiae.KkxPLb .gb_2e .tk3N6e-suEOdc-jQ8oHc,
+  .vhoiae.KkxPLb [role="tooltip"] .tk3N6e-suEOdc-ez0xG,
+  .vhoiae.KkxPLb .Kk7lMc-Ca .tk3N6e-suEOdc-ez0xG,
+  .vhoiae.KkxPLb .gb_2e .tk3N6e-suEOdc-ez0xG {
+    border-color: #f0f00a transparent !important;
+  }
+  .vhoiae.KkxPLb .Kk7lMc-QWPxkf-d-j .Yb-Il-d .Yb-Il-d-c-j {
+    background-color: #f0f00c;
+  }
+  .vhoiae.KkxPLb .Kk7lMc-QWPxkf-d-j .Yb-Il-d .Yb-Il-d-c-j path:nth-child(1) {
+    stroke: #f0f004;
+  }
+  .vhoiae.KkxPLb .Yb-Il-d#qJTzr .Yb-Il-d-c-j {
+    filter: brightness(0) invert(31%) sepia(10%) saturate(1268%) hue-rotate(196deg) brightness(90%) contrast(86%);
+  }
+  .vhoiae.KkxPLb .Yb-Il-d-c-Nd {
+    background-color: transparent;
+  }
+  .vhoiae.KkxPLb [src="//ssl.gstatic.com/images/branding/product/1x/drive_2020q4_48dp.png"] {
+    content: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2087.3%2078%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22m6.6%2066.85%203.85%206.65c.8%201.4%201.95%202.5%203.3%203.3L27.5%2053H0c0%201.55.4%203.1%201.2%204.5z%22%20fill%3D%22%23f0f014%22/%3E%3Cpath%20d%3D%22M43.65%2025%2029.9%201.2c-1.35.8-2.5%201.9-3.3%203.3l-25.4%2044A9.06%209.06%200%200%200%200%2053h27.5z%22%20fill%3D%22%23f0f015%22/%3E%3Cpath%20d%3D%22M73.55%2076.8c1.35-.8%202.5-1.9%203.3-3.3l1.6-2.75L86.1%2057.5c.8-1.4%201.2-2.95%201.2-4.5H59.798l5.852%2011.5z%22%20fill%3D%22%23f0f011%22/%3E%3Cpath%20d%3D%22M43.65%2025%2057.4%201.2C56.05.4%2054.5%200%2052.9%200H34.4c-1.6%200-3.15.45-4.5%201.2z%22%20fill%3D%22%23f0f011%22/%3E%3Cpath%20d%3D%22M59.8%2053H27.5L13.75%2076.8c1.35.8%202.9%201.2%204.5%201.2h50.8c1.6%200%203.15-.45%204.5-1.2z%22%20fill%3D%22%23f0f019%22/%3E%3Cpath%20d%3D%22m73.4%2026.5-12.7-22c-.8-1.4-1.95-2.5-3.3-3.3L43.65%2025%2059.8%2053h27.45c0-1.55-.4-3.1-1.2-4.5z%22%20fill%3D%22%23f0f014%22/%3E%3C/svg%3E");
+  }
+  .vhoiae.KkxPLb .z-Ea-Fj-c svg path {
+    fill: #f0f015;
+  }
+  .vhoiae.LgGVmb,
+  .vhoiae .yYWAMb.bvmRsc,
+  .vhoiae .dif24c.bvmRsc {
+    --dt-on-background: #f0f004;
+    --dt-on-background-secondary: #f0f006;
+    --dt-background: #f0f001;
+    --dt-on-surface: #f0f004;
+    --dt-inverse-surface: #f0f004;
+    --dt-on-surface-secondary: #f0f006;
+    --dt-on-surface-variant: #f0f004;
+    --dt-surface-variant: #f0f00c;
+    --dt-inverse-on-surface: #f0f00c;
+    --dt-surface: #f0f001;
+    --dt-surface-tint: #f0f01b;
+    --dt-shadow-elevation-1: 0px 3px 1px -2px rgba(240, 240, 1, 0.2), 0px 2px 2px 0px rgba(240, 240, 1, 0.14), 0px 1px 5px 0px rgba(240, 240, 1, 0.12);
+    --dt-shadow-elevation-2: 0px 2px 4px -1px rgba(240, 240, 1, 0.2), 0px 4px 5px 0px rgba(240, 240, 1, 0.14), 0px 1px 10px 0px rgba(240, 240, 1, 0.12);
+    --dt-shadow-elevation-3: 0px 5px 5px -3px rgba(240, 240, 1, 0.2), 0px 8px 10px 1px rgba(240, 240, 1, 0.14), 0px 3px 14px 2px rgba(240, 240, 1, 0.12);
+    --dt-shadow-elevation-4: 0px 5px 5px -3px rgba(240, 240, 1, 0.2), 0px 8px 10px 1px rgba(240, 240, 1, 0.14), 0px 3px 14px 2px rgba(240, 240, 1, 0.12);
+    --dt-shadow-elevation-5: 0px 8px 10px -6px rgba(240, 240, 1, 0.2), 0px 16px 24px 2px rgba(240, 240, 1, 0.14), 0px 6px 30px 5px rgba(240, 240, 1, 0.12);
+    --dt-surface-container-lowest: #f0f003;
+    --dt-surface-container-low: #f0f002;
+    --dt-surface-container: #f0f00c;
+    --dt-surface-container-high: #f0f00b;
+    --dt-surface-container-highest: #f0f00a;
+    --dt-surface-dim: #f0f003;
+    --dt-surface-bright: #f0f001;
+    --dt-on-primary-container: #f0f004;
+    --dt-primary-container-icon: #f0f004;
+    --dt-primary-container-link: #f0f004;
+    --dt-primary: #f0f01b;
+    --dt-primary-action: #f0f01b;
+    --dt-primary-action-stateful: #f0f01b;
+    --dt-primary-outline: #f0f01b;
+    --dt-primary-action-state-layer: #f0f01b;
+    --dt-primary-container: #f0f00c;
+    --dt-on-primary: #f0f001;
+    --dt-primary-icon: #f0f001;
+    --dt-primary-link: #f0f001;
+    --dt-on-secondary-container: #f0f004;
+    --dt-secondary-container-icon: #f0f004;
+    --dt-secondary-container-link: #f0f004;
+    --dt-secondary: #f0f01b;
+    --dt-secondary-action: #f0f01b;
+    --dt-secondary-action-stateful: #f0f01b;
+    --dt-secondary-outline: #f0f01b;
+    --dt-secondary-action-state-layer: #f0f01b;
+    --dt-secondary-container: #f0f00c;
+    --dt-on-secondary: #f0f001;
+    --dt-secondary-icon: #f0f001;
+    --dt-secondary-link: #f0f001;
+    --dt-on-tertiary-container: #f0f004;
+    --dt-tertiary-container-icon: #f0f004;
+    --dt-tertiary-container-link: #f0f004;
+    --dt-tertiary: #f0f01b;
+    --dt-tertiary-action: #f0f01b;
+    --dt-tertiary-action-stateful: #f0f01b;
+    --dt-tertiary-outline: #f0f01b;
+    --dt-tertiary-action-state-layer: #f0f01b;
+    --dt-tertiary-container: #f0f00c;
+    --dt-on-tertiary: #f0f001;
+    --dt-tertiary-icon: #f0f001;
+    --dt-tertiary-link: #f0f001;
+    --dt-on-neutral-container: #f0f004;
+    --dt-neutral-container-icon: #f0f004;
+    --dt-neutral-container-link: #f0f004;
+    --dt-neutral: #f0f00c;
+    --dt-neutral-action: #f0f004;
+    --dt-neutral-action-stateful: #f0f004;
+    --dt-neutral-outline: #f0f00c;
+    --dt-neutral-action-state-layer: #f0f00c;
+    --dt-neutral-container: #f0f00c;
+    --dt-on-neutral: #f0f004;
+    --dt-neutral-icon: #f0f00c;
+    --dt-neutral-link: #f0f00c;
+    --dt-on-warning-container: #f0f014;
+    --dt-warning-container-icon: #f0f014;
+    --dt-warning-container-link: #f0f014;
+    --dt-warning: #f0f014;
+    --dt-warning-action: #f0f014;
+    --dt-warning-action-stateful: #f0f014;
+    --dt-warning-outline: #f0f014;
+    --dt-warning-action-state-layer: #f0f014;
+    --dt-warning-container: #f0f00c;
+    --dt-on-warning: #f0f001;
+    --dt-warning-icon: #f0f014;
+    --dt-warning-link: #f0f014;
+    --dt-on-error-container: #f0f011;
+    --dt-error-container-icon: #f0f011;
+    --dt-error-container-link: #f0f011;
+    --dt-error: #f0f011;
+    --dt-error-action: #f0f011;
+    --dt-error-action-stateful: #f0f011;
+    --dt-error-outline: #f0f011;
+    --dt-error-action-state-layer: #f0f00b;
+    --dt-error-container: #f0f00b;
+    --dt-on-error: #f0f001;
+    --dt-error-icon: #f0f001;
+    --dt-error-link: #f0f001;
+    --dt-mime-type-blue: #f0f019;
+    --dt-mime-type-dark-blue: #f0f019;
+    --dt-mime-type-green: #f0f015;
+    --dt-mime-type-grey: #f0f009;
+    --dt-mime-type-purple: #f0f010;
+    --dt-mime-type-deep-purple: #f0f010;
+    --dt-mime-type-red: #f0f011;
+    --dt-mime-type-yellow: #f0f014;
+    --dt-disabled: #f0f009;
+    --dt-on-disabled: #f0f004;
+    --dt-outline: #f0f009;
+    --dt-outline-variant: #f0f00a;
+    --dt-light-info-banner-button: #f0f004;
+    --dt-light-neutral-banner-button: #f0f004;
+    --dt-light-success-banner-button: #f0f015;
+    --dt-light-warning-banner-button: #f0f014;
+    --dt-light-error-banner-button: #f0f011;
+    --gm3-sys-color-background: #f0f001;
+    --gm3-sys-color-background-rgb: 240, 240, 1;
+    --gm3-sys-color-error: #f0f011;
+    --gm3-sys-color-error-rgb: 240, 240, 17;
+    --gm3-sys-color-error-container: #f0f00a;
+    --gm3-sys-color-error-container-rgb: 240, 240, 10;
+    --gm3-sys-color-inverse-on-surface: #f0f00c;
+    --gm3-sys-color-inverse-on-surface-rgb: 240, 240, 12;
+    --gm3-sys-color-inverse-primary: red;
+    --gm3-sys-color-inverse-primary-rgb: 255, 0, 0;
+    --gm3-sys-color-inverse-surface: #f0f004;
+    --gm3-sys-color-inverse-surface-rgb: 240, 240, 4;
+    --gm3-sys-color-on-background: #f0f004;
+    --gm3-sys-color-on-background-rgb: 240, 240, 4;
+    --gm3-sys-color-on-error: #f0f001;
+    --gm3-sys-color-on-error-rgb: 240, 240, 1;
+    --gm3-sys-color-on-error-container: #f0f011;
+    --gm3-sys-color-on-error-container-rgb: 240, 240, 17;
+    --gm3-sys-color-on-primary: #f0f001;
+    --gm3-sys-color-on-primary-rgb: 240, 240, 1;
+    --gm3-sys-color-on-primary-container: #f0f004;
+    --gm3-sys-color-on-primary-container-rgb: 240, 240, 4;
+    --gm3-sys-color-on-primary-fixed: #f0f001;
+    --gm3-sys-color-on-primary-fixed-rgb: [object Object];
+    --gm3-sys-color-on-primary-fixed-variant: #f0f001;
+    --gm3-sys-color-on-primary-fixed-variant-rgb: [object Object];
+    --gm3-sys-color-on-secondary: #f0f001;
+    --gm3-sys-color-on-secondary-rgb: 240, 240, 1;
+    --gm3-sys-color-on-secondary-container: #f0f004;
+    --gm3-sys-color-on-secondary-container-rgb: 240, 240, 4;
+    --gm3-sys-color-on-secondary-fixed: #f0f001;
+    --gm3-sys-color-on-secondary-fixed-rgb: 240, 240, 1;
+    --gm3-sys-color-on-secondary-fixed-variant: #f0f001;
+    --gm3-sys-color-on-secondary-fixed-variant-rgb: 240, 240, 1;
+    --gm3-sys-color-on-surface: #f0f004;
+    --gm3-sys-color-on-surface-rgb: 240, 240, 4;
+    --gm3-sys-color-on-surface-variant: #f0f004;
+    --gm3-sys-color-on-surface-variant-rgb: 240, 240, 4;
+    --gm3-sys-color-on-tertiary: #f0f001;
+    --gm3-sys-color-on-tertiary-rgb: 240, 240, 1;
+    --gm3-sys-color-on-tertiary-container: #f0f004;
+    --gm3-sys-color-on-tertiary-container-rgb: 240, 240, 4;
+    --gm3-sys-color-on-tertiary-fixed: #f0f001;
+    --gm3-sys-color-on-tertiary-fixed-rgb: 240, 240, 1;
+    --gm3-sys-color-on-tertiary-fixed-variant: #f0f001;
+    --gm3-sys-color-on-tertiary-fixed-variant-rgb: 240, 240, 1;
+    --gm3-sys-color-outline: #f0f009;
+    --gm3-sys-color-outline-rgb: 240, 240, 9;
+    --gm3-sys-color-outline-variant: #f0f00a;
+    --gm3-sys-color-outline-variant-rgb: 240, 240, 10;
+    --gm3-sys-color-primary: #f0f01b;
+    --gm3-sys-color-primary-rgb: 240, 240, 27;
+    --gm3-sys-color-primary-container: #f0f00c;
+    --gm3-sys-color-primary-container-rgb: 240, 240, 12;
+    --gm3-sys-color-primary-fixed: #f0f01b;
+    --gm3-sys-color-primary-fixed-rgb: 240, 240, 27;
+    --gm3-sys-color-primary-fixed-dim: #f0f01b;
+    --gm3-sys-color-primary-fixed-dim-rgb: 240, 240, 27;
+    --gm3-sys-color-secondary: #f0f01b;
+    --gm3-sys-color-secondary-rgb: [object Object];
+    --gm3-sys-color-secondary-container: #f0f00c;
+    --gm3-sys-color-secondary-container-rgb: 240, 240, 12;
+    --gm3-sys-color-secondary-fixed: #c2e7ff;
+    --gm3-sys-color-secondary-fixed-rgb: 194, 231, 255;
+    --gm3-sys-color-secondary-fixed-dim: #7fcfff;
+    --gm3-sys-color-secondary-fixed-dim-rgb: 127, 207, 255;
+    --gm3-sys-color-surface: #f0f001;
+    --gm3-sys-color-surface-rgb: 240, 240, 1;
+    --gm3-sys-color-surface-bright: #f0f001;
+    --gm3-sys-color-surface-bright-rgb: 240, 240, 1;
+    --gm3-sys-color-surface-container: #f0f00c;
+    --gm3-sys-color-surface-container-rgb: 240, 240, 12;
+    --gm3-sys-color-surface-container-high: #f0f00b;
+    --gm3-sys-color-surface-container-high-rgb: 240, 240, 11;
+    --gm3-sys-color-surface-container-highest: #f0f00a;
+    --gm3-sys-color-surface-container-highest-rgb: 240, 240, 10;
+    --gm3-sys-color-surface-container-low: #f0f002;
+    --gm3-sys-color-surface-container-low-rgb: 240, 240, 2;
+    --gm3-sys-color-surface-container-lowest: #f0f003;
+    --gm3-sys-color-surface-container-lowest-rgb: 240, 240, 3;
+    --gm3-sys-color-surface-dim: #f0f003;
+    --gm3-sys-color-surface-dim-rgb: 240, 240, 3;
+    --gm3-sys-color-surface-tint: #f0f01b;
+    --gm3-sys-color-surface-tint-rgb: 240, 240, 27;
+    --gm3-sys-color-surface-variant: #f0f00c;
+    --gm3-sys-color-surface-variant-rgb: 240, 240, 12;
+    --gm3-sys-color-tertiary: #f0f01b;
+    --gm3-sys-color-tertiary-rgb: 240, 240, 27;
+    --gm3-sys-color-tertiary-container: #f0f00c;
+    --gm3-sys-color-tertiary-container-rgb: [object Object];
+    --gm3-sys-color-tertiary-fixed: #f0f01b;
+    --gm3-sys-color-tertiary-fixed-rgb: 240, 240, 27;
+    --gm3-sys-color-tertiary-fixed-dim: #f0f01b;
+    --gm3-sys-color-tertiary-fixed-dim-rgb: 240, 240, 27;
+    --dt-scrim: rgba(240, 240, 1, 0.5);
+    --dt-scrim-2x: rgba(240, 240, 1, 0.5);
+    --gm3-sys-color-scrim: #f0f001;
+    --gm3-sys-color-scrim-rgb: 240, 240, 1;
+    --gm3-sys-color-shadow: #f0f001;
+    --gm3-sys-color-shadow-rgb: 240, 240, 1;
+    /* Settings menu title & back button */
+    /* Settings menu Storage total used icon */
+    /* Drive sync checkbox disabled */
+    /* Quota hover box-shadow */
+    /* Quota Google Drive */
+    /* Quota Google Photos */
+    /* Quota Gmail */
+    /* Google Account outline */
+    /* File preview (separate tab) background */
+    /* File preview (separate tab) top bar */
+    /* File preview (separate tab) bottom bar */
+    /* File preview (separate tab) share button */
+    /* File preview (separate tab) share Quick options */
+    /* File preview (separate tab) Print, Download, 3 dots */
+    /* File preview (separate tab) File title */
+    /* File preview (separate tab) 3 dots menu item hover */
+    /* File preview (separate tab) No preview available */
+    /* File preview (in Drive) text document */
+    /* File preview (in Drive) comment on image */
+    /* Drive sharing window material icon */
+    /* Drive sharing window access hover */
+    /* Drive sharing iframe (in Drive) */
+    /* Drive sharing iframe (file preview separate tab) */
+    /* Drive applications sidebar close button */
+    /* Drive applications sidebar get addons */
+    /* Drive applications sidebar close button white background */
+    /* Drive icon */
+    /* Drive upload checkmark */
+  }
+  .vhoiae.LgGVmb ::selection,
+  .vhoiae .yYWAMb.bvmRsc ::selection,
+  .vhoiae .dif24c.bvmRsc ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  .vhoiae.LgGVmb input::placeholder,
+  .vhoiae .yYWAMb.bvmRsc input::placeholder,
+  .vhoiae .dif24c.bvmRsc input::placeholder,
+  .vhoiae.LgGVmb textarea::placeholder,
+  .vhoiae .yYWAMb.bvmRsc textarea::placeholder,
+  .vhoiae .dif24c.bvmRsc textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  .vhoiae.LgGVmb .gb_Pc svg,
+  .vhoiae .yYWAMb.bvmRsc .gb_Pc svg,
+  .vhoiae .dif24c.bvmRsc .gb_Pc svg,
+  .vhoiae.LgGVmb .gb_Uc.gb_Zc svg,
+  .vhoiae .yYWAMb.bvmRsc .gb_Uc.gb_Zc svg,
+  .vhoiae .dif24c.bvmRsc .gb_Uc.gb_Zc svg,
+  .vhoiae.LgGVmb .gb_Pc .gb_gd .gb_od,
+  .vhoiae .yYWAMb.bvmRsc .gb_Pc .gb_gd .gb_od,
+  .vhoiae .dif24c.bvmRsc .gb_Pc .gb_gd .gb_od,
+  .vhoiae.LgGVmb .gb_Pc .gb_gd .gb_Oc,
+  .vhoiae .yYWAMb.bvmRsc .gb_Pc .gb_gd .gb_Oc,
+  .vhoiae .dif24c.bvmRsc .gb_Pc .gb_gd .gb_Oc,
+  .vhoiae.LgGVmb .gb_Pc .gb_gd .gb_id,
+  .vhoiae .yYWAMb.bvmRsc .gb_Pc .gb_gd .gb_id,
+  .vhoiae .dif24c.bvmRsc .gb_Pc .gb_gd .gb_id,
+  .vhoiae.LgGVmb .gb_Uc.gb_Zc .gb_od,
+  .vhoiae .yYWAMb.bvmRsc .gb_Uc.gb_Zc .gb_od,
+  .vhoiae .dif24c.bvmRsc .gb_Uc.gb_Zc .gb_od {
+    color: #f0f004 !important;
+  }
+  .vhoiae.LgGVmb .VBJTHe svg path,
+  .vhoiae .yYWAMb.bvmRsc .VBJTHe svg path,
+  .vhoiae .dif24c.bvmRsc .VBJTHe svg path {
+    fill: #f0f004;
+  }
+  .vhoiae.LgGVmb .MlG5Jc gm-checkbox[disabled] ~ .VfPpkd-ga,
+  .vhoiae .yYWAMb.bvmRsc .MlG5Jc gm-checkbox[disabled] ~ .VfPpkd-ga,
+  .vhoiae .dif24c.bvmRsc .MlG5Jc gm-checkbox[disabled] ~ .VfPpkd-ga,
+  .vhoiae.LgGVmb .MlG5Jc gm-radio[disabled] ~ .VfPpkd-ga,
+  .vhoiae .yYWAMb.bvmRsc .MlG5Jc gm-radio[disabled] ~ .VfPpkd-ga,
+  .vhoiae .dif24c.bvmRsc .MlG5Jc gm-radio[disabled] ~ .VfPpkd-ga,
+  .vhoiae.LgGVmb .MlG5Jc .VfPpkd-Qa-Qu-db ~ .VfPpkd-ga,
+  .vhoiae .yYWAMb.bvmRsc .MlG5Jc .VfPpkd-Qa-Qu-db ~ .VfPpkd-ga,
+  .vhoiae .dif24c.bvmRsc .MlG5Jc .VfPpkd-Qa-Qu-db ~ .VfPpkd-ga,
+  .vhoiae.LgGVmb .MlG5Jc .VfPpkd-Eg-Qu-db ~ .VfPpkd-ga,
+  .vhoiae .yYWAMb.bvmRsc .MlG5Jc .VfPpkd-Eg-Qu-db ~ .VfPpkd-ga,
+  .vhoiae .dif24c.bvmRsc .MlG5Jc .VfPpkd-Eg-Qu-db ~ .VfPpkd-ga {
+    color: #f0f006 !important;
+  }
+  .vhoiae.LgGVmb .KnDsIf:hover,
+  .vhoiae .yYWAMb.bvmRsc .KnDsIf:hover,
+  .vhoiae .dif24c.bvmRsc .KnDsIf:hover,
+  .vhoiae.LgGVmb .KnDsIf:focus,
+  .vhoiae .yYWAMb.bvmRsc .KnDsIf:focus,
+  .vhoiae .dif24c.bvmRsc .KnDsIf:focus,
+  .vhoiae.LgGVmb .al9hA,
+  .vhoiae .yYWAMb.bvmRsc .al9hA,
+  .vhoiae .dif24c.bvmRsc .al9hA {
+    box-shadow: 0 2px 6px #f0f009;
+  }
+  .vhoiae.LgGVmb .kJzqSb,
+  .vhoiae .yYWAMb.bvmRsc .kJzqSb,
+  .vhoiae .dif24c.bvmRsc .kJzqSb {
+    color: #f0f019;
+  }
+  .vhoiae.LgGVmb .L1pqQb,
+  .vhoiae .yYWAMb.bvmRsc .L1pqQb,
+  .vhoiae .dif24c.bvmRsc .L1pqQb {
+    color: #f0f014;
+  }
+  .vhoiae.LgGVmb .au0LDe,
+  .vhoiae .yYWAMb.bvmRsc .au0LDe,
+  .vhoiae .dif24c.bvmRsc .au0LDe {
+    color: #f0f011;
+  }
+  .vhoiae.LgGVmb .gb_Ea.gb_i,
+  .vhoiae .yYWAMb.bvmRsc .gb_Ea.gb_i,
+  .vhoiae .dif24c.bvmRsc .gb_Ea.gb_i {
+    border-color: #f0f009;
+    background-color: #f0f00c;
+  }
+  .vhoiae.LgGVmb .gb_Ea.gb_i:focus,
+  .vhoiae .yYWAMb.bvmRsc .gb_Ea.gb_i:focus,
+  .vhoiae .dif24c.bvmRsc .gb_Ea.gb_i:focus,
+  .vhoiae.LgGVmb .gb_Ea.gb_i:hover,
+  .vhoiae .yYWAMb.bvmRsc .gb_Ea.gb_i:hover,
+  .vhoiae .dif24c.bvmRsc .gb_Ea.gb_i:hover {
+    border-color: #f0f006;
+  }
+  .vhoiae.LgGVmb.ndfHFb-c4YZDc-uoC0bf.ndfHFb-c4YZDc-i5oIFb .ndfHFb-c4YZDc-bnBfGc,
+  .vhoiae .yYWAMb.bvmRsc.ndfHFb-c4YZDc-uoC0bf.ndfHFb-c4YZDc-i5oIFb .ndfHFb-c4YZDc-bnBfGc,
+  .vhoiae .dif24c.bvmRsc.ndfHFb-c4YZDc-uoC0bf.ndfHFb-c4YZDc-i5oIFb .ndfHFb-c4YZDc-bnBfGc {
+    background-color: #f0f001;
+  }
+  .vhoiae.LgGVmb .a-b-uoC0bf.a-b-L .a-b-jl,
+  .vhoiae .yYWAMb.bvmRsc .a-b-uoC0bf.a-b-L .a-b-jl,
+  .vhoiae .dif24c.bvmRsc .a-b-uoC0bf.a-b-L .a-b-jl {
+    background-color: rgba(240, 240, 1, 0.85);
+  }
+  .vhoiae.LgGVmb.ndfHFb-c4YZDc-uoC0bf.ndfHFb-c4YZDc-i5oIFb .ndfHFb-c4YZDc-Wrql6b.ndfHFb-c4YZDc-Wrql6b-Hyc8Sd,
+  .vhoiae .yYWAMb.bvmRsc.ndfHFb-c4YZDc-uoC0bf.ndfHFb-c4YZDc-i5oIFb .ndfHFb-c4YZDc-Wrql6b.ndfHFb-c4YZDc-Wrql6b-Hyc8Sd,
+  .vhoiae .dif24c.bvmRsc.ndfHFb-c4YZDc-uoC0bf.ndfHFb-c4YZDc-i5oIFb .ndfHFb-c4YZDc-Wrql6b.ndfHFb-c4YZDc-Wrql6b-Hyc8Sd,
+  .vhoiae.LgGVmb .a-b-uoC0bf.a-b-L .a-b-K.a-b-K-Hyc8Sd,
+  .vhoiae .yYWAMb.bvmRsc .a-b-uoC0bf.a-b-L .a-b-K.a-b-K-Hyc8Sd,
+  .vhoiae .dif24c.bvmRsc .a-b-uoC0bf.a-b-L .a-b-K.a-b-K-Hyc8Sd {
+    background-color: rgba(240, 240, 1, 0.85);
+  }
+  .vhoiae.LgGVmb .ndfHFb-c4YZDc-q77wGc .ndfHFb-c4YZDc-DARUcf-NnAfwf-i5oIFb,
+  .vhoiae .yYWAMb.bvmRsc .ndfHFb-c4YZDc-q77wGc .ndfHFb-c4YZDc-DARUcf-NnAfwf-i5oIFb,
+  .vhoiae .dif24c.bvmRsc .ndfHFb-c4YZDc-q77wGc .ndfHFb-c4YZDc-DARUcf-NnAfwf-i5oIFb,
+  .vhoiae.LgGVmb .ndfHFb-c4YZDc-q77wGc .ndfHFb-c4YZDc-nJjxad-nK2kYb-i5oIFb,
+  .vhoiae .yYWAMb.bvmRsc .ndfHFb-c4YZDc-q77wGc .ndfHFb-c4YZDc-nJjxad-nK2kYb-i5oIFb,
+  .vhoiae .dif24c.bvmRsc .ndfHFb-c4YZDc-q77wGc .ndfHFb-c4YZDc-nJjxad-nK2kYb-i5oIFb,
+  .vhoiae.LgGVmb .a-b-vo .a-b-La-yc-L,
+  .vhoiae .yYWAMb.bvmRsc .a-b-vo .a-b-La-yc-L,
+  .vhoiae .dif24c.bvmRsc .a-b-vo .a-b-La-yc-L,
+  .vhoiae.LgGVmb .a-b-vo .a-b-Kb-ac-L,
+  .vhoiae .yYWAMb.bvmRsc .a-b-vo .a-b-Kb-ac-L,
+  .vhoiae .dif24c.bvmRsc .a-b-vo .a-b-Kb-ac-L {
+    background-color: rgba(240, 240, 1, 0.85);
+    color: #f0f004 !important;
+    /* File preview (separate tab) page input */
+  }
+  .vhoiae.LgGVmb .ndfHFb-c4YZDc-q77wGc .ndfHFb-c4YZDc-DARUcf-NnAfwf-i5oIFb .ndfHFb-c4YZDc-DARUcf-NGme3c-YPqjbf,
+  .vhoiae .yYWAMb.bvmRsc .ndfHFb-c4YZDc-q77wGc .ndfHFb-c4YZDc-DARUcf-NnAfwf-i5oIFb .ndfHFb-c4YZDc-DARUcf-NGme3c-YPqjbf,
+  .vhoiae .dif24c.bvmRsc .ndfHFb-c4YZDc-q77wGc .ndfHFb-c4YZDc-DARUcf-NnAfwf-i5oIFb .ndfHFb-c4YZDc-DARUcf-NGme3c-YPqjbf,
+  .vhoiae.LgGVmb .ndfHFb-c4YZDc-q77wGc .ndfHFb-c4YZDc-nJjxad-nK2kYb-i5oIFb .ndfHFb-c4YZDc-DARUcf-NGme3c-YPqjbf,
+  .vhoiae .yYWAMb.bvmRsc .ndfHFb-c4YZDc-q77wGc .ndfHFb-c4YZDc-nJjxad-nK2kYb-i5oIFb .ndfHFb-c4YZDc-DARUcf-NGme3c-YPqjbf,
+  .vhoiae .dif24c.bvmRsc .ndfHFb-c4YZDc-q77wGc .ndfHFb-c4YZDc-nJjxad-nK2kYb-i5oIFb .ndfHFb-c4YZDc-DARUcf-NGme3c-YPqjbf,
+  .vhoiae.LgGVmb .a-b-vo .a-b-La-yc-L .ndfHFb-c4YZDc-DARUcf-NGme3c-YPqjbf,
+  .vhoiae .yYWAMb.bvmRsc .a-b-vo .a-b-La-yc-L .ndfHFb-c4YZDc-DARUcf-NGme3c-YPqjbf,
+  .vhoiae .dif24c.bvmRsc .a-b-vo .a-b-La-yc-L .ndfHFb-c4YZDc-DARUcf-NGme3c-YPqjbf,
+  .vhoiae.LgGVmb .a-b-vo .a-b-Kb-ac-L .ndfHFb-c4YZDc-DARUcf-NGme3c-YPqjbf,
+  .vhoiae .yYWAMb.bvmRsc .a-b-vo .a-b-Kb-ac-L .ndfHFb-c4YZDc-DARUcf-NGme3c-YPqjbf,
+  .vhoiae .dif24c.bvmRsc .a-b-vo .a-b-Kb-ac-L .ndfHFb-c4YZDc-DARUcf-NGme3c-YPqjbf,
+  .vhoiae.LgGVmb .ndfHFb-c4YZDc-q77wGc .ndfHFb-c4YZDc-DARUcf-NnAfwf-i5oIFb .a-b-La-su-vb,
+  .vhoiae .yYWAMb.bvmRsc .ndfHFb-c4YZDc-q77wGc .ndfHFb-c4YZDc-DARUcf-NnAfwf-i5oIFb .a-b-La-su-vb,
+  .vhoiae .dif24c.bvmRsc .ndfHFb-c4YZDc-q77wGc .ndfHFb-c4YZDc-DARUcf-NnAfwf-i5oIFb .a-b-La-su-vb,
+  .vhoiae.LgGVmb .ndfHFb-c4YZDc-q77wGc .ndfHFb-c4YZDc-nJjxad-nK2kYb-i5oIFb .a-b-La-su-vb,
+  .vhoiae .yYWAMb.bvmRsc .ndfHFb-c4YZDc-q77wGc .ndfHFb-c4YZDc-nJjxad-nK2kYb-i5oIFb .a-b-La-su-vb,
+  .vhoiae .dif24c.bvmRsc .ndfHFb-c4YZDc-q77wGc .ndfHFb-c4YZDc-nJjxad-nK2kYb-i5oIFb .a-b-La-su-vb,
+  .vhoiae.LgGVmb .a-b-vo .a-b-La-yc-L .a-b-La-su-vb,
+  .vhoiae .yYWAMb.bvmRsc .a-b-vo .a-b-La-yc-L .a-b-La-su-vb,
+  .vhoiae .dif24c.bvmRsc .a-b-vo .a-b-La-yc-L .a-b-La-su-vb,
+  .vhoiae.LgGVmb .a-b-vo .a-b-Kb-ac-L .a-b-La-su-vb,
+  .vhoiae .yYWAMb.bvmRsc .a-b-vo .a-b-Kb-ac-L .a-b-La-su-vb,
+  .vhoiae .dif24c.bvmRsc .a-b-vo .a-b-Kb-ac-L .a-b-La-su-vb {
+    background-color: rgba(240, 240, 1, 0.5);
+    color: #f0f004;
+  }
+  .vhoiae.LgGVmb.ndfHFb-c4YZDc-uoC0bf .zAYgkb-uoC0bf .tk3N6e-LgbsSe,
+  .vhoiae .yYWAMb.bvmRsc.ndfHFb-c4YZDc-uoC0bf .zAYgkb-uoC0bf .tk3N6e-LgbsSe,
+  .vhoiae .dif24c.bvmRsc.ndfHFb-c4YZDc-uoC0bf .zAYgkb-uoC0bf .tk3N6e-LgbsSe,
+  .vhoiae.LgGVmb.ndfHFb-c4YZDc-uoC0bf .zAYgkb-mAKE4e-LQLjdd-xl07Ob-LgbsSe.VIpgJd-Kb3HCc-xl07Ob-LgbsSe,
+  .vhoiae .yYWAMb.bvmRsc.ndfHFb-c4YZDc-uoC0bf .zAYgkb-mAKE4e-LQLjdd-xl07Ob-LgbsSe.VIpgJd-Kb3HCc-xl07Ob-LgbsSe,
+  .vhoiae .dif24c.bvmRsc.ndfHFb-c4YZDc-uoC0bf .zAYgkb-mAKE4e-LQLjdd-xl07Ob-LgbsSe.VIpgJd-Kb3HCc-xl07Ob-LgbsSe,
+  .vhoiae.LgGVmb .a-b-uoC0bf .ae-uoC0bf .g-d,
+  .vhoiae .yYWAMb.bvmRsc .a-b-uoC0bf .ae-uoC0bf .g-d,
+  .vhoiae .dif24c.bvmRsc .a-b-uoC0bf .ae-uoC0bf .g-d,
+  .vhoiae.LgGVmb .a-b-uoC0bf .ae-mAKE4e-Hc-w-d.h-R-w-d,
+  .vhoiae .yYWAMb.bvmRsc .a-b-uoC0bf .ae-mAKE4e-Hc-w-d.h-R-w-d,
+  .vhoiae .dif24c.bvmRsc .a-b-uoC0bf .ae-mAKE4e-Hc-w-d.h-R-w-d {
+    background-color: #f0f01b;
+    color: #f0f001;
+    /* File preview (separate tab) share icon */
+    /* File preview (separate tab) share triangle */
+  }
+  .vhoiae.LgGVmb.ndfHFb-c4YZDc-uoC0bf .zAYgkb-uoC0bf .tk3N6e-LgbsSe .IyROMc-euCgFf-LJSvSb,
+  .vhoiae .yYWAMb.bvmRsc.ndfHFb-c4YZDc-uoC0bf .zAYgkb-uoC0bf .tk3N6e-LgbsSe .IyROMc-euCgFf-LJSvSb,
+  .vhoiae .dif24c.bvmRsc.ndfHFb-c4YZDc-uoC0bf .zAYgkb-uoC0bf .tk3N6e-LgbsSe .IyROMc-euCgFf-LJSvSb,
+  .vhoiae.LgGVmb.ndfHFb-c4YZDc-uoC0bf .zAYgkb-mAKE4e-LQLjdd-xl07Ob-LgbsSe.VIpgJd-Kb3HCc-xl07Ob-LgbsSe .IyROMc-euCgFf-LJSvSb,
+  .vhoiae .yYWAMb.bvmRsc.ndfHFb-c4YZDc-uoC0bf .zAYgkb-mAKE4e-LQLjdd-xl07Ob-LgbsSe.VIpgJd-Kb3HCc-xl07Ob-LgbsSe .IyROMc-euCgFf-LJSvSb,
+  .vhoiae .dif24c.bvmRsc.ndfHFb-c4YZDc-uoC0bf .zAYgkb-mAKE4e-LQLjdd-xl07Ob-LgbsSe.VIpgJd-Kb3HCc-xl07Ob-LgbsSe .IyROMc-euCgFf-LJSvSb,
+  .vhoiae.LgGVmb .a-b-uoC0bf .ae-uoC0bf .g-d .IyROMc-euCgFf-LJSvSb,
+  .vhoiae .yYWAMb.bvmRsc .a-b-uoC0bf .ae-uoC0bf .g-d .IyROMc-euCgFf-LJSvSb,
+  .vhoiae .dif24c.bvmRsc .a-b-uoC0bf .ae-uoC0bf .g-d .IyROMc-euCgFf-LJSvSb,
+  .vhoiae.LgGVmb .a-b-uoC0bf .ae-mAKE4e-Hc-w-d.h-R-w-d .IyROMc-euCgFf-LJSvSb,
+  .vhoiae .yYWAMb.bvmRsc .a-b-uoC0bf .ae-mAKE4e-Hc-w-d.h-R-w-d .IyROMc-euCgFf-LJSvSb,
+  .vhoiae .dif24c.bvmRsc .a-b-uoC0bf .ae-mAKE4e-Hc-w-d.h-R-w-d .IyROMc-euCgFf-LJSvSb,
+  .vhoiae.LgGVmb.ndfHFb-c4YZDc-uoC0bf .zAYgkb-uoC0bf .tk3N6e-LgbsSe .ae-c,
+  .vhoiae .yYWAMb.bvmRsc.ndfHFb-c4YZDc-uoC0bf .zAYgkb-uoC0bf .tk3N6e-LgbsSe .ae-c,
+  .vhoiae .dif24c.bvmRsc.ndfHFb-c4YZDc-uoC0bf .zAYgkb-uoC0bf .tk3N6e-LgbsSe .ae-c,
+  .vhoiae.LgGVmb.ndfHFb-c4YZDc-uoC0bf .zAYgkb-mAKE4e-LQLjdd-xl07Ob-LgbsSe.VIpgJd-Kb3HCc-xl07Ob-LgbsSe .ae-c,
+  .vhoiae .yYWAMb.bvmRsc.ndfHFb-c4YZDc-uoC0bf .zAYgkb-mAKE4e-LQLjdd-xl07Ob-LgbsSe.VIpgJd-Kb3HCc-xl07Ob-LgbsSe .ae-c,
+  .vhoiae .dif24c.bvmRsc.ndfHFb-c4YZDc-uoC0bf .zAYgkb-mAKE4e-LQLjdd-xl07Ob-LgbsSe.VIpgJd-Kb3HCc-xl07Ob-LgbsSe .ae-c,
+  .vhoiae.LgGVmb .a-b-uoC0bf .ae-uoC0bf .g-d .ae-c,
+  .vhoiae .yYWAMb.bvmRsc .a-b-uoC0bf .ae-uoC0bf .g-d .ae-c,
+  .vhoiae .dif24c.bvmRsc .a-b-uoC0bf .ae-uoC0bf .g-d .ae-c,
+  .vhoiae.LgGVmb .a-b-uoC0bf .ae-mAKE4e-Hc-w-d.h-R-w-d .ae-c,
+  .vhoiae .yYWAMb.bvmRsc .a-b-uoC0bf .ae-mAKE4e-Hc-w-d.h-R-w-d .ae-c,
+  .vhoiae .dif24c.bvmRsc .a-b-uoC0bf .ae-mAKE4e-Hc-w-d.h-R-w-d .ae-c {
+    filter: brightness(0) invert(10%) sepia(36%) saturate(650%) hue-rotate(201deg) brightness(90%) contrast(93%);
+  }
+  .vhoiae.LgGVmb.ndfHFb-c4YZDc-uoC0bf .zAYgkb-uoC0bf .tk3N6e-LgbsSe .VIpgJd-Kb3HCc-xl07Ob-LgbsSe-j4gsHd,
+  .vhoiae .yYWAMb.bvmRsc.ndfHFb-c4YZDc-uoC0bf .zAYgkb-uoC0bf .tk3N6e-LgbsSe .VIpgJd-Kb3HCc-xl07Ob-LgbsSe-j4gsHd,
+  .vhoiae .dif24c.bvmRsc.ndfHFb-c4YZDc-uoC0bf .zAYgkb-uoC0bf .tk3N6e-LgbsSe .VIpgJd-Kb3HCc-xl07Ob-LgbsSe-j4gsHd,
+  .vhoiae.LgGVmb.ndfHFb-c4YZDc-uoC0bf .zAYgkb-mAKE4e-LQLjdd-xl07Ob-LgbsSe.VIpgJd-Kb3HCc-xl07Ob-LgbsSe .VIpgJd-Kb3HCc-xl07Ob-LgbsSe-j4gsHd,
+  .vhoiae .yYWAMb.bvmRsc.ndfHFb-c4YZDc-uoC0bf .zAYgkb-mAKE4e-LQLjdd-xl07Ob-LgbsSe.VIpgJd-Kb3HCc-xl07Ob-LgbsSe .VIpgJd-Kb3HCc-xl07Ob-LgbsSe-j4gsHd,
+  .vhoiae .dif24c.bvmRsc.ndfHFb-c4YZDc-uoC0bf .zAYgkb-mAKE4e-LQLjdd-xl07Ob-LgbsSe.VIpgJd-Kb3HCc-xl07Ob-LgbsSe .VIpgJd-Kb3HCc-xl07Ob-LgbsSe-j4gsHd,
+  .vhoiae.LgGVmb .a-b-uoC0bf .ae-uoC0bf .g-d .VIpgJd-Kb3HCc-xl07Ob-LgbsSe-j4gsHd,
+  .vhoiae .yYWAMb.bvmRsc .a-b-uoC0bf .ae-uoC0bf .g-d .VIpgJd-Kb3HCc-xl07Ob-LgbsSe-j4gsHd,
+  .vhoiae .dif24c.bvmRsc .a-b-uoC0bf .ae-uoC0bf .g-d .VIpgJd-Kb3HCc-xl07Ob-LgbsSe-j4gsHd,
+  .vhoiae.LgGVmb .a-b-uoC0bf .ae-mAKE4e-Hc-w-d.h-R-w-d .VIpgJd-Kb3HCc-xl07Ob-LgbsSe-j4gsHd,
+  .vhoiae .yYWAMb.bvmRsc .a-b-uoC0bf .ae-mAKE4e-Hc-w-d.h-R-w-d .VIpgJd-Kb3HCc-xl07Ob-LgbsSe-j4gsHd,
+  .vhoiae .dif24c.bvmRsc .a-b-uoC0bf .ae-mAKE4e-Hc-w-d.h-R-w-d .VIpgJd-Kb3HCc-xl07Ob-LgbsSe-j4gsHd,
+  .vhoiae.LgGVmb.ndfHFb-c4YZDc-uoC0bf .zAYgkb-uoC0bf .tk3N6e-LgbsSe .h-R-w-d-Re,
+  .vhoiae .yYWAMb.bvmRsc.ndfHFb-c4YZDc-uoC0bf .zAYgkb-uoC0bf .tk3N6e-LgbsSe .h-R-w-d-Re,
+  .vhoiae .dif24c.bvmRsc.ndfHFb-c4YZDc-uoC0bf .zAYgkb-uoC0bf .tk3N6e-LgbsSe .h-R-w-d-Re,
+  .vhoiae.LgGVmb.ndfHFb-c4YZDc-uoC0bf .zAYgkb-mAKE4e-LQLjdd-xl07Ob-LgbsSe.VIpgJd-Kb3HCc-xl07Ob-LgbsSe .h-R-w-d-Re,
+  .vhoiae .yYWAMb.bvmRsc.ndfHFb-c4YZDc-uoC0bf .zAYgkb-mAKE4e-LQLjdd-xl07Ob-LgbsSe.VIpgJd-Kb3HCc-xl07Ob-LgbsSe .h-R-w-d-Re,
+  .vhoiae .dif24c.bvmRsc.ndfHFb-c4YZDc-uoC0bf .zAYgkb-mAKE4e-LQLjdd-xl07Ob-LgbsSe.VIpgJd-Kb3HCc-xl07Ob-LgbsSe .h-R-w-d-Re,
+  .vhoiae.LgGVmb .a-b-uoC0bf .ae-uoC0bf .g-d .h-R-w-d-Re,
+  .vhoiae .yYWAMb.bvmRsc .a-b-uoC0bf .ae-uoC0bf .g-d .h-R-w-d-Re,
+  .vhoiae .dif24c.bvmRsc .a-b-uoC0bf .ae-uoC0bf .g-d .h-R-w-d-Re,
+  .vhoiae.LgGVmb .a-b-uoC0bf .ae-mAKE4e-Hc-w-d.h-R-w-d .h-R-w-d-Re,
+  .vhoiae .yYWAMb.bvmRsc .a-b-uoC0bf .ae-mAKE4e-Hc-w-d.h-R-w-d .h-R-w-d-Re,
+  .vhoiae .dif24c.bvmRsc .a-b-uoC0bf .ae-mAKE4e-Hc-w-d.h-R-w-d .h-R-w-d-Re {
+    border-color: #f0f001 transparent !important;
+  }
+  .vhoiae.LgGVmb .zAYgkb-NhlrFc-xl07Ob-BvBYQ,
+  .vhoiae .yYWAMb.bvmRsc .zAYgkb-NhlrFc-xl07Ob-BvBYQ,
+  .vhoiae .dif24c.bvmRsc .zAYgkb-NhlrFc-xl07Ob-BvBYQ,
+  .vhoiae.LgGVmb .h-w.ae-NhlrFc-w,
+  .vhoiae .yYWAMb.bvmRsc .h-w.ae-NhlrFc-w,
+  .vhoiae .dif24c.bvmRsc .h-w.ae-NhlrFc-w {
+    background-color: #f0f001;
+    /* File preview (in Drive) share Quick options current share level container */
+    /* File preview (separate tab) share Quick options divider */
+    /* File preview (separate tab) share Quick options row hover */
+    /* File preview (separate tab) share Quick options row icon */
+  }
+  .vhoiae.LgGVmb .zAYgkb-NhlrFc-xl07Ob-BvBYQ *,
+  .vhoiae .yYWAMb.bvmRsc .zAYgkb-NhlrFc-xl07Ob-BvBYQ *,
+  .vhoiae .dif24c.bvmRsc .zAYgkb-NhlrFc-xl07Ob-BvBYQ *,
+  .vhoiae.LgGVmb .h-w.ae-NhlrFc-w *,
+  .vhoiae .yYWAMb.bvmRsc .h-w.ae-NhlrFc-w *,
+  .vhoiae .dif24c.bvmRsc .h-w.ae-NhlrFc-w * {
+    color: #f0f004 !important;
+  }
+  .vhoiae.LgGVmb .zAYgkb-NhlrFc-xl07Ob-BvBYQ .h-v-x,
+  .vhoiae .yYWAMb.bvmRsc .zAYgkb-NhlrFc-xl07Ob-BvBYQ .h-v-x,
+  .vhoiae .dif24c.bvmRsc .zAYgkb-NhlrFc-xl07Ob-BvBYQ .h-v-x,
+  .vhoiae.LgGVmb .h-w.ae-NhlrFc-w .h-v-x,
+  .vhoiae .yYWAMb.bvmRsc .h-w.ae-NhlrFc-w .h-v-x,
+  .vhoiae .dif24c.bvmRsc .h-w.ae-NhlrFc-w .h-v-x {
+    opacity: 100%;
+  }
+  .vhoiae.LgGVmb .zAYgkb-NhlrFc-xl07Ob-BvBYQ .zAYgkb-NhlrFc-gqMrKb,
+  .vhoiae .yYWAMb.bvmRsc .zAYgkb-NhlrFc-xl07Ob-BvBYQ .zAYgkb-NhlrFc-gqMrKb,
+  .vhoiae .dif24c.bvmRsc .zAYgkb-NhlrFc-xl07Ob-BvBYQ .zAYgkb-NhlrFc-gqMrKb,
+  .vhoiae.LgGVmb .h-w.ae-NhlrFc-w .zAYgkb-NhlrFc-gqMrKb,
+  .vhoiae .yYWAMb.bvmRsc .h-w.ae-NhlrFc-w .zAYgkb-NhlrFc-gqMrKb,
+  .vhoiae .dif24c.bvmRsc .h-w.ae-NhlrFc-w .zAYgkb-NhlrFc-gqMrKb,
+  .vhoiae.LgGVmb .zAYgkb-NhlrFc-xl07Ob-BvBYQ .ae-NhlrFc-Yo,
+  .vhoiae .yYWAMb.bvmRsc .zAYgkb-NhlrFc-xl07Ob-BvBYQ .ae-NhlrFc-Yo,
+  .vhoiae .dif24c.bvmRsc .zAYgkb-NhlrFc-xl07Ob-BvBYQ .ae-NhlrFc-Yo,
+  .vhoiae.LgGVmb .h-w.ae-NhlrFc-w .ae-NhlrFc-Yo,
+  .vhoiae .yYWAMb.bvmRsc .h-w.ae-NhlrFc-w .ae-NhlrFc-Yo,
+  .vhoiae .dif24c.bvmRsc .h-w.ae-NhlrFc-w .ae-NhlrFc-Yo {
+    border-color: #f0f009;
+  }
+  .vhoiae.LgGVmb .zAYgkb-NhlrFc-xl07Ob-BvBYQ .VIpgJd-j7LFlb-sn54Q,
+  .vhoiae .yYWAMb.bvmRsc .zAYgkb-NhlrFc-xl07Ob-BvBYQ .VIpgJd-j7LFlb-sn54Q,
+  .vhoiae .dif24c.bvmRsc .zAYgkb-NhlrFc-xl07Ob-BvBYQ .VIpgJd-j7LFlb-sn54Q,
+  .vhoiae.LgGVmb .h-w.ae-NhlrFc-w .VIpgJd-j7LFlb-sn54Q,
+  .vhoiae .yYWAMb.bvmRsc .h-w.ae-NhlrFc-w .VIpgJd-j7LFlb-sn54Q,
+  .vhoiae .dif24c.bvmRsc .h-w.ae-NhlrFc-w .VIpgJd-j7LFlb-sn54Q,
+  .vhoiae.LgGVmb .zAYgkb-NhlrFc-xl07Ob-BvBYQ .h-v-pc,
+  .vhoiae .yYWAMb.bvmRsc .zAYgkb-NhlrFc-xl07Ob-BvBYQ .h-v-pc,
+  .vhoiae .dif24c.bvmRsc .zAYgkb-NhlrFc-xl07Ob-BvBYQ .h-v-pc,
+  .vhoiae.LgGVmb .h-w.ae-NhlrFc-w .h-v-pc,
+  .vhoiae .yYWAMb.bvmRsc .h-w.ae-NhlrFc-w .h-v-pc,
+  .vhoiae .dif24c.bvmRsc .h-w.ae-NhlrFc-w .h-v-pc {
+    background-color: #f0f00c;
+  }
+  .vhoiae.LgGVmb .zAYgkb-NhlrFc-xl07Ob-BvBYQ .IyROMc-euCgFf-LJSvSb,
+  .vhoiae .yYWAMb.bvmRsc .zAYgkb-NhlrFc-xl07Ob-BvBYQ .IyROMc-euCgFf-LJSvSb,
+  .vhoiae .dif24c.bvmRsc .zAYgkb-NhlrFc-xl07Ob-BvBYQ .IyROMc-euCgFf-LJSvSb,
+  .vhoiae.LgGVmb .h-w.ae-NhlrFc-w .IyROMc-euCgFf-LJSvSb,
+  .vhoiae .yYWAMb.bvmRsc .h-w.ae-NhlrFc-w .IyROMc-euCgFf-LJSvSb,
+  .vhoiae .dif24c.bvmRsc .h-w.ae-NhlrFc-w .IyROMc-euCgFf-LJSvSb,
+  .vhoiae.LgGVmb .zAYgkb-NhlrFc-xl07Ob-BvBYQ .ba-ea-i,
+  .vhoiae .yYWAMb.bvmRsc .zAYgkb-NhlrFc-xl07Ob-BvBYQ .ba-ea-i,
+  .vhoiae .dif24c.bvmRsc .zAYgkb-NhlrFc-xl07Ob-BvBYQ .ba-ea-i,
+  .vhoiae.LgGVmb .h-w.ae-NhlrFc-w .ba-ea-i,
+  .vhoiae .yYWAMb.bvmRsc .h-w.ae-NhlrFc-w .ba-ea-i,
+  .vhoiae .dif24c.bvmRsc .h-w.ae-NhlrFc-w .ba-ea-i {
+    filter: brightness(0) invert(84%) sepia(19%) saturate(370%) hue-rotate(192deg) brightness(98%) contrast(95%);
+  }
+  .vhoiae.LgGVmb .ndfHFb-c4YZDc-Bz112c:not([style]),
+  .vhoiae .yYWAMb.bvmRsc .ndfHFb-c4YZDc-Bz112c:not([style]),
+  .vhoiae .dif24c.bvmRsc .ndfHFb-c4YZDc-Bz112c:not([style]),
+  .vhoiae.LgGVmb .ndfHFb-c4YZDc-Bz112c[style*="googlematerialicons"],
+  .vhoiae .yYWAMb.bvmRsc .ndfHFb-c4YZDc-Bz112c[style*="googlematerialicons"],
+  .vhoiae .dif24c.bvmRsc .ndfHFb-c4YZDc-Bz112c[style*="googlematerialicons"],
+  .vhoiae.LgGVmb .ndfHFb-c4YZDc-Bz112c[style="user-select: none;"],
+  .vhoiae .yYWAMb.bvmRsc .ndfHFb-c4YZDc-Bz112c[style="user-select: none;"],
+  .vhoiae .dif24c.bvmRsc .ndfHFb-c4YZDc-Bz112c[style="user-select: none;"],
+  .vhoiae.LgGVmb .ndfHFb-c4YZDc-Wrql6b-htvI8d-wcotoc-wHEfpf-ndfHFb-Bz112c,
+  .vhoiae .yYWAMb.bvmRsc .ndfHFb-c4YZDc-Wrql6b-htvI8d-wcotoc-wHEfpf-ndfHFb-Bz112c,
+  .vhoiae .dif24c.bvmRsc .ndfHFb-c4YZDc-Wrql6b-htvI8d-wcotoc-wHEfpf-ndfHFb-Bz112c,
+  .vhoiae.LgGVmb .ndfHFb-c4YZDc-Wrql6b-w37qKe-Bz112c,
+  .vhoiae .yYWAMb.bvmRsc .ndfHFb-c4YZDc-Wrql6b-w37qKe-Bz112c,
+  .vhoiae .dif24c.bvmRsc .ndfHFb-c4YZDc-Wrql6b-w37qKe-Bz112c,
+  .vhoiae.LgGVmb .a-b-c:not([style]),
+  .vhoiae .yYWAMb.bvmRsc .a-b-c:not([style]),
+  .vhoiae .dif24c.bvmRsc .a-b-c:not([style]),
+  .vhoiae.LgGVmb .a-b-c[style*="googlematerialicons"],
+  .vhoiae .yYWAMb.bvmRsc .a-b-c[style*="googlematerialicons"],
+  .vhoiae .dif24c.bvmRsc .a-b-c[style*="googlematerialicons"],
+  .vhoiae.LgGVmb .a-b-c[style="user-select: none;"],
+  .vhoiae .yYWAMb.bvmRsc .a-b-c[style="user-select: none;"],
+  .vhoiae .dif24c.bvmRsc .a-b-c[style="user-select: none;"],
+  .vhoiae.LgGVmb .a-b-K-zc-Eb-bg-a-c,
+  .vhoiae .yYWAMb.bvmRsc .a-b-K-zc-Eb-bg-a-c,
+  .vhoiae .dif24c.bvmRsc .a-b-K-zc-Eb-bg-a-c,
+  .vhoiae.LgGVmb .a-b-K-X-c,
+  .vhoiae .yYWAMb.bvmRsc .a-b-K-X-c,
+  .vhoiae .dif24c.bvmRsc .a-b-K-X-c {
+    filter: brightness(0) invert(84%) sepia(19%) saturate(370%) hue-rotate(192deg) brightness(98%) contrast(95%);
+  }
+  .vhoiae.LgGVmb .ndfHFb-c4YZDc-Wrql6b-V1ur5d,
+  .vhoiae .yYWAMb.bvmRsc .ndfHFb-c4YZDc-Wrql6b-V1ur5d,
+  .vhoiae .dif24c.bvmRsc .ndfHFb-c4YZDc-Wrql6b-V1ur5d,
+  .vhoiae.LgGVmb .a-b-cg-Zf,
+  .vhoiae .yYWAMb.bvmRsc .a-b-cg-Zf,
+  .vhoiae .dif24c.bvmRsc .a-b-cg-Zf {
+    color: #f0f004;
+  }
+  .vhoiae.LgGVmb .ndfHFb-c4YZDc-j7LFlb:hover,
+  .vhoiae .yYWAMb.bvmRsc .ndfHFb-c4YZDc-j7LFlb:hover,
+  .vhoiae .dif24c.bvmRsc .ndfHFb-c4YZDc-j7LFlb:hover,
+  .vhoiae.LgGVmb .a-b-v:hover,
+  .vhoiae .yYWAMb.bvmRsc .a-b-v:hover,
+  .vhoiae .dif24c.bvmRsc .a-b-v:hover {
+    background-color: #f0f00c;
+  }
+  .vhoiae.LgGVmb .ndfHFb-c4YZDc-EglORb-haAclf,
+  .vhoiae .yYWAMb.bvmRsc .ndfHFb-c4YZDc-EglORb-haAclf,
+  .vhoiae .dif24c.bvmRsc .ndfHFb-c4YZDc-EglORb-haAclf,
+  .vhoiae.LgGVmb .a-b-Tb-j,
+  .vhoiae .yYWAMb.bvmRsc .a-b-Tb-j,
+  .vhoiae .dif24c.bvmRsc .a-b-Tb-j {
+    background-color: #f0f00c;
+    color: #f0f004;
+    /* File preview (separate tab) No preview available Download */
+    /* File preview (separate tab) No preview available Download icon */
+  }
+  .vhoiae.LgGVmb .ndfHFb-c4YZDc-EglORb-haAclf .ndfHFb-c4YZDc-bN97Pc-nupQLb-LgbsSe,
+  .vhoiae .yYWAMb.bvmRsc .ndfHFb-c4YZDc-EglORb-haAclf .ndfHFb-c4YZDc-bN97Pc-nupQLb-LgbsSe,
+  .vhoiae .dif24c.bvmRsc .ndfHFb-c4YZDc-EglORb-haAclf .ndfHFb-c4YZDc-bN97Pc-nupQLb-LgbsSe,
+  .vhoiae.LgGVmb .a-b-Tb-j .ndfHFb-c4YZDc-bN97Pc-nupQLb-LgbsSe,
+  .vhoiae .yYWAMb.bvmRsc .a-b-Tb-j .ndfHFb-c4YZDc-bN97Pc-nupQLb-LgbsSe,
+  .vhoiae .dif24c.bvmRsc .a-b-Tb-j .ndfHFb-c4YZDc-bN97Pc-nupQLb-LgbsSe,
+  .vhoiae.LgGVmb .ndfHFb-c4YZDc-EglORb-haAclf .a-b-x-rb-d,
+  .vhoiae .yYWAMb.bvmRsc .ndfHFb-c4YZDc-EglORb-haAclf .a-b-x-rb-d,
+  .vhoiae .dif24c.bvmRsc .ndfHFb-c4YZDc-EglORb-haAclf .a-b-x-rb-d,
+  .vhoiae.LgGVmb .a-b-Tb-j .a-b-x-rb-d,
+  .vhoiae .yYWAMb.bvmRsc .a-b-Tb-j .a-b-x-rb-d,
+  .vhoiae .dif24c.bvmRsc .a-b-Tb-j .a-b-x-rb-d {
+    background-color: #f0f00b;
+    color: #f0f004;
+    text-shadow: none;
+    border-color: transparent;
+  }
+  .vhoiae.LgGVmb .ndfHFb-c4YZDc-EglORb-haAclf .ndfHFb-c4YZDc-bN97Pc-nupQLb-LgbsSe:hover,
+  .vhoiae .yYWAMb.bvmRsc .ndfHFb-c4YZDc-EglORb-haAclf .ndfHFb-c4YZDc-bN97Pc-nupQLb-LgbsSe:hover,
+  .vhoiae .dif24c.bvmRsc .ndfHFb-c4YZDc-EglORb-haAclf .ndfHFb-c4YZDc-bN97Pc-nupQLb-LgbsSe:hover,
+  .vhoiae.LgGVmb .a-b-Tb-j .ndfHFb-c4YZDc-bN97Pc-nupQLb-LgbsSe:hover,
+  .vhoiae .yYWAMb.bvmRsc .a-b-Tb-j .ndfHFb-c4YZDc-bN97Pc-nupQLb-LgbsSe:hover,
+  .vhoiae .dif24c.bvmRsc .a-b-Tb-j .ndfHFb-c4YZDc-bN97Pc-nupQLb-LgbsSe:hover,
+  .vhoiae.LgGVmb .ndfHFb-c4YZDc-EglORb-haAclf .a-b-x-rb-d:hover,
+  .vhoiae .yYWAMb.bvmRsc .ndfHFb-c4YZDc-EglORb-haAclf .a-b-x-rb-d:hover,
+  .vhoiae .dif24c.bvmRsc .ndfHFb-c4YZDc-EglORb-haAclf .a-b-x-rb-d:hover,
+  .vhoiae.LgGVmb .a-b-Tb-j .a-b-x-rb-d:hover,
+  .vhoiae .yYWAMb.bvmRsc .a-b-Tb-j .a-b-x-rb-d:hover,
+  .vhoiae .dif24c.bvmRsc .a-b-Tb-j .a-b-x-rb-d:hover {
+    background-color: #f0f00a;
+    background-image: none;
+  }
+  .vhoiae.LgGVmb .ndfHFb-c4YZDc-EglORb-haAclf .ndfHFb-c4YZDc-bN97Pc-nupQLb-LgbsSe-Bz112c,
+  .vhoiae .yYWAMb.bvmRsc .ndfHFb-c4YZDc-EglORb-haAclf .ndfHFb-c4YZDc-bN97Pc-nupQLb-LgbsSe-Bz112c,
+  .vhoiae .dif24c.bvmRsc .ndfHFb-c4YZDc-EglORb-haAclf .ndfHFb-c4YZDc-bN97Pc-nupQLb-LgbsSe-Bz112c,
+  .vhoiae.LgGVmb .a-b-Tb-j .ndfHFb-c4YZDc-bN97Pc-nupQLb-LgbsSe-Bz112c,
+  .vhoiae .yYWAMb.bvmRsc .a-b-Tb-j .ndfHFb-c4YZDc-bN97Pc-nupQLb-LgbsSe-Bz112c,
+  .vhoiae .dif24c.bvmRsc .a-b-Tb-j .ndfHFb-c4YZDc-bN97Pc-nupQLb-LgbsSe-Bz112c,
+  .vhoiae.LgGVmb .ndfHFb-c4YZDc-EglORb-haAclf .a-b-x-rb-d-c,
+  .vhoiae .yYWAMb.bvmRsc .ndfHFb-c4YZDc-EglORb-haAclf .a-b-x-rb-d-c,
+  .vhoiae .dif24c.bvmRsc .ndfHFb-c4YZDc-EglORb-haAclf .a-b-x-rb-d-c,
+  .vhoiae.LgGVmb .a-b-Tb-j .a-b-x-rb-d-c,
+  .vhoiae .yYWAMb.bvmRsc .a-b-Tb-j .a-b-x-rb-d-c,
+  .vhoiae .dif24c.bvmRsc .a-b-Tb-j .a-b-x-rb-d-c {
+    filter: brightness(0) invert(84%) sepia(19%) saturate(370%) hue-rotate(192deg) brightness(98%) contrast(95%);
+  }
+  .vhoiae.LgGVmb .a-b-r-x,
+  .vhoiae .yYWAMb.bvmRsc .a-b-r-x,
+  .vhoiae .dif24c.bvmRsc .a-b-r-x,
+  .vhoiae.LgGVmb .ndfHFb-c4YZDc-fmcmS-bN97Pc,
+  .vhoiae .yYWAMb.bvmRsc .ndfHFb-c4YZDc-fmcmS-bN97Pc,
+  .vhoiae .dif24c.bvmRsc .ndfHFb-c4YZDc-fmcmS-bN97Pc,
+  .vhoiae.LgGVmb .a-b-r-x pre,
+  .vhoiae .yYWAMb.bvmRsc .a-b-r-x pre,
+  .vhoiae .dif24c.bvmRsc .a-b-r-x pre,
+  .vhoiae.LgGVmb .ndfHFb-c4YZDc-fmcmS-bN97Pc pre,
+  .vhoiae .yYWAMb.bvmRsc .ndfHFb-c4YZDc-fmcmS-bN97Pc pre,
+  .vhoiae .dif24c.bvmRsc .ndfHFb-c4YZDc-fmcmS-bN97Pc pre {
+    background-color: #f0f00c !important;
+    color: #f0f004 !important;
+  }
+  .vhoiae.LgGVmb .Yk-efwuC,
+  .vhoiae .yYWAMb.bvmRsc .Yk-efwuC,
+  .vhoiae .dif24c.bvmRsc .Yk-efwuC {
+    background-color: #f0f00c !important;
+    /* File preview (in Drive) comment on image person */
+    /* File preview (in Drive) comments */
+  }
+  .vhoiae.LgGVmb .Yk-efwuC .Yk-Vq7Udc,
+  .vhoiae .yYWAMb.bvmRsc .Yk-efwuC .Yk-Vq7Udc,
+  .vhoiae .dif24c.bvmRsc .Yk-efwuC .Yk-Vq7Udc {
+    background-color: #f0f00c !important;
+    /* Comment text */
+    /* Comment date */
+  }
+  .vhoiae.LgGVmb .Yk-efwuC .Yk-Vq7Udc [data-name],
+  .vhoiae .yYWAMb.bvmRsc .Yk-efwuC .Yk-Vq7Udc [data-name],
+  .vhoiae .dif24c.bvmRsc .Yk-efwuC .Yk-Vq7Udc [data-name] {
+    color: #f0f004 !important;
+  }
+  .vhoiae.LgGVmb .Yk-efwuC .Yk-Vq7Udc .Yk-eKrold-Sg.Yk-eKrold-Sg,
+  .vhoiae .yYWAMb.bvmRsc .Yk-efwuC .Yk-Vq7Udc .Yk-eKrold-Sg.Yk-eKrold-Sg,
+  .vhoiae .dif24c.bvmRsc .Yk-efwuC .Yk-Vq7Udc .Yk-eKrold-Sg.Yk-eKrold-Sg {
+    color: #f0f004 !important;
+  }
+  .vhoiae.LgGVmb .Yk-efwuC .Yk-Vq7Udc .Yk-eKrold-bi,
+  .vhoiae .yYWAMb.bvmRsc .Yk-efwuC .Yk-Vq7Udc .Yk-eKrold-bi,
+  .vhoiae .dif24c.bvmRsc .Yk-efwuC .Yk-Vq7Udc .Yk-eKrold-bi {
+    color: #f0f006 !important;
+  }
+  .vhoiae.LgGVmb .Yk-efwuC .Yk-efwuC-vb-Gd,
+  .vhoiae .yYWAMb.bvmRsc .Yk-efwuC .Yk-efwuC-vb-Gd,
+  .vhoiae .dif24c.bvmRsc .Yk-efwuC .Yk-efwuC-vb-Gd {
+    background-color: #f0f00c;
+  }
+  .vhoiae.LgGVmb .Yk-efwuC .Yk-efwuC-vb-Gd,
+  .vhoiae .yYWAMb.bvmRsc .Yk-efwuC .Yk-efwuC-vb-Gd,
+  .vhoiae .dif24c.bvmRsc .Yk-efwuC .Yk-efwuC-vb-Gd,
+  .vhoiae.LgGVmb .Yk-efwuC .Yk-efwuC-vb-Gd *,
+  .vhoiae .yYWAMb.bvmRsc .Yk-efwuC .Yk-efwuC-vb-Gd *,
+  .vhoiae .dif24c.bvmRsc .Yk-efwuC .Yk-efwuC-vb-Gd * {
+    color: #f0f004 !important;
+  }
+  .vhoiae.LgGVmb .Yk-efwuC .Yk-efwuC-vb-Gd [role="textbox"],
+  .vhoiae .yYWAMb.bvmRsc .Yk-efwuC .Yk-efwuC-vb-Gd [role="textbox"],
+  .vhoiae .dif24c.bvmRsc .Yk-efwuC .Yk-efwuC-vb-Gd [role="textbox"] {
+    background-color: #f0f00b;
+    border-color: #f0f009;
+  }
+  .vhoiae.LgGVmb .Yk-efwuC .Yk-efwuC-vb-Gd [role="textbox"]::before,
+  .vhoiae .yYWAMb.bvmRsc .Yk-efwuC .Yk-efwuC-vb-Gd [role="textbox"]::before,
+  .vhoiae .dif24c.bvmRsc .Yk-efwuC .Yk-efwuC-vb-Gd [role="textbox"]::before {
+    color: #f0f006 !important;
+  }
+  .vhoiae.LgGVmb .Yk-efwuC .Yk-efwuC-vb-Gd [role="button"],
+  .vhoiae .yYWAMb.bvmRsc .Yk-efwuC .Yk-efwuC-vb-Gd [role="button"],
+  .vhoiae .dif24c.bvmRsc .Yk-efwuC .Yk-efwuC-vb-Gd [role="button"] {
+    background-color: #f0f00b !important;
+    /* needed to override border-color */
+  }
+  .vhoiae.LgGVmb .Yk-efwuC .Yk-efwuC-vb-Gd [role="button"][role="button"],
+  .vhoiae .yYWAMb.bvmRsc .Yk-efwuC .Yk-efwuC-vb-Gd [role="button"][role="button"],
+  .vhoiae .dif24c.bvmRsc .Yk-efwuC .Yk-efwuC-vb-Gd [role="button"][role="button"] {
+    border-color: #f0f009 !important;
+  }
+  .vhoiae.LgGVmb .Yk-efwuC .Yk-efwuC-vb-Gd [role="button"][aria-disabled="true"],
+  .vhoiae .yYWAMb.bvmRsc .Yk-efwuC .Yk-efwuC-vb-Gd [role="button"][aria-disabled="true"],
+  .vhoiae .dif24c.bvmRsc .Yk-efwuC .Yk-efwuC-vb-Gd [role="button"][aria-disabled="true"] {
+    background-color: #f0f00b !important;
+    color: #f0f006 !important;
+  }
+  .vhoiae.LgGVmb .SbpzSe .VfPpkd-StrnGf-rymPhb-f7MjDc,
+  .vhoiae .yYWAMb.bvmRsc .SbpzSe .VfPpkd-StrnGf-rymPhb-f7MjDc,
+  .vhoiae .dif24c.bvmRsc .SbpzSe .VfPpkd-StrnGf-rymPhb-f7MjDc {
+    color: #f0f01b;
+  }
+  .vhoiae.LgGVmb .lfDNBb:hover,
+  .vhoiae .yYWAMb.bvmRsc .lfDNBb:hover,
+  .vhoiae .dif24c.bvmRsc .lfDNBb:hover,
+  .vhoiae.LgGVmb .lfDNBb:focus-within,
+  .vhoiae .yYWAMb.bvmRsc .lfDNBb:focus-within,
+  .vhoiae .dif24c.bvmRsc .lfDNBb:focus-within,
+  .vhoiae.LgGVmb .ZelW3e:hover .FYhd9e,
+  .vhoiae .yYWAMb.bvmRsc .ZelW3e:hover .FYhd9e,
+  .vhoiae .dif24c.bvmRsc .ZelW3e:hover .FYhd9e,
+  .vhoiae.LgGVmb .ZelW3e:focus-within .FYhd9e,
+  .vhoiae .yYWAMb.bvmRsc .ZelW3e:focus-within .FYhd9e,
+  .vhoiae .dif24c.bvmRsc .ZelW3e:focus-within .FYhd9e {
+    background-color: #f0f00c;
+  }
+  .vhoiae.LgGVmb .lb-k-x,
+  .vhoiae .yYWAMb.bvmRsc .lb-k-x,
+  .vhoiae .dif24c.bvmRsc .lb-k-x {
+    color-scheme: unset;
+  }
+  .vhoiae.LgGVmb .XKSfm-Sx9Kwc-bN97Pc,
+  .vhoiae .yYWAMb.bvmRsc .XKSfm-Sx9Kwc-bN97Pc,
+  .vhoiae .dif24c.bvmRsc .XKSfm-Sx9Kwc-bN97Pc {
+    color-scheme: auto;
+    /* unset doesn't work? */
+  }
+  .vhoiae.LgGVmb [role="tooltip"],
+  .vhoiae .yYWAMb.bvmRsc [role="tooltip"],
+  .vhoiae .dif24c.bvmRsc [role="tooltip"],
+  .vhoiae.LgGVmb .Kk7lMc-Ca,
+  .vhoiae .yYWAMb.bvmRsc .Kk7lMc-Ca,
+  .vhoiae .dif24c.bvmRsc .Kk7lMc-Ca,
+  .vhoiae.LgGVmb .gb_2e,
+  .vhoiae .yYWAMb.bvmRsc .gb_2e,
+  .vhoiae .dif24c.bvmRsc .gb_2e {
+    background-color: #f0f00a;
+    border-color: transparent;
+    /* File preview (separate tab) tooltip arrow */
+  }
+  .vhoiae.LgGVmb [role="tooltip"] *,
+  .vhoiae .yYWAMb.bvmRsc [role="tooltip"] *,
+  .vhoiae .dif24c.bvmRsc [role="tooltip"] *,
+  .vhoiae.LgGVmb .Kk7lMc-Ca *,
+  .vhoiae .yYWAMb.bvmRsc .Kk7lMc-Ca *,
+  .vhoiae .dif24c.bvmRsc .Kk7lMc-Ca *,
+  .vhoiae.LgGVmb .gb_2e *,
+  .vhoiae .yYWAMb.bvmRsc .gb_2e *,
+  .vhoiae .dif24c.bvmRsc .gb_2e *,
+  .vhoiae.LgGVmb [role="tooltip"],
+  .vhoiae .yYWAMb.bvmRsc [role="tooltip"],
+  .vhoiae .dif24c.bvmRsc [role="tooltip"],
+  .vhoiae.LgGVmb .Kk7lMc-Ca,
+  .vhoiae .yYWAMb.bvmRsc .Kk7lMc-Ca,
+  .vhoiae .dif24c.bvmRsc .Kk7lMc-Ca,
+  .vhoiae.LgGVmb .gb_2e,
+  .vhoiae .yYWAMb.bvmRsc .gb_2e,
+  .vhoiae .dif24c.bvmRsc .gb_2e {
+    color: #f0f004 !important;
+  }
+  .vhoiae.LgGVmb [role="tooltip"] .tk3N6e-suEOdc-jQ8oHc,
+  .vhoiae .yYWAMb.bvmRsc [role="tooltip"] .tk3N6e-suEOdc-jQ8oHc,
+  .vhoiae .dif24c.bvmRsc [role="tooltip"] .tk3N6e-suEOdc-jQ8oHc,
+  .vhoiae.LgGVmb .Kk7lMc-Ca .tk3N6e-suEOdc-jQ8oHc,
+  .vhoiae .yYWAMb.bvmRsc .Kk7lMc-Ca .tk3N6e-suEOdc-jQ8oHc,
+  .vhoiae .dif24c.bvmRsc .Kk7lMc-Ca .tk3N6e-suEOdc-jQ8oHc,
+  .vhoiae.LgGVmb .gb_2e .tk3N6e-suEOdc-jQ8oHc,
+  .vhoiae .yYWAMb.bvmRsc .gb_2e .tk3N6e-suEOdc-jQ8oHc,
+  .vhoiae .dif24c.bvmRsc .gb_2e .tk3N6e-suEOdc-jQ8oHc,
+  .vhoiae.LgGVmb [role="tooltip"] .tk3N6e-suEOdc-ez0xG,
+  .vhoiae .yYWAMb.bvmRsc [role="tooltip"] .tk3N6e-suEOdc-ez0xG,
+  .vhoiae .dif24c.bvmRsc [role="tooltip"] .tk3N6e-suEOdc-ez0xG,
+  .vhoiae.LgGVmb .Kk7lMc-Ca .tk3N6e-suEOdc-ez0xG,
+  .vhoiae .yYWAMb.bvmRsc .Kk7lMc-Ca .tk3N6e-suEOdc-ez0xG,
+  .vhoiae .dif24c.bvmRsc .Kk7lMc-Ca .tk3N6e-suEOdc-ez0xG,
+  .vhoiae.LgGVmb .gb_2e .tk3N6e-suEOdc-ez0xG,
+  .vhoiae .yYWAMb.bvmRsc .gb_2e .tk3N6e-suEOdc-ez0xG,
+  .vhoiae .dif24c.bvmRsc .gb_2e .tk3N6e-suEOdc-ez0xG {
+    border-color: #f0f00a transparent !important;
+  }
+  .vhoiae.LgGVmb .Kk7lMc-QWPxkf-d-j .Yb-Il-d .Yb-Il-d-c-j,
+  .vhoiae .yYWAMb.bvmRsc .Kk7lMc-QWPxkf-d-j .Yb-Il-d .Yb-Il-d-c-j,
+  .vhoiae .dif24c.bvmRsc .Kk7lMc-QWPxkf-d-j .Yb-Il-d .Yb-Il-d-c-j {
+    background-color: #f0f00c;
+  }
+  .vhoiae.LgGVmb .Kk7lMc-QWPxkf-d-j .Yb-Il-d .Yb-Il-d-c-j path:nth-child(1),
+  .vhoiae .yYWAMb.bvmRsc .Kk7lMc-QWPxkf-d-j .Yb-Il-d .Yb-Il-d-c-j path:nth-child(1),
+  .vhoiae .dif24c.bvmRsc .Kk7lMc-QWPxkf-d-j .Yb-Il-d .Yb-Il-d-c-j path:nth-child(1) {
+    stroke: #f0f004;
+  }
+  .vhoiae.LgGVmb .Yb-Il-d#qJTzr .Yb-Il-d-c-j,
+  .vhoiae .yYWAMb.bvmRsc .Yb-Il-d#qJTzr .Yb-Il-d-c-j,
+  .vhoiae .dif24c.bvmRsc .Yb-Il-d#qJTzr .Yb-Il-d-c-j {
+    filter: brightness(0) invert(84%) sepia(19%) saturate(370%) hue-rotate(192deg) brightness(98%) contrast(95%);
+  }
+  .vhoiae.LgGVmb .Yb-Il-d-c-Nd,
+  .vhoiae .yYWAMb.bvmRsc .Yb-Il-d-c-Nd,
+  .vhoiae .dif24c.bvmRsc .Yb-Il-d-c-Nd {
+    background-color: transparent;
+  }
+  .vhoiae.LgGVmb [src="//ssl.gstatic.com/images/branding/product/1x/drive_2020q4_48dp.png"],
+  .vhoiae .yYWAMb.bvmRsc [src="//ssl.gstatic.com/images/branding/product/1x/drive_2020q4_48dp.png"],
+  .vhoiae .dif24c.bvmRsc [src="//ssl.gstatic.com/images/branding/product/1x/drive_2020q4_48dp.png"] {
+    content: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2087.3%2078%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22m6.6%2066.85%203.85%206.65c.8%201.4%201.95%202.5%203.3%203.3L27.5%2053H0c0%201.55.4%203.1%201.2%204.5z%22%20fill%3D%22%23f0f014%22/%3E%3Cpath%20d%3D%22M43.65%2025%2029.9%201.2c-1.35.8-2.5%201.9-3.3%203.3l-25.4%2044A9.06%209.06%200%200%200%200%2053h27.5z%22%20fill%3D%22%23f0f015%22/%3E%3Cpath%20d%3D%22M73.55%2076.8c1.35-.8%202.5-1.9%203.3-3.3l1.6-2.75L86.1%2057.5c.8-1.4%201.2-2.95%201.2-4.5H59.798l5.852%2011.5z%22%20fill%3D%22%23f0f011%22/%3E%3Cpath%20d%3D%22M43.65%2025%2057.4%201.2C56.05.4%2054.5%200%2052.9%200H34.4c-1.6%200-3.15.45-4.5%201.2z%22%20fill%3D%22%23f0f011%22/%3E%3Cpath%20d%3D%22M59.8%2053H27.5L13.75%2076.8c1.35.8%202.9%201.2%204.5%201.2h50.8c1.6%200%203.15-.45%204.5-1.2z%22%20fill%3D%22%23f0f019%22/%3E%3Cpath%20d%3D%22m73.4%2026.5-12.7-22c-.8-1.4-1.95-2.5-3.3-3.3L43.65%2025%2059.8%2053h27.45c0-1.55-.4-3.1-1.2-4.5z%22%20fill%3D%22%23f0f014%22/%3E%3C/svg%3E");
+  }
+  .vhoiae.LgGVmb .z-Ea-Fj-c svg path,
+  .vhoiae .yYWAMb.bvmRsc .z-Ea-Fj-c svg path,
+  .vhoiae .dif24c.bvmRsc .z-Ea-Fj-c svg path {
+    fill: #f0f015;
+  }
+}

@@ -1,0 +1,2443 @@
+/* ==UserStyle==
+@name           pwnbox-youtube
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for YouTube (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("youtube.com") {
+  /* pwnbox: flat background in dark mode, independent of YouTube's own
+     theme attribute */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --yt-spec-base-background: #f0f001 !important;
+      --yt-sys-color-baseline--base-background: #f0f001 !important;
+      --yt-spec-general-background-a: #f0f001 !important;
+      --yt-spec-general-background-b: #f0f001 !important;
+      --yt-spec-general-background-c: #f0f001 !important;
+      background-color: #f0f001 !important;
+    }
+    ytd-app,
+    #page-container.ytd-app,
+    ytd-page-manager,
+    ytd-masthead #container.ytd-masthead,
+    ytd-masthead #background.ytd-masthead,
+    #guide-content,
+    #guide-inner-content,
+    ytd-watch-flexy,
+    ytd-browse,
+    ytd-two-column-browse-results-renderer,
+    yt-related-chip-cloud-renderer #container.yt-related-chip-cloud-renderer,
+    #chips-content,
+    ytd-mini-guide-renderer,
+    #background {
+      background-color: #f0f001 !important;
+    }
+  }
+  :root[dark] {
+    color-scheme: dark;
+    color: #f0f004;
+    background: #f0f001;
+    /* Misc */
+    /* Selected chapter */
+    /* Skeleton */
+    /* Ambient mode */
+    /* Icons */
+    /* Notifications Bell and Indicator */
+    /* Buttons */
+    /* Search box */
+    /* Video description */
+    /* Links */
+    /* Course Playlist (e.g. https://www.youtube.com/playlist?list=PLZHQObOWTQDNPOjrT6KVlfJuKtYTftqH6) */
+    /* Thumbnails */
+    /* Panels, popups, tooltips */
+    /* Video player */
+    /* Video highlight */
+    /* Video previews */
+    /* Shorts titles and views on homepage */
+    /* Buy super thanks bar */
+    /* Avatar */
+    /* Channel pages */
+    /* Components */
+    /* Menus and context sheets */
+    /* Dialogs */
+    /* Dropdowns */
+    /* Toggles/Switches */
+    /* Textareas */
+    /* Comments */
+    /* Profile Card */
+    /* Live chat replay */
+    /* Category tag pills */
+  }
+  :root[dark] ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root[dark] input::placeholder,
+  :root[dark] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root[dark],
+  :root[dark] [dark],
+  :root[dark] [system-icons],
+  :root[dark] [darker-dark-theme],
+  :root[dark][dark],
+  :root[dark][system-icons],
+  :root[dark][darker-dark-theme] {
+    --efyt-control-bar-background-color: #f0f002 !important;
+    --dimmer-text: #f0f004 !important;
+    /* Newest Variables */
+    --yt-sys-color-baseline--base-background: #f0f001 !important;
+    --yt-sys-color-baseline--menu-background: #f0f002 !important;
+    --yt-sys-color-baseline--raised-background: #f0f001 !important;
+    --yt-sys-color-baseline--additive-background: #f0f001 !important;
+    --yt-sys-color-baseline--wordmark-text: #f0f004 !important;
+    --yt-sys-color-baseline--text-primary: #f0f004 !important;
+    --yt-sys-color-baseline--text-secondary: #f0f006 !important;
+    --yt-sys-color-baseline--call-to-action: #f0f01b !important;
+    --yt-sys-color-baseline--suggested-action: #f0f009 !important;
+    --yt-sys-color-baseline--outline: #f0f00c !important;
+    --yt-sys-color-baseline--outline-opaque: #f0f00b !important;
+    --yt-sys-color-baseline--outline-inverse-opaque: #f0f009 !important;
+    --yt-sys-color-baseline--overlay-background-medium-light: rgba(240, 240, 1, 0.6) !important;
+    --yt-sys-color-baseline--overlay-background-heavy: rgba(240, 240, 1, 0.8) !important;
+    --yt-sys-color-baseline--overlay-background-solid: #f0f003 !important;
+    --yt-sys-color-baseline--overlay-text-primary: #f0f004 !important;
+    --yt-spec-white-1: #f0f004 !important;
+    --yt-spec-white-2: #f0f006 !important;
+    --yt-spec-white-3: #f0f005 !important;
+    --yt-spec-white-4: #d7d704 !important;
+    --yt-spec-black-1: #f0f001 !important;
+    --yt-spec-black-2: #f0f001 !important;
+    --yt-spec-black-3: #f0f001 !important;
+    --yt-spec-black-4: #f0f001 !important;
+    --yt-spec-black-pure: #f0f001 !important;
+    --yt-spec-grey-1: #f0f004 !important;
+    --yt-spec-grey-2: #f0f006 !important;
+    --yt-spec-grey-3: #f0f005 !important;
+    --yt-spec-grey-4: #f0f007 !important;
+    --yt-spec-grey-5: #f0f008 !important;
+    --yt-brand-youtube-red: #f0f01b !important;
+    --yt-brand-medium-red: #f0f01b !important;
+    --yt-brand-light-red: #f0f01b !important;
+    --yt-spec-red-30: #f0f013 !important;
+    --yt-spec-red-70: #f0f011 !important;
+    --yt-spec-red-indicator: #f0f01b !important;
+    --yt-spec-pale-blue: #f0f017 !important;
+    --yt-spec-light-blue: #f0f017 !important;
+    --yt-spec-dark-blue: #f0f018 !important;
+    --yt-spec-navy-blue: #f0f016 !important;
+    --yt-spec-light-green: #f0f015 !important;
+    --yt-spec-dark-green: #f0f015 !important;
+    --yt-spec-yellow: #f0f013 !important;
+    --yt-spec-black-pure-alpha-5: #f0f006 !important;
+    --yt-spec-black-pure-alpha-10: #f0f007 !important;
+    --yt-spec-black-pure-alpha-15: rgba(240, 240, 3, 0.85) !important;
+    --yt-spec-black-pure-alpha-30: rgba(240, 240, 3, 0.7) !important;
+    --yt-spec-black-pure-alpha-60: rgba(240, 240, 3, 0.4) !important;
+    --yt-spec-black-pure-alpha-80: rgba(240, 240, 3, 0.2) !important;
+    --yt-spec-black-1-alpha-98: rgba(240, 240, 3, 0.02) !important;
+    --yt-spec-black-1-alpha-95: rgba(240, 240, 3, 0.05) !important;
+    --yt-spec-white-1-alpha-10: rgba(240, 240, 4, 0.9) !important;
+    --yt-spec-white-1-alpha-20: rgba(240, 240, 4, 0.8) !important;
+    --yt-spec-white-1-alpha-25: rgba(240, 240, 4, 0.75) !important;
+    --yt-spec-white-1-alpha-30: rgba(240, 240, 4, 0.7) !important;
+    --yt-spec-white-1-alpha-70: rgba(240, 240, 4, 0.3) !important;
+    --yt-spec-white-1-alpha-95: rgba(240, 240, 4, 0.05) !important;
+    --yt-spec-white-1-alpha-98: rgba(240, 240, 4, 0.02) !important;
+    --yt-brand-medium-red-alpha-90: rgba(240, 240, 27, 0.1) !important;
+    --yt-brand-medium-red-alpha-30: rgba(240, 240, 27, 0.7) !important;
+    --yt-brand-light-red-alpha-30: rgba(240, 240, 27, 0.7) !important;
+    --yt-spec-light-blue-alpha-30: rgba(240, 240, 24, 0.7) !important;
+    --yt-spec-dark-blue-alpha-30: rgba(240, 240, 24, 0.7) !important;
+    --yt-spec-base-background: #f0f001 !important;
+    --yt-spec-raised-background: #f0f001 !important;
+    --yt-spec-menu-background: #f0f002 !important;
+    --yt-spec-inverted-background: #f0f004 !important;
+    --yt-spec-additive-background: #f0f001 !important;
+    --yt-spec-outline: #f0f00c !important;
+    --yt-spec-shadow: rgba(240, 240, 3, 0.75) !important;
+    --yt-spec-text-primary: #f0f004 !important;
+    --yt-spec-text-secondary: #f0f006 !important;
+    --yt-spec-text-disabled: #f0f005 !important;
+    --yt-spec-text-primary-inverse: #f0f003 !important;
+    --yt-spec-call-to-action: #f0f01b !important;
+    --yt-spec-call-to-action-inverse: #f0f01b !important;
+    --yt-spec-suggested-action: rgba(240, 240, 27, 0.2) !important;
+    --yt-spec-suggested-action-inverse: #f0f004 !important;
+    --yt-spec-icon-active-other: #f0f004 !important;
+    --yt-spec-button-chip-background-hover: #f0f00b !important;
+    --yt-spec-touch-response: #f0f00c !important;
+    --yt-spec-touch-response-inverse: #f0f01b !important;
+    --yt-spec-brand-icon-active: #f0f01b !important;
+    --yt-spec-brand-button-background: #f0f01b !important;
+    --yt-spec-brand-link-text: #f0f018 !important;
+    --yt-spec-wordmark-text: #f0f004 !important;
+    --yt-spec-error-indicator: #f0f011 !important;
+    --yt-spec-themed-blue: #f0f01b !important;
+    --yt-spec-themed-green: #f0f015 !important;
+    --yt-spec-ad-indicator: #f0f016 !important;
+    --yt-spec-themed-overlay-background: rgba(240, 240, 3, 0.8) !important;
+    --yt-spec-commerce-badge-background: #f0f015 !important;
+    --yt-spec-static-brand-red: #f0f01b !important;
+    --yt-spec-static-brand-white: #f0f004 !important;
+    --yt-spec-static-brand-black: #f0f001 !important;
+    --yt-spec-static-clear-color: #f0f003 !important;
+    --yt-spec-static-clear-black: #f0f001 !important;
+    --yt-spec-static-ad-yellow: #f0f013 !important;
+    --yt-spec-static-grey: #f0f006 !important;
+    --yt-spec-static-overlay-background-solid: #f0f003 !important;
+    --yt-spec-static-overlay-background-heavy: #f0f003 !important;
+    --yt-spec-static-overlay-background-medium: rgba(240, 240, 3, 0.5) !important;
+    --yt-spec-static-overlay-background-light: rgba(240, 240, 3, 0.9) !important;
+    --yt-spec-static-overlay-text-primary: #f0f004 !important;
+    --yt-spec-static-overlay-text-secondary: rgba(240, 240, 6, 0.3) !important;
+    --yt-spec-static-overlay-text-disabled: rgba(240, 240, 6, 0.7) !important;
+    --yt-spec-static-overlay-call-to-action: #f0f01b !important;
+    --yt-spec-static-overlay-icon-active-other: #f0f003 !important;
+    --yt-spec-static-overlay-icon-inactive: #f0f00b !important;
+    --yt-spec-static-overlay-icon-disabled: #f0f00a !important;
+    --yt-spec-static-overlay-button-primary: #f0f01b !important;
+    --yt-spec-static-overlay-touch-response: #f0f008 !important;
+    --yt-spec-static-overlay-touch-response-inverse: #f0f00b !important;
+    --yt-spec-static-overlay-background-brand: #f0f01b !important;
+    --yt-spec-assistive-feed-themed-gradient-1: #f0f006 !important;
+    --yt-spec-assistive-feed-themed-gradient-2: #f0f01a !important;
+    --yt-spec-assistive-feed-themed-gradient-3: #f0f011 !important;
+    --yt-spec-brand-background-solid: #f0f001 !important;
+    --yt-spec-brand-background-primary: #f0f001 !important;
+    --yt-spec-brand-background-secondary: #f0f002 !important;
+    --yt-spec-general-background-a: #f0f001 !important;
+    --yt-spec-general-background-b: #f0f001 !important;
+    --yt-spec-general-background-c: #f0f003 !important;
+    --yt-spec-error-background: #f0f001 !important;
+    --yt-spec-10-percent-layer: #f0f00b !important;
+    --yt-spec-snackbar-background: #f0f002 !important;
+    --yt-spec-snackbar-background-updated: #f0f002 !important;
+    --yt-spec-badge-chip-background: #f0f001 !important;
+    --yt-spec-verified-badge-background: #f0f001 !important;
+    --yt-spec-call-to-action-fadeoutd: rgba(240, 240, 24, 0.7) !important;
+    --yt-spec-call-to-action-hover: #f0f01b !important;
+    --yt-spec-brand-button-background-hover: #f0f01b !important;
+    --yt-spec-brand-link-text-fadeoutd: rgba(240, 240, 27, 0.7) !important;
+    --yt-spec-filled-button-focus-outline: #f0f00c !important;
+    --yt-spec-static-overlay-button-hover: #f0f00b !important;
+    --yt-spec-mono-filled-hover: #f0f00b !important;
+    --yt-spec-commerce-filled-hover: #f0f01b !important;
+    --yt-spec-mono-tonal-hover: #f0f00b !important;
+    --yt-spec-commerce-tonal-hover: #f0f00a !important;
+    --yt-spec-static-overlay-filled-hover: #f0f008 !important;
+    --yt-spec-static-overlay-tonal-hover: #f0f00b !important;
+    --yt-spec-paper-tab-ink: rgba(240, 240, 4, 0.7) !important;
+    --yt-spec-filled-button-text: #f0f004 !important;
+    --yt-spec-selected-nav-text: #f0f004 !important;
+    --iron-icon-fill-color: #f0f004 !important;
+    --yt-spec-overlay-text-primary: #f0f004 !important;
+    --yt-spec-overlay-background-medium-light: rgba(240, 240, 1, 0.6) !important;
+    --yt-spec-overlay-background-heavy: rgba(240, 240, 1, 0.8) !important;
+    --yt-spec-overlay-background-solid: #f0f001 !important;
+    /* Search bar */
+    --ytd-searchbox-border-color: #f0f00c !important;
+    --ytd-searchbox-legacy-border-color: #f0f00c !important;
+    --ytd-searchbox-legacy-border-shadow-color: #f0f003 !important;
+    --ytd-searchbox-legacy-button-color: #f0f002 !important;
+    --ytd-searchbox-legacy-button-border-color: #f0f00c !important;
+    --ytd-searchbox-legacy-button-focus-color: #f0f01b !important;
+    --ytd-searchbox-legacy-button-hover-color: #f0f002 !important;
+    --ytd-searchbox-legacy-button-hover-border-color: #f0f00c !important;
+    --ytd-searchbox-legacy-button-icon-color: #f0f01b !important;
+    --ytd-searchbox-background: #f0f001 !important;
+    --ytd-searchbox-text-color: #f0f004 !important;
+    /* System icons */
+    --yt-spec-icon-inactive: #f0f004 !important;
+    --yt-spec-icon-disabled: #f0f008 !important;
+    --yt-spec-brand-icon-inactive: #f0f007 !important;
+    /* Live chat */
+    --yt-live-chat-background-color: #f0f001 !important;
+    --yt-live-chat-primary-text-color: #f0f004 !important;
+    --yt-live-chat-action-panel-background-color: #f0f001 !important;
+    --yt-live-chat-secondary-background-color: #f0f00b !important;
+    --yt-live-chat-toast-background-color: #f0f00a !important;
+    --yt-live-chat-mode-change-background-color: #f0f001 !important;
+    --yt-live-chat-secondary-text-color: #f0f006 !important;
+    --yt-live-chat-tertiary-text-color: rgba(240, 240, 4, 0.46) !important;
+    --yt-live-chat-text-input-field-inactive-underline-color: #f0f006 !important;
+    --yt-live-chat-text-input-field-placeholder-color: #f0f006 !important;
+    --yt-live-chat-enabled-send-button-color: #f0f004 !important;
+    --yt-live-chat-disabled-icon-button-color: #f0f005 !important;
+    --yt-live-chat-picker-button-hover-color: #f0f01b !important;
+    --yt-live-chat-mention-background-color: #f0f01b !important;
+    --yt-live-chat-mention-text-color: #f0f004 !important;
+    --yt-live-chat-deleted-message-color: #f0f006 !important;
+    --yt-live-chat-deleted-message-bar-color: #f0f005 !important;
+    --yt-live-chat-reconnect-message-color: #f0f004 !important;
+    --yt-live-chat-disabled-button-background-color: #f0f009 !important;
+    --yt-live-chat-sub-panel-background-color: #f0f001 !important;
+    --yt-live-chat-sub-panel-background-color-transparent: #f0f002 !important;
+    --yt-live-chat-moderator-color: #f0f01a !important;
+    --yt-live-chat-owner-color: #f0f013 !important;
+    --yt-live-chat-message-highlight-background-color: #f0f001 !important;
+    --yt-live-chat-sponsor-color: #f0f015 !important;
+    --yt-live-chat-overlay-color: rgba(240, 240, 2, 0.5) !important;
+    --yt-live-chat-dialog-background-color: #f0f001 !important;
+    --yt-emoji-picker-variant-selector-bg-color: #f0f001 !important;
+    --yt-live-chat-moderation-mode-hover-background-color: rgba(240, 240, 2, 0.7) !important;
+    --yt-grey: #f0f006 !important;
+    --yt-live-chat-text-input-field-suggestion-background-color: #f0f006 !important;
+    --yt-live-chat-text-input-field-suggestion-background-color-hover: #f0f005 !important;
+    --yt-emoji-picker-search-background-color: #f0f00c !important;
+    --yt-emoji-picker-search-color: #f0f004 !important;
+    --yt-emoji-picker-search-placeholder-color: #f0f01b !important;
+    --yt-live-chat-slider-active-color: #f0f01b !important;
+    --yt-live-chat-slider-container-color: #f0f00c !important;
+    --yt-live-chat-slider-markers-color: #f0f004 !important;
+    --yt-live-chat-banner-gradient-scrim: linear-gradient(#f0f002, transparent) !important;
+    --yt-live-chat-action-panel-gradient-scrim: linear-gradient(to top, #f0f002, transparent) !important;
+    --yt-live-chat-automod-button-background-color-hover: rgba(240, 240, 3, 0.5) !important;
+    --yt-live-chat-automod-button-explanation-color: rgba(240, 240, 27, 0.3) !important;
+    --yt-live-chat-shimmer-background-color: rgba(240, 240, 3, 0.6) !important;
+    --yt-live-chat-shimmer-linear-gradient: linear-gradient(0deg, rgba(240, 240, 4, 0.9) 40%, rgba(240, 240, 1, 0.7) 50%, rgba(240, 240, 4, 0.9) 60%) !important;
+    --yt-live-chat-vem-background-color: #f0f002 !important;
+    --yt-live-chat-product-picker-icon-color: rgba(240, 240, 4, 0.5) !important;
+    --yt-live-chat-product-picker-hover-color: #f0f009 !important;
+    --yt-live-chat-product-picker-disabled-icon-color: rgba(240, 240, 4, 0.7) !important;
+    --yt-live-chat-action-panel-background-color-transparent: (null) !important;
+    --paper-tooltip-background: #f0f00a !important;
+    --paper-tooltip-text-color: #f0f004 !important;
+    /* Links */
+    --yt-endpoint-color: #f0f004 !important;
+    --yt-endpoint-visited-color: #f0f004 !important;
+    --yt-endpoint-hover-color: #f0f01b !important;
+    --sb-dark-red-outline: #f0f01b !important;
+    --sb-main-bg-color: #f0f001 !important;
+    --sb-main-fg-color: #f0f004 !important;
+    --sb-grey-bg-color: #f0f001 !important;
+    --sb-grey-fg-color: #f0f006 !important;
+    --sb-red-bg-color: #f0f01b !important;
+    --sb-category-sponsor: #f0f015 !important;
+    --sb-category-selfpromo: #f0f014 !important;
+    --sb-category-exclusive_access: #f0f016 !important;
+    --sb-category-interaction: #f0f010 !important;
+    --sb-category-poi_highlight: #f0f00f !important;
+    --sb-category-intro: #f0f017 !important;
+    --sb-category-outro: #f0f019 !important;
+    --sb-category-preview: #f0f018 !important;
+    --sb-category-filler: #f0f01a !important;
+    --sb-category-music_offtopic: #f0f013 !important;
+  }
+  :root[dark] .ytTooltipContainerDefaultTooltipContent,
+  :root[dark] [dark] .ytTooltipContainerDefaultTooltipContent,
+  :root[dark] [system-icons] .ytTooltipContainerDefaultTooltipContent,
+  :root[dark] [darker-dark-theme] .ytTooltipContainerDefaultTooltipContent,
+  :root[dark][dark] .ytTooltipContainerDefaultTooltipContent,
+  :root[dark][system-icons] .ytTooltipContainerDefaultTooltipContent,
+  :root[dark][darker-dark-theme] .ytTooltipContainerDefaultTooltipContent {
+    background: var(--paper-tooltip-background) !important;
+    color: var(--paper-tooltip-text-color) !important;
+  }
+  :root[dark]:not(.style-scope) {
+    --primary-text-color: #f0f004 !important;
+    --primary-background-color: #f0f001 !important;
+    --secondary-text-color: #f0f006 !important;
+    --disabled-text-color: #f0f005 !important;
+    --divider-color: #f0f009 !important;
+    --error-color: #f0f011 !important;
+    --primary-color: #f0f01b !important;
+    --light-primary-color: #f0f01b !important;
+    --dark-primary-color: #f0f019 !important;
+    --accent-color: #f0f01b !important;
+    --light-accent-color: #f0f01b !important;
+    --dark-accent-color: #f0f01b !important;
+    --light-theme-background-color: #f0f001 !important;
+    --light-theme-base-color: #f0f004 !important;
+    --light-theme-text-color: #f0f004 !important;
+    --light-theme-secondary-color: #f0f006 !important;
+    --light-theme-disabled-color: #f0f005 !important;
+    --light-theme-divider-color: #f0f009 !important;
+    --dark-theme-background-color: #f0f001 !important;
+    --dark-theme-base-color: #f0f004 !important;
+    --dark-theme-text-color: #f0f004 !important;
+    --dark-theme-secondary-color: #f0f006 !important;
+    --dark-theme-disabled-color: #f0f005 !important;
+    --dark-theme-divider-color: #f0f009 !important;
+  }
+  :root[dark] #progress.yt-page-navigation-progress {
+    background: #f0f01b;
+  }
+  :root[dark] ytd-macro-markers-list-item-renderer {
+    --ytd-macro-markers-list-item-background-color: #f0f00c;
+    --ytd-macro-markers-list-item-title-color: #f0f004;
+    --ytd-macro-markers-list-item-secondary-color: #f0f005;
+    --ytd-macro-markers-list-item-timestamp-background-color: #f0f00b;
+  }
+  :root[dark] ytd-playlist-panel-video-renderer {
+    --yt-lightsource-section2-color: #f0f00b;
+    --yt-lightsource-section4-color: #f0f00a;
+    --yt-lightsource-primary-title-color: #f0f004;
+    --yt-lightsource-secondary-title-color: #f0f004;
+    --yt-active-playlist-panel-background-color: #f0f00c;
+  }
+  :root[dark] ytd-playlist-panel-renderer[collapsible][collapsed][use-color-palette] .header.ytd-playlist-panel-renderer {
+    --iron-icon-fill-color: #f0f004;
+    background-color: #f0f001;
+  }
+  :root[dark] #container.ytd-masthead {
+    --iron-icon-fill-color: #f0f004;
+  }
+  :root[dark] #background.ytd-masthead,
+  :root[dark] #frosted-glass {
+    --yt-frosted-glass-desktop: #f0f001;
+    --yt-spec-frosted-glass-desktop: #f0f001;
+  }
+  :root[dark] ytd-feed-filter-chip-bar-renderer[expand-instead-of-scroll] #chips-wrapper.ytd-feed-filter-chip-bar-renderer {
+    --iron-icon-fill-color: #f0f004;
+    background-color: #f0f001;
+  }
+  :root[dark] .ytp-progress-list {
+    background: rgba(240, 240, 12, 0.8);
+  }
+  :root[dark] .ytp-load-progress {
+    background: #f0f009;
+  }
+  :root[dark] ytd-expandable-metadata-renderer {
+    --yt-lightsource-section1-color: #f0f001;
+    --yt-lightsource-section2-color: #f0f00c;
+    --yt-lightsource-section3-color: #f0f00b;
+    --yt-lightsource-section4-color: #f0f00a;
+    --yt-lightsource-primary-title-color: #f0f004;
+    --yt-lightsource-secondary-title-color: #f0f006;
+  }
+  :root[dark] yt-live-chat-renderer {
+    --yt-button-default-text-color: #f0f004;
+    --yt-button-default-background-color: #f0f001;
+    --yt-button-dark-text-color: #f0f001;
+    --yt-button-dark-background-color: #f0f01b;
+    --yt-button-payment-background-color: #f0f01b;
+  }
+  :root[dark] yt-icon-button.yt-live-chat-item-list-renderer {
+    background-color: #f0f01b;
+    color: #f0f001;
+  }
+  :root[dark] yt-icon-button.yt-live-chat-item-list-renderer:hover {
+    background-color: #e3e30f;
+  }
+  :root[dark] #guide-skeleton,
+  :root[dark] #home-container-skeleton,
+  :root[dark] #home-chips {
+    background-color: #f0f001;
+    z-index: -1;
+  }
+  :root[dark] ytd-app[is-shorts-page] {
+    background: var(--yt-spec-base-background);
+  }
+  :root[dark] #guide-skeleton .guide-ghost-icon,
+  :root[dark] #guide-skeleton .guide-ghost-text,
+  :root[dark] .masthead-skeleton-icon,
+  :root[dark] #home-page-skeleton .skeleton-bg-color,
+  :root[dark] .watch-skeleton .skeleton-bg-color {
+    background-color: #f0f00b;
+  }
+  :root[dark] #cinematics,
+  :root[dark] #cinematic-container {
+    display: none;
+  }
+  :root[dark] .ytp-settings-button.ytp-hd-quality-badge::after,
+  :root[dark] .ytp-settings-button.ytp-hdr-quality-badge::after,
+  :root[dark] .ytp-settings-button.ytp-4k-quality-badge::after,
+  :root[dark] .ytp-settings-button.ytp-5k-quality-badge::after,
+  :root[dark] .ytp-settings-button.ytp-8k-quality-badge::after,
+  :root[dark] .ytp-settings-button.ytp-3d-badge-grey::after,
+  :root[dark] .ytp-settings-button.ytp-3d-badge::after {
+    background-color: #f0f01b;
+  }
+  :root[dark] [fill="red"],
+  :root[dark] [fill="#F00"],
+  :root[dark] [fill="#FF0000"],
+  :root[dark] [fill="#f03"],
+  :root[dark] [fill="#FF0033"] {
+    fill: #f0f01b;
+  }
+  :root[dark] [fill="white"] {
+    fill: #f0f004;
+  }
+  :root[dark] yt-icon.ytd-logo [fill="white"] {
+    fill: #f0f003;
+  }
+  :root[dark] .yt-spec-icon-shape [fill="#FAFAFA"],
+  :root[dark] .yt-spec-icon-shape [fill="#000"],
+  :root[dark] .yt-spec-icon-shape [fill="#fff"],
+  :root[dark] .yt-spec-icon-shape [fill="#FFF"],
+  :root[dark] .yt-spec-icon-shape [fill="#FFFFFF"] {
+    fill: #f0f003;
+  }
+  :root[dark] .ytSpecIconBadgeShapeStyleOverlay .ytSpecIconBadgeShapeIcon,
+  :root[dark] .ytSpecIconBadgeShapeBadge {
+    color: #f0f004;
+  }
+  :root[dark] .ytSpecIconBadgeShapeTypeNotification .ytSpecIconBadgeShapeBadge {
+    background-color: #f0f01b;
+    color: #f0f001;
+  }
+  :root[dark] .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
+    color: #f0f004;
+    background-color: #f0f00c;
+    /* Accent for filled-in thumbs up (like button) */
+  }
+  :root[dark] .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal [fill="rgb(3,3,3)"],
+  :root[dark] .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal [fill="rgb(0,0,0)"],
+  :root[dark] .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal [fill="rgb(255,255,255)"] {
+    fill: #f0f004;
+  }
+  :root[dark] .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal [stroke="rgb(0,0,0)"],
+  :root[dark] .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal [stroke="rgb(255,255,255)"] {
+    stroke: #f0f004;
+  }
+  :root[dark] .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal [animated-icon-type="LIKE"] g path[fill] {
+    fill: #f0f01b;
+  }
+  :root[dark] .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal [animated-icon-type="LIKE"] g path[fill] + [stroke] {
+    stroke: #f0f01b;
+  }
+  :root[dark] .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal:hover {
+    background-color: #f0f00b;
+  }
+  :root[dark] .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--outline {
+    color: #f0f004;
+    border-color: #f0f00a;
+  }
+  :root[dark] .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--outline:hover {
+    background-color: #f0f00a;
+  }
+  :root[dark] .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
+    color: #f0f004;
+    /* Accent for filled-in thumbs up (like button) */
+  }
+  :root[dark] .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text path[d="M3,11h3v10H3V11z M18.77,11h-4.23l1.52-4.94C16.38,5.03,15.54,4,14.38,4c-0.58,0-1.14,0.24-1.52,0.65L7,11v10h10.43 c1.06,0,1.98-0.67,2.19-1.61l1.34-6C21.23,12.15,20.18,11,18.77,11z"] {
+    fill: #f0f01b;
+  }
+  :root[dark] .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text:hover {
+    background-color: #f0f00b;
+  }
+  :root[dark] .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled {
+    color: #f0f001;
+    background-color: #f0f01b;
+  }
+  :root[dark] .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled:hover {
+    background-color: #e3e30f;
+  }
+  :root[dark] .yt-spec-button-shape-next--disabled {
+    color: #f0f008;
+  }
+  :root[dark] .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--tonal {
+    color: #f0f004;
+    background-color: #f0f00c;
+  }
+  :root[dark] .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--tonal:hover {
+    background-color: #f0f00b;
+  }
+  :root[dark] .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--text {
+    color: #f0f004;
+  }
+  :root[dark] .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--text:hover {
+    background-color: #f0f00c;
+  }
+  :root[dark] .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--filled {
+    color: #f0f001;
+    background-color: #f0f01b;
+  }
+  :root[dark] .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--outline {
+    color: #f0f004;
+    border-color: #f0f00b;
+  }
+  :root[dark] .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--outline:hover {
+    background: #f0f00c;
+  }
+  :root[dark] .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline {
+    color: #f0f01b;
+    border-color: #f0f00a;
+  }
+  :root[dark] .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline:hover {
+    background-color: rgba(240, 240, 27, 0.3);
+    color: #f0f01b;
+  }
+  :root[dark] .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text {
+    color: #f0f01b;
+  }
+  :root[dark] .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text:hover {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root[dark] .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--filled {
+    color: #f0f001;
+    background-color: #f0f01b;
+  }
+  :root[dark] .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--filled:hover {
+    background-color: #f2f233;
+  }
+  :root[dark] .yt-spec-button-shape-next--disabled.yt-spec-button-shape-next--filled {
+    color: #f0f006;
+    background-color: rgba(240, 240, 11, 0.7);
+  }
+  :root[dark] .ytSearchboxComponentInputBox,
+  :root[dark] .ytSearchboxComponentInputBoxDark {
+    background: var(--ytd-searchbox-background);
+    color: var(--ytd-searchbox-text-color);
+    border-color: var(--ytd-searchbox-border-color);
+    box-shadow: none;
+  }
+  :root[dark] .ytSearchboxComponentInputBoxHasFocus,
+  :root[dark] .ytSearchboxComponentInputBoxHasFocusDark {
+    border-color: #f0f01b;
+  }
+  :root[dark] .ytSuggestionComponentPersonalizedSuggestion {
+    color: #f0f004;
+  }
+  :root[dark] .ytSuggestionComponentHighlighted {
+    background: #f0f00b;
+  }
+  :root[dark] .ytSuggestionComponentLargerRemovedText {
+    color: #f0f008;
+  }
+  :root[dark] .ytSearchboxComponentSuggestionsContainer,
+  :root[dark] .ytSearchboxComponentSuggestionsContainerDark {
+    background: var(--yt-spec-raised-background);
+    border-color: var(--yt-spec-raised-background);
+  }
+  :root[dark] .ytSuggestionComponentSuggestion,
+  :root[dark] .ytSuggestionComponentSuggestionDark {
+    color: var(--ytd-searchbox-text-color);
+  }
+  :root[dark] .ytSearchboxComponentSearchButton,
+  :root[dark] .ytSearchboxComponentSearchButtonDark {
+    color: var(--ytd-searchbox-text-color);
+    background: var(--yt-spec-raised-background);
+    border-color: var(--ytd-searchbox-border-color);
+  }
+  :root[dark] .ytSearchboxComponentClearButtonIcon,
+  :root[dark] .ytSearchboxComponentClearButtonIconDark {
+    color: var(--ytd-searchbox-text-color);
+  }
+  :root[dark] ytd-watch-metadata {
+    --yt-saturated-raised-background: #f0f001 !important;
+    --yt-saturated-text-primary: #f0f004 !important;
+    --yt-saturated-text-secondary: #f0f005 !important;
+  }
+  :root[dark] ytd-text-inline-expander .ytAttributedStringLinkInheritColor:not(
+        .ytAttributedStringLink
+      ) {
+    color: #f0f004 !important;
+  }
+  :root[dark] .ytAttributedStringHighlightTextDecorator {
+    background-color: #f0f00a !important;
+  }
+  :root[dark] .ytAttributedStringLinkCallToActionColor {
+    color: #f0f01b;
+  }
+  :root[dark] .ytwCourseProgressViewModelHostProgressTitle,
+  :root[dark] .ytwCourseProgressViewModelHostProgressSubtitle {
+    color: #f0f004;
+  }
+  :root[dark] .ytwCourseProgressViewModelHostProgressBar {
+    background-color: rgba(240, 240, 4, 0.2);
+  }
+  :root[dark] .ytwCourseProgressViewModelHostProgressBar .ytwCourseProgressViewModelHostProgressBarFill {
+    background-color: #f0f004;
+  }
+  :root[dark] .ytwHowThisWasMadeSectionViewModelSectionTitle,
+  :root[dark] .ytwHowThisWasMadeSectionViewModelBodyHeader {
+    color: #f0f004;
+  }
+  :root[dark] .ytwHowThisWasMadeSectionViewModelBodyText {
+    color: #f0f006;
+  }
+  :root[dark] .ytVideoDescriptionYouchatSectionViewModelSectionTitle {
+    color: #f0f004;
+  }
+  :root[dark] .ytVideoDescriptionYouchatSectionViewModelSubHeaderText {
+    color: #f0f006;
+  }
+  :root[dark] .ytwYouChatItemViewModelHost {
+    color: #f0f004;
+  }
+  :root[dark] .ytwYouChatChipsDataChip {
+    color: #f0f004;
+    border-color: #f0f00a;
+  }
+  :root[dark] .ytwYouChatChipsDataChip:hover {
+    background-color: #f0f00b;
+  }
+  :root[dark] .chatInputViewModelChatDisclaimer {
+    color: #f0f006;
+  }
+  :root[dark] .ytwTimelineChapterViewModelTitle,
+  :root[dark] .ytShelfHeaderLayoutTitle {
+    color: #f0f004;
+  }
+  :root[dark] .ytwTranscriptSegmentViewModelHost {
+    color: #f0f006;
+  }
+  :root[dark] .ytwTranscriptSegmentViewModelTimestamp {
+    background-color: #f0f00a;
+    color: #f0f005;
+  }
+  :root[dark] .ytwTranscriptSegmentViewModelTimestampActive {
+    background-color: #f0f009;
+    color: #f0f004;
+  }
+  :root[dark] .videoAttributesSectionViewModelTitle,
+  :root[dark] .ytVideoAttributeViewModelTitle {
+    color: #f0f004;
+  }
+  :root[dark] .ytVideoAttributeViewModelSubtitle,
+  :root[dark] .ytVideoAttributeViewModelSecondarySubtitle {
+    color: #f0f005;
+  }
+  :root[dark] .ytp-sb-unsubscribe {
+    background-color: #f0f00a;
+    color: #f0f004;
+  }
+  :root[dark] .ytp-sb-subscribe {
+    background-color: #f0f01b;
+    color: #f0f001;
+  }
+  :root[dark] .ytThumbnailOverlayProgressBarHostWatchedProgressBar {
+    background-color: #f0f00a;
+  }
+  :root[dark] .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment {
+    background: #f0f01b;
+  }
+  :root[dark] ytd-thumbnail-overlay-resume-playback-renderer {
+    background-color: #f0f00a;
+  }
+  :root[dark] ytd-thumbnail-overlay-resume-playback-renderer #progress.ytd-thumbnail-overlay-resume-playback-renderer {
+    background: #f0f01b;
+  }
+  :root[dark] .ytp-tooltip-bottom-text {
+    background: rgba(240, 240, 12, 0.9);
+    color: #f0f004;
+    text-shadow: none;
+  }
+  :root[dark] .ytp-popup {
+    background: rgba(240, 240, 12, 0.9);
+    text-shadow: none;
+  }
+  :root[dark] .ytp-panel-menu,
+  :root[dark] .ytp-panel-header,
+  :root[dark] .ytp-panel-footer,
+  :root[dark] .ytp-menuitem-label,
+  :root[dark] .ytp-premium-label,
+  :root[dark] .ytp-menuitem-content,
+  :root[dark] .ytp-menuitem-label-count,
+  :root[dark] .ytp-menu-label-secondary,
+  :root[dark] .ytd-menu-title-renderer {
+    color: #f0f004;
+  }
+  :root[dark] .ytp-panel-footer-content-link {
+    color: #f0f01b;
+  }
+  :root[dark] .ytp-panel-back-button {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%2032%2032%22%20version%3D%221.1%22%3E%3Cpath%20d%3D%22m19.41%2020.09-4.58-4.59%204.58-4.59L18%209.5l-6%206%206%206z%22%20fill%3D%22%23f0f004%22/%3E%3C/svg%3E");
+  }
+  :root[dark] .ytp-menuitem[aria-checked="false"] .ytp-menuitem-toggle-checkbox::after {
+    background-color: #f0f008;
+  }
+  :root[dark] .ytp-menuitem[aria-checked="true"] .ytp-menuitem-toggle-checkbox {
+    background-color: #f0f00a;
+  }
+  :root[dark] .ytp-menuitem[aria-checked="true"] .ytp-menuitem-toggle-checkbox::after {
+    background-color: #f0f004;
+  }
+  :root[dark] .ytp-menuitem:not([aria-disabled="true"]):hover {
+    background-color: #f0f00b;
+  }
+  :root[dark] yt-progress-bar .ytProgressBarLineProgressBarPlayed,
+  :root[dark] yt-progress-bar .ytProgressBarPlayheadProgressBarPlayheadDot {
+    background: #f0f01b;
+  }
+  :root[dark] yt-progress-bar .ytProgressBarLineProgressBarHovered,
+  :root[dark] yt-progress-bar .ytProgressBarLineProgressBarBackground {
+    background: #f0f004;
+  }
+  :root[dark] .ytp-cards-button .ytp-cards-button-icon use {
+    fill: #f0f001;
+  }
+  :root[dark] .ytp-cards-button .ytp-cards-button-icon path {
+    fill: #f0f004;
+  }
+  :root[dark] .ytp-cards-teaser .ytp-cards-teaser-box {
+    background-color: #f0f00a;
+    border-bottom-color: #f0f00a;
+  }
+  :root[dark] .ytp-cards-teaser .ytp-cards-teaser-text {
+    color: #f0f004;
+  }
+  :root[dark] .html5-video-player {
+    color: #f0f004;
+    background-color: #f0f003;
+    /* stats for nerds */
+  }
+  :root[dark] .html5-video-player .ytp-swatch-background-color,
+  :root[dark] .html5-video-player .ytp-play-progress {
+    background: #f0f01b;
+  }
+  :root[dark] .html5-video-player .ytp-svg-fill,
+  :root[dark] .html5-video-player [fill="#fff"] {
+    fill: #f0f004;
+  }
+  :root[dark] .html5-video-player .ytp-volume-slider-handle,
+  :root[dark] .html5-video-player .ytp-volume-slider-handle::before {
+    background-color: #f0f004;
+  }
+  :root[dark] .html5-video-player .ytp-volume-slider-handle::after {
+    background-color: rgba(240, 240, 4, 0.2);
+  }
+  :root[dark] .html5-video-player .ytp-time-current,
+  :root[dark] .html5-video-player .ytp-time-separator,
+  :root[dark] .html5-video-player .ytp-time-duration {
+    color: #f0f004;
+  }
+  :root[dark] .html5-video-player .ytp-live-badge[disabled]::before {
+    background: #f0f01b;
+  }
+  :root[dark] .html5-video-player .ytp-live-badge::before {
+    background: #f0f009;
+  }
+  :root[dark] .html5-video-player .ytp-button[aria-pressed]::after,
+  :root[dark] .html5-video-player .ytp-subtitles-button[aria-pressed]::after {
+    background-color: #f0f01b;
+  }
+  :root[dark] .html5-video-player .ytp-sfn {
+    background: rgba(240, 240, 1, 0.8);
+    color: #f0f004;
+  }
+  :root[dark] .html5-video-player .ytp-autonav-toggle-button {
+    background-color: #f0f00a;
+  }
+  :root[dark] .html5-video-player .ytp-autonav-toggle-button::after {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2236%22%20height%3D%2236%22%20viewBox%3D%220%200%2036%2036%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M12.75%204.5h-3c-.6%200-1.17.23-1.6.65-.42.43-.65%201-.65%201.6v22.5c0%20.59.23%201.16.65%201.59.43.42%201%20.66%201.6.66h3c.59%200%201.16-.24%201.59-.66.42-.43.66-1%20.66-1.59V6.75c0-.6-.24-1.17-.66-1.6-.43-.42-1-.65-1.59-.65m13.5%200h-3c-.6%200-1.17.23-1.6.65-.42.43-.65%201-.65%201.6v22.5c0%20.59.23%201.16.65%201.59.43.42%201%20.66%201.6.66h3c.59%200%201.16-.24%201.59-.66.42-.43.66-1%20.66-1.59V6.75c0-.6-.24-1.17-.66-1.6-.43-.42-1-.65-1.59-.65%22%20fill%3D%22%23f0f004%22/%3E%3C/svg%3E");
+    background-color: #f0f008;
+  }
+  :root[dark] .html5-video-player .ytp-autonav-toggle-button[aria-checked="true"]::after {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2236%22%20height%3D%2236%22%20viewBox%3D%220%200%2036%2036%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22m17%208.6-6.11-3.61c-1.5-.88-3.39.2-3.39%201.94v22.13c0%201.74%201.89%202.82%203.39%201.94L17%2027.4zm0%200v18.8L33%2018z%22%20fill%3D%22%23f0f001%22/%3E%3C/svg%3E");
+    background-color: #f0f004;
+  }
+  :root[dark] ytd-rich-item-renderer.ytd-rich-item-renderer-highlight {
+    background-color: rgba(240, 240, 27, 0.1);
+    box-shadow: rgba(240, 240, 27, 0.1) 0 0 0 10px;
+  }
+  :root[dark] #shorts-container {
+    --yt-spec-static-overlay-text-primary: #f0f004;
+    /* Buy super thanks button */
+  }
+  :root[dark] #shorts-container .YtwFactoidRendererLabel {
+    color: #f0f006;
+  }
+  :root[dark] #shorts-container .YtwFactoidRendererValue {
+    color: #f0f004;
+  }
+  :root[dark] #shorts-container ytd-reel-video-renderer:not([is-watch-while-mode]) .ytSpecButtonShapeWithLabelLabel {
+    color: #f0f005;
+  }
+  :root[dark] #shorts-container ytd-reel-video-renderer[is-watch-while-mode] .ytSpecButtonShapeWithLabelLabel {
+    color: #f0f004;
+  }
+  :root[dark] #shorts-container .ytdVolumeControlsMuteIcon {
+    color: #f0f004;
+  }
+  :root[dark] #shorts-container .YtdShortsSuggestedActionStaticHostContainer {
+    background-color: rgba(240, 240, 1, 0.6);
+  }
+  :root[dark] #shorts-container .YtdShortsSuggestedActionStaticHostContainer .YtdShortsSuggestedActionStaticHostLeadingIcon,
+  :root[dark] #shorts-container .YtdShortsSuggestedActionStaticHostContainer .YtdShortsSuggestedActionStaticHostPrimaryText {
+    color: #f0f004;
+  }
+  :root[dark] .ytBadgeShapeThumbnailDefaultRedesign,
+  :root[dark] .yt-spec-button-shape-next--overlay-dark.yt-spec-button-shape-next--tonal[style="background-color: rgba(0, 0, 0, 0.3);"],
+  :root[dark] .ytdVolumeControlsBackgroundScrim,
+  :root[dark] .ytInlinePlayerControlsTopRightControlsCircleButton {
+    background: rgba(240, 240, 1, 0.6) !important;
+    color: #f0f004;
+  }
+  :root[dark] .yt-spec-button-shape-next--overlay-dark.yt-spec-button-shape-next--filled {
+    background: #f0f01b;
+    color: #f0f001;
+  }
+  :root[dark] .ytSpecTouchFeedbackShapeHoverEffect {
+    background-color: #f0f00c !important;
+  }
+  :root[dark] .ytLockupMetadataViewModelTitle {
+    color: #f0f004 !important;
+  }
+  :root[dark] .ytLockupMetadataViewModelMetadata {
+    color: #f0f006 !important;
+  }
+  :root[dark] .ytBadgeShapeDefault {
+    color: #f0f006;
+    background: #f0f00b;
+  }
+  :root[dark] .ytBadgeShapeDefault.ytBadgeShapeModern {
+    background: none;
+  }
+  :root[dark] .ytBadgeShapeCommerce {
+    color: #f0f015;
+  }
+  :root[dark] .ytBadgeShapeThumbnailLive {
+    background: #f0f01b;
+    color: #f0f001;
+  }
+  :root[dark] .shortsLockupViewModelHostOutsideMetadataEndpoint {
+    color: #f0f004;
+  }
+  :root[dark] .shortsLockupViewModelHostOutsideMetadataSubhead {
+    color: #f0f006;
+  }
+  :root[dark] #progressContainer.tp-yt-paper-progress {
+    background-color: #f0f002;
+  }
+  :root[dark] #comment-chip-container.yt-pdg-comment-chip-renderer,
+  :root[dark] .slider-knob-inner.tp-yt-paper-slider {
+    background: #f0f01b;
+  }
+  :root[dark] #primaryProgress.tp-yt-paper-progress {
+    background: linear-gradient(139deg, #f0f013, #f0f012, #f0f011, #f0f00f);
+  }
+  :root[dark] #container.ytd-pdg-comment-preview-renderer {
+    background-color: #f0f002;
+  }
+  :root[dark] #comment-chip-price.yt-pdg-comment-chip-renderer,
+  :root[dark] yt-icon.yt-pdg-comment-chip-renderer {
+    color: #f0f003;
+  }
+  :root[dark] .ytSpecAvatarShapeLiveRing::after {
+    background: #f0f01b !important;
+  }
+  :root[dark] .ytSpecAvatarShapeLiveBadge {
+    background-color: #f0f01b;
+  }
+  :root[dark] .ytSpecAvatarShapeLiveBadgeText {
+    color: #f0f001;
+  }
+  :root[dark] .ytPageHeaderViewModelHost .ytPageHeaderViewModelTitle {
+    color: #f0f004;
+  }
+  :root[dark] .ytPageHeaderViewModelHost .ytPageHeaderViewModelContentMetadata {
+    color: #f0f006;
+  }
+  :root[dark] .ytPageHeaderViewModelHost [style$="color: rgb(255, 255, 255);"] {
+    color: #f0f004 !important;
+  }
+  :root[dark] .ytTruncatedTextHost {
+    color: #f0f006;
+  }
+  :root[dark] .ytAttributionViewModelSuffix .ytAttributedStringLinkCallToActionColor,
+  :root[dark] .ytTruncatedTextAbsoluteButton {
+    color: #f0f004;
+  }
+  :root[dark] .ytTabShapeTab {
+    color: #f0f005;
+  }
+  :root[dark] .ytTabShapeTabSelected {
+    color: #f0f004;
+  }
+  :root[dark] .tabGroupShapeSlider {
+    background-color: #f0f004;
+  }
+  :root[dark] .ytTabShapeHost:hover .ytTabShapeTabBar {
+    background-color: #f0f005;
+  }
+  :root[dark] .ytContextualSheetLayoutHost,
+  :root[dark] ytd-menu-popup-renderer {
+    background-color: #f0f002;
+  }
+  :root[dark] .ytListItemViewModelTappable:hover {
+    background-color: #f0f00c;
+  }
+  :root[dark] .ytPanelHeaderViewModelTitle,
+  :root[dark] .ytListItemViewModelTitle,
+  :root[dark] .ytListItemViewModelAccessory {
+    color: #f0f004;
+  }
+  :root[dark] .ytListItemViewModelSubtitle {
+    color: #f0f005;
+  }
+  :root[dark] .ytSpecDialogLayoutHost {
+    background-color: #f0f002;
+  }
+  :root[dark] .ytSpecDialogLayoutHost .ytDialogHeaderViewModelText {
+    color: #f0f004;
+  }
+  :root[dark] .ytDropdownViewModelTitle {
+    color: #f0f004;
+  }
+  :root[dark] .ytDropdownViewModelLabel {
+    color: #f0f006;
+  }
+  :root[dark] .ytDropdownViewModelSupportError {
+    color: #f0f011;
+  }
+  :root[dark] .ytDropdownViewModelDropdownContainerErrorBorder {
+    border-color: #f0f011;
+  }
+  :root[dark] .ytStandardsTextareaShapeTextareaContainerOutline:focus-within {
+    border-color: #f0f004;
+  }
+  :root[dark] .ytSwitchShapeTrack {
+    background-color: #f0f00a;
+  }
+  :root[dark] .ytSwitchShapeKnob {
+    background-color: #f0f002;
+  }
+  :root[dark] .ytSwitchShapeTrackActive {
+    background-color: #f0f01b;
+  }
+  :root[dark] .ytStandardsTextareaShapeTextarea {
+    color: #f0f004;
+  }
+  :root[dark] .ytStandardsTextareaShapePlaceholder {
+    color: #f0f006;
+  }
+  :root[dark] .ytStandardsTextareaShapeTextarea::placeholder {
+    color: transparent !important;
+  }
+  :root[dark] .ytSubThreadConnection,
+  :root[dark] .ytSubThreadContinuation {
+    border-left-color: #f0f00b;
+  }
+  :root[dark] .ytSubThreadConnection {
+    border-bottom-color: #f0f00b;
+  }
+  :root[dark] .ytSubThreadHovered > .ytSubThreadThreadline .ytSubThreadConnection,
+  :root[dark] .ytSubThreadHovered > .ytSubThreadThreadline .ytSubThreadContinuation {
+    border-left-color: #f0f009;
+  }
+  :root[dark] .ytSubThreadHovered > .ytSubThreadThreadline .ytSubThreadConnection {
+    border-bottom-color: #f0f009;
+  }
+  :root[dark] .ytProfileCardViewModelHost {
+    background-color: #f0f002;
+  }
+  :root[dark] .ytProfileCardViewModelHost .ytProfileIdentityInfoViewModelChannelName,
+  :root[dark] .ytProfileCardViewModelHost .ytProfileIdentityInfoViewModelMetadataHandleWithBoldFont {
+    color: #f0f004;
+  }
+  :root[dark] .ytProfileCardViewModelHost .ytProfileIdentityInfoViewModelBadge {
+    filter: brightness(0) saturate(100%) invert(75%) sepia(82%) saturate(1008%) hue-rotate(189deg) brightness(120%) contrast(90%);
+  }
+  :root[dark] .ytProfileCardViewModelHost .ytProfileIdentityInfoViewModelMetadataContent {
+    color: #f0f006;
+  }
+  :root[dark] .ytProfileCardViewModelHost .ytProfileInfoViewModelSectionTitle {
+    color: #f0f004;
+  }
+  :root[dark] .ytProfileCardViewModelHost .ytProfileInfoViewModelSectionSubtitle {
+    color: #f0f005;
+  }
+  :root[dark] .ytProfileCardViewModelHost .ytProfileInfoViewModelSectionHeartIcon {
+    filter: brightness(0) saturate(100%) invert(81%) sepia(11%) saturate(522%) hue-rotate(191deg) brightness(100%) contrast(81%);
+  }
+  :root[dark] .ytProfileCardViewModelHost .ytCommentInteractionViewModelVideoTitle {
+    color: #f0f004;
+  }
+  :root[dark] .ytProfileCardViewModelHost .ytCommentInteractionViewModelCommentContent {
+    color: #f0f005;
+  }
+  :root[dark] .ytVideoMetadataCarouselViewModelHost,
+  :root[dark] .YtVideoMetadataCarouselViewModelHost {
+    background-color: #f0f00c;
+  }
+  :root[dark] .ytVideoMetadataCarouselViewModelHost .ytCarouselTitleViewModelTitle,
+  :root[dark] .YtVideoMetadataCarouselViewModelHost .ytCarouselTitleViewModelTitle,
+  :root[dark] .ytVideoMetadataCarouselViewModelHost .YtCarouselTitleViewModelTitle,
+  :root[dark] .YtVideoMetadataCarouselViewModelHost .YtCarouselTitleViewModelTitle,
+  :root[dark] .ytVideoMetadataCarouselViewModelHost .yt-core-attributed-string,
+  :root[dark] .YtVideoMetadataCarouselViewModelHost .yt-core-attributed-string,
+  :root[dark] .ytVideoMetadataCarouselViewModelHost .yt-icon-shape,
+  :root[dark] .YtVideoMetadataCarouselViewModelHost .yt-icon-shape {
+    color: #f0f004;
+  }
+  :root[dark] .ytVideoMetadataCarouselViewModelHost .ytTextCarouselItemViewModelHost,
+  :root[dark] .YtVideoMetadataCarouselViewModelHost .ytTextCarouselItemViewModelHost {
+    color: #f0f005;
+  }
+  :root[dark] .ytChipShapeInactive {
+    background-color: #f0f00c;
+    color: #f0f004;
+  }
+  :root[dark] .ytChipShapeActive {
+    background-color: #f0f01b;
+    color: #f0f001;
+  }
+  :root:not([dark]) {
+    color-scheme: light;
+    color: #f0f004;
+    background: #f0f001;
+    /* Misc */
+    /* Selected chapter */
+    /* Skeleton */
+    /* Ambient mode */
+    /* Icons */
+    /* Notifications Bell and Indicator */
+    /* Buttons */
+    /* Search box */
+    /* Video description */
+    /* Links */
+    /* Course Playlist (e.g. https://www.youtube.com/playlist?list=PLZHQObOWTQDNPOjrT6KVlfJuKtYTftqH6) */
+    /* Thumbnails */
+    /* Panels, popups, tooltips */
+    /* Video player */
+    /* Video highlight */
+    /* Video previews */
+    /* Shorts titles and views on homepage */
+    /* Buy super thanks bar */
+    /* Avatar */
+    /* Channel pages */
+    /* Components */
+    /* Menus and context sheets */
+    /* Dialogs */
+    /* Dropdowns */
+    /* Toggles/Switches */
+    /* Textareas */
+    /* Comments */
+    /* Profile Card */
+    /* Live chat replay */
+    /* Category tag pills */
+  }
+  :root:not([dark]) ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root:not([dark]) input::placeholder,
+  :root:not([dark]) textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root:not([dark]),
+  :root:not([dark]) [dark],
+  :root:not([dark]) [system-icons],
+  :root:not([dark]) [darker-dark-theme],
+  :root:not([dark])[dark],
+  :root:not([dark])[system-icons],
+  :root:not([dark])[darker-dark-theme] {
+    --efyt-control-bar-background-color: #f0f002 !important;
+    --dimmer-text: #f0f004 !important;
+    /* Newest Variables */
+    --yt-sys-color-baseline--base-background: #f0f001 !important;
+    --yt-sys-color-baseline--menu-background: #f0f002 !important;
+    --yt-sys-color-baseline--raised-background: #f0f001 !important;
+    --yt-sys-color-baseline--additive-background: #f0f001 !important;
+    --yt-sys-color-baseline--wordmark-text: #f0f004 !important;
+    --yt-sys-color-baseline--text-primary: #f0f004 !important;
+    --yt-sys-color-baseline--text-secondary: #f0f006 !important;
+    --yt-sys-color-baseline--call-to-action: #f0f01b !important;
+    --yt-sys-color-baseline--suggested-action: #f0f009 !important;
+    --yt-sys-color-baseline--outline: #f0f00c !important;
+    --yt-sys-color-baseline--outline-opaque: #f0f00b !important;
+    --yt-sys-color-baseline--outline-inverse-opaque: #f0f009 !important;
+    --yt-sys-color-baseline--overlay-background-medium-light: rgba(240, 240, 4, 0.6) !important;
+    --yt-sys-color-baseline--overlay-background-heavy: rgba(240, 240, 4, 0.8) !important;
+    --yt-sys-color-baseline--overlay-background-solid: #f0f003 !important;
+    --yt-sys-color-baseline--overlay-text-primary: #f0f004 !important;
+    --yt-spec-white-1: #f0f004 !important;
+    --yt-spec-white-2: #f0f006 !important;
+    --yt-spec-white-3: #f0f005 !important;
+    --yt-spec-white-4: #d7d704 !important;
+    --yt-spec-black-1: #f0f001 !important;
+    --yt-spec-black-2: #f0f001 !important;
+    --yt-spec-black-3: #f0f001 !important;
+    --yt-spec-black-4: #f0f001 !important;
+    --yt-spec-black-pure: #f0f001 !important;
+    --yt-spec-grey-1: #f0f004 !important;
+    --yt-spec-grey-2: #f0f006 !important;
+    --yt-spec-grey-3: #f0f005 !important;
+    --yt-spec-grey-4: #f0f007 !important;
+    --yt-spec-grey-5: #f0f008 !important;
+    --yt-brand-youtube-red: #f0f01b !important;
+    --yt-brand-medium-red: #f0f01b !important;
+    --yt-brand-light-red: #f0f01b !important;
+    --yt-spec-red-30: #f0f013 !important;
+    --yt-spec-red-70: #f0f011 !important;
+    --yt-spec-red-indicator: #f0f01b !important;
+    --yt-spec-pale-blue: #f0f017 !important;
+    --yt-spec-light-blue: #f0f017 !important;
+    --yt-spec-dark-blue: #f0f018 !important;
+    --yt-spec-navy-blue: #f0f016 !important;
+    --yt-spec-light-green: #f0f015 !important;
+    --yt-spec-dark-green: #f0f015 !important;
+    --yt-spec-yellow: #f0f013 !important;
+    --yt-spec-black-pure-alpha-5: #f0f006 !important;
+    --yt-spec-black-pure-alpha-10: #f0f007 !important;
+    --yt-spec-black-pure-alpha-15: rgba(240, 240, 3, 0.85) !important;
+    --yt-spec-black-pure-alpha-30: rgba(240, 240, 3, 0.7) !important;
+    --yt-spec-black-pure-alpha-60: rgba(240, 240, 3, 0.4) !important;
+    --yt-spec-black-pure-alpha-80: rgba(240, 240, 3, 0.2) !important;
+    --yt-spec-black-1-alpha-98: rgba(240, 240, 3, 0.02) !important;
+    --yt-spec-black-1-alpha-95: rgba(240, 240, 3, 0.05) !important;
+    --yt-spec-white-1-alpha-10: rgba(240, 240, 4, 0.9) !important;
+    --yt-spec-white-1-alpha-20: rgba(240, 240, 4, 0.8) !important;
+    --yt-spec-white-1-alpha-25: rgba(240, 240, 4, 0.75) !important;
+    --yt-spec-white-1-alpha-30: rgba(240, 240, 4, 0.7) !important;
+    --yt-spec-white-1-alpha-70: rgba(240, 240, 4, 0.3) !important;
+    --yt-spec-white-1-alpha-95: rgba(240, 240, 4, 0.05) !important;
+    --yt-spec-white-1-alpha-98: rgba(240, 240, 4, 0.02) !important;
+    --yt-brand-medium-red-alpha-90: rgba(240, 240, 27, 0.1) !important;
+    --yt-brand-medium-red-alpha-30: rgba(240, 240, 27, 0.7) !important;
+    --yt-brand-light-red-alpha-30: rgba(240, 240, 27, 0.7) !important;
+    --yt-spec-light-blue-alpha-30: rgba(240, 240, 24, 0.7) !important;
+    --yt-spec-dark-blue-alpha-30: rgba(240, 240, 24, 0.7) !important;
+    --yt-spec-base-background: #f0f001 !important;
+    --yt-spec-raised-background: #f0f001 !important;
+    --yt-spec-menu-background: #f0f002 !important;
+    --yt-spec-inverted-background: #f0f004 !important;
+    --yt-spec-additive-background: #f0f001 !important;
+    --yt-spec-outline: #f0f00c !important;
+    --yt-spec-shadow: rgba(240, 240, 3, 0.75) !important;
+    --yt-spec-text-primary: #f0f004 !important;
+    --yt-spec-text-secondary: #f0f006 !important;
+    --yt-spec-text-disabled: #f0f005 !important;
+    --yt-spec-text-primary-inverse: #f0f003 !important;
+    --yt-spec-call-to-action: #f0f01b !important;
+    --yt-spec-call-to-action-inverse: #f0f01b !important;
+    --yt-spec-suggested-action: rgba(240, 240, 27, 0.2) !important;
+    --yt-spec-suggested-action-inverse: #f0f004 !important;
+    --yt-spec-icon-active-other: #f0f004 !important;
+    --yt-spec-button-chip-background-hover: #f0f00b !important;
+    --yt-spec-touch-response: #f0f00c !important;
+    --yt-spec-touch-response-inverse: #f0f01b !important;
+    --yt-spec-brand-icon-active: #f0f01b !important;
+    --yt-spec-brand-button-background: #f0f01b !important;
+    --yt-spec-brand-link-text: #f0f018 !important;
+    --yt-spec-wordmark-text: #f0f004 !important;
+    --yt-spec-error-indicator: #f0f011 !important;
+    --yt-spec-themed-blue: #f0f01b !important;
+    --yt-spec-themed-green: #f0f015 !important;
+    --yt-spec-ad-indicator: #f0f016 !important;
+    --yt-spec-themed-overlay-background: rgba(240, 240, 3, 0.8) !important;
+    --yt-spec-commerce-badge-background: #f0f015 !important;
+    --yt-spec-static-brand-red: #f0f01b !important;
+    --yt-spec-static-brand-white: #f0f004 !important;
+    --yt-spec-static-brand-black: #f0f001 !important;
+    --yt-spec-static-clear-color: #f0f003 !important;
+    --yt-spec-static-clear-black: #f0f001 !important;
+    --yt-spec-static-ad-yellow: #f0f013 !important;
+    --yt-spec-static-grey: #f0f006 !important;
+    --yt-spec-static-overlay-background-solid: #f0f003 !important;
+    --yt-spec-static-overlay-background-heavy: #f0f003 !important;
+    --yt-spec-static-overlay-background-medium: rgba(240, 240, 3, 0.5) !important;
+    --yt-spec-static-overlay-background-light: rgba(240, 240, 3, 0.9) !important;
+    --yt-spec-static-overlay-text-primary: #f0f004 !important;
+    --yt-spec-static-overlay-text-secondary: rgba(240, 240, 6, 0.3) !important;
+    --yt-spec-static-overlay-text-disabled: rgba(240, 240, 6, 0.7) !important;
+    --yt-spec-static-overlay-call-to-action: #f0f01b !important;
+    --yt-spec-static-overlay-icon-active-other: #f0f003 !important;
+    --yt-spec-static-overlay-icon-inactive: #f0f00b !important;
+    --yt-spec-static-overlay-icon-disabled: #f0f00a !important;
+    --yt-spec-static-overlay-button-primary: #f0f01b !important;
+    --yt-spec-static-overlay-touch-response: #f0f008 !important;
+    --yt-spec-static-overlay-touch-response-inverse: #f0f00b !important;
+    --yt-spec-static-overlay-background-brand: #f0f01b !important;
+    --yt-spec-assistive-feed-themed-gradient-1: #f0f006 !important;
+    --yt-spec-assistive-feed-themed-gradient-2: #f0f01a !important;
+    --yt-spec-assistive-feed-themed-gradient-3: #f0f011 !important;
+    --yt-spec-brand-background-solid: #f0f001 !important;
+    --yt-spec-brand-background-primary: #f0f001 !important;
+    --yt-spec-brand-background-secondary: #f0f002 !important;
+    --yt-spec-general-background-a: #f0f001 !important;
+    --yt-spec-general-background-b: #f0f001 !important;
+    --yt-spec-general-background-c: #f0f003 !important;
+    --yt-spec-error-background: #f0f001 !important;
+    --yt-spec-10-percent-layer: #f0f00b !important;
+    --yt-spec-snackbar-background: #f0f002 !important;
+    --yt-spec-snackbar-background-updated: #f0f002 !important;
+    --yt-spec-badge-chip-background: #f0f003 !important;
+    --yt-spec-verified-badge-background: #f0f001 !important;
+    --yt-spec-call-to-action-fadeoutd: rgba(240, 240, 24, 0.7) !important;
+    --yt-spec-call-to-action-hover: #f0f01b !important;
+    --yt-spec-brand-button-background-hover: #f0f01b !important;
+    --yt-spec-brand-link-text-fadeoutd: rgba(240, 240, 27, 0.7) !important;
+    --yt-spec-filled-button-focus-outline: #f0f00c !important;
+    --yt-spec-static-overlay-button-hover: #f0f00b !important;
+    --yt-spec-mono-filled-hover: #f0f00b !important;
+    --yt-spec-commerce-filled-hover: #f0f01b !important;
+    --yt-spec-mono-tonal-hover: #f0f00b !important;
+    --yt-spec-commerce-tonal-hover: #f0f00a !important;
+    --yt-spec-static-overlay-filled-hover: #f0f008 !important;
+    --yt-spec-static-overlay-tonal-hover: #f0f00b !important;
+    --yt-spec-paper-tab-ink: rgba(240, 240, 4, 0.7) !important;
+    --yt-spec-filled-button-text: #f0f004 !important;
+    --yt-spec-selected-nav-text: #f0f004 !important;
+    --iron-icon-fill-color: #f0f004 !important;
+    --yt-spec-overlay-text-primary: #f0f004 !important;
+    --yt-spec-overlay-background-medium-light: rgba(240, 240, 4, 0.6) !important;
+    --yt-spec-overlay-background-heavy: rgba(240, 240, 4, 0.8) !important;
+    --yt-spec-overlay-background-solid: #f0f004 !important;
+    /* Search bar */
+    --ytd-searchbox-border-color: #f0f00c !important;
+    --ytd-searchbox-legacy-border-color: #f0f00c !important;
+    --ytd-searchbox-legacy-border-shadow-color: #f0f003 !important;
+    --ytd-searchbox-legacy-button-color: #f0f002 !important;
+    --ytd-searchbox-legacy-button-border-color: #f0f00c !important;
+    --ytd-searchbox-legacy-button-focus-color: #f0f01b !important;
+    --ytd-searchbox-legacy-button-hover-color: #f0f002 !important;
+    --ytd-searchbox-legacy-button-hover-border-color: #f0f00c !important;
+    --ytd-searchbox-legacy-button-icon-color: #f0f01b !important;
+    --ytd-searchbox-background: #f0f001 !important;
+    --ytd-searchbox-text-color: #f0f004 !important;
+    /* System icons */
+    --yt-spec-icon-inactive: #f0f004 !important;
+    --yt-spec-icon-disabled: #f0f008 !important;
+    --yt-spec-brand-icon-inactive: #f0f007 !important;
+    /* Live chat */
+    --yt-live-chat-background-color: #f0f001 !important;
+    --yt-live-chat-primary-text-color: #f0f004 !important;
+    --yt-live-chat-action-panel-background-color: #f0f001 !important;
+    --yt-live-chat-secondary-background-color: #f0f00b !important;
+    --yt-live-chat-toast-background-color: #f0f00a !important;
+    --yt-live-chat-mode-change-background-color: #f0f001 !important;
+    --yt-live-chat-secondary-text-color: #f0f006 !important;
+    --yt-live-chat-tertiary-text-color: rgba(240, 240, 4, 0.46) !important;
+    --yt-live-chat-text-input-field-inactive-underline-color: #f0f006 !important;
+    --yt-live-chat-text-input-field-placeholder-color: #f0f006 !important;
+    --yt-live-chat-enabled-send-button-color: #f0f004 !important;
+    --yt-live-chat-disabled-icon-button-color: #f0f005 !important;
+    --yt-live-chat-picker-button-hover-color: #f0f01b !important;
+    --yt-live-chat-mention-background-color: #f0f01b !important;
+    --yt-live-chat-mention-text-color: #f0f004 !important;
+    --yt-live-chat-deleted-message-color: #f0f006 !important;
+    --yt-live-chat-deleted-message-bar-color: #f0f005 !important;
+    --yt-live-chat-reconnect-message-color: #f0f004 !important;
+    --yt-live-chat-disabled-button-background-color: #f0f009 !important;
+    --yt-live-chat-sub-panel-background-color: #f0f001 !important;
+    --yt-live-chat-sub-panel-background-color-transparent: #f0f002 !important;
+    --yt-live-chat-moderator-color: #f0f01a !important;
+    --yt-live-chat-owner-color: #f0f013 !important;
+    --yt-live-chat-message-highlight-background-color: #f0f001 !important;
+    --yt-live-chat-sponsor-color: #f0f015 !important;
+    --yt-live-chat-overlay-color: rgba(240, 240, 2, 0.5) !important;
+    --yt-live-chat-dialog-background-color: #f0f001 !important;
+    --yt-emoji-picker-variant-selector-bg-color: #f0f001 !important;
+    --yt-live-chat-moderation-mode-hover-background-color: rgba(240, 240, 2, 0.7) !important;
+    --yt-grey: #f0f006 !important;
+    --yt-live-chat-text-input-field-suggestion-background-color: #f0f006 !important;
+    --yt-live-chat-text-input-field-suggestion-background-color-hover: #f0f005 !important;
+    --yt-emoji-picker-search-background-color: #f0f00c !important;
+    --yt-emoji-picker-search-color: #f0f004 !important;
+    --yt-emoji-picker-search-placeholder-color: #f0f01b !important;
+    --yt-live-chat-slider-active-color: #f0f01b !important;
+    --yt-live-chat-slider-container-color: #f0f00c !important;
+    --yt-live-chat-slider-markers-color: #f0f004 !important;
+    --yt-live-chat-banner-gradient-scrim: linear-gradient(#f0f002, transparent) !important;
+    --yt-live-chat-action-panel-gradient-scrim: linear-gradient(to top, #f0f002, transparent) !important;
+    --yt-live-chat-automod-button-background-color-hover: rgba(240, 240, 3, 0.5) !important;
+    --yt-live-chat-automod-button-explanation-color: rgba(240, 240, 27, 0.3) !important;
+    --yt-live-chat-shimmer-background-color: rgba(240, 240, 3, 0.6) !important;
+    --yt-live-chat-shimmer-linear-gradient: linear-gradient(0deg, rgba(240, 240, 4, 0.9) 40%, rgba(240, 240, 1, 0.7) 50%, rgba(240, 240, 4, 0.9) 60%) !important;
+    --yt-live-chat-vem-background-color: #f0f002 !important;
+    --yt-live-chat-product-picker-icon-color: rgba(240, 240, 4, 0.5) !important;
+    --yt-live-chat-product-picker-hover-color: #f0f009 !important;
+    --yt-live-chat-product-picker-disabled-icon-color: rgba(240, 240, 4, 0.7) !important;
+    --yt-live-chat-action-panel-background-color-transparent: (null) !important;
+    --paper-tooltip-background: #f0f00a !important;
+    --paper-tooltip-text-color: #f0f004 !important;
+    /* Links */
+    --yt-endpoint-color: #f0f004 !important;
+    --yt-endpoint-visited-color: #f0f004 !important;
+    --yt-endpoint-hover-color: #f0f01b !important;
+    --sb-dark-red-outline: #f0f01b !important;
+    --sb-main-bg-color: #f0f001 !important;
+    --sb-main-fg-color: #f0f004 !important;
+    --sb-grey-bg-color: #f0f001 !important;
+    --sb-grey-fg-color: #f0f006 !important;
+    --sb-red-bg-color: #f0f01b !important;
+    --sb-category-sponsor: #f0f015 !important;
+    --sb-category-selfpromo: #f0f014 !important;
+    --sb-category-exclusive_access: #f0f016 !important;
+    --sb-category-interaction: #f0f010 !important;
+    --sb-category-poi_highlight: #f0f00f !important;
+    --sb-category-intro: #f0f017 !important;
+    --sb-category-outro: #f0f019 !important;
+    --sb-category-preview: #f0f018 !important;
+    --sb-category-filler: #f0f01a !important;
+    --sb-category-music_offtopic: #f0f013 !important;
+  }
+  :root:not([dark]) .ytTooltipContainerDefaultTooltipContent,
+  :root:not([dark]) [dark] .ytTooltipContainerDefaultTooltipContent,
+  :root:not([dark]) [system-icons] .ytTooltipContainerDefaultTooltipContent,
+  :root:not([dark]) [darker-dark-theme] .ytTooltipContainerDefaultTooltipContent,
+  :root:not([dark])[dark] .ytTooltipContainerDefaultTooltipContent,
+  :root:not([dark])[system-icons] .ytTooltipContainerDefaultTooltipContent,
+  :root:not([dark])[darker-dark-theme] .ytTooltipContainerDefaultTooltipContent {
+    background: var(--paper-tooltip-background) !important;
+    color: var(--paper-tooltip-text-color) !important;
+  }
+  :root:not([dark]):not(.style-scope) {
+    --primary-text-color: #f0f004 !important;
+    --primary-background-color: #f0f001 !important;
+    --secondary-text-color: #f0f006 !important;
+    --disabled-text-color: #f0f005 !important;
+    --divider-color: #f0f009 !important;
+    --error-color: #f0f011 !important;
+    --primary-color: #f0f01b !important;
+    --light-primary-color: #f0f01b !important;
+    --dark-primary-color: #f0f019 !important;
+    --accent-color: #f0f01b !important;
+    --light-accent-color: #f0f01b !important;
+    --dark-accent-color: #f0f01b !important;
+    --light-theme-background-color: #f0f001 !important;
+    --light-theme-base-color: #f0f004 !important;
+    --light-theme-text-color: #f0f004 !important;
+    --light-theme-secondary-color: #f0f006 !important;
+    --light-theme-disabled-color: #f0f005 !important;
+    --light-theme-divider-color: #f0f009 !important;
+    --dark-theme-background-color: #f0f001 !important;
+    --dark-theme-base-color: #f0f004 !important;
+    --dark-theme-text-color: #f0f004 !important;
+    --dark-theme-secondary-color: #f0f006 !important;
+    --dark-theme-disabled-color: #f0f005 !important;
+    --dark-theme-divider-color: #f0f009 !important;
+  }
+  :root:not([dark]) #progress.yt-page-navigation-progress {
+    background: #f0f01b;
+  }
+  :root:not([dark]) ytd-macro-markers-list-item-renderer {
+    --ytd-macro-markers-list-item-background-color: #f0f00c;
+    --ytd-macro-markers-list-item-title-color: #f0f004;
+    --ytd-macro-markers-list-item-secondary-color: #f0f005;
+    --ytd-macro-markers-list-item-timestamp-background-color: #f0f00b;
+  }
+  :root:not([dark]) ytd-playlist-panel-video-renderer {
+    --yt-lightsource-section2-color: #f0f00b;
+    --yt-lightsource-section4-color: #f0f00a;
+    --yt-lightsource-primary-title-color: #f0f004;
+    --yt-lightsource-secondary-title-color: #f0f004;
+    --yt-active-playlist-panel-background-color: #f0f00c;
+  }
+  :root:not([dark]) ytd-playlist-panel-renderer[collapsible][collapsed][use-color-palette] .header.ytd-playlist-panel-renderer {
+    --iron-icon-fill-color: #f0f004;
+    background-color: #f0f001;
+  }
+  :root:not([dark]) #container.ytd-masthead {
+    --iron-icon-fill-color: #f0f004;
+  }
+  :root:not([dark]) #background.ytd-masthead,
+  :root:not([dark]) #frosted-glass {
+    --yt-frosted-glass-desktop: #f0f001;
+    --yt-spec-frosted-glass-desktop: #f0f001;
+  }
+  :root:not([dark]) ytd-feed-filter-chip-bar-renderer[expand-instead-of-scroll] #chips-wrapper.ytd-feed-filter-chip-bar-renderer {
+    --iron-icon-fill-color: #f0f004;
+    background-color: #f0f001;
+  }
+  :root:not([dark]) ytd-expandable-metadata-renderer {
+    --yt-lightsource-section1-color: #f0f001;
+    --yt-lightsource-section2-color: #f0f00c;
+    --yt-lightsource-section3-color: #f0f00b;
+    --yt-lightsource-section4-color: #f0f00a;
+    --yt-lightsource-primary-title-color: #f0f004;
+    --yt-lightsource-secondary-title-color: #f0f006;
+  }
+  :root:not([dark]) yt-live-chat-renderer {
+    --yt-button-default-text-color: #f0f004;
+    --yt-button-default-background-color: #f0f001;
+    --yt-button-dark-text-color: #f0f001;
+    --yt-button-dark-background-color: #f0f01b;
+    --yt-button-payment-background-color: #f0f01b;
+  }
+  :root:not([dark]) yt-icon-button.yt-live-chat-item-list-renderer {
+    background-color: #f0f01b;
+    color: #f0f001;
+  }
+  :root:not([dark]) yt-icon-button.yt-live-chat-item-list-renderer:hover {
+    background-color: #e3e30f;
+  }
+  :root:not([dark]) #guide-skeleton,
+  :root:not([dark]) #home-container-skeleton,
+  :root:not([dark]) #home-chips {
+    background-color: #f0f001;
+    z-index: -1;
+  }
+  :root:not([dark]) ytd-app[is-shorts-page] {
+    background: var(--yt-spec-base-background);
+  }
+  :root:not([dark]) #guide-skeleton .guide-ghost-icon,
+  :root:not([dark]) #guide-skeleton .guide-ghost-text,
+  :root:not([dark]) .masthead-skeleton-icon,
+  :root:not([dark]) #home-page-skeleton .skeleton-bg-color,
+  :root:not([dark]) .watch-skeleton .skeleton-bg-color {
+    background-color: #f0f00b;
+  }
+  :root:not([dark]) #cinematics,
+  :root:not([dark]) #cinematic-container {
+    display: none;
+  }
+  :root:not([dark]) .ytp-settings-button.ytp-hd-quality-badge::after,
+  :root:not([dark]) .ytp-settings-button.ytp-hdr-quality-badge::after,
+  :root:not([dark]) .ytp-settings-button.ytp-4k-quality-badge::after,
+  :root:not([dark]) .ytp-settings-button.ytp-5k-quality-badge::after,
+  :root:not([dark]) .ytp-settings-button.ytp-8k-quality-badge::after,
+  :root:not([dark]) .ytp-settings-button.ytp-3d-badge-grey::after,
+  :root:not([dark]) .ytp-settings-button.ytp-3d-badge::after {
+    background-color: #f0f01b;
+  }
+  :root:not([dark]) [fill="red"],
+  :root:not([dark]) [fill="#F00"],
+  :root:not([dark]) [fill="#FF0000"],
+  :root:not([dark]) [fill="#f03"],
+  :root:not([dark]) [fill="#FF0033"] {
+    fill: #f0f01b;
+  }
+  :root:not([dark]) [fill="white"] {
+    fill: #f0f001;
+  }
+  :root:not([dark]) yt-icon.ytd-logo [fill="white"] {
+    fill: #f0f003;
+  }
+  :root:not([dark]) .yt-spec-icon-shape [fill="#FAFAFA"],
+  :root:not([dark]) .yt-spec-icon-shape [fill="#000"],
+  :root:not([dark]) .yt-spec-icon-shape [fill="#fff"],
+  :root:not([dark]) .yt-spec-icon-shape [fill="#FFF"],
+  :root:not([dark]) .yt-spec-icon-shape [fill="#FFFFFF"] {
+    fill: #f0f003;
+  }
+  :root:not([dark]) .ytSpecIconBadgeShapeStyleOverlay .ytSpecIconBadgeShapeIcon,
+  :root:not([dark]) .ytSpecIconBadgeShapeBadge {
+    color: #f0f004;
+  }
+  :root:not([dark]) .ytSpecIconBadgeShapeTypeNotification .ytSpecIconBadgeShapeBadge {
+    background-color: #f0f01b;
+    color: #f0f001;
+  }
+  :root:not([dark]) .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
+    color: #f0f004;
+    background-color: #f0f00c;
+    /* Accent for filled-in thumbs up (like button) */
+  }
+  :root:not([dark]) .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal [fill="rgb(3,3,3)"],
+  :root:not([dark]) .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal [fill="rgb(0,0,0)"],
+  :root:not([dark]) .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal [fill="rgb(255,255,255)"] {
+    fill: #f0f004;
+  }
+  :root:not([dark]) .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal [stroke="rgb(0,0,0)"],
+  :root:not([dark]) .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal [stroke="rgb(255,255,255)"] {
+    stroke: #f0f004;
+  }
+  :root:not([dark]) .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal [animated-icon-type="LIKE"] g path[fill] {
+    fill: #f0f01b;
+  }
+  :root:not([dark]) .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal [animated-icon-type="LIKE"] g path[fill] + [stroke] {
+    stroke: #f0f01b;
+  }
+  :root:not([dark]) .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal:hover {
+    background-color: #f0f00b;
+  }
+  :root:not([dark]) .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--outline {
+    color: #f0f004;
+    border-color: #f0f00a;
+  }
+  :root:not([dark]) .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--outline:hover {
+    background-color: #f0f00a;
+  }
+  :root:not([dark]) .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
+    color: #f0f004;
+    /* Accent for filled-in thumbs up (like button) */
+  }
+  :root:not([dark]) .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text path[d="M3,11h3v10H3V11z M18.77,11h-4.23l1.52-4.94C16.38,5.03,15.54,4,14.38,4c-0.58,0-1.14,0.24-1.52,0.65L7,11v10h10.43 c1.06,0,1.98-0.67,2.19-1.61l1.34-6C21.23,12.15,20.18,11,18.77,11z"] {
+    fill: #f0f01b;
+  }
+  :root:not([dark]) .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text:hover {
+    background-color: #f0f00b;
+  }
+  :root:not([dark]) .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled {
+    color: #f0f001;
+    background-color: #f0f01b;
+  }
+  :root:not([dark]) .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled:hover {
+    background-color: #e3e30f;
+  }
+  :root:not([dark]) .yt-spec-button-shape-next--disabled {
+    color: #f0f008;
+  }
+  :root:not([dark]) .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--tonal {
+    color: #f0f004;
+    background-color: #f0f00c;
+  }
+  :root:not([dark]) .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--tonal:hover {
+    background-color: #f0f00b;
+  }
+  :root:not([dark]) .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--text {
+    color: #f0f004;
+  }
+  :root:not([dark]) .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--text:hover {
+    background-color: #f0f00c;
+  }
+  :root:not([dark]) .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--filled {
+    color: #f0f001;
+    background-color: #f0f01b;
+  }
+  :root:not([dark]) .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--outline {
+    color: #f0f004;
+    border-color: #f0f00b;
+  }
+  :root:not([dark]) .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--outline:hover {
+    background: #f0f00c;
+  }
+  :root:not([dark]) .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline {
+    color: #f0f01b;
+    border-color: #f0f00a;
+  }
+  :root:not([dark]) .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline:hover {
+    background-color: rgba(240, 240, 27, 0.3);
+    color: #f0f01b;
+  }
+  :root:not([dark]) .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text {
+    color: #f0f01b;
+  }
+  :root:not([dark]) .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text:hover {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root:not([dark]) .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--filled {
+    color: #f0f001;
+    background-color: #f0f01b;
+  }
+  :root:not([dark]) .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--filled:hover {
+    background-color: #f2f233;
+  }
+  :root:not([dark]) .yt-spec-button-shape-next--disabled.yt-spec-button-shape-next--filled {
+    color: #f0f006;
+    background-color: rgba(240, 240, 11, 0.7);
+  }
+  :root:not([dark]) .ytSearchboxComponentInputBox,
+  :root:not([dark]) .ytSearchboxComponentInputBoxDark {
+    background: var(--ytd-searchbox-background);
+    color: var(--ytd-searchbox-text-color);
+    border-color: var(--ytd-searchbox-border-color);
+    box-shadow: none;
+  }
+  :root:not([dark]) .ytSearchboxComponentInputBoxHasFocus,
+  :root:not([dark]) .ytSearchboxComponentInputBoxHasFocusDark {
+    border-color: #f0f01b;
+  }
+  :root:not([dark]) .ytSuggestionComponentPersonalizedSuggestion {
+    color: #f0f004;
+  }
+  :root:not([dark]) .ytSuggestionComponentHighlighted {
+    background: #f0f00b;
+  }
+  :root:not([dark]) .ytSuggestionComponentLargerRemovedText {
+    color: #f0f008;
+  }
+  :root:not([dark]) .ytSearchboxComponentSuggestionsContainer,
+  :root:not([dark]) .ytSearchboxComponentSuggestionsContainerDark {
+    background: var(--yt-spec-raised-background);
+    border-color: var(--yt-spec-raised-background);
+  }
+  :root:not([dark]) .ytSuggestionComponentSuggestion,
+  :root:not([dark]) .ytSuggestionComponentSuggestionDark {
+    color: var(--ytd-searchbox-text-color);
+  }
+  :root:not([dark]) .ytSearchboxComponentSearchButton,
+  :root:not([dark]) .ytSearchboxComponentSearchButtonDark {
+    color: var(--ytd-searchbox-text-color);
+    background: var(--yt-spec-raised-background);
+    border-color: var(--ytd-searchbox-border-color);
+  }
+  :root:not([dark]) .ytSearchboxComponentClearButtonIcon,
+  :root:not([dark]) .ytSearchboxComponentClearButtonIconDark {
+    color: var(--ytd-searchbox-text-color);
+  }
+  :root:not([dark]) ytd-watch-metadata {
+    --yt-saturated-raised-background: #f0f001 !important;
+    --yt-saturated-text-primary: #f0f004 !important;
+    --yt-saturated-text-secondary: #f0f005 !important;
+  }
+  :root:not([dark]) ytd-text-inline-expander .ytAttributedStringLinkInheritColor:not(
+        .ytAttributedStringLink
+      ) {
+    color: #f0f004 !important;
+  }
+  :root:not([dark]) .ytAttributedStringHighlightTextDecorator {
+    background-color: #f0f00a !important;
+  }
+  :root:not([dark]) .ytAttributedStringLinkCallToActionColor {
+    color: #f0f01b;
+  }
+  :root:not([dark]) .ytwCourseProgressViewModelHostProgressTitle,
+  :root:not([dark]) .ytwCourseProgressViewModelHostProgressSubtitle {
+    color: #f0f004;
+  }
+  :root:not([dark]) .ytwCourseProgressViewModelHostProgressBar {
+    background-color: rgba(240, 240, 1, 0.2);
+  }
+  :root:not([dark]) .ytwCourseProgressViewModelHostProgressBar .ytwCourseProgressViewModelHostProgressBarFill {
+    background-color: #f0f004;
+  }
+  :root:not([dark]) .ytwHowThisWasMadeSectionViewModelSectionTitle,
+  :root:not([dark]) .ytwHowThisWasMadeSectionViewModelBodyHeader {
+    color: #f0f004;
+  }
+  :root:not([dark]) .ytwHowThisWasMadeSectionViewModelBodyText {
+    color: #f0f006;
+  }
+  :root:not([dark]) .ytVideoDescriptionYouchatSectionViewModelSectionTitle {
+    color: #f0f004;
+  }
+  :root:not([dark]) .ytVideoDescriptionYouchatSectionViewModelSubHeaderText {
+    color: #f0f006;
+  }
+  :root:not([dark]) .ytwYouChatItemViewModelHost {
+    color: #f0f004;
+  }
+  :root:not([dark]) .ytwYouChatChipsDataChip {
+    color: #f0f004;
+    border-color: #f0f00a;
+  }
+  :root:not([dark]) .ytwYouChatChipsDataChip:hover {
+    background-color: #f0f00b;
+  }
+  :root:not([dark]) .chatInputViewModelChatDisclaimer {
+    color: #f0f006;
+  }
+  :root:not([dark]) .ytwTimelineChapterViewModelTitle,
+  :root:not([dark]) .ytShelfHeaderLayoutTitle {
+    color: #f0f004;
+  }
+  :root:not([dark]) .ytwTranscriptSegmentViewModelHost {
+    color: #f0f006;
+  }
+  :root:not([dark]) .ytwTranscriptSegmentViewModelTimestamp {
+    background-color: #f0f00a;
+    color: #f0f005;
+  }
+  :root:not([dark]) .ytwTranscriptSegmentViewModelTimestampActive {
+    background-color: #f0f009;
+    color: #f0f004;
+  }
+  :root:not([dark]) .videoAttributesSectionViewModelTitle,
+  :root:not([dark]) .ytVideoAttributeViewModelTitle {
+    color: #f0f004;
+  }
+  :root:not([dark]) .ytVideoAttributeViewModelSubtitle,
+  :root:not([dark]) .ytVideoAttributeViewModelSecondarySubtitle {
+    color: #f0f005;
+  }
+  :root:not([dark]) .ytp-sb-unsubscribe {
+    background-color: #f0f00a;
+    color: #f0f004;
+  }
+  :root:not([dark]) .ytp-sb-subscribe {
+    background-color: #f0f01b;
+    color: #f0f001;
+  }
+  :root:not([dark]) .ytThumbnailOverlayProgressBarHostWatchedProgressBar {
+    background-color: #f0f00a;
+  }
+  :root:not([dark]) .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment {
+    background: #f0f01b;
+  }
+  :root:not([dark]) ytd-thumbnail-overlay-resume-playback-renderer {
+    background-color: #f0f00a;
+  }
+  :root:not([dark]) ytd-thumbnail-overlay-resume-playback-renderer #progress.ytd-thumbnail-overlay-resume-playback-renderer {
+    background: #f0f01b;
+  }
+  :root:not([dark]) .ytp-tooltip-bottom-text {
+    background: rgba(240, 240, 12, 0.9);
+    color: #f0f004;
+    text-shadow: none;
+  }
+  :root:not([dark]) .ytp-popup {
+    background: rgba(240, 240, 12, 0.9);
+    text-shadow: none;
+  }
+  :root:not([dark]) .ytp-panel-menu,
+  :root:not([dark]) .ytp-panel-header,
+  :root:not([dark]) .ytp-panel-footer,
+  :root:not([dark]) .ytp-menuitem-label,
+  :root:not([dark]) .ytp-premium-label,
+  :root:not([dark]) .ytp-menuitem-content,
+  :root:not([dark]) .ytp-menuitem-label-count,
+  :root:not([dark]) .ytp-menu-label-secondary,
+  :root:not([dark]) .ytd-menu-title-renderer {
+    color: #f0f004;
+  }
+  :root:not([dark]) .ytp-panel-footer-content-link {
+    color: #f0f01b;
+  }
+  :root:not([dark]) .ytp-panel-back-button {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%2032%2032%22%20version%3D%221.1%22%3E%3Cpath%20d%3D%22m19.41%2020.09-4.58-4.59%204.58-4.59L18%209.5l-6%206%206%206z%22%20fill%3D%22%23f0f004%22/%3E%3C/svg%3E");
+  }
+  :root:not([dark]) .ytp-menuitem[aria-checked="false"] .ytp-menuitem-toggle-checkbox::after {
+    background-color: #f0f008;
+  }
+  :root:not([dark]) .ytp-menuitem[aria-checked="true"] .ytp-menuitem-toggle-checkbox {
+    background-color: #f0f00a;
+  }
+  :root:not([dark]) .ytp-menuitem[aria-checked="true"] .ytp-menuitem-toggle-checkbox::after {
+    background-color: #f0f004;
+  }
+  :root:not([dark]) .ytp-menuitem:not([aria-disabled="true"]):hover {
+    background-color: #f0f00b;
+  }
+  :root:not([dark]) yt-progress-bar .ytProgressBarLineProgressBarPlayed,
+  :root:not([dark]) yt-progress-bar .ytProgressBarPlayheadProgressBarPlayheadDot {
+    background: #f0f01b;
+  }
+  :root:not([dark]) yt-progress-bar .ytProgressBarLineProgressBarHovered,
+  :root:not([dark]) yt-progress-bar .ytProgressBarLineProgressBarBackground {
+    background: #f0f004;
+  }
+  :root:not([dark]) .ytp-cards-button .ytp-cards-button-icon use {
+    fill: #f0f004;
+  }
+  :root:not([dark]) .ytp-cards-button .ytp-cards-button-icon path {
+    fill: #f0f001;
+  }
+  :root:not([dark]) .ytp-cards-teaser .ytp-cards-teaser-box {
+    background-color: #f0f00a;
+    border-bottom-color: #f0f00a;
+  }
+  :root:not([dark]) .ytp-cards-teaser .ytp-cards-teaser-text {
+    color: #f0f004;
+  }
+  :root:not([dark]) .html5-video-player {
+    color: #f0f001;
+    background-color: #f0f003;
+    /* stats for nerds */
+  }
+  :root:not([dark]) .html5-video-player .ytp-swatch-background-color,
+  :root:not([dark]) .html5-video-player .ytp-play-progress {
+    background: #f0f01b;
+  }
+  :root:not([dark]) .html5-video-player .ytp-svg-fill,
+  :root:not([dark]) .html5-video-player [fill="#fff"] {
+    fill: #f0f001;
+  }
+  :root:not([dark]) .html5-video-player .ytp-volume-slider-handle,
+  :root:not([dark]) .html5-video-player .ytp-volume-slider-handle::before {
+    background-color: #f0f001;
+  }
+  :root:not([dark]) .html5-video-player .ytp-volume-slider-handle::after {
+    background-color: rgba(240, 240, 1, 0.2);
+  }
+  :root:not([dark]) .html5-video-player .ytp-time-current,
+  :root:not([dark]) .html5-video-player .ytp-time-separator,
+  :root:not([dark]) .html5-video-player .ytp-time-duration {
+    color: #f0f001;
+  }
+  :root:not([dark]) .html5-video-player .ytp-live-badge[disabled]::before {
+    background: #f0f01b;
+  }
+  :root:not([dark]) .html5-video-player .ytp-live-badge::before {
+    background: #f0f009;
+  }
+  :root:not([dark]) .html5-video-player .ytp-button[aria-pressed]::after,
+  :root:not([dark]) .html5-video-player .ytp-subtitles-button[aria-pressed]::after {
+    background-color: #f0f01b;
+  }
+  :root:not([dark]) .html5-video-player .ytp-sfn {
+    background: rgba(240, 240, 1, 0.8);
+    color: #f0f004;
+  }
+  :root:not([dark]) .html5-video-player .ytp-autonav-toggle-button {
+    background-color: #f0f00a;
+  }
+  :root:not([dark]) .html5-video-player .ytp-autonav-toggle-button::after {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2236%22%20height%3D%2236%22%20viewBox%3D%220%200%2036%2036%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M12.75%204.5h-3c-.6%200-1.17.23-1.6.65-.42.43-.65%201-.65%201.6v22.5c0%20.59.23%201.16.65%201.59.43.42%201%20.66%201.6.66h3c.59%200%201.16-.24%201.59-.66.42-.43.66-1%20.66-1.59V6.75c0-.6-.24-1.17-.66-1.6-.43-.42-1-.65-1.59-.65m13.5%200h-3c-.6%200-1.17.23-1.6.65-.42.43-.65%201-.65%201.6v22.5c0%20.59.23%201.16.65%201.59.43.42%201%20.66%201.6.66h3c.59%200%201.16-.24%201.59-.66.42-.43.66-1%20.66-1.59V6.75c0-.6-.24-1.17-.66-1.6-.43-.42-1-.65-1.59-.65%22%20fill%3D%22%23f0f001%22/%3E%3C/svg%3E");
+    background-color: #f0f008;
+  }
+  :root:not([dark]) .html5-video-player .ytp-autonav-toggle-button[aria-checked="true"]::after {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2236%22%20height%3D%2236%22%20viewBox%3D%220%200%2036%2036%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22m17%208.6-6.11-3.61c-1.5-.88-3.39.2-3.39%201.94v22.13c0%201.74%201.89%202.82%203.39%201.94L17%2027.4zm0%200v18.8L33%2018z%22%20fill%3D%22%23f0f004%22/%3E%3C/svg%3E");
+    background-color: #f0f001;
+  }
+  :root:not([dark]) ytd-rich-item-renderer.ytd-rich-item-renderer-highlight {
+    background-color: rgba(240, 240, 27, 0.1);
+    box-shadow: rgba(240, 240, 27, 0.1) 0 0 0 10px;
+  }
+  :root:not([dark]) #shorts-container {
+    --yt-spec-static-overlay-text-primary: #f0f001;
+    /* Buy super thanks button */
+  }
+  :root:not([dark]) #shorts-container .YtwFactoidRendererLabel {
+    color: #f0f006;
+  }
+  :root:not([dark]) #shorts-container .YtwFactoidRendererValue {
+    color: #f0f004;
+  }
+  :root:not([dark]) #shorts-container ytd-reel-video-renderer:not([is-watch-while-mode]) .ytSpecButtonShapeWithLabelLabel {
+    color: #f0f005;
+  }
+  :root:not([dark]) #shorts-container ytd-reel-video-renderer[is-watch-while-mode] .ytSpecButtonShapeWithLabelLabel {
+    color: #f0f001;
+  }
+  :root:not([dark]) #shorts-container .ytdVolumeControlsMuteIcon {
+    color: #f0f001;
+  }
+  :root:not([dark]) #shorts-container .YtdShortsSuggestedActionStaticHostContainer {
+    background-color: rgba(240, 240, 4, 0.6);
+  }
+  :root:not([dark]) #shorts-container .YtdShortsSuggestedActionStaticHostContainer .YtdShortsSuggestedActionStaticHostLeadingIcon,
+  :root:not([dark]) #shorts-container .YtdShortsSuggestedActionStaticHostContainer .YtdShortsSuggestedActionStaticHostPrimaryText {
+    color: #f0f004;
+  }
+  :root:not([dark]) .ytBadgeShapeThumbnailDefaultRedesign,
+  :root:not([dark]) .yt-spec-button-shape-next--overlay-dark.yt-spec-button-shape-next--tonal[style="background-color: rgba(0, 0, 0, 0.3);"],
+  :root:not([dark]) .ytdVolumeControlsBackgroundScrim,
+  :root:not([dark]) .ytInlinePlayerControlsTopRightControlsCircleButton {
+    background: rgba(240, 240, 4, 0.6) !important;
+    color: #f0f001;
+  }
+  :root:not([dark]) .yt-spec-button-shape-next--overlay-dark.yt-spec-button-shape-next--filled {
+    background: #f0f01b;
+    color: #f0f001;
+  }
+  :root:not([dark]) .ytSpecTouchFeedbackShapeHoverEffect {
+    background-color: #f0f00c !important;
+  }
+  :root:not([dark]) .ytLockupMetadataViewModelTitle {
+    color: #f0f004 !important;
+  }
+  :root:not([dark]) .ytLockupMetadataViewModelMetadata {
+    color: #f0f006 !important;
+  }
+  :root:not([dark]) .ytBadgeShapeDefault {
+    color: #f0f006;
+    background: #f0f00b;
+  }
+  :root:not([dark]) .ytBadgeShapeDefault.ytBadgeShapeModern {
+    background: none;
+  }
+  :root:not([dark]) .ytBadgeShapeCommerce {
+    color: #f0f015;
+  }
+  :root:not([dark]) .ytBadgeShapeThumbnailLive {
+    background: #f0f01b;
+    color: #f0f001;
+  }
+  :root:not([dark]) .shortsLockupViewModelHostOutsideMetadataEndpoint {
+    color: #f0f004;
+  }
+  :root:not([dark]) .shortsLockupViewModelHostOutsideMetadataSubhead {
+    color: #f0f006;
+  }
+  :root:not([dark]) #progressContainer.tp-yt-paper-progress {
+    background-color: #f0f002;
+  }
+  :root:not([dark]) #comment-chip-container.yt-pdg-comment-chip-renderer,
+  :root:not([dark]) .slider-knob-inner.tp-yt-paper-slider {
+    background: #f0f01b;
+  }
+  :root:not([dark]) #primaryProgress.tp-yt-paper-progress {
+    background: linear-gradient(139deg, #f0f013, #f0f012, #f0f011, #f0f00f);
+  }
+  :root:not([dark]) #container.ytd-pdg-comment-preview-renderer {
+    background-color: #f0f002;
+  }
+  :root:not([dark]) #comment-chip-price.yt-pdg-comment-chip-renderer,
+  :root:not([dark]) yt-icon.yt-pdg-comment-chip-renderer {
+    color: #f0f003;
+  }
+  :root:not([dark]) .ytSpecAvatarShapeLiveRing::after {
+    background: #f0f01b !important;
+  }
+  :root:not([dark]) .ytSpecAvatarShapeLiveBadge {
+    background-color: #f0f01b;
+  }
+  :root:not([dark]) .ytSpecAvatarShapeLiveBadgeText {
+    color: #f0f001;
+  }
+  :root:not([dark]) .ytPageHeaderViewModelHost .ytPageHeaderViewModelTitle {
+    color: #f0f004;
+  }
+  :root:not([dark]) .ytPageHeaderViewModelHost .ytPageHeaderViewModelContentMetadata {
+    color: #f0f006;
+  }
+  :root:not([dark]) .ytPageHeaderViewModelHost [style$="color: rgb(255, 255, 255);"] {
+    color: #f0f004 !important;
+  }
+  :root:not([dark]) .ytTruncatedTextHost {
+    color: #f0f006;
+  }
+  :root:not([dark]) .ytAttributionViewModelSuffix .ytAttributedStringLinkCallToActionColor,
+  :root:not([dark]) .ytTruncatedTextAbsoluteButton {
+    color: #f0f004;
+  }
+  :root:not([dark]) .ytTabShapeTab {
+    color: #f0f005;
+  }
+  :root:not([dark]) .ytTabShapeTabSelected {
+    color: #f0f004;
+  }
+  :root:not([dark]) .tabGroupShapeSlider {
+    background-color: #f0f004;
+  }
+  :root:not([dark]) .ytTabShapeHost:hover .ytTabShapeTabBar {
+    background-color: #f0f005;
+  }
+  :root:not([dark]) .ytContextualSheetLayoutHost,
+  :root:not([dark]) ytd-menu-popup-renderer {
+    background-color: #f0f002;
+  }
+  :root:not([dark]) .ytListItemViewModelTappable:hover {
+    background-color: #f0f00c;
+  }
+  :root:not([dark]) .ytPanelHeaderViewModelTitle,
+  :root:not([dark]) .ytListItemViewModelTitle,
+  :root:not([dark]) .ytListItemViewModelAccessory {
+    color: #f0f004;
+  }
+  :root:not([dark]) .ytListItemViewModelSubtitle {
+    color: #f0f005;
+  }
+  :root:not([dark]) .ytSpecDialogLayoutHost {
+    background-color: #f0f002;
+  }
+  :root:not([dark]) .ytSpecDialogLayoutHost .ytDialogHeaderViewModelText {
+    color: #f0f004;
+  }
+  :root:not([dark]) .ytDropdownViewModelTitle {
+    color: #f0f004;
+  }
+  :root:not([dark]) .ytDropdownViewModelLabel {
+    color: #f0f006;
+  }
+  :root:not([dark]) .ytDropdownViewModelSupportError {
+    color: #f0f011;
+  }
+  :root:not([dark]) .ytDropdownViewModelDropdownContainerErrorBorder {
+    border-color: #f0f011;
+  }
+  :root:not([dark]) .ytStandardsTextareaShapeTextareaContainerOutline:focus-within {
+    border-color: #f0f004;
+  }
+  :root:not([dark]) .ytSwitchShapeTrack {
+    background-color: #f0f00a;
+  }
+  :root:not([dark]) .ytSwitchShapeKnob {
+    background-color: #f0f002;
+  }
+  :root:not([dark]) .ytSwitchShapeTrackActive {
+    background-color: #f0f01b;
+  }
+  :root:not([dark]) .ytStandardsTextareaShapeTextarea {
+    color: #f0f004;
+  }
+  :root:not([dark]) .ytStandardsTextareaShapePlaceholder {
+    color: #f0f006;
+  }
+  :root:not([dark]) .ytStandardsTextareaShapeTextarea::placeholder {
+    color: transparent !important;
+  }
+  :root:not([dark]) .ytSubThreadConnection,
+  :root:not([dark]) .ytSubThreadContinuation {
+    border-left-color: #f0f00b;
+  }
+  :root:not([dark]) .ytSubThreadConnection {
+    border-bottom-color: #f0f00b;
+  }
+  :root:not([dark]) .ytSubThreadHovered > .ytSubThreadThreadline .ytSubThreadConnection,
+  :root:not([dark]) .ytSubThreadHovered > .ytSubThreadThreadline .ytSubThreadContinuation {
+    border-left-color: #f0f009;
+  }
+  :root:not([dark]) .ytSubThreadHovered > .ytSubThreadThreadline .ytSubThreadConnection {
+    border-bottom-color: #f0f009;
+  }
+  :root:not([dark]) .ytProfileCardViewModelHost {
+    background-color: #f0f002;
+  }
+  :root:not([dark]) .ytProfileCardViewModelHost .ytProfileIdentityInfoViewModelChannelName,
+  :root:not([dark]) .ytProfileCardViewModelHost .ytProfileIdentityInfoViewModelMetadataHandleWithBoldFont {
+    color: #f0f004;
+  }
+  :root:not([dark]) .ytProfileCardViewModelHost .ytProfileIdentityInfoViewModelBadge {
+    filter: brightness(0) saturate(100%) invert(43%) sepia(43%) saturate(515%) hue-rotate(196deg) brightness(49%) contrast(68%);
+  }
+  :root:not([dark]) .ytProfileCardViewModelHost .ytProfileIdentityInfoViewModelMetadataContent {
+    color: #f0f006;
+  }
+  :root:not([dark]) .ytProfileCardViewModelHost .ytProfileInfoViewModelSectionTitle {
+    color: #f0f004;
+  }
+  :root:not([dark]) .ytProfileCardViewModelHost .ytProfileInfoViewModelSectionSubtitle {
+    color: #f0f005;
+  }
+  :root:not([dark]) .ytProfileCardViewModelHost .ytProfileInfoViewModelSectionHeartIcon {
+    filter: brightness(0) saturate(100%) invert(63%) sepia(28%) saturate(515%) hue-rotate(196deg) brightness(48%) contrast(67%);
+  }
+  :root:not([dark]) .ytProfileCardViewModelHost .ytCommentInteractionViewModelVideoTitle {
+    color: #f0f004;
+  }
+  :root:not([dark]) .ytProfileCardViewModelHost .ytCommentInteractionViewModelCommentContent {
+    color: #f0f005;
+  }
+  :root:not([dark]) .ytVideoMetadataCarouselViewModelHost,
+  :root:not([dark]) .YtVideoMetadataCarouselViewModelHost {
+    background-color: #f0f00c;
+  }
+  :root:not([dark]) .ytVideoMetadataCarouselViewModelHost .ytCarouselTitleViewModelTitle,
+  :root:not([dark]) .YtVideoMetadataCarouselViewModelHost .ytCarouselTitleViewModelTitle,
+  :root:not([dark]) .ytVideoMetadataCarouselViewModelHost .YtCarouselTitleViewModelTitle,
+  :root:not([dark]) .YtVideoMetadataCarouselViewModelHost .YtCarouselTitleViewModelTitle,
+  :root:not([dark]) .ytVideoMetadataCarouselViewModelHost .yt-core-attributed-string,
+  :root:not([dark]) .YtVideoMetadataCarouselViewModelHost .yt-core-attributed-string,
+  :root:not([dark]) .ytVideoMetadataCarouselViewModelHost .yt-icon-shape,
+  :root:not([dark]) .YtVideoMetadataCarouselViewModelHost .yt-icon-shape {
+    color: #f0f004;
+  }
+  :root:not([dark]) .ytVideoMetadataCarouselViewModelHost .ytTextCarouselItemViewModelHost,
+  :root:not([dark]) .YtVideoMetadataCarouselViewModelHost .ytTextCarouselItemViewModelHost {
+    color: #f0f005;
+  }
+  :root:not([dark]) .ytChipShapeInactive {
+    background-color: #f0f00c;
+    color: #f0f004;
+  }
+  :root:not([dark]) .ytChipShapeActive {
+    background-color: #f0f01b;
+    color: #f0f001;
+  }
+}
+@-moz-document url-prefix("https://studio.youtube.com") {
+  :root[dark] [src="https://www.gstatic.com/youtube/img/creator/yt_studio_logo_white.svg"] {
+    content: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2097.55%2024%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20fill%3D%22%23f0f01b%22%20d%3D%22M17.1%200S6.4%200%203.8.7a4.15%204.15%200%200%200-3%203C0%206.4%200%2012%200%2012a45%2045%200%200%200%20.7%208.2%204.32%204.32%200%200%200%203%203c2.7.8%2013.4.8%2013.4.8s10.7%200%2013.4-.7a4.32%204.32%200%200%200%203-3%2045%2045%200%200%200%20.7-8.2s.1-5.7-.6-8.3a4.32%204.32%200%200%200-3-3C27.9%200%2017.1%200%2017.1%200m-3.4%206.9%208.9%205.1-8.9%205.1z%22/%3E%3Cpath%20fill%3D%22%23f0f004%22%20d%3D%22M76.3.9v4.4c0%201.1%200%202%20.1%203.3h-.1A3.36%203.36%200%200%200%2073.4%207c-2.3%200-3.3%202-3.3%206.6V16c0%204.9.8%206.6%203.2%206.6a3.42%203.42%200%200%200%203.2-2.4h.1l.4%202.1h2.6V.9zm6.688.4c-1.126.032-1.687.55-1.687%202.1%200%201.7.599%202.1%201.799%202.1s1.8-.5%201.8-2.1-.6-2.1-1.8-2.1zM45%201.4c-3.6%200-5%201.7-5%204.9s1.1%204.5%203.7%206.8c1.6%201.4%202.8%202.5%202.8%204.8%200%201.5-.4%202.2-1.6%202.2s-1.7-.8-1.6-3.6h-3.1c-.6%204.2.8%206.1%204.5%206.2%203.5%200%205-1.5%205-5.4%200-3.1-1.3-4.4-3.7-6.6-1.9-1.8-2.8-2.5-2.8-4.6%200-1.4.3-2.2%201.6-2.2s1.6%201.1%201.5%203.9l3.1-.2c.5-4.2-.8-6.2-4.4-6.2m7.6%201.4-.4%204.5h-1.4v2.6H52v8.8c0%202.7.4%203.8%202.6%203.8a7.4%207.4%200%200%200%203.1-.6l-.6-2.2a5.2%205.2%200%200%201-1.3.2c-.5%200-.7-.3-.7-1.7V9.9h2.2V7.3H55V2.8zM91%207c-3.3%200-4.7%201.8-4.7%206.7v2.2c0%204.7%201.1%206.7%204.6%206.7s4.7-2%204.7-6.7v-2.2C95.6%208.9%2094.3%207%2091%207m-31.8.3v11.4c0%202.7.9%204%202.9%204a3.46%203.46%200%200%200%203.2-2.1h.1l.3%201.8h2.7V7.3H65v12a1.51%201.51%200%200%201-1.4%201c-.7%200-1-.6-1-1.9V7.3zm22.3%200v15.1h3.2V7.3zm9.4%202c1%200%201.3%201%201.3%203.1v4.7c0%202.2-.4%203.1-1.3%203.1s-1.2-.9-1.2-3.1v-4.7c0-2%20.2-3.1%201.2-3.1M75%209.4a1.56%201.56%200%200%201%201.3.8v8.5c-.2.9-.9%201.4-1.4%201.3-1%200-1.3-1-1.3-4.4v-1.9c0-3.3.3-4.3%201.4-4.3%22/%3E%3C/svg%3E");
+  }
+  :root[dark],
+  :root[dark] html,
+  :root[dark] html[dark],
+  :root[dark] html[dark][dark],
+  :root[dark][dark],
+  :root[dark][light],
+  :root[dark] [light],
+  :root[dark] html[light],
+  :root[dark] html[light][light] {
+    --yt-spec-black-pure-alpha-80: (null);
+    --yt-spec-black-pure-alpha-60: (null);
+    --yt-spec-black-1-alpha-98: (null);
+    --yt-spec-black-1-alpha-95: (null);
+    --iron-icon-fill-color: unset;
+    --yt-spec-text-primary: #f0f004;
+    --ytcp-text-primary: #f0f004;
+    --ytcp-text-primary-inverse: #f0f001;
+    --ytcp-static-overlay-text-primary-inverse: #f0f001;
+    --ytcp-wordmark-text: #f0f004;
+    --ytcp-text-secondary: #f0f006;
+    --ytcp-text-disabled: #f0f005;
+    --ytcp-overlay-text-primary: #f0f007;
+    --ytcp-general-background-a: #f0f001;
+    --yt-spec-base-background: #f0f001;
+    --yt-spec-black-3: #f0f001;
+    --yt-spec-brand-background-solid: #f0f002;
+    --ytcp-brand-background-solid: #f0f002;
+    --yt-spec-raised-background: #f0f002;
+    --ytcp-general-background-b: #f0f002;
+    --ytcp-analytics-reach-background: #f0f002;
+    --yt-spec-black-2: #f0f002;
+    --ytcp-general-background-c: #f0f003;
+    --ytcp-menu-background: #f0f00c;
+    --ytcp-container-border-color: #f0f00c;
+    --ytcp-container-hovered-border-color: #f0f00c;
+    --ytcp-line-divider-solid: #f0f00c;
+    --ytcp-container-border-color-inverse: #f0f006;
+    --ytcp-line-divider-solid-inverse: #f0f006;
+    --ytcp-call-to-action: #f0f01b;
+    --ytcp-call-to-action-inverse: #f0f002;
+    --ytcp-call-to-action-raised-background: #f0f01b;
+    --yt-spec-brand-button-background: #f0f01b;
+    --ytcp-call-to-action-raised-disabled: #f0f00a;
+    --ytcp-call-to-action-raised-disabled-background: #f0f007;
+    --ytcp-call-to-action-raised-background-inverse: #f0f001;
+    --ytcp-call-to-action-raised-disabled-inverse: #f0f00a;
+    --ytcp-call-to-action-raised-disabled-background-inverse: #f0f007;
+    --yt-spec-brand-background-primary: #f0f00c;
+    --yt-compact-link-icon-color: #f0f007;
+    --ytcp-icon-active: #f0f01b;
+    --ytcp-icon-inactive: #f0f007;
+    --ytcp-icon-disabled: #f0f009;
+    --ytcp-icon-active-inverse: #f0f008;
+    --ytcp-icon-disabled-inverse: #f0f005;
+    --ytcp-error-red: #f0f011;
+    --ytcp-badge-red: #f0f011;
+    --ytcp-error-red-inverse: #f0f011;
+    --ytcp-themed-red-inverse: #f0f011;
+    --ytcp-themed-red: #f0f01b;
+    --ytcp-themed-blue: #f0f01b;
+    --ytcp-badge-blue: rgba(240, 240, 27, 0.3);
+    --ytcp-badge-blue-solid: #f0f019;
+    --ytcp-themed-blue-inverse: #f0f019;
+    --ytcp-themed-green: #f0f015;
+    --ytmus-genre-primary-melon: #f0f015;
+    --ytcp-themed-green-inverse: #f0f015;
+    --ytcp-analytics-pine: #f0f015;
+    --ytcp-analytics-pine-inverse: #f0f015;
+    --ytcp-analytics-parrot: #f0f015;
+    --ytcp-themed-yellow: #f0f013;
+    --ytmus-genre-primary-gold: #f0f013;
+    --ytcp-yellow-inverse: #f0f013;
+    --ytcp-badge-yellow: #f0f013;
+    --ytcp-analytics-yellow: #f0f013;
+    --ytcp-analytics-apricot: #f0f013;
+    --ytcp-suggested-action: #f0f016;
+    --ytcp-analytics-overview: #f0f016;
+    --ytcp-analytics-revenue: #f0f016;
+    --ytcp-analytics-default-secondary: #f0f016;
+    --ytcp-analytics-royal-blue: #f0f01a;
+    --ytcp-analytics-reach: #f0f01a;
+    --ytcp-analytics-audience: #f0f01a;
+    --ytcp-analytics-engagement: #f0f00f;
+    --ytcp-analytics-revenue-secondary: #f0f00f;
+    --ytcp-analytics-bubblegum: #f0f00e;
+    --ytmus-genre-primary-ruby: #f0f00e;
+    --ytmus-genre-primary-salmon: #f0f010;
+    --ytmus-genre-primary-orange: #f0f012;
+    --ytmus-genre-primary-sky: #f0f017;
+    --ytmus-genre-primary-sky-inverse: #f0f017;
+    --yt-spec-badge-chip-background: #f0f00b;
+    --ytcp-focus-inverse: #f0f01b;
+    --ytcp-focus: #f0f01b;
+    --ytcp-selected-item: #f0f01b;
+    --ytcp-hover-item: #f0f007;
+    --ytcp-chip-active-focus: #f0f01b;
+    --ytcp-playhead: #f0f007;
+    --ytcp-playhead-inverse: #f0f007;
+  }
+  :root[dark] ytcp-button.destructive.ytls-error-dialog {
+    color: #f0f001;
+  }
+  :root[dark] yt-formatted-string.ytls-error-dialog,
+  :root[dark] tp-yt-iron-icon.ytls-error-dialog {
+    color: #f0f004;
+  }
+  :root [src="https://www.gstatic.com/youtube/img/creator/yt_studio_logo_white.svg"] {
+    content: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2097.55%2024%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20fill%3D%22%23f0f01b%22%20d%3D%22M17.1%200S6.4%200%203.8.7a4.15%204.15%200%200%200-3%203C0%206.4%200%2012%200%2012a45%2045%200%200%200%20.7%208.2%204.32%204.32%200%200%200%203%203c2.7.8%2013.4.8%2013.4.8s10.7%200%2013.4-.7a4.32%204.32%200%200%200%203-3%2045%2045%200%200%200%20.7-8.2s.1-5.7-.6-8.3a4.32%204.32%200%200%200-3-3C27.9%200%2017.1%200%2017.1%200m-3.4%206.9%208.9%205.1-8.9%205.1z%22/%3E%3Cpath%20fill%3D%22%23f0f004%22%20d%3D%22M76.3.9v4.4c0%201.1%200%202%20.1%203.3h-.1A3.36%203.36%200%200%200%2073.4%207c-2.3%200-3.3%202-3.3%206.6V16c0%204.9.8%206.6%203.2%206.6a3.42%203.42%200%200%200%203.2-2.4h.1l.4%202.1h2.6V.9zm6.688.4c-1.126.032-1.687.55-1.687%202.1%200%201.7.599%202.1%201.799%202.1s1.8-.5%201.8-2.1-.6-2.1-1.8-2.1zM45%201.4c-3.6%200-5%201.7-5%204.9s1.1%204.5%203.7%206.8c1.6%201.4%202.8%202.5%202.8%204.8%200%201.5-.4%202.2-1.6%202.2s-1.7-.8-1.6-3.6h-3.1c-.6%204.2.8%206.1%204.5%206.2%203.5%200%205-1.5%205-5.4%200-3.1-1.3-4.4-3.7-6.6-1.9-1.8-2.8-2.5-2.8-4.6%200-1.4.3-2.2%201.6-2.2s1.6%201.1%201.5%203.9l3.1-.2c.5-4.2-.8-6.2-4.4-6.2m7.6%201.4-.4%204.5h-1.4v2.6H52v8.8c0%202.7.4%203.8%202.6%203.8a7.4%207.4%200%200%200%203.1-.6l-.6-2.2a5.2%205.2%200%200%201-1.3.2c-.5%200-.7-.3-.7-1.7V9.9h2.2V7.3H55V2.8zM91%207c-3.3%200-4.7%201.8-4.7%206.7v2.2c0%204.7%201.1%206.7%204.6%206.7s4.7-2%204.7-6.7v-2.2C95.6%208.9%2094.3%207%2091%207m-31.8.3v11.4c0%202.7.9%204%202.9%204a3.46%203.46%200%200%200%203.2-2.1h.1l.3%201.8h2.7V7.3H65v12a1.51%201.51%200%200%201-1.4%201c-.7%200-1-.6-1-1.9V7.3zm22.3%200v15.1h3.2V7.3zm9.4%202c1%200%201.3%201%201.3%203.1v4.7c0%202.2-.4%203.1-1.3%203.1s-1.2-.9-1.2-3.1v-4.7c0-2%20.2-3.1%201.2-3.1M75%209.4a1.56%201.56%200%200%201%201.3.8v8.5c-.2.9-.9%201.4-1.4%201.3-1%200-1.3-1-1.3-4.4v-1.9c0-3.3.3-4.3%201.4-4.3%22/%3E%3C/svg%3E");
+  }
+  :root,
+  :root html,
+  :root html[dark],
+  :root html[dark][dark],
+  :root[dark],
+  :root[light],
+  :root [light],
+  :root html[light],
+  :root html[light][light] {
+    --yt-spec-black-pure-alpha-80: (null);
+    --yt-spec-black-pure-alpha-60: (null);
+    --yt-spec-black-1-alpha-98: (null);
+    --yt-spec-black-1-alpha-95: (null);
+    --iron-icon-fill-color: unset;
+    --yt-spec-text-primary: #f0f004;
+    --ytcp-text-primary: #f0f004;
+    --ytcp-text-primary-inverse: #f0f001;
+    --ytcp-static-overlay-text-primary-inverse: #f0f001;
+    --ytcp-wordmark-text: #f0f004;
+    --ytcp-text-secondary: #f0f006;
+    --ytcp-text-disabled: #f0f005;
+    --ytcp-overlay-text-primary: #f0f007;
+    --ytcp-general-background-a: #f0f001;
+    --yt-spec-base-background: #f0f001;
+    --yt-spec-black-3: #f0f001;
+    --yt-spec-brand-background-solid: #f0f002;
+    --ytcp-brand-background-solid: #f0f002;
+    --yt-spec-raised-background: #f0f002;
+    --ytcp-general-background-b: #f0f002;
+    --ytcp-analytics-reach-background: #f0f002;
+    --yt-spec-black-2: #f0f002;
+    --ytcp-general-background-c: #f0f003;
+    --ytcp-menu-background: #f0f00c;
+    --ytcp-container-border-color: #f0f00c;
+    --ytcp-container-hovered-border-color: #f0f00c;
+    --ytcp-line-divider-solid: #f0f00c;
+    --ytcp-container-border-color-inverse: #f0f006;
+    --ytcp-line-divider-solid-inverse: #f0f006;
+    --ytcp-call-to-action: #f0f01b;
+    --ytcp-call-to-action-inverse: #f0f002;
+    --ytcp-call-to-action-raised-background: #f0f01b;
+    --yt-spec-brand-button-background: #f0f01b;
+    --ytcp-call-to-action-raised-disabled: #f0f00a;
+    --ytcp-call-to-action-raised-disabled-background: #f0f007;
+    --ytcp-call-to-action-raised-background-inverse: #f0f001;
+    --ytcp-call-to-action-raised-disabled-inverse: #f0f00a;
+    --ytcp-call-to-action-raised-disabled-background-inverse: #f0f007;
+    --yt-spec-brand-background-primary: #f0f00c;
+    --yt-compact-link-icon-color: #f0f007;
+    --ytcp-icon-active: #f0f01b;
+    --ytcp-icon-inactive: #f0f007;
+    --ytcp-icon-disabled: #f0f009;
+    --ytcp-icon-active-inverse: #f0f008;
+    --ytcp-icon-disabled-inverse: #f0f005;
+    --ytcp-error-red: #f0f011;
+    --ytcp-badge-red: #f0f011;
+    --ytcp-error-red-inverse: #f0f011;
+    --ytcp-themed-red-inverse: #f0f011;
+    --ytcp-themed-red: #f0f01b;
+    --ytcp-themed-blue: #f0f01b;
+    --ytcp-badge-blue: rgba(240, 240, 27, 0.3);
+    --ytcp-badge-blue-solid: #f0f019;
+    --ytcp-themed-blue-inverse: #f0f019;
+    --ytcp-themed-green: #f0f015;
+    --ytmus-genre-primary-melon: #f0f015;
+    --ytcp-themed-green-inverse: #f0f015;
+    --ytcp-analytics-pine: #f0f015;
+    --ytcp-analytics-pine-inverse: #f0f015;
+    --ytcp-analytics-parrot: #f0f015;
+    --ytcp-themed-yellow: #f0f013;
+    --ytmus-genre-primary-gold: #f0f013;
+    --ytcp-yellow-inverse: #f0f013;
+    --ytcp-badge-yellow: #f0f013;
+    --ytcp-analytics-yellow: #f0f013;
+    --ytcp-analytics-apricot: #f0f013;
+    --ytcp-suggested-action: #f0f016;
+    --ytcp-analytics-overview: #f0f016;
+    --ytcp-analytics-revenue: #f0f016;
+    --ytcp-analytics-default-secondary: #f0f016;
+    --ytcp-analytics-royal-blue: #f0f01a;
+    --ytcp-analytics-reach: #f0f01a;
+    --ytcp-analytics-audience: #f0f01a;
+    --ytcp-analytics-engagement: #f0f00f;
+    --ytcp-analytics-revenue-secondary: #f0f00f;
+    --ytcp-analytics-bubblegum: #f0f00e;
+    --ytmus-genre-primary-ruby: #f0f00e;
+    --ytmus-genre-primary-salmon: #f0f010;
+    --ytmus-genre-primary-orange: #f0f012;
+    --ytmus-genre-primary-sky: #f0f017;
+    --ytmus-genre-primary-sky-inverse: #f0f017;
+    --yt-spec-badge-chip-background: #f0f00b;
+    --ytcp-focus-inverse: #f0f01b;
+    --ytcp-focus: #f0f01b;
+    --ytcp-selected-item: #f0f01b;
+    --ytcp-hover-item: #f0f007;
+    --ytcp-chip-active-focus: #f0f01b;
+    --ytcp-playhead: #f0f007;
+    --ytcp-playhead-inverse: #f0f007;
+  }
+  :root ytcp-button.destructive.ytls-error-dialog {
+    color: #f0f001;
+  }
+  :root yt-formatted-string.ytls-error-dialog,
+  :root tp-yt-iron-icon.ytls-error-dialog {
+    color: #f0f004;
+  }
+}
+@-moz-document domain("m.youtube.com") {
+  html[darker-dark-theme] {
+    background-color: #f0f001 !important;
+    color: #f0f004 !important;
+    /* Ambient mode */
+    /* Comment box */
+    /* Bottom bar */
+    /* Chips */
+    /* Buttons */
+  }
+  html[darker-dark-theme] #cinematics {
+    mix-blend-mode: lighten;
+  }
+  html[darker-dark-theme] .mobile-topbar-header[data-mode="watch"],
+  html[darker-dark-theme] ytm-mobile-topbar-renderer:not([ambient-topbar]) {
+    background: #f0f001;
+  }
+  html[darker-dark-theme] .mobile-topbar-header[data-mode="watch"] .mobile-topbar-logo,
+  html[darker-dark-theme] .mobile-topbar-header[data-mode="watch"] .mobile-topbar-title,
+  html[darker-dark-theme] .mobile-topbar-header[data-mode="watch"] .mobile-topbar-header-content {
+    color: #f0f004;
+  }
+  html[darker-dark-theme] .yt-spec-bottom-sheet-layout__bottom-sheet-renderer-container,
+  html[darker-dark-theme] .modern-styling {
+    background: #f0f00c;
+  }
+  html[darker-dark-theme] .yt-spec-bottom-sheet-layout__bottom-sheet-layout-header-wrapper {
+    border-bottom-color: #f0f00c;
+  }
+  html[darker-dark-theme] .yt-spec-bottom-sheet-layout__bottom-sheet-content {
+    color: #f0f004;
+  }
+  html[darker-dark-theme] .engagement-panel-container {
+    background: #f0f002;
+  }
+  html[darker-dark-theme] ytm-pivot-bar-renderer {
+    background: #f0f002;
+    color: #f0f004;
+    border-top-color: #f0f00c;
+  }
+  html[darker-dark-theme] .chip-bar {
+    background-color: #f0f001;
+  }
+  html[darker-dark-theme] [chip-style*="STYLE_"] .chip-container {
+    color: #f0f004;
+    background-color: #f0f00c;
+  }
+  html[darker-dark-theme] [chip-style*="STYLE_"].selected .chip-container {
+    color: #f0f001;
+    background-color: #f0f01b;
+  }
+  html[darker-dark-theme] .yt-spec-touch-feedback-shape--touch-response .yt-spec-touch-feedback-shape__fill {
+    background-color: #f0f004;
+  }
+  html[darker-dark-theme] .yt-spec-touch-feedback-shape--touch-response .yt-spec-touch-feedback-shape__stroke {
+    border-color: #f0f00b;
+  }
+  html[darker-dark-theme] .yt-spec-touch-feedback-shape--overlay-touch-response-inverse .yt-spec-touch-feedback-shape__fill {
+    background-color: #f0f01b;
+  }
+  html[darker-dark-theme] .yt-spec-touch-feedback-shape--overlay-touch-response .yt-spec-touch-feedback-shape__fill {
+    background-color: #f0f004;
+  }
+  html {
+    background-color: #f0f001 !important;
+    color: #f0f004 !important;
+    /* Ambient mode */
+    /* Comment box */
+    /* Bottom bar */
+    /* Chips */
+    /* Buttons */
+  }
+  html #cinematics {
+    mix-blend-mode: lighten;
+  }
+  html .mobile-topbar-header[data-mode="watch"],
+  html ytm-mobile-topbar-renderer:not([ambient-topbar]) {
+    background: #f0f001;
+  }
+  html .mobile-topbar-header[data-mode="watch"] .mobile-topbar-logo,
+  html .mobile-topbar-header[data-mode="watch"] .mobile-topbar-title,
+  html .mobile-topbar-header[data-mode="watch"] .mobile-topbar-header-content {
+    color: #f0f004;
+  }
+  html .yt-spec-bottom-sheet-layout__bottom-sheet-renderer-container,
+  html .modern-styling {
+    background: #f0f00c;
+  }
+  html .yt-spec-bottom-sheet-layout__bottom-sheet-layout-header-wrapper {
+    border-bottom-color: #f0f00c;
+  }
+  html .yt-spec-bottom-sheet-layout__bottom-sheet-content {
+    color: #f0f004;
+  }
+  html .engagement-panel-container {
+    background: #f0f002;
+  }
+  html ytm-pivot-bar-renderer {
+    background: #f0f002;
+    color: #f0f004;
+    border-top-color: #f0f00c;
+  }
+  html .chip-bar {
+    background-color: #f0f001;
+  }
+  html [chip-style*="STYLE_"] .chip-container {
+    color: #f0f004;
+    background-color: #f0f00c;
+  }
+  html [chip-style*="STYLE_"].selected .chip-container {
+    color: #f0f001;
+    background-color: #f0f01b;
+  }
+  html .yt-spec-touch-feedback-shape--touch-response .yt-spec-touch-feedback-shape__fill {
+    background-color: #f0f004;
+  }
+  html .yt-spec-touch-feedback-shape--touch-response .yt-spec-touch-feedback-shape__stroke {
+    border-color: #f0f00b;
+  }
+  html .yt-spec-touch-feedback-shape--overlay-touch-response-inverse .yt-spec-touch-feedback-shape__fill {
+    background-color: #f0f01b;
+  }
+  html .yt-spec-touch-feedback-shape--overlay-touch-response .yt-spec-touch-feedback-shape__fill {
+    background-color: #f0f004;
+  }
+}

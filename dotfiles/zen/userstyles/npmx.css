@@ -1,0 +1,101 @@
+/* ==UserStyle==
+@name           pwnbox-npmx
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for npmx (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("npmx.dev") {
+  :root[data-theme="dark"][data-bg-theme] {
+    color-scheme: dark;
+    --bg: #f0f001;
+    --bg-subtle: #f0f002;
+    --bg-muted: #f0f003;
+    --bg-elevated: #f0f00c;
+    --fg: #f0f004;
+    --fg-subtle: #f0f008;
+    --fg-muted: #f0f006;
+    --fg-elevated: #f0f006;
+    --accent: #f0f01b;
+    --accent-muted: #f0f01b;
+    --border: #f0f00b;
+    --border-subtle: #f0f00c;
+    --border-hover: #f0f009;
+    --swatch-sky: #f0f017;
+    --swatch-coral: #f0f013;
+    --swatch-amber: #f0f014;
+    --swatch-emerald: #f0f015;
+    --swatch-violet: #f0f010;
+    --swatch-magenta: #f0f00f;
+    --swatch-neutral: #f0f004;
+    --badge-orange: #f0f013;
+    --badge-yellow: #f0f014;
+    --badge-green: #f0f015;
+    --badge-cyan: #f0f016;
+    --badge-blue: #f0f019;
+    --badge-indigo: #f0f01a;
+    --badge-purple: #f0f010;
+    --badge-pink: #f0f00f;
+    --colors-red-500: #f0f011;
+    --colors-emerald-500: #f0f015;
+    --colors-yellow-600: #f0f014;
+    --colors-amber-500: #f0f013;
+    --colors-emerald-400: #f0f015;
+    --colors-orange-500: #f0f013;
+  }
+  :root[data-theme="dark"][data-bg-theme] ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root[data-theme="dark"][data-bg-theme] input::placeholder,
+  :root[data-theme="dark"][data-bg-theme] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root[data-theme="light"][data-bg-theme] {
+    color-scheme: light;
+    --bg: #f0f001;
+    --bg-subtle: #f0f002;
+    --bg-muted: #f0f003;
+    --bg-elevated: #f0f00c;
+    --fg: #f0f004;
+    --fg-subtle: #f0f008;
+    --fg-muted: #f0f006;
+    --fg-elevated: #f0f006;
+    --accent: #f0f01b;
+    --accent-muted: #f0f01b;
+    --border: #f0f00b;
+    --border-subtle: #f0f00c;
+    --border-hover: #f0f009;
+    --swatch-sky: #f0f017;
+    --swatch-coral: #f0f013;
+    --swatch-amber: #f0f014;
+    --swatch-emerald: #f0f015;
+    --swatch-violet: #f0f010;
+    --swatch-magenta: #f0f00f;
+    --swatch-neutral: #f0f004;
+    --badge-orange: #f0f013;
+    --badge-yellow: #f0f014;
+    --badge-green: #f0f015;
+    --badge-cyan: #f0f016;
+    --badge-blue: #f0f019;
+    --badge-indigo: #f0f01a;
+    --badge-purple: #f0f010;
+    --badge-pink: #f0f00f;
+    --colors-red-500: #f0f011;
+    --colors-emerald-500: #f0f015;
+    --colors-yellow-600: #f0f014;
+    --colors-amber-500: #f0f013;
+    --colors-emerald-400: #f0f015;
+    --colors-orange-500: #f0f013;
+  }
+  :root[data-theme="light"][data-bg-theme] ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root[data-theme="light"][data-bg-theme] input::placeholder,
+  :root[data-theme="light"][data-bg-theme] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+}

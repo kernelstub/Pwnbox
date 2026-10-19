@@ -1,0 +1,393 @@
+/* ==UserStyle==
+@name           pwnbox-tabnews
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for TabNews (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("tabnews.com.br") {
+  :root:has(div[data-color-mode="dark"]) {
+    color-scheme: dark;
+    --bgColor-default: #f0f001;
+    --bgColor-emphasis: #f0f003;
+    --fgColor-default: #f0f004;
+    --bgColor-neutral-emphasis: #f0f006;
+    --bgColor-accent-emphasis: #f0f01b;
+    --fgColor-accent: #f0f01b;
+    --fgColor-onEmphasis: #f0f004;
+    --color-accent-fg: #f0f01b;
+    --fgColor-muted: #f0f009;
+    --borderColor-default: #f0f00c;
+    --button-default-bgColor-rest: #f0f001;
+    --button-default-bgColor-hover: #f0f003;
+    --button-default-fgColor-rest: #f0f004;
+    --button-default-fgColor-hover: #f0f004;
+    --button-primary-bgColor-rest: #f0f01b;
+    --button-primary-bgColor-disabled: rgba(240, 240, 27, 0.85);
+    --button-primary-fgColor-disabled: #f0f004;
+    --button-primary-fgColor-rest: #f0f00c;
+    --button-primary-bgColor-hover: #e3e30f;
+    --button-primary-fgColor-hover: #f0f00c;
+    --button-default-bgColor-active: #f0f001;
+    --controlKnob-bgColor-rest: #f0f003;
+    --bgColor-accent-muted: #f0f002;
+    --fgColor-danger: #f0f011;
+    --button-danger-bgColor-hover: #f0f011;
+    --control-danger-fgColor-hover: #f0f011;
+    --control-danger-bgColor-hover: #f0f002;
+    --bgColor-success-emphasis: #f0f015;
+    --fgColor-success: #f0f015;
+    /* Create post box */
+    --codeMirror-fgColor: #f0f004;
+    --bgColor-muted: #f0f001;
+    --bgColor-inset: #f0f001;
+    --color-prettylights-syntax-markup-heading: #f0f004;
+    --color-prettylights-syntax-markup-inserted-text: #f0f006;
+    --color-prettylights-syntax-string: #f0f019;
+    /* Header */
+    --header-bgColor: #f0f002;
+    --header-fgColor-default: #f0f004;
+    --color-header-text: #f0f004;
+    --header-fgColor-logo: #f0f004;
+    --color-header-logo: #f0f004;
+    --color-checks-input-placeholder-text: #f0f004;
+    --headerSearch-bgColor: #f0f002;
+    --headerSearch-borderColor: #f0f009;
+    --color-prettylights-syntax-variable: #f0f010;
+    --color-prettylights-syntax-markup-list: #f0f004;
+    /* Style the button to change theme when light theme is on */
+    /* Style the "Status" page */
+    /* Style the "Search with Google" overlay box */
+  }
+  :root:has(div[data-color-mode="dark"]) ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root:has(div[data-color-mode="dark"]) input::placeholder,
+  :root:has(div[data-color-mode="dark"]) textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root:has(div[data-color-mode="dark"]) input[type="checkbox"] {
+    --fgColor-onEmphasis: #f0f00c;
+  }
+  :root:has(div[data-color-mode="dark"]) #nprogress .bar {
+    background: #f0f01b;
+  }
+  :root:has(div[data-color-mode="dark"]) button[style="--button-color: #e7dfc3;"] svg {
+    color: #f0f017;
+  }
+  :root:has(div[data-color-mode="dark"]) button[style="--button-color: #ecdc0f99;"] svg {
+    color: #f0f014;
+  }
+  :root:has(div[data-color-mode="dark"]) svg[fill="#0969da"] {
+    fill: #f0f019;
+  }
+  :root:has(div[data-color-mode="dark"]) svg[fill="#2da44e"] {
+    fill: #f0f015;
+  }
+  :root:has(div[data-color-mode="dark"]) text {
+    fill: #f0f004;
+  }
+  :root:has(div[data-color-mode="dark"]) path.recharts-rectangle {
+    fill: #f0f01b;
+  }
+  :root:has(div[data-color-mode="dark"]) path.recharts-rectangle.recharts-tooltip-cursor {
+    fill: #f0f009;
+  }
+  :root:has(div[data-color-mode="dark"]) div.recharts-default-tooltip {
+    border-color: #f0f009 !important;
+  }
+  :root:has(div[data-color-mode="dark"]) li.recharts-tooltip-item {
+    color: #f0f01b !important;
+  }
+  :root:has(div[data-color-mode="dark"]) div[overflow="hidden"] {
+    border-color: #f0f009;
+  }
+  :root:has(div[data-color-mode="dark"]) div[overflow="hidden"] * {
+    border-color: #f0f009;
+  }
+  :root:has(div[data-color-mode="dark"]) div[class*="Overlay__StyledOverlay"] {
+    background: #f0f001;
+  }
+  :root:has(div[data-color-mode="dark"]) div[class*="Overlay__StyledOverlay"] h2 {
+    color: #f0f004;
+  }
+  :root:has(div[data-color-mode="dark"]) div[class*="Overlay__StyledOverlay"] .gsc-control-cse {
+    background: #f0f001;
+    border-color: transparent;
+  }
+  :root:has(div[data-color-mode="dark"]) div[class*="Overlay__StyledOverlay"] .gsc-input-box {
+    background: #f0f001;
+    border-color: #f0f009;
+  }
+  :root:has(div[data-color-mode="dark"]) div[class*="Overlay__StyledOverlay"] .gsc-input {
+    background: transparent;
+    color: #f0f004;
+  }
+  :root:has(div[data-color-mode="dark"]) div[class*="Overlay__StyledOverlay"] .gsc-search-button > button {
+    border-color: #f0f009;
+    background: #f0f001 !important;
+  }
+  :root:has(div[data-color-mode="dark"]) div[class*="Overlay__StyledOverlay"] .gsc-search-button > button svg {
+    fill: #f0f004;
+  }
+  :root:has(div[data-color-mode="dark"]) .gsc-completion-container {
+    background: #f0f001 !important;
+    border-color: #f0f009;
+  }
+  :root:has(div[data-color-mode="dark"]) .gsc-completion-container .gsc-completion-selected {
+    background: #f0f003;
+  }
+  :root:has(div[data-color-mode="dark"]) .gsc-completion-container span {
+    color: #f0f004 !important;
+  }
+  :root:has(div[data-color-mode="dark"]) .gsc-refinementhActive,
+  :root:has(div[data-color-mode="dark"]) .gsc-refinementhInactive {
+    color: #f0f004;
+    background: #f0f001;
+    border-color: #f0f01b;
+  }
+  :root:has(div[data-color-mode="dark"]) .gsc-option-menu-container {
+    color: #f0f004;
+  }
+  :root:has(div[data-color-mode="dark"]) .gsc-option-menu-container .gsc-selected-option-container {
+    background: #f0f001;
+    border-color: #f0f004;
+    color: #f0f004;
+  }
+  :root:has(div[data-color-mode="dark"]) .gsc-option-menu-container .gsc-option-menu {
+    background: #f0f001;
+  }
+  :root:has(div[data-color-mode="dark"]) .gsc-option-menu-container .gsc-option-menu .gsc-option-menu-item-highlighted {
+    background: #f0f003;
+  }
+  :root:has(div[data-color-mode="dark"]) .gsc-result-info,
+  :root:has(div[data-color-mode="dark"]) .gsc-orderby-label,
+  :root:has(div[data-color-mode="dark"]) .gs-label,
+  :root:has(div[data-color-mode="dark"]) .gs-title,
+  :root:has(div[data-color-mode="dark"]) .gs-snippet,
+  :root:has(div[data-color-mode="dark"]) .gsc-option-menu-item,
+  :root:has(div[data-color-mode="dark"]) .gscb_a {
+    color: #f0f004 !important;
+  }
+  :root:has(div[data-color-mode="dark"]) .gsc-result-info b,
+  :root:has(div[data-color-mode="dark"]) .gsc-orderby-label b,
+  :root:has(div[data-color-mode="dark"]) .gs-label b,
+  :root:has(div[data-color-mode="dark"]) .gs-title b,
+  :root:has(div[data-color-mode="dark"]) .gs-snippet b,
+  :root:has(div[data-color-mode="dark"]) .gsc-option-menu-item b,
+  :root:has(div[data-color-mode="dark"]) .gscb_a b {
+    color: #f0f004 !important;
+  }
+  :root:has(div[data-color-mode="dark"]) .gsc-webResult {
+    border-color: transparent;
+    background: #f0f001;
+  }
+  :root:has(div[data-color-mode="dark"]) .gsc-webResult .gsc-url-top > * {
+    color: #f0f01b;
+  }
+  :root:has(div[data-color-mode="dark"]) .gsc-cursor-page {
+    background: #f0f001;
+    color: #f0f004;
+    border-color: #f0f004;
+  }
+  :root:has(div[data-color-mode="dark"]) .gcsc-find-more-on-google {
+    color: #f0f004;
+  }
+  :root:has(div[data-color-mode="dark"]) .gcsc-find-more-on-google svg {
+    fill: #f0f004;
+  }
+  :root:has(div[data-color-mode="light"]) {
+    color-scheme: light;
+    --bgColor-default: #f0f001;
+    --bgColor-emphasis: #f0f003;
+    --fgColor-default: #f0f004;
+    --bgColor-neutral-emphasis: #f0f006;
+    --bgColor-accent-emphasis: #f0f01b;
+    --fgColor-accent: #f0f01b;
+    --fgColor-onEmphasis: #f0f004;
+    --color-accent-fg: #f0f01b;
+    --fgColor-muted: #f0f009;
+    --borderColor-default: #f0f00c;
+    --button-default-bgColor-rest: #f0f001;
+    --button-default-bgColor-hover: #f0f003;
+    --button-default-fgColor-rest: #f0f004;
+    --button-default-fgColor-hover: #f0f004;
+    --button-primary-bgColor-rest: #f0f01b;
+    --button-primary-bgColor-disabled: rgba(240, 240, 27, 0.85);
+    --button-primary-fgColor-disabled: #f0f004;
+    --button-primary-fgColor-rest: #f0f00c;
+    --button-primary-bgColor-hover: #e3e30f;
+    --button-primary-fgColor-hover: #f0f00c;
+    --button-default-bgColor-active: #f0f001;
+    --controlKnob-bgColor-rest: #f0f003;
+    --bgColor-accent-muted: #f0f002;
+    --fgColor-danger: #f0f011;
+    --button-danger-bgColor-hover: #f0f011;
+    --control-danger-fgColor-hover: #f0f011;
+    --control-danger-bgColor-hover: #f0f002;
+    --bgColor-success-emphasis: #f0f015;
+    --fgColor-success: #f0f015;
+    /* Create post box */
+    --codeMirror-fgColor: #f0f004;
+    --bgColor-muted: #f0f001;
+    --bgColor-inset: #f0f001;
+    --color-prettylights-syntax-markup-heading: #f0f004;
+    --color-prettylights-syntax-markup-inserted-text: #f0f006;
+    --color-prettylights-syntax-string: #f0f019;
+    /* Header */
+    --header-bgColor: #f0f002;
+    --header-fgColor-default: #f0f004;
+    --color-header-text: #f0f004;
+    --header-fgColor-logo: #f0f004;
+    --color-header-logo: #f0f004;
+    --color-checks-input-placeholder-text: #f0f004;
+    --headerSearch-bgColor: #f0f002;
+    --headerSearch-borderColor: #f0f009;
+    --color-prettylights-syntax-variable: #f0f010;
+    --color-prettylights-syntax-markup-list: #f0f004;
+    /* Style the button to change theme when light theme is on */
+    /* Style the "Status" page */
+    /* Style the "Search with Google" overlay box */
+  }
+  :root:has(div[data-color-mode="light"]) ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  :root:has(div[data-color-mode="light"]) input::placeholder,
+  :root:has(div[data-color-mode="light"]) textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  :root:has(div[data-color-mode="light"]) input[type="checkbox"] {
+    --fgColor-onEmphasis: #f0f00c;
+  }
+  :root:has(div[data-color-mode="light"]) #nprogress .bar {
+    background: #f0f01b;
+  }
+  :root:has(div[data-color-mode="light"]) button[style="--button-color: #e7dfc3;"] svg {
+    color: #f0f017;
+  }
+  :root:has(div[data-color-mode="light"]) button[style="--button-color: #ecdc0f99;"] svg {
+    color: #f0f014;
+  }
+  :root:has(div[data-color-mode="light"]) svg[fill="#0969da"] {
+    fill: #f0f019;
+  }
+  :root:has(div[data-color-mode="light"]) svg[fill="#2da44e"] {
+    fill: #f0f015;
+  }
+  :root:has(div[data-color-mode="light"]) text {
+    fill: #f0f004;
+  }
+  :root:has(div[data-color-mode="light"]) path.recharts-rectangle {
+    fill: #f0f01b;
+  }
+  :root:has(div[data-color-mode="light"]) path.recharts-rectangle.recharts-tooltip-cursor {
+    fill: #f0f009;
+  }
+  :root:has(div[data-color-mode="light"]) div.recharts-default-tooltip {
+    border-color: #f0f009 !important;
+  }
+  :root:has(div[data-color-mode="light"]) li.recharts-tooltip-item {
+    color: #f0f01b !important;
+  }
+  :root:has(div[data-color-mode="light"]) div[overflow="hidden"] {
+    border-color: #f0f009;
+  }
+  :root:has(div[data-color-mode="light"]) div[overflow="hidden"] * {
+    border-color: #f0f009;
+  }
+  :root:has(div[data-color-mode="light"]) div[class*="Overlay__StyledOverlay"] {
+    background: #f0f001;
+  }
+  :root:has(div[data-color-mode="light"]) div[class*="Overlay__StyledOverlay"] h2 {
+    color: #f0f004;
+  }
+  :root:has(div[data-color-mode="light"]) div[class*="Overlay__StyledOverlay"] .gsc-control-cse {
+    background: #f0f001;
+    border-color: transparent;
+  }
+  :root:has(div[data-color-mode="light"]) div[class*="Overlay__StyledOverlay"] .gsc-input-box {
+    background: #f0f001;
+    border-color: #f0f009;
+  }
+  :root:has(div[data-color-mode="light"]) div[class*="Overlay__StyledOverlay"] .gsc-input {
+    background: transparent;
+    color: #f0f004;
+  }
+  :root:has(div[data-color-mode="light"]) div[class*="Overlay__StyledOverlay"] .gsc-search-button > button {
+    border-color: #f0f009;
+    background: #f0f001 !important;
+  }
+  :root:has(div[data-color-mode="light"]) div[class*="Overlay__StyledOverlay"] .gsc-search-button > button svg {
+    fill: #f0f004;
+  }
+  :root:has(div[data-color-mode="light"]) .gsc-completion-container {
+    background: #f0f001 !important;
+    border-color: #f0f009;
+  }
+  :root:has(div[data-color-mode="light"]) .gsc-completion-container .gsc-completion-selected {
+    background: #f0f003;
+  }
+  :root:has(div[data-color-mode="light"]) .gsc-completion-container span {
+    color: #f0f004 !important;
+  }
+  :root:has(div[data-color-mode="light"]) .gsc-refinementhActive,
+  :root:has(div[data-color-mode="light"]) .gsc-refinementhInactive {
+    color: #f0f004;
+    background: #f0f001;
+    border-color: #f0f01b;
+  }
+  :root:has(div[data-color-mode="light"]) .gsc-option-menu-container {
+    color: #f0f004;
+  }
+  :root:has(div[data-color-mode="light"]) .gsc-option-menu-container .gsc-selected-option-container {
+    background: #f0f001;
+    border-color: #f0f004;
+    color: #f0f004;
+  }
+  :root:has(div[data-color-mode="light"]) .gsc-option-menu-container .gsc-option-menu {
+    background: #f0f001;
+  }
+  :root:has(div[data-color-mode="light"]) .gsc-option-menu-container .gsc-option-menu .gsc-option-menu-item-highlighted {
+    background: #f0f003;
+  }
+  :root:has(div[data-color-mode="light"]) .gsc-result-info,
+  :root:has(div[data-color-mode="light"]) .gsc-orderby-label,
+  :root:has(div[data-color-mode="light"]) .gs-label,
+  :root:has(div[data-color-mode="light"]) .gs-title,
+  :root:has(div[data-color-mode="light"]) .gs-snippet,
+  :root:has(div[data-color-mode="light"]) .gsc-option-menu-item,
+  :root:has(div[data-color-mode="light"]) .gscb_a {
+    color: #f0f004 !important;
+  }
+  :root:has(div[data-color-mode="light"]) .gsc-result-info b,
+  :root:has(div[data-color-mode="light"]) .gsc-orderby-label b,
+  :root:has(div[data-color-mode="light"]) .gs-label b,
+  :root:has(div[data-color-mode="light"]) .gs-title b,
+  :root:has(div[data-color-mode="light"]) .gs-snippet b,
+  :root:has(div[data-color-mode="light"]) .gsc-option-menu-item b,
+  :root:has(div[data-color-mode="light"]) .gscb_a b {
+    color: #f0f004 !important;
+  }
+  :root:has(div[data-color-mode="light"]) .gsc-webResult {
+    border-color: transparent;
+    background: #f0f001;
+  }
+  :root:has(div[data-color-mode="light"]) .gsc-webResult .gsc-url-top > * {
+    color: #f0f01b;
+  }
+  :root:has(div[data-color-mode="light"]) .gsc-cursor-page {
+    background: #f0f001;
+    color: #f0f004;
+    border-color: #f0f004;
+  }
+  :root:has(div[data-color-mode="light"]) .gcsc-find-more-on-google {
+    color: #f0f004;
+  }
+  :root:has(div[data-color-mode="light"]) .gcsc-find-more-on-google svg {
+    fill: #f0f004;
+  }
+}

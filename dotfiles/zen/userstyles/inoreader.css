@@ -1,0 +1,933 @@
+/* ==UserStyle==
+@name           pwnbox-inoreader
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for inoreader (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("inoreader.com") {
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root body,
+    :root .inno_dialog,
+    :root .reader_pane_view_style_1 .article_subscribed,
+    :root .reader_pane_view_style_4 .article_subscribed,
+    :root .inno_toolbar_switcher_button_active,
+    :root .dashboard_wrapper,
+    :root #sb_tree_part,
+    :root #sb_menu_icon,
+    :root #sb_tp_search_overlay,
+    :root #feed_searcher,
+    :root #wraper.tree_pane_docked #feed_searcher,
+    :root #preferences_main_wrapper,
+    :root .reader_pane_view_style_0 .article_expanded:hover,
+    :root div.article_expanded,
+    :root .article,
+    :root .article_expanded .article_footer_placeholder_middle.footerized.article_footer_placeholder_middle_sticky,
+    :root #article_dialog .article_footer_placeholder_top,
+    :root #three_way_contents .article_footer_placeholder_top,
+    :root .article_footer,
+    :root .pricing_plans_row_sticky,
+    :root .searcher_top_bar_wrapper {
+      background-color: #f0f001;
+    }
+    :root body,
+    :root .article_unreaded .article_tile_title,
+    :root .icon16,
+    :root .icon14,
+    :root .icon19,
+    :root .h6,
+    :root .article_unreaded .article_magazine_content,
+    :root .article_unreaded .article_magazine_title,
+    :root #sb_tp_dock,
+    :root .inno_toolbar_button,
+    :root #sb_rp_heading,
+    :root .article_header_text,
+    :root .article_content,
+    :root .profile_menu_themes_heading,
+    :root .inno_toolbar_switcher_button:hover,
+    :root #sb_rp_heading span.icon16,
+    :root .sub_engagement_number,
+    :root .sub_folder,
+    :root .inline_folders_editor,
+    :root .tf,
+    :root .top_bar_tab,
+    :root .top_bar_tab .icon16,
+    :root #tree_pane .icon16,
+    :root #add_content_simulated_button .plus_img,
+    :root a:link,
+    :root .h4[class*="icon-"],
+    :root h4[class*="icon-"],
+    :root .inno_tabs_wrapper .inno_tabs_header .inno_tabs_tab a:link,
+    :root .inno_tabs_wrapper .inno_tabs_header .inno_tabs_tab a:active,
+    :root .inno_tabs_wrapper .inno_tabs_header .inno_tabs_tab a:visited,
+    :root #tree_pane .plus_img {
+      color: #f0f004;
+    }
+    :root a.text-color,
+    :root a.nav-item-btn,
+    :root .icon-arrow_collapse {
+      color: #f0f004 !important;
+    }
+    :root .progress {
+      --bs-progress-bar-color: #f0f01b;
+      --bs-progress-bar-bg: #f0f01b;
+      --bs-bar-bg: #f0f008;
+    }
+    :root .text-muted-color {
+      color: #f0f006 !important;
+    }
+    :root #tree_pane,
+    :root #reader_pane,
+    :root #feeds_nav,
+    :root .tree_ad,
+    :root .article_full_contents,
+    :root .article_unreaded,
+    :root .search_empty_state_mask,
+    :root .library_wrapper_outer,
+    :root .teams_presentation_wrapper,
+    :root .article_subscribed,
+    :root .tr1,
+    :root .search_width_constraint,
+    :root .bg-white {
+      background-color: #f0f001 !important;
+      color: #f0f004;
+    }
+    :root .st_usage_slider_outer {
+      background-color: #f0f004;
+    }
+    :root .st_usage_slider_inner,
+    :root #text-menu .dropdown-menu,
+    :root .article_unreaded .article_unread_dot .article_unread_dot_internal {
+      background-color: #f0f01b;
+    }
+    :root .bg-primary {
+      background-color: #f0f01b !important;
+    }
+    :root #tree_pane .parent_div_inner_selected .plus_img {
+      color: #f0f01b;
+    }
+    :root .active-url .item-name,
+    :root .active-url span[class^="icon-"].h4,
+    :root .active-url i[class^="icon-"].h4 {
+      color: #f0f01b !important;
+    }
+    :root .icon-logo_circle {
+      color: #f0f003 !important;
+    }
+    :root #tabs_pane .nav-item a i,
+    :root #tabs_pane .nav-item a span,
+    :root #tabs_pane #bottom_tabs .nav-item a i {
+      color: #f0f003;
+    }
+    :root #tabs_pane .tabs-counter,
+    :root #tabs_pane #bottom_tabs .nav-item a i.icon-full {
+      color: #f0f004 !important;
+      background-color: #f0f001 !important;
+    }
+    :root #hint-pref {
+      fill: #f0f01b;
+    }
+    :root .article_footer_buttons.icon-article_topbar_read_later_full,
+    :root #reader_pane .ar .article_btns a .h4.icon-saved,
+    :root #reader_pane .ar .article_btns a .h4.star_full,
+    :root span.icon-yellow,
+    :root i.icon-yellow {
+      color: #f0f014;
+    }
+    :root .bg-alt {
+      background: #f0f014 !important;
+    }
+    :root .btn.btn-alt {
+      background-color: #f0f014;
+      border-color: #f0f014;
+    }
+    :root .bg-success-color.darker {
+      background-color: #f0f015 !important;
+    }
+    :root .alert_state {
+      background-color: #f0f011;
+    }
+    :root .icon-mark-as-read-single-unread {
+      color: #f0f019 !important;
+    }
+    :root .tabs-counter {
+      background-color: #f0f01b !important;
+      outline-color: #f0f01b !important;
+      color: #f0f002;
+    }
+    :root .active-tab-feeds:not(.active-overlay) #tabs_pane [data-tab="feeds"] i,
+    :root .active-tab-dashboard:not(.active-overlay) #tabs_pane [data-tab="dashboard"] i,
+    :root .active-tab-saved:not(.active-overlay) #tabs_pane [data-tab="saved"] i,
+    :root .active-tab-automation:not(.active-overlay) #tabs_pane [data-tab="automation"] i,
+    :root .active-tab-search:not(.active-overlay) #tabs_pane [data-tab="search"] i,
+    :root .active-tab-add_feed:not(.active-overlay) #tabs_pane [data-tab="add_feed"] i,
+    :root .active-tab-notifications:not(.active-overlay) #tabs_pane [data-tab="notifications"] i,
+    :root .active-tab-preferences:not(.active-overlay) #tabs_pane [data-tab="preferences"] i {
+      background-color: #f0f001;
+      color: #f0f004 !important;
+    }
+    :root .preferences_main_button,
+    :root .preferences_billing_feature_main {
+      background-color: #f0f002;
+      border-color: #f0f00c;
+    }
+    :root .dashboard_gadgets,
+    :root .dashboard_gadgets .content,
+    :root .library_section_main_article,
+    :root .library_secondary_article,
+    :root .library_section_list_articles {
+      background-color: #f0f002;
+    }
+    :root #header_pane,
+    :root .search_context_dropdown.open {
+      background-color: #f0f001 !important;
+      color: #f0f004;
+    }
+    :root .dropdown-menu,
+    :root .ino-autocomplete {
+      background-color: #f0f002;
+    }
+    :root .dropdown-menu .dropdown-header {
+      color: #f0f004;
+    }
+    :root .dropdown-menu .dropdown-item,
+    :root a:visited {
+      color: #f0f006;
+    }
+    :root .dropdown-menu .dropdown-item:hover,
+    :root .dropdown-menu .dropdown-item:focus,
+    :root #tree_pane .parent_div_inner:hover,
+    :root #tree_pane .parent_div_inner:active,
+    :root #tree_pane .parent_div_inner:focus,
+    :root .search_context_dropdown.open .search_context_filter:hover,
+    :root .nav.nav-hover .nav-item:hover,
+    :root .lang_bubble:hover,
+    :root #tabs_pane .toggle_sidebar_btn i {
+      background-color: #f0f00c;
+    }
+    :root .dropdown-menu .dropdown-item:active {
+      background-color: #f0f00c;
+      color: #f0f01b;
+    }
+    :root .dropdown-menu .dropdown-item.active,
+    :root #tree_pane .parent_div_inner_selected,
+    :root #tree_pane .parent_div_inner_selected:hover,
+    :root #tree_pane .parent_div_inner_selected a,
+    :root .search_context_dropdown.open .search_context_filter.active,
+    :root .nav.nav-hover .active-url,
+    :root .lang_bubble.lang_bubble_current {
+      background-color: #f0f00b;
+      color: #f0f01b;
+    }
+    :root .btn.btn-outline-text {
+      color: #f0f004;
+      border-color: #f0f006;
+    }
+    :root .btn.btn-primary,
+    :root .btn.btn-primary:hover {
+      color: #f0f004;
+      background-color: #f0f01b;
+      border-color: #f0f01b;
+    }
+    :root .dropdown-menu-active,
+    :root .btn.btn-outline-text:hover {
+      color: #f0f004;
+      border-color: #f0f006;
+      background-color: #f0f00c;
+    }
+    :root input[type="text"]:focus,
+    :root input[type="checkbox"]:focus + label,
+    :root input[type="checkbox"]:active + label,
+    :root input[type="button"]:focus,
+    :root input[type="button"]:active,
+    :root textarea:focus,
+    :root select:focus,
+    :root button:focus,
+    :root input[type="password"]:focus,
+    :root input[type="email"]:focus {
+      box-shadow: 0 0 3px #f0f01b !important;
+      border-color: #f0f01b !important;
+    }
+    :root input[type="text"],
+    :root input[type="number"],
+    :root input[type="password"],
+    :root select,
+    :root textarea {
+      background-color: #f0f001 !important;
+      color: #f0f004 !important;
+      border-color: #f0f006;
+    }
+    :root .graylink_darker,
+    :root .article_short_contents {
+      color: #f0f006;
+    }
+    :root div.article_magazine.article_current,
+    :root div.article_magazine.article_bulk_selected {
+      box-shadow: 0 0 0 1px #f0f006;
+    }
+    :root .view_style_3 #reader_pane .ar.article_current .article_tile_picture {
+      box-shadow: inset 3px 3px 0 -2px #f0f01b, inset -3px 2px 0 -2px #f0f01b;
+    }
+    :root .view_style_3 #reader_pane .ar.article_current {
+      box-shadow: inset 0 0 0 1px #f0f01b;
+    }
+    :root .view_style_4 #reader_pane .ar.article_current {
+      box-shadow: 0 0 0 1px #f0f01b;
+    }
+    :root .view_style_2 #reader_pane .ar.article_current_3way,
+    :root .view_style_2 #reader_pane .ar.article_expanded {
+      box-shadow: none;
+      border-color: #f0f004;
+    }
+    :root .article_magazine_content {
+      color: #f0f009;
+    }
+    :root .article_magazine_title {
+      color: #f0f008;
+    }
+    :root .inno_dialog_modal_overlay {
+      background-color: #f0f007;
+    }
+    :root .subscriptions_legend,
+    :root .preferences_main_button_icon span,
+    :root a.bluelink:link,
+    :root .bluelink,
+    :root .inno_tabs_tab_current,
+    :root .inno_tabs_tab_current:hover,
+    :root .inno_toolbar_button_menu_item_inactive .inno_toolbar_button_menu_icon,
+    :root .inno_toolbar_button_menu_icon,
+    :root #preferences_subscriptions_table span.icon_active,
+    :root .text-primary,
+    :root .inno_tabs_wrapper .inno_tabs_header .inno_tabs_tab.inno_tabs_tab_current a:link,
+    :root .inno_tabs_wrapper .inno_tabs_header .inno_tabs_tab.inno_tabs_tab_current a:active,
+    :root .inno_tabs_wrapper .inno_tabs_header .inno_tabs_tab.inno_tabs_tab_current a:visited {
+      color: #f0f01b !important;
+    }
+    :root #new_articles_overlay {
+      color: #f0f01b;
+      background-color: #f0f001;
+    }
+    :root input.apple-switch:checked {
+      background-color: #f0f01b;
+      border-color: #f0f01b;
+    }
+    :root .add_content_simulated_button.expanded {
+      background-color: #f0f00c;
+      box-shadow: inset 0 -1px 0 0 #f0f01b;
+    }
+    :root .inno_toolbar_button_menu,
+    :root #reader_pane .info_state,
+    :root .inno_dialog_modal .info_state,
+    :root .preferences_interface_helper,
+    :root .sub_folder {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root #profile_menu_themes_wrapper {
+      display: none;
+    }
+    :root #sb_reading_part,
+    :root #wraper.tree_pane_docked #sb_tree_part {
+      box-shadow: none;
+    }
+    :root .whitebutton {
+      background-color: #f0f001;
+      color: #f0f004;
+      border-color: #f0f00c;
+    }
+    :root .bluebutton,
+    :root .inno_dialog .inno_dialog_buttonbar_button:nth-child(1) {
+      background-color: #f0f01b;
+      color: #f0f003;
+      border-style: none;
+    }
+    :root .inno_dialog .inno_dialog_buttonbar_button:nth-child(1):hover:enabled {
+      background-color: #f0f01b;
+      border-color: #f0f01b;
+    }
+    :root .inno_dialog_buttonbar_button {
+      background-color: #f0f001;
+      color: #f0f004;
+    }
+    :root .icon_green {
+      color: #f0f015;
+    }
+    :root .reader_pane_view_style_0 .article_unreaded:hover,
+    :root .reader_pane_view_style_2 .article_unreaded:hover,
+    :root .reader_pane_view_style_2 .article:hover,
+    :root .sd .share_wrapper .icon16:hover,
+    :root .pricing_feature_row:nth-child(odd),
+    :root .pricing_table_row .pricing_table_leftmost_cell,
+    :root .article_footer .share_wrapper:hover {
+      background-color: #f0f00c;
+    }
+    :root .add_content_simulated_button_menu,
+    :root .profile_menu_plan_badge {
+      background-color: #f0f00c;
+      border-color: #f0f00c;
+      color: #f0f004;
+    }
+    :root .catalog_follow_featured_collection,
+    :root .catalog_sub_section_title,
+    :root .search_feed_wrapper {
+      border-color: #f0f00c;
+    }
+    :root .border-bottom,
+    :root .header-shadow {
+      border-color: #f0f004;
+    }
+    :root .pricing_teams_hero {
+      background-color: #f0f00c;
+      background-image: none;
+    }
+    :root .parent_div_inner:hover,
+    :root .inno_toolbar_button_menu_item:hover,
+    :root .preferences_profile_wrapper,
+    :root code,
+    :root pre {
+      background-color: #f0f00c;
+      color: #f0f004;
+    }
+    :root .preferences_profile_plan_wrapper,
+    :root .st_subheader,
+    :root .catalog_sub_section_tab.catalog_sub_section_tab_current,
+    :root .catalog_sub_section_tab:hover {
+      background: #f0f00b;
+      color: #f0f004;
+    }
+    :root .article_footer .article_footer_main_buttons .article_footer_buttons:hover,
+    :root .article_footer .article_footer_main_buttons .article_footer_buttons_current,
+    :root .article_footer .icon-article_topbar_more_menu:hover,
+    :root .st_header,
+    :root input[type="radio"].filter_radio:checked + label,
+    :root input[type="checkbox"].filter_radio:checked + label {
+      background-color: #f0f00a;
+      color: #f0f004;
+    }
+    :root input[type="checkbox"].form-check-input:checked,
+    :root input[type="radio"].form-check-input:checked {
+      background-color: #f0f01b;
+      border-color: #f0f01b;
+    }
+    :root .normal_dim {
+      color: #f0f005;
+    }
+    :root .parent_div_inner_selected,
+    :root #preferences_header,
+    :root #tabs_pane,
+    :root .add_content_simulated_button_menu_line_item:hover {
+      background-color: #f0f01b;
+      color: #f0f002;
+    }
+    :root #preferences_header .icon16,
+    :root #preferences_dialog_close_button span.icon16 {
+      color: #f0f002;
+    }
+    :root .article_tile.article_unreaded.article_expanded {
+      background-color: #f0f001;
+      box-shadow: 0 1px 8px #f0f002, 0 1px 3px #f0f002;
+    }
+    :root div.article_current_3way {
+      box-shadow: inset 0 0 0 1 #f0f01b, inset 5px 0 0 0 #f0f01b;
+    }
+    :root div.article_tile.article_expanded {
+      border-color: #f0f002;
+    }
+    :root .article_footer_placeholder_top .article_footer,
+    :root .inno_tabs_header,
+    :root .gadget_overview_feed {
+      border-color: #f0f00a;
+    }
+    :root .inno_toolbar_switcher:hover .inno_toolbar_switcher_button_active,
+    :root .inno_toolbar_switcher:hover .inno_toolbar_switcher_button_active:hover {
+      color: #f0f01b;
+      background-color: #f0f001;
+      border-color: #f0f01b;
+    }
+    :root .inno_tabs_tab:hover {
+      color: #f0f01b;
+      border-color: #f0f01b;
+    }
+    :root #audio_player_nav.is-overlay .tab-content,
+    :root #audio_player_nav .media-player.maximized .container,
+    :root #notifications_nav.is-overlay .tab-content,
+    :root #support_nav.is-overlay .tab-content,
+    :root #profile_nav.is-overlay .tab-content {
+      background-color: #f0f001;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+    }
+    :root ::selection {
+      background-color: rgba(240, 240, 27, 0.3);
+    }
+    :root input::placeholder,
+    :root textarea::placeholder {
+      color: #f0f006 !important;
+    }
+    :root body,
+    :root .inno_dialog,
+    :root .reader_pane_view_style_1 .article_subscribed,
+    :root .reader_pane_view_style_4 .article_subscribed,
+    :root .inno_toolbar_switcher_button_active,
+    :root .dashboard_wrapper,
+    :root #sb_tree_part,
+    :root #sb_menu_icon,
+    :root #sb_tp_search_overlay,
+    :root #feed_searcher,
+    :root #wraper.tree_pane_docked #feed_searcher,
+    :root #preferences_main_wrapper,
+    :root .reader_pane_view_style_0 .article_expanded:hover,
+    :root div.article_expanded,
+    :root .article,
+    :root .article_expanded .article_footer_placeholder_middle.footerized.article_footer_placeholder_middle_sticky,
+    :root #article_dialog .article_footer_placeholder_top,
+    :root #three_way_contents .article_footer_placeholder_top,
+    :root .article_footer,
+    :root .pricing_plans_row_sticky,
+    :root .searcher_top_bar_wrapper {
+      background-color: #f0f001;
+    }
+    :root body,
+    :root .article_unreaded .article_tile_title,
+    :root .icon16,
+    :root .icon14,
+    :root .icon19,
+    :root .h6,
+    :root .article_unreaded .article_magazine_content,
+    :root .article_unreaded .article_magazine_title,
+    :root #sb_tp_dock,
+    :root .inno_toolbar_button,
+    :root #sb_rp_heading,
+    :root .article_header_text,
+    :root .article_content,
+    :root .profile_menu_themes_heading,
+    :root .inno_toolbar_switcher_button:hover,
+    :root #sb_rp_heading span.icon16,
+    :root .sub_engagement_number,
+    :root .sub_folder,
+    :root .inline_folders_editor,
+    :root .tf,
+    :root .top_bar_tab,
+    :root .top_bar_tab .icon16,
+    :root #tree_pane .icon16,
+    :root #add_content_simulated_button .plus_img,
+    :root a:link,
+    :root .h4[class*="icon-"],
+    :root h4[class*="icon-"],
+    :root .inno_tabs_wrapper .inno_tabs_header .inno_tabs_tab a:link,
+    :root .inno_tabs_wrapper .inno_tabs_header .inno_tabs_tab a:active,
+    :root .inno_tabs_wrapper .inno_tabs_header .inno_tabs_tab a:visited,
+    :root #tree_pane .plus_img {
+      color: #f0f004;
+    }
+    :root a.text-color,
+    :root a.nav-item-btn,
+    :root .icon-arrow_collapse {
+      color: #f0f004 !important;
+    }
+    :root .progress {
+      --bs-progress-bar-color: #f0f01b;
+      --bs-progress-bar-bg: #f0f01b;
+      --bs-bar-bg: #f0f008;
+    }
+    :root .text-muted-color {
+      color: #f0f006 !important;
+    }
+    :root #tree_pane,
+    :root #reader_pane,
+    :root #feeds_nav,
+    :root .tree_ad,
+    :root .article_full_contents,
+    :root .article_unreaded,
+    :root .search_empty_state_mask,
+    :root .library_wrapper_outer,
+    :root .teams_presentation_wrapper,
+    :root .article_subscribed,
+    :root .tr1,
+    :root .search_width_constraint,
+    :root .bg-white {
+      background-color: #f0f001 !important;
+      color: #f0f004;
+    }
+    :root .st_usage_slider_outer {
+      background-color: #f0f004;
+    }
+    :root .st_usage_slider_inner,
+    :root #text-menu .dropdown-menu,
+    :root .article_unreaded .article_unread_dot .article_unread_dot_internal {
+      background-color: #f0f01b;
+    }
+    :root .bg-primary {
+      background-color: #f0f01b !important;
+    }
+    :root #tree_pane .parent_div_inner_selected .plus_img {
+      color: #f0f01b;
+    }
+    :root .active-url .item-name,
+    :root .active-url span[class^="icon-"].h4,
+    :root .active-url i[class^="icon-"].h4 {
+      color: #f0f01b !important;
+    }
+    :root .icon-logo_circle {
+      color: #f0f003 !important;
+    }
+    :root #tabs_pane .nav-item a i,
+    :root #tabs_pane .nav-item a span,
+    :root #tabs_pane #bottom_tabs .nav-item a i {
+      color: #f0f003;
+    }
+    :root #tabs_pane .tabs-counter,
+    :root #tabs_pane #bottom_tabs .nav-item a i.icon-full {
+      color: #f0f004 !important;
+      background-color: #f0f001 !important;
+    }
+    :root #hint-pref {
+      fill: #f0f01b;
+    }
+    :root .article_footer_buttons.icon-article_topbar_read_later_full,
+    :root #reader_pane .ar .article_btns a .h4.icon-saved,
+    :root #reader_pane .ar .article_btns a .h4.star_full,
+    :root span.icon-yellow,
+    :root i.icon-yellow {
+      color: #f0f014;
+    }
+    :root .bg-alt {
+      background: #f0f014 !important;
+    }
+    :root .btn.btn-alt {
+      background-color: #f0f014;
+      border-color: #f0f014;
+    }
+    :root .bg-success-color.darker {
+      background-color: #f0f015 !important;
+    }
+    :root .alert_state {
+      background-color: #f0f011;
+    }
+    :root .icon-mark-as-read-single-unread {
+      color: #f0f019 !important;
+    }
+    :root .tabs-counter {
+      background-color: #f0f01b !important;
+      outline-color: #f0f01b !important;
+      color: #f0f002;
+    }
+    :root .active-tab-feeds:not(.active-overlay) #tabs_pane [data-tab="feeds"] i,
+    :root .active-tab-dashboard:not(.active-overlay) #tabs_pane [data-tab="dashboard"] i,
+    :root .active-tab-saved:not(.active-overlay) #tabs_pane [data-tab="saved"] i,
+    :root .active-tab-automation:not(.active-overlay) #tabs_pane [data-tab="automation"] i,
+    :root .active-tab-search:not(.active-overlay) #tabs_pane [data-tab="search"] i,
+    :root .active-tab-add_feed:not(.active-overlay) #tabs_pane [data-tab="add_feed"] i,
+    :root .active-tab-notifications:not(.active-overlay) #tabs_pane [data-tab="notifications"] i,
+    :root .active-tab-preferences:not(.active-overlay) #tabs_pane [data-tab="preferences"] i {
+      background-color: #f0f001;
+      color: #f0f004 !important;
+    }
+    :root .preferences_main_button,
+    :root .preferences_billing_feature_main {
+      background-color: #f0f002;
+      border-color: #f0f00c;
+    }
+    :root .dashboard_gadgets,
+    :root .dashboard_gadgets .content,
+    :root .library_section_main_article,
+    :root .library_secondary_article,
+    :root .library_section_list_articles {
+      background-color: #f0f002;
+    }
+    :root #header_pane,
+    :root .search_context_dropdown.open {
+      background-color: #f0f001 !important;
+      color: #f0f004;
+    }
+    :root .dropdown-menu,
+    :root .ino-autocomplete {
+      background-color: #f0f002;
+    }
+    :root .dropdown-menu .dropdown-header {
+      color: #f0f004;
+    }
+    :root .dropdown-menu .dropdown-item,
+    :root a:visited {
+      color: #f0f006;
+    }
+    :root .dropdown-menu .dropdown-item:hover,
+    :root .dropdown-menu .dropdown-item:focus,
+    :root #tree_pane .parent_div_inner:hover,
+    :root #tree_pane .parent_div_inner:active,
+    :root #tree_pane .parent_div_inner:focus,
+    :root .search_context_dropdown.open .search_context_filter:hover,
+    :root .nav.nav-hover .nav-item:hover,
+    :root .lang_bubble:hover,
+    :root #tabs_pane .toggle_sidebar_btn i {
+      background-color: #f0f00c;
+    }
+    :root .dropdown-menu .dropdown-item:active {
+      background-color: #f0f00c;
+      color: #f0f01b;
+    }
+    :root .dropdown-menu .dropdown-item.active,
+    :root #tree_pane .parent_div_inner_selected,
+    :root #tree_pane .parent_div_inner_selected:hover,
+    :root #tree_pane .parent_div_inner_selected a,
+    :root .search_context_dropdown.open .search_context_filter.active,
+    :root .nav.nav-hover .active-url,
+    :root .lang_bubble.lang_bubble_current {
+      background-color: #f0f00b;
+      color: #f0f01b;
+    }
+    :root .btn.btn-outline-text {
+      color: #f0f004;
+      border-color: #f0f006;
+    }
+    :root .btn.btn-primary,
+    :root .btn.btn-primary:hover {
+      color: #f0f004;
+      background-color: #f0f01b;
+      border-color: #f0f01b;
+    }
+    :root .dropdown-menu-active,
+    :root .btn.btn-outline-text:hover {
+      color: #f0f004;
+      border-color: #f0f006;
+      background-color: #f0f00c;
+    }
+    :root input[type="text"]:focus,
+    :root input[type="checkbox"]:focus + label,
+    :root input[type="checkbox"]:active + label,
+    :root input[type="button"]:focus,
+    :root input[type="button"]:active,
+    :root textarea:focus,
+    :root select:focus,
+    :root button:focus,
+    :root input[type="password"]:focus,
+    :root input[type="email"]:focus {
+      box-shadow: 0 0 3px #f0f01b !important;
+      border-color: #f0f01b !important;
+    }
+    :root input[type="text"],
+    :root input[type="number"],
+    :root input[type="password"],
+    :root select,
+    :root textarea {
+      background-color: #f0f001 !important;
+      color: #f0f004 !important;
+      border-color: #f0f006;
+    }
+    :root .graylink_darker,
+    :root .article_short_contents {
+      color: #f0f006;
+    }
+    :root div.article_magazine.article_current,
+    :root div.article_magazine.article_bulk_selected {
+      box-shadow: 0 0 0 1px #f0f006;
+    }
+    :root .view_style_3 #reader_pane .ar.article_current .article_tile_picture {
+      box-shadow: inset 3px 3px 0 -2px #f0f01b, inset -3px 2px 0 -2px #f0f01b;
+    }
+    :root .view_style_3 #reader_pane .ar.article_current {
+      box-shadow: inset 0 0 0 1px #f0f01b;
+    }
+    :root .view_style_4 #reader_pane .ar.article_current {
+      box-shadow: 0 0 0 1px #f0f01b;
+    }
+    :root .view_style_2 #reader_pane .ar.article_current_3way,
+    :root .view_style_2 #reader_pane .ar.article_expanded {
+      box-shadow: none;
+      border-color: #f0f004;
+    }
+    :root .article_magazine_content {
+      color: #f0f009;
+    }
+    :root .article_magazine_title {
+      color: #f0f008;
+    }
+    :root .inno_dialog_modal_overlay {
+      background-color: #f0f007;
+    }
+    :root .subscriptions_legend,
+    :root .preferences_main_button_icon span,
+    :root a.bluelink:link,
+    :root .bluelink,
+    :root .inno_tabs_tab_current,
+    :root .inno_tabs_tab_current:hover,
+    :root .inno_toolbar_button_menu_item_inactive .inno_toolbar_button_menu_icon,
+    :root .inno_toolbar_button_menu_icon,
+    :root #preferences_subscriptions_table span.icon_active,
+    :root .text-primary,
+    :root .inno_tabs_wrapper .inno_tabs_header .inno_tabs_tab.inno_tabs_tab_current a:link,
+    :root .inno_tabs_wrapper .inno_tabs_header .inno_tabs_tab.inno_tabs_tab_current a:active,
+    :root .inno_tabs_wrapper .inno_tabs_header .inno_tabs_tab.inno_tabs_tab_current a:visited {
+      color: #f0f01b !important;
+    }
+    :root #new_articles_overlay {
+      color: #f0f01b;
+      background-color: #f0f001;
+    }
+    :root input.apple-switch:checked {
+      background-color: #f0f01b;
+      border-color: #f0f01b;
+    }
+    :root .add_content_simulated_button.expanded {
+      background-color: #f0f00c;
+      box-shadow: inset 0 -1px 0 0 #f0f01b;
+    }
+    :root .inno_toolbar_button_menu,
+    :root #reader_pane .info_state,
+    :root .inno_dialog_modal .info_state,
+    :root .preferences_interface_helper,
+    :root .sub_folder {
+      background-color: #f0f002;
+      color: #f0f004;
+    }
+    :root #profile_menu_themes_wrapper {
+      display: none;
+    }
+    :root #sb_reading_part,
+    :root #wraper.tree_pane_docked #sb_tree_part {
+      box-shadow: none;
+    }
+    :root .whitebutton {
+      background-color: #f0f001;
+      color: #f0f004;
+      border-color: #f0f00c;
+    }
+    :root .bluebutton,
+    :root .inno_dialog .inno_dialog_buttonbar_button:nth-child(1) {
+      background-color: #f0f01b;
+      color: #f0f003;
+      border-style: none;
+    }
+    :root .inno_dialog .inno_dialog_buttonbar_button:nth-child(1):hover:enabled {
+      background-color: #f0f01b;
+      border-color: #f0f01b;
+    }
+    :root .inno_dialog_buttonbar_button {
+      background-color: #f0f001;
+      color: #f0f004;
+    }
+    :root .icon_green {
+      color: #f0f015;
+    }
+    :root .reader_pane_view_style_0 .article_unreaded:hover,
+    :root .reader_pane_view_style_2 .article_unreaded:hover,
+    :root .reader_pane_view_style_2 .article:hover,
+    :root .sd .share_wrapper .icon16:hover,
+    :root .pricing_feature_row:nth-child(odd),
+    :root .pricing_table_row .pricing_table_leftmost_cell,
+    :root .article_footer .share_wrapper:hover {
+      background-color: #f0f00c;
+    }
+    :root .add_content_simulated_button_menu,
+    :root .profile_menu_plan_badge {
+      background-color: #f0f00c;
+      border-color: #f0f00c;
+      color: #f0f004;
+    }
+    :root .catalog_follow_featured_collection,
+    :root .catalog_sub_section_title,
+    :root .search_feed_wrapper {
+      border-color: #f0f00c;
+    }
+    :root .border-bottom,
+    :root .header-shadow {
+      border-color: #f0f004;
+    }
+    :root .pricing_teams_hero {
+      background-color: #f0f00c;
+      background-image: none;
+    }
+    :root .parent_div_inner:hover,
+    :root .inno_toolbar_button_menu_item:hover,
+    :root .preferences_profile_wrapper,
+    :root code,
+    :root pre {
+      background-color: #f0f00c;
+      color: #f0f004;
+    }
+    :root .preferences_profile_plan_wrapper,
+    :root .st_subheader,
+    :root .catalog_sub_section_tab.catalog_sub_section_tab_current,
+    :root .catalog_sub_section_tab:hover {
+      background: #f0f00b;
+      color: #f0f004;
+    }
+    :root .article_footer .article_footer_main_buttons .article_footer_buttons:hover,
+    :root .article_footer .article_footer_main_buttons .article_footer_buttons_current,
+    :root .article_footer .icon-article_topbar_more_menu:hover,
+    :root .st_header,
+    :root input[type="radio"].filter_radio:checked + label,
+    :root input[type="checkbox"].filter_radio:checked + label {
+      background-color: #f0f00a;
+      color: #f0f004;
+    }
+    :root input[type="checkbox"].form-check-input:checked,
+    :root input[type="radio"].form-check-input:checked {
+      background-color: #f0f01b;
+      border-color: #f0f01b;
+    }
+    :root .normal_dim {
+      color: #f0f005;
+    }
+    :root .parent_div_inner_selected,
+    :root #preferences_header,
+    :root #tabs_pane,
+    :root .add_content_simulated_button_menu_line_item:hover {
+      background-color: #f0f01b;
+      color: #f0f002;
+    }
+    :root #preferences_header .icon16,
+    :root #preferences_dialog_close_button span.icon16 {
+      color: #f0f002;
+    }
+    :root .article_tile.article_unreaded.article_expanded {
+      background-color: #f0f001;
+      box-shadow: 0 1px 8px #f0f002, 0 1px 3px #f0f002;
+    }
+    :root div.article_current_3way {
+      box-shadow: inset 0 0 0 1 #f0f01b, inset 5px 0 0 0 #f0f01b;
+    }
+    :root div.article_tile.article_expanded {
+      border-color: #f0f002;
+    }
+    :root .article_footer_placeholder_top .article_footer,
+    :root .inno_tabs_header,
+    :root .gadget_overview_feed {
+      border-color: #f0f00a;
+    }
+    :root .inno_toolbar_switcher:hover .inno_toolbar_switcher_button_active,
+    :root .inno_toolbar_switcher:hover .inno_toolbar_switcher_button_active:hover {
+      color: #f0f01b;
+      background-color: #f0f001;
+      border-color: #f0f01b;
+    }
+    :root .inno_tabs_tab:hover {
+      color: #f0f01b;
+      border-color: #f0f01b;
+    }
+    :root #audio_player_nav.is-overlay .tab-content,
+    :root #audio_player_nav .media-player.maximized .container,
+    :root #notifications_nav.is-overlay .tab-content,
+    :root #support_nav.is-overlay .tab-content,
+    :root #profile_nav.is-overlay .tab-content {
+      background-color: #f0f001;
+    }
+  }
+}

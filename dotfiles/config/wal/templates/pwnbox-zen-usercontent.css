@@ -1,0 +1,145 @@
+/* pwnbox zen theme — userContent.css (generated from pywal)
+   adapted from catppuccin/zen-browser */
+
+@media (prefers-color-scheme: dark) {
+
+  /* Common variables affecting all pages */
+  @-moz-document url-prefix("about:") {
+    :root {
+      --in-content-page-color: {foreground} !important;
+      --color-accent-primary: {color4} !important;
+      --color-accent-primary-hover: {color7} !important;
+      --color-accent-primary-active: {color6} !important;
+      background-color: {color0} !important;
+      --in-content-page-background: {color0} !important;
+    }
+
+    * {
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
+  }
+
+  /* Variables and styles specific to about:newtab and about:home */
+  @-moz-document url("about:newtab"), url("about:home") {
+    :root {
+      --newtab-background-color: {color0} !important;
+      --newtab-background-color-secondary: {color8} !important;
+      --newtab-element-hover-color: {color8} !important;
+      --newtab-text-primary-color: {color7} !important;
+      --newtab-wordmark-color: {color7} !important;
+      --newtab-primary-action-background: {color4} !important;
+    }
+
+    .icon {
+      color: {color4} !important;
+    }
+
+    .card-outer:is(:hover, :focus, .active):not(.placeholder) .card-title {
+      color: {color4} !important;
+    }
+
+    .top-site-outer .search-topsite {
+      background-color: {color6} !important;
+    }
+
+    .compact-cards .card-outer .card-context .card-context-icon.icon-download {
+      fill: {color2} !important;
+    }
+  }
+
+  /* Variables and styles specific to about:preferences */
+  @-moz-document url-prefix("about:preferences") {
+    :root {
+      --zen-colors-tertiary: {background} !important;
+      --in-content-text-color: {color7} !important;
+      --link-color: {color4} !important;
+      --link-color-hover: {color7} !important;
+      --zen-colors-primary: {color8} !important;
+      --in-content-box-background: {color8} !important;
+      --zen-primary-color: {color4} !important;
+    }
+
+    groupbox, moz-card {
+      background: {color0} !important;
+    }
+
+    button,
+    groupbox menulist {
+      background: {color8} !important;
+      color: {color7} !important;
+    }
+
+    .main-content {
+      background-color: {background} !important;
+    }
+
+    .identity-color-blue {
+      --identity-tab-color: {color4} !important;
+      --identity-icon-color: {color4} !important;
+    }
+
+    .identity-color-turquoise {
+      --identity-tab-color: {color6} !important;
+      --identity-icon-color: {color6} !important;
+    }
+
+    .identity-color-green {
+      --identity-tab-color: {color2} !important;
+      --identity-icon-color: {color2} !important;
+    }
+
+    .identity-color-yellow {
+      --identity-tab-color: {color3} !important;
+      --identity-icon-color: {color3} !important;
+    }
+
+    .identity-color-orange {
+      --identity-tab-color: {color3} !important;
+      --identity-icon-color: {color3} !important;
+    }
+
+    .identity-color-red {
+      --identity-tab-color: {color5} !important;
+      --identity-icon-color: {color5} !important;
+    }
+
+    .identity-color-pink {
+      --identity-tab-color: {color5} !important;
+      --identity-icon-color: {color5} !important;
+    }
+
+    .identity-color-purple {
+      --identity-tab-color: {color4} !important;
+      --identity-icon-color: {color4} !important;
+    }
+  }
+
+  /* Variables and styles specific to about:addons */
+  @-moz-document url-prefix("about:addons") {
+    :root {
+      --zen-dark-color-mix-base: {background} !important;
+      --background-color-box: {color0} !important;
+    }
+  }
+
+  /* Variables and styles specific to about:protections */
+  @-moz-document url-prefix("about:protections") {
+    :root {
+      --zen-primary-color: {color0} !important;
+      --social-color: {color4} !important;
+      --coockie-color: {color6} !important;
+      --fingerprinter-color: {color3} !important;
+      --cryptominer-color: {color4} !important;
+      --tracker-color: {color2} !important;
+      --in-content-primary-button-background-hover: {color7} !important;
+      --in-content-primary-button-text-color-hover: {background} !important;
+      --in-content-primary-button-background: {color8} !important;
+      --in-content-primary-button-text-color: {color7} !important;
+    }
+
+    .card {
+      background-color: {color8} !important;
+    }
+  }
+}

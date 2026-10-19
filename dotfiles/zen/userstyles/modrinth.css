@@ -1,0 +1,395 @@
+/* ==UserStyle==
+@name           pwnbox-modrinth
+@namespace      pwnbox
+@version        2026.08.16
+@description    Soothing pastel theme for Modrinth (pywal, follows the pwnbox theme)
+@author         Catppuccin (adapted)
+@license        MIT
+==/UserStyle== */
+
+/* deno-fmt-ignore */
+/* deno-fmt-ignore */
+@-moz-document domain("modrinth.com") {
+  .light,
+  .light-mode,
+  .light-properties,
+  html {
+    color-scheme: light;
+    --text-color: #f0f004 !important;
+    --color-base: #f0f004 !important;
+    --color-bg: #f0f003 !important;
+    --color-secondary: #f0f006 !important;
+    --color-ad-raised: #f0f00a !important;
+    --color-ad: #f0f00b !important;
+    --color-ad-highlight: #f0f016 !important;
+    --color-brand: #f0f01b !important;
+    --color-brand-green: #f0f015 !important;
+    --color-button-bg-active: #f0f009 !important;
+    --color-button-bg-selected: rgba(240, 240, 27, 0.25) !important;
+    --color-button-bg-hover: #f0f00b !important;
+    --color-button-bg: #f0f00c !important;
+    --color-button-text-hover: #f0f004 !important;
+    --color-button-text: #f0f005 !important;
+    --color-button-text-active: #f0f004 !important;
+    --color-button-text-selected: #f0f01b !important;
+    --color-divider: #f0f00c !important;
+    --color-divider-dark: #f0f00a !important;
+    --color-heading: #f0f004 !important;
+    --color-icon: #f0f004 !important;
+    --color-link-active: #f0f018 !important;
+    --color-link-hover: #f0f017 !important;
+    --color-link: #f0f019 !important;
+    --color-raised-bg: #f0f001 !important;
+    --color-blue: #f0f018 !important;
+    --color-special-blue: #f0f018 !important;
+    --color-orange: #f0f013 !important;
+    --color-special-orange: #f0f013 !important;
+    --color-purple: #f0f010 !important;
+    --color-special-purple: #f0f010 !important;
+    --color-red: #f0f011 !important;
+    --color-gray: #f0f006 !important;
+    --color-special-gray: #f0f006 !important;
+    --color-green: #f0f015 !important;
+    --color-text: #f0f005 !important;
+    --color-text-dark: #f0f004 !important;
+    --color-text-inactive: #f0f008 !important;
+    --color-brand-highlight: rgba(240, 240, 27, 0.25) !important;
+    --color-brand-inverted: #dbdfef !important;
+    --color-table-alternate-row: #f0f003 !important;
+    --color-table-border: #f0f009 !important;
+    --color-contrast: #f0f004 !important;
+    --color-accent-contrast: #f0f002 !important;
+    --color-red-highlight: rgba(240, 240, 17, 0.25) !important;
+    --color-orange-highlight: rgba(240, 240, 19, 0.25) !important;
+    --color-green-highlight: rgba(240, 240, 27, 0.25) !important;
+    --color-blue-highlight: rgba(240, 240, 25, 0.25) !important;
+    --color-purple-highlight: rgba(240, 240, 16, 0.25) !important;
+    --color-gray-highlight: rgba(240, 240, 4, 0.25) !important;
+    --color-red-bg: rgba(240, 240, 17, 0.2) !important;
+    --color-orange-bg: rgba(240, 240, 19, 0.25) !important;
+    --color-green-bg: rgba(240, 240, 27, 0.25) !important;
+    --color-blue-bg: rgba(240, 240, 25, 0.25) !important;
+    --color-purple-bg: rgba(240, 240, 16, 0.25) !important;
+    --color-brand-shadow: #f0f01b !important;
+    --color-warning-banner-side: #f0f011 !important;
+    --color-warning-banner-bg: rgba(240, 240, 17, 0.25) !important;
+    --color-warning-banner-text: #f0f004 !important;
+    --color-platform-fabric: #f0f00d !important;
+    --color-platform-quilt: #f0f010 !important;
+    --color-platform-forge: #f0f01a !important;
+    --color-platform-neoforge: #f0f013 !important;
+    --color-platform-liteloader: #f0f017 !important;
+    --color-platform-bukkit: #f0f013 !important;
+    --color-platform-bungeecord: #f0f014 !important;
+    --color-platform-folia: #f0f015 !important;
+    --color-platform-paper: #f0f011 !important;
+    --color-platform-purpur: #f0f010 !important;
+    --color-platform-spigot: #f0f014 !important;
+    --color-platform-velocity: #f0f016 !important;
+    --color-platform-waterfall: #f0f019 !important;
+    --color-platform-sponge: #f0f014 !important;
+    --color-platform-ornithe: #f0f016 !important;
+    --color-platform-bta-babric: #f0f015 !important;
+    --color-platform-legacy-fabric: #f0f01a !important;
+    --color-platform-nilloader: #f0f00f !important;
+    --color-button-border: rgba(240, 240, 3, 0.2) !important;
+    --color-tooltip-bg: #f0f00b !important;
+    --color-tooltip-text: #f0f005 !important;
+    --landing-green-label: #f0f01b !important;
+    --landing-green-label-bg: rgba(240, 240, 27, 0.1) !important;
+    --landing-blue-label: #f0f019 !important;
+    --landing-color-heading: #f0f004 !important;
+    --landing-color-subheading: #f0f006 !important;
+    --landing-border-color: #f0f009 !important;
+    --landing-blue-label-bg: rgba(240, 240, 25, 0.1) !important;
+    --landing-border-gradient: linear-gradient(to bottom right, #f0f009, #f0f00a) !important;
+    --brand-gradient-strong-bg: linear-gradient(270deg, rgba(240, 240, 27, 0.05) 10%, rgba(240, 240, 27, 0.15)) !important;
+    --brand-gradient-border: rgba(240, 240, 27, 0.1) !important;
+    --surface-1: #f0f003 !important;
+    --surface-1-5: #f0f003 !important;
+    --surface-2: #f0f002 !important;
+    --surface-2-5: #f0f002 !important;
+    --surface-3: #f0f001 !important;
+    --surface-4: #f0f00c !important;
+    --surface-5: #f0f00a !important;
+    --color-text-primary: #f0f004 !important;
+    --color-text-default: #f0f005 !important;
+    --color-text-tertiary: #f0f006 !important;
+  }
+  .light ::selection,
+  .light-mode ::selection,
+  .light-properties ::selection,
+  html ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  .light input::placeholder,
+  .light-mode input::placeholder,
+  .light-properties input::placeholder,
+  html input::placeholder,
+  .light textarea::placeholder,
+  .light-mode textarea::placeholder,
+  .light-properties textarea::placeholder,
+  html textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  .light .blob-demonstration,
+  .light-mode .blob-demonstration,
+  .light-properties .blob-demonstration,
+  html .blob-demonstration,
+  .light .blob-demonstration::after,
+  .light-mode .blob-demonstration::after,
+  .light-properties .blob-demonstration::after,
+  html .blob-demonstration::after {
+    background: linear-gradient(0deg, rgba(240, 240, 27, 0.2), rgba(240, 240, 1, 0.1)) !important;
+  }
+  .light .logo-banner path,
+  .light-mode .logo-banner path,
+  .light-properties .logo-banner path,
+  html .logo-banner path {
+    fill: #f0f01b !important;
+  }
+  .light .logo-banner > svg > g > rect,
+  .light-mode .logo-banner > svg > g > rect,
+  .light-properties .logo-banner > svg > g > rect,
+  html .logo-banner > svg > g > rect {
+    display: none;
+  }
+  .light [tabindex="0"]:focus-visible,
+  .light-mode [tabindex="0"]:focus-visible,
+  .light-properties [tabindex="0"]:focus-visible,
+  html [tabindex="0"]:focus-visible,
+  .light a:focus-visible,
+  .light-mode a:focus-visible,
+  .light-properties a:focus-visible,
+  html a:focus-visible,
+  .light button:focus-visible,
+  .light-mode button:focus-visible,
+  .light-properties button:focus-visible,
+  html button:focus-visible {
+    outline-color: #f0f01b;
+  }
+  .light .BDVE3s9MFQttmbMUeYup-2 a b,
+  .light-mode .BDVE3s9MFQttmbMUeYup-2 a b,
+  .light-properties .BDVE3s9MFQttmbMUeYup-2 a b,
+  html .BDVE3s9MFQttmbMUeYup-2 a b,
+  .light .BDVE3s9MFQttmbMUeYup-2 a strong,
+  .light-mode .BDVE3s9MFQttmbMUeYup-2 a strong,
+  .light-properties .BDVE3s9MFQttmbMUeYup-2 a strong,
+  html .BDVE3s9MFQttmbMUeYup-2 a strong {
+    color: #f0f01b;
+  }
+  .light .multiselect__select::before,
+  .light-mode .multiselect__select::before,
+  .light-properties .multiselect__select::before,
+  html .multiselect__select::before {
+    border-color: #f0f004 transparent transparent;
+    color: #f0f004;
+  }
+  .light .btn-wrapper:hover a,
+  .light-mode .btn-wrapper:hover a,
+  .light-properties .btn-wrapper:hover a,
+  html .btn-wrapper:hover a,
+  .light .btn-wrapper:hover button,
+  .light-mode .btn-wrapper:hover button,
+  .light-properties .btn-wrapper:hover button,
+  html .btn-wrapper:hover button {
+    --tw-brightness: none !important;
+  }
+  .light .nuxt-loading-indicator,
+  .light-mode .nuxt-loading-indicator,
+  .light-properties .nuxt-loading-indicator,
+  html .nuxt-loading-indicator {
+    background: #f0f01b !important;
+  }
+  .dark,
+  .dark-mode,
+  .oled-mode,
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --text-color: #f0f004 !important;
+    --color-base: #f0f004 !important;
+    --color-bg: #f0f003 !important;
+    --color-secondary: #f0f006 !important;
+    --color-ad-raised: #f0f00a !important;
+    --color-ad: #f0f00b !important;
+    --color-ad-highlight: #f0f016 !important;
+    --color-brand: #f0f01b !important;
+    --color-brand-green: #f0f015 !important;
+    --color-button-bg-active: #f0f009 !important;
+    --color-button-bg-selected: rgba(240, 240, 27, 0.25) !important;
+    --color-button-bg-hover: #f0f00b !important;
+    --color-button-bg: #f0f00c !important;
+    --color-button-text-hover: #f0f004 !important;
+    --color-button-text: #f0f005 !important;
+    --color-button-text-active: #f0f004 !important;
+    --color-button-text-selected: #f0f01b !important;
+    --color-divider: #f0f00c !important;
+    --color-divider-dark: #f0f00a !important;
+    --color-heading: #f0f004 !important;
+    --color-icon: #f0f004 !important;
+    --color-link-active: #f0f018 !important;
+    --color-link-hover: #f0f017 !important;
+    --color-link: #f0f019 !important;
+    --color-raised-bg: #f0f001 !important;
+    --color-blue: #f0f018 !important;
+    --color-special-blue: #f0f018 !important;
+    --color-orange: #f0f013 !important;
+    --color-special-orange: #f0f013 !important;
+    --color-purple: #f0f010 !important;
+    --color-special-purple: #f0f010 !important;
+    --color-red: #f0f011 !important;
+    --color-gray: #f0f006 !important;
+    --color-special-gray: #f0f006 !important;
+    --color-green: #f0f015 !important;
+    --color-text: #f0f005 !important;
+    --color-text-dark: #f0f004 !important;
+    --color-text-inactive: #f0f008 !important;
+    --color-brand-highlight: rgba(240, 240, 27, 0.25) !important;
+    --color-brand-inverted: #010409 !important;
+    --color-table-alternate-row: #f0f003 !important;
+    --color-table-border: #f0f009 !important;
+    --color-contrast: #f0f004 !important;
+    --color-accent-contrast: #f0f002 !important;
+    --color-red-highlight: rgba(240, 240, 17, 0.25) !important;
+    --color-orange-highlight: rgba(240, 240, 19, 0.25) !important;
+    --color-green-highlight: rgba(240, 240, 27, 0.25) !important;
+    --color-blue-highlight: rgba(240, 240, 25, 0.25) !important;
+    --color-purple-highlight: rgba(240, 240, 16, 0.25) !important;
+    --color-gray-highlight: rgba(240, 240, 4, 0.25) !important;
+    --color-red-bg: rgba(240, 240, 17, 0.2) !important;
+    --color-orange-bg: rgba(240, 240, 19, 0.25) !important;
+    --color-green-bg: rgba(240, 240, 27, 0.25) !important;
+    --color-blue-bg: rgba(240, 240, 25, 0.25) !important;
+    --color-purple-bg: rgba(240, 240, 16, 0.25) !important;
+    --color-brand-shadow: #f0f01b !important;
+    --color-warning-banner-side: #f0f011 !important;
+    --color-warning-banner-bg: rgba(240, 240, 17, 0.25) !important;
+    --color-warning-banner-text: #f0f004 !important;
+    --color-platform-fabric: #f0f00d !important;
+    --color-platform-quilt: #f0f010 !important;
+    --color-platform-forge: #f0f01a !important;
+    --color-platform-neoforge: #f0f013 !important;
+    --color-platform-liteloader: #f0f017 !important;
+    --color-platform-bukkit: #f0f013 !important;
+    --color-platform-bungeecord: #f0f014 !important;
+    --color-platform-folia: #f0f015 !important;
+    --color-platform-paper: #f0f011 !important;
+    --color-platform-purpur: #f0f010 !important;
+    --color-platform-spigot: #f0f014 !important;
+    --color-platform-velocity: #f0f016 !important;
+    --color-platform-waterfall: #f0f019 !important;
+    --color-platform-sponge: #f0f014 !important;
+    --color-platform-ornithe: #f0f016 !important;
+    --color-platform-bta-babric: #f0f015 !important;
+    --color-platform-legacy-fabric: #f0f01a !important;
+    --color-platform-nilloader: #f0f00f !important;
+    --color-button-border: rgba(240, 240, 3, 0.2) !important;
+    --color-tooltip-bg: #f0f00b !important;
+    --color-tooltip-text: #f0f005 !important;
+    --landing-green-label: #f0f01b !important;
+    --landing-green-label-bg: rgba(240, 240, 27, 0.1) !important;
+    --landing-blue-label: #f0f019 !important;
+    --landing-color-heading: #f0f004 !important;
+    --landing-color-subheading: #f0f006 !important;
+    --landing-border-color: #f0f009 !important;
+    --landing-blue-label-bg: rgba(240, 240, 25, 0.1) !important;
+    --landing-border-gradient: linear-gradient(to bottom right, #f0f009, #f0f00a) !important;
+    --brand-gradient-strong-bg: linear-gradient(270deg, rgba(240, 240, 27, 0.05) 10%, rgba(240, 240, 27, 0.15)) !important;
+    --brand-gradient-border: rgba(240, 240, 27, 0.1) !important;
+    --surface-1: #f0f003 !important;
+    --surface-1-5: #f0f003 !important;
+    --surface-2: #f0f002 !important;
+    --surface-2-5: #f0f002 !important;
+    --surface-3: #f0f001 !important;
+    --surface-4: #f0f00c !important;
+    --surface-5: #f0f00a !important;
+    --color-text-primary: #f0f004 !important;
+    --color-text-default: #f0f005 !important;
+    --color-text-tertiary: #f0f006 !important;
+  }
+  .dark ::selection,
+  .dark-mode ::selection,
+  .oled-mode ::selection,
+  :root[data-theme="dark"] ::selection {
+    background-color: rgba(240, 240, 27, 0.3);
+  }
+  .dark input::placeholder,
+  .dark-mode input::placeholder,
+  .oled-mode input::placeholder,
+  :root[data-theme="dark"] input::placeholder,
+  .dark textarea::placeholder,
+  .dark-mode textarea::placeholder,
+  .oled-mode textarea::placeholder,
+  :root[data-theme="dark"] textarea::placeholder {
+    color: #f0f006 !important;
+  }
+  .dark .blob-demonstration,
+  .dark-mode .blob-demonstration,
+  .oled-mode .blob-demonstration,
+  :root[data-theme="dark"] .blob-demonstration,
+  .dark .blob-demonstration::after,
+  .dark-mode .blob-demonstration::after,
+  .oled-mode .blob-demonstration::after,
+  :root[data-theme="dark"] .blob-demonstration::after {
+    background: linear-gradient(0deg, rgba(240, 240, 27, 0.2), rgba(240, 240, 1, 0.1)) !important;
+  }
+  .dark .logo-banner path,
+  .dark-mode .logo-banner path,
+  .oled-mode .logo-banner path,
+  :root[data-theme="dark"] .logo-banner path {
+    fill: #f0f01b !important;
+  }
+  .dark .logo-banner > svg > g > rect,
+  .dark-mode .logo-banner > svg > g > rect,
+  .oled-mode .logo-banner > svg > g > rect,
+  :root[data-theme="dark"] .logo-banner > svg > g > rect {
+    display: none;
+  }
+  .dark [tabindex="0"]:focus-visible,
+  .dark-mode [tabindex="0"]:focus-visible,
+  .oled-mode [tabindex="0"]:focus-visible,
+  :root[data-theme="dark"] [tabindex="0"]:focus-visible,
+  .dark a:focus-visible,
+  .dark-mode a:focus-visible,
+  .oled-mode a:focus-visible,
+  :root[data-theme="dark"] a:focus-visible,
+  .dark button:focus-visible,
+  .dark-mode button:focus-visible,
+  .oled-mode button:focus-visible,
+  :root[data-theme="dark"] button:focus-visible {
+    outline-color: #f0f01b;
+  }
+  .dark .BDVE3s9MFQttmbMUeYup-2 a b,
+  .dark-mode .BDVE3s9MFQttmbMUeYup-2 a b,
+  .oled-mode .BDVE3s9MFQttmbMUeYup-2 a b,
+  :root[data-theme="dark"] .BDVE3s9MFQttmbMUeYup-2 a b,
+  .dark .BDVE3s9MFQttmbMUeYup-2 a strong,
+  .dark-mode .BDVE3s9MFQttmbMUeYup-2 a strong,
+  .oled-mode .BDVE3s9MFQttmbMUeYup-2 a strong,
+  :root[data-theme="dark"] .BDVE3s9MFQttmbMUeYup-2 a strong {
+    color: #f0f01b;
+  }
+  .dark .multiselect__select::before,
+  .dark-mode .multiselect__select::before,
+  .oled-mode .multiselect__select::before,
+  :root[data-theme="dark"] .multiselect__select::before {
+    border-color: #f0f004 transparent transparent;
+    color: #f0f004;
+  }
+  .dark .btn-wrapper:hover a,
+  .dark-mode .btn-wrapper:hover a,
+  .oled-mode .btn-wrapper:hover a,
+  :root[data-theme="dark"] .btn-wrapper:hover a,
+  .dark .btn-wrapper:hover button,
+  .dark-mode .btn-wrapper:hover button,
+  .oled-mode .btn-wrapper:hover button,
+  :root[data-theme="dark"] .btn-wrapper:hover button {
+    --tw-brightness: none !important;
+  }
+  .dark .nuxt-loading-indicator,
+  .dark-mode .nuxt-loading-indicator,
+  .oled-mode .nuxt-loading-indicator,
+  :root[data-theme="dark"] .nuxt-loading-indicator {
+    background: #f0f01b !important;
+  }
+}
