@@ -1,8 +1,9 @@
 <h1 align="center">PWNBOX</h1>
 
 <p align="center">
-  <img src="assets/preview.png" alt="PWNBOX desktop" width="860">
+  <img src="https://github.com/user-attachments/assets/6bc14965-486f-468d-8f70-fba584b46522" alt="PWNBOX desktop" width="860">
 </p>
+
 
 <p align="center">
   A ready-to-go <a href="https://nixos.org">NixOS</a> +
