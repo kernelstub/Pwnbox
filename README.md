@@ -24,6 +24,7 @@
 - [Keybinds](#keybinds)
 - [Privacy](#privacy)
 - [Install](#install)
+- [ISOs](#isos)
 - [IDA Free / Pro](#ida-free--pro)
 - [Author](#author)
 - [License](#license)
@@ -37,6 +38,7 @@ The full manual lives in [`docs/`](docs/README.md):
 | Document                                   | What it covers                                      |
 | ------------------------------------------ | --------------------------------------------------- |
 | [Getting started](docs/getting-started.md) | Install, first boot, updates, host config           |
+| [ISOs](docs/isos.md)                       | Live/installer ISOs, live credentials, booting      |
 | [Desktop](docs/desktop.md)                 | Hyprland, GNOME, Quickshell and the bar             |
 | [Keybinds](docs/keybinds.md)               | Every keyboard shortcut                             |
 | [Themes](docs/themes.md)                   | Wallpaper themes, custom themes, the `ALT + S` menu |
@@ -250,6 +252,36 @@ Commands you will use most:
 | `ALT + S`             | Open the theme / settings menu        |
 
 Add your own packages in `pkgs/custom.nix`.
+
+## ISOs
+
+Bootable images, built from this flake:
+
+```bash
+./build-iso.sh              # live + installer for this machine → iso/
+./build-iso.sh live         # just the live desktop ISO
+./build-iso.sh installer    # just the installer ISO
+```
+
+- **Live ISO** — the full pwnbox desktop on a stick. Runs entirely in RAM:
+  zero persistence, nothing touches the USB drive, reboot = factory reset.
+- **Installer ISO** — a stock NixOS installer carrying this flake at
+  `/pwnbox`, ready for `nixos-install --flake`.
+- **Architectures** — `x86_64-linux` (BIOS + UEFI) and `aarch64-linux`
+  (UEFI only, needs an ARM builder: `--builders 'ssh-ng://root@pi
+  aarch64-linux - 8'`).
+
+Live ISO credentials and defaults:
+
+| | |
+| --- | --- |
+| User / password | `pwnbox` / `pwnbox` (change with `passwd`) |
+| Root | locked, sudo via `pwnbox` |
+| Time zone | UTC |
+| Session | Hyprland (autologin), GNOME as second session |
+
+Full details — booting, Ventoy/`dd`, Secure Boot, NVIDIA and the installer
+flow — in [docs/isos.md](docs/isos.md).
 
 ## IDA Free / Pro
 

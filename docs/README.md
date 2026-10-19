@@ -11,6 +11,7 @@ and jump to whatever you need.
 | Document | What it covers |
 | --- | --- |
 | [Getting started](getting-started.md) | Install, first boot, updates, host config |
+| [ISOs](isos.md) | Building live/installer ISOs, live credentials, booting |
 | [Desktop](desktop.md) | Hyprland, GNOME, Quickshell, sessions |
 | [Keybinds](keybinds.md) | Every keyboard shortcut |
 | [Themes](themes.md) | Wallpaper themes, custom themes, the `ALT + S` menu |
