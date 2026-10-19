@@ -16,9 +16,15 @@ let
   enabledToolCategories = lib.filter (n: config.pwnbox.packages.toolset.${n}.enable) (
     builtins.attrNames categories
   );
+
+  # Some toolset packages are restricted to specific platforms upstream
+  # (e.g. cryptomator: x86_64-linux). Drop them from the toolset on other
+  # platforms instead of failing the whole evaluation.
+  availableOnThis = lib.meta.availableOn pkgs.stdenv.hostPlatform;
+
   pentestTools = pkgs.buildEnv {
     name = "pwnbox-tools";
-    paths = lib.flatten (map (n: categories.${n}) enabledToolCategories);
+    paths = lib.flatten (map (n: lib.filter availableOnThis categories.${n}) enabledToolCategories);
     ignoreCollisions = true;
   };
 
@@ -193,39 +199,43 @@ let
     (writeShellScriptBin "ytdl" ''exec ${yt-dlp}/bin/yt-dlp "$@"'')
   ];
 
-  apps = with pkgs; [
-    chromium
+  apps =
+    with pkgs;
+    [
+      chromium
 
-    signal-desktop
-    ayugram-desktop
-    element-desktop
-    simplex-chat-desktop
-    dino
-    qtox
-    equibop
+      signal-desktop
+      ayugram-desktop
+      element-desktop
+      simplex-chat-desktop
+      dino
+      qtox
+      equibop
 
-    obsidian
-    zed-editor
-    geary
-    keepassxc
+      obsidian
+      zed-editor
+      geary
+      keepassxc
 
-    spotify
-    spicetify-cli
-    qbittorrent
-    vlc
+      qbittorrent
+      vlc
 
-    exodus
-    ledger-live-desktop
+      pwncat
 
-    pwncat
+      mullvad-vpn
 
-    mullvad-vpn
-
-    tor-browser
-    mullvad-browser
-    tor
-    torsocks
-  ];
+      tor
+      torsocks
+    ]
+    # x86_64-only upstream binaries (unavailable or non-functional on ARM)
+    ++ optionals pkgs.stdenv.isx86_64 [
+      exodus
+      ledger-live-desktop
+      tor-browser
+      mullvad-browser
+      spotify
+      spicetify-cli
+    ];
 
   gaming = with pkgs; [
     lutris
@@ -304,10 +314,15 @@ in
     ++ optionals config.pwnbox.packages.gaming gaming
     ++ optionals config.pwnbox.packages.creative creative
     ++ optionals (zenBrowser != null) [ zenBrowser ]
-    ++ optionals config.pwnbox.packages.hacking [
-      pentestTools
-      pkgs.pwnbox.ida
-    ]
+    ++ optionals config.pwnbox.packages.hacking (
+      [
+        pentestTools
+      ]
+      ++ optionals pkgs.stdenv.isx86_64 [
+        # IDA FHS wrapper is x86_64-only (platforms in pkgs/ida-fhs.nix)
+        pkgs.pwnbox.ida
+      ]
+    )
     ++ languages
     ++ custom;
 

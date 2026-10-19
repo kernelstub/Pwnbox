@@ -18,7 +18,8 @@ lib.mkIf config.pwnbox.desktop.enable {
 
   hardware.graphics = {
     enable = true;
-    enable32Bit = true;
+    # 32-bit graphics libs only exist on x86_64
+    enable32Bit = lib.mkDefault pkgs.stdenv.hostPlatform.isx86;
   };
 
   xdg.portal = {
