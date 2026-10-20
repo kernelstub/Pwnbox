@@ -147,7 +147,7 @@ kitty is signalled automatically; Quickshell is restarted automatically.
 Re-run verbosely and read the tail:
 
 ```bash
-./install.sh switch --verbose
+./scripts/install.sh switch --verbose
 ```
 
 The full log is at `/tmp/pwnbox-install.log`. If the system is unusable, boot

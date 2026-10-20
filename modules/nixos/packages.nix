@@ -17,9 +17,6 @@ let
     builtins.attrNames categories
   );
 
-  # Some toolset packages are restricted to specific platforms upstream
-  # (e.g. cryptomator: x86_64-linux). Drop them from the toolset on other
-  # platforms instead of failing the whole evaluation.
   availableOnThis = lib.meta.availableOn pkgs.stdenv.hostPlatform;
 
   pentestTools = pkgs.buildEnv {
@@ -30,10 +27,10 @@ let
 
   zenBrowser =
     if inputs != null && inputs ? zen-browser then
-      pkgs.callPackage ../../pkgs/zen-browser.nix {
+      pkgs.callPackage ../../pkgs/apps/browsers/zen-browser.nix {
         zen-browser-unwrapped =
           inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.zen-browser-unwrapped;
-        pywalfox = pkgs.callPackage ../../pkgs/pywalfox-native.nix { };
+        pywalfox = pkgs.callPackage ../../pkgs/apps/browsers/pywalfox-native.nix { };
       }
     else
       null;
@@ -229,7 +226,6 @@ let
       tor
       torsocks
     ]
-    # x86_64-only upstream binaries (unavailable or non-functional on ARM)
     ++ optionals pkgs.stdenv.isx86_64 [
       exodus
       ledger-live-desktop
@@ -321,7 +317,6 @@ in
         pentestTools
       ]
       ++ optionals pkgs.stdenv.isx86_64 [
-        # IDA FHS wrapper is x86_64-only (platforms in pkgs/ida-fhs.nix)
         pkgs.pwnbox.ida
       ]
     )

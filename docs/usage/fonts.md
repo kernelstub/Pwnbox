@@ -42,7 +42,7 @@ downloaded at runtime.
 | Zathura | n/a | `set font` |
 | Zen (browser chrome + site styles) | n/a | generated `userChrome.css` + userstyles |
 
-Apps that run inside the terminal (micro, Neovim, ranger, btop, neofetch, …)
+Apps that run inside the terminal (micro, Neovim, ranger, btop, fastfetch, …)
 inherit the kitty font automatically.
 
 ## How it is applied

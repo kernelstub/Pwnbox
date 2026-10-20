@@ -2,7 +2,7 @@
  *
  * Element's main process is ESM (`"type": "module"`), so this uses dynamic
  * imports and top-level await instead of require(). It mirrors
- * pkgs/signal-loader.js: read ~/.config/Element/theme.css (or
+ * pkgs/apps/messaging/signal-loader.js: read ~/.config/Element/theme.css (or
  * PWNBOX_ELEMENT_CSS), inject it into every renderer and watch the file so
  * theme changes apply live.
  */

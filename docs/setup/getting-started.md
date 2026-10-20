@@ -18,12 +18,12 @@ cd pwnbox
 Then run the installer from the flake directory:
 
 ```bash
-./install.sh switch
+./scripts/install.sh switch
 ```
 
-Running `./install.sh` without arguments shows the help screen with a prompt
-for the default action; `./install.sh --help` prints the same screen. The
-installer:
+Running `./scripts/install.sh` without arguments shows the help screen with a
+prompt for the default action; `./scripts/install.sh --help` prints the same
+screen. The installer:
 
 1. Detects your user, host name, time zone and hardware.
 2. Creates `hosts/<host>/` from the `nixos` template if it does not exist
@@ -38,6 +38,9 @@ installer:
    left alone).
 4. Runs `nixos-rebuild` with the flake. Garbage collection is opt-in with
    `--gc`; by default old generations are kept so you can roll back.
+
+The run starts with a preflight inspection and then reports each execution
+phase in a compact table.
 
 ### Installer actions
 
@@ -62,10 +65,10 @@ installer:
 Examples:
 
 ```bash
-./install.sh build
-./install.sh test -H myhost
-./install.sh switch --verbose
-./install.sh switch -- --show-trace
+./scripts/install.sh build
+./scripts/install.sh test -H myhost
+./scripts/install.sh switch --verbose
+./scripts/install.sh switch -- --show-trace
 ```
 
 ## After install
@@ -115,8 +118,9 @@ pwnbox = {
 Every option is documented in `modules/nixos/options.nix`.
 
 `hardware-configuration.nix` and the auto-generated `boot.nix` belong to the
-machine and are refreshed by `install.sh` on every run — put kernel modules,
-loader tweaks or anything else you want to keep in `default.nix` instead.
+machine and are refreshed by `scripts/install.sh` on every run — put kernel
+modules, loader tweaks or anything else you want to keep in `default.nix`
+instead.
 
 ## Wallpapers
 
@@ -130,7 +134,7 @@ IDA is proprietary and is **not** installed by the flake. Install it
 yourself (any directory); with `packages.hacking` on, the flake provides
 the FHS wrapper (`ida`, `ida64`, `idat`, `hv`), launcher entries, the pywal
 theme, fonts and a pseudocode plugin — see
-[Apps](apps.md#ida-free--pro).
+[Apps](../usage/apps.md#ida-free--pro).
 
 ```bash
 # default install location
@@ -147,7 +151,7 @@ seeded automatically, and the pwnbox theme is generated into
 `~/.config/stremio-enhanced/themes/`. Open Stremio Enhanced, go to
 Settings → Themes and apply the **pwnbox** theme once; from then on it
 follows every wallpaper / custom theme switch (restart the app after
-switching). See [Apps](apps.md#stremio-enhanced).
+switching). See [Apps](../usage/apps.md#stremio-enhanced).
 
 ## Recovery
 

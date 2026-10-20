@@ -69,7 +69,6 @@ in
     "cava" = configDir "cava";
     "fuzzel/fuzzel.ini" = tpl "config/fuzzel/fuzzel.ini";
     "kitty/kitty.conf" = tpl "config/kitty/kitty.conf";
-    "neofetch" = configDir "neofetch";
     "fastfetch" = configDir "fastfetch";
     "rofi/config.rasi" = tpl "config/rofi/config.rasi";
     "rofi/menu.rasi" = tpl "config/rofi/menu.rasi";

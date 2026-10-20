@@ -8,7 +8,7 @@ apps, kernel), not in this repository.
 ## Supported versions
 
 Only the latest commit of the `main` branch is supported. There are no
-formal releases; the ISOs built by `build-iso.sh` are snapshots of the
+formal releases; the ISOs built by `scripts/iso.sh` are snapshots of the
 flake at build time.
 
 ## In scope
@@ -18,9 +18,9 @@ Anything that weakens the box itself as configured:
 - Hardening regressions (`modules/nixos/hardening.nix`, kernel command line,
   network and firewall settings, user/privilege defaults).
 - Insecure defaults in the NixOS/home-manager modules, activation scripts or
-  `install.sh`.
+  `scripts/install.sh`.
 - Credential or key handling in the packaged apps, launchers and helper
-  scripts (`dotfiles/scripts`, `pkgs/`).
+  scripts (`dotfiles/scripts`, `scripts/`, `pkgs/`).
 - Supply-chain issues introduced by this flake itself (inputs, overlays,
   `flake.lock` pins of untrustworthy sources).
 

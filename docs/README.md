@@ -5,24 +5,41 @@ reverse engineering, Active Directory and networking. It ships a Hyprland
 desktop (with GNOME as a second session) driven by Quickshell, and a
 wallpaper-driven theming system that reaches every app.
 
-This folder is the full manual. Start with [Getting started](getting-started.md)
+This folder is the full manual. Start with [Getting started](setup/getting-started.md)
 and jump to whatever you need.
+
+## Setup
 
 | Document | What it covers |
 | --- | --- |
-| [Getting started](getting-started.md) | Install, first boot, updates, host config |
-| [ISOs](isos.md) | Building live/installer ISOs, live credentials, booting |
-| [Desktop](desktop.md) | Hyprland, GNOME, Quickshell, sessions |
-| [Keybinds](keybinds.md) | Every keyboard shortcut |
-| [Themes](themes.md) | Wallpaper themes, custom themes, the `ALT + S` menu |
-| [Fonts](fonts.md) | System/application fonts and sizes |
-| [Apps](apps.md) | Per-app theming and live updates (Spotify, Discord, Telegram, Stremio Enhanced, IDA Free/Pro) |
-| [Browser](browser.md) | Zen, site themes and the pwnbox styles extension |
-| [Packages](packages.md) | Tool categories and optional app sets |
-| [Privacy](privacy.md) | Hardening and zero-trace defaults |
-| [Architecture](architecture.md) | Repo layout and how a theme switch works |
-| [Troubleshooting](troubleshooting.md) | Common problems and fixes |
-| [Development](development.md) | Add themes, packages and bar styles |
+| [Getting started](setup/getting-started.md) | Install, first boot, updates, host config |
+| [ISOs](setup/isos.md) | Building live/installer ISOs, live credentials, booting |
+
+## Using pwnbox
+
+| Document | What it covers |
+| --- | --- |
+| [Desktop](usage/desktop.md) | Hyprland, GNOME, Quickshell, sessions |
+| [Keybinds](usage/keybinds.md) | Every keyboard shortcut |
+| [Themes](usage/themes.md) | Wallpaper themes, custom themes, the `ALT + S` menu |
+| [Fonts](usage/fonts.md) | System/application fonts and sizes |
+| [Apps](usage/apps.md) | Per-app theming and live updates (Spotify, Discord, Telegram, Stremio Enhanced, IDA Free/Pro) |
+| [Browser](usage/browser.md) | Zen, site themes and the pwnbox styles extension |
+| [Privacy](usage/privacy.md) | Hardening and zero-trace defaults |
+
+## Reference
+
+| Document | What it covers |
+| --- | --- |
+| [Packages](reference/packages.md) | Tool categories and optional app sets |
+| [Troubleshooting](reference/troubleshooting.md) | Common problems and fixes |
+
+## Development
+
+| Document | What it covers |
+| --- | --- |
+| [Architecture](development/architecture.md) | Repo layout and how a theme switch works |
+| [Workflow](development/workflow.md) | Add themes, packages and bar styles |
 | [Security policy](../SECURITY.md) | Reporting vulnerabilities privately |
 | [Contributing](../CONTRIBUTING.md) | Repo layout, style, testing before a PR |
 

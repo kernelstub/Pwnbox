@@ -70,7 +70,7 @@ See [Apps](apps.md#ida-free--pro) for the full picture.
 
 ## Obsidian
 
-The `~/Documents/Notes` vault (created by `install.sh`) follows the same
+The `~/Documents/Notes` vault (created by `scripts/install.sh`) follows the same
 palette through the `pwnbox` CSS snippet:
 
 - `pwnbox-theme` regenerates the snippet from the active palette and keeps it

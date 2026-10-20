@@ -6,7 +6,7 @@ stdenvNoCC.mkDerivation {
   pname = "pwnbox-dotfiles";
   version = "1.0.0";
 
-  src = ../dotfiles;
+  src = ../../dotfiles;
 
   dontConfigure = true;
   dontBuild = true;

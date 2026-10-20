@@ -6,7 +6,7 @@ stdenvNoCC.mkDerivation {
   pname = "pwnbox-gnome-fonts";
   version = "1.0.0";
 
-  src = ../dotfiles/gnome/fonts;
+  src = ../../dotfiles/gnome/fonts;
 
   dontConfigure = true;
   dontBuild = true;

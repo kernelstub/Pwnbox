@@ -7,12 +7,6 @@
   element-web-unwrapped,
 }:
 let
-  # Real (symlink-free) copy of element-web with the Labs tab enabled in the
-  # served config.json. The custom themes dialog lives behind Settings ->
-  # Labs -> Developer mode, which is needed to add the pwnbox theme URL once
-  # (see docs/apps.md). The plain nixpkgs `element-web.override { conf }`
-  # wrapper produces a symlink farm, which electron-builder's asar step
-  # refuses to pack ("links out of the package"), hence the copy here.
   element-web-labs = stdenvNoCC.mkDerivation {
     pname = "element-web-pwnbox";
     inherit (element-web-unwrapped) version;
@@ -37,9 +31,6 @@ in
     postInstall = (old.postInstall or "") + ''
       element_asar_tmp="$(mktemp -d)"
       ${lib.getExe asar} extract "$out/share/element/app.asar" "$element_asar_tmp"
-      # Separator newline: if upstream ever ends the main bundle with a line
-      # comment (`//# sourceURL=…`), the loader's first line must not be
-      # swallowed into it.
       printf '\n' >> "$element_asar_tmp/lib/electron-main.js"
       cat ${./element-loader.js} >> "$element_asar_tmp/lib/electron-main.js"
       ${lib.getExe asar} pack "$element_asar_tmp" "$out/share/element/app.asar.new"

@@ -13,7 +13,7 @@ It provides `nixfmt`, `statix` and `deadnix`.
 ## Formatting
 
 ```bash
-nixfmt flake.nix modules/**/*.nix pkgs/**/*.nix
+nix fmt
 ```
 
 ## Add a custom theme
@@ -24,7 +24,7 @@ nixfmt flake.nix modules/**/*.nix pkgs/**/*.nix
 
 Only `name`, `background` and `foreground` are required; everything else falls
 back to the monochrome palette. See
-[Themes](themes.md#custom-themes) and `dotfiles/themes/README.md`.
+[Themes](../usage/themes.md#custom-themes) and `dotfiles/themes/README.md`.
 
 ## Add a site theme
 
@@ -40,7 +40,7 @@ Site themes live in `dotfiles/zen/userstyles/` as compiled CSS templates with
    theme change and serves it for the pwnbox styles extension.
 
 Also add the site to the priority list in `sync_userstyles` if it is a popular
-one, and mention it in [Browser](browser.md) if it needs special notes.
+one, and mention it in [Browser](../usage/browser.md) if it needs special notes.
 
 ## Add a package
 
@@ -85,7 +85,7 @@ used by Spotify, Equibop and Telegram is:
    at startup, so `sync_telegram_fonts` restarts it when the font changed and
    the app is running).
 
-Add the app to `docs/apps.md` when you do.
+Add the app to `docs/usage/apps.md` when you do.
 
 ## The IDA theme
 
@@ -107,7 +107,7 @@ Add the app to `docs/apps.md` when you do.
 
 ## Stremio Enhanced
 
-- `pkgs/stremio-enhanced.nix` wraps the upstream AppImage with
+- `pkgs/apps/media/stremio-enhanced.nix` wraps the upstream AppImage with
   `appimageTools.wrapType2` and pins the streaming server
   (`serverVersion` + its hash). The package ships a `nix-update` script for
   the AppImage; bump `serverVersion` by hand
@@ -125,8 +125,8 @@ Add the app to `docs/apps.md` when you do.
 ## Signal
 
 - Signal Desktop has no upstream custom theme support, so the overlay
-  (`pkgs/signal-desktop.nix`) rebuilds the nixpkgs package with an extra
-  `postInstall` step: unpack `app.asar`, append `pkgs/signal-loader.js` to
+  (`pkgs/apps/messaging/signal-desktop.nix`) rebuilds the nixpkgs package with an extra
+  `postInstall` step: unpack `app.asar`, append `pkgs/apps/messaging/signal-loader.js` to
   `bundles/main.js` (the Electron main process bundle), repack. Keep the
   loader self-contained (no imports) and resilient — it runs in the main
   process of every Signal window.
@@ -144,8 +144,8 @@ Add the app to `docs/apps.md` when you do.
 
 ## Element
 
-- Same mechanism as Signal: the overlay (`pkgs/element-desktop.nix`) repacks
-  `app.asar` with `pkgs/element-loader.js` appended to
+- Same mechanism as Signal: the overlay (`pkgs/apps/messaging/element-desktop.nix`) repacks
+  `app.asar` with `pkgs/apps/messaging/element-loader.js` appended to
   `lib/electron-main.js`. Element's main process is ESM
   (`"type": "module"`), so the loader uses dynamic `import()` + top-level
   await instead of `require`.
@@ -165,8 +165,8 @@ Add the app to `docs/apps.md` when you do.
 
 ## Wire
 
-- Same mechanism as Signal: the overlay (`pkgs/wire-desktop.nix`) repacks
-  `app.asar` with `pkgs/wire-loader.js` appended to the CJS webpack bundle
+- Same mechanism as Signal: the overlay (`pkgs/apps/messaging/wire-desktop.nix`) repacks
+  `app.asar` with `pkgs/apps/messaging/wire-loader.js` appended to the CJS webpack bundle
   `electron/dist/main.js`.
 - The webapp is loaded from the Wire CDN into a remote `<webview>`, so the
   loader injects into every webContents via `web-contents-created` (which
@@ -191,7 +191,7 @@ Add the app to `docs/apps.md` when you do.
   in memory, a running instance is stopped first, then relaunched.
 - Fonts: the app hardcodes the bundled Inter files
   (`fonts/Inter-*.ttf` inside `common-desktop-*.jar`). The pwnbox launcher
-  (`pkgs/simplex-launcher.sh`, installed as `simplex-chat-desktop`) keeps a
+  (`pkgs/apps/messaging/simplex-launcher.sh`, installed as `simplex-chat-desktop`) keeps a
   writable copy of the extracted AppImage under
   `~/.local/share/pwnbox/simplex`, swaps those entries for the current
   application font (resolved through `fc-match`) and runs the copy inside the
@@ -201,10 +201,10 @@ Add the app to `docs/apps.md` when you do.
 ## Testing
 
 - Syntax-check the shell helpers:
-  `bash -n dotfiles/scripts/pwnbox-theme`
+  `bash -n dotfiles/scripts/pwnbox-theme scripts/*.sh`
 - Parse the Nix modules: `nix-instantiate --parse modules/home/dotfiles.nix`
-- Build without activating: `./install.sh build`
-- Try it for one boot: `./install.sh test`
+- Build without activating: `./scripts/install.sh build`
+- Try it for one boot: `./scripts/install.sh test`
 
 ## Style guidelines
 

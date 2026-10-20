@@ -13,7 +13,7 @@ let
 
   pwnboxStyles = runCommand "pwnbox-styles.xpi" { nativeBuildInputs = [ zip ]; } ''
     mkdir src
-    cp ${../dotfiles/zen/extension}/* src/
+    cp ${../../../dotfiles/zen/extension}/* src/
     (cd src && zip -q -r "$out" .)
   '';
 
@@ -33,7 +33,7 @@ let
           };
     in
     builtins.filter (p: p != null) (
-      map parse (lib.splitString "\n" (builtins.readFile ../dotfiles/zen/user.js))
+      map parse (lib.splitString "\n" (builtins.readFile ../../../dotfiles/zen/user.js))
     );
 
   prefsFromUserJs = builtins.listToAttrs (map (p: lib.nameValuePair p.name p.value) userJsPrefs);

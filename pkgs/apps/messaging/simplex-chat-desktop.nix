@@ -12,9 +12,6 @@ let
 
   src = simplex-chat-desktop.passthru.sources.${system};
 
-  # Same inputs as the wrapType2-internal extract call, so this is the
-  # identical store path — usable both as the launcher's app source and as
-  # appimageContents for the desktop file/icons below.
   appDir = appimageTools.extract {
     pname = "simplex-chat-desktop";
     version = simplex-chat-desktop.version;

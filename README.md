@@ -36,21 +36,21 @@
 
 The full manual lives in [`docs/`](docs/README.md):
 
-| Document                                   | What it covers                                      |
-| ------------------------------------------ | --------------------------------------------------- |
-| [Getting started](docs/getting-started.md) | Install, first boot, updates, host config           |
-| [ISOs](docs/isos.md)                       | Live/installer ISOs, live credentials, booting      |
-| [Desktop](docs/desktop.md)                 | Hyprland, GNOME, Quickshell and the bar             |
-| [Keybinds](docs/keybinds.md)               | Every keyboard shortcut                             |
-| [Themes](docs/themes.md)                   | Wallpaper themes, custom themes, the `ALT + S` menu |
-| [Fonts](docs/fonts.md)                     | System/application fonts and sizes                  |
-| [Apps](docs/apps.md)                       | Per-app theming and live updates                    |
-| [Browser](docs/browser.md)                 | Zen, site themes and the pwnbox styles extension    |
-| [Packages](docs/packages.md)               | Tool categories and optional app sets               |
-| [Privacy](docs/privacy.md)                 | Hardening and zero-trace defaults                   |
-| [Architecture](docs/architecture.md)       | Repo layout and how a theme switch works            |
-| [Troubleshooting](docs/troubleshooting.md) | Common problems and fixes                           |
-| [Development](docs/development.md)         | Add themes, packages and bar styles                 |
+| Document | What it covers |
+| --- | --- |
+| [Getting started](docs/setup/getting-started.md) | Install, first boot, updates, host config |
+| [ISOs](docs/setup/isos.md) | Live/installer ISOs, live credentials, booting |
+| [Desktop](docs/usage/desktop.md) | Hyprland, GNOME, Quickshell and the bar |
+| [Keybinds](docs/usage/keybinds.md) | Every keyboard shortcut |
+| [Themes](docs/usage/themes.md) | Wallpaper themes, custom themes, the `ALT + S` menu |
+| [Fonts](docs/usage/fonts.md) | System/application fonts and sizes |
+| [Apps](docs/usage/apps.md) | Per-app theming and live updates |
+| [Browser](docs/usage/browser.md) | Zen, site themes and the pwnbox styles extension |
+| [Packages](docs/reference/packages.md) | Tool categories and optional app sets |
+| [Privacy](docs/usage/privacy.md) | Hardening and zero-trace defaults |
+| [Architecture](docs/development/architecture.md) | Repo layout and how a theme switch works |
+| [Troubleshooting](docs/reference/troubleshooting.md) | Common problems and fixes |
+| [Development](docs/development/workflow.md) | Add themes, packages and bar styles |
 
 ---
 
@@ -122,25 +122,25 @@ Optional sets. Turn them on with `pwnbox.packages.gaming` or
   each with its own `theme.conf` and wallpaper.
 - **One menu for everything.** `ALT + S` opens the settings picker for theme,
   wallpaper, bar style, corner radii, fonts, font sizes, blur, transparency,
-  window borders, shadows and animations. See [docs/themes.md](docs/themes.md).
+  window borders, shadows and animations. See [docs/usage/themes.md](docs/usage/themes.md).
 - **Live app theming.** Spotify, Discord (Equibop), Telegram (AyuGram),
   Signal, Element and Wire update while they are running, without quitting
   them. Signal, Element and Wire are patched by the flake to load a
   pywal-generated `theme.css` (colours + application font) at runtime. See
-  [docs/apps.md](docs/apps.md).
+  [docs/usage/apps.md](docs/usage/apps.md).
 - **Stremio Enhanced.** Replaces plain Stremio with the Enhanced fork
   (plugins + themes). The pwnbox theme recolours it from the active palette
   (apply it once under Settings → Themes), the streaming server is installed
   automatically, and the application font from `ALT + S` is used. See
-  [docs/apps.md](docs/apps.md#stremio-enhanced).
+  [docs/usage/apps.md](docs/usage/apps.md#stremio-enhanced).
 - **IDA Free / Pro.** Not in nixpkgs (proprietary), so the flake wraps a
   locally installed copy: an FHS environment with every library IDA needs, a
   flat pywal theme with the same background-lightened borders as Zed, the
   pwnbox fonts, and a pseudocode retagging plugin. See
-  [docs/apps.md](docs/apps.md#ida-free--pro).
+  [docs/usage/apps.md](docs/usage/apps.md#ida-free--pro).
 - **Themed browser.** Zen's UI, DevTools, about: pages and 131 website themes
   all follow the palette and update live via the pwnbox styles extension. See
-  [docs/browser.md](docs/browser.md).
+  [docs/usage/browser.md](docs/usage/browser.md).
 - All appearance choices are saved and re-applied on login.
 
 <details>
@@ -203,7 +203,7 @@ downloaded at runtime).
 | `PRINT` / `SUPER + SHIFT + S` / `SUPER + SHIFT + R` | Screenshot: clipboard / region / save |
 
 The full list, including media and hardware keys, is in
-[docs/keybinds.md](docs/keybinds.md).
+[docs/usage/keybinds.md](docs/usage/keybinds.md).
 
 ## Privacy
 
@@ -233,24 +233,26 @@ unzip pwnbox.zip     # or: tar -xzf pwnbox.tar.gz
 cd pwnbox
 
 # 3. run the installer
-./install.sh switch
+./scripts/install.sh switch
 ```
 
-`install.sh` detects your user, hostname, time zone and hardware, creates
-`hosts/<host>/` from the `nixos` template, refreshes `hardware-configuration.nix`
-and `boot.nix` for the current machine, then activates. The template's
-`hardware-configuration.nix` ships placeholder disk UUIDs — the installer
-replaces them with the real ones for your device, so there is nothing to edit.
-Garbage collection is opt-in with `--gc`.
+`./scripts/install.sh` detects your user, hostname, time zone and hardware,
+creates `hosts/<host>/` from the `nixos` template, refreshes
+`hardware-configuration.nix` and `boot.nix` for the current machine, then
+activates. The template's `hardware-configuration.nix` ships placeholder disk
+UUIDs — the installer replaces them with the real ones for your device, so
+there is nothing to edit.
+Garbage collection is opt-in with `--gc`. The run starts with a preflight
+inspection and then reports each execution phase in a compact table.
 
 Commands you will use most:
 
-| Command               | Does                                  |
-| --------------------- | ------------------------------------- |
-| `./install.sh switch` | Rebuild and activate                  |
-| `upd`                 | Rebuild and activate                  |
-| `update`              | Update all flake inputs, then rebuild |
-| `ALT + S`             | Open the theme / settings menu        |
+| Command                       | Does                                  |
+| ----------------------------- | ------------------------------------- |
+| `./scripts/install.sh switch` | Rebuild and activate                  |
+| `upd`                         | Rebuild and activate                  |
+| `update`                      | Update all flake inputs, then rebuild |
+| `ALT + S`                     | Open the theme / settings menu        |
 
 Add your own packages in `pkgs/custom.nix`.
 
@@ -259,9 +261,9 @@ Add your own packages in `pkgs/custom.nix`.
 Bootable images, built from this flake:
 
 ```bash
-./build-iso.sh              # live + installer for this machine → iso/
-./build-iso.sh live         # just the live desktop ISO
-./build-iso.sh installer    # just the installer ISO
+./scripts/iso.sh              # live + installer for this machine → iso/
+./scripts/iso.sh live         # just the live desktop ISO
+./scripts/iso.sh installer    # just the installer ISO
 ```
 
 - **Live ISO** — the full pwnbox desktop on a stick. Runs entirely in RAM:
@@ -282,7 +284,7 @@ Live ISO credentials and defaults:
 | Session | Hyprland (autologin), GNOME as second session |
 
 Full details — booting, Ventoy/`dd`, Secure Boot, NVIDIA and the installer
-flow — in [docs/isos.md](docs/isos.md).
+flow — in [docs/setup/isos.md](docs/setup/isos.md).
 
 ## IDA Free / Pro
 
@@ -304,8 +306,8 @@ yourself (any location) — the flake provides everything around it:
 PWNBOX_IDA_HOME=/opt/ida-9.4 ida          # run from a custom location
 ```
 
-See [docs/apps.md](docs/apps.md#ida-free--pro) and
-[docs/troubleshooting.md](docs/troubleshooting.md#ida-free--pro).
+See [docs/usage/apps.md](docs/usage/apps.md#ida-free--pro) and
+[docs/reference/troubleshooting.md](docs/reference/troubleshooting.md#ida-free--pro).
 
 ## Community
 

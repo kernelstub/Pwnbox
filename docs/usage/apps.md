@@ -25,8 +25,8 @@ changed.
 ## Signal
 
 Signal Desktop does not support custom themes upstream, so the flake patches
-the packaged app (`pkgs/signal-desktop.nix`): the build unpacks `app.asar`,
-appends a tiny loader (`pkgs/signal-loader.js`) to the main process bundle and
+the packaged app (`pkgs/apps/messaging/signal-desktop.nix`): the build unpacks `app.asar`,
+appends a tiny loader (`pkgs/apps/messaging/signal-loader.js`) to the main process bundle and
 repacks it. The loader reads `~/.config/Signal/theme.css` and injects it into
 every renderer window via `webContents.insertCSS`, watching the file so
 changes apply live.
@@ -48,8 +48,8 @@ wallpapers and custom themes.
 ## Element
 
 Element (Matrix) is themed the same way as Signal: the flake patches the
-packaged app (`pkgs/element-desktop.nix`) by appending
-`pkgs/element-loader.js` to the ESM main process bundle
+packaged app (`pkgs/apps/messaging/element-desktop.nix`) by appending
+`pkgs/apps/messaging/element-loader.js` to the ESM main process bundle
 (`lib/electron-main.js` in `app.asar`). The loader injects
 `~/.config/Element/theme.css` into every window and watches the file, so
 palette and font changes apply live.
@@ -75,7 +75,7 @@ injected variables override the built-in dark theme.
 server). To make **Pwnbox** show up in the theme picker, add it once:
 
 1. Settings → Labs (the tab is enabled through `show_labs_settings` in the
-   packaged webapp config, see `pkgs/element-desktop.nix`) → enable
+   packaged webapp config, see `pkgs/apps/messaging/element-desktop.nix`) → enable
    **Developer mode**;
 2. avatar menu → Developer tools → Custom themes → paste the URL → Add;
 3. Settings → Appearance → Theme → select **Pwnbox**.
@@ -88,7 +88,7 @@ so it also applies on other devices using the same Matrix account.)
 
 Wire Desktop is an Electron shell whose actual webapp runs in a remote
 `<webview>`, so the flake patches the packaged app
-(`pkgs/wire-desktop.nix`) by appending `pkgs/wire-loader.js` to the main
+(`pkgs/apps/messaging/wire-desktop.nix`) by appending `pkgs/apps/messaging/wire-loader.js` to the main
 process bundle (`electron/dist/main.js` in `app.asar`). The loader injects
 `~/.config/Wire/theme.css` into **every** webContents
 (`web-contents-created` catches the webview guest as well as the shell
@@ -130,7 +130,7 @@ On every theme change, `pwnbox-theme` (`sync_simplex`):
   at startup.
 
 Fonts: the app hardcodes its bundled Inter fonts, so the pwnbox launcher
-(`pkgs/simplex-launcher.sh`) swaps `fonts/Inter-*.ttf` inside the app jar
+(`pkgs/apps/messaging/simplex-launcher.sh`) swaps `fonts/Inter-*.ttf` inside the app jar
 for the current application font (via `fc-match`) in a writable copy under
 `~/.local/share/pwnbox/simplex` and runs that copy — the repack only happens
 when the font setting changes.
@@ -139,7 +139,7 @@ when the font setting changes.
 
 pwnbox ships [Stremio Enhanced](https://github.com/REVENGE977/stremio-enhanced)
 (the community fork with plugin and theme support) instead of plain Stremio.
-It is packaged in `pkgs/stremio-enhanced.nix` and enabled in
+It is packaged in `pkgs/apps/media/stremio-enhanced.nix` and enabled in
 `pkgs/custom.nix` as `pwnbox.stremio-enhanced`.
 
 ### The package
@@ -152,7 +152,7 @@ It is packaged in `pkgs/stremio-enhanced.nix` and enabled in
   it — the `ALT + S` application font renders correctly.
 - **Streaming server.** Stremio plays through its local streaming server
   (`server.js`). The flake fetches it from `dl.strem.io` at build time
-  (`serverVersion` in `pkgs/stremio-enhanced.nix`) and seeds it to
+  (`serverVersion` in `pkgs/apps/media/stremio-enhanced.nix`) and seeds it to
   `~/.config/stremio-enhanced/streamingserver/server.js` (plus `version.txt`)
   on activation. The app updates it itself when Stremio releases a new
   version; bump `serverVersion` and rebuild to pre-seed a newer one.
@@ -243,7 +243,7 @@ AyuGram reloads itself.
 
 ## Obsidian
 
-The vault is `~/Documents/Notes` (created by `install.sh`).
+The vault is `~/Documents/Notes` (created by `scripts/install.sh`).
 
 - Palette → `~/.obsidian/snippets/pwnbox.css`, enabled and kept enabled in
   `appearance.json` on every theme change; fonts and corner radius follow the
@@ -271,7 +271,7 @@ takes care of the rest.
 
 ### The wrapper
 
-`pkgs/ida-fhs.nix` builds an FHS environment with every system library IDA
+`pkgs/security/ida-fhs.nix` builds an FHS environment with every system library IDA
 links against (Qt platform deps, X11/XCB, fontconfig, freetype, glib, GTK,
 libglvnd, wayland, dbus, zlib, …). It is installed whenever
 `pwnbox.packages.hacking` is on and provides:

@@ -8,7 +8,7 @@ stdenvNoCC.mkDerivation {
   pname = "pwnbox-grub-theme";
   version = "1.0.0";
 
-  src = ../dotfiles;
+  src = ../../dotfiles;
   themeSrc = ./grub-theme;
 
   nativeBuildInputs = [

@@ -6,7 +6,7 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
-FLAKE_DIR="$SCRIPT_DIR"
+FLAKE_DIR="$(cd -- "$SCRIPT_DIR/.." && pwd)"
 LOG="${TMPDIR:-/tmp}/pwnbox-iso.log"
 OUT_TMP="${TMPDIR:-/tmp}/pwnbox-iso.out"
 
@@ -35,7 +35,7 @@ had_args=$#
 usage_text() {
     printf '\n'
     printf '  %sUSAGE%s\n' "${C_BLUE:-}${C_BOLD:-}" "${C_RESET:-}"
-    printf '    %s./build-iso.sh [IMAGE...] [OPTIONS]%s\n' "${C_DIM:-}" "${C_RESET:-}"
+    printf '    %s./scripts/iso.sh [IMAGE...] [OPTIONS]%s\n' "${C_DIM:-}" "${C_RESET:-}"
     printf '    %sBuild pwnbox ISO images (live desktop and/or installer).%s\n' "${C_DIM:-}" "${C_RESET:-}"
     printf '    %sWith no IMAGE argument, both images are built.%s\n' "${C_DIM:-}" "${C_RESET:-}"
 
@@ -58,10 +58,10 @@ usage_text() {
     printf '    %-18s %s\n' "aarch64-linux" "UEFI only; needs an ARM builder or binfmt emulation"
 
     printf '\n  %sEXAMPLES%s\n' "${C_BLUE:-}${C_BOLD:-}" "${C_RESET:-}"
-    printf '    %s./build-iso.sh%s\n' "${C_DIM:-}" "${C_RESET:-}"
-    printf '    %s./build-iso.sh live%s\n' "${C_DIM:-}" "${C_RESET:-}"
-    printf '    %s./build-iso.sh installer -a aarch64-linux --builders "ssh-ng://root@pi aarch64-linux - 8"%s\n' "${C_DIM:-}" "${C_RESET:-}"
-    printf '    %s./build-iso.sh live -u /dev/sdb%s\n' "${C_DIM:-}" "${C_RESET:-}"
+    printf '    %s./scripts/iso.sh%s\n' "${C_DIM:-}" "${C_RESET:-}"
+    printf '    %s./scripts/iso.sh live%s\n' "${C_DIM:-}" "${C_RESET:-}"
+    printf '    %s./scripts/iso.sh installer -a aarch64-linux --builders "ssh-ng://root@pi aarch64-linux - 8"%s\n' "${C_DIM:-}" "${C_RESET:-}"
+    printf '    %s./scripts/iso.sh live -u /dev/sdb%s\n' "${C_DIM:-}" "${C_RESET:-}"
     printf '\n'
 }
 
@@ -75,7 +75,7 @@ while [ "$#" -gt 0 ]; do
         ;;
     -a | --arch)
         if [ "$#" -lt 2 ]; then
-            echo "build-iso.sh: --arch needs a value" >&2
+            echo "scripts/iso.sh: --arch needs a value" >&2
             exit 2
         fi
         arch="$2"
@@ -87,7 +87,7 @@ while [ "$#" -gt 0 ]; do
         ;;
     --builders)
         if [ "$#" -lt 2 ]; then
-            echo "build-iso.sh: --builders needs a value" >&2
+            echo "scripts/iso.sh: --builders needs a value" >&2
             exit 2
         fi
         builders="$2"
@@ -99,7 +99,7 @@ while [ "$#" -gt 0 ]; do
         ;;
     -o | --out)
         if [ "$#" -lt 2 ]; then
-            echo "build-iso.sh: --out needs a value" >&2
+            echo "scripts/iso.sh: --out needs a value" >&2
             exit 2
         fi
         out_dir="$2"
@@ -111,7 +111,7 @@ while [ "$#" -gt 0 ]; do
         ;;
     -u | --usb)
         if [ "$#" -lt 2 ]; then
-            echo "build-iso.sh: --usb needs a value" >&2
+            echo "scripts/iso.sh: --usb needs a value" >&2
             exit 2
         fi
         usb_dev="$2"
@@ -138,7 +138,7 @@ while [ "$#" -gt 0 ]; do
         shift
         ;;
     *)
-        echo "build-iso.sh: unknown argument '$1'" >&2
+        echo "scripts/iso.sh: unknown argument '$1'" >&2
         usage >&2
         exit 2
         ;;
@@ -331,11 +331,11 @@ for image in "${images[@]}"; do
     step "building $image ISO for $arch"
     info "this can take a while"
 
-    nix_args=(build ".#images.$arch.$image" --no-link --print-out-paths)
+    nix_args=(build "$FLAKE_DIR#images.$arch.$image" --no-link --print-out-paths)
     [ -n "$builders" ] && nix_args+=(--builders "$builders")
 
     if [ "$no_build" -eq 1 ]; then
-        nix_args=(eval ".#images.$arch.$image.drvPath")
+        nix_args=(eval "$FLAKE_DIR#images.$arch.$image.drvPath")
         if run_nix nix "${nix_args[@]}" >/dev/null; then
             info "$image config evaluates for $arch"
             continue

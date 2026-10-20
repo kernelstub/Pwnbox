@@ -1737,7 +1737,7 @@ sync_signal() {
 }
 
 # Element reads ~/.config/Element/theme.css (injected live by
-# pkgs/element-loader.js). The theme maps the pwnbox palette onto the
+# pkgs/apps/messaging/element-loader.js). The theme maps the pwnbox palette onto the
 # Compound design tokens (--cpd-color-*) plus the raw gray/green ramps the
 # element theme css references directly.
 sync_element() {
@@ -2059,7 +2059,7 @@ sync_element() {
     rm -f "$json_tmp" 2>/dev/null || true
 }
 
-# Wire reads ~/.config/Wire/theme.css (injected live by pkgs/wire-loader.js
+# Wire reads ~/.config/Wire/theme.css (injected live by pkgs/apps/messaging/wire-loader.js
 # into every webContents — the shell and the remote webapp webview). The
 # theme maps the pwnbox palette onto Wire's CSS variables: the gray ramp,
 # foreground/background fade ramps, the accent block and the color triples.

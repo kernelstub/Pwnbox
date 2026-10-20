@@ -35,8 +35,6 @@
       ];
       forAllSystems = lib.genAttrs systems;
 
-      # Architectures we build live/installer ISOs for. Add "riscv64-linux"
-      # experimentally — expect toolset eval failures that need guarding.
       isoSystems = [
         "x86_64-linux"
         "aarch64-linux"
@@ -58,11 +56,10 @@
           && !(builtins.elem name [
             "iso"
             "installer"
-          ]) # image profiles, not hosts
+          ])
         ) (builtins.readDir ./hosts)
       );
 
-      # Shared module stack for hosts and images.
       commonModules = [
         ./modules/nixos
         ./modules/nixos/home-manager.nix
@@ -93,11 +90,6 @@
           ];
         };
 
-      # ISO images always use an explicit system (never PWNBOX_SYSTEM).
-      # withPwnbox: whether to include the pwnbox module stack (live images
-      # yes; the installer ISO is a stock NixOS installer that merely carries
-      # the flake source, and the pwnbox hardening clashes with the installer
-      # profile, e.g. security.sudo-rs vs security.sudo).
       mkImage =
         name: system: modules: withPwnbox:
         lib.nixosSystem {
@@ -106,10 +98,6 @@
           modules =
             modules
             ++ [
-              # Equivalent of the nixpkgs.hostPlatform line nixos-generate-config
-              # writes into hardware-configuration.nix for regular hosts.
-              # Several pwnbox modules read it, and the literal string avoids a
-              # pkgs <-> hostPlatform evaluation cycle.
               { nixpkgs.hostPlatform = lib.mkDefault system; }
             ]
             ++ lib.optionals withPwnbox commonModules;
@@ -131,7 +119,6 @@
     {
       nixosConfigurations = lib.genAttrs hostNames mkHost // isoConfigs;
 
-      # Convenience aliases: nix build .#images.<system>.{live,installer}
       images = lib.genAttrs isoSystems (system: {
         live = self.nixosConfigurations."iso-live-${system}".config.system.build.isoImage;
         installer = self.nixosConfigurations."iso-installer-${system}".config.system.build.isoImage;
@@ -153,9 +140,6 @@
               allowUnfree = true;
               allowInsecurePredicate = _: true;
               android_sdk.accept_license = true;
-              # Packages like apktool drag x86_64-only deps (aapt) into their
-              # closure; without this, non-x86_64 toolset envs refuse to
-              # evaluate. Such packages may be runtime-broken off-x86.
               allowUnsupportedSystem = true;
             };
             overlays = [ self.overlays.default ];

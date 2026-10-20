@@ -1,7 +1,7 @@
 # ISOs
 
 pwnbox ships two kinds of bootable images per architecture, built straight
-from the flake with `./build-iso.sh` (or plain `nix build`):
+from the flake with `./scripts/iso.sh` (or plain `nix build`):
 
 | Image | Flake output | What you get |
 | --- | --- | --- |
@@ -12,17 +12,17 @@ from the flake with `./build-iso.sh` (or plain `nix build`):
 
 Requirements: Nix with flakes enabled, and network access for the first
 fetch. Files must be tracked by git (the flake ignores untracked files —
-`build-iso.sh` warns about them).
+`scripts/iso.sh` warns about them).
 
 ```bash
-./build-iso.sh                      # live + installer for this machine
-./build-iso.sh live                 # just the live ISO
-./build-iso.sh installer            # just the installer ISO
-./build-iso.sh -n                   # evaluate configs only, do not build
+./scripts/iso.sh                      # live + installer for this machine
+./scripts/iso.sh live                 # just the live ISO
+./scripts/iso.sh installer            # just the installer ISO
+./scripts/iso.sh -n                   # evaluate configs only, do not build
 ```
 
 Finished images land in `iso/pwnbox-<image>-<arch>.iso`, with size and
-sha256 printed for each. Run `./build-iso.sh --help` for all options
+sha256 printed for each. Run `./scripts/iso.sh --help` for all options
 (remote builders, custom output dir, writing straight to a USB stick, …).
 
 The same images can be built directly with nix:
@@ -42,7 +42,7 @@ nix build .#images.x86_64-linux.installer     # → result/iso/pwnbox-installer.
 Building for a foreign architecture:
 
 ```bash
-./build-iso.sh live -a aarch64-linux --builders 'ssh-ng://root@pi aarch64-linux - 8'
+./scripts/iso.sh live -a aarch64-linux --builders 'ssh-ng://root@pi aarch64-linux - 8'
 ```
 
 ## Live ISO
@@ -69,7 +69,7 @@ Building for a foreign architecture:
   CUDA or the proprietary driver.
 - **IDA.** IDA itself is proprietary and never included. The FHS wrapper is
   on the x86_64 image — point it at your own installation with
-  `PWNBOX_IDA_HOME` (see [Apps](apps.md#ida-free--pro)).
+  `PWNBOX_IDA_HOME` (see [Apps](../usage/apps.md#ida-free--pro)).
 - **RAM.** The squashfs store is loop-mounted from the stick, but Hyprland +
   GNOME + the toolset are happiest with 8 GB+; 4 GB will boot but swap hard
   (zram).
@@ -114,6 +114,6 @@ On aarch64, tell the flake which system you want (it defaults to
 PWNBOX_SYSTEM=aarch64-linux nixos-install --impure --flake '/mnt/root/pwnbox#nixos'
 ```
 
-After the first boot, run `./install.sh switch` from `/root/pwnbox` to let
-it create the host-specific config, or continue with `nixos-rebuild
+After the first boot, run `./scripts/install.sh switch` from `/root/pwnbox`
+to let it create the host-specific config, or continue with `nixos-rebuild
 --flake .#nixos`.

@@ -49,7 +49,7 @@ All categories are enabled by default. Disable any with
 
 IDA is proprietary, so the flake never fetches it — instead it wraps a
 locally installed copy. With `pwnbox.packages.hacking` (on by default with
-the toolset), `pkgs/ida-fhs.nix` installs:
+the toolset), `pkgs/security/ida-fhs.nix` installs:
 
 - an **FHS environment** with every library the stock IDA binary links
   against (Qt/X11/xcb, fontconfig, freetype, glib, GTK, libglvnd, wayland,
@@ -65,7 +65,7 @@ ida                     # default location
 PWNBOX_IDA_HOME=/opt/ida ida
 ```
 
-Theming and fonts are covered in [Apps](apps.md#ida-free--pro).
+Theming and fonts are covered in [Apps](../usage/apps.md#ida-free--pro).
 
 ## Daily-driver apps
 
@@ -85,7 +85,7 @@ Theming and fonts are covered in [Apps](apps.md#ida-free--pro).
 
 [Stremio Enhanced](https://github.com/REVENGE977/stremio-enhanced) replaces
 plain Stremio (`pwnbox.stremio-enhanced` in `pkgs/custom.nix`). The package in
-`pkgs/stremio-enhanced.nix`:
+`pkgs/apps/media/stremio-enhanced.nix`:
 
 - wraps the upstream AppImage (x86_64 / aarch64) in an FHS environment;
 - bundles the pwnbox fonts into the sandbox so the application font renders;
@@ -93,7 +93,7 @@ plain Stremio (`pwnbox.stremio-enhanced` in `pkgs/custom.nix`). The package in
   pinned by `serverVersion`) at build time and seeds it to
   `~/.config/stremio-enhanced/streamingserver/` on activation.
 
-Theming is covered in [Apps](apps.md#stremio-enhanced).
+Theming is covered in [Apps](../usage/apps.md#stremio-enhanced).
 
 ## Ledger Live
 
@@ -103,7 +103,7 @@ installs `ledger-udev-rules` so hardware wallets are reachable without root.
 ## Exodus
 
 nixpkgs' `exodus` package uses `requireFile` (a manual download). The overlay
-in `pkgs/exodus.nix` replaces it with a `fetchurl` of the same pinned vendor
+in `pkgs/apps/wallets/exodus.nix` replaces it with a `fetchurl` of the same pinned vendor
 archive from `downloads.exodus.com`, so normal builds work without manual
 store imports. Update the hash when bumping the version.
 

@@ -2,8 +2,6 @@
 let
   inherit (pkgs) lib buildEnv;
 
-  # Some toolset packages are restricted to specific platforms upstream
-  # (e.g. cryptomator: x86_64-linux). Keep only the ones available here.
   available = lib.meta.availableOn pkgs.stdenv.hostPlatform;
   categories' = lib.mapAttrs (_: lib.filter available) categories;
 

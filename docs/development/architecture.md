@@ -5,7 +5,9 @@
 ```
 .
 ├── flake.nix                 # inputs and outputs
-├── install.sh                # bootstrap / rebuild helper
+├── scripts/
+│   ├── install.sh            # bootstrap / rebuild helper
+│   └── iso.sh                # live/installer ISO builder
 ├── hosts/                    # per-machine configs (one dir per host)
 │   └── nixos/                # template host
 ├── modules/
@@ -21,12 +23,24 @@
 │       ├── packages.nix
 │       └── shell.nix         # zsh + aliases
 ├── pkgs/                     # package sets, toolset categories, custom.nix
-│   ├── ida-fhs.nix           # FHS wrapper for a locally installed IDA
-│   ├── signal-desktop.nix    # Signal + pywal theme loader (asar patch)
-│   ├── element-desktop.nix   # Element + pywal theme loader (asar patch)
-│   ├── wire-desktop.nix      # Wire + pywal theme loader (asar patch)
-│   ├── simplex-chat-desktop.nix # SimpleX + pywal theme + font launcher
-│   └── stremio-enhanced.nix  # Stremio Enhanced AppImage + streaming server
+│   ├── categories/           # one file per pentest tool category
+│   ├── apps/
+│   │   ├── browsers/         # Zen Browser, pywalfox native host
+│   │   ├── media/            # Stremio Enhanced, Spicetify Marketplace
+│   │   ├── messaging/        # Signal, Element, Wire, SimpleX, Telegram config
+│   │   ├── notes/            # Obsidian plugins
+│   │   └── wallets/          # Exodus
+│   ├── desktop/              # dotfiles, fonts, cursors, GRUB theme
+│   ├── security/             # IDA wrapper, Impacket tools, SharpHound
+│   ├── categories.nix
+│   ├── custom.nix
+│   ├── default.nix
+│   └── toolset.nix
+├── docs/                     # manual, grouped by audience
+│   ├── setup/                # install and ISO guides
+│   ├── usage/                # desktop, apps, themes and privacy
+│   ├── reference/            # packages and troubleshooting
+│   └── development/          # architecture and contributor workflow
 ├── overlays/                 # nixpkgs overlay
 └── dotfiles/
     ├── config/               # app configs (kitty, rofi, quickshell, …)
@@ -95,12 +109,12 @@ the templates that turn it into each app's format.
 ## State and generated files
 
 - Settings live in `~/.cache/pwnbox/theme/` (see
-  [Themes → Where state lives](themes.md#where-state-lives)).
+  [Themes → Where state lives](../usage/themes.md#where-state-lives)).
 - Generated app configs live next to their managed base or under
   `~/.cache/pwnbox/theme/`.
 - On activation, the Stremio streaming server (`server.js`) is seeded into
   `~/.config/stremio-enhanced/streamingserver/` (see
-  [Apps](apps.md#stremio-enhanced)).
+  [Apps](../usage/apps.md#stremio-enhanced)).
 - On login, `pwnbox-theme restore` re-applies the saved wallpaper/theme and
   effects, then `reload_apps` re-syncs the live apps.
 
