@@ -37,7 +37,9 @@ Site themes live in `dotfiles/zen/userstyles/` as compiled CSS templates with
    its palette to the marker slots.
 2. Add it as `dotfiles/zen/userstyles/<name>.css`.
 3. Rebuild; `pwnbox-theme` regenerates it with the active palette on every
-   theme change and serves it for the pwnbox styles extension.
+   theme change and serves it for the pwnbox styles extension. Any leftover
+   yellow/gold shades from the upstream palette are remapped onto the active
+   accent, so a compiled file cannot keep a stale accent colour.
 
 Also add the site to the priority list in `sync_userstyles` if it is a popular
 one, and mention it in [Browser](../usage/browser.md) if it needs special notes.

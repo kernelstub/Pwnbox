@@ -1088,9 +1088,8 @@ sync_userstyles() {
     local templates="$HOME/.config/pwnbox/zen/userstyles"
     local outdir="$cache/userstyles"
     local p="" bg="" fg="" c0="" c1="" c2="" c3="" c4="" c5="" c6="" c7="" c8=""
-    local crust="" s2="" s1="" i="" hex="" mark="" r="" g="" b="" t="" name="" app=""
+    local crust="" s2="" s1="" i="" t="" name="" app="" slots=""
     local -a slot_hex=()
-    local -a sed_args=()
 
     [ -d "$templates" ] || return 0
     app="$(app_font)"
@@ -1154,20 +1153,376 @@ sync_userstyles() {
     slot_hex[26]="$c4"
     slot_hex[27]="$c4"
 
-    for i in $(seq 27 -1 1); do
-        hex="${slot_hex[$i]}"
-        mark="$(printf 'f0f0%02x' "$i")"
-        r=$((16#${hex:0:2}))
-        g=$((16#${hex:2:2}))
-        b=$((16#${hex:4:2}))
-        sed_args+=(-e "s/#$mark/#$hex/g" -e "s/%23$mark/%23$hex/g" -e "s/240, 240, $i/$r, $g, $b/g")
+    for i in $(seq 1 27); do
+        slots+="$i ${slot_hex[$i]}"$'\n'
     done
 
     mkdir -p "$outdir" 2>/dev/null || return 0
+    PWNBOX_USERSTYLE_SLOTS="$slots" \
+        PWNBOX_USERSTYLE_ACCENT="$c4" \
+        PWNBOX_USERSTYLE_BG="$bg" \
+        PWNBOX_USERSTYLE_FG="$fg" \
+        python3 - "$templates" "$outdir" <<'PY' || return 0
+# Resolve the template colour markers against the active palette and fold
+# leftover yellow/gold shades from the upstream theme onto the accent colour.
+# This is CSS-aware: selectors, attribute matches and comments stay untouched.
+import colorsys
+import glob
+import os
+import re
+import sys
+
+NUMBER = r"\d+(?:\.\d+)?"
+HEX = re.compile(r"#([0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})\b")
+ENCODED_HEX = re.compile(r"%23([0-9a-fA-F]{6})\b")
+COLOR_FN = re.compile(r"\b(rgba?|hsla?)\(([^()]*)\)", re.I)
+MARKER_TRIPLET = re.compile(
+    r"(?<![\w.])(240(?:\.0+)?)\s*,\s*(240(?:\.0+)?)\s*,\s*(\d{1,3}(?:\.0+)?)(?![\w.])"
+)
+RGB_TRIPLET = re.compile(
+    r"^(\s*)(" + NUMBER + r")\s*,\s*(" + NUMBER + r")\s*,\s*(" + NUMBER
+    + r")(\s*!important)?(\s*)$",
+    re.I,
+)
+
+
+def hex_rgb(value):
+    value = value.lstrip("#")
+    if len(value) in (3, 4):
+        value = "".join(ch * 2 for ch in value)
+    return tuple(int(value[i : i + 2], 16) for i in (0, 2, 4))
+
+
+def rgb_hex(rgb):
+    return "#%02x%02x%02x" % tuple(
+        max(0, min(255, int(round(component)))) for component in rgb
+    )
+
+
+def rgb_hls(rgb):
+    return colorsys.rgb_to_hls(rgb[0] / 255.0, rgb[1] / 255.0, rgb[2] / 255.0)
+
+
+def blend(source, target, amount):
+    return tuple(
+        source[i] + (target[i] - source[i]) * amount for i in range(3)
+    )
+
+
+def is_yellow(rgb):
+    high = max(rgb)
+    if high <= 0:
+        return False
+    saturation = (high - min(rgb)) / high
+    hue = colorsys.rgb_to_hsv(
+        rgb[0] / 255.0, rgb[1] / 255.0, rgb[2] / 255.0
+    )[0] * 360.0
+    return 40.0 <= hue <= 75.0 and saturation >= 0.10
+
+
+class Recolor:
+    """Map stale yellow/gold accent shades onto the active accent colour."""
+
+    def __init__(self, slots, accent, background, foreground):
+        self.palette = set(slots.values()) | {accent, background, foreground}
+        self.accent = accent
+        self.background = background
+        self.foreground = foreground
+        self.accent_lightness = rgb_hls(accent)[1]
+
+    def __call__(self, rgb):
+        if rgb in self.palette or not is_yellow(rgb):
+            return None
+
+        lightness = rgb_hls(rgb)[1]
+        if lightness <= self.accent_lightness:
+            if self.accent_lightness <= 1e-6:
+                amount = 0.0
+            else:
+                amount = 1.0 - lightness / self.accent_lightness
+            return blend(self.accent, self.background, amount)
+
+        if self.accent_lightness >= 1.0 - 1e-6:
+            amount = 0.0
+        else:
+            amount = (lightness - self.accent_lightness) / (
+                1.0 - self.accent_lightness
+            )
+        return blend(self.accent, self.foreground, amount)
+
+
+def marker_slot(rgb, slots):
+    red, green, blue = rgb
+    if abs(red - 240.0) > 1e-6 or abs(green - 240.0) > 1e-6:
+        return None
+    slot = int(round(blue))
+    if abs(blue - slot) > 1e-6:
+        return None
+    return slots.get(slot)
+
+
+def resolve(rgb, slots, recolor):
+    slot = marker_slot(rgb, slots)
+    if slot is not None:
+        return slot
+    return recolor(rgb)
+
+
+def split_color_args(body):
+    parts = [part.strip() for part in body.split(",")]
+    if len(parts) == 1:
+        if "/" in body:
+            values, alpha = body.split("/", 1)
+            parts = values.split() + [alpha.strip()]
+        else:
+            parts = body.split()
+    return parts
+
+
+def transform_value(value, slots, recolor, prop=""):
+    def replace_hex(match):
+        token = match.group(1)
+        rgb = hex_rgb(token)
+        alpha = None
+        if len(token) == 4:
+            alpha = "%02x" % (int(token[3] * 2, 16))
+        elif len(token) == 8:
+            alpha = token[6:8]
+
+        new = resolve(rgb, slots, recolor)
+        if new is None:
+            return match.group(0)
+
+        result = rgb_hex(new)
+        if alpha is not None:
+            result += alpha
+        return result
+
+    def replace_encoded_hex(match):
+        new = resolve(hex_rgb(match.group(1)), slots, recolor)
+        if new is None:
+            return match.group(0)
+        return "%23" + rgb_hex(new)[1:]
+
+    def replace_function(match):
+        name = match.group(1).lower()
+        parts = split_color_args(match.group(2))
+        if len(parts) not in (3, 4):
+            return match.group(0)
+
+        alpha = parts[3] if len(parts) == 4 else None
+        try:
+            if name.startswith("rgb"):
+                rgb = tuple(
+                    float(part[:-1]) * 2.55
+                    if part.endswith("%")
+                    else float(part)
+                    for part in parts[:3]
+                )
+                rgb = tuple(max(0.0, min(255.0, component)) for component in rgb)
+            else:
+                hue = float(parts[0].replace("deg", ""))
+                saturation = float(parts[1].rstrip("%")) / 100.0
+                lightness = float(parts[2].rstrip("%")) / 100.0
+                red, green, blue = colorsys.hls_to_rgb(
+                    (hue % 360.0) / 360.0, lightness, saturation
+                )
+                rgb = (red * 255.0, green * 255.0, blue * 255.0)
+        except ValueError:
+            return match.group(0)
+
+        new = resolve(rgb, slots, recolor)
+        if new is None:
+            return match.group(0)
+
+        red, green, blue = (
+            max(0, min(255, int(round(component)))) for component in new
+        )
+        if alpha is None:
+            return rgb_hex((red, green, blue))
+        return "rgba(%d, %d, %d, %s)" % (red, green, blue, alpha)
+
+    def replace_marker_triplet(match):
+        slot = marker_slot((240.0, 240.0, float(match.group(3))), slots)
+        if slot is None:
+            return match.group(0)
+        return "%d, %d, %d" % slot
+
+    value = MARKER_TRIPLET.sub(replace_marker_triplet, value)
+    value = HEX.sub(replace_hex, value)
+    value = ENCODED_HEX.sub(replace_encoded_hex, value)
+    value = COLOR_FN.sub(replace_function, value)
+
+    if prop.startswith("--"):
+        match = RGB_TRIPLET.match(value)
+        if match:
+            rgb = tuple(float(match.group(i)) for i in (2, 3, 4))
+            new = resolve(rgb, slots, recolor)
+            if new is not None:
+                red, green, blue = (
+                    max(0, min(255, int(round(component)))) for component in new
+                )
+                return "%s%d, %d, %d%s%s" % (
+                    match.group(1),
+                    red,
+                    green,
+                    blue,
+                    match.group(5) or "",
+                    match.group(6),
+                )
+
+    return value
+
+
+def transform_css(text, slots, recolor):
+    length = len(text)
+
+    def transform_segment(segment):
+        stripped = segment.strip()
+        if not stripped or stripped.startswith("@"):
+            return segment
+
+        segment_length = len(segment)
+        index = 0
+        depth = 0
+        quote = None
+        while index < segment_length:
+            char = segment[index]
+            if char == "/" and index + 1 < segment_length and segment[index + 1] == "*":
+                end = segment.find("*/", index + 2)
+                index = segment_length if end < 0 else end + 2
+                continue
+            if quote:
+                if char == quote:
+                    quote = None
+                index += 1
+                continue
+            if char in "\"'":
+                quote = char
+                index += 1
+                continue
+            if char == "(":
+                depth += 1
+            elif char == ")":
+                depth = max(0, depth - 1)
+            elif char == ":" and depth == 0:
+                prop = segment[:index].strip().split()
+                prop = prop[-1] if prop else ""
+                return (
+                    segment[: index + 1]
+                    + transform_value(segment[index + 1 :], slots, recolor, prop)
+                )
+            index += 1
+        return segment
+
+    def parse_block(index):
+        output = []
+        segment_start = index
+        while index < length:
+            char = text[index]
+
+            if char == "/" and index + 1 < length and text[index + 1] == "*":
+                end = text.find("*/", index + 2)
+                index = length if end < 0 else end + 2
+                continue
+
+            if char in "\"'":
+                quote = char
+                index += 1
+                while index < length:
+                    if text[index] == "\\":
+                        index += 2
+                        continue
+                    if text[index] == quote:
+                        index += 1
+                        break
+                    index += 1
+                continue
+
+            if char == "(":
+                depth = 1
+                index += 1
+                quote = None
+                while index < length and depth:
+                    current = text[index]
+                    if quote:
+                        if current == "\\":
+                            index += 2
+                            continue
+                        if current == quote:
+                            quote = None
+                        index += 1
+                        continue
+                    if current in "\"'":
+                        quote = current
+                        index += 1
+                        continue
+                    if current == "(":
+                        depth += 1
+                    elif current == ")":
+                        depth -= 1
+                    index += 1
+                continue
+
+            if char == "{":
+                output.append(text[segment_start:index])
+                output.append("{")
+                inner, index = parse_block(index + 1)
+                output.append(inner)
+                output.append("}")
+                segment_start = index
+                continue
+
+            if char == ";":
+                output.append(transform_segment(text[segment_start:index]))
+                output.append(";")
+                index += 1
+                segment_start = index
+                continue
+
+            if char == "}":
+                output.append(transform_segment(text[segment_start:index]))
+                return "".join(output), index + 1
+
+            index += 1
+
+        output.append(transform_segment(text[segment_start:index]))
+        return "".join(output), index
+
+    result, _ = parse_block(0)
+    return result
+
+
+def main():
+    source, destination = sys.argv[1], sys.argv[2]
+
+    slots = {}
+    for line in os.environ["PWNBOX_USERSTYLE_SLOTS"].splitlines():
+        index, value = line.split()
+        slots[int(index)] = hex_rgb(value)
+
+    accent = hex_rgb(os.environ["PWNBOX_USERSTYLE_ACCENT"])
+    background = hex_rgb(os.environ["PWNBOX_USERSTYLE_BG"])
+    foreground = hex_rgb(os.environ["PWNBOX_USERSTYLE_FG"])
+    recolor = Recolor(slots, accent, background, foreground)
+
+    os.makedirs(destination, exist_ok=True)
+    for path in sorted(glob.glob(os.path.join(source, "*.css"))):
+        with open(path, "rb") as handle:
+            text = handle.read().decode("utf-8", "surrogateescape")
+
+        name = os.path.splitext(os.path.basename(path))[0]
+        output = transform_css(text, slots, recolor)
+        with open(os.path.join(destination, name + ".user.css"), "wb") as handle:
+            handle.write(output.encode("utf-8", "surrogateescape"))
+
+
+if __name__ == "__main__":
+    main()
+PY
     for t in "$templates"/*.css; do
         [ -f "$t" ] || continue
         name="$(basename "$t" .css)"
-        sed "${sed_args[@]}" "$t" >"$outdir/$name.user.css" 2>/dev/null || true
         sed -i -E \
             -e "s/^@version.*/@version        $(date +%s).0.0/" \
             -e "/^==\/UserStyle==/i @updateURL      http://localhost:8311/${name}.user.css" \
