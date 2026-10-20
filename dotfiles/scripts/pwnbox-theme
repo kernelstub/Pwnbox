@@ -313,6 +313,9 @@ apply_fonts() {
     sync_ida_clr
     sync_obsidian
     sync_signal
+    sync_element
+    sync_wire
+    sync_simplex
     sync_telegram_fonts
 }
 
@@ -1733,6 +1736,751 @@ sync_signal() {
     rm -f "$tmp"
 }
 
+# Element reads ~/.config/Element/theme.css (injected live by
+# pkgs/element-loader.js). The theme maps the pwnbox palette onto the
+# Compound design tokens (--cpd-color-*) plus the raw gray/green ramps the
+# element theme css references directly.
+sync_element() {
+    local conf_dir="$HOME/.config/Element" pwn="$cache/colors.json" wal="$wal_out/colors.json"
+    local bg="" bgalt="" fg="" fgdim="" faint="" accent="" accentsoft="" red="" green="" yellow="" cyan=""
+    local s1="" s2="" s3="" app="" tmp="" tok="" slot="" alpha="" val="" n=""
+
+    command -v element-desktop >/dev/null 2>&1 || return 0
+    mkdir -p "$conf_dir" "$cache" 2>/dev/null || return 0
+
+    if [ -f "$wal" ]; then
+        bg="$(zen_json_color background "$wal")"
+        fg="$(zen_json_color foreground "$wal")"
+        bgalt="$(zen_json_color color0 "$wal")"
+        red="$(zen_json_color color1 "$wal")"
+        green="$(zen_json_color color2 "$wal")"
+        yellow="$(zen_json_color color3 "$wal")"
+        cyan="$(zen_json_color color6 "$wal")"
+        faint="$(zen_json_color color8 "$wal")"
+        accentsoft="$(zen_json_color color7 "$wal")"
+    fi
+    for p in "$pwn" "$mono/colors.json"; do
+        [ -f "$p" ] || continue
+        [ -n "$bg" ] || bg="$(zen_json_color bg "$p")"
+        [ -n "$fg" ] || fg="$(zen_json_color fg "$p")"
+        [ -n "$bgalt" ] || bgalt="$(zen_json_color bgAlt "$p")"
+        [ -n "$fgdim" ] || fgdim="$(zen_json_color fgDim "$p")"
+        [ -n "$faint" ] || faint="$(zen_json_color fgFaint "$p")"
+        [ -n "$accent" ] || accent="$(zen_json_color accent "$p")"
+        [ -n "$accentsoft" ] || accentsoft="$(zen_json_color accentSoft "$p")"
+        [ -n "$red" ] || red="$(zen_json_color red "$p")"
+        [ -n "$green" ] || green="$(zen_json_color green "$p")"
+        [ -n "$yellow" ] || yellow="$(zen_json_color yellow "$p")"
+        [ -n "$cyan" ] || cyan="$(zen_json_color cyan "$p")"
+    done
+
+    [ -n "$bg" ] || return 0
+    [ -n "$bgalt" ] || bgalt="$bg"
+    [ -n "$fg" ] || fg="cccccc"
+    [ -n "$fgdim" ] || fgdim="$fg"
+    [ -n "$faint" ] || faint="$bgalt"
+    [ -n "$accent" ] || accent="$faint"
+    [ -n "$accentsoft" ] || accentsoft="$fg"
+    [ -n "$red" ] || red="$accent"
+    [ -n "$green" ] || green="$fg"
+    [ -n "$yellow" ] || yellow="$faint"
+    [ -n "$cyan" ] || cyan="$faint"
+
+    s1="$(lighten_hex "#$bg" 6)"
+    s1="${s1#\#}"
+    s2="$(lighten_hex "#$bg" 10)"
+    s2="${s2#\#}"
+    s3="$(lighten_hex "#$bg" 16)"
+    s3="${s3#\#}"
+    app="$(app_font)"
+
+    el_slot() {
+        case "$1" in
+        bg) printf '%s' "$bg" ;;
+        bgalt) printf '%s' "$bgalt" ;;
+        fg) printf '%s' "$fg" ;;
+        fgdim) printf '%s' "$fgdim" ;;
+        faint) printf '%s' "$faint" ;;
+        accent) printf '%s' "$accent" ;;
+        accentsoft) printf '%s' "$accentsoft" ;;
+        red) printf '%s' "$red" ;;
+        green) printf '%s' "$green" ;;
+        yellow) printf '%s' "$yellow" ;;
+        cyan) printf '%s' "$cyan" ;;
+        s1) printf '%s' "$s1" ;;
+        s2) printf '%s' "$s2" ;;
+        s3) printf '%s' "$s3" ;;
+        esac
+    }
+
+    local -a tokens=(
+        "--cpd-color-bg-canvas-default=bg"
+        "--cpd-color-bg-canvas-default-level-1=bg"
+        "--cpd-color-bg-canvas-disabled=bgalt"
+        "--cpd-color-bg-subtle-primary=s1"
+        "--cpd-color-bg-subtle-secondary=bgalt"
+        "--cpd-color-bg-subtle-secondary-level-0=bg"
+        "--cpd-color-theme-bg=bg"
+
+        "--cpd-color-bg-action-primary-rest=accent"
+        "--cpd-color-bg-action-primary-hovered=accentsoft"
+        "--cpd-color-bg-action-primary-pressed=faint"
+        "--cpd-color-bg-action-primary-disabled=faint"
+        "--cpd-color-bg-action-secondary-rest=bgalt"
+        "--cpd-color-bg-action-secondary-hovered=s1"
+        "--cpd-color-bg-action-secondary-pressed=s2"
+        "--cpd-color-bg-action-tertiary-rest=bgalt"
+        "--cpd-color-bg-action-tertiary-hovered=s1"
+        "--cpd-color-bg-action-tertiary-selected=s2"
+        "--cpd-color-bg-accent-rest=s1"
+        "--cpd-color-bg-accent-hovered=s2"
+        "--cpd-color-bg-accent-pressed=s2"
+        "--cpd-color-bg-accent-selected=accent"
+
+        "--cpd-color-text-primary=fg"
+        "--cpd-color-text-secondary=fgdim"
+        "--cpd-color-text-disabled=faint"
+        "--cpd-color-text-on-solid-primary=bg"
+        "--cpd-color-text-action-accent=accentsoft"
+        "--cpd-color-text-action-primary=accent"
+        "--cpd-color-text-link-external=cyan"
+        "--cpd-color-text-critical-primary=red"
+        "--cpd-color-text-success-primary=green"
+        "--cpd-color-text-info-primary=cyan"
+        "--cpd-color-text-badge-accent=accentsoft"
+        "--cpd-color-text-badge-info=cyan"
+
+        "--cpd-color-border-interactive-primary=accent"
+        "--cpd-color-border-interactive-hovered=accentsoft"
+        "--cpd-color-border-interactive-secondary=s2"
+        "--cpd-color-border-focused=accent"
+        "--cpd-color-border-disabled=faint"
+        "--cpd-color-border-critical-primary=red"
+        "--cpd-color-border-critical-hovered=red"
+        "--cpd-color-border-critical-subtle=red:4d"
+        "--cpd-color-border-info-subtle=s2"
+        "--cpd-color-border-success-subtle=s2"
+        "--cpd-color-border-accent-primary=accent"
+        "--cpd-color-border-accent-subtle=s2"
+
+        "--cpd-color-separator-primary=s1"
+        "--cpd-color-separator-secondary=s2"
+
+        "--cpd-color-icon-primary=fg"
+        "--cpd-color-icon-secondary=fgdim"
+        "--cpd-color-icon-tertiary=faint"
+        "--cpd-color-icon-quaternary=faint"
+        "--cpd-color-icon-disabled=faint"
+        "--cpd-color-icon-on-solid-primary=bg"
+        "--cpd-color-icon-accent-primary=accentsoft"
+        "--cpd-color-icon-accent-tertiary=accent"
+        "--cpd-color-icon-critical-primary=red"
+        "--cpd-color-icon-success-primary=green"
+        "--cpd-color-icon-info-primary=cyan"
+        "--cpd-color-icon-primary-alpha=fg:66"
+        "--cpd-color-icon-secondary-alpha=fgdim:66"
+        "--cpd-color-icon-tertiary-alpha=faint:66"
+        "--cpd-color-icon-quaternary-alpha=faint:66"
+
+        "--cpd-color-bg-critical-primary=red"
+        "--cpd-color-bg-critical-hovered=red"
+        "--cpd-color-bg-critical-subtle=red:33"
+        "--cpd-color-bg-critical-subtle-hovered=red:4d"
+        "--cpd-color-bg-info-subtle=s1"
+        "--cpd-color-bg-success-subtle=s1"
+        "--cpd-color-bg-badge-accent=accent"
+        "--cpd-color-bg-badge-critical=red"
+        "--cpd-color-bg-badge-default=s1"
+        "--cpd-color-bg-badge-info=s1"
+        "--cpd-color-bg-badge-primary=s1"
+        "--cpd-color-bg-badge-secondary=s2"
+
+        "--cpd-color-bg-decorative-1=s1"
+        "--cpd-color-bg-decorative-2=s1"
+        "--cpd-color-bg-decorative-3=s2"
+        "--cpd-color-bg-decorative-4=s2"
+        "--cpd-color-bg-decorative-5=bgalt"
+        "--cpd-color-bg-decorative-6=bgalt"
+        "--cpd-color-text-decorative-1=fg"
+        "--cpd-color-text-decorative-2=fg"
+        "--cpd-color-text-decorative-3=fgdim"
+        "--cpd-color-text-decorative-4=fgdim"
+        "--cpd-color-text-decorative-5=faint"
+        "--cpd-color-text-decorative-6=faint"
+
+        "--cpd-color-gradient-action-linear=s1"
+        "--cpd-color-gradient-action-stop1=accent"
+        "--cpd-color-gradient-action-stop2=accent"
+        "--cpd-color-gradient-action-stop3=accentsoft"
+        "--cpd-color-gradient-action-stop4=accentsoft"
+        "--cpd-color-gradient-critical-linear=s1"
+        "--cpd-color-gradient-critical-stop1=red"
+        "--cpd-color-gradient-critical-stop2=red"
+        "--cpd-color-gradient-info-linear=s1"
+        "--cpd-color-gradient-info-stop1=s1"
+        "--cpd-color-gradient-info-stop2=s2"
+        "--cpd-color-gradient-subtle-linear=s1"
+        "--cpd-color-gradient-subtle-stop1=s1"
+        "--cpd-color-gradient-subtle-stop2=s1"
+        "--cpd-color-gradient-subtle-stop3=s2"
+        "--cpd-color-gradient-subtle-stop4=s2"
+        "--cpd-color-gradient-subtle-stop5=bgalt"
+        "--cpd-color-gradient-subtle-stop6=bgalt"
+    )
+
+    tmp="$cache/.element.css.pwnbox-tmp"
+    {
+        printf '/* pwnbox element theme (generated from the active palette) */\n'
+        printf ':root {\n'
+        for pair in "${tokens[@]}"; do
+            tok="${pair%%=*}"
+            slot="${pair#*=}"
+            alpha=""
+            case "$slot" in
+            *:*)
+                alpha="${slot#*:}"
+                slot="${slot%%:*}"
+                ;;
+            esac
+            val="$(el_slot "$slot")"
+            [ -n "$val" ] || continue
+            printf '  %s: #%s%s !important;\n' "$tok" "$val" "$alpha"
+        done
+
+        # Raw gray ramp (light end = foreground, dark end = background).
+        for n in 100 200 300 400 500 600 700 800 900 1000 1100 1200 1300 1400; do
+            mix_hex "#$fg" "#$bg" "$(((10#$n - 100) * 100 / 1300))"
+            printf '  --cpd-color-gray-%s: #%s !important;\n' "$n" "$MIX_RESULT"
+        done
+
+        # Raw green ramp (accent shades: 500 = accent, lighter towards the
+        # foreground, darker towards the background).
+        for n in 100 200 300 400 500 600 700 800 900 1000 1100 1200 1300 1400; do
+            case "$n" in
+            100) mix_hex "#$accent" "#$fg" 85 ;;
+            200) mix_hex "#$accent" "#$fg" 70 ;;
+            300) mix_hex "#$accent" "#$fg" 55 ;;
+            400) mix_hex "#$accent" "#$fg" 30 ;;
+            500) MIX_RESULT="$accent" ;;
+            600) mix_hex "#$accent" "#$bg" 20 ;;
+            700) mix_hex "#$accent" "#$bg" 40 ;;
+            800) mix_hex "#$accent" "#$bg" 55 ;;
+            900) mix_hex "#$accent" "#$bg" 70 ;;
+            1000) mix_hex "#$accent" "#$bg" 80 ;;
+            1100) mix_hex "#$accent" "#$bg" 88 ;;
+            1200) mix_hex "#$accent" "#$bg" 93 ;;
+            1300) mix_hex "#$accent" "#$bg" 96 ;;
+            1400) mix_hex "#$accent" "#$bg" 98 ;;
+            esac
+            printf '  --cpd-color-green-%s: #%s !important;\n' "$n" "$MIX_RESULT"
+        done
+
+        printf '  --cpd-font-family-sans: "%s", "Inter Fallback: Helvetica Neue", sans-serif !important;\n' "$app"
+        printf '  --cpd-font-family-mono: "%s", ui-monospace, monospace !important;\n' "$app"
+        printf '}\n\n'
+        printf 'html, body, button, input, select, textarea { font-family: var(--cpd-font-family-sans) !important; }\n'
+        printf 'code, pre, kbd, samp { font-family: var(--cpd-font-family-mono) !important; }\n'
+    } >"$tmp" 2>/dev/null || {
+        rm -f "$tmp"
+        return 0
+    }
+
+    if ! cmp -s "$tmp" "$conf_dir/theme.css" 2>/dev/null; then
+        chmod u+w "$conf_dir/theme.css" 2>/dev/null || true
+        cat "$tmp" >"$conf_dir/theme.css" 2>/dev/null || true
+        chmod u+w "$conf_dir/theme.css" 2>/dev/null || true
+    fi
+    rm -f "$tmp"
+
+    # Also emit a proper Element custom theme ("Pwnbox" in the theme picker).
+    # Element 1.12 has no labs gate for custom themes: add it once via
+    # Settings -> Developer settings -> Custom themes ->
+    #   http://localhost:8311/element-pwnbox.json
+    # (served by the pwnbox userstyles server). It is stored per-account and
+    # then shows up under Settings -> Appearance -> Theme.
+    json_dir="$cache/userstyles"
+    mkdir -p "$json_dir" 2>/dev/null || true
+    json_tmp="$cache/.element-pwnbox.json.pwnbox-tmp"
+    {
+        printf '{\n'
+        printf '  "name": "Pwnbox",\n'
+        printf '  "is_dark": true,\n'
+        printf '  "fonts": {"general": "%s", "monospace": "%s"},\n' "$app" "$app"
+        printf '  "compound": {\n'
+        first=1
+        for pair in "${tokens[@]}"; do
+            tok="${pair%%=*}"
+            slot="${pair#*=}"
+            alpha=""
+            case "$slot" in
+            *:*)
+                alpha="${slot#*:}"
+                slot="${slot%%:*}"
+                ;;
+            esac
+            val="$(el_slot "$slot")"
+            [ -n "$val" ] || continue
+            [ "$first" = "1" ] || printf ',\n'
+            first=0
+            printf '    "%s": "#%s%s"' "$tok" "$val" "$alpha"
+        done
+        for n in 10 20 30 40 50 60 70 80 90 95 100; do
+            mix_hex "#$fg" "#$bg" "$(((10#$n - 10) * 100 / 90))"
+            [ "$first" = "1" ] || printf ',\n'
+            first=0
+            printf '    "--cpd-color-gray-%s": "#%s"' "$n" "$MIX_RESULT"
+        done
+        for n in 50 100 200 300 400 500 600 700 800 900; do
+            case "$n" in
+            50) mix_hex "#$accent" "#$fg" 90 ;;
+            100) mix_hex "#$accent" "#$fg" 75 ;;
+            200) mix_hex "#$accent" "#$fg" 55 ;;
+            300) mix_hex "#$accent" "#$fg" 40 ;;
+            400) mix_hex "#$accent" "#$fg" 20 ;;
+            500) MIX_RESULT="$accent" ;;
+            600) mix_hex "#$accent" "#$bg" 20 ;;
+            700) mix_hex "#$accent" "#$bg" 40 ;;
+            800) mix_hex "#$accent" "#$bg" 60 ;;
+            900) mix_hex "#$accent" "#$bg" 80 ;;
+            esac
+            [ "$first" = "1" ] || printf ',\n'
+            first=0
+            printf '    "--cpd-color-green-%s": "#%s"' "$n" "$MIX_RESULT"
+        done
+        printf '\n  }\n'
+        printf '}\n'
+    } >"$json_tmp" 2>/dev/null || {
+        rm -f "$json_tmp"
+        return 0
+    }
+    if ! cmp -s "$json_tmp" "$json_dir/element-pwnbox.json" 2>/dev/null; then
+        cp_atomic "$json_tmp" "$json_dir/element-pwnbox.json"
+    fi
+    rm -f "$json_tmp" 2>/dev/null || true
+}
+
+# Wire reads ~/.config/Wire/theme.css (injected live by pkgs/wire-loader.js
+# into every webContents — the shell and the remote webapp webview). The
+# theme maps the pwnbox palette onto Wire's CSS variables: the gray ramp,
+# foreground/background fade ramps, the accent block and the color triples.
+sync_wire() {
+    local conf_dir="$HOME/.config/Wire" pwn="$cache/colors.json" wal="$wal_out/colors.json"
+    local bg="" bgalt="" fg="" fgdim="" faint="" accent="" accentsoft="" red="" green="" yellow="" cyan=""
+    local s1="" s2="" s3="" app="" radius="" tmp="" tok="" slot="" alpha="" val="" n="" aa="" p=""
+    local json_dir="" json_tmp="" first=1
+
+    command -v wire-desktop >/dev/null 2>&1 || return 0
+    mkdir -p "$conf_dir" "$cache" 2>/dev/null || return 0
+
+    if [ -f "$wal" ]; then
+        bg="$(zen_json_color background "$wal")"
+        fg="$(zen_json_color foreground "$wal")"
+        bgalt="$(zen_json_color color0 "$wal")"
+        red="$(zen_json_color color1 "$wal")"
+        green="$(zen_json_color color2 "$wal")"
+        yellow="$(zen_json_color color3 "$wal")"
+        cyan="$(zen_json_color color6 "$wal")"
+        faint="$(zen_json_color color8 "$wal")"
+        accentsoft="$(zen_json_color color7 "$wal")"
+    fi
+    for p in "$pwn" "$mono/colors.json"; do
+        [ -f "$p" ] || continue
+        [ -n "$bg" ] || bg="$(zen_json_color bg "$p")"
+        [ -n "$fg" ] || fg="$(zen_json_color fg "$p")"
+        [ -n "$bgalt" ] || bgalt="$(zen_json_color bgAlt "$p")"
+        [ -n "$fgdim" ] || fgdim="$(zen_json_color fgDim "$p")"
+        [ -n "$faint" ] || faint="$(zen_json_color fgFaint "$p")"
+        [ -n "$accent" ] || accent="$(zen_json_color accent "$p")"
+        [ -n "$accentsoft" ] || accentsoft="$(zen_json_color accentSoft "$p")"
+        [ -n "$red" ] || red="$(zen_json_color red "$p")"
+        [ -n "$green" ] || green="$(zen_json_color green "$p")"
+        [ -n "$yellow" ] || yellow="$(zen_json_color yellow "$p")"
+        [ -n "$cyan" ] || cyan="$(zen_json_color cyan "$p")"
+    done
+
+    [ -n "$bg" ] || return 0
+    [ -n "$bgalt" ] || bgalt="$bg"
+    [ -n "$fg" ] || fg="cccccc"
+    [ -n "$fgdim" ] || fgdim="$fg"
+    [ -n "$faint" ] || faint="$bgalt"
+    [ -n "$accent" ] || accent="$faint"
+    [ -n "$accentsoft" ] || accentsoft="$fg"
+    [ -n "$red" ] || red="$accent"
+    [ -n "$green" ] || green="$fg"
+    [ -n "$yellow" ] || yellow="$faint"
+    [ -n "$cyan" ] || cyan="$faint"
+
+    s1="$(lighten_hex "#$bg" 6)"
+    s1="${s1#\#}"
+    s2="$(lighten_hex "#$bg" 10)"
+    s2="${s2#\#}"
+    s3="$(lighten_hex "#$bg" 16)"
+    s3="${s3#\#}"
+    app="$(app_font)"
+    radius="$(ui_radius)"
+    case "$radius" in '' | *[!0-9]*) radius=9 ;; esac
+
+    wire_slot() {
+        case "$1" in
+        bg) printf '%s' "$bg" ;;
+        bgalt) printf '%s' "$bgalt" ;;
+        fg) printf '%s' "$fg" ;;
+        fgdim) printf '%s' "$fgdim" ;;
+        faint) printf '%s' "$faint" ;;
+        accent) printf '%s' "$accent" ;;
+        accentsoft) printf '%s' "$accentsoft" ;;
+        red) printf '%s' "$red" ;;
+        green) printf '%s' "$green" ;;
+        yellow) printf '%s' "$yellow" ;;
+        cyan) printf '%s' "$cyan" ;;
+        s1) printf '%s' "$s1" ;;
+        s2) printf '%s' "$s2" ;;
+        s3) printf '%s' "$s3" ;;
+        esac
+    }
+
+    local -a tokens=(
+        "--foreground=fg"
+        "--background=bg"
+
+        "--app-bg=bg"
+        "--app-bg-secondary=bgalt"
+        "--sidebar-bg=bg"
+        "--input-bar-bg=bg"
+        "--transparent-img-bg=s1"
+        "--group-icon-bg=s1"
+        "--sidebar-border-color=s1"
+        "--sidebar-folder-selected-bg=s1"
+        "--border-color=s1"
+        "--main-color=fg"
+        "--base-secondary-text=fgdim"
+        "--conversation-list-bg-opacity=bg"
+        "--separator-color=s2"
+
+        "--modal-bg=bgalt"
+        "--message-actions-background=bgalt"
+        "--message-actions-border=s1"
+        "--message-actions-background-hover=s1"
+        "--message-actions-border-hover=s2"
+        "--message-actions-active-border=accent"
+        "--message-actions-active-background=s1"
+
+        "--message-reactions-active-border=accent"
+        "--message-reactions-active-background=s1"
+        "--message-reactions-background=bgalt"
+        "--message-reactions-border=s1"
+        "--message-reactions-focus-border=accent"
+        "--message-reactions-count=fgdim"
+
+        "--text-input-background=bgalt"
+        "--text-input-border=s1"
+        "--text-input-border-hover=s2"
+        "--text-input-placeholder=faint"
+        "--text-input-color=fg"
+        "--text-input-disabled=s1"
+        "--text-input-label=fgdim"
+        "--text-input-alert=red"
+        "--text-input-success=green"
+        "--text-input-editing=accent:1a"
+        "--message-quote-bg=bgalt"
+        "--preference-account-input-bg=bgalt"
+        "--group-creation-modal-teamname-input-bg=bgalt"
+
+        "--accent-color=accent"
+        "--accent-color-highlight=s2"
+        "--accent-color-highlight-inversed=accent"
+        "--accent-color-border=s1"
+        "--accent-color-focus=accentsoft"
+        "--accent-color-selection=accent"
+        "--accent-color-self-mention=accent"
+        "--accent-color-fade-16=accent:29"
+        "--accent-color-fade-24=accent:3d"
+
+        "--button-primary-hover=accentsoft"
+        "--button-primary-focus-border=accent"
+        "--button-primary-active=faint"
+        "--button-primary-active-bg=s1"
+        "--button-primary-active-border=faint"
+        "--button-secondary-hover-border=accentsoft"
+        "--button-secondary-active-bg=s1"
+        "--button-secondary-active-border=accent"
+        "--list-item-selected-bg=s2"
+        "--content-message-timestamp=faint"
+        "--toggle-button-hover-bg=s2"
+        "--toggle-button-unselected-bg=s1"
+        "--toggle-button-unselected-hover-border=s2"
+        "--toggle-button-unselected-hover-bg=s1"
+        "--icon-primary-active-fill=accent"
+        "--indicator-range-input-thumb=accentsoft"
+
+        "--group-video-bg=bg"
+        "--group-video-tile-bg=bgalt"
+        "--participant-audio-connecting-color=red"
+        "--inactive-call-button-bg=bgalt"
+        "--inactive-call-button-border=s1"
+        "--inactive-call-button-hover-bg=s1"
+        "--inactive-call-button-hover-border=s2"
+        "--disabled-call-button-bg=s1"
+        "--disabled-call-button-border=s1"
+        "--disabled-call-button-svg=faint"
+        "--button-group-left-hover=s1"
+        "--button-group-right-hover=s2"
+
+        "--blue-500=accent"
+        "--blue-dark-500=accentsoft"
+        "--green-500=green"
+        "--green-dark-500=green"
+        "--red-500=red"
+        "--red-dark-500=red"
+        "--amber-500=yellow"
+        "--amber-dark-500=yellow"
+        "--turquoise-500=cyan"
+        "--turquoise-dark-500=cyan"
+        "--purple-500=accent"
+        "--purple-dark-500=accentsoft"
+        "--black-500=fg"
+        "--black-dark-500=fg"
+    )
+
+    tmp="$cache/.wire.css.pwnbox-tmp"
+    {
+        printf '/* pwnbox wire theme (generated from the active palette) */\n'
+        printf 'body {\n'
+        for pair in "${tokens[@]}"; do
+            tok="${pair%%=*}"
+            slot="${pair#*=}"
+            alpha=""
+            case "$slot" in
+            *:*)
+                alpha="${slot#*:}"
+                slot="${slot%%:*}"
+                ;;
+            esac
+            val="$(wire_slot "$slot")"
+            [ -n "$val" ] || continue
+            printf '  %s: #%s%s !important;\n' "$tok" "$val" "$alpha"
+        done
+
+        # Gray ramp: 10 = lightest (foreground), 100 = darkest (background).
+        for n in 10 20 30 40 50 60 70 80 90 95 100; do
+            mix_hex "#$fg" "#$bg" "$(((10#$n - 10) * 100 / 90))"
+            printf '  --gray-%s: #%s !important;\n' "$n" "$MIX_RESULT"
+        done
+
+        # Foreground/background fade ramps (0..96 in steps of 8).
+        for n in 0 8 16 24 32 40 48 56 64 72 80 88 96; do
+            aa="$(printf '%02x' $((n * 255 / 100)))"
+            printf '  --foreground-fade-%s: #%s%s !important;\n' "$n" "$fg" "$aa"
+            printf '  --background-fade-%s: #%s%s !important;\n' "$n" "$bg" "$aa"
+        done
+
+        # Accent ramp 50..900 (500 = accent) plus the darkened variant.
+        for n in 50 100 200 300 400 500 600 700 800 900; do
+            case "$n" in
+            50) mix_hex "#$accent" "#$fg" 90 ;;
+            100) mix_hex "#$accent" "#$fg" 75 ;;
+            200) mix_hex "#$accent" "#$fg" 55 ;;
+            300) mix_hex "#$accent" "#$fg" 40 ;;
+            400) mix_hex "#$accent" "#$fg" 20 ;;
+            500) MIX_RESULT="$accent" ;;
+            600) mix_hex "#$accent" "#$bg" 20 ;;
+            700) mix_hex "#$accent" "#$bg" 40 ;;
+            800) mix_hex "#$accent" "#$bg" 60 ;;
+            900) mix_hex "#$accent" "#$bg" 80 ;;
+            esac
+            printf '  --accent-color-%s: #%s !important;\n' "$n" "$MIX_RESULT"
+        done
+        mix_hex "#$accent" "#$bg" 16
+        printf '  --accent-color-darken-16: #%s !important;\n' "$MIX_RESULT"
+
+        printf '  --font-family-base: "%s", sans-serif !important;\n' "$app"
+        printf '  --button-border-radius: %spx !important;\n' "$radius"
+        printf '}\n\n'
+        printf 'html, body, button, input, select, textarea { font-family: var(--font-family-base) !important; }\n'
+        printf 'code, pre, kbd, samp { font-family: var(--font-family-base) !important; }\n'
+    } >"$tmp" 2>/dev/null || {
+        rm -f "$tmp"
+        return 0
+    }
+
+    if ! cmp -s "$tmp" "$conf_dir/theme.css" 2>/dev/null; then
+        chmod u+w "$conf_dir/theme.css" 2>/dev/null || true
+        cat "$tmp" >"$conf_dir/theme.css" 2>/dev/null || true
+        chmod u+w "$conf_dir/theme.css" 2>/dev/null || true
+    fi
+    rm -f "$tmp"
+}
+
+# SimpleX Chat is a Compose desktop app: no CSS, no live reload. The pwnbox
+# theme is written as a theme override into ~/.config/simplex/themes.yaml and
+# selected through CurrentTheme/CurrentThemeIds in settings.properties; the
+# app only reads both at startup, so a running instance is restarted. Fonts
+# are patched into the bundled jar by the pwnbox launcher at app start.
+simplex_theme_id='d0fb5e1a-9c2f-4b6e-8a3d-7c1e5f2a4b90'
+
+simplex_running() {
+    local p
+    for p in /proc/[0-9]*; do
+        [ -r "$p/exe" ] || continue
+        case "$(readlink -f "$p/exe" 2>/dev/null)" in
+        */pwnbox/simplex/app/*) return 0 ;;
+        esac
+    done
+    return 1
+}
+
+simplex_stop() {
+    local p tries=0
+    for p in /proc/[0-9]*; do
+        [ -r "$p/exe" ] || continue
+        case "$(readlink -f "$p/exe" 2>/dev/null)" in
+        */pwnbox/simplex/app/*) kill "${p##*/}" 2>/dev/null || true ;;
+        esac
+    done
+    while simplex_running && [ "$tries" -lt 25 ]; do
+        sleep 0.2
+        tries=$((tries + 1))
+    done
+    if simplex_running; then
+        for p in /proc/[0-9]*; do
+            [ -r "$p/exe" ] || continue
+            case "$(readlink -f "$p/exe" 2>/dev/null)" in
+            */pwnbox/simplex/app/*) kill -KILL "${p##*/}" 2>/dev/null || true ;;
+            esac
+        done
+        sleep 0.5
+    fi
+}
+
+simplex_start() {
+    local bin
+    bin="$(command -v simplex-chat-desktop 2>/dev/null)"
+    [ -n "$bin" ] || return 0
+    setsid "$bin" >/dev/null 2>&1 &
+}
+
+sync_simplex() {
+    local conf_dir="$HOME/.config/simplex" pwn="$cache/colors.json" wal="$wal_out/colors.json"
+    local bg="" bgalt="" fg="" fgdim="" faint="" accent="" accentsoft="" red="" green="" yellow="" cyan=""
+    local s1="" s2="" s3="" tmp="" props_tmp="" body="" changed=0 was_running=0 p=""
+
+    command -v simplex-chat-desktop >/dev/null 2>&1 || return 0
+    mkdir -p "$conf_dir" "$cache" 2>/dev/null || return 0
+
+    if [ -f "$wal" ]; then
+        bg="$(zen_json_color background "$wal")"
+        fg="$(zen_json_color foreground "$wal")"
+        bgalt="$(zen_json_color color0 "$wal")"
+        red="$(zen_json_color color1 "$wal")"
+        green="$(zen_json_color color2 "$wal")"
+        yellow="$(zen_json_color color3 "$wal")"
+        cyan="$(zen_json_color color6 "$wal")"
+        faint="$(zen_json_color color8 "$wal")"
+        accentsoft="$(zen_json_color color7 "$wal")"
+    fi
+    for p in "$pwn" "$mono/colors.json"; do
+        [ -f "$p" ] || continue
+        [ -n "$bg" ] || bg="$(zen_json_color bg "$p")"
+        [ -n "$fg" ] || fg="$(zen_json_color fg "$p")"
+        [ -n "$bgalt" ] || bgalt="$(zen_json_color bgAlt "$p")"
+        [ -n "$fgdim" ] || fgdim="$(zen_json_color fgDim "$p")"
+        [ -n "$faint" ] || faint="$(zen_json_color fgFaint "$p")"
+        [ -n "$accent" ] || accent="$(zen_json_color accent "$p")"
+        [ -n "$accentsoft" ] || accentsoft="$(zen_json_color accentSoft "$p")"
+        [ -n "$red" ] || red="$(zen_json_color red "$p")"
+        [ -n "$green" ] || green="$(zen_json_color green "$p")"
+        [ -n "$yellow" ] || yellow="$(zen_json_color yellow "$p")"
+        [ -n "$cyan" ] || cyan="$(zen_json_color cyan "$p")"
+    done
+
+    [ -n "$bg" ] || return 0
+    [ -n "$bgalt" ] || bgalt="$bg"
+    [ -n "$fg" ] || fg="cccccc"
+    [ -n "$fgdim" ] || fgdim="$fg"
+    [ -n "$faint" ] || faint="$bgalt"
+    [ -n "$accent" ] || accent="$faint"
+    [ -n "$accentsoft" ] || accentsoft="$fg"
+    [ -n "$red" ] || red="$accent"
+    [ -n "$green" ] || green="$fg"
+    [ -n "$yellow" ] || yellow="$faint"
+    [ -n "$cyan" ] || cyan="$faint"
+
+    s1="$(lighten_hex "#$bg" 6)"
+    s1="${s1#\#}"
+    s2="$(lighten_hex "#$bg" 10)"
+    s2="${s2#\#}"
+    s3="$(lighten_hex "#$bg" 16)"
+    s3="${s3#\#}"
+
+    # themes.yaml: keep every existing theme except the previous pwnbox block,
+    # then append the freshly generated one.
+    tmp="$cache/.simplex-themes.yaml.pwnbox-tmp"
+    body=""
+    if [ -f "$conf_dir/themes.yaml" ]; then
+        body="$(awk -v id="$simplex_theme_id" '
+            BEGIN { skip = 0 }
+            skip && /^- / { skip = 0 }
+            $0 ~ ("^- themeId: .*" id) { skip = 1; next }
+            !skip { print }
+        ' "$conf_dir/themes.yaml" 2>/dev/null || true)"
+    fi
+    {
+        if [ -n "$body" ]; then
+            printf '%s\n' "$body"
+        else
+            printf 'themes:\n'
+        fi
+        printf -- '- themeId: %s\n' "$simplex_theme_id"
+        printf '  base: DARK\n'
+        printf '  colors:\n'
+        printf "    accent: '#FF%s'\n" "$accent"
+        printf "    accentVariant: '#FF%s'\n" "$accentsoft"
+        printf "    secondary: '#FF%s'\n" "$green"
+        printf "    secondaryVariant: '#FF%s'\n" "$faint"
+        printf "    background: '#FF%s'\n" "$bg"
+        printf "    menus: '#FF%s'\n" "$s1"
+        printf "    title: '#FF%s'\n" "$fg"
+        printf "    accentVariant2: '#FF%s'\n" "$cyan"
+        printf "    sentMessage: '#FF%s'\n" "$s3"
+        printf "    sentReply: '#FF%s'\n" "$s2"
+        printf "    receivedMessage: '#FF%s'\n" "$bgalt"
+        printf "    receivedReply: '#FF%s'\n" "$s1"
+    } >"$tmp"
+
+    # settings.properties: rewrite only the theme selection keys; the app
+    # keeps the rest of the file untouched.
+    props_tmp="$cache/.simplex-settings.properties.pwnbox-tmp"
+    if [ -f "$conf_dir/settings.properties" ]; then
+        grep -v -E '^(CurrentTheme|SystemDarkTheme|CurrentThemeIds)=' "$conf_dir/settings.properties" >"$props_tmp" 2>/dev/null || true
+    else
+        : >"$props_tmp" 2>/dev/null || true
+    fi
+    printf 'CurrentTheme=DARK\n' >>"$props_tmp"
+    printf 'SystemDarkTheme=DARK\n' >>"$props_tmp"
+    printf 'CurrentThemeIds={"DARK":"%s"}\n' "$simplex_theme_id" >>"$props_tmp"
+
+    if ! cmp -s "$tmp" "$conf_dir/themes.yaml" 2>/dev/null; then
+        changed=1
+    fi
+    if ! cmp -s "$props_tmp" "$conf_dir/settings.properties" 2>/dev/null; then
+        changed=1
+    fi
+    if [ "$changed" = "1" ] && simplex_running; then
+        was_running=1
+        simplex_stop
+    fi
+
+    if [ "$changed" = "1" ]; then
+        cp_atomic "$tmp" "$conf_dir/themes.yaml"
+        cp_atomic "$props_tmp" "$conf_dir/settings.properties"
+    fi
+    rm -f "$tmp" "$props_tmp" 2>/dev/null || true
+
+    if [ "$was_running" = "1" ]; then
+        simplex_start
+    fi
+}
+
 telegram_running() {
     pgrep -f '^AyuGram$' >/dev/null 2>&1 || pgrep -x '.AyuGram-wrappe' >/dev/null 2>&1
 }
@@ -1940,6 +2688,9 @@ apply_borders() {
     sync_equibop
     sync_stremio
     sync_signal
+    sync_element
+    sync_wire
+    sync_simplex
     sync_zen_chrome
     apply_fonts
     spawn_nice sync_userstyles
@@ -2538,6 +3289,9 @@ choose_ui_radius() {
     apply_ui_radius
     sync_stremio
     sync_signal
+    sync_element
+    sync_wire
+    sync_simplex
     restart_quickshell
     notify "UI radius" "${choice}px"
 }

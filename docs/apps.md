@@ -13,10 +13,14 @@ When you change the theme, four apps refresh themselves in place:
 | **Telegram (AyuGram)** | AyuGram watches the theme file and reloads it |
 | **Discord (Equibop)** | Equibop watches `quickCss.css` and hot-applies it |
 | **Signal** | the patched desktop app watches `~/.config/Signal/theme.css` and re-injects it |
+| **Element** | the patched desktop app watches `~/.config/Element/theme.css` and re-injects it |
+| **Wire** | the patched desktop app watches `~/.config/Wire/theme.css` and re-injects it |
 
 You can keep them open. `ALT + S` is enough. The browser re-themes live too
 (Pywalfox); see [Browser](browser.md). Stremio Enhanced reads its theme file
-at startup, so restart it after a theme switch.
+at startup, so restart it after a theme switch. SimpleX Chat has no live
+theme support — `pwnbox-theme` restarts it automatically when the palette
+changed.
 
 ## Signal
 
@@ -40,6 +44,96 @@ from the active pywal / custom palette:
 `pwnbox-theme` only writes the theme when Signal is installed. No setup step
 is needed in the app itself: restart-free, and the theme follows both pywal
 wallpapers and custom themes.
+
+## Element
+
+Element (Matrix) is themed the same way as Signal: the flake patches the
+packaged app (`pkgs/element-desktop.nix`) by appending
+`pkgs/element-loader.js` to the ESM main process bundle
+(`lib/electron-main.js` in `app.asar`). The loader injects
+`~/.config/Element/theme.css` into every window and watches the file, so
+palette and font changes apply live.
+
+On every theme change, `pwnbox-theme` (`sync_element`) regenerates that file:
+
+- the Compound design tokens (`--cpd-color-*`: canvas/panel backgrounds,
+  text, borders, icons, badge and status colours, gradients) are mapped onto
+  the palette ramp, with action/accent slots taken from `accent`,
+  destructive/affirmative/info slots from `red` / `green` / `cyan`;
+- the raw `--cpd-color-gray-*` and `--cpd-color-green-*` ramps (referenced
+  directly by Element's own theme css) are regenerated as a foreground →
+  background and accent-shade ramp respectively;
+- the application font from `ALT + S` goes into
+  `--cpd-font-family-sans` / `--cpd-font-family-mono`.
+
+The Element "theme" setting itself can stay at its default (dark): the
+injected variables override the built-in dark theme.
+
+`sync_element` also writes a proper Element custom theme
+(`~/.cache/pwnbox/theme/userstyles/element-pwnbox.json`, served at
+`http://localhost:8311/element-pwnbox.json` by the pwnbox userstyles
+server). To make **Pwnbox** show up in the theme picker, add it once:
+
+1. Settings → Labs (the tab is enabled through `show_labs_settings` in the
+   packaged webapp config, see `pkgs/element-desktop.nix`) → enable
+   **Developer mode**;
+2. avatar menu → Developer tools → Custom themes → paste the URL → Add;
+3. Settings → Appearance → Theme → select **Pwnbox**.
+
+(Element has no `feature_custom_themes` labs flag anymore — custom themes
+are gated behind Developer mode instead. The theme is stored per-account,
+so it also applies on other devices using the same Matrix account.)
+
+## Wire
+
+Wire Desktop is an Electron shell whose actual webapp runs in a remote
+`<webview>`, so the flake patches the packaged app
+(`pkgs/wire-desktop.nix`) by appending `pkgs/wire-loader.js` to the main
+process bundle (`electron/dist/main.js` in `app.asar`). The loader injects
+`~/.config/Wire/theme.css` into **every** webContents
+(`web-contents-created` catches the webview guest as well as the shell
+window) and watches the file, so palette and font changes apply live.
+
+On every theme change, `pwnbox-theme` (`sync_wire`) regenerates that file:
+
+- Wire's CSS variables are overridden on `body`: the `--gray-10` … 
+  `--gray-100` ramp becomes a foreground → background ramp, the
+  `--foreground` / `--background` fade ramps are regenerated with the
+  matching alpha, and the framework slots (app/sidebar/input bar, borders,
+  modals, message actions and reactions, text inputs, calling controls) are
+  mapped onto the flat palette surfaces;
+- the accent block (`--accent-color`, its `-50` … `-900` ramp, fades,
+  selection, buttons, toggles) is derived from the `accent` palette entry,
+  with the `red` / `green` / `yellow` / `cyan` entries feeding the
+  `--*-500` color triples Wire uses for statuses and svg fills;
+- the application font from `ALT + S` goes into `--font-family-base` and
+  the UI corner radius into `--button-border-radius`.
+
+Wire's built-in dark theme stays selected; the injected variables override
+it.
+
+## SimpleX Chat
+
+SimpleX Chat's desktop app is built with Compose, not a web view, so there is
+no CSS to inject and no live reload: the palette is written as a theme
+override and applied on app start.
+
+On every theme change, `pwnbox-theme` (`sync_simplex`):
+
+- merges a `pwnbox` theme override (all twelve `ThemeColors` slots:
+  accent, background, surfaces, message bubbles and replies) into
+  `~/.config/simplex/themes.yaml`, preserving any other themes in the file;
+- selects it via `CurrentTheme` / `SystemDarkTheme` / `CurrentThemeIds` in
+  `~/.config/simplex/settings.properties` (only these three keys are
+  touched);
+- restarts a running instance automatically, since both files are only read
+  at startup.
+
+Fonts: the app hardcodes its bundled Inter fonts, so the pwnbox launcher
+(`pkgs/simplex-launcher.sh`) swaps `fonts/Inter-*.ttf` inside the app jar
+for the current application font (via `fc-match`) in a writable copy under
+`~/.local/share/pwnbox/simplex` and runs that copy — the repack only happens
+when the font setting changes.
 
 ## Stremio Enhanced
 

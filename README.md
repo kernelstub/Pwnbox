@@ -122,10 +122,10 @@ Optional sets. Turn them on with `pwnbox.packages.gaming` or
 - **One menu for everything.** `ALT + S` opens the settings picker for theme,
   wallpaper, bar style, corner radii, fonts, font sizes, blur, transparency,
   window borders, shadows and animations. See [docs/themes.md](docs/themes.md).
-- **Live app theming.** Spotify, Discord (Equibop), Telegram (AyuGram) and
-  Signal update while they are running, without quitting them. Signal is
-  patched by the flake to load a pywal-generated `~/.config/Signal/theme.css`
-  (colours + application font) at runtime. See
+- **Live app theming.** Spotify, Discord (Equibop), Telegram (AyuGram),
+  Signal, Element and Wire update while they are running, without quitting
+  them. Signal, Element and Wire are patched by the flake to load a
+  pywal-generated `theme.css` (colours + application font) at runtime. See
   [docs/apps.md](docs/apps.md).
 - **Stremio Enhanced.** Replaces plain Stremio with the Enhanced fork
   (plugins + themes). The pwnbox theme recolours it from the active palette

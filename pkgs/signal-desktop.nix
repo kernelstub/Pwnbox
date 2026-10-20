@@ -9,6 +9,11 @@ signal-desktop.overrideAttrs (old: {
   postInstall = (old.postInstall or "") + ''
     signal_asar_tmp="$(mktemp -d)"
     ${lib.getExe asar} extract "$out/share/signal-desktop/app.asar" "$signal_asar_tmp"
+    # Signal's main bundle ends with a `//# sourceURL=…` line comment; without
+    # a separator newline the loader's opening line would be commented out and
+    # its body would land at module top level (SyntaxError: `fs` already
+    # declared) — which makes Signal refuse to start.
+    printf '\n' >> "$signal_asar_tmp/bundles/main.js"
     cat ${./signal-loader.js} >> "$signal_asar_tmp/bundles/main.js"
     ${lib.getExe asar} pack "$signal_asar_tmp" "$out/share/signal-desktop/app.asar.new"
     chmod --reference="$out/share/signal-desktop/app.asar" "$out/share/signal-desktop/app.asar.new"

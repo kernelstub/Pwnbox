@@ -142,6 +142,62 @@ Add the app to `docs/apps.md` when you do.
   Axo tokens (compiled into `stylesheets/tailwind.css`); if upstream
   changes tokens, update the token list in `sync_signal`.
 
+## Element
+
+- Same mechanism as Signal: the overlay (`pkgs/element-desktop.nix`) repacks
+  `app.asar` with `pkgs/element-loader.js` appended to
+  `lib/electron-main.js`. Element's main process is ESM
+  (`"type": "module"`), so the loader uses dynamic `import()` + top-level
+  await instead of `require`.
+- The webapp ships as a real copy of `element-web-unwrapped` with
+  `show_labs_settings = true` merged into `config.json` (the nixpkgs
+  `element-web.override { conf }` wrapper produces a symlink farm that
+  electron-builder's asar step refuses to pack).
+- The loader reads `~/.config/Element/theme.css` and injects it live, exactly
+  like the Signal loader (insertCSS + `fs.watchFile`).
+- `sync_element` generates that file: the Compound design tokens
+  (`--cpd-color-*` semantics plus the raw `gray`/`green` ramps the element
+  theme css references directly) map onto the palette, and the application
+  font goes into `--cpd-font-family-sans` / `--cpd-font-family-mono`. If
+  Element/Compound renames tokens, update the token list in `sync_element`.
+  It also writes the `element-pwnbox.json` custom theme (name "Pwnbox") for
+  the theme picker.
+
+## Wire
+
+- Same mechanism as Signal: the overlay (`pkgs/wire-desktop.nix`) repacks
+  `app.asar` with `pkgs/wire-loader.js` appended to the CJS webpack bundle
+  `electron/dist/main.js`.
+- The webapp is loaded from the Wire CDN into a remote `<webview>`, so the
+  loader injects into every webContents via `web-contents-created` (which
+  also fires for webview guests), not just BrowserWindows. It reads
+  `~/.config/Wire/theme.css` and applies it live (`fs.watchFile`).
+- `sync_wire` generates that file: Wire's CSS variables (`--gray-*` ramp,
+  foreground/background fades, framework slots, the accent block, `--*-500`
+  color triples) map onto the palette, plus the application font and UI
+  radius. If Wire's webapp changes its variable set, update the token list
+  in `sync_wire`.
+
+## SimpleX Chat
+
+- SimpleX is a Compose-multiplatform AppImage: no DOM to inject CSS into and
+  no live theme reload. Themes are YAML overrides
+  (`~/.config/simplex/themes.yaml`) selected through `CurrentTheme` /
+  `CurrentThemeIds` in `~/.config/simplex/settings.properties`; both are
+  only read at startup.
+- `sync_simplex` merges a `pwnbox` override (fixed `themeId`, base `DARK`)
+  into `themes.yaml` — preserving other themes — and rewrites only the three
+  theme-selection keys in `settings.properties`. Because the app caches both
+  in memory, a running instance is stopped first, then relaunched.
+- Fonts: the app hardcodes the bundled Inter files
+  (`fonts/Inter-*.ttf` inside `common-desktop-*.jar`). The pwnbox launcher
+  (`pkgs/simplex-launcher.sh`, installed as `simplex-chat-desktop`) keeps a
+  writable copy of the extracted AppImage under
+  `~/.local/share/pwnbox/simplex`, swaps those entries for the current
+  application font (resolved through `fc-match`) and runs the copy inside the
+  upstream FHS wrapper via `APPIMAGE_DEBUG_EXEC`. The jar is only repacked
+  when the font setting changes.
+
 ## Testing
 
 - Syntax-check the shell helpers:

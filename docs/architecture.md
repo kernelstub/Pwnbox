@@ -23,6 +23,9 @@
 ├── pkgs/                     # package sets, toolset categories, custom.nix
 │   ├── ida-fhs.nix           # FHS wrapper for a locally installed IDA
 │   ├── signal-desktop.nix    # Signal + pywal theme loader (asar patch)
+│   ├── element-desktop.nix   # Element + pywal theme loader (asar patch)
+│   ├── wire-desktop.nix      # Wire + pywal theme loader (asar patch)
+│   ├── simplex-chat-desktop.nix # SimpleX + pywal theme + font launcher
 │   └── stremio-enhanced.nix  # Stremio Enhanced AppImage + streaming server
 ├── overlays/                 # nixpkgs overlay
 └── dotfiles/

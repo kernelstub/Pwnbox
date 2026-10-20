@@ -205,8 +205,10 @@ let
       chromium
 
       signal-desktop
+      session-desktop
       ayugram-desktop
       element-desktop
+      wire-desktop
       simplex-chat-desktop
       dino
       qtox

@@ -3,6 +3,19 @@ final: prev: {
     signal-desktop = prev.signal-desktop;
   };
 
+  element-desktop = final.callPackage ../pkgs/element-desktop.nix {
+    element-desktop = prev.element-desktop;
+  };
+
+  wire-desktop = final.callPackage ../pkgs/wire-desktop.nix {
+    wire-desktop = prev.wire-desktop;
+  };
+
+  simplex-chat-desktop = final.callPackage ../pkgs/simplex-chat-desktop.nix {
+    simplex-chat-desktop = prev.simplex-chat-desktop;
+    appimageTools = prev.appimageTools;
+  };
+
   exodus = final.callPackage ../pkgs/exodus.nix {
     exodus = prev.exodus;
   };
