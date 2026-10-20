@@ -1,0 +1,46 @@
+name: Bug report
+description: Something in pwnbox does not work the way it should
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before opening an issue, check [docs/troubleshooting.md](https://github.com/kernelstub/Pwnbox/blob/main/docs/troubleshooting.md).
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What did you expect, and what happened instead?
+      placeholder: Describe the problem as precisely as you can.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Minimal steps that trigger the problem.
+      placeholder: |
+        1. Enable …
+        2. Run …
+        3. See …
+    validations:
+      required: true
+  - type: input
+    id: commit
+    attributes:
+      label: Commit or release
+      description: Which commit of pwnbox are you on? (`git rev-parse --short HEAD` in the flake checkout)
+      placeholder: e.g. d337968
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Hardware, GPU, `nixos-version`, or anything else that might matter.
+      placeholder: e.g. NixOS 26.05, AMD GPU, Hyprland session
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched the existing issues first
+        - label: The problem is with pwnbox itself, not an upstream package

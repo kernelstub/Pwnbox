@@ -1,0 +1,28 @@
+name: Feature request
+description: Suggest an app, a package category, a theme or a module
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Idea
+      description: What do you want pwnbox to do that it does not do today?
+      placeholder: Describe the feature and why it fits the project.
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: |
+        For packages: name, where it comes from (nixpkgs / flake / binary),
+        and how it should integrate (theming, toolset category, default-on).
+        For themes: which app, which tokens or CSS variables.
+      placeholder: Any specifics that help.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched the existing issues first
+        - label: It fits the project (hacking, privacy, or the desktop experience)

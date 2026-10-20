@@ -26,6 +26,7 @@
 - [Install](#install)
 - [ISOs](#isos)
 - [IDA Free / Pro](#ida-free--pro)
+- [Community](#community)
 - [Author](#author)
 - [License](#license)
 
@@ -305,6 +306,16 @@ PWNBOX_IDA_HOME=/opt/ida-9.4 ida          # run from a custom location
 
 See [docs/apps.md](docs/apps.md#ida-free--pro) and
 [docs/troubleshooting.md](docs/troubleshooting.md#ida-free--pro).
+
+## Community
+
+- [Security policy](SECURITY.md) — what counts as a vulnerability and how to
+  report one privately
+- [Contributing](CONTRIBUTING.md) — repo layout, style, testing before a PR
+- [Code of conduct](CODE_OF_CONDUCT.md)
+
+Issues and pull requests are welcome. Use the issue templates for bug
+reports and feature requests.
 
 ## Author
 

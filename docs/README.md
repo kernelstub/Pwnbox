@@ -23,6 +23,8 @@ and jump to whatever you need.
 | [Architecture](architecture.md) | Repo layout and how a theme switch works |
 | [Troubleshooting](troubleshooting.md) | Common problems and fixes |
 | [Development](development.md) | Add themes, packages and bar styles |
+| [Security policy](../SECURITY.md) | Reporting vulnerabilities privately |
+| [Contributing](../CONTRIBUTING.md) | Repo layout, style, testing before a PR |
 
 ## At a glance
 
