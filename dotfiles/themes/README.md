@@ -18,11 +18,17 @@ dotfiles/themes/
 ├── Amoled/                 # a theme
 │   ├── theme.conf          # the colours (required)
 │   └── wallpaper.png       # the wallpaper it uses (optional but recommended)
-├── Catppuccin-Mocha/
+├── Catppuccin/
 │   ├── theme.conf
 │   └── wallpaper.png
+├── Tokyo Night/
+│   ├── theme.conf
+│   └── wallpaper.jpg       # .jpg and .png are both fine
 └── Development/            # a GTK theme folder, no theme.conf, so it is ignored
 ```
+
+The flake also ships Dracula, Rosé Pine, Everforest, Kanagawa, One Dark and
+Solarized Dark. See [CREDITS.md](CREDITS.md) for palette and wallpaper sources.
 
 Unlike the wallpaper picker (which extracts a palette from an image with
 pywal), a custom theme has a **fixed** palette that you write down yourself and

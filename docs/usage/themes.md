@@ -106,7 +106,10 @@ dotfiles/themes/
 ```
 
 A fresh installation applies the `Pwnbox` theme by default; if its folder is
-missing, the built-in Monochrome palette is the fallback.
+missing, the built-in Monochrome palette is the fallback. The flake ships
+Tokyo Night, Solarized Dark, Dracula, Rosé Pine, Everforest, Kanagawa and One
+Dark alongside the original themes; see `dotfiles/themes/CREDITS.md` for the
+palette and wallpaper sources.
 
 `theme.conf` is INI-style:
 
