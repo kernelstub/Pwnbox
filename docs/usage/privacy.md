@@ -48,9 +48,10 @@ apps are installed by default and the system is hardened.
 
 Zen is the normal, themed browser: pwnbox only installs the theming
 integration (Pywalfox and the pwnbox styles extension) and a theme-only
-`user.js` that requests dark mode. It does not force privacy extensions,
-change tracking or telemetry settings, or loosen extension signatures. See
-[Browser](browser.md).
+`user.js` that requests dark mode. It does not force privacy extensions or
+change tracking and telemetry settings. Signature enforcement is disabled only
+so the bundled unsigned pwnbox styles extension can run; user-installed
+extensions are unaffected. See [Browser](browser.md).
 
 Tor Browser is the hardened option. `pkgs/apps/browsers/tor-browser.nix` pins
 it to the **Safest** security level and locks the corresponding prefs, then

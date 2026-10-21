@@ -39,6 +39,10 @@ let
       };
       Preferences = {
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+        # The bundled pwnbox styles extension is our own XPI and is not signed
+        # by AMO. Zen rejects it as unverified without this pref, which disables
+        # the site themes. All other extensions are still user-managed.
+        "xpinstall.signatures.required" = false;
       };
     };
 

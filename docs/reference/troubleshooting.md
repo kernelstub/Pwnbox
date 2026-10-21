@@ -67,6 +67,9 @@ to the new one in `kitty/shaders.c`.
 
 ## Zen / site themes
 
+- **pwnbox styles is disabled as unverified.** The bundled extension is not
+  signed by AMO; the Zen wrapper disables signature enforcement so it can run.
+  After an upgrade from a build that enforced signatures, restart Zen once.
 - **Site themes not applied.** They only match in dark mode; the theme-only
   `user.js` requests the dark colour scheme, so restart Zen once after changing
   it. Also confirm `toolkit.legacyUserProfileCustomizations.stylesheets` is

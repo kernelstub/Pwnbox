@@ -74,9 +74,12 @@ Changes apply to every open page instantly.
 
 Zen is a normal browser. `dotfiles/zen/user.js` is intentionally limited to
 the dark colour scheme used by the site themes; it does not change telemetry,
-tracking protection, cache behaviour or extension installs, and extension
-signatures stay enforced. Everything else comes from Zen itself; updates are
-shipped by rebuilding the flake because the browser lives in the Nix store.
+tracking protection, cache behaviour or extension installs. The one exception
+is `xpinstall.signatures.required = false`, which is required to keep the
+bundled pwnbox styles extension enabled because it is not signed by AMO.
+Installing any other extension still requires explicit user confirmation;
+everything else comes from Zen itself. Updates are shipped by rebuilding the
+flake because the browser lives in the Nix store.
 
 Upgrades from older pwnbox releases remove the previous hardening prefs from
 `prefs.js` and replace the old `user.js` automatically. Previously
