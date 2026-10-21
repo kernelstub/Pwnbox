@@ -229,7 +229,7 @@ let
     ++ optionals pkgs.stdenv.isx86_64 [
       exodus
       ledger-live-desktop
-      tor-browser
+      (pkgs.callPackage ../../pkgs/apps/browsers/tor-browser.nix { })
       mullvad-browser
       spotify
       spicetify-cli

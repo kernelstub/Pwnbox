@@ -293,7 +293,15 @@ in
         if [ -f "$zen_profiles/profiles.ini" ]; then
           profile="$(sed -n 's/^Path=//p' "$zen_profiles/profiles.ini" | head -n1)"
           if [ -n "$profile" ]; then
-            run install -m 0644 ${dotfiles}/zen/user.js "$zen_profiles/$profile/user.js"
+            new_user_js="${dotfiles}/zen/user.js"
+            # Previous pwnbox releases installed a privacy/security-hardening
+            # user.js. Remove those prefs from prefs.js before replacing it,
+            # otherwise the old values survive the file removal.
+            if [ -f "$zen_profiles/$profile/user.js" ] && ! cmp -s "$new_user_js" "$zen_profiles/$profile/user.js"; then
+              run ${pkgs.python3}/bin/python3 ${dotfiles}/scripts/pwnbox-zen-unharden \
+                "$zen_profiles/$profile/user.js" "$zen_profiles/$profile/prefs.js"
+            fi
+            run install -m 0644 "$new_user_js" "$zen_profiles/$profile/user.js"
             chrome="$zen_profiles/$profile/chrome"
             run mkdir -p "$chrome"
             for pair in \

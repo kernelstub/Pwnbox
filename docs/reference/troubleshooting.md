@@ -67,10 +67,10 @@ to the new one in `kitty/shaders.c`.
 
 ## Zen / site themes
 
-- **Site themes not applied.** They only match in dark mode; `user.js` forces
-  the dark colour scheme, so restart Zen once after changing it. Also confirm
-  `toolkit.legacyUserProfileCustomizations.stylesheets` is `true` in
-  `about:config`.
+- **Site themes not applied.** They only match in dark mode; the theme-only
+  `user.js` requests the dark colour scheme, so restart Zen once after changing
+  it. Also confirm `toolkit.legacyUserProfileCustomizations.stylesheets` is
+  `true` in `about:config`.
 - **Themes don't update live after a theme change.** The pwnbox styles
   extension polls the local server; click its toolbar icon and read the status
   line (version, last check, error). If it reports an error, make sure the

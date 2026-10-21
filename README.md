@@ -95,7 +95,7 @@ On top of the toolset, the box ships a full daily-driver app set:
 | Area                         | Apps                                                                                                                                                                                                              |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Private & encrypted chat** | Signal, SimpleX, Element (Matrix), Dino (XMPP), qTox, AyuGram (Telegram), Equibop (Discord / Equicord)                                                                                                             |
-| **Browsers**                 | Zen (default, hardened + themed), Chromium, Tor Browser, Mullvad Browser                                                                                                                                          |
+| **Browsers**                 | Zen (default, themed), Chromium, Tor Browser (hardened), Mullvad Browser                                                                                                                                          |
 | **Privacy & security**       | KeePassXC, Mullvad VPN, Tor + torsocks                                                                                                                                                                            |
 | **Crypto wallets**           | Exodus, Ledger Live (with udev rules for Ledger devices)                                                                                                                                                          |
 | **Office & notes**           | LibreOffice, Obsidian, Geary, Zathura                                                                                                                                                                             |
@@ -215,8 +215,10 @@ to keep no traces:
 - RAM-backed `/tmp` and `/var/tmp`.
 - Hardened kernel & network, `sudo-rs`, locked root, firewall on.
 - No persisted shell history.
-- Hardened Zen: telemetry off, cache/history cleared on exit, cookies kept,
-  dark mode forced.
+- Hardened Tor Browser: Safest security level, JavaScript/JIT/WASM/WebGL/
+  WebRTC/PDF attack surface disabled, locked against weakening.
+- Zen stays a normal themed browser: no forced privacy extensions or
+  hardening prefs.
 - Signal, SimpleX, Element, Dino, qTox, Tor Browser, Mullvad VPN and
   `tor` / `torsocks` included.
 

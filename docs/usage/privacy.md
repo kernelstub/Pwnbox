@@ -46,23 +46,26 @@ apps are installed by default and the system is hardened.
 
 ## Browser
 
-Zen ships hardened by default (`dotfiles/zen/user.js`, applied on every rebuild
-and at startup):
+Zen is the normal, themed browser: pwnbox only installs the theming
+integration (Pywalfox and the pwnbox styles extension) and a theme-only
+`user.js` that requests dark mode. It does not force privacy extensions,
+change tracking or telemetry settings, or loosen extension signatures. See
+[Browser](browser.md).
 
-- Telemetry, studies, crash reports, search suggestions and sponsored content
-  disabled
-- Strict tracking protection, first-party isolation, query stripping,
-  Global Privacy Control
-- No speculative connections, no prefetch/DNS prefetch, trimmed referrers,
-  session-scoped disk footprint (cache in memory only)
-- Cache, history, form data and downloads cleared on shutdown — **cookies are
-  kept**, so logins persist
-- Dark colour scheme forced on all sites
-- Pywalfox, ClearURLs and the pwnbox styles extension are installed by
-  default
+Tor Browser is the hardened option. `pkgs/apps/browsers/tor-browser.nix` pins
+it to the **Safest** security level and locks the corresponding prefs, then
+reduces the remaining attack surface:
 
-Manage these settings in `dotfiles/zen/user.js`; the browser UI changes are
-overwritten by it at startup.
+- JavaScript, JIT, WebAssembly, WebGL, WebAudio, WebRTC, EME and PDF.js
+  scripting disabled
+- extension installs, remote debugging and external protocol launches blocked
+- camera, microphone, geolocation and notifications denied by default
+- prefetch, speculative connections, disk cache and safe-browsing lookups off
+- telemetry, studies and crash uploads disabled
+
+Tor Browser's sandbox and Tor routing are left intact, and updates come
+through nixpkgs. No browser can be made exploit-proof; this configuration
+removes common attack vectors and keeps the browser updated.
 
 ## Privacy apps
 

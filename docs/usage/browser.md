@@ -5,17 +5,15 @@ theme like every other app.
 
 ## What is preinstalled
 
-Seven extensions are force-installed by policy on first launch (no clicks):
+Only the theming integration is installed by policy:
 
 | Extension | What it does |
 | --- | --- |
 | **pwnbox styles** | Our own extension: applies all site themes in real time |
 | **Pywalfox** | Applies the pywal palette to the browser UI, live on theme change |
-| **uBlock Origin** | Ad and tracker blocking |
-| **Wappalyzer** | Web technology detection |
-| **TWP - Translate Web Pages** | Web page translation |
-| **Mullvad Browser Extension** | Mullvad VPN companion |
-| **ClearURLs** | Removes tracking parameters from URLs |
+
+No ad blockers, privacy extensions or other add-ons are forced. Install and
+manage extensions yourself from `about:addons`.
 
 The native messaging host for Pywalfox and the `toolkit.legacyUserProfileCustomizations.stylesheets`
 preference are installed automatically, so `userChrome.css` / `userContent.css`
@@ -72,17 +70,18 @@ Click the extension's toolbar icon to open a popup with the master switches
 
 Changes apply to every open page instantly.
 
-## Hardening
+## No hardening
 
-Zen is hardened by `dotfiles/zen/user.js`, applied to the profile on every
-rebuild and at startup:
+Zen is a normal browser. `dotfiles/zen/user.js` is intentionally limited to
+the dark colour scheme used by the site themes; it does not change telemetry,
+tracking protection, cache behaviour or extension installs, and extension
+signatures stay enforced. Everything else comes from Zen itself; updates are
+shipped by rebuilding the flake because the browser lives in the Nix store.
 
-- All telemetry, studies, crash reports and search suggestions disabled
-- Strict tracking protection, first-party isolation, query stripping, no
-  speculative connections, no prefetch, trimmed referrers
-- Cache/history/formdata cleared on shutdown; **cookies are kept** so you stay
-  logged in
-- Dark colour scheme forced on all sites, so dark-gated styles apply everywhere
+Upgrades from older pwnbox releases remove the previous hardening prefs from
+`prefs.js` and replace the old `user.js` automatically. Previously
+force-installed ad blockers and privacy add-ons are no longer managed; they
+remain as ordinary user-installed extensions and can be removed in
+`about:addons`.
 
-The file is managed; changes to these settings belong in
-`dotfiles/zen/user.js`, not in the browser UI.
+Tor Browser is the hardened browser; see [Privacy](privacy.md).

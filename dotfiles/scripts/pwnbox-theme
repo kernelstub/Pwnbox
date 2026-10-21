@@ -690,12 +690,7 @@ import re
 import sys
 
 ids = [
-    "uBlock0@raymondhill.net",
-    "{d19a89b9-76c1-4a61-bcd4-49e8de916403}",
-    "{036a55b4-5e72-4d05-a06c-cba2dfcc134a}",
-    "wappalyzer@crunchlabz.com",
     "pywalfox@frewacom.org",
-    "{74145f27-f039-47ce-a470-a662b129930a}",
     "kern@skuntir.com",
 ]
 widgets = [i.lower() + "-browser-action" for i in ids]

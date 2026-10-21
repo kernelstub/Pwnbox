@@ -331,7 +331,8 @@ Action icons are left as IDA's own (the theme has none bundled).
 ## Browser
 
 Zen is themed end to end: chrome, about: pages and 131 site themes. See
-[Browser](browser.md).
+[Browser](browser.md). Tor Browser is deliberately unthemed and hardened for
+hostile sites; see [Privacy](privacy.md#browser).
 
 ## Desktop shell
 

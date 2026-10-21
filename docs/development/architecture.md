@@ -25,7 +25,7 @@
 ├── pkgs/                     # package sets, toolset categories, custom.nix
 │   ├── categories/           # one file per pentest tool category
 │   ├── apps/
-│   │   ├── browsers/         # Zen Browser, pywalfox native host
+│   │   ├── browsers/         # Zen, Tor Browser hardening, pywalfox host
 │   │   ├── media/            # Stremio Enhanced, Spicetify Marketplace
 │   │   ├── messaging/        # Signal, Element, Wire, SimpleX, Telegram config
 │   │   ├── notes/            # Obsidian plugins
@@ -47,7 +47,7 @@
     │   └── wal/              # pywal templates + monochrome seed
     ├── ida/                  # IDA theme plugin + tintable icon templates
     ├── themes/               # custom fixed-palette themes
-    ├── zen/                  # user.js hardening + site style templates
+    ├── zen/                  # theme-only user.js + site style templates
     ├── gnome/                # fonts, GTK base CSS, wallpapers
     └── scripts/              # pwnbox-theme, pwnbox-spotify, …
 ```

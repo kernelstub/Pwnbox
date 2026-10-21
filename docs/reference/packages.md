@@ -72,7 +72,7 @@ Theming and fonts are covered in [Apps](../usage/apps.md#ida-free--pro).
 | Area | Apps |
 | --- | --- |
 | **Private & encrypted chat** | Signal, SimpleX, Element (Matrix), Dino (XMPP), qTox, AyuGram (Telegram), Equibop (Discord / Equicord) |
-| **Browsers** | Zen (default), Chromium, Tor Browser |
+| **Browsers** | Zen (default), Chromium, Tor Browser (hardened) |
 | **Privacy & security** | KeePassXC, Mullvad VPN, Tor + torsocks |
 | **Crypto wallets** | Exodus, Ledger Live (with udev rules for Ledger devices) |
 | **Office & notes** | LibreOffice, Obsidian, Geary, Papers (Document Viewer), Loupe (Image Viewer) |

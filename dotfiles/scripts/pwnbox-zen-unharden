@@ -1,0 +1,47 @@
+#!/usr/bin/env python3
+"""Remove prefs that a previous pwnbox Zen user.js managed.
+
+Usage: pwnbox-zen-unharden <old-user.js> <prefs.js>
+
+The old user.js is parsed only to collect pref names, then matching lines are
+dropped from prefs.js so Firefox falls back to its own defaults. The caller
+replaces user.js with the current theme-only file afterwards.
+"""
+
+import os
+import re
+import stat
+import sys
+
+
+def main():
+    if len(sys.argv) != 3:
+        raise SystemExit("usage: pwnbox-zen-unharden <old-user.js> <prefs.js>")
+
+    user_js, prefs_js = sys.argv[1], sys.argv[2]
+    try:
+        with open(user_js, encoding="utf-8", errors="replace") as handle:
+            names = set(re.findall(r'user_pref\("([^"]+)"', handle.read()))
+    except FileNotFoundError:
+        return
+
+    if not names or not os.path.exists(prefs_js):
+        return
+
+    mode = stat.S_IMODE(os.stat(prefs_js).st_mode)
+    tmp = prefs_js + ".pwnbox-tmp"
+    with open(prefs_js, encoding="utf-8", errors="replace") as source, open(
+        tmp, "w", encoding="utf-8"
+    ) as target:
+        for line in source:
+            match = re.match(r'\s*user_pref\("([^"]+)"', line)
+            if match and match.group(1) in names:
+                continue
+            target.write(line)
+
+    os.chmod(tmp, mode)
+    os.replace(tmp, prefs_js)
+
+
+if __name__ == "__main__":
+    main()
