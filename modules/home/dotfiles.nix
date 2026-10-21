@@ -419,8 +419,9 @@ in
     run chmod u+w "$HOME/.config/zed/themes/pwnbox.json" "$HOME/.config/zed/themes/kerne.json" 2>/dev/null || true
     run sh -c 'chmod -R u+w "$HOME/.cache/pwnbox/theme" 2>/dev/null || true'
     if [ -x "$HOME/.scripts/pwnbox-theme" ]; then
-      run sh -c '"$HOME/.scripts/pwnbox-theme" borders >/dev/null 2>&1 || true'
-      run sh -c '"$HOME/.scripts/pwnbox-theme" userstyles >/dev/null 2>&1 || true'
+      run sh -c 'PATH="/run/current-system/sw/bin:/etc/profiles/per-user/$(id -un)/bin:$HOME/.nix-profile/bin:$PATH" "$HOME/.scripts/pwnbox-theme" borders >/dev/null 2>&1 || true'
+      run sh -c 'PATH="/run/current-system/sw/bin:/etc/profiles/per-user/$(id -un)/bin:$HOME/.nix-profile/bin:$PATH" "$HOME/.scripts/pwnbox-theme" userstyles >/dev/null 2>&1 || true'
+      run sh -c 'PATH="/run/current-system/sw/bin:/etc/profiles/per-user/$(id -un)/bin:$HOME/.nix-profile/bin:$PATH" "$HOME/.scripts/pwnbox-theme" refresh >/dev/null 2>&1 || true'
     fi
     if command -v systemctl >/dev/null 2>&1; then
       run systemctl --user start pwnbox-styles.service 2>/dev/null || true

@@ -131,6 +131,11 @@ then choose it from `ALT + S → Custom`. The flake only sees files tracked by
 git, so an untracked theme folder is silently ignored even after a rebuild. The
 command-line equivalent is `pwnbox-theme custom`.
 
+Thumbnails are cached in `~/.cache/pwnbox/theme/thumbs` but keyed on the
+resolved wallpaper path and size/mtime, so replacing a theme's `wallpaper.png`
+updates the picker automatically on the next rebuild (`pwnbox-theme refresh`
+runs during activation). No cache clearing is needed.
+
 ## What is generated
 
 The theme scripts read the active palette and write a small set of files that

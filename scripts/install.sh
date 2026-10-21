@@ -639,6 +639,32 @@ dry-activate) action_note="dry activation complete" ;;
 esac
 exec_row "build and activate" "pass" "$action_note"
 
+theme_note="skipped (not activated)"
+theme_state="pass"
+case "$action" in
+switch | test)
+    theme_note="refreshed"
+    if [ -x "$home/.scripts/pwnbox-theme" ]; then
+        theme_path="/run/current-system/sw/bin:/etc/profiles/per-user/$user/bin:$home/.nix-profile/bin:/usr/bin:/bin"
+        if [ "$(id -un)" = "$user" ]; then
+            run env HOME="$home" PATH="$theme_path" "$home/.scripts/pwnbox-theme" refresh || {
+                theme_note="pending"
+                theme_state="warn"
+            }
+        else
+            run runuser -u "$user" -- env HOME="$home" PATH="$theme_path" "$home/.scripts/pwnbox-theme" refresh || {
+                theme_note="pending"
+                theme_state="warn"
+            }
+        fi
+    else
+        theme_note="script not installed yet"
+        theme_state="warn"
+    fi
+    ;;
+esac
+exec_row "theme assets" "$theme_state" "$theme_note"
+
 exec_row "verify" "run" "vault and desktop services"
 vault="$home/Documents/Notes"
 if [ ! -d "$vault/.obsidian" ]; then

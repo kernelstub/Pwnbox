@@ -3493,21 +3493,68 @@ borders() {
     command -v hyprctl >/dev/null 2>&1 && hyprctl reload >/dev/null 2>&1 || true
 }
 
+thumb_sig() {
+    local src="$1" resolved
+    resolved="$(readlink -f -- "$src" 2>/dev/null || printf '%s' "$src")"
+    printf '%s|%s' "$resolved" "$(stat -Lc '%s:%y' -- "$src" 2>/dev/null || printf '0')"
+}
+
 make_thumb() {
-    local src="$1" key="${2:-}" out
+    local src="$1" key="${2:-}" out sigf sig tmp
     [ -f "$src" ] || return 0
     [ -n "$key" ] || key="$(basename "$src")"
     mkdir -p "$thumb_dir" 2>/dev/null || true
     out="$thumb_dir/${key}.png"
-    if [ ! -f "$out" ] || [ "$src" -nt "$out" ]; then
+    sigf="$out.src"
+    sig="$(thumb_sig "$src")"
+    # Nix store files all carry mtime 1, so -nt never notices a rebuilt
+    # wallpaper. Compare the resolved path (it changes per store hash) plus
+    # size/mtime instead, and regenerate when it differs.
+    if [ ! -f "$out" ] || [ ! -f "$sigf" ] || [ "$(cat "$sigf" 2>/dev/null)" != "$sig" ]; then
+        tmp="$thumb_dir/.${key}.$$.png"
         if command -v magick >/dev/null 2>&1; then
-            magick "$src" -auto-orient -resize '256x256^' -gravity center -extent 256x256 "$out" >/dev/null 2>&1 || true
+            magick "$src" -auto-orient -resize '256x256^' -gravity center -extent 256x256 "png:$tmp" >/dev/null 2>&1 || {
+                rm -f "$tmp"
+                return 0
+            }
         elif command -v convert >/dev/null 2>&1; then
-            convert "$src" -auto-orient -resize '256x256^' -gravity center -extent 256x256 "$out" >/dev/null 2>&1 || true
+            convert "$src" -auto-orient -resize '256x256^' -gravity center -extent 256x256 "png:$tmp" >/dev/null 2>&1 || {
+                rm -f "$tmp"
+                return 0
+            }
+        else
+            return 0
+        fi
+        if mv -f "$tmp" "$out" 2>/dev/null; then
+            printf '%s' "$sig" >"$sigf" 2>/dev/null || true
+        else
+            rm -f "$tmp"
+            return 0
         fi
     fi
     [ -f "$out" ] && printf '%s' "$out"
     return 0
+}
+
+refresh() {
+    local dir wp cur img
+    mkdir -p "$thumb_dir" 2>/dev/null || true
+    while IFS= read -r dir; do
+        [ -n "$dir" ] || continue
+        wp="$(custom_theme_wallpaper "$dir")"
+        make_thumb "$wp" "custom-$(basename "$dir")" >/dev/null
+    done < <(custom_theme_dirs)
+
+    # If a custom theme is active, re-apply its wallpaper so a rebuilt
+    # wallpaper.png is visible immediately instead of at the next login.
+    cur="$(read_state "$custom_state" "")"
+    if [ -n "$cur" ] && dir="$(theme_dir_of "$cur")"; then
+        img="$(custom_theme_wallpaper "$dir")"
+        printf '%s\n' "$img" >"$state"
+        if [ -n "${WAYLAND_DISPLAY:-}" ] || [ -n "${DISPLAY:-}" ]; then
+            set_wallpaper "$img"
+        fi
+    fi
 }
 
 bar_styles=(
@@ -3891,6 +3938,7 @@ shadows | windowshadows) choose_shadows ;;
 icons) build_mono_icons ;;
 userstyles) sync_userstyles ;;
 stylus | styles) styles ;;
+refresh) refresh ;;
 restore) restore ;;
 -h | --help | help)
     cat <<'EOF'
@@ -3910,6 +3958,7 @@ usage: pwnbox-theme <command>
   scale, setscale <n>      display scale
   icons, userstyles        rebuild mono icons / userstyles
   borders                  re-apply borders, fonts and app theming
+  refresh                  refresh theme thumbnails and wallpaper
   restore                  re-apply the current theme
   menu                     open the rofi theme menu
 EOF
