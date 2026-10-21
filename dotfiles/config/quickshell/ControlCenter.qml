@@ -25,6 +25,7 @@ PanelWindow {
     property string monitors: ""
     property var captureMonitors: []
     property string pendingCapture: ""
+    property int captureDelay: 0
     readonly property var monitorOutputs: captureMonitors ? captureMonitors.filter(function (m) { return !m.disabled }) : []
     property string stateBarstyle: ""
     property string stateFontUi: ""
@@ -142,13 +143,15 @@ PanelWindow {
 
     Timer {
         id: captureTimer
-        interval: center.stateAnim === "off" ? 80 : 350
+        interval: center.captureDelay > 0 ? center.captureDelay
+            : (center.stateAnim === "off" ? 80 : 350)
         onTriggered: {
             if (center.pendingCapture === "")
                 return;
             runner.command = ["sh", "-c", center.pendingCapture];
             runner.startDetached();
             center.pendingCapture = "";
+            center.captureDelay = 0;
         }
     }
 
@@ -393,8 +396,9 @@ PanelWindow {
         runner.startDetached();
     }
 
-    function runCapture(cmd) {
+    function runCapture(cmd, delay) {
         center.pendingCapture = cmd;
+        center.captureDelay = delay === undefined ? 0 : delay;
         center.open = false;
         openChangedTo(false);
         captureTimer.restart();
@@ -2129,7 +2133,7 @@ PanelWindow {
                                 label: "Full screen — " + modelData.name
                                 value: modelData.width + "x" + modelData.height
                                 glyph: Theme.iconDisplay
-                                onActivated: center.runCapture("$HOME/.scripts/pwnbox-screenshot full " + modelData.name)
+                                onActivated: center.runCapture("$HOME/.scripts/pwnbox-screenshot full " + modelData.name, 1200)
                             }
                         }
                         ActionRow {

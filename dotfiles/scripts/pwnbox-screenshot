@@ -33,10 +33,15 @@ finish() {
 }
 
 area_geometry() {
-    slurp -d -w 2 \
+    local geometry
+    geometry="$(slurp -d -w 2 \
         -b "#00000080" \
         -c "#${fg}ff" \
-        -s "#00000000" || true
+        -s "#00000000" || true)"
+    # slurp's selection border fades out with the layer surface. Give the
+    # compositor time to remove it, otherwise grim captures a 1px outline.
+    [ -n "$geometry" ] && sleep 0.3
+    printf '%s' "$geometry"
 }
 
 mode="${1:-clipboard}"
