@@ -58,9 +58,10 @@ editor's accent colours are all derived from the 16 colours above (see
 
 ## Adding a theme
 
-1. Create `dotfiles/themes/<Name>/theme.conf` (copy `Catppuccin-Mocha` as a base).
+1. Create `dotfiles/themes/<Name>/theme.conf` (copy `Catppuccin` as a base).
 2. Drop a wallpaper in the same folder.
-3. `nixos-rebuild switch` (the folders are linked from the flake), then choose
-   it from `ALT + S → THEME → Custom`.
+3. `git add` the folder — the flake only includes git-tracked files, so an
+   untracked theme is silently ignored — then `nixos-rebuild switch`, and
+   choose it from `ALT + S → THEME → Custom`.
 
 The command line equivalent is `pwnbox-theme custom`.
