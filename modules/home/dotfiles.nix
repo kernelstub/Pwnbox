@@ -433,13 +433,4 @@ in
       run sh -c 'pkill -f "bin/quickshell -n$" 2>/dev/null || true; sleep 0.5; setsid qs -n >/dev/null 2>&1 &'
     fi
   '';
-
-  home.activation.pwnboxHyprcorrect = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    cfg="$HOME/.config/hyprcorrect/config.toml"
-    if [ ! -e "$cfg" ]; then
-      run mkdir -p "$(dirname "$cfg")"
-      run cp -f ${dotfiles}/config/hyprcorrect/config.toml "$cfg"
-      run chmod u+w "$cfg" 2>/dev/null || true
-    fi
-  '';
 }

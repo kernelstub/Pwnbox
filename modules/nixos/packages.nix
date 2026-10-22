@@ -137,7 +137,6 @@ let
     wl-clipboard
     cliphist
     wtype
-    (aspellWithDicts (ps: [ ps.en ]))
     brightnessctl
     playerctl
     pamixer

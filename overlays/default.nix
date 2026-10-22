@@ -32,7 +32,6 @@ final: prev: {
     manrope = final.callPackage ../pkgs/desktop/manrope.nix { };
     colloid-cursors = final.callPackage ../pkgs/desktop/colloid-cursors.nix { };
     gnome-fonts = final.callPackage ../pkgs/desktop/gnome-fonts.nix { };
-    hyprcorrect = final.callPackage ../pkgs/desktop/hyprcorrect.nix { };
 
     colloid-dark-grey = final.callPackage ../pkgs/desktop/colloid-dark-grey.nix {
       accent = "#454545";

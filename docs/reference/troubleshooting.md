@@ -29,30 +29,6 @@ The control center is centered on the main monitor. If it is off-centre or
 opens on the wrong monitor, make sure you rebuilt after the change and that
 Quickshell restarted.
 
-## Text correction doesn't work
-
-For the hyprcorrect chords:
-
-```bash
-pgrep -ax hyprcorrect
-groups | grep input
-hyprctl binds | grep -i hyprcorrect
-hyprcorrect prefs
-```
-
-If `input` is missing, log out and back in after the rebuild. If the daemon is
-not running, start it with `hyprcorrect` and check its output. The pwnbox
-chords are `SUPER + ALT + W/S/V/L`; if you changed them in preferences, use
-those instead.
-
-For selected text (`SUPER + ALT + C`):
-
-- Select the text first and keep the application focused.
-- Check `~/.cache/pwnbox/correct-selection.log` if a notification says the
-  correction failed.
-- In terminals the corrected text is copied to the clipboard rather than
-  replacing the selection.
-
 ## Kitty shows "N by M cells" while resizing
 
 That is kitty's live-resize overlay. It is drawn unconditionally by

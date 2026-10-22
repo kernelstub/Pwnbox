@@ -37,37 +37,10 @@ Autostarted at login:
 - `pwnbox-theme restore`. Re-applies the saved theme
 - `hypridle`. Idle daemon (idle listeners disabled; the session never
   auto-locks or suspends)
-- `hyprcorrect`. Desktop spelling correction and selected-text correction
-  (see below)
 - `hyprpolkitagent`
 - `qs -n`. Quickshell
 - `gnome-keyring-daemon`
 - `cliphist` (text + images)
-
-## Text correction
-
-[hyprcorrect](https://github.com/jondkinney/hyprcorrect) runs in the
-background and corrects the word or sentence you just typed. A separate
-pwnbox helper corrects an existing selection with the system spellchecker.
-
-| Keys | Action |
-| --- | --- |
-| `SUPER + ALT + C` | Correct the selected text in place |
-| `SUPER + ALT + W` | Fix the last word |
-| `SUPER + ALT + S` | Fix the last sentence |
-| `SUPER + ALT + V` | Review the correction before applying |
-| `SUPER + ALT + L` | Review with the LLM provider |
-
-`SUPER + ALT + C` works on editable GUI text fields. Select the text, press
-the chord, and the corrected text replaces it. In a terminal the corrected
-selection is copied to the clipboard instead, because a terminal selection is
-not an editable range.
-
-The hyprcorrect chords can be rebound with `hyprcorrect prefs` (or the
-**hyprcorrect** launcher entry). The daemon needs membership in the `input`
-group; pwnbox adds it automatically, so log out and back in once after the
-first rebuild. The selected-text helper uses the bundled English `aspell`
-dictionary and `wl-clipboard`.
 
 ## GNOME
 
