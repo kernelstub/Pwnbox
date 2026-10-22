@@ -29,6 +29,8 @@ lib.mkIf config.pwnbox.desktop.enable {
       noto-fonts-color-emoji
 
       iosevka
+      ioskeley-mono.normal
+      ioskeley-mono.normal-NF
       jetbrains-mono
       inconsolata
       noto-fonts

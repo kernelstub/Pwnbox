@@ -151,6 +151,12 @@
         // lib.optionalAttrs (system == "x86_64-linux") {
           chatgpt = inputs.chatgpt.packages.${system}.chatgpt;
         }
+        // {
+          # Ioskeley Mono ships in nixpkgs (pkgs.ioskeley-mono.<variant>):
+          # https://github.com/ahatem/IoskeleyMono
+          ioskeley-mono = pkgs.ioskeley-mono.normal;
+          ioskeley-mono-nf = pkgs.ioskeley-mono.normal-NF;
+        }
       );
 
       formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt);
