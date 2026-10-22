@@ -174,6 +174,24 @@ pwnbox-scrollbars, quizlet, trinket
 
 </details>
 
+### Community themes
+
+The community gallery lives at
+[kernelstub/Pwnbox-Themes](https://github.com/kernelstub/Pwnbox-Themes). Every
+theme is a self-contained folder with a `theme.conf` and wallpaper:
+
+```bash
+cp -r Pwnbox-Themes/themes/<name> ~/pwnbox/dotfiles/themes/
+cd ~/pwnbox
+git add dotfiles/themes/<name>
+upd
+```
+
+Pick it from `ALT + S → Custom` or run `pwnbox-theme custom`. See the
+[gallery](https://github.com/kernelstub/Pwnbox-Themes#themes) for previews and
+the [theme creation guide](https://github.com/kernelstub/Pwnbox-Themes/blob/main/docs/usage/create.md)
+to contribute one.
+
 ## Desktop
 
 Hyprland is the default session (GNOME is available as a second one). The bar,

@@ -136,6 +136,23 @@ resolved wallpaper path and size/mtime, so replacing a theme's `wallpaper.png`
 updates the picker automatically on the next rebuild (`pwnbox-theme refresh`
 runs during activation). No cache clearing is needed.
 
+## Community themes
+
+The community gallery is
+[kernelstub/Pwnbox-Themes](https://github.com/kernelstub/Pwnbox-Themes). Themes
+there follow the same folder layout as the built-in ones:
+
+```bash
+cp -r Pwnbox-Themes/themes/<name> ~/pwnbox/dotfiles/themes/
+cd ~/pwnbox
+git add dotfiles/themes/<name>
+upd
+```
+
+Then choose it from `ALT + S → Custom`, or run `pwnbox-theme custom`. The
+repository includes a validator (`scripts/validate-theme.py`) and a
+[creation guide](https://github.com/kernelstub/Pwnbox-Themes/blob/main/docs/usage/create.md).
+
 ## What is generated
 
 The theme scripts read the active palette and write a small set of files that
