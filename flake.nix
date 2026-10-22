@@ -156,6 +156,8 @@
           # https://github.com/ahatem/IoskeleyMono
           ioskeley-mono = pkgs.ioskeley-mono.normal;
           ioskeley-mono-nf = pkgs.ioskeley-mono.normal-NF;
+
+          easyeffects = pkgs.easyeffects;
         }
       );
 

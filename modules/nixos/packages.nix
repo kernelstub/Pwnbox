@@ -141,6 +141,7 @@ let
     playerctl
     pamixer
     pavucontrol
+    easyeffects
     gnome-keyring
     libsecret
 
