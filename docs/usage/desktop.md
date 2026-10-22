@@ -116,6 +116,8 @@ contains everything, organised into cards:
   full-screen screenshots wait 0.5 s so the control center is gone before the
   shot is taken.
 - **Notifications.** Do-not-disturb, clear-all and the notification list.
+  Popups show at most three at a time; older ones stay in the notification
+  list. Popups show the notification content without application names.
 
 Clicking any bar element (clock, stats, volume, Wi-Fi, Bluetooth, bell, power)
 opens the control center scrolled to the matching section. `Escape` or clicking

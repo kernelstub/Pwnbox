@@ -14,12 +14,6 @@ Rectangle {
     property bool popped: true
     visible: root.valid && root.popped
 
-    readonly property int urgency: root.valid ? notif.urgency : 0
-    readonly property bool critical: urgency === NotificationUrgency.Critical
-    readonly property color accentColor: critical ? Theme.red
-        : urgency === NotificationUrgency.Low ? Theme.fgFaint
-        : Theme.accent
-
     readonly property string iconSource: {
         if (!root.valid)
             return "";
@@ -36,13 +30,6 @@ Rectangle {
             }
         }
         return "";
-    }
-
-    readonly property string initial: {
-        if (!root.valid)
-            return "•";
-        const name = (notif.appName || "").trim();
-        return name.length > 0 ? name.charAt(0).toUpperCase() : "•";
     }
 
     readonly property var visibleActions: {
@@ -112,11 +99,10 @@ Rectangle {
             Text {
                 anchors.centerIn: parent
                 visible: !root.hasIcon
-                text: root.initial
+                text: Theme.iconBell
                 color: Theme.fgDim
-                font.family: Theme.fontFamily
+                font.family: Theme.fontIcons
                 font.pixelSize: 16
-                font.weight: Font.Medium
             }
         }
 
@@ -124,17 +110,6 @@ Rectangle {
             id: textColumn
             width: layout.width - iconBox.width - layout.spacing
             spacing: 3
-
-            Text {
-                width: parent.width
-                text: root.notif.appName
-                color: root.accentColor
-                font.family: Theme.fontFamily
-                font.pixelSize: 10
-                font.letterSpacing: 0.5
-                elide: Text.ElideRight
-                visible: text.length > 0
-            }
 
             Text {
                 width: parent.width

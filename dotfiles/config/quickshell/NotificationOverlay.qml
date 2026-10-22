@@ -5,8 +5,9 @@ import Quickshell.Wayland
 PanelWindow {
     id: root
     required property var mainScreen
-    required property var server
+    required property var popups
     property bool dnd: false
+    signal popupClosed(var notif)
 
     screen: root.mainScreen
     visible: !root.dnd
@@ -37,18 +38,23 @@ PanelWindow {
         spacing: 0
 
         Repeater {
-            model: root.server.trackedNotifications.values
+            model: root.popups
 
             delegate: Item {
                 id: wrapper
+                required property var modelData
                 width: 360
                 height: popup.visible ? popup.implicitHeight + 8 : 0
 
                 NotificationPopup {
                     id: popup
-                    notif: modelData
+                    notif: wrapper.modelData
                     autoExpire: true
-                    onExpired: popup.popped = false
+                    onExpired: {
+                        popup.popped = false;
+                        root.popupClosed(wrapper.modelData);
+                    }
+                    onDismissed: root.popupClosed(wrapper.modelData)
                 }
             }
         }

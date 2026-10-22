@@ -2276,27 +2276,16 @@ PanelWindow {
                                         color: Theme.bgA
                                         Text {
                                             anchors.centerIn: parent
-                                            text: (item.notif.appName || "?").trim().charAt(0).toUpperCase()
+                                            text: Theme.iconBell
                                             color: item.accentColor
-                                            font.family: Theme.fontFamily
+                                            font.family: Theme.fontIcons
                                             font.pixelSize: 13
-                                            font.weight: Font.Medium
                                         }
                                     }
 
                                     Column {
                                         width: body.width - 34 - body.spacing - 26
                                         spacing: 3
-                                        Text {
-                                            width: parent.width
-                                            text: item.notif.appName
-                                            color: item.accentColor
-                                            font.family: Theme.fontFamily
-                                            font.pixelSize: 9
-                                            font.letterSpacing: 0.5
-                                            elide: Text.ElideRight
-                                            visible: text.length > 0
-                                        }
                                         Text {
                                             width: parent.width
                                             text: item.notif.summary

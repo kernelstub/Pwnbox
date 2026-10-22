@@ -12,6 +12,8 @@ ShellRoot {
     property bool dnd: false
     property int notifCount: 0
     property bool notifOpen: false
+    property var popupNotifications: []
+    readonly property int maxPopups: 3
 
     readonly property var mainScreen: {
         const screens = Quickshell.screens;
@@ -26,6 +28,16 @@ ShellRoot {
 
     function isMainScreen(screen) {
         return root.mainScreen !== null && screen === root.mainScreen;
+    }
+
+    function addPopup(notif) {
+        const next = root.popupNotifications.filter(n => n !== notif);
+        next.push(notif);
+        root.popupNotifications = next.slice(Math.max(0, next.length - root.maxPopups));
+    }
+
+    function removePopup(notif) {
+        root.popupNotifications = root.popupNotifications.filter(n => n !== notif);
     }
 
     Process {
@@ -81,14 +93,24 @@ ShellRoot {
         bodyMarkupSupported: false
         onNotification: n => {
             n.tracked = true;
+            root.addPopup(n);
             if (!root.notifOpen)
                 root.notifCount += 1;
         }
     }
 
+    Connections {
+        target: notifServer.trackedNotifications
+        function onValuesChanged() {
+            const tracked = notifServer.trackedNotifications.values;
+            root.popupNotifications = root.popupNotifications.filter(n => tracked.indexOf(n) !== -1);
+        }
+    }
+
     NotificationOverlay {
         mainScreen: root.mainScreen
-        server: notifServer
+        popups: root.popupNotifications
+        onPopupClosed: n => root.removePopup(n)
         dnd: root.dnd
     }
 
