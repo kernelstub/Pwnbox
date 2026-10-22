@@ -26,6 +26,9 @@ in
         "networkmanager"
         "wheel"
       ]
+      # hyprcorrect reads /dev/input/event* to buffer keystrokes for
+      # system-wide typo correction.
+      ++ lib.optionals config.pwnbox.desktop.enable [ "input" ]
       ++ virtGroups
       ++ u.extraGroups
     );

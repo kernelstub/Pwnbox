@@ -4,6 +4,7 @@
   manrope = pkgs.callPackage ./desktop/manrope.nix { };
   colloid-cursors = pkgs.callPackage ./desktop/colloid-cursors.nix { };
   gnome-fonts = pkgs.callPackage ./desktop/gnome-fonts.nix { };
+  hyprcorrect = pkgs.callPackage ./desktop/hyprcorrect.nix { };
   tg-config = pkgs.callPackage ./apps/messaging/tg-config.nix { };
   stremio-enhanced = pkgs.callPackage ./apps/media/stremio-enhanced.nix { };
   spicetify-marketplace = pkgs.callPackage ./apps/media/spicetify-marketplace.nix { };

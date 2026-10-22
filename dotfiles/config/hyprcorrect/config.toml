@@ -1,0 +1,9 @@
+[hotkeys]
+fix_word = "SUPER+ALT+W"
+fix_sentence = "SUPER+ALT+S"
+review = "SUPER+ALT+V"
+review_llm = "SUPER+ALT+L"
+
+[providers]
+default = "spellbook"
+smart = "spellbook"

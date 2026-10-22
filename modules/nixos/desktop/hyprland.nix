@@ -27,5 +27,6 @@ lib.mkIf config.pwnbox.desktop.enable {
     hyprshot
     hyprpicker
     hyprpolkitagent
+    pwnbox.hyprcorrect
   ];
 }

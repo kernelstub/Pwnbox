@@ -1,0 +1,328 @@
+#!/usr/bin/env python3
+"""Correct the spelling of the current text selection.
+
+The script reads the selection, corrects it with aspell, and puts the result
+back into the focused application.  GUI text fields are replaced in place;
+terminal selections are copied to the clipboard because a terminal selection
+is not an editable text range.
+"""
+
+import json
+import os
+import re
+import subprocess
+import sys
+import time
+
+TERMINAL_HINTS = (
+    "kitty",
+    "alacritty",
+    "foot",
+    "wezterm",
+    "konsole",
+    "ghostty",
+    "xterm",
+    "urxvt",
+    "terminal",
+    "tmux",
+)
+
+TEXT_TYPES = (
+    "text/plain;charset=utf-8",
+    "text/plain",
+    "UTF8_STRING",
+    "STRING",
+    "TEXT",
+)
+
+# Aspell does not know contractions, and its first suggestion for some of
+# them is poor ("dont" -> "dint").  Keep the common ones explicit.
+COMMON = {
+    "alot": "a lot",
+    "dont": "don't",
+    "isnt": "isn't",
+    "arent": "aren't",
+    "wasnt": "wasn't",
+    "werent": "weren't",
+    "didnt": "didn't",
+    "doesnt": "doesn't",
+    "couldnt": "couldn't",
+    "shouldnt": "shouldn't",
+    "wouldnt": "wouldn't",
+    "havent": "haven't",
+    "hasnt": "hasn't",
+    "hadnt": "hadn't",
+    "youre": "you're",
+    "theyre": "they're",
+    "weve": "we've",
+    "ive": "I've",
+    "im": "I'm",
+    "thats": "that's",
+    "whats": "what's",
+    "heres": "here's",
+    "theres": "there's",
+    "wheres": "where's",
+    "wouldve": "would've",
+    "couldve": "could've",
+    "shouldve": "should've",
+}
+
+LOG_PATH = os.path.expanduser("~/.cache/pwnbox/correct-selection.log")
+
+
+def run(args):
+    return subprocess.run(
+        args,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.DEVNULL,
+        text=True,
+        check=False,
+    )
+
+
+def log(message):
+    try:
+        os.makedirs(os.path.dirname(LOG_PATH), exist_ok=True)
+        with open(LOG_PATH, "a", encoding="utf-8") as handle:
+            handle.write(message.rstrip() + "\n")
+    except OSError:
+        pass
+
+
+def notify(message):
+    subprocess.run(
+        ["notify-send", "-a", "pwnbox", "Autocorrect", message],
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+        check=False,
+    )
+
+
+def active_class():
+    try:
+        result = subprocess.run(
+            ["hyprctl", "activewindow", "-j"],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.DEVNULL,
+            text=True,
+            timeout=2,
+            check=False,
+        )
+        data = json.loads(result.stdout or "{}")
+        return (data.get("class") or data.get("initialClass") or "").lower()
+    except (OSError, ValueError, subprocess.TimeoutExpired):
+        return ""
+
+
+def is_terminal(window_class):
+    return any(hint in window_class for hint in TERMINAL_HINTS)
+
+
+def read_primary():
+    result = run(["wl-paste", "--primary", "--no-newline"])
+    return result.stdout if result.returncode == 0 else ""
+
+
+def read_clipboard():
+    result = run(["wl-paste", "--no-newline"])
+    return result.stdout if result.returncode == 0 else ""
+
+
+def clipboard_types():
+    result = run(["wl-paste", "--list-types"])
+    return result.stdout.split() if result.returncode == 0 else []
+
+
+def clipboard_text():
+    """Return clipboard text, "" when empty, or None for non-text content."""
+    types = clipboard_types()
+    if not types:
+        return ""
+    if not any(t in TEXT_TYPES for t in types):
+        return None
+    return read_clipboard()
+
+
+def write_clipboard(text):
+    subprocess.run(
+        ["wl-copy"],
+        input=text.encode("utf-8"),
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+        check=False,
+    )
+
+
+def send_copy():
+    run(["wtype", "-M", "ctrl", "-k", "c", "-m", "ctrl"])
+
+
+def send_paste():
+    run(["wtype", "-M", "ctrl", "-k", "v", "-m", "ctrl"])
+
+
+def type_text(text):
+    return run(["wtype", "-d", "1", "--", text])
+
+
+def apply_case(original, replacement):
+    if original.isupper():
+        return replacement.upper()
+    if original[:1].isupper() and original[1:].islower():
+        return replacement[:1].upper() + replacement[1:]
+    return replacement
+
+
+class Speller:
+    def __init__(self):
+        self.proc = subprocess.Popen(
+            ["aspell", "-a", "--lang=en_US", "--encoding=utf-8"],
+            stdin=subprocess.PIPE,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.DEVNULL,
+            text=True,
+            bufsize=1,
+        )
+        # The first line is the aspell version banner.
+        self.proc.stdout.readline()
+
+    def correct_line(self, line):
+        if not line.strip():
+            return line
+
+        # A leading '^' is an ispell command marker.  Prefixing a space
+        # keeps the text as text and shifts the reported offsets by one.
+        prefix = " " if line.startswith("^") else ""
+        self.proc.stdin.write(prefix + line + "\n")
+        self.proc.stdin.flush()
+
+        edits = []
+        while True:
+            output = self.proc.stdout.readline()
+            if output == "" or output == "\n":
+                break
+            match = re.match(r"^& (\S+) \d+ (\d+):\s*(.*)$", output)
+            if not match:
+                continue
+
+            word = match.group(1)
+            offset = int(match.group(2)) - len(prefix)
+            suggestions = match.group(3).strip()
+            if offset < 0 or not suggestions:
+                continue
+
+            if line[offset : offset + len(word)] != word:
+                offset = line.find(word, max(0, offset - 2))
+                if offset < 0:
+                    continue
+
+            first = suggestions.split(",")[0].strip()
+            if not first:
+                continue
+            replacement = COMMON.get(word.lower(), first)
+            edits.append((offset, offset + len(word), apply_case(word, replacement)))
+
+        for start, end, replacement in reversed(edits):
+            line = line[:start] + replacement + line[end:]
+        return line
+
+    def close(self):
+        try:
+            self.proc.stdin.close()
+            self.proc.wait(timeout=1)
+        except (OSError, subprocess.TimeoutExpired):
+            self.proc.kill()
+
+
+def get_selection(window_class):
+    """Return (text, source, saved_clipboard)."""
+    if is_terminal(window_class):
+        primary = read_primary()
+        return (primary, "primary", None) if primary else ("", None, None)
+
+    # In GUI apps, copy the actual selection instead of trusting the
+    # primary selection, which may be stale from another window.
+    saved = clipboard_text()
+    if saved is None:
+        # A non-text clipboard cannot be restored after Ctrl+C; use the
+        # primary selection rather than destroying it.
+        primary = read_primary()
+        return (primary, "primary", None) if primary else ("", None, None)
+
+    send_copy()
+    time.sleep(0.2)
+    selected = read_clipboard()
+    if selected and selected != saved:
+        return selected, "copy", saved
+
+    if read_clipboard() != saved:
+        write_clipboard(saved)
+    return "", None, saved
+
+
+def replace_selection(text, source, saved, window_class):
+    if is_terminal(window_class):
+        write_clipboard(text)
+        notify("Corrected selection copied to clipboard")
+        return
+
+    # Single-line ASCII text can be typed directly without touching the
+    # clipboard.  Multi-line or non-ASCII selections use a clipboard paste
+    # so newlines and Unicode survive.
+    if (
+        "\n" not in text
+        and "\r" not in text
+        and "\t" not in text
+        and len(text) <= 400
+        and text.isascii()
+    ):
+        result = type_text(text)
+        if result.returncode == 0:
+            if source == "copy" and saved is not None:
+                time.sleep(0.15)
+                write_clipboard(saved)
+            return
+
+    saved_clip = saved if saved is not None else clipboard_text()
+    write_clipboard(text)
+    time.sleep(0.05)
+    send_paste()
+    time.sleep(0.45)
+    if saved_clip is not None:
+        write_clipboard(saved_clip)
+
+
+def main():
+    window_class = active_class()
+    selected, source, saved = get_selection(window_class)
+    if not selected:
+        notify("Select some text first")
+        return 1
+
+    speller = Speller()
+    try:
+        corrected = "\n".join(speller.correct_line(line) for line in selected.split("\n"))
+    finally:
+        speller.close()
+
+    if corrected == selected:
+        if source == "copy" and saved is not None:
+            write_clipboard(saved)
+        notify("No spelling changes")
+        return 0
+
+    replace_selection(corrected, source, saved, window_class)
+    return 0
+
+
+if __name__ == "__main__":
+    try:
+        sys.exit(main())
+    except OSError as error:
+        log(f"selection correction failed: {error}")
+        notify("Selection correction failed (see ~/.cache/pwnbox/correct-selection.log)")
+        sys.exit(1)
+    except Exception as error:  # noqa: BLE001 - report GUI failures, not tracebacks
+        log(f"selection correction failed: {error!r}")
+        notify("Selection correction failed (see ~/.cache/pwnbox/correct-selection.log)")
+        sys.exit(1)

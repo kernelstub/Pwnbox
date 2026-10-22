@@ -44,6 +44,16 @@ apps are installed by default and the system is hardened.
 - No autologin.
 - Garbage collection runs daily and keeps 7 days.
 
+## Text correction
+
+Hyprcorrect runs in the background so the correction chords work in every
+application. It reads `/dev/input/event*` (hence the `input` group) to keep the
+last typed word/sentence in memory; the buffer is never written to disk. The
+default provider is the bundled offline dictionary. The selected-text helper
+(`SUPER + ALT + C`) sends the selected text to the local `aspell` dictionary
+and replaces it; the corrected text is not sent anywhere. Neither tool has a
+network provider enabled unless you configure one in `hyprcorrect prefs`.
+
 ## Browser
 
 Zen is the normal, themed browser: pwnbox only installs the theming

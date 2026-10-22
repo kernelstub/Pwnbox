@@ -78,9 +78,27 @@ Theming and fonts are covered in [Apps](../usage/apps.md#ida-free--pro).
 | **Office & notes** | LibreOffice, Obsidian, Geary, Zathura, Papers (Document Viewer), Loupe (Image Viewer) |
 | **AI assistant** | ChatGPT (official desktop app) |
 | **Media & creative** | Stremio Enhanced, Spotify, VLC, mpv, cmus, qBittorrent, GIMP, Inkscape, Krita, OBS, Audacity, Kdenlive, Blender, spotdl, yt-dlp (also `ytdl`) |
-| **Terminal & system** | kitty, ranger, zsh + oh-my-zsh, tmux, btop, fastfetch, fzf, ripgrep, bat, eza, zoxide, lazygit |
+| **Terminal & system** | kitty, ranger, zsh + oh-my-zsh, tmux, btop, fastfetch, fzf, ripgrep, bat, eza, zoxide, lazygit, hyprcorrect (text correction) |
 | **Development** | Neovim, Zed, Git, Docker / Podman, libvirt / KVM (virt-manager) and language toolchains (C/C++, Rust, Go, Python, JVM, JS/TS, Haskell, …) |
 | **Reverse engineering** | IDA Pro 9.x / IDA Free via an FHS wrapper for a locally installed copy — `ida`, `ida64`, `idat`, `hv` commands and launcher entries, fully themed |
+
+## Hyprcorrect and selected-text correction
+
+[Hyprcorrect](https://github.com/jondkinney/hyprcorrect) is packaged from
+upstream `v0.6.0` in `pkgs/desktop/hyprcorrect.nix`. It starts with Hyprland
+(`exec-once = hyprcorrect`) and corrects the last word/sentence on demand.
+The default chords are replaced by a pwnbox config in
+`dotfiles/config/hyprcorrect/config.toml`; they are copied to
+`~/.config/hyprcorrect/config.toml` on first setup and can be changed later
+with `hyprcorrect prefs`.
+
+`dotfiles/scripts/pwnbox-correct-selection` handles existing selections:
+select text and press `SUPER + ALT + C`. It gets the selection through the
+primary selection (or `Ctrl+C` in a GUI app), corrects it with `aspell`, and
+replaces it. Terminal selections are corrected onto the clipboard instead.
+The primary user is added to the `input` group for hyprcorrect; group changes
+only apply to new sessions, so log out and back in once after the first
+rebuild.
 
 ## Stremio Enhanced
 

@@ -60,6 +60,20 @@ Ten global workspaces: `ALT + 1..9` and `ALT + 0` for workspace 10.
 | `SUPER + ALT + R` | Reload Hyprland |
 | `SUPER + ALT + Q` | Exit Hyprland session |
 
+## Text correction
+
+| Keys | Action |
+| --- | --- |
+| `SUPER + ALT + C` | Correct selected text in place |
+| `SUPER + ALT + W` | Fix the last word |
+| `SUPER + ALT + S` | Fix the last sentence |
+| `SUPER + ALT + V` | Review before applying |
+| `SUPER + ALT + L` | Review with the LLM provider |
+
+These chords are currently unused by the desktop. Change the hyprcorrect ones
+with `hyprcorrect prefs`; `SUPER + ALT + C` is defined in
+`dotfiles/config/hypr/hyprland.conf`.
+
 ## Media & hardware
 
 | Keys | Action |

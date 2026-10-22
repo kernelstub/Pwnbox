@@ -25,7 +25,7 @@ One flake, a complete workstation:
 | **Daily-driver apps** | Encrypted chat, browsers, office, media, wallets, containers and VMs, plus Neovim, Zed and IDA Free / Pro. |
 | **Theming** | One palette from a pywal wallpaper or fixed theme, applied across the desktop, terminals, editors, chat apps, browser and IDA. |
 | **Privacy** | Volatile logs, zram-only swap, RAM-backed `/tmp`, a hardened kernel and network, locked root, firewall on and a hardened Tor Browser. |
-| **Desktop** | Hyprland with a Quickshell bar, notifications and control center, or GNOME as a second session. |
+| **Desktop** | Hyprland with a Quickshell bar, notifications, control center and system-wide text correction, or GNOME as a second session. |
 | **Reproducibility** | Every package, font and theme comes from the flake; nothing is downloaded at runtime. |
 
 ## Quick start

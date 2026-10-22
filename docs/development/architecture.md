@@ -126,6 +126,7 @@ the templates that turn it into each app's format.
 | `~/.scripts/pwnbox-ida-reg` | Patches `~/.idapro/ida.reg` (theme + fonts, CRC re-seal) |
 | `~/.scripts/pwnbox-spotify` | Writable Spotify + Spicetify + watch |
 | `~/.scripts/pwnbox-screenshot` | Region/full/saved screenshots |
+| `~/.scripts/pwnbox-correct-selection` | Corrects the current text selection with aspell |
 | `~/.scripts/status` | Small status helper |
 
 ## Flake outputs
