@@ -38,6 +38,22 @@
 
   boot.tmp.useTmpfs = true;
   boot.tmp.cleanOnBoot = true;
+
+  # /tmp is RAM-backed. Large stale artifacts (VM images, unpacked trees)
+  # otherwise keep consuming memory until the next reboot. Age them out
+  # during normal operation as well.
+  systemd.tmpfiles.rules = [
+    "x /tmp/.X11-unix"
+    "x /tmp/.ICE-unix"
+    "x /tmp/.XIM-unix"
+    "x /tmp/.font-unix"
+    "e /tmp 1777 root root 2d"
+  ];
+  systemd.timers.systemd-tmpfiles-clean.timerConfig = {
+    OnBootSec = "15min";
+    OnUnitActiveSec = "6h";
+  };
+
   fileSystems."/var/tmp" = {
     device = "none";
     fsType = "tmpfs";

@@ -57,6 +57,16 @@ to the new one in `kitty/shaders.c`.
 - **Scrollbars are gone.** That is intentional. The base CSS hides them.
 - **Fonts look wrong.** Run `pwnbox-spotify fonts` and reopen Spotify if the
   watcher isn't attached.
+- **Many `spotify-wrapped` processes.** One client normally owns a renderer,
+  GPU, network, storage, CDM and crashpad helper; those are not duplicate
+  instances. If memory keeps growing after the window is closed, run
+  `pwnbox-spotify stop` (or `pwnbox-spotify cleanup` for orphans). The launcher
+  starts new clients in `pwnbox-spotify-*.scope`, so
+  `systemctl --user stop 'pwnbox-spotify-*.scope'` also terminates the whole
+  tree.
+- **Duplicate Quickshell bars.** The theme helper now waits for the old shell
+  to exit and starts exactly one replacement. Run `pwnbox-theme restart-shell`
+  to recover a stuck session.
 
 ## Discord (Equibop)
 

@@ -217,6 +217,32 @@ in
     };
   };
 
+  # CEF can leave renderer/GPU helpers behind after a crash even though the
+  # top-level Spotify process is gone. Reap only those leftovers; a healthy
+  # running client is left alone.
+  systemd.user.services.pwnbox-spotify-clean = {
+    Unit = {
+      Description = "Reap leftover Spotify helper processes";
+      ConditionPathExists = "${homeDir}/.scripts/pwnbox-spotify";
+    };
+    Service = {
+      Type = "oneshot";
+      ExecStart = "${homeDir}/.scripts/pwnbox-spotify cleanup";
+    };
+  };
+
+  systemd.user.timers.pwnbox-spotify-clean = {
+    Unit = {
+      Description = "Periodically reap leftover Spotify processes";
+    };
+    Timer = {
+      OnBootSec = "5min";
+      OnUnitActiveSec = "10min";
+      Unit = "pwnbox-spotify-clean.service";
+    };
+    Install.WantedBy = [ "timers.target" ];
+  };
+
   home.activation.pwnboxIdaPlugin = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     if [ -d "$HOME/.idapro" ]; then
       run mkdir -p "$HOME/.idapro/plugins"
@@ -429,8 +455,8 @@ in
     if command -v systemctl >/dev/null 2>&1; then
       run systemctl --user start pwnbox-styles.service 2>/dev/null || true
     fi
-    if command -v qs >/dev/null 2>&1; then
-      run sh -c 'pkill -f "bin/quickshell -n$" 2>/dev/null || true; sleep 0.5; setsid qs -n >/dev/null 2>&1 &'
+    if command -v qs >/dev/null 2>&1 && [ -x "$HOME/.scripts/pwnbox-theme" ]; then
+      run sh -c '"$HOME/.scripts/pwnbox-theme" restart-shell >/dev/null 2>&1 || true'
     fi
   '';
 }

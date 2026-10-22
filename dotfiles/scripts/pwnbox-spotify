@@ -16,7 +16,18 @@ live_js="$HOME/.scripts/pwnbox-spotify-live.mjs"
 debug_port=9222
 debug_flags=("--remote-debugging-port=$debug_port" "--remote-allow-origins=*")
 
+runtime_dir="${XDG_RUNTIME_DIR:-/tmp}"
+lock_file="$runtime_dir/pwnbox-spotify.lock"
+# One scope per launched client. A unique name means an old wrapper can never
+# stop a client that the user just relaunched.
+scope_unit="pwnbox-spotify-$$-$RANDOM.scope"
+
 have() { command -v "$1" >/dev/null 2>&1; }
+
+release_lock() {
+    flock -u 9 2>/dev/null || true
+    exec 9>&-
+}
 
 cache_value() {
     local file="$1" fallback="$2" v
@@ -197,7 +208,112 @@ configure() {
     esac
 }
 
-spotify_running() { pgrep -f "$dest_dir" >/dev/null 2>&1; }
+spotify_pids() {
+    local pid exe real
+    real="$(readlink -f "$dest_dir/.spotify-wrapped" 2>/dev/null || true)"
+    # Match the executable, not the command line: systemd-run and wrapper
+    # shells may mention the same path without being Spotify processes.
+    for pid in /proc/[0-9]*; do
+        pid="${pid##*/}"
+        exe="$(readlink -f "/proc/$pid/exe" 2>/dev/null || true)"
+        [ -n "$exe" ] || continue
+        if [ "$exe" = "$dest_dir/.spotify-wrapped" ] ||
+            { [ -n "$real" ] && [ "$exe" = "$real" ]; }; then
+            printf '%s\n' "$pid"
+        fi
+    done
+}
+
+# The CEF/Electron client keeps renderer, GPU, network and crashpad helpers.
+# Only the process without a --type= argument is the top-level instance.
+spotify_main_pids() {
+    local pid cmdline
+    for pid in $(spotify_pids); do
+        cmdline="$(tr '\0' ' ' <"/proc/$pid/cmdline" 2>/dev/null || true)"
+        [ -n "$cmdline" ] || continue
+        case "$cmdline" in
+        *--type=*) continue ;;
+        esac
+        printf '%s\n' "$pid"
+    done
+}
+
+spotify_running() { [ -n "$(spotify_main_pids)" ]; }
+
+spotify_window() {
+    command -v hyprctl >/dev/null 2>&1 || return 1
+    hyprctl -j clients 2>/dev/null | grep -q '"class"[[:space:]]*:[[:space:]]*"spotify"'
+}
+
+focus_spotify() {
+    if command -v hyprctl >/dev/null 2>&1; then
+        hyprctl dispatch focuswindow "class:^(spotify)$" >/dev/null 2>&1 || true
+        return 0
+    fi
+    if command -v wmctrl >/dev/null 2>&1; then
+        wmctrl -a Spotify >/dev/null 2>&1 || true
+    fi
+}
+
+spotify_scopes() {
+    command -v systemctl >/dev/null 2>&1 || return 0
+    systemctl --user list-units --type=scope --all --no-legend --plain \
+        'pwnbox-spotify-[0-9]*.scope' 2>/dev/null | awk '{ print $1 }'
+}
+
+# Stop every process belonging to the writable Spotify copy. This also stops
+# all transient scopes, so renderers cannot survive a closed/crashed client.
+stop_spotify() {
+    local pids tries=0 unit
+    for unit in $(spotify_scopes); do
+        systemctl --user stop "$unit" >/dev/null 2>&1 || true
+    done
+
+    pids="$(spotify_pids)"
+    [ -n "$pids" ] || return 0
+    kill $pids 2>/dev/null || true
+
+    while [ -n "$(spotify_pids)" ] && [ "$tries" -lt 25 ]; do
+        sleep 0.2
+        tries=$((tries + 1))
+    done
+
+    pids="$(spotify_pids)"
+    if [ -n "$pids" ]; then
+        kill -KILL $pids 2>/dev/null || true
+    fi
+}
+
+# Reap helpers left behind after the top-level client is gone. A healthy
+# running client is never touched.
+cleanup_spotify() {
+    local active_us now_us newest=0 unit
+
+    if spotify_running; then
+        return 0
+    fi
+
+    # Do not race a client that is still exec'ing into its main process. Look
+    # at the most recently started scope, not at a fixed unit name.
+    for unit in $(spotify_scopes); do
+        active_us="$(systemctl --user show "$unit" \
+            -p ActiveEnterTimestampMonotonic --value 2>/dev/null || true)"
+        case "$active_us" in
+        '' | *[!0-9]*) active_us=0 ;;
+        esac
+        if [ "$active_us" -gt "$newest" ]; then
+            newest="$active_us"
+        fi
+    done
+    if [ "$newest" -ne 0 ]; then
+        now_us="$(awk '{ printf "%.0f", $1 * 1000000 }' /proc/uptime)"
+        if [ $((now_us - newest)) -lt 60000000 ]; then
+            return 0
+        fi
+    fi
+
+    stop_spotify
+}
 
 debugger_up() {
     (exec 3<>"/dev/tcp/127.0.0.1/$debug_port") 2>/dev/null || return 1
@@ -246,6 +362,57 @@ apply_theme() {
 }
 
 launch() {
+    local main_pids count=0 status=0
+
+    exec 9>"$lock_file"
+    flock -w 2 9 || exit 0
+
+    main_pids="$(spotify_main_pids)"
+    if [ -n "$main_pids" ]; then
+        count="$(printf '%s\n' "$main_pids" | grep -c . || true)"
+    fi
+
+    # Two top-level clients are never intentional; collapse them into one.
+    if [ "$count" -gt 1 ]; then
+        stop_spotify
+        count=0
+    fi
+
+    if [ "$count" -eq 1 ]; then
+        if [ "$#" -gt 0 ] && [ -n "$*" ]; then
+            # Let Spotify's own single-instance handler forward the URI.
+            release_lock
+            exec "$dest_dir/spotify" "$@"
+        fi
+
+        if command -v hyprctl >/dev/null 2>&1; then
+            if spotify_window; then
+                if [ -f "$dest_root/.applied" ]; then
+                    write_colors
+                    write_user_css
+                fi
+                live_inject || true
+                focus_spotify
+                exit 0
+            fi
+            # Top-level process without a window: a crash leftover.
+            stop_spotify
+        else
+            # No compositor query available (for example GNOME): trust the
+            # running client rather than killing it.
+            if [ -f "$dest_root/.applied" ]; then
+                write_colors
+                write_user_css
+            fi
+            live_inject || true
+            exit 0
+        fi
+    fi
+
+    # No healthy top-level client is left. Drop helpers and any stale scope
+    # before replacing the writable copy, so systemd-run cannot hit a
+    # leftover unit with the same name.
+    stop_spotify
     ensure_copy
     if have spicetify; then
         if [ -f "$dest_root/.applied" ]; then
@@ -259,6 +426,19 @@ launch() {
             live_inject
         ) >/dev/null 2>&1 &
     fi
+
+    release_lock
+    if have systemd-run && have systemctl &&
+        systemctl --user show-environment >/dev/null 2>&1; then
+        status=0
+        systemd-run --user --scope --collect --quiet \
+            --property=KillMode=control-group --unit="$scope_unit" \
+            "$dest_dir/spotify" "${debug_flags[@]}" "$@" || status=$?
+        # A scope can outlive its main process when CEF helpers linger. Stop
+        # the whole cgroup as soon as the client returns.
+        systemctl --user stop "$scope_unit" >/dev/null 2>&1 || true
+        exit "$status"
+    fi
     exec "$dest_dir/spotify" "${debug_flags[@]}" "$@"
 }
 
@@ -268,12 +448,20 @@ ensure) ensure_copy ;;
 colors) write_colors ;;
 fonts) write_user_css ;;
 inject) live_inject ;;
+stop) stop_spotify ;;
+cleanup) cleanup_spotify ;;
+focus) focus_spotify ;;
+restart)
+    stop_spotify
+    shift || true
+    launch "$@"
+    ;;
 launch)
     shift || true
     launch "$@"
     ;;
 *)
-    echo "usage: pwnbox-spotify {apply|ensure|colors|fonts|inject|launch [args...]}" >&2
+    echo "usage: pwnbox-spotify {apply|ensure|colors|fonts|inject|launch [args...]|stop|restart|cleanup|focus}" >&2
     exit 2
     ;;
 esac

@@ -18,6 +18,8 @@ apps are installed by default and the system is hardened.
 
 - **No swap partition.** `zramSwap` only (`memoryPercent = 50`).
 - **RAM-backed `/tmp`** and `/var/tmp` (`boot.tmp.useTmpfs`, `cleanOnBoot`).
+  `/tmp` is also age-cleaned every six hours, so abandoned build or VM
+  artifacts cannot keep consuming memory until the next reboot.
 - No hibernation (`nohibernate`).
 
 ## Hardened kernel & network

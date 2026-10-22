@@ -202,7 +202,16 @@ Commands:
 pwnbox-spotify apply
 pwnbox-spotify fonts
 pwnbox-spotify launch
+pwnbox-spotify restart
+pwnbox-spotify stop
+pwnbox-spotify cleanup
 ```
+
+`launch` reuses a running client, focusing its window instead of starting a
+second instance. Each client runs in a transient `pwnbox-spotify-*.scope`, and
+a user timer reaps renderer/GPU helpers left behind after a crash. `stop` closes
+every scope; `cleanup` only removes leftovers when no top-level client is
+running.
 
 ## Discord (Equibop)
 
