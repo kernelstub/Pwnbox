@@ -16,21 +16,16 @@
 
 ## What you get
 
-- **26 pentest categories** — recon, web, AD, network, wireless, RF/SDR,
-  hardware, firmware, reversing, pwn, fuzzing, forensics, cloud, containers,
-  Kubernetes, cracking, crypto, wordlists, mobile, VoIP and more. Every category
-  can be toggled from the host config.
-- **A full daily-driver app set** — encrypted chat, browsers, office, media,
-  wallets, containers and VMs, plus Neovim, Zed and IDA Free / Pro wrapping.
-- **One palette everywhere** — pywal wallpapers or fixed-palette themes drive
-  Hyprland, Quickshell, kitty, rofi, GTK, Neovim, Zed, Telegram, Discord,
-  Spotify, Signal, Element, Wire, Stremio, IDA and Zen.
-- **Private by default** — volatile logs, zram-only swap, RAM-backed `/tmp`,
-  hardened kernel and network, locked root, firewall on and a hardened Tor
-  Browser.
-- **Two sessions** — Hyprland with a Quickshell desktop, or GNOME.
-- **Reproducible** — every tool, font and theme comes from the flake; nothing is
-  downloaded at runtime.
+One flake, a complete workstation:
+
+| Area | What you get |
+| --- | --- |
+| **Offensive tooling** | 26 toggleable categories, from recon and Active Directory to reversing, pwn, forensics, cloud and more. |
+| **Daily-driver apps** | Encrypted chat, browsers, office, media, wallets, containers and VMs, plus Neovim, Zed and IDA Free / Pro. |
+| **Theming** | One palette from a pywal wallpaper or fixed theme, applied across the desktop, terminals, editors, chat apps, browser and IDA. |
+| **Privacy** | Volatile logs, zram-only swap, RAM-backed `/tmp`, a hardened kernel and network, locked root, firewall on and a hardened Tor Browser. |
+| **Desktop** | Hyprland with a Quickshell bar, notifications and control center, or GNOME as a second session. |
+| **Reproducibility** | Every package, font and theme comes from the flake; nothing is downloaded at runtime. |
 
 ## Quick start
 
