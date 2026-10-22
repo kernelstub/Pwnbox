@@ -1,8 +1,9 @@
-<h1 align="center">PWNBOX</h1>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/6bc14965-486f-468d-8f70-fba584b46522" alt="PWNBOX desktop" width="860">
+  <img width="1672" height="941" alt="image" src="https://github.com/user-attachments/assets/046e063f-0d41-43b0-81e4-beefd37a2c09" />
 </p>
+
+
 
 
 <p align="center">
