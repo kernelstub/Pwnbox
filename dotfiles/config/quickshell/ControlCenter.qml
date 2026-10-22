@@ -43,6 +43,7 @@ PanelWindow {
     property string stateWallpaper: ""
     property string homeDir: ""
     property string netInfo: ""
+    property bool clipboardUnlocked: false
     property var clipItems: []
     signal dndToggled(bool value)
     signal openChangedTo(bool value)
@@ -278,6 +279,11 @@ PanelWindow {
         onExited: clipRead.running = true
     }
     Process {
+        id: clipEditProc
+        command: ["true"]
+        onExited: clipRead.running = true
+    }
+    Process {
         id: scaleProc
         command: ["true"]
     }
@@ -324,8 +330,15 @@ PanelWindow {
         }
         if (section === "clipboard")
             clipRead.running = true;
+        else
+            clipboardUnlocked = false;
         if (section === "capture")
             captureMonitorProc.running = true;
+    }
+
+    onOpenChanged: {
+        if (!open)
+            clipboardUnlocked = false;
     }
 
     function parseStats(text) {
@@ -379,14 +392,17 @@ PanelWindow {
         clipProc.startDetached();
     }
 
-    function clipDelete(id) {
-        clipProc.command = ["sh", "-c", "cliphist delete " + id];
-        clipProc.startDetached();
+    function clipDelete(id, preview) {
+        const line = String(id) + "\t" + (preview || "");
+        clipEditProc.command = [
+            "sh", "-c", "printf '%s\\n' \"$1\" | cliphist delete", "sh", line
+        ];
+        clipEditProc.running = true;
     }
 
     function clipClearAll() {
-        clipProc.command = ["sh", "-c", "cliphist wipe"];
-        clipProc.startDetached();
+        clipEditProc.command = ["cliphist", "wipe"];
+        clipEditProc.running = true;
     }
 
     function run(cmd) {
@@ -1961,6 +1977,15 @@ PanelWindow {
                         SectionTitle { text: "History" }
 
                         ActionRow {
+                            label: center.clipboardUnlocked ? "Hide clipboard" : "Show clipboard"
+                            glyph: center.clipboardUnlocked ? Theme.iconEyeSlash : Theme.iconEye
+                            value: center.clipboardUnlocked ? "visible" : "hidden"
+                            visible: center.clipItems.length > 0
+                            height: visible ? 38 : 0
+                            onActivated: center.clipboardUnlocked = !center.clipboardUnlocked
+                        }
+
+                        ActionRow {
                             label: "Clear all"
                             glyph: Theme.iconTrash || "\uf1f8"
                             danger: true
@@ -1997,46 +2022,87 @@ PanelWindow {
                                     cursorShape: Qt.PointingHandCursor
                                     onClicked: center.clipCopy(clipRow.modelData.id)
                                 }
-                                Text {
-                                    anchors { left: parent.left; leftMargin: 12; verticalCenter: parent.verticalCenter }
-                                    text: Theme.iconClipboard || "\uf0ea"
-                                    color: Theme.fgDim
-                                    font.family: Theme.fontIcons
-                                    font.pixelSize: 12
-                                }
-                                Text {
+                                Item {
+                                    id: clipContent
                                     anchors {
-                                        left: parent.left; leftMargin: 34
-                                        right: clipDel.left; rightMargin: 8
-                                        verticalCenter: parent.verticalCenter
+                                        left: parent.left
+                                        right: clipActions.left
+                                        top: parent.top
+                                        bottom: parent.bottom
                                     }
-                                    text: clipRow.modelData.preview || "(empty)"
-                                    color: Theme.fg
-                                    font.family: Theme.fontFamily
-                                    font.pixelSize: 11
-                                    elide: Text.ElideRight
-                                }
-                                Rectangle {
-                                    id: clipDel
-                                    anchors { right: parent.right; rightMargin: 6; verticalCenter: parent.verticalCenter }
-                                    width: 26
-                                    height: 26
-                                    radius: 6
-                                    color: clipDelMouse.containsMouse ? Theme.bgA : "transparent"
 
                                     Text {
-                                        anchors.centerIn: parent
-                                        text: Theme.iconTrash || "\uf1f8"
-                                        color: clipDelMouse.containsMouse ? Theme.red : Theme.fgFaint
+                                        anchors { left: parent.left; leftMargin: 12; verticalCenter: parent.verticalCenter }
+                                        text: Theme.iconClipboard || "\uf0ea"
+                                        color: Theme.fgDim
                                         font.family: Theme.fontIcons
-                                        font.pixelSize: 11
+                                        font.pixelSize: 12
                                     }
-                                    MouseArea {
-                                        id: clipDelMouse
-                                        anchors.fill: parent
-                                        hoverEnabled: true
-                                        cursorShape: Qt.PointingHandCursor
-                                        onClicked: center.clipDelete(clipRow.modelData.id)
+                                    Text {
+                                        id: clipPreview
+                                        anchors {
+                                            left: parent.left; leftMargin: 34
+                                            right: parent.right; rightMargin: 8
+                                            verticalCenter: parent.verticalCenter
+                                        }
+                                        text: center.clipboardUnlocked
+                                            ? (clipRow.modelData.preview || "(empty)")
+                                            : "••••••••••••••••••••"
+                                        color: center.clipboardUnlocked ? Theme.fg : Theme.fgFaint
+                                        font.family: Theme.fontFamily
+                                        font.pixelSize: 11
+                                        elide: Text.ElideRight
+                                    }
+                                }
+                                Row {
+                                    id: clipActions
+                                    anchors { right: parent.right; rightMargin: 6; verticalCenter: parent.verticalCenter }
+                                    spacing: 2
+
+                                    Rectangle {
+                                        id: clipCopyBtn
+                                        width: 26
+                                        height: 26
+                                        radius: 6
+                                        color: clipCopyMouse.containsMouse ? Theme.bgA : "transparent"
+
+                                        Text {
+                                            anchors.centerIn: parent
+                                            text: Theme.iconCopy || "\uf0c5"
+                                            color: clipCopyMouse.containsMouse ? Theme.fg : Theme.fgFaint
+                                            font.family: Theme.fontIcons
+                                            font.pixelSize: 11
+                                        }
+                                        MouseArea {
+                                            id: clipCopyMouse
+                                            anchors.fill: parent
+                                            hoverEnabled: true
+                                            cursorShape: Qt.PointingHandCursor
+                                            onClicked: center.clipCopy(clipRow.modelData.id)
+                                        }
+                                    }
+
+                                    Rectangle {
+                                        id: clipDel
+                                        width: 26
+                                        height: 26
+                                        radius: 6
+                                        color: clipDelMouse.containsMouse ? Theme.bgA : "transparent"
+
+                                        Text {
+                                            anchors.centerIn: parent
+                                            text: Theme.iconTrash || "\uf1f8"
+                                            color: clipDelMouse.containsMouse ? Theme.red : Theme.fgFaint
+                                            font.family: Theme.fontIcons
+                                            font.pixelSize: 11
+                                        }
+                                        MouseArea {
+                                            id: clipDelMouse
+                                            anchors.fill: parent
+                                            hoverEnabled: true
+                                            cursorShape: Qt.PointingHandCursor
+                                            onClicked: center.clipDelete(clipRow.modelData.id, clipRow.modelData.preview)
+                                        }
                                     }
                                 }
                             }
