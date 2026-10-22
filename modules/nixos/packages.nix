@@ -210,6 +210,7 @@ let
       dino
       qtox
       equibop
+      goofcord
 
       obsidian
       zed-editor
