@@ -21,7 +21,7 @@ let
     version = zen-browser-unwrapped.version;
 
     extraPolicies = {
-      # Zen itself cannot update inside the Nix store; `upd` ships new builds.
+      # Zen itself cannot update inside the Nix store; a rebuild ships new builds.
       DisableAppUpdate = true;
       ExtensionSettings = {
         "styles@pwnbox.one" = {

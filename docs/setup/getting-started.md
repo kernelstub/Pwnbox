@@ -73,13 +73,13 @@ Examples:
 
 ## After install
 
-Useful shell aliases (defined in `modules/home/shell.nix`):
+Useful commands:
 
 | Command | Does |
 | --- | --- |
-| `upd` | Rebuild and activate |
-| `update` | Update all flake inputs, then rebuild |
-| `rebuild` | Not defined by default, use `upd` |
+| `./scripts/install.sh switch` | Rebuild and activate |
+| `update` | Update all flake inputs, then rebuild (shell alias) |
+| `ALT + S` | Open the theme / settings menu |
 
 ## Host configuration
 

@@ -116,8 +116,9 @@ Any missing colour falls back to the monochrome palette, so a minimal theme is
 just `name`, `background` and `foreground`. See
 `dotfiles/themes/README.md` for the full reference.
 
-After adding a theme folder, `git add` it and rebuild (`upd`) so it is linked,
-then choose it from `ALT + S → Custom`. The flake only sees files tracked by
+After adding a theme folder, `git add` it and rebuild
+(`./scripts/install.sh switch`) so it is linked, then choose it from
+`ALT + S → Custom`. The flake only sees files tracked by
 git, so an untracked theme folder is silently ignored even after a rebuild. The
 command-line equivalent is `pwnbox-theme custom`.
 
@@ -136,7 +137,7 @@ there follow the same folder layout as the built-in ones:
 cp -r Pwnbox-Themes/themes/<name> ~/pwnbox/dotfiles/themes/
 cd ~/pwnbox
 git add dotfiles/themes/<name>
-upd
+./scripts/install.sh switch
 ```
 
 Then choose it from `ALT + S → Custom`, or run `pwnbox-theme custom`. The

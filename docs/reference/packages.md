@@ -121,4 +121,4 @@ with pkgs;
 ]
 ```
 
-Then rebuild with `upd`.
+Then rebuild with `./scripts/install.sh switch`.

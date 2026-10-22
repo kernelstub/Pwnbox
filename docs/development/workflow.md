@@ -20,8 +20,8 @@ nix fmt
 
 1. Create `dotfiles/themes/<Name>/theme.conf` (copy `Pwnbox` as a base).
 2. Drop a wallpaper next to it.
-3. `git add` the folder (the flake ignores untracked files), rebuild (`upd`),
-   then pick it from `ALT + S → Custom`.
+3. `git add` the folder (the flake ignores untracked files), rebuild
+   (`./scripts/install.sh switch`), then pick it from `ALT + S → Custom`.
 
 Only `name`, `background` and `foreground` are required; everything else falls
 back to the monochrome palette. See

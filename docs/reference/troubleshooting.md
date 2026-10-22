@@ -95,8 +95,8 @@ to the new one in `kitty/shaders.c`.
   `programs.nix-ld.libraries`.
 - **Theme doesn't update after switching wallpaper.** IDA reads its CSS at
   startup — restart IDA. If it still doesn't change, the wal template may
-  be stale: rebuild (`upd`) so the template in the store matches the flake,
-  then switch the wallpaper once more.
+  be stale: rebuild (`./scripts/install.sh switch`) so the template in the
+  store matches the flake, then switch the wallpaper once more.
 - **"corrupted registry file".** `~/.idapro/ida.reg` has a CRC. Only
   `pwnbox-ida-reg` should touch it; if it got broken another way, delete
   it (IDA recreates it, losing only UI settings) or restore a backup.
@@ -127,11 +127,11 @@ to the new one in `kitty/shaders.c`.
   config directory does not exist yet — launch Stremio Enhanced once first.
 - **"server.js not found" on startup.** The streaming server is seeded to
   `~/.config/stremio-enhanced/streamingserver/server.js` on activation. If it
-  is missing, rebuild (`upd`) or let the app download it from the dialog it
-  shows.
+  is missing, rebuild (`./scripts/install.sh switch`) or let the app download
+  it from the dialog it shows.
 - **Fonts look wrong.** The app font is written into the theme CSS. If it
   still falls back, the installed package may predate the font fix — rebuild
-  (`upd`) so the FHS sandbox carries the pwnbox fonts.
+  (`./scripts/install.sh switch`) so the FHS sandbox carries the pwnbox fonts.
 
 ## Fonts or font sizes didn't change
 

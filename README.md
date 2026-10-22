@@ -44,8 +44,8 @@ builds and activates. Garbage collection is opt-in with `--gc`.
 
 - Full walkthrough: [Getting started](docs/setup/getting-started.md)
 - Bootable images: [ISOs](docs/setup/isos.md)
-- Most-used commands: `upd` (rebuild), `update` (update inputs + rebuild),
-  `ALT + S` (theme / settings menu)
+- Most-used commands: `./scripts/install.sh switch` (rebuild),
+  `update` (update inputs + rebuild), `ALT + S` (theme / settings menu)
 
 ## Documentation
 
@@ -71,8 +71,8 @@ The full manual lives in [`docs/`](docs/README.md):
 
 Extra fixed-palette themes are collected in
 [kernelstub/Pwnbox-Themes](https://github.com/kernelstub/Pwnbox-Themes). Copy a
-theme folder into `dotfiles/themes/`, `git add` it, rebuild with `upd`, then
-select it from `ALT + S → Custom`. See
+theme folder into `dotfiles/themes/`, `git add` it, rebuild with
+`./scripts/install.sh switch`, then select it from `ALT + S → Custom`. See
 [Themes](docs/usage/themes.md#community-themes) for details.
 
 ## Community

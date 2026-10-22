@@ -88,7 +88,6 @@ in
       c = "clear";
       reload = "source ~/.config/zsh/.zshrc";
 
-      upd = "sudo nixos-rebuild switch --flake $HOME/Flakes#$(hostname -s)";
       update = "nix flake update --flake $HOME/Flakes && sudo nixos-rebuild switch --flake $HOME/Flakes#$(hostname -s)";
       install = "nix profile install";
       remove = "nix profile remove";
