@@ -18,7 +18,7 @@ nix fmt
 
 ## Add a custom theme
 
-1. Create `dotfiles/themes/<Name>/theme.conf` (copy `Beach` as a base).
+1. Create `dotfiles/themes/<Name>/theme.conf` (copy `Pwnbox` as a base).
 2. Drop a wallpaper next to it.
 3. `git add` the folder (the flake ignores untracked files), rebuild (`upd`),
    then pick it from `ALT + S → Custom`.

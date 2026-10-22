@@ -88,25 +88,15 @@ and (optionally) a wallpaper:
 
 ```
 dotfiles/themes/
-├── Pwnbox/
-│   ├── theme.conf
-│   └── wallpaper.png
-├── Monochrome/
-│   ├── theme.conf
-│   └── wallpaper.png
-├── Amoled/
-│   ├── theme.conf
-│   └── wallpaper.png
-├── Beach/
-│   ├── theme.conf
-│   └── wallpaper.png
-└── Compose/
+└── Pwnbox/
     ├── theme.conf
     └── wallpaper.png
 ```
 
 A fresh installation applies the `Pwnbox` theme by default; if its folder is
-missing, the built-in Monochrome palette is the fallback.
+missing, the built-in Monochrome palette is the fallback. Additional themes can
+be installed from [kernelstub/Pwnbox-Themes](https://github.com/kernelstub/Pwnbox-Themes)
+or created locally.
 
 `theme.conf` is INI-style:
 

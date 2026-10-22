@@ -9,20 +9,14 @@ the built-in Monochrome palette is the fallback.
 
 ```
 dotfiles/themes/
-├── Pwnbox/                 # applied by default on a fresh installation
-│   ├── theme.conf
-│   └── wallpaper.png
-├── Monochrome/             # the built-in grey theme
-│   ├── theme.conf
-│   └── wallpaper.png
-├── Amoled/                 # a theme
-│   ├── theme.conf          # the colours (required)
-│   └── wallpaper.png       # the wallpaper it uses (optional but recommended)
-├── Catppuccin/
-│   ├── theme.conf
-│   └── wallpaper.png
-└── Development/            # a GTK theme folder, no theme.conf, so it is ignored
+└── Pwnbox/                 # applied by default on a fresh installation
+    ├── theme.conf
+    └── wallpaper.png
 ```
+
+More themes live in
+[kernelstub/Pwnbox-Themes](https://github.com/kernelstub/Pwnbox-Themes). To add
+one, copy its folder here; any subfolder with a `theme.conf` is picked up.
 
 Unlike the wallpaper picker (which extracts a palette from an image with
 pywal), a custom theme has a **fixed** palette that you write down yourself and
@@ -58,7 +52,7 @@ editor's accent colours are all derived from the 16 colours above (see
 
 ## Adding a theme
 
-1. Create `dotfiles/themes/<Name>/theme.conf` (copy `Catppuccin` as a base).
+1. Create `dotfiles/themes/<Name>/theme.conf` (copy `Pwnbox` as a base).
 2. Drop a wallpaper in the same folder.
 3. `git add` the folder — the flake only includes git-tracked files, so an
    untracked theme is silently ignored — then `nixos-rebuild switch`, and
