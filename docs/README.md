@@ -21,7 +21,7 @@ and jump to whatever you need.
 | --- | --- |
 | [Desktop](usage/desktop.md) | Hyprland, GNOME, Quickshell, sessions |
 | [Keybinds](usage/keybinds.md) | Every keyboard shortcut |
-| [Themes](usage/themes.md) | Wallpaper themes, custom themes, the `ALT + S` menu |
+| [Themes](usage/themes.md) | Wallpaper themes, custom and community themes, the `ALT + S` menu |
 | [Fonts](usage/fonts.md) | System/application fonts and sizes |
 | [Apps](usage/apps.md) | Per-app theming and live updates (Spotify, Discord, Telegram, Stremio Enhanced, IDA Free/Pro) |
 | [Browser](usage/browser.md) | Zen, site themes and the pwnbox styles extension |

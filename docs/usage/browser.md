@@ -70,6 +70,39 @@ Click the extension's toolbar icon to open a popup with the master switches
 
 Changes apply to every open page instantly.
 
+### Included sites
+
+<details>
+<summary>131 themed websites</summary>
+
+**Development & docs** — alacritty.org, arch-wiki, bstats, codeberg, crates.io,
+crowdin, devdocs, dev.to, docs.deno.com, docs.rs, freedesktop, ghostty.org,
+github, gleam.run, go.dev, graphite, hackage, home-manager-options-search,
+hoogle, hoppscotch, learn-x-in-y-minutes, mdbook, mdn, neovim.io,
+nixos-manual, nixos-search, npm, npmx, pypi, pythonanywhere, react.dev,
+regex101, scalar, stack-overflow, web.dev, zen-browser-docs
+
+**AI, search & productivity** — alternativeto, amplenote, anonymous-overflow,
+boringproxy, brave-search, chatgpt, claude, deepseek, deepl, ecosia, gmail,
+google-drive, google-gemini, google-photos, grabify, have-i-been-pwned,
+homepage, indie-wiki-buddy, inoreader, invokeai, keyoxide, lingva, linkedin,
+microsoft-word, migadu-webmail, ollama, openmediavault, paste.rs, perplexity,
+poe, porkbun, proton, raindrop, rentry.co, searchix, searxng, startpage, stylus,
+syncthing, tabnews, tldraw, tuta, vercel, vikunja, whatsapp-web, wikipedia,
+wikiwand
+
+**Media, social & streaming** — anilist, bsky, cinny, cobalt, elk, hacker-news,
+holodex, hyperpipe, instagram, invidious, lastfm, lemmy, libreddit, listenbrainz,
+lobste.rs, mastodon, modrinth, namemc, nitter, phanpy, pinterest,
+planet-minecraft, pronouns.cc, pronouns.page, reddit, seventv, shinigami-eyes,
+snapchat-web, spotify-web, status.cafe, substack, twitch, twitter, youtube
+
+**Learning, games & fun** — advent-of-code, canvas-lms, chess.com, desmos,
+formative, ichi.moe, jisho, keybr.com, lichess, minesweeper, picrew,
+pwnbox-scrollbars, quizlet, trinket
+
+</details>
+
 ## No hardening
 
 Zen is a normal browser. `dotfiles/zen/user.js` is intentionally limited to

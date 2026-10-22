@@ -72,14 +72,15 @@ Theming and fonts are covered in [Apps](../usage/apps.md#ida-free--pro).
 | Area | Apps |
 | --- | --- |
 | **Private & encrypted chat** | Signal, SimpleX, Element (Matrix), Dino (XMPP), qTox, AyuGram (Telegram), Equibop (Discord / Equicord) |
-| **Browsers** | Zen (default), Chromium, Tor Browser (hardened) |
+| **Browsers** | Zen (default, themed), Chromium, Tor Browser (hardened), Mullvad Browser |
 | **Privacy & security** | KeePassXC, Mullvad VPN, Tor + torsocks |
 | **Crypto wallets** | Exodus, Ledger Live (with udev rules for Ledger devices) |
-| **Office & notes** | LibreOffice, Obsidian, Geary, Papers (Document Viewer), Loupe (Image Viewer) |
+| **Office & notes** | LibreOffice, Obsidian, Geary, Zathura, Papers (Document Viewer), Loupe (Image Viewer) |
 | **AI assistant** | ChatGPT (official desktop app) |
 | **Media & creative** | Stremio Enhanced, Spotify, VLC, mpv, cmus, qBittorrent, GIMP, Inkscape, Krita, OBS, Audacity, Kdenlive, Blender, spotdl, yt-dlp (also `ytdl`) |
 | **Terminal & system** | kitty, ranger, zsh + oh-my-zsh, tmux, btop, fastfetch, fzf, ripgrep, bat, eza, zoxide, lazygit |
 | **Development** | Neovim, Zed, Git, Docker / Podman, libvirt / KVM (virt-manager) and language toolchains (C/C++, Rust, Go, Python, JVM, JS/TS, Haskell, …) |
+| **Reverse engineering** | IDA Pro 9.x / IDA Free via an FHS wrapper for a locally installed copy — `ida`, `ida64`, `idat`, `hv` commands and launcher entries, fully themed |
 
 ## Stremio Enhanced
 

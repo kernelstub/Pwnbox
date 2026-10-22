@@ -11,6 +11,12 @@ pwnbox ships two Wayland sessions: **Hyprland** (the default) and **GNOME**.
 
 At login, LY shows the clock and the session picker.
 
+## Editors
+
+Neovim is configured VS Code-style — LSP, completion, Telescope, Treesitter,
+gitsigns, neo-tree, which-key and more — with every plugin supplied by Nix.
+Zed is the GUI editor and follows the same palette, fonts and border styling.
+
 ## Hyprland
 
 Window management is configured in `dotfiles/config/hypr/hyprland.conf`:
