@@ -30,7 +30,6 @@ font_app_size_state="$cache/font-size-app"
 scale_state="$cache/scale"
 
 font_choices=(
-    "Manrope"
     "Fairfax HD"
     "Fairfax Hax HD"
     "Fairfax Pona HD"
@@ -46,6 +45,8 @@ font_choices=(
     "Iosevka Nerd Font"
     "Iosevka Nerd Font Mono"
     "Iosevka Nerd Font Propo"
+    "Ioskeley Mono"
+    "IoskeleyMono Nerd Font"
     "JetBrains Mono"
     "JetBrainsMono Nerd Font"
     "JetBrainsMono Nerd Font Mono"
@@ -134,8 +135,8 @@ border_hypr() { [ "$(border_state)" = "off" ] && printf '0' || printf '2'; }
 shadow_state() { read_state "$shadow_file" on; }
 shadow_label() { [ "$(shadow_state)" = "off" ] && printf 'Off' || printf 'On'; }
 shadow_hypr() { [ "$(shadow_state)" = "off" ] && printf 'false' || printf 'true'; }
-ui_font() { read_state "$font_ui_state" "Manrope"; }
-app_font() { read_state "$font_app_state" "Iosevka Nerd Font Mono"; }
+ui_font() { read_state "$font_ui_state" "IoskeleyMono Nerd Font"; }
+app_font() { read_state "$font_app_state" "IoskeleyMono Nerd Font"; }
 ui_font_size() { read_state "$font_ui_size_state" 9; }
 app_font_size() { read_state "$font_app_size_state" 9; }
 scale() { read_state "$scale_state" 100; }

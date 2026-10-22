@@ -37,7 +37,7 @@ sync_app() {
 patch_fonts() {
     local family
     family="$(cat "$font_state" 2>/dev/null || true)"
-    [ -n "$family" ] || family='Iosevka Nerd Font Mono'
+    [ -n "$family" ] || family='IoskeleyMono Nerd Font'
     [ -f "$font_stamp" ] && [ "$(cat "$font_stamp" 2>/dev/null || true)" = "$family" ] && return 0
 
     local jar

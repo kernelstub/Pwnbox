@@ -47,7 +47,7 @@ in
     };
 
     font = {
-      name = "Manrope";
+      name = "IoskeleyMono Nerd Font";
       size = 9;
     };
 
@@ -76,9 +76,9 @@ in
       color-scheme = "prefer-dark";
       accent-color = "slate";
       clock-format = "24h";
-      font-name = "Manrope 9";
-      document-font-name = "Manrope 9";
-      monospace-font-name = "Iosevka Nerd Font Mono 11";
+      font-name = "IoskeleyMono Nerd Font 9";
+      document-font-name = "IoskeleyMono Nerd Font 9";
+      monospace-font-name = "IoskeleyMono Nerd Font 11";
       font-hinting = "slight";
       enable-animations = true;
       enable-hot-corners = false;
@@ -89,7 +89,7 @@ in
 
     "org/gnome/desktop/wm/preferences" = {
       theme = "Colloid-Dark-Grey";
-      titlebar-font = "Iosevka Nerd Font Mono 11";
+      titlebar-font = "IoskeleyMono Nerd Font 11";
       button-layout = "appmenu:";
       focus-mode = "mouse";
       num-workspaces = 5;

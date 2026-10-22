@@ -9,8 +9,6 @@ lib.mkIf config.pwnbox.desktop.enable {
     enableDefaultPackages = true;
 
     packages = with pkgs; [
-      pwnbox.manrope
-
       ubuntu-classic
       spleen
       terminus_font_ttf
@@ -42,12 +40,11 @@ lib.mkIf config.pwnbox.desktop.enable {
       enable = true;
       defaultFonts = {
         monospace = [
-          "Iosevka Nerd Font Mono"
-          "JetBrainsMono Nerd Font Mono"
+          "IoskeleyMono Nerd Font"
           "Noto Sans Mono"
         ];
         sansSerif = [
-          "Manrope"
+          "IoskeleyMono Nerd Font"
           "Noto Sans"
         ];
         serif = [ "Noto Serif" ];

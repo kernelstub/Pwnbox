@@ -1801,13 +1801,13 @@ PanelWindow {
                         ActionRow {
                             label: "System font"
                             glyph: Theme.iconPencil
-                            value: center.stateFontUi || "Manrope"
+                            value: center.stateFontUi || "IoskeleyMono Nerd Font"
                             onActivated: center.run("$HOME/.scripts/pwnbox-theme uifont")
                         }
                         ActionRow {
                             label: "Application font"
                             glyph: Theme.iconPencil
-                            value: center.stateAppFont || "Iosevka Nerd Font Mono"
+                            value: center.stateAppFont || "IoskeleyMono Nerd Font"
                             onActivated: center.run("$HOME/.scripts/pwnbox-theme appfont")
                         }
                         ActionRow {

@@ -139,8 +139,8 @@ EOF
 
 fonts_block() {
     local ui app uisize spotsize
-    ui="$(cache_value font-ui Manrope)"
-    app="$(cache_value font-app "Iosevka Nerd Font Mono")"
+    ui="$(cache_value font-ui IoskeleyMono Nerd Font)"
+    app="$(cache_value font-app "IoskeleyMono Nerd Font")"
     uisize="$(cache_value font-size-ui 9)"
     case "$uisize" in '' | *[!0-9]*) uisize=9 ;; esac
     spotsize=$((uisize + 5))

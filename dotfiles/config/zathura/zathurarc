@@ -1,7 +1,7 @@
 set zoom-min 50
 set zoom-max 150
 
-set font "Iosevka Nerd Font Mono Regular" 11
+set font "IoskeleyMono Nerd Font Regular" 11
 
 set default-bg "#000000"
 set default-fg "#ffffff"

@@ -41,7 +41,7 @@
 
     --settingsicons: 0;
 
-    --font: "Manrope";
+    --font: "IoskeleyMono Nerd Font";
 
     --accentcolor: 85, 85, 85;
 
@@ -82,7 +82,7 @@
     --backgroundfloating: 28, 28, 28;
 
     --text-feedback-positive: #ccc !important;
-    --font-code: "Manrope" !important;
+    --font-code: "IoskeleyMono Nerd Font" !important;
 
     --custom-gradient-color-1: #fff !important;
     --custom-gradient-color-2: #fff !important;
@@ -157,7 +157,7 @@
 }
 
 code {
-    font-family: Manrope, monospace;
+    font-family: "IoskeleyMono Nerd Font", monospace;
 }
 .visual-refresh .expandedFolderIconWrapper_bc7085 {
     border-radius: 12px;

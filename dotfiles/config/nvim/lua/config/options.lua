@@ -16,7 +16,7 @@ opt.showmode = false
 
 opt.guicursor = "n-v-c-sm:ver25,i-ci-ve:ver25,r-cr:ver25,o:ver25,t:ver25,a:blinkwait700-blinkon400-blinkoff250"
 
-opt.guifont = "Iosevka Nerd Font Mono:h12"
+opt.guifont = "IoskeleyMono Nerd Font:h12"
 opt.ruler = true
 opt.laststatus = 3
 opt.cmdheight = 1

@@ -287,9 +287,9 @@ in
       "theme": "obsidian",
       "translucency": false,
       "cssTheme": "",
-      "textFontFamily": "Manrope",
-      "interfaceFontFamily": "Manrope",
-      "monospaceFontFamily": "Iosevka Nerd Font Mono",
+      "textFontFamily": "IoskeleyMono Nerd Font",
+      "interfaceFontFamily": "IoskeleyMono Nerd Font",
+      "monospaceFontFamily": "IoskeleyMono Nerd Font",
       "enabledCssSnippets": [
         "pwnbox",
         "no-scrollbars"
