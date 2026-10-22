@@ -43,7 +43,6 @@ PanelWindow {
     property string stateWallpaper: ""
     property string homeDir: ""
     property string netInfo: ""
-    property bool clipboardUnlocked: false
     property var clipItems: []
     signal dndToggled(bool value)
     signal openChangedTo(bool value)
@@ -330,15 +329,8 @@ PanelWindow {
         }
         if (section === "clipboard")
             clipRead.running = true;
-        else
-            clipboardUnlocked = false;
         if (section === "capture")
             captureMonitorProc.running = true;
-    }
-
-    onOpenChanged: {
-        if (!open)
-            clipboardUnlocked = false;
     }
 
     function parseStats(text) {
@@ -1977,15 +1969,6 @@ PanelWindow {
                         SectionTitle { text: "History" }
 
                         ActionRow {
-                            label: center.clipboardUnlocked ? "Hide clipboard" : "Show clipboard"
-                            glyph: center.clipboardUnlocked ? Theme.iconEyeSlash : Theme.iconEye
-                            value: center.clipboardUnlocked ? "visible" : "hidden"
-                            visible: center.clipItems.length > 0
-                            height: visible ? 38 : 0
-                            onActivated: center.clipboardUnlocked = !center.clipboardUnlocked
-                        }
-
-                        ActionRow {
                             label: "Clear all"
                             glyph: Theme.iconTrash || "\uf1f8"
                             danger: true
@@ -2045,10 +2028,8 @@ PanelWindow {
                                             right: parent.right; rightMargin: 8
                                             verticalCenter: parent.verticalCenter
                                         }
-                                        text: center.clipboardUnlocked
-                                            ? (clipRow.modelData.preview || "(empty)")
-                                            : "••••••••••••••••••••"
-                                        color: center.clipboardUnlocked ? Theme.fg : Theme.fgFaint
+                                        text: clipRow.modelData.preview || "(empty)"
+                                        color: Theme.fg
                                         font.family: Theme.fontFamily
                                         font.pixelSize: 11
                                         elide: Text.ElideRight

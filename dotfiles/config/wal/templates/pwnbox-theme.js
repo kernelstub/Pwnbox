@@ -82,6 +82,4 @@ var iconTerminal    = "\uf120";
 var iconFolder      = "\uf07b";
 var iconClipboard   = "\uf0ea";
 var iconTrash       = "\uf1f8";
-var iconEye         = "\uf06e";
-var iconEyeSlash    = "\uf070";
 var iconCopy        = "\uf0c5";

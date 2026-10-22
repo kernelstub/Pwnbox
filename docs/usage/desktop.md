@@ -110,8 +110,7 @@ contains everything, organised into cards:
 - **Volume.** Per-app/output/input sliders with mute.
 - **System.** CPU, memory, swap, disk, uptime and network stats.
 - **Clipboard.** Clipboard history (newest first) with copy-back, per-item
-  delete and clear-all. Previews are masked until you press **Show clipboard**;
-  each row has its own copy and delete buttons.
+  copy and delete buttons, and clear-all.
 - **Capture.** Area, full screen (all screens or one entry per monitor),
   active window, annotation and recording (also per monitor). Per-monitor
   full-screen screenshots wait 0.5 s so the control center is gone before the
