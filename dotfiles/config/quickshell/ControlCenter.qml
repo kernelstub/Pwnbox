@@ -2133,7 +2133,7 @@ PanelWindow {
                                 label: "Full screen — " + modelData.name
                                 value: modelData.width + "x" + modelData.height
                                 glyph: Theme.iconDisplay
-                                onActivated: center.runCapture("$HOME/.scripts/pwnbox-screenshot full " + modelData.name, 1200)
+                                onActivated: center.runCapture("$HOME/.scripts/pwnbox-screenshot full " + modelData.name, 500)
                             }
                         }
                         ActionRow {

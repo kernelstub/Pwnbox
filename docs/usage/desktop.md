@@ -139,7 +139,9 @@ contains everything, organised into cards:
 - **Clipboard.** Clipboard history (newest first) with copy-back, per-item
   delete and clear-all.
 - **Capture.** Area, full screen (all screens or one entry per monitor),
-  active window, annotation and recording (also per monitor).
+  active window, annotation and recording (also per monitor). Per-monitor
+  full-screen screenshots wait 0.5 s so the control center is gone before the
+  shot is taken.
 - **Notifications.** Do-not-disturb, clear-all and the notification list.
 
 Clicking any bar element (clock, stats, volume, Wi-Fi, Bluetooth, bell, power)
