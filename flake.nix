@@ -150,6 +150,7 @@
         // (import ./pkgs/toolset.nix { inherit pkgs categories; })
         // lib.optionalAttrs (system == "x86_64-linux") {
           chatgpt = inputs.chatgpt.packages.${system}.chatgpt;
+          steam = pkgs.steam;
         }
         // {
           # Ioskeley Mono ships in nixpkgs (pkgs.ioskeley-mono.<variant>):
