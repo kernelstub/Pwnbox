@@ -29,6 +29,7 @@
 
     packages = {
       hacking = true;
+      gaming = true;
     };
   };
 
