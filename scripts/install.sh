@@ -334,6 +334,18 @@ if command -v getent >/dev/null 2>&1; then
     h="$(getent passwd "$user" 2>/dev/null | cut -d: -f6 || true)"
     [ -n "$h" ] && home="$h"
 fi
+# Account not created yet (fresh install as root): do not fall back to root's home.
+if [ -z "${h:-}" ] && [ "$(id -un)" != "$user" ]; then
+    home="/home/$user"
+fi
+
+as_user() {
+    if [ "$(id -un)" = "$user" ]; then
+        "$@"
+    else
+        runuser -u "$user" -- "$@"
+    fi
+}
 
 host_dir="$FLAKE_DIR/hosts/$host"
 need_sudo=0
@@ -558,7 +570,15 @@ EOF
 esac
 
 if command -v git >/dev/null 2>&1 && git -C "$FLAKE_DIR" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
-    git -C "$FLAKE_DIR" add -- "$host_dir" >/dev/null 2>&1 || true
+    # Intent-to-add only the untracked generated files so flakes see them; never touch the rest of the index.
+    for _f in default.nix hardware-configuration.nix boot.nix; do
+        [ -f "$host_dir/$_f" ] || continue
+        git -C "$FLAKE_DIR" ls-files --error-unmatch -- "$host_dir/$_f" >/dev/null 2>&1 && continue
+        if ! git -C "$FLAKE_DIR" add -N -- "$host_dir/$_f" >/dev/null 2>&1; then
+            exec_row "hardware and boot" "fail" "git could not include $_f"
+            die "git add -N failed for $host_dir/$_f (flake would not see it)"
+        fi
+    done
 fi
 
 if [ "$hardware_warn" -eq 1 ] || [ "$boot_warn" -eq 1 ]; then
@@ -671,13 +691,18 @@ esac
 exec_row "theme assets" "$theme_state" "$theme_note"
 
 exec_row "verify" "run" "vault and desktop services"
-vault="$home/Documents/Notes"
-if [ ! -d "$vault/.obsidian" ]; then
-    if ! mkdir -p "$vault/.obsidian/plugins" "$vault/.obsidian/snippets"; then
-        exec_row "verify" "fail" "could not create vault"
-        die "could not create $vault"
-    fi
-    if ! cat > "$vault/Welcome.md" <<'EOF'
+vault_note="vault untouched ($action)"
+# Only after activation: the target account may not exist yet for build/boot/dry-activate.
+case "$action" in
+switch | test)
+    vault="$home/Documents/Notes"
+    vault_note="vault ready"
+    if [ ! -d "$vault/.obsidian" ]; then
+        if ! as_user mkdir -p "$vault/.obsidian/plugins" "$vault/.obsidian/snippets"; then
+            exec_row "verify" "fail" "could not create vault"
+            die "could not create $vault"
+        fi
+        if ! as_user tee "$vault/Welcome.md" >/dev/null <<'EOF'
 # pwnbox notes
 
 Obsidian vault, themed by pwnbox. The active palette (pywal or custom theme)
@@ -686,14 +711,16 @@ is applied as the `pwnbox` CSS snippet — switch it with `ALT + S`.
 Installed community plugins: Dataview, Templater, Obsidian Git, Kanban,
 Outliner, Style Settings, LaTeX Suite, QuickAdd.
 EOF
-    then
-        exec_row "verify" "fail" "could not write vault"
-        die "could not write $vault/Welcome.md"
+        then
+            exec_row "verify" "fail" "could not write vault"
+            die "could not write $vault/Welcome.md"
+        fi
+        info "vault created: $vault"
+    else
+        info "vault present: $vault"
     fi
-    info "vault created: $vault"
-else
-    info "vault present: $vault"
-fi
+    ;;
+esac
 
 styles_note="service reload skipped"
 case "$action" in
@@ -718,7 +745,7 @@ switch | test)
     ;;
 esac
 
-exec_row "verify" "pass" "vault ready; $styles_note"
+exec_row "verify" "pass" "$vault_note; $styles_note"
 
 case "$action" in
 switch | test) next_note="log out/in for GNOME, or run: qs -n" ;;

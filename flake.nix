@@ -149,12 +149,7 @@
         (import ./pkgs { inherit pkgs; })
         // (import ./pkgs/toolset.nix { inherit pkgs categories; })
         // lib.optionalAttrs (system == "x86_64-linux") {
-          chatgpt = inputs.chatgpt.packages.${system}.chatgpt.overrideAttrs (old: {
-            src = pkgs.fetchurl {
-              inherit (old.src) name url;
-              hash = "sha256-6wgxxzTxVPk/jrzw4X0RjaDep9wXN9xhoecURDdb8ZA=";
-            };
-          });
+          chatgpt = inputs.chatgpt.packages.${system}.chatgpt;
           steam = pkgs.steam;
         }
         // {

@@ -36,17 +36,8 @@ let
       null;
 
   chatgpt =
-    if
-      inputs != null
-      && inputs ? chatgpt
-      && (inputs.chatgpt.packages.${pkgs.stdenv.hostPlatform.system} or { }) ? chatgpt
-    then
-      inputs.chatgpt.packages.${pkgs.stdenv.hostPlatform.system}.chatgpt.overrideAttrs (old: {
-        src = pkgs.fetchurl {
-          inherit (old.src) name url;
-          hash = "sha256-6wgxxzTxVPk/jrzw4X0RjaDep9wXN9xhoecURDdb8ZA=";
-        };
-      })
+    if inputs != null && inputs ? chatgpt then
+      (inputs.chatgpt.packages.${pkgs.stdenv.hostPlatform.system} or { }).chatgpt or null
     else
       null;
 

@@ -43,6 +43,11 @@
     user = "pwnbox";
   };
 
+  # Ly autologin picks the first session matching "hyprland", which is the uwsm one
+  # (hyprland-uwsm.desktop sorts first); it needs uwsm's units, so enable them here.
+  programs.hyprland.withUWSM = lib.mkForce true;
+  services.displayManager.defaultSession = lib.mkForce "hyprland-uwsm";
+
   boot.kernelParams = lib.mkForce (
     [
       "quiet"

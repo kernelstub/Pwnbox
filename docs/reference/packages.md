@@ -96,6 +96,16 @@ plain Stremio (`pwnbox.stremio-enhanced` in `pkgs/custom.nix`). The package in
 
 Theming is covered in [Apps](../usage/apps.md#stremio-enhanced).
 
+## ChatGPT
+
+ChatGPT is the official desktop app, packaged by the
+[`nixos-chatgpt`](https://github.com/csoftware-arigpt/nixos-chatgpt) flake
+input. Its source uses OpenAI's mutable `latest` `.deb` URL; the upstream
+flake maintains the version and integrity hash. Pwnbox does not carry a
+second hash override. If a fresh build reports a hash mismatch for
+`chatgpt_amd64.deb`, update the input with `nix flake update chatgpt` once
+upstream has published a matching pin. Do not bypass integrity checks.
+
 ## Ledger Live
 
 Ledger Live comes straight from nixpkgs. `hardware.ledger.enable = true`
