@@ -45,7 +45,7 @@
         let
           v = builtins.getEnv name;
         in
-        if v == "" then fallback else v;
+        if v == "" || v == "root" then fallback else v;
       detectedUser = envOr "PWNBOX_USER" (envOr "SUDO_USER" (envOr "USER" "pwnbox"));
 
       hostNames = builtins.attrNames (
@@ -149,7 +149,12 @@
         (import ./pkgs { inherit pkgs; })
         // (import ./pkgs/toolset.nix { inherit pkgs categories; })
         // lib.optionalAttrs (system == "x86_64-linux") {
-          chatgpt = inputs.chatgpt.packages.${system}.chatgpt;
+          chatgpt = inputs.chatgpt.packages.${system}.chatgpt.overrideAttrs (old: {
+            src = pkgs.fetchurl {
+              inherit (old.src) name url;
+              hash = "sha256-6wgxxzTxVPk/jrzw4X0RjaDep9wXN9xhoecURDdb8ZA=";
+            };
+          });
           steam = pkgs.steam;
         }
         // {

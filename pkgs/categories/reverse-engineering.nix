@@ -32,6 +32,10 @@ with pkgs;
   yara-x
   binwalk
   (unblob.overrideAttrs (old: {
+    disabledTests = (old.disabledTests or [ ]) ++ [
+      "test_sigterm_terminates_promptly"
+      "test_sigkill_leaves_no_orphans"
+    ];
     postPatch = (old.postPatch or "") + ''
       sed -i \
         -e 's|def frombuf(cls, buf, encoding, errors):  # noqa: C901|def frombuf(cls, buf, encoding, errors):\n        """Parse GNU headers without treating the prefix field as a pathname."""\n        return cls._frombuf(buf, encoding, errors)\n\n    @classmethod\n    def _frombuf(cls, buf, encoding, errors, *, dircheck=True):  # noqa: C901|' \

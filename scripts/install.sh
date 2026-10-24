@@ -320,6 +320,7 @@ if [ -z "$host" ]; then
 fi
 
 user="${PWNBOX_USER:-${SUDO_USER:-$(id -un 2>/dev/null || echo pwnbox)}}"
+[ "$user" = "root" ] && user="pwnbox"
 system="${PWNBOX_SYSTEM:-$(nix eval --impure --raw --expr builtins.currentSystem 2>/dev/null || echo x86_64-linux)}"
 
 if [ "$(id -u)" -eq 0 ]; then
@@ -555,6 +556,10 @@ EOF
     boot_note="GRUB on $boot_disk"
     ;;
 esac
+
+if command -v git >/dev/null 2>&1 && git -C "$FLAKE_DIR" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    git -C "$FLAKE_DIR" add -- "$host_dir" >/dev/null 2>&1 || true
+fi
 
 if [ "$hardware_warn" -eq 1 ] || [ "$boot_warn" -eq 1 ]; then
     exec_row "hardware and boot" "warn" "$hardware_note; $boot_note"

@@ -10,10 +10,11 @@
     (inputs.nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix")
   ];
 
-  isoImage.storeContents = [
+  isoImage.storeContents = [ self ];
+  isoImage.contents = [
     {
-      object = self;
-      symlink = "/pwnbox";
+      source = self;
+      target = "/pwnbox";
     }
   ];
 
