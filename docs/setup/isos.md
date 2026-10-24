@@ -76,20 +76,49 @@ Building for a foreign architecture:
 
 ### Booting
 
-Flash with `dd` or copy the ISO onto a Ventoy stick:
+Flash with `dd`, or copy the ISO onto a [Ventoy](https://www.ventoy.net) stick
+(a plain `.iso` file in the data partition; the live ISO is far larger than 4 GB,
+so use Ventoy's default exFAT data partition, never FAT32):
 
 ```bash
 sudo dd if=iso/pwnbox-live-x86_64-linux.iso of=/dev/sdX bs=4M conv=fsync status=progress
 ```
 
+On Ventoy, press Enter on the ISO and pick **Boot in normal mode**. Do **not**
+use *Boot in grub2 mode*: Ventoy's patched GRUB renames the kernel parameter
+`init=` to `vtinit=`, and the NixOS initrd (`initrd-find-nixos-closure`) only
+reads `init=`, so boot stops in the emergency shell with "No init= parameter on
+the kernel command line". This affects NixOS images that use this systemd initrd
+and is open upstream: [ventoy/Ventoy#2689](https://github.com/ventoy/Ventoy/issues/2689).
+
 If the machine refuses to boot it, disable Secure Boot in the firmware — the
 ISO is not Microsoft-signed.
 
-Quick smoke test in a VM:
+The live session logs in by itself through Ly's autologin and starts the
+`hyprland-uwsm` session (Hyprland under `uwsm`). `hosts/iso` selects it
+explicitly: Ly matches the session name `hyprland` against two session files, so
+it can pick the uwsm one, and that session only starts when
+`programs.hyprland.withUWSM` is on.
+
+### Testing that an image boots
+
+Checksums and `xorriso` header dumps do not show that an image boots. Boot it
+in a VM, BIOS and UEFI (OVMF), and look at the screen:
 
 ```bash
+cp /usr/share/OVMF/OVMF_VARS_4M.fd OVMF_VARS.fd      # firmware paths differ per distro
 qemu-system-x86_64 -m 8G -enable-kvm -cdrom iso/pwnbox-live-x86_64-linux.iso
+qemu-system-x86_64 -m 8G -enable-kvm -cdrom iso/pwnbox-live-x86_64-linux.iso \
+  -drive if=pflash,format=raw,readonly=on,file=/usr/share/OVMF/OVMF_CODE_4M.fd \
+  -drive if=pflash,format=raw,file=OVMF_VARS.fd
 ```
+
+To test the Ventoy path, install Ventoy onto a disk image (an empty file made
+with `truncate`, attached with `losetup -P` and passed to `Ventoy2Disk.sh -I`),
+copy the ISO onto its exFAT partition, and boot the file as a USB disk with
+`-drive file=stick.img,format=raw,if=none,id=u,snapshot=on -device qemu-xhci
+-device usb-storage,drive=u,bootindex=0`, once with and once without the OVMF
+drives. In Ventoy's menu pick the ISO, then **Boot in normal mode**.
 
 ## Installer ISO
 
@@ -99,7 +128,8 @@ Boot it, partition the disk, then install from the embedded flake:
 mkfs.ext4 /dev/nvme0n1p2            # after partitioning (gdisk)
 mount /dev/nvme0n1p2 /mnt
 mkdir -p /mnt/root
-cp -r /pwnbox /mnt/root/pwnbox      # flake source is read-only on the ISO
+cp -rL /pwnbox /mnt/root/pwnbox                      # /pwnbox is a read-only store symlink
+chmod -R u+w /mnt/root/pwnbox                        # keeps exec bits, makes it writable
 
 nixos-generate-config --root /mnt
 cp /mnt/etc/nixos/hardware-configuration.nix /mnt/root/pwnbox/hosts/nixos/

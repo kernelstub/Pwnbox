@@ -336,20 +336,24 @@ for image in "${images[@]}"; do
 
     if [ "$no_build" -eq 1 ]; then
         nix_args=(eval "$FLAKE_DIR#images.$arch.$image.drvPath")
-        if run_nix nix "${nix_args[@]}" >/dev/null; then
+        rc=0
+        run_nix nix "${nix_args[@]}" >/dev/null || rc=$?
+        if [ "$rc" -eq 0 ]; then
             info "$image config evaluates for $arch"
             continue
         else
-            fail_log $?
+            fail_log "$rc"
         fi
     fi
 
-    if ! run_nix nix "${nix_args[@]}"; then
-        fail_log $?
+    rc=0
+    run_nix nix "${nix_args[@]}" || rc=$?
+    if [ "$rc" -ne 0 ]; then
+        fail_log "$rc"
     fi
     out_path="$(tail -n 1 "$OUT_TMP" | tr -d '[:space:]')"
 
-    iso_file="$(find "$out_path" -maxdepth 2 -name '*.iso' -print -quit 2>/dev/null || true)"
+    iso_file="$(find "$out_path" -maxdepth 2 -type f -name '*.iso' -print -quit 2>/dev/null || true)"
     if [ -z "$iso_file" ]; then
         die "no .iso found in $out_path"
     fi

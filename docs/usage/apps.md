@@ -252,7 +252,7 @@ AyuGram reloads itself.
 
 ## Obsidian
 
-The vault is `~/Documents/Notes` (created by `scripts/install.sh`).
+The vault is `~/Documents/Notes` (created by `scripts/install.sh switch`/`test`).
 
 - Palette → `~/.obsidian/snippets/pwnbox.css`, enabled and kept enabled in
   `appearance.json` on every theme change; fonts and corner radius follow the

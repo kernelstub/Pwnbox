@@ -45,7 +45,7 @@
         let
           v = builtins.getEnv name;
         in
-        if v == "" then fallback else v;
+        if v == "" || v == "root" then fallback else v;
       detectedUser = envOr "PWNBOX_USER" (envOr "SUDO_USER" (envOr "USER" "pwnbox"));
 
       hostNames = builtins.attrNames (

@@ -10,12 +10,9 @@
     (inputs.nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix")
   ];
 
-  isoImage.storeContents = [
-    {
-      object = self;
-      symlink = "/pwnbox";
-    }
-  ];
+  # The flake lives in the squashfs store; /pwnbox points at it in the live system.
+  isoImage.storeContents = [ self ];
+  systemd.tmpfiles.rules = [ "L+ /pwnbox - - - - ${self}" ];
 
   isoImage = {
     volumeID = "PWNBOXINST";
