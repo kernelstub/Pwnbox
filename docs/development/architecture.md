@@ -75,7 +75,10 @@ rofi menu
    │
     ├─ Pywal ─────► wal -i <image>  ─┐
     ├─ Custom ────► build scheme ────┤
-    │                                ▼
+    ├─ Presets ───► Custom palette + │
+    │               full look (fonts,│
+    │               gaps, effects,   │
+    │               bar style, …)    ▼
     │                        install palette
     │                    (kitty, rofi, fuzzel, GTK,
     │                     Hyprland, Neovim, Zed,
@@ -87,6 +90,7 @@ rofi menu
    │                                │
    ├─ bar style ──► qs ipc call barstyle set
    ├─ radius/blur/opacity/animations ──► hyprctl reload + quickshell restart
+   ├─ gaps ──► generated Hyprland config + hyprctl reload
    ├─ fonts/sizes ──► regenerate per-app font config
    │
    └──────────────► reload_apps

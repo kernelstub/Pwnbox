@@ -58,7 +58,10 @@ let
       (
         builtins.attrNames (
           lib.filterAttrs (
-            name: type: type == "directory" && builtins.pathExists "${themes}/${name}/theme.conf"
+            name: type:
+              type == "directory"
+              && (builtins.pathExists "${themes}/${name}/theme.conf"
+                || builtins.pathExists "${themes}/${name}/preset.conf")
           ) (builtins.readDir themes)
         )
       )

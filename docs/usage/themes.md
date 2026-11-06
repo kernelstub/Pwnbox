@@ -9,9 +9,12 @@ that palette from a wallpaper, or pin it with a custom theme.
 | --- | --- |
 | **Pywal** | Pick a wallpaper; extract a palette from it |
 | **Custom** | Pick one of the fixed-palette themes |
+| **Presets** | Pick a full theme preset: palette + fonts, gaps, effects, bar style |
 | **Style** | Bar layout (15 styles) |
 | **Corner radius** | Window rounding, in px |
 | **Window borders** | Hyprland window border on/off |
+| **Window gaps** | Spacing between windows, in px |
+| **Screen gaps** | Spacing between windows and the screen edges, in px |
 | **UI corner radius** | Bar / panel / rofi rounding, in px |
 | **System font** | UI font |
 | **System font size** | UI font size |
@@ -25,8 +28,9 @@ that palette from a wallpaper, or pin it with a custom theme.
 Every choice is written to `~/.cache/pwnbox/theme/` and re-applied on login.
 Blur and transparency cover Hyprland windows as well as the Quickshell bar,
 control center and popups (and rofi): the alpha is baked into Quickshell's
-`Theme.js` and the shell restarts on change. Window borders and shadows are
-written into the generated Hyprland config and applied with a `hyprctl reload`.
+`Theme.js` and the shell restarts on change. Window borders, shadows and gaps
+are written into the generated Hyprland config and applied with a
+`hyprctl reload`.
 
 ## Wallpaper themes (Pywal)
 
@@ -127,6 +131,43 @@ resolved wallpaper path and size/mtime, so replacing a theme's `wallpaper.png`
 updates the picker automatically on the next rebuild (`pwnbox-theme refresh`
 runs during activation). No cache clearing is needed.
 
+## Theme presets
+
+A theme folder that also ships a `preset.conf` is a **preset**: choosing it
+from `ALT + S → Presets` applies the palette *and* every other setting in one
+go — the font you want with that theme, window spacing, borders, transparency,
+blur, shadows, animations, corner radii, bar style and scale:
+
+```ini
+# colours come from theme.conf in the same folder (or here, if there is none)
+
+barstyle = islands
+radius = 9
+uiradius = 9
+borders = on
+shadows = on
+blur = on
+opacity = 92
+animations = on
+gaps = 5
+gaps_out = 10
+scale = 100
+font-ui = IoskeleyMono Nerd Font
+font-app = IoskeleyMono Nerd Font
+font-size-ui = 9
+font-size-app = 9
+```
+
+Every key is optional: the palette falls back to the folder's `theme.conf`
+(then monochrome), and a missing settings key keeps the current value, so a
+preset can be as small as one font line. See
+`dotfiles/themes/README.md` for the full key reference.
+
+Applying a preset is exactly like applying a custom theme, plus the settings:
+the same state files are written, so everything is re-applied on login and
+still tweakable afterwards from `ALT + S`. Picking a preset theme from
+**Custom** applies its settings too.
+
 ## Community themes
 
 The community gallery is
@@ -182,6 +223,8 @@ apps include or read:
 | `~/.cache/pwnbox/theme/barstyle` | Current bar style |
 | `~/.cache/pwnbox/theme/radius-window` | Window radius |
 | `~/.cache/pwnbox/theme/radius-ui` | UI radius |
+| `~/.cache/pwnbox/theme/gaps` | Spacing between windows (px) |
+| `~/.cache/pwnbox/theme/gaps-out` | Spacing around the screen edges (px) |
 | `~/.cache/pwnbox/theme/blur` | `on` / `off` |
 | `~/.cache/pwnbox/theme/opacity` | Transparency % |
 | `~/.cache/pwnbox/theme/animations` | `on` / `off` |
@@ -200,12 +243,15 @@ apps include or read:
 pwnbox-theme menu
 pwnbox-theme pick
 pwnbox-theme custom
+pwnbox-theme preset
 pwnbox-theme monochrome
 pwnbox-theme apply <image>
 pwnbox-theme barstyle
 pwnbox-theme borders
 pwnbox-theme windowborders
 pwnbox-theme shadows
+pwnbox-theme gaps
+pwnbox-theme gapsout
 pwnbox-theme restore
 pwnbox-theme styles
 pwnbox-theme uifont

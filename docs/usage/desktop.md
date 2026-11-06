@@ -21,7 +21,8 @@ Zed is the GUI editor and follows the same palette, fonts and border styling.
 
 Window management is configured in `dotfiles/config/hypr/hyprland.conf`:
 
-- `general`. Gaps, borders (border colour is generated from the theme).
+- `general`. Gaps and borders (border colour is generated from the theme;
+  the spacing between windows and the screen edges is driven by `ALT + S`).
 - `decoration`. Rounding, opacity, shadow and blur (all driven by `ALT + S`).
 - `animations`. Toggled from the settings menu.
 - `monitor = , <resolution>, auto, auto`. From `pwnbox.desktop.resolution`

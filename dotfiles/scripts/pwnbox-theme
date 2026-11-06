@@ -28,6 +28,8 @@ font_app_state="$cache/font-app"
 font_ui_size_state="$cache/font-size-ui"
 font_app_size_state="$cache/font-size-app"
 scale_state="$cache/scale"
+gaps_state="$cache/gaps"
+gaps_out_state="$cache/gaps-out"
 
 font_choices=(
     "Fairfax HD"
@@ -140,6 +142,8 @@ app_font() { read_state "$font_app_state" "IoskeleyMono Nerd Font"; }
 ui_font_size() { read_state "$font_ui_size_state" 9; }
 app_font_size() { read_state "$font_app_size_state" 9; }
 scale() { read_state "$scale_state" 100; }
+gaps() { read_state "$gaps_state" 5; }
+gaps_out() { read_state "$gaps_out_state" 10; }
 
 theme_color() {
     local key="$1" value
@@ -2963,6 +2967,8 @@ apply_borders() {
                 printf '    border_size = %s\n' "$(border_hypr)"
                 printf '    col.active_border = rgba(%sff)\n' "$brdr"
                 printf '    col.inactive_border = rgba(%sff)\n' "$brdr"
+                printf '    gaps_in = %s\n' "$(gaps)"
+                printf '    gaps_out = %s\n' "$(gaps_out)"
                 printf '}\n'
                 printf 'windowrule = border_color rgba(%sff) rgba(%sff), match:class ^(spotify)$\n' "$brdr" "$brdr"
                 printf 'decoration {\n'
@@ -3216,7 +3222,22 @@ custom_theme_dirs() {
     [ -d "$themes_dir" ] || return 0
     for d in "$themes_dir"/*/; do
         [ -d "$d" ] || continue
-        [ -f "${d}theme.conf" ] || continue
+        if [ -f "${d}theme.conf" ] || [ -f "${d}preset.conf" ]; then
+            printf '%s\n' "${d%/}"
+        fi
+    done
+}
+
+# Themes that ship a preset.conf: full look-and-feel packages (palette +
+# fonts, gaps, effects, bar style …). A folder may have both theme.conf and
+# preset.conf; the preset reuses the palette of theme.conf when it does not
+# define its own colours.
+preset_theme_dirs() {
+    local d
+    [ -d "$themes_dir" ] || return 0
+    for d in "$themes_dir"/*/; do
+        [ -d "$d" ] || continue
+        [ -f "${d}preset.conf" ] || continue
         printf '%s\n' "${d%/}"
     done
 }
@@ -3316,6 +3337,7 @@ build_custom_scheme() {
 custom_theme_wallpaper() {
     local dir="$1" wp f
     wp="$(conf_get "$dir/theme.conf" wallpaper)"
+    [ -n "$wp" ] || wp="$(conf_get "$dir/preset.conf" wallpaper)"
     if [ -n "$wp" ]; then
         case "$wp" in
         /*) [ -f "$wp" ] && {
@@ -3337,11 +3359,85 @@ custom_theme_wallpaper() {
     printf '%s' "$default_wall"
 }
 
+# preset.conf — a full look-and-feel package next to theme.conf. Every key is
+# optional: the palette falls back to theme.conf (then monochrome), and each
+# settings key that is missing simply keeps the current value. Numeric values
+# are validated before they touch the state files.
+apply_preset_settings() {
+    local conf="$1" v
+    [ -f "$conf" ] || return 0
+    mkdir -p "$cache"
+
+    v="$(conf_get "$conf" barstyle)"
+    if [ -n "$v" ]; then
+        printf '%s' "$v" >"$style_state"
+        if command -v qs >/dev/null 2>&1; then
+            qs ipc call barstyle set "$v" >/dev/null 2>&1 || true
+        fi
+    fi
+
+    v="$(conf_get "$conf" radius)"
+    case "$v" in '' | *[!0-9]*) ;; *) printf '%s' "$v" >"$radius_state" ;; esac
+
+    v="$(conf_get "$conf" uiradius)"
+    case "$v" in '' | *[!0-9]*) ;; *) printf '%s' "$v" >"$uir_state" ;; esac
+
+    v="$(conf_get "$conf" borders)"
+    case "$v" in on | off) printf '%s' "$v" >"$border_file" ;; esac
+
+    v="$(conf_get "$conf" shadows)"
+    case "$v" in on | off) printf '%s' "$v" >"$shadow_file" ;; esac
+
+    v="$(conf_get "$conf" blur)"
+    case "$v" in on | off) printf '%s' "$v" >"$blur_file" ;; esac
+
+    v="$(conf_get "$conf" animations)"
+    case "$v" in on | off) printf '%s' "$v" >"$anim_file" ;; esac
+
+    v="$(conf_get "$conf" opacity)"
+    case "$v" in
+    '' | *[!0-9]*) ;;
+    *)
+        [ "$v" -gt 100 ] && v=100
+        [ "$v" -lt 1 ] && v=1
+        printf '%s' "$v" >"$opacity_file"
+        ;;
+    esac
+
+    v="$(conf_get "$conf" gaps)"
+    case "$v" in '' | *[!0-9]*) ;; *) printf '%s' "$v" >"$gaps_state" ;; esac
+
+    v="$(conf_get "$conf" gaps_out)"
+    case "$v" in '' | *[!0-9]*) ;; *) printf '%s' "$v" >"$gaps_out_state" ;; esac
+
+    v="$(conf_get "$conf" scale)"
+    case "$v" in
+    '' | *[!0-9]*) ;;
+    *)
+        printf '%s' "$v" >"$scale_state"
+        apply_scale "$v"
+        ;;
+    esac
+
+    v="$(conf_get "$conf" font-ui)"
+    [ -n "$v" ] && printf '%s' "$v" >"$font_ui_state"
+
+    v="$(conf_get "$conf" font-app)"
+    [ -n "$v" ] && printf '%s' "$v" >"$font_app_state"
+
+    v="$(conf_get "$conf" font-size-ui)"
+    case "$v" in '' | *[!0-9]*) ;; *) printf '%s' "$v" >"$font_ui_size_state" ;; esac
+
+    v="$(conf_get "$conf" font-size-app)"
+    case "$v" in '' | *[!0-9]*) ;; *) printf '%s' "$v" >"$font_app_size_state" ;; esac
+}
+
 do_custom() {
-    local dir="${1%/}" quiet="${2:-}" conf name scheme wallpaper
+    local dir="${1%/}" quiet="${2:-}" conf scheme_conf name scheme wallpaper
     conf="$dir/theme.conf"
+    [ -f "$conf" ] || conf="$dir/preset.conf"
     [ -f "$conf" ] || {
-        [ -n "$quiet" ] || notify "Theme" "No theme.conf in $(basename "$dir")"
+        [ -n "$quiet" ] || notify "Theme" "No theme.conf or preset.conf in $(basename "$dir")"
         return 1
     }
     command -v wal >/dev/null 2>&1 || {
@@ -3353,8 +3449,12 @@ do_custom() {
 
     mkdir -p "$cache"
     scheme="$cache/custom-scheme.json"
-    if ! build_custom_scheme "$conf" "$scheme"; then
-        [ -n "$quiet" ] || notify "Theme" "Invalid colours in $(basename "$dir")/theme.conf"
+    # Colours come from theme.conf when the theme has one (presets fall back
+    # to it); a preset-only folder defines its palette in preset.conf itself.
+    scheme_conf="$dir/theme.conf"
+    [ -f "$scheme_conf" ] || scheme_conf="$conf"
+    if ! build_custom_scheme "$scheme_conf" "$scheme"; then
+        [ -n "$quiet" ] || notify "Theme" "Invalid colours in $(basename "$dir")"
         return 1
     fi
     if ! wal --theme "$scheme" -n -s -e -q >/dev/null 2>&1; then
@@ -3363,6 +3463,7 @@ do_custom() {
     fi
 
     install_palette
+    apply_preset_settings "$dir/preset.conf"
     apply_borders
     spawn_nice build_mono_icons
 
@@ -3381,6 +3482,7 @@ custom_label() {
     while IFS= read -r dir; do
         [ "$(basename "$dir")" = "$cur" ] || continue
         name="$(conf_get "$dir/theme.conf" name)"
+        [ -n "$name" ] || name="$(conf_get "$dir/preset.conf" name)"
         [ -n "$name" ] || name="$cur"
         printf '  (%s)' "$name"
         return 0
@@ -3395,6 +3497,7 @@ custom() {
         [ -n "$dir" ] || continue
         conf="$dir/theme.conf"
         name="$(conf_get "$conf" name)"
+        [ -n "$name" ] || name="$(conf_get "$dir/preset.conf" name)"
         [ -n "$name" ] || name="$(basename "$dir")"
         wp="$(custom_theme_wallpaper "$dir")"
         printf '%s\t%s\n' "$name" "$dir" >>"$mapf"
@@ -3417,6 +3520,59 @@ custom() {
             -kb-move-char-back Control+b -kb-move-char-forward Control+f \
             -kb-row-left Left -kb-row-right Right \
             -p "Custom theme" -theme "$custom_cfg" <"$listf" || true
+    )"
+    dir="$(awk -F'\t' -v n="$choice" '$1 == n { print $2; exit }' "$mapf")"
+    rm -f "$listf" "$mapf"
+    [ -n "$choice" ] || return 0
+    [ -n "$dir" ] || return 0
+    do_custom "$dir"
+}
+
+preset_label() {
+    local cur dir name
+    cur="$(read_state "$custom_state" "")"
+    [ -n "$cur" ] || return 0
+    while IFS= read -r dir; do
+        [ "$(basename "$dir")" = "$cur" ] || continue
+        name="$(conf_get "$dir/preset.conf" name)"
+        [ -n "$name" ] || name="$(conf_get "$dir/theme.conf" name)"
+        [ -n "$name" ] || name="$cur"
+        printf '  (%s)' "$name"
+        return 0
+    done < <(preset_theme_dirs)
+}
+
+preset() {
+    local listf mapf dir conf name wp thumb choice
+    listf="$(mktemp)"
+    mapf="$(mktemp)"
+    while IFS= read -r dir; do
+        [ -n "$dir" ] || continue
+        conf="$dir/preset.conf"
+        name="$(conf_get "$conf" name)"
+        [ -n "$name" ] || name="$(conf_get "$dir/theme.conf" name)"
+        [ -n "$name" ] || name="$(basename "$dir")"
+        wp="$(custom_theme_wallpaper "$dir")"
+        printf '%s\t%s\n' "$name" "$dir" >>"$mapf"
+        thumb="$(make_thumb "$wp" "custom-$(basename "$dir")")"
+        if [ -n "$thumb" ]; then
+            printf '%s\0icon\x1f%s\n' "$name" "$thumb" >>"$listf"
+        else
+            printf '%s\n' "$name" >>"$listf"
+        fi
+    done < <(preset_theme_dirs)
+
+    if [ ! -s "$listf" ]; then
+        rm -f "$listf" "$mapf"
+        notify "Theme" "No presets in $themes_dir"
+        return 0
+    fi
+
+    choice="$(
+        rofi -dmenu -i -show-icons -no-custom \
+            -kb-move-char-back Control+b -kb-move-char-forward Control+f \
+            -kb-row-left Left -kb-row-right Right \
+            -p "Preset" -theme "$custom_cfg" <"$listf" || true
     )"
     dir="$(awk -F'\t' -v n="$choice" '$1 == n { print $2; exit }' "$mapf")"
     rm -f "$listf" "$mapf"
@@ -3807,6 +3963,30 @@ choose_scale() {
     notify "Scale" "${choice}%"
 }
 
+gap_values=(0 2 4 5 6 8 10 12 14 16 20 24 32)
+
+choose_gaps() {
+    local choice
+    choice="$(choose_value "Window gaps" "$(gaps)" "${gap_values[@]}")"
+    [ -n "$choice" ] || return 0
+    mkdir -p "$cache"
+    printf '%s' "$choice" >"$gaps_state"
+    apply_borders
+    command -v hyprctl >/dev/null 2>&1 && hyprctl reload >/dev/null 2>&1 || true
+    notify "Window gaps" "${choice}px"
+}
+
+choose_gaps_out() {
+    local choice
+    choice="$(choose_value "Screen gaps" "$(gaps_out)" "${gap_values[@]}")"
+    [ -n "$choice" ] || return 0
+    mkdir -p "$cache"
+    printf '%s' "$choice" >"$gaps_out_state"
+    apply_borders
+    command -v hyprctl >/dev/null 2>&1 && hyprctl reload >/dev/null 2>&1 || true
+    notify "Screen gaps" "${choice}px"
+}
+
 choose_ui_font() {
     local choice
     choice="$(choose_value "System font" "$(ui_font)" "${font_choices[@]}")"
@@ -3859,11 +4039,14 @@ menu() {
             menu_section "THEME"
             printf 'Pywal\n'
             printf 'Custom%s\n' "$(custom_label)"
+            printf 'Presets%s\n' "$(preset_label)"
             menu_section "BAR"
             printf 'Style\n'
             menu_section "WINDOWS"
             printf 'Corner radius: %spx\n' "$(win_radius)"
             printf 'Window borders: %s\n' "$(border_label)"
+            printf 'Window gaps: %spx\n' "$(gaps)"
+            printf 'Screen gaps: %spx\n' "$(gaps_out)"
             menu_section "DISPLAY"
             printf 'Scale: %s%%\n' "$(scale)"
             menu_section "INTERFACE"
@@ -3883,9 +4066,12 @@ menu() {
     case "$choice" in
     "Pywal") pick ;;
     "Custom"*) custom ;;
+    "Presets"*) preset ;;
     "Style") barstyle ;;
     "Corner radius:"*) choose_window_radius ;;
     "Window borders:"*) choose_borders ;;
+    "Window gaps:"*) choose_gaps ;;
+    "Screen gaps:"*) choose_gaps_out ;;
     "Scale:"*) choose_scale ;;
     "UI corner radius:"*) choose_ui_radius ;;
     "System font:"*) choose_ui_font ;;
@@ -3934,11 +4120,14 @@ case "${1:-menu}" in
 menu) menu ;;
 pick | wallpaper) pick ;;
 custom | themes) custom ;;
+preset | presets) preset ;;
 monochrome) monochrome ;;
 apply) apply "${2:?usage: pwnbox-theme apply <image>}" ;;
 barstyle) barstyle ;;
 radius) choose_window_radius ;;
 uiradius) choose_ui_radius ;;
+gaps | windowgaps) choose_gaps ;;
+gapsout | screengaps) choose_gaps_out ;;
 uifont | systemfont) choose_ui_font ;;
 appfont | monofont) choose_app_font ;;
 uifontsize | systemsize) choose_ui_font_size ;;
@@ -3963,10 +4152,12 @@ usage: pwnbox-theme <command>
 
   pick, wallpaper          pick a wallpaper (pywal palette)
   custom, themes           pick a fixed-palette theme
+  preset, presets          pick a full preset (palette + fonts, gaps, effects)
   monochrome               apply the built-in monochrome theme
   apply <image>            apply a wallpaper image
   barstyle                 pick a bar style
   radius, uiradius         window / UI corner radius
+  gaps, gapsout            window / screen gaps (spacing)
   windowborders, shadows   window borders / shadows on-off
   blur, transparency       window blur / transparency
   animations               hyprland animations on-off

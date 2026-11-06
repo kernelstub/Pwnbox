@@ -58,7 +58,7 @@ The full manual lives in [`docs/`](docs/README.md):
 | [ISOs](docs/setup/isos.md) | Live/installer ISOs, live credentials, booting |
 | [Desktop](docs/usage/desktop.md) | Hyprland, GNOME, Quickshell and the bar |
 | [Keybinds](docs/usage/keybinds.md) | Every keyboard shortcut |
-| [Themes](docs/usage/themes.md) | Wallpaper themes, custom and community themes, the `ALT + S` menu |
+| [Themes](docs/usage/themes.md) | Wallpaper themes, custom and community themes, theme presets, the `ALT + S` menu |
 | [Fonts](docs/usage/fonts.md) | System/application fonts and sizes |
 | [Apps](docs/usage/apps.md) | Per-app theming and live updates |
 | [Browser](docs/usage/browser.md) | Zen, site themes and the pwnbox styles extension |

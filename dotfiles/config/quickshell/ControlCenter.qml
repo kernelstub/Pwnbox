@@ -34,6 +34,8 @@ PanelWindow {
     property string stateAppFontSize: ""
     property string stateRadius: ""
     property string stateUiRadius: ""
+    property string stateGaps: ""
+    property string stateGapsOut: ""
     property string stateBlur: ""
     property string stateOpacity: ""
     property string stateAnim: ""
@@ -41,6 +43,7 @@ PanelWindow {
     property string stateShadows: ""
     property string stateCustom: ""
     property string stateWallpaper: ""
+    property string statePreset: ""
     property string homeDir: ""
     property string netInfo: ""
     property var clipItems: []
@@ -184,7 +187,7 @@ PanelWindow {
 
     Process {
         id: themeStateProc
-        command: ["sh", "-c", "d=\"$HOME/.cache/pwnbox/theme\"; for f in barstyle font-ui font-app font-size-ui font-size-app radius-window radius-ui blur opacity animations borders shadows custom-theme wallpaper; do printf '%s=%s\\n' \"$f\" \"$(cat \"$d/$f\" 2>/dev/null)\"; done"]
+        command: ["sh", "-c", "d=\"$HOME/.cache/pwnbox/theme\"; for f in barstyle font-ui font-app font-size-ui font-size-app radius-window radius-ui gaps gaps-out blur opacity animations borders shadows custom-theme wallpaper; do printf '%s=%s\\n' \"$f\" \"$(cat \"$d/$f\" 2>/dev/null)\"; done; ct=\"$(cat \"$d/custom-theme\" 2>/dev/null)\"; if [ -n \"$ct\" ] && [ -f \"$HOME/.config/pwnbox/themes/$ct/preset.conf\" ]; then printf 'preset-active=%s\\n' \"$ct\"; fi"]
         stdout: StdioCollector {
             onStreamFinished: {
                 const out = {};
@@ -201,6 +204,8 @@ PanelWindow {
                 center.stateAppFontSize = out["font-size-app"] || "";
                 center.stateRadius = out["radius-window"] || "";
                 center.stateUiRadius = out["radius-ui"] || "";
+                center.stateGaps = out.gaps || "";
+                center.stateGapsOut = out["gaps-out"] || "";
                 center.stateBlur = out.blur || "";
                 center.stateOpacity = out.opacity || "";
                 center.stateAnim = out.animations || "";
@@ -208,6 +213,7 @@ PanelWindow {
                 center.stateShadows = out.shadows || "";
                 center.stateCustom = out["custom-theme"] || "";
                 center.stateWallpaper = out.wallpaper || "";
+                center.statePreset = out["preset-active"] || "";
             }
         }
     }
@@ -1771,6 +1777,12 @@ PanelWindow {
                             onActivated: center.run("$HOME/.scripts/pwnbox-theme custom")
                         }
                         ActionRow {
+                            label: "Presets"
+                            glyph: Theme.iconLauncher
+                            value: center.statePreset || "None"
+                            onActivated: center.run("$HOME/.scripts/pwnbox-theme preset")
+                        }
+                        ActionRow {
                             label: "Bar style"
                             glyph: Theme.iconLauncher
                             value: center.stateBarstyle || "side"
@@ -1789,6 +1801,18 @@ PanelWindow {
                             glyph: Theme.iconWindow
                             value: center.stateBorders === "off" ? "Off" : "On"
                             onActivated: center.run("$HOME/.scripts/pwnbox-theme windowborders")
+                        }
+                        ActionRow {
+                            label: "Window gaps"
+                            glyph: Theme.iconWindow
+                            value: (center.stateGaps || "5") + "px"
+                            onActivated: center.run("$HOME/.scripts/pwnbox-theme gaps")
+                        }
+                        ActionRow {
+                            label: "Screen gaps"
+                            glyph: Theme.iconDisplay
+                            value: (center.stateGapsOut || "10") + "px"
+                            onActivated: center.run("$HOME/.scripts/pwnbox-theme gapsout")
                         }
                         ActionRow {
                             label: "UI corner radius"
