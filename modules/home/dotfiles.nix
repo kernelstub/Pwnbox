@@ -398,6 +398,12 @@ in
         VolumeWidget.qml WindowTitle.qml; do
         run rm -f "$qs_dir/$legacy" "$qs_dir/$legacy.hm-backup"
       done
+      # drop home-manager backups of any other stale files (old panels,
+      # removed bar styles, …); they are only needed during activation.
+      for backup in "$qs_dir"/*.hm-backup; do
+        [ -e "$backup" ] || continue
+        run rm -rf "$backup"
+      done
     fi
     hyprlock_conf="$HOME/.config/hypr/hyprlock.conf"
     if [ -L "$hyprlock_conf" ]; then
