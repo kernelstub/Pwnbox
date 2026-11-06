@@ -7,6 +7,7 @@ ShellRoot {
     id: root
 
     property string barStyle: "islands"
+    property string wsIndicator: "dots"
     property string mainMonitor: "@MAINMONITOR@"
 
     property bool dnd: false
@@ -53,6 +54,19 @@ ShellRoot {
         }
     }
 
+    Process {
+        id: wsReader
+        command: ["sh", "-c", "cat \"$HOME/.cache/pwnbox/theme/workspaces\" 2>/dev/null"]
+        running: true
+        stdout: StdioCollector {
+            onStreamFinished: {
+                const s = this.text.trim();
+                if (s.length > 0)
+                    root.wsIndicator = s;
+            }
+        }
+    }
+
     IpcHandler {
         target: "barstyle"
 
@@ -62,6 +76,18 @@ ShellRoot {
 
         function get(): string {
             return root.barStyle;
+        }
+    }
+
+    IpcHandler {
+        target: "workspaces"
+
+        function set(name: string) {
+            root.wsIndicator = name;
+        }
+
+        function get(): string {
+            return root.wsIndicator;
         }
     }
 
@@ -78,6 +104,7 @@ ShellRoot {
         model: Quickshell.screens
         Bar {
             barStyle: root.barStyle
+            wsIndicator: root.wsIndicator
             visible: root.isMainScreen(modelData)
             dnd: root.dnd
             notifCount: root.notifCount

@@ -21,7 +21,7 @@ Item {
         anchors.leftMargin: 10
         implicitWidth: wsRow.implicitWidth + 26
         Row { id: wsRow; anchors.centerIn: parent; spacing: 7
-            Workspaces {} }
+            Workspaces { indicator: bar.wsIndicator } }
     }
 
     Pill {

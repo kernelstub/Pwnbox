@@ -8,6 +8,7 @@ PanelWindow {
     id: bar
     required property ShellScreen modelData
     required property string barStyle
+    required property string wsIndicator
     property bool dnd: false
     property int notifCount: 0
     property bool notifOpen: false

@@ -28,6 +28,7 @@ PanelWindow {
     property int captureDelay: 0
     readonly property var monitorOutputs: captureMonitors ? captureMonitors.filter(function (m) { return !m.disabled }) : []
     property string stateBarstyle: ""
+    property string stateWorkspaces: ""
     property string stateFontUi: ""
     property string stateAppFont: ""
     property string stateFontUiSize: ""
@@ -187,7 +188,7 @@ PanelWindow {
 
     Process {
         id: themeStateProc
-        command: ["sh", "-c", "d=\"$HOME/.cache/pwnbox/theme\"; for f in barstyle font-ui font-app font-size-ui font-size-app radius-window radius-ui gaps gaps-out blur opacity animations borders shadows custom-theme wallpaper; do printf '%s=%s\\n' \"$f\" \"$(cat \"$d/$f\" 2>/dev/null)\"; done; ct=\"$(cat \"$d/custom-theme\" 2>/dev/null)\"; if [ -n \"$ct\" ] && [ -f \"$HOME/.config/pwnbox/themes/$ct/preset.conf\" ]; then printf 'preset-active=%s\\n' \"$ct\"; fi"]
+        command: ["sh", "-c", "d=\"$HOME/.cache/pwnbox/theme\"; for f in barstyle workspaces font-ui font-app font-size-ui font-size-app radius-window radius-ui gaps gaps-out blur opacity animations borders shadows custom-theme wallpaper; do printf '%s=%s\\n' \"$f\" \"$(cat \"$d/$f\" 2>/dev/null)\"; done; ct=\"$(cat \"$d/custom-theme\" 2>/dev/null)\"; if [ -n \"$ct\" ] && [ -f \"$HOME/.config/pwnbox/themes/$ct/preset.conf\" ]; then printf 'preset-active=%s\\n' \"$ct\"; fi"]
         stdout: StdioCollector {
             onStreamFinished: {
                 const out = {};
@@ -198,6 +199,7 @@ PanelWindow {
                         out[lines[i].slice(0, eq)] = lines[i].slice(eq + 1);
                 }
                 center.stateBarstyle = out.barstyle || "";
+                center.stateWorkspaces = out.workspaces || "";
                 center.stateFontUi = out["font-ui"] || "";
                 center.stateAppFont = out["font-app"] || "";
                 center.stateFontUiSize = out["font-size-ui"] || "";
@@ -1787,6 +1789,12 @@ PanelWindow {
                             glyph: Theme.iconLauncher
                             value: center.stateBarstyle || "side"
                             onActivated: center.run("$HOME/.scripts/pwnbox-theme barstyle")
+                        }
+                        ActionRow {
+                            label: "Workspace indicators"
+                            glyph: Theme.iconWindow
+                            value: center.stateWorkspaces ? center.stateWorkspaces.charAt(0).toUpperCase() + center.stateWorkspaces.slice(1) : "Dots"
+                            onActivated: center.run("$HOME/.scripts/pwnbox-theme workspaces")
                         }
 
                         SectionTitle { text: "Shape" }

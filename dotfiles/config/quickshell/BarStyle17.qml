@@ -20,7 +20,7 @@ Item {
             id: wsCol
             anchors.centerIn: parent
             spacing: 6
-            Workspaces { vertical: true; anchors.horizontalCenter: parent.horizontalCenter }
+            Workspaces { indicator: bar.wsIndicator; vertical: true; anchors.horizontalCenter: parent.horizontalCenter }
         }
     }
 

@@ -30,6 +30,7 @@ font_app_size_state="$cache/font-size-app"
 scale_state="$cache/scale"
 gaps_state="$cache/gaps"
 gaps_out_state="$cache/gaps-out"
+ws_state="$cache/workspaces"
 
 font_choices=(
     "Fairfax HD"
@@ -158,6 +159,7 @@ app_font_size() { read_state "$font_app_size_state" 9; }
 scale() { read_state "$scale_state" 100; }
 gaps() { read_state "$gaps_state" 5; }
 gaps_out() { read_state "$gaps_out_state" 10; }
+ws_indicator() { read_state "$ws_state" dots; }
 
 theme_color() {
     local key="$1" value
@@ -3390,6 +3392,16 @@ apply_preset_settings() {
         fi
     fi
 
+    v="$(conf_get "$conf" workspaces)"
+    case "$v" in
+    dots | numbers | roman | squares)
+        printf '%s' "$v" >"$ws_state"
+        if command -v qs >/dev/null 2>&1; then
+            qs ipc call workspaces set "$v" >/dev/null 2>&1 || true
+        fi
+        ;;
+    esac
+
     v="$(conf_get "$conf" radius)"
     case "$v" in '' | *[!0-9]*) ;; *) printf '%s' "$v" >"$radius_state" ;; esac
 
@@ -3800,6 +3812,50 @@ barstyle() {
     done
 }
 
+ws_styles=(
+    "dots|Dots"
+    "numbers|Numbers"
+    "roman|Roman numerals"
+    "squares|Squares"
+)
+
+ws_label() {
+    local id entry
+    id="$(ws_indicator)"
+    for entry in "${ws_styles[@]}"; do
+        if [ "${entry%%|*}" = "$id" ]; then
+            printf '%s' "${entry##*|}"
+            return 0
+        fi
+    done
+    printf 'Dots'
+}
+
+set_ws_indicator() {
+    local id="$1" label="$2"
+    mkdir -p "$cache"
+    printf '%s' "$id" >"$ws_state"
+    if command -v qs >/dev/null 2>&1; then
+        qs ipc call workspaces set "$id" >/dev/null 2>&1 || true
+    fi
+    notify "Workspace indicators" "$label"
+}
+
+choose_workspaces() {
+    local entry id choice
+    clear_stale_rofi_lock
+    choice="$(printf '%s\n' "${ws_styles[@]}" | cut -d'|' -f2- |
+        rofi -dmenu -i -no-custom -select "$(ws_label)" \
+            -p "Workspace indicators" -theme "$menu_cfg" || true)"
+    [ -n "$choice" ] || return 0
+    for entry in "${ws_styles[@]}"; do
+        if [ "${entry##*|}" = "$choice" ]; then
+            set_ws_indicator "${entry%%|*}" "$choice"
+            return 0
+        fi
+    done
+}
+
 pick() {
     mkdir -p "$wall_dir" "$thumb_dir"
     shopt -s nullglob
@@ -4062,6 +4118,7 @@ menu() {
             printf 'Presets%s\n' "$(preset_label)"
             menu_section "BAR"
             printf 'Style\n'
+            printf 'Workspace indicators: %s\n' "$(ws_label)"
             menu_section "WINDOWS"
             printf 'Corner radius: %spx\n' "$(win_radius)"
             printf 'Window borders: %s\n' "$(border_label)"
@@ -4088,6 +4145,7 @@ menu() {
     "Custom"*) custom ;;
     "Presets"*) preset ;;
     "Style") barstyle ;;
+    "Workspace indicators:"*) choose_workspaces ;;
     "Corner radius:"*) choose_window_radius ;;
     "Window borders:"*) choose_borders ;;
     "Window gaps:"*) choose_gaps ;;
@@ -4144,6 +4202,7 @@ preset | presets) preset ;;
 monochrome) monochrome ;;
 apply) apply "${2:?usage: pwnbox-theme apply <image>}" ;;
 barstyle) barstyle ;;
+workspaces | wsindicator | wsstyle) choose_workspaces ;;
 radius) choose_window_radius ;;
 uiradius) choose_ui_radius ;;
 gaps | windowgaps) choose_gaps ;;
@@ -4176,6 +4235,7 @@ usage: pwnbox-theme <command>
   monochrome               apply the built-in monochrome theme
   apply <image>            apply a wallpaper image
   barstyle                 pick a bar style
+  workspaces, wsindicator  pick workspace indicator style (dots/numbers/…)
   radius, uiradius         window / UI corner radius
   gaps, gapsout            window / screen gaps (spacing)
   windowborders, shadows   window borders / shadows on-off

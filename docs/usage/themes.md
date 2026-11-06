@@ -11,6 +11,7 @@ that palette from a wallpaper, or pin it with a custom theme.
 | **Custom** | Pick one of the fixed-palette themes |
 | **Presets** | Pick a full theme preset: palette + fonts, gaps, effects, bar style |
 | **Style** | Bar layout (15 styles) |
+| **Workspace indicators** | Bar workspace display: dots, numbers, roman numerals, squares |
 | **Corner radius** | Window rounding, in px |
 | **Window borders** | Hyprland window border on/off |
 | **Window gaps** | Spacing between windows, in px |
@@ -142,6 +143,7 @@ blur, shadows, animations, corner radii, bar style and scale:
 # colours come from theme.conf in the same folder (or here, if there is none)
 
 barstyle = islands
+workspaces = dots
 radius = 9
 uiradius = 9
 borders = on
@@ -221,6 +223,7 @@ apps include or read:
 | `~/.cache/pwnbox/theme/wallpaper` | Current wallpaper path |
 | `~/.cache/pwnbox/theme/custom-theme` | Current custom theme name |
 | `~/.cache/pwnbox/theme/barstyle` | Current bar style |
+| `~/.cache/pwnbox/theme/workspaces` | Workspace indicator style (`dots` / `numbers` / `roman` / `squares`) |
 | `~/.cache/pwnbox/theme/radius-window` | Window radius |
 | `~/.cache/pwnbox/theme/radius-ui` | UI radius |
 | `~/.cache/pwnbox/theme/gaps` | Spacing between windows (px) |
@@ -247,6 +250,7 @@ pwnbox-theme preset
 pwnbox-theme monochrome
 pwnbox-theme apply <image>
 pwnbox-theme barstyle
+pwnbox-theme workspaces
 pwnbox-theme borders
 pwnbox-theme windowborders
 pwnbox-theme shadows

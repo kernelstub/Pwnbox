@@ -20,7 +20,7 @@ Item {
         Island {
             implicitWidth: workspaces.implicitWidth + 26
             Row { id: workspaces; anchors.centerIn: parent; spacing: 7
-                Workspaces {} }
+                Workspaces { indicator: bar.wsIndicator } }
         }
     }
 

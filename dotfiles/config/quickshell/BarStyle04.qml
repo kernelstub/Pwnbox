@@ -28,7 +28,7 @@ Item {
             id: content
             anchors.centerIn: parent
             spacing: 14
-            Workspaces { Layout.alignment: Qt.AlignVCenter }
+            Workspaces { indicator: bar.wsIndicator; Layout.alignment: Qt.AlignVCenter }
             Div {}
             Clock { Layout.alignment: Qt.AlignVCenter }
             Div {}

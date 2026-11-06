@@ -15,7 +15,7 @@ Item {
     RowLayout {
         anchors { left: parent.left; leftMargin: 10; verticalCenter: parent.verticalCenter }
         spacing: 8
-        Workspaces { Layout.alignment: Qt.AlignVCenter }
+        Workspaces { indicator: bar.wsIndicator; Layout.alignment: Qt.AlignVCenter }
     }
 
     RowLayout {

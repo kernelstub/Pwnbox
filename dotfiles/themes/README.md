@@ -68,6 +68,7 @@ Settings keys (every one is optional; a missing key keeps the current value):
 | Key | Meaning |
 | --- | --- |
 | `barstyle` | Bar layout, one of the 15 style ids (`islands`, `floating`, `flat`, `pill`, `capsule`, `bottom`, `split`, `blocky`, `minipills`, `side`, `sideright`, `sidepill`, `sidepillright`, `sideminipills`, `sideminipillsright`). |
+| `workspaces` | Workspace indicator style in the bar: `dots`, `numbers`, `roman` or `squares`. |
 | `radius` | Window corner radius in px. |
 | `uiradius` | UI (bar/panel/rofi) corner radius in px. |
 | `borders` | Window borders `on` / `off`. |
@@ -89,6 +90,7 @@ A full preset is just the palette plus these lines:
 # (palette keys from theme.conf, or here if there is no theme.conf)
 
 barstyle = islands
+workspaces = dots
 radius = 9
 uiradius = 9
 borders = on

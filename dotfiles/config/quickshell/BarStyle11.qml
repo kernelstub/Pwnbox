@@ -14,7 +14,7 @@ Item {
     ColumnLayout {
         anchors { top: parent.top; topMargin: 12; horizontalCenter: parent.horizontalCenter }
         spacing: 6
-        Workspaces { vertical: true; Layout.alignment: Qt.AlignHCenter }
+        Workspaces { indicator: bar.wsIndicator; vertical: true; Layout.alignment: Qt.AlignHCenter }
     }
 
     ColumnLayout {
