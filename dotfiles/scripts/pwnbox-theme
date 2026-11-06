@@ -116,6 +116,20 @@ read_state() {
     printf '%s' "$value"
 }
 
+# Rofi refuses to start when a previous instance left its pidfile behind
+# (killed, crashed, SIGTERM without cleanup): every picker then silently
+# opens nothing. Drop the lock when the recorded PID is not alive.
+rofi_pidfile="${XDG_RUNTIME_DIR:-/tmp}/rofi.pid"
+
+clear_stale_rofi_lock() {
+    local pid
+    [ -f "$rofi_pidfile" ] || return 0
+    pid="$(cat "$rofi_pidfile" 2>/dev/null)" || return 0
+    case "$pid" in '' | *[!0-9]*) rm -f "$rofi_pidfile" 2>/dev/null; return 0 ;; esac
+    kill -0 "$pid" 2>/dev/null && return 0
+    rm -f "$rofi_pidfile" 2>/dev/null || true
+}
+
 win_radius() { read_state "$radius_state" 9; }
 ui_radius() { read_state "$uir_state" 9; }
 blur_state() { read_state "$blur_file" on; }
@@ -3515,6 +3529,7 @@ custom() {
         return 0
     fi
 
+    clear_stale_rofi_lock
     choice="$(
         rofi -dmenu -i -show-icons -no-custom \
             -kb-move-char-back Control+b -kb-move-char-forward Control+f \
@@ -3568,6 +3583,7 @@ preset() {
         return 0
     fi
 
+    clear_stale_rofi_lock
     choice="$(
         rofi -dmenu -i -show-icons -no-custom \
             -kb-move-char-back Control+b -kb-move-char-forward Control+f \
@@ -3759,6 +3775,7 @@ set_barstyle() {
 
 barstyle() {
     local entry id choice preview
+    clear_stale_rofi_lock
     choice="$(
         for entry in "${bar_styles[@]}"; do
             id="${entry%%|*}"
@@ -3810,6 +3827,7 @@ pick() {
         notify "Wallpaper" "No wallpapers found"
         return 0
     fi
+    clear_stale_rofi_lock
     choice="$(
         rofi -dmenu -i -show-icons -no-custom \
             -kb-move-char-back Control+b -kb-move-char-forward Control+f \
@@ -3834,6 +3852,7 @@ menu_section() {
 choose_value() {
     local prompt="$1" current="$2"
     shift 2
+    clear_stale_rofi_lock
     printf '%s\n' "$@" | rofi -dmenu -i -no-custom -select "$current" \
         -p "$prompt" -theme "$menu_cfg" || true
 }
@@ -4034,6 +4053,7 @@ choose_app_font_size() {
 
 menu() {
     local choice
+    clear_stale_rofi_lock
     choice="$(
         {
             menu_section "THEME"
