@@ -14,7 +14,7 @@ configuration {
 window {
     location: center;
     anchor: center;
-    width: 840px;
+    width: 1200px;
     border: 2px;
     border-color: @brdr;
     border-radius: @radius;
@@ -41,7 +41,7 @@ prompt {
 }
 
 listview {
-    columns: 3;
+    columns: 5;
     lines: 1;
     cycle: true;
     fixed-height: false;
@@ -63,7 +63,7 @@ element {
 }
 
 element-icon {
-    size: 224px;
+    size: 196px;
     border-radius: @radius;
 }
 
