@@ -382,6 +382,23 @@ in
       run cp -f ${dotfiles}/config/wal/monochrome/Theme.js "$HOME/.config/quickshell/Theme.js"
     fi
     run chmod u+w "$HOME/.config/quickshell/Theme.js" 2>/dev/null || true
+    # legacy: the quickshell config was reorganized into bar/, components/
+    # and controlcenter/ subdirectories; drop the old flat files (and their
+    # home-manager backups) so the directory stays clean.
+    qs_dir="$HOME/.config/quickshell"
+    if [ -d "$qs_dir/bar" ]; then
+      for legacy in \
+        Bar.qml BarStyles.js Workspaces.qml ControlCenter.qml \
+        BarStyle01.qml BarStyle02.qml BarStyle03.qml BarStyle04.qml BarStyle05.qml \
+        BarStyle06.qml BarStyle07.qml BarStyle08.qml BarStyle10.qml BarStyle11.qml \
+        BarStyle12.qml BarStyle13.qml BarStyle14.qml BarStyle17.qml BarStyle18.qml \
+        BatteryWidget.qml Calendar.qml Clock.qml Indicators.qml Media.qml \
+        MediaCompact.qml NotifButton.qml NotificationOverlay.qml NotificationPopup.qml \
+        PowerButton.qml QuickToggle.qml SliderBar.qml Stats.qml VolumeOsd.qml \
+        VolumeWidget.qml WindowTitle.qml; do
+        run rm -f "$qs_dir/$legacy" "$qs_dir/$legacy.hm-backup"
+      done
+    fi
     hyprlock_conf="$HOME/.config/hypr/hyprlock.conf"
     if [ -L "$hyprlock_conf" ]; then
       run rm -f "$hyprlock_conf"
